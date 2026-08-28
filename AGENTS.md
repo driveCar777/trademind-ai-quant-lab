@@ -194,9 +194,10 @@ POST /task → requests.post() → indicator-worker → RSI → 保存结果 →
 **Regime Transition V0.9** ✅ 已冻结（四 Xavier；`NO_CANDIDATE`；0001 FALSIFIED；不要第 4 条；不要调 ADX/hold/VOL）  
 **ALPHA_PROGRAM_V1** ✅ Universe/分类器已落地（149 PASS；Level 1=0）  
 **Residual V0.91** ✅ 已冻结（`NO_CANDIDATE`；不要调 SMA60）  
-**Alpha Recovery V1.0** ✅ 失败分析 + 纸面合同 `INSTITUTIONAL_TIME_V1.0`（**未跑**；hash `1d3c4a1f…24457`）  
+**Alpha Recovery V1.0** ✅ 失败分析 + 合同（当时未跑）  
+**Alpha Mission V1.1** ✅ STOP B。IT WEAK_EDGE 已杀；TS/MS/RI/AMS FALSIFIED。Level=0 Candidate=0。  
 V11：MT5 日线样本内外回测 + 风控证伪。`survived` 不是年化保证。  
-FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要调 OIL 动量。不要回头调 XA / RT / XR。不要无 Candidate 写策略。不要实现 IT runner，除非审查通过。
+FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要调 OIL 动量。不要回头调 XA / RT / XR / IT / TS / MS / RI / AMS。不要无 Candidate 写策略。下一美元 = 新数据，不是调参。
 
 ---
 

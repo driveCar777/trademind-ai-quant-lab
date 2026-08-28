@@ -1,0 +1,31 @@
+{
+  "discovery_id": "INSTITUTIONAL_TIME_V1.0",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "INSTITUTIONAL_TIME_V1.0",
+      "family_id": "FAM-IT-CALENDAR-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-IT-0003"
+      ],
+      "job_id": "IT-V10-Xavier-03-HYP-IT-0003",
+      "node": "Xavier-03",
+      "note": "Worker executes this list only. Not weekday. Not V0.9.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-D1-20260825-000001",
+        "tm-market-OIL-D1-20260825-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457",
+      "seed": 20260825,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-03"
+}

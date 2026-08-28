@@ -1,0 +1,10 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "TIME_STRUCTURE_V1",
+  "invent_tokyo_forbidden": true,
+  "next_action": "KILL_FAMILY_THEN_NEXT_ALPHA",
+  "note": "Do not retune hold or add Tokyo. Do not read Final OOS.",
+  "optimize_forbidden": true,
+  "outcome": "NO_CANDIDATE",
+  "strategy_layer_allowed": false
+}

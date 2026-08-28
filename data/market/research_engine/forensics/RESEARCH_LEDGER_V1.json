@@ -1,0 +1,58 @@
+{
+  "ledger_id": "RESEARCH_LEDGER_V1",
+  "FINAL_OOS_TOUCHED": false,
+  "start_commit": "134bfe565a6972991cec5d75da22d80e5d62bae3",
+  "n": 5,
+  "rows": [
+    {
+      "tag": "RESEARCH-2026-0001",
+      "experiment": "INSTITUTIONAL_TIME_V1.0",
+      "contract": "1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457",
+      "dataset": ["tm-market-GOLD-D1-20260825-000001", "tm-market-OIL-D1-20260825-000001"],
+      "result": "WEAK_EDGE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "tag": "RESEARCH-2026-0002",
+      "experiment": "TIME_STRUCTURE_V1",
+      "contract": "51bb3eedac31936667271df8324df7e76b898a3b126a718b256e37591d7a93d2",
+      "dataset": ["tm-market-GOLD-H1-20260828-000001", "tm-market-OIL-H1-20260828-000001"],
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "tag": "RESEARCH-2026-0003",
+      "experiment": "MICROSTRUCTURE_SURPRISE_V1",
+      "contract": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+      "dataset": ["tm-market-GOLD-H1-20260828-000001", "tm-market-OIL-H1-20260828-000001"],
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "tag": "RESEARCH-2026-0004",
+      "experiment": "REGIME_INTERACTION_V1",
+      "contract": "c060a77e5c08e7c226f63878f6b105e9255b7dedebd5074aa5782dbc9b1fd321",
+      "dataset": ["tm-market-GOLD-H1-20260828-000001", "tm-market-OIL-H1-20260828-000001"],
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": false,
+      "note": "Local 2000 is authority. Same costed-sign failure as TS/MS."
+    },
+    {
+      "tag": "RESEARCH-2026-0005",
+      "experiment": "ALT_MARKET_STRUCTURE_V1",
+      "contract": "8e12e3b16eecb7095a2e7b22847e4be23ba7bd586506daf2cb2e12ea0ec0aad6",
+      "dataset": ["tm-market-GOLD-H1-20260828-000001", "tm-market-OIL-H1-20260828-000001"],
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": false,
+      "note": "Local 2000 is authority."
+    }
+  ]
+}

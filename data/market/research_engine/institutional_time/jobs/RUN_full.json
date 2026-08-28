@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457",
+      "elapsed_seconds": 12.947721242904663,
+      "end": "2026-08-28T05:28:19Z",
+      "exit_code": 0,
+      "experiment": "INSTITUTIONAL_TIME_V1.0",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-28T05:28:06Z",
+      "stderr": "",
+      "stdout": "IT_JOB_DONE IT-V10-Xavier-04-HYP-IT-0001 10.8\nIT_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457",
+      "elapsed_seconds": 13.216971397399902,
+      "end": "2026-08-28T05:28:19Z",
+      "exit_code": 0,
+      "experiment": "INSTITUTIONAL_TIME_V1.0",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-28T05:28:06Z",
+      "stderr": "",
+      "stdout": "IT_JOB_DONE IT-V10-Xavier-03-HYP-IT-0003 10.9\nIT_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457",
+      "elapsed_seconds": 13.281509160995483,
+      "end": "2026-08-28T05:28:19Z",
+      "exit_code": 0,
+      "experiment": "INSTITUTIONAL_TIME_V1.0",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-28T05:28:06Z",
+      "stderr": "",
+      "stdout": "IT_JOB_DONE IT-V10-Xavier-02-HYP-IT-0002 11.3\nIT_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457",
+      "elapsed_seconds": 13.698129177093506,
+      "end": "2026-08-28T05:28:20Z",
+      "exit_code": 0,
+      "experiment": "INSTITUTIONAL_TIME_V1.0",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-28T05:28:06Z",
+      "stderr": "",
+      "stdout": "IT_JOB_DONE IT-V10-Xavier-01-HYP-IT-0001 11.7\nIT_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-28T05:28:20Z"
+}

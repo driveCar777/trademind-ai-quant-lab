@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** Alpha Recovery V1.0 已写出纸面合同 `INSTITUTIONAL_TIME_V1.0`。**不要跑。** Level 仍是 0。
-> **最后更新:** 2026-08-27（Recovery forensics + 合同；167 PASS；未执行新家族）
-> **阶段终点:** 等审查。禁止调参救 V0.8/V0.9/V0.91。禁止 RSI/MACD/MA。
+> **当前活跃模块:** Alpha Mission V1.1 **STOP B**。Level 仍是 0。Candidate=0。
+> **最后更新:** 2026-08-28（IT/TS/MS/RI/AMS 已跑并杀死；不要调参救）
+> **阶段终点:** STOP B。禁止调参救任何已杀家族。禁止 RSI/MACD/MA。下一美元 = 新数据。
 
 ---
 
@@ -43,6 +43,19 @@
 | XR V0.91 | GOLD/OIL residual（3 假设 / 本地 2000） | ✅ FROZEN | 2026-08-27 |
 | PROG V1 | Alpha Program 盘点/库/门/路线 | ✅ DESIGN | 2026-08-26 |
 | REC V1 | Alpha Recovery（forensics + 一个纸面合同） | ✅ DESIGN | 2026-08-27 |
+| MISSION V1.1 | IT → TS → MS → RI → AMS | ✅ STOP B | 2026-08-28 |
+
+## Alpha Mission V1.1 — STOP B 2026-08-28
+
+从 Level 0 推进到 Level 1 失败。五家族已执行。Candidate=0。Level 仍 0。
+
+- IT V1.0：local 2000 + 四 Xavier。WEAK_EDGE。FDR 0/3。KILLED。
+- TS / MS：local 2000 + 四 Xavier。3/3 FALSIFIED。KILLED。
+- RI / AMS：local 2000 权威。3/3 FALSIFIED。KILLED。
+- GOLD/OIL D1 最大 **7.715y BROKER_LIMITATION**（2018-12-12）。不要写成 10y。
+- 报告：`ALPHA_MISSION_V1.1_REPORT.md`。记忆：`RESEARCH_MEMORY_INDEX.json`。失败库：`FAILED_ALPHA_DATABASE_V2.json`。
+
+下一最小任务：**新数据**（2018 前商品、IV、carry、新闻）。不要再开 Ava GOLD/OIL hold=5 多头合同。不要 AI feature farming。不要读 Final OOS。
 
 ## Alpha Recovery V1.0 — DESIGN 2026-08-27
 

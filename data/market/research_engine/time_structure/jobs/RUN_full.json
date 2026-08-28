@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "51bb3eedac31936667271df8324df7e76b898a3b126a718b256e37591d7a93d2",
+      "elapsed_seconds": 251.23852491378784,
+      "end": "2026-08-28T05:44:01Z",
+      "exit_code": 0,
+      "experiment": "TIME_STRUCTURE_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-28T05:39:50Z",
+      "stderr": "",
+      "stdout": "TS_JOB_DONE TS-V1-Xavier-04-HYP-TS-0001 243.3\nTS_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "51bb3eedac31936667271df8324df7e76b898a3b126a718b256e37591d7a93d2",
+      "elapsed_seconds": 254.51734018325806,
+      "end": "2026-08-28T05:44:04Z",
+      "exit_code": 0,
+      "experiment": "TIME_STRUCTURE_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-28T05:39:50Z",
+      "stderr": "",
+      "stdout": "TS_JOB_DONE TS-V1-Xavier-03-HYP-TS-0003 246.7\nTS_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "51bb3eedac31936667271df8324df7e76b898a3b126a718b256e37591d7a93d2",
+      "elapsed_seconds": 266.11998295783997,
+      "end": "2026-08-28T05:44:16Z",
+      "exit_code": 0,
+      "experiment": "TIME_STRUCTURE_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-28T05:39:50Z",
+      "stderr": "",
+      "stdout": "TS_JOB_DONE TS-V1-Xavier-02-HYP-TS-0002 258.6\nTS_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "51bb3eedac31936667271df8324df7e76b898a3b126a718b256e37591d7a93d2",
+      "elapsed_seconds": 276.0787959098816,
+      "end": "2026-08-28T05:44:26Z",
+      "exit_code": 0,
+      "experiment": "TIME_STRUCTURE_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-28T05:39:50Z",
+      "stderr": "",
+      "stdout": "TS_JOB_DONE TS-V1-Xavier-01-HYP-TS-0001 268.5\nTS_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-28T05:44:26Z"
+}

@@ -1,0 +1,37 @@
+{
+  "mission_id": "ALPHA_MISSION_V1.1",
+  "utc": "2026-08-28T06:00:00Z",
+  "level": 0,
+  "candidate": 0,
+  "certified_strategy": 0,
+  "paper_trading": 0,
+  "mt5_live": "FORBIDDEN",
+  "order_send": "FORBIDDEN",
+  "final_oos": "DENIED",
+  "stop": "STOP_B",
+  "stop_reason": "Researchable UNKNOWN on current broker data is exhausted. Remaining mechanisms are DATA_BLOCKED (IV, carry, news) or FORBIDDEN reopens.",
+  "start_commit": "134bfe565a6972991cec5d75da22d80e5d62bae3",
+  "github": {
+    "remote": "https://github.com/driveCar777/trademind-ai-quant-lab",
+    "branch": "main",
+    "visibility": "private"
+  },
+  "data": {
+    "GOLD_OIL_D1_max": "7.715y BROKER_LIMITATION first_bar=2018-12-12",
+    "GOLD_OIL_H1_max": "7.715y ACQUIRED",
+    "FX_D1_max": "broker backfill to 1971; EURUSD pre-1999 not true EUR",
+    "FX_H1_max": "8.10y from 2018-07-22",
+    "frozen_20260825_untouched": true
+  },
+  "families_this_mission": {
+    "INSTITUTIONAL_TIME_V1.0": "KILLED WEAK_EDGE",
+    "TIME_STRUCTURE_V1": "KILLED NO_CANDIDATE",
+    "MICROSTRUCTURE_SURPRISE_V1": "KILLED NO_CANDIDATE",
+    "REGIME_INTERACTION_V1": "KILLED NO_CANDIDATE",
+    "ALT_MARKET_STRUCTURE_V1": "KILLED NO_CANDIDATE"
+  },
+  "closest_non_candidate": {
+    "id": "HYP-IT-0001",
+    "note": "GOLD month-end research+validation positive after cost. FDR fail. OIL did not confirm. Block-bootstrap CI includes 0. Not Level 1."
+  }
+}

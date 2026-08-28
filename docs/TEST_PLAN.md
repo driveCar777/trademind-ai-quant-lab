@@ -774,6 +774,27 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 ---
 
+## Alpha Mission V1.1 — 2026-08-28 STOP B
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| research_engine 单元 | ✅ **192 PASS** |
+| 其中新增 IT / TS / MS / RI / AMS 合同与泄漏门 | ✅ |
+| IT 四 Xavier | ✅ 01=04；程序 WEAK_EDGE；FDR 0/3 |
+| TS / MS 四 Xavier | ✅ cross_check True；3/3 FALSIFIED |
+| RI / AMS | ✅ 本地 2000 权威；3/3 FALSIFIED |
+| GOLD/OIL D1 最大历史 | 7.715y BROKER_LIMITATION；冻结 `20260825` 未覆盖 |
+| V0.8 / V0.9 / V0.91 / IT hash | ✅ 未改 |
+| Final OOS | ✅ 未访问 |
+| 14:11 / FD / V0.6 | ✅ 未改 |
+| 程序级 CANDIDATE / Level | 0 / Level 0 |
+
+不是交易许可。不是年化 10%。不要调参救。
+
+---
+
 ## 冒烟测试规则
 
 1. 每次只验证**最核心**路径

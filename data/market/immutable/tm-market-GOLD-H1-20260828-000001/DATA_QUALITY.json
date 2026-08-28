@@ -1,0 +1,28 @@
+{
+  "duplicate_count": 0,
+  "fail_reasons": [],
+  "first_timestamp": "2018-12-12T08:00:00Z",
+  "gap_count": 2019,
+  "inf_count": 0,
+  "invalid_ohlc_count": 0,
+  "last_timestamp": "2026-08-28T05:00:00Z",
+  "missing_column_count": 0,
+  "nan_count": 0,
+  "out_of_order_count": 0,
+  "overlap_count": 0,
+  "real_volume_present": true,
+  "real_volume_zero_count": 45575,
+  "row_count": 45575,
+  "spread_present": true,
+  "spread_zero_count": 2,
+  "tick_volume_present": true,
+  "tick_volume_zero_count": 0,
+  "validation_status": "WARN",
+  "volume_policy": "tick_volume_only",
+  "warn_reasons": [
+    "real_volume_all_zero",
+    "timestamp_gaps",
+    "H1_SHORTER_THAN_8Y_REQUEST"
+  ],
+  "zero_price_count": 0
+}

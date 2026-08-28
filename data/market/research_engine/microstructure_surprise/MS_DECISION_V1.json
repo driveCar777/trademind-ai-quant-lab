@@ -1,0 +1,10 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "MICROSTRUCTURE_SURPRISE_V1",
+  "next_action": "KILL_FAMILY_THEN_NEXT_ALPHA",
+  "note": "Do not retune z_cut or lookback. Do not read Final OOS.",
+  "optimize_forbidden": true,
+  "outcome": "NO_CANDIDATE",
+  "strategy_layer_allowed": false,
+  "z_cut_change_forbidden": true
+}

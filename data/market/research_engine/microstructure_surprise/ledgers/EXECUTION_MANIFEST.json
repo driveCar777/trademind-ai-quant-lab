@@ -1,0 +1,58 @@
+{
+  "contract_hash": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+  "records": [
+    {
+      "contract_hash": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+      "elapsed_seconds": 260.7550549507141,
+      "end": "2026-08-28T05:55:04Z",
+      "exit_code": 0,
+      "experiment": "MICROSTRUCTURE_SURPRISE_V1",
+      "host": "192.168.1.202",
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-28T05:50:44Z",
+      "stderr": "",
+      "stdout": "MS_JOB_DONE MS-V1-Xavier-03-HYP-MS-0003 245.1\nMS_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "contract_hash": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+      "elapsed_seconds": 267.92512917518616,
+      "end": "2026-08-28T05:55:12Z",
+      "exit_code": 0,
+      "experiment": "MICROSTRUCTURE_SURPRISE_V1",
+      "host": "192.168.1.203",
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-28T05:50:44Z",
+      "stderr": "",
+      "stdout": "MS_JOB_DONE MS-V1-Xavier-04-HYP-MS-0001 251.4\nMS_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "contract_hash": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+      "elapsed_seconds": 279.76623582839966,
+      "end": "2026-08-28T05:55:23Z",
+      "exit_code": 0,
+      "experiment": "MICROSTRUCTURE_SURPRISE_V1",
+      "host": "192.168.1.200",
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-28T05:50:44Z",
+      "stderr": "",
+      "stdout": "MS_JOB_DONE MS-V1-Xavier-01-HYP-MS-0001 264.2\nMS_NODE_DONE Xavier-01 1\n"
+    },
+    {
+      "contract_hash": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+      "elapsed_seconds": 281.46730971336365,
+      "end": "2026-08-28T05:55:25Z",
+      "exit_code": 0,
+      "experiment": "MICROSTRUCTURE_SURPRISE_V1",
+      "host": "192.168.1.201",
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-28T05:50:44Z",
+      "stderr": "",
+      "stdout": "MS_JOB_DONE MS-V1-Xavier-02-HYP-MS-0002 265.1\nMS_NODE_DONE Xavier-02 1\n"
+    }
+  ],
+  "utc": "2026-08-28T05:55:25Z"
+}

@@ -1,0 +1,131 @@
+{
+  "database_id": "FAILED_ALPHA_DATABASE_V2",
+  "FINAL_OOS_TOUCHED": false,
+  "n": 12,
+  "records": [
+    {
+      "family": "HYP-0001",
+      "mechanism": "simple directional / frozen 14:11 contract",
+      "what_was_tested": "Locked HYP-0001 on immutable sample",
+      "what_failed": "FALSIFIED; contract 14:11 immutable",
+      "why": "Historical evidence. Do not retune.",
+      "forbidden_reopen_pattern": "rewrite 14:11; parameter rescue",
+      "status": "KILLED"
+    },
+    {
+      "family": "FACTOR_DISCOVERY_V0.1",
+      "mechanism": "factor zoo including tickvol level",
+      "what_was_tested": "57 candidates FDR four Xavier",
+      "what_failed": "NO_USEFUL_FACTORS_FOUND",
+      "why": "No FDR survivor after cost/holdout.",
+      "forbidden_reopen_pattern": "RSI MACD MA tickvol_z as next-return level",
+      "status": "KILLED"
+    },
+    {
+      "family": "STRATEGY_DISCOVERY_V0.5",
+      "mechanism": "simple strategy sketches",
+      "what_was_tested": "15 sketches market state",
+      "what_failed": "NO_USEFUL_STRATEGIES_FOUND",
+      "why": "Foundation only. Not a candidate.",
+      "forbidden_reopen_pattern": "simple direction momentum reversal breakout",
+      "status": "KILLED"
+    },
+    {
+      "family": "PROFIT_DISCOVERY_V0.6",
+      "mechanism": "costed simple strategies",
+      "what_was_tested": "Four Xavier costed book",
+      "what_failed": "WEAK_EDGE_ONLY program CANDIDATE=0",
+      "why": "Cost killed remaining sketches.",
+      "forbidden_reopen_pattern": "raise leverage to hit 10%",
+      "status": "KILLED"
+    },
+    {
+      "family": "CROSS_ASSET_V0.8",
+      "mechanism": "simple FX to GOLD/OIL next bar",
+      "what_was_tested": "3 hypotheses four Xavier",
+      "what_failed": "NO_CANDIDATE 3/3 FALSIFIED FDR 0/3",
+      "why": "Wrong sign / no two-target confirmation.",
+      "forbidden_reopen_pattern": "USDJPY→GOLD or EURUSD→GOLD variant",
+      "status": "KILLED",
+      "search_space_hash": "787a37f93aae630e2530c6c416c3acf8c5ddd5a9470ae7f442a409f431749827"
+    },
+    {
+      "family": "REGIME_TRANSITION_V0.9",
+      "mechanism": "single-asset ADX/VOL tercile transition",
+      "what_was_tested": "3 hypotheses four Xavier",
+      "what_failed": "NO_CANDIDATE 0001 FALSIFIED",
+      "why": "Do not retune ADX/hold/VOL.",
+      "forbidden_reopen_pattern": "fourth RT ID; ADX14; VOL 33/67; hold change",
+      "status": "KILLED",
+      "search_space_hash": "3ccb614d8a7784b4fe7c57f6f6a7449c3ac87a8111f3d078bf2096415b8c6cea"
+    },
+    {
+      "family": "CROSS_RESIDUAL_V0.91",
+      "mechanism": "SMA60 residual GOLD/OIL",
+      "what_was_tested": "3 hypotheses local 2000",
+      "what_failed": "NO_CANDIDATE",
+      "why": "Costed two-leg TR<0. Do not retune SMA60.",
+      "forbidden_reopen_pattern": "SMA60 residual parameter tweak",
+      "status": "KILLED",
+      "search_space_hash": "0ce685fe6442a1812700df2cde6daa4c9f4255d04a707710c367f5cb6afbdc57"
+    },
+    {
+      "family": "INSTITUTIONAL_TIME_V1.0",
+      "mechanism": "calendar month-end / month-start D1 rebalance",
+      "what_was_tested": "HYP-IT-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "WEAK_EDGE; FDR 0/3; OIL validation sign fail; month-start research sign fail",
+      "why": "0001 GOLD month-end research+validation positive but FDR fail and OIL did not confirm. Block bootstrap CI includes 0. Occupancy 3.9%. Not a Candidate.",
+      "forbidden_reopen_pattern": "month-end T-2; month-start T+3; add quarter-end; flip sign; change hold",
+      "status": "KILLED",
+      "search_space_hash": "1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457",
+      "tag": "RESEARCH-2026-0001",
+      "cross_check_match": true
+    },
+    {
+      "family": "TIME_STRUCTURE_V1",
+      "mechanism": "London / NY FX session-open inventory reprice",
+      "what_was_tested": "HYP-TS-0001/0002/0003 H1 7.7y local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE all three FALSIFIED",
+      "why": "Long session-open hold 5h + V0.6 cost lost ~93-97% research. Predicted +. Observed −. Do not flip.",
+      "forbidden_reopen_pattern": "add Tokyo; weekday dummy; flip sign; change hold; reopen month-end",
+      "status": "KILLED",
+      "search_space_hash": "51bb3eedac31936667271df8324df7e76b898a3b126a718b256e37591d7a93d2",
+      "tag": "RESEARCH-2026-0002",
+      "cross_check_match": true
+    },
+    {
+      "family": "MICROSTRUCTURE_SURPRISE_V1",
+      "mechanism": "tick_volume surprise vs same-hour trailing 20, z>2",
+      "what_was_tested": "HYP-MS-0001/0002/0003 H1 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE all three FALSIFIED",
+      "why": "Not FD tickvol level. Occupancy 1-6%. Costed long surprise lost money both windows. Wrong sign.",
+      "forbidden_reopen_pattern": "lower z_cut; raw tickvol level; FD tickvol_z next-return",
+      "status": "KILLED",
+      "search_space_hash": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+      "tag": "RESEARCH-2026-0003",
+      "cross_check_match": true
+    },
+    {
+      "family": "REGIME_INTERACTION_V1",
+      "mechanism": "relative GOLD/OIL RV20 cross and joint vol shock",
+      "what_was_tested": "HYP-RI-0001/0002/0003 H1 local 2000",
+      "what_failed": "NO_CANDIDATE all three FALSIFIED",
+      "why": "Not V0.8/V0.9/V0.91. Crosses rare (0.3%). Joint 5.3%. All costed TR negative, wrong sign.",
+      "forbidden_reopen_pattern": "ADX14; VOL 33/67; SMA60; V0.8 FX→metal",
+      "status": "KILLED",
+      "search_space_hash": "c060a77e5c08e7c226f63878f6b105e9255b7dedebd5074aa5782dbc9b1fd321",
+      "tag": "RESEARCH-2026-0004"
+    },
+    {
+      "family": "ALT_MARKET_STRUCTURE_V1",
+      "mechanism": "first H1 after >=36h gap; down-gap subset",
+      "what_was_tested": "HYP-AMS-0001/0002/0003 H1 local 2000",
+      "what_failed": "NO_CANDIDATE all three FALSIFIED",
+      "why": "Not a Monday dummy. Occupancy <1%. Costed long reopen lost money both windows.",
+      "forbidden_reopen_pattern": "weekday dummy; shrink gap_hours after PnL; flip sign",
+      "status": "KILLED",
+      "search_space_hash": "8e12e3b16eecb7095a2e7b22847e4be23ba7bd586506daf2cb2e12ea0ec0aad6",
+      "tag": "RESEARCH-2026-0005"
+    }
+  ]
+}

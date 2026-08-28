@@ -1,0 +1,31 @@
+{
+  "discovery_id": "MICROSTRUCTURE_SURPRISE_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "MICROSTRUCTURE_SURPRISE_V1",
+      "family_id": "FAM-MS-SURPRISE-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-MS-0001"
+      ],
+      "job_id": "MS-V1-Xavier-04-HYP-MS-0001",
+      "node": "Xavier-04",
+      "note": "Surprise only. Not FD tickvol level. Not weekday.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-H1-20260828-000001",
+        "tm-market-OIL-H1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "CROSS_CHECK",
+      "search_space_hash": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+      "seed": 20260828,
+      "timeframe": "H1"
+    }
+  ],
+  "node": "Xavier-04"
+}

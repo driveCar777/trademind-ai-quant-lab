@@ -1,8 +1,16 @@
 ﻿# TradeMind — 修改记录
 
-> 不使用 Git。所有版本变更记录在此文件。
+> 研究代码现入 private GitHub。秘密仍禁止入库。冻结研究不可用 Git 回滚。
 
 ---
+
+## 2026-08-28 — Alpha Mission V1.1 STOP B
+
+- 新历史：GOLD/OIL D1/H1 `20260828-000001`。GOLD/OIL D1 **7.715y BROKER_LIMITATION**，不是 10y。未覆盖 `20260825`。
+- IT V1.0 已跑：local 2000 + 四 Xavier。程序 **WEAK_EDGE**。FDR 0/3。01=04 一致。家族 KILLED。
+- Time Structure / Microstructure Surprise / Regime Interaction / Alt Market Structure 全部 **NO_CANDIDATE**。高换手 hold=5 多头在 H1 上成本后证伪。
+- Level 仍 0。Candidate=0。Final OOS 未读。未 `order_send`。
+- 报告：`docs/research_engine/ALPHA_MISSION_V1.1_REPORT.md`。
 
 ## 2026-08-28 — GitHub baseline + secret removal
 

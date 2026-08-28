@@ -1,0 +1,31 @@
+{
+  "index_id": "RESEARCH_MEMORY_INDEX",
+  "FINAL_OOS_TOUCHED": false,
+  "level": 0,
+  "candidate": 0,
+  "rows": [
+    {"hypothesis": "HYP-0001", "mechanism": "directional", "dataset": "immutable-20260825", "status": "FALSIFIED", "result": "killed", "why_failed": "14:11 immutable", "related_family": "HYP-0001"},
+    {"hypothesis": "FD V0.1", "mechanism": "factor zoo / tickvol level", "dataset": "immutable-20260825", "status": "NO_USEFUL_FACTORS_FOUND", "result": "killed", "why_failed": "FDR none", "related_family": "FACTOR_DISCOVERY_V0.1"},
+    {"hypothesis": "V0.5/V0.6", "mechanism": "simple strategies costed", "dataset": "immutable-20260825", "status": "NO_USEFUL_STRATEGIES / WEAK_EDGE_ONLY", "result": "killed", "why_failed": "cost", "related_family": "PROFIT_DISCOVERY_V0.6"},
+    {"hypothesis": "HYP-XA-0001..0003", "mechanism": "simple cross asset", "dataset": "GOLD/OIL D1 20260825", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "3/3 FALSIFIED", "related_family": "CROSS_ASSET_V0.8"},
+    {"hypothesis": "HYP-RT-0001..0003", "mechanism": "single regime transition", "dataset": "GOLD/OIL D1 20260825", "status": "NO_CANDIDATE", "result": "killed", "why_failed": "0001 FALSIFIED; do not retune ADX", "related_family": "REGIME_TRANSITION_V0.9"},
+    {"hypothesis": "HYP-XR-0001..0003", "mechanism": "SMA60 residual", "dataset": "GOLD/OIL D1 20260825", "status": "NO_CANDIDATE", "result": "killed", "why_failed": "do not retune SMA60", "related_family": "CROSS_RESIDUAL_V0.91"},
+    {"hypothesis": "HYP-IT-0001", "mechanism": "month-end D1 GOLD +", "dataset": "GOLD D1 20260825", "status": "WEAK_SUPPORT", "result": "not candidate", "why_failed": "FDR fail; OIL did not confirm; block CI includes 0", "related_family": "INSTITUTIONAL_TIME_V1.0"},
+    {"hypothesis": "HYP-IT-0002", "mechanism": "month-end D1 OIL +", "dataset": "OIL D1 20260825", "status": "NO_EDGE", "result": "validation sign fail", "why_failed": "VALIDATION_NOT_PROFITABLE VALIDATION_SIGN", "related_family": "INSTITUTIONAL_TIME_V1.0"},
+    {"hypothesis": "HYP-IT-0003", "mechanism": "month-start D1 GOLD +", "dataset": "GOLD D1 20260825", "status": "NO_EDGE", "result": "research sign fail", "why_failed": "RESEARCH_NOT_PROFITABLE RESEARCH_SIGN", "related_family": "INSTITUTIONAL_TIME_V1.0"},
+    {"hypothesis": "HYP-TS-0001..0003", "mechanism": "London/NY session open", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "costed long session-open destroyed equity; do not flip", "related_family": "TIME_STRUCTURE_V1"},
+    {"hypothesis": "HYP-MS-0001..0003", "mechanism": "same-hour vol surprise", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "costed surprise long lost money; not FD level", "related_family": "MICROSTRUCTURE_SURPRISE_V1"},
+    {"hypothesis": "HYP-RI-0001..0003", "mechanism": "relative RV / joint vol", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "wrong sign after cost", "related_family": "REGIME_INTERACTION_V1"},
+    {"hypothesis": "HYP-AMS-0001..0003", "mechanism": ">=36h gap reopen", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "not weekday; costed long reopen lost money", "related_family": "ALT_MARKET_STRUCTURE_V1"}
+  ],
+  "still_unknown": [
+    {"mechanism": "IV / options", "status": "DATA_BLOCKED"},
+    {"mechanism": "carry / funding", "status": "DATA_BLOCKED"},
+    {"mechanism": "news / alternative text", "status": "DATA_BLOCKED"},
+    {"mechanism": "true 10y GOLD/OIL D1", "status": "BROKER_LIMITATION 7.715y from 2018-12-12"}
+  ],
+  "ai_assisted": {
+    "allowed": false,
+    "why": "All researchable economic families on current data are KILLED. AI feature generation would be result-adjacent farming or a reopen. Remaining mechanisms need new data (IV/carry/news) not a new z-cut."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "REGIME_INTERACTION_V1",
+  "family_id": "FAM-RI-RELVOL-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_BOTH_TARGETS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "GOLD_RELVOL_CROSSES_CHEAP",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RI-0001",
+      "mechanism": "Gold realized vol crosses cheap vs oil; bid the quieter metal.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "OIL_RELVOL_CROSSES_CHEAP",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RI-0002",
+      "mechanism": "Oil realized vol crosses cheap vs gold; bid the quieter commodity.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "OIL",
+      "target_asset": "OIL"
+    },
+    {
+      "event": "JOINT_VOL_SHOCK",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RI-0003",
+      "mechanism": "Joint gold+oil vol shock; risk-on bounce into gold. Not V0.9 single-asset tercile.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-RI-0001",
+    "HYP-RI-0002",
+    "HYP-RI-0003"
+  ],
+  "not_v08": true,
+  "not_v09": true,
+  "not_v091": true,
+  "not_weekday": true,
+  "parent_datasets": [
+    "tm-market-GOLD-H1-20260828-000001",
+    "tm-market-OIL-H1-20260828-000001"
+  ],
+  "relative_vol": {
+    "cross_level": 1.0,
+    "rv_n": 20,
+    "self_n": 100
+  },
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "c060a77e5c08e7c226f63878f6b105e9255b7dedebd5074aa5782dbc9b1fd321",
+  "seed": 20260828,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "H1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_each_target_own_h1_dates"
+  }
+}

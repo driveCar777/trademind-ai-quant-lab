@@ -1,0 +1,155 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "8bd8d706c78450a96059740bf6e1c9917861a6749f3f92a351f28a5aabcf5c32",
+  "discovery_id": "TIME_STRUCTURE_V1",
+  "elapsed_seconds": 258.6038763523102,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-ts-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28729628,
+    "pid": 31777,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 40.0,
+      "AUX-therm": 39.5,
+      "CPU-therm": 41.0,
+      "GPU-therm": 40.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 40.0,
+      "Tdiode_tegra": 43.0,
+      "thermal-fan-est": 40.25
+    },
+    "ts": "2026-08-28T05:44:16Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "LONDON_OPEN_H1",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-TS-0002",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 6830,
+      "start": "2025-07-04"
+    },
+    "parent_sha256": "dbdb5a29b7b36fd9db8fe631e41e818716ba08c9d5d207009e833f8ba51944c8",
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.0012870033648637717,
+        "iterations": 2000,
+        "low": -0.0005520667849190563,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": 0.0010701554804318193,
+        "iterations": 2000,
+        "low": -0.00030178583069280854,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": -0.39656558998239166,
+      "cost_paid": 3683.3676750261875,
+      "delta": 0.00036752508353248914,
+      "effect_size": 0.02756825853185824,
+      "end_equity": 698.3354876544223,
+      "level_leak": false,
+      "max_drawdown": -0.9304423867685161,
+      "max_trade_share": 0.005025097566105602,
+      "mean_baseline": -0.0028961773731164438,
+      "mean_signal": -0.0025286522895839546,
+      "n_bars": 31870,
+      "n_eligible": 31864,
+      "n_feature": 31870,
+      "n_signal": 1393,
+      "n_skip_overlap": 0,
+      "n_trade": 1393,
+      "occupancy": 0.04370881706934421,
+      "raw_p": 0.31134432783608196,
+      "sharpe": -5.63481102394154,
+      "total_return": -0.9301664512345578,
+      "trade_count": 1393,
+      "turnover": 368.6176823444843,
+      "win_count": 414
+    },
+    "side": 1,
+    "target_asset": "OIL",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.0012561623215927246,
+        "iterations": 2000,
+        "low": -0.0007442616812018601,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": 0.001079801724590484,
+        "iterations": 2000,
+        "low": -0.00047117868355457757,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": -0.41560946371945184,
+      "cost_paid": 1921.3194762728876,
+      "delta": 0.00026454055760895615,
+      "effect_size": 0.03429101590783551,
+      "end_equity": 5452.746278400266,
+      "level_leak": false,
+      "max_drawdown": -0.4587344885036477,
+      "max_trade_share": 0.01608155937052848,
+      "mean_baseline": -0.0028827367777351284,
+      "mean_signal": -0.002618196220126172,
+      "n_bars": 6829,
+      "n_eligible": 6823,
+      "n_feature": 6829,
+      "n_signal": 298,
+      "n_skip_overlap": 0,
+      "n_trade": 298,
+      "occupancy": 0.04363742861326695,
+      "raw_p": null,
+      "sharpe": -6.183069234482205,
+      "total_return": -0.45472537215997333,
+      "trade_count": 298,
+      "turnover": 192.26324433955503,
+      "win_count": 88
+    },
+    "window_hash": "1297189eb378b713b783dfcc54771d6335cf13a45c503d0e9aa86a60c92e1985"
+  },
+  "job_id": "TS-V1-Xavier-02-HYP-TS-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "GOLD": "d59c01d6a213066b409c6c8abeb85d1f4420bb5436541cf88af9112595e84496",
+    "OIL": "dbdb5a29b7b36fd9db8fe631e41e818716ba08c9d5d207009e833f8ba51944c8"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "51bb3eedac31936667271df8324df7e76b898a3b126a718b256e37591d7a93d2",
+  "window_hashes": {
+    "GOLD": "44e8492efa8184328bb91a7040875eb6a84ccb30d4a9825d221c8fc1352be386",
+    "OIL": "1297189eb378b713b783dfcc54771d6335cf13a45c503d0e9aa86a60c92e1985"
+  }
+}

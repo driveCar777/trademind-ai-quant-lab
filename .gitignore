@@ -38,6 +38,7 @@ x02_final.txt
 # Large / local-only binaries
 *.exe
 *.deb
+*.tar
 *.tar.gz
 *.zip
 docker-images/

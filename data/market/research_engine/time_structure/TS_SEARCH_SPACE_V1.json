@@ -1,0 +1,100 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "TIME_STRUCTURE_V1",
+  "executed": false,
+  "family_id": "FAM-TS-SESSION-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_BOTH_TARGETS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "LONDON_OPEN_H1",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-TS-0001",
+      "kind": "LONDON_OPEN",
+      "mechanism": "London cash open inventory reprice into gold.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "LONDON_OPEN_H1",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-TS-0002",
+      "kind": "LONDON_OPEN",
+      "mechanism": "London cash open inventory reprice into oil.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "OIL",
+      "target_asset": "OIL"
+    },
+    {
+      "event": "NY_FX_OPEN_H1",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-TS-0003",
+      "kind": "NY_FX_OPEN",
+      "mechanism": "New York FX cash open inventory reprice into gold.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-TS-0001",
+    "HYP-TS-0002",
+    "HYP-TS-0003"
+  ],
+  "not_institutional_time": true,
+  "not_weekday": true,
+  "parent_datasets": [
+    "tm-market-GOLD-H1-20260828-000001",
+    "tm-market-OIL-H1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "51bb3eedac31936667271df8324df7e76b898a3b126a718b256e37591d7a93d2",
+  "seed": 20260828,
+  "sessions": {
+    "LONDON_OPEN_H1": {
+      "dst": "EU_LAST_SUNDAY_MARCH_OCTOBER",
+      "local_hour": 8,
+      "tz": "Europe/London"
+    },
+    "NY_FX_OPEN_H1": {
+      "dst": "US_SECOND_SUNDAY_MARCH_FIRST_SUNDAY_NOVEMBER",
+      "local_hour": 8,
+      "tz": "America/New_York"
+    }
+  },
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "H1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_each_target_own_h1_dates"
+  }
+}

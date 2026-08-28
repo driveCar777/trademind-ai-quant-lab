@@ -1,0 +1,84 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "ALT_MARKET_STRUCTURE_V1",
+  "family_id": "FAM-AMS-GAP-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "gap_hours": 36,
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_BOTH_TARGETS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "GAP_REOPEN_H1",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-AMS-0001",
+      "mechanism": "First H1 after >=36h gap; inventory reopen into gold.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "GAP_REOPEN_H1",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-AMS-0002",
+      "mechanism": "First H1 after >=36h gap; inventory reopen into oil.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "OIL",
+      "target_asset": "OIL"
+    },
+    {
+      "event": "GAP_REOPEN_DOWN_H1",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-AMS-0003",
+      "mechanism": "Down-gap reopen catch-up into gold. Not a Monday dummy.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-AMS-0001",
+    "HYP-AMS-0002",
+    "HYP-AMS-0003"
+  ],
+  "not_weekday": true,
+  "parent_datasets": [
+    "tm-market-GOLD-H1-20260828-000001",
+    "tm-market-OIL-H1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "8e12e3b16eecb7095a2e7b22847e4be23ba7bd586506daf2cb2e12ea0ec0aad6",
+  "seed": 20260828,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "H1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_each_target_own_h1_dates"
+  }
+}

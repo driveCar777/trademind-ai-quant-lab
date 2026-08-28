@@ -1,0 +1,115 @@
+{
+  "created_at_utc": "2026-08-28T05:50:01Z",
+  "discovery_id": "REGIME_INTERACTION_V1",
+  "nodes": {
+    "Xavier-01": [
+      {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "block_length": 5,
+        "bootstrap_iterations": 2000,
+        "discovery_id": "REGIME_INTERACTION_V1",
+        "family_id": "FAM-RI-RELVOL-0001",
+        "fdr_q": 0.05,
+        "hold_bars": 5,
+        "hypothesis_count": 1,
+        "hypothesis_ids": [
+          "HYP-RI-0001"
+        ],
+        "job_id": "RI-V1-Xavier-01-HYP-RI-0001",
+        "node": "Xavier-01",
+        "note": "Surprise only. Not FD tickvol level. Not weekday.",
+        "parent_dataset_ids": [
+          "tm-market-GOLD-H1-20260828-000001",
+          "tm-market-OIL-H1-20260828-000001"
+        ],
+        "permutation_iterations": 2000,
+        "role": "PRIMARY",
+        "search_space_hash": "c060a77e5c08e7c226f63878f6b105e9255b7dedebd5074aa5782dbc9b1fd321",
+        "seed": 20260828,
+        "timeframe": "H1"
+      }
+    ],
+    "Xavier-02": [
+      {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "block_length": 5,
+        "bootstrap_iterations": 2000,
+        "discovery_id": "REGIME_INTERACTION_V1",
+        "family_id": "FAM-RI-RELVOL-0001",
+        "fdr_q": 0.05,
+        "hold_bars": 5,
+        "hypothesis_count": 1,
+        "hypothesis_ids": [
+          "HYP-RI-0002"
+        ],
+        "job_id": "RI-V1-Xavier-02-HYP-RI-0002",
+        "node": "Xavier-02",
+        "note": "Surprise only. Not FD tickvol level. Not weekday.",
+        "parent_dataset_ids": [
+          "tm-market-GOLD-H1-20260828-000001",
+          "tm-market-OIL-H1-20260828-000001"
+        ],
+        "permutation_iterations": 2000,
+        "role": "PRIMARY",
+        "search_space_hash": "c060a77e5c08e7c226f63878f6b105e9255b7dedebd5074aa5782dbc9b1fd321",
+        "seed": 20260828,
+        "timeframe": "H1"
+      }
+    ],
+    "Xavier-03": [
+      {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "block_length": 5,
+        "bootstrap_iterations": 2000,
+        "discovery_id": "REGIME_INTERACTION_V1",
+        "family_id": "FAM-RI-RELVOL-0001",
+        "fdr_q": 0.05,
+        "hold_bars": 5,
+        "hypothesis_count": 1,
+        "hypothesis_ids": [
+          "HYP-RI-0003"
+        ],
+        "job_id": "RI-V1-Xavier-03-HYP-RI-0003",
+        "node": "Xavier-03",
+        "note": "Surprise only. Not FD tickvol level. Not weekday.",
+        "parent_dataset_ids": [
+          "tm-market-GOLD-H1-20260828-000001",
+          "tm-market-OIL-H1-20260828-000001"
+        ],
+        "permutation_iterations": 2000,
+        "role": "PRIMARY",
+        "search_space_hash": "c060a77e5c08e7c226f63878f6b105e9255b7dedebd5074aa5782dbc9b1fd321",
+        "seed": 20260828,
+        "timeframe": "H1"
+      }
+    ],
+    "Xavier-04": [
+      {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "block_length": 5,
+        "bootstrap_iterations": 2000,
+        "discovery_id": "REGIME_INTERACTION_V1",
+        "family_id": "FAM-RI-RELVOL-0001",
+        "fdr_q": 0.05,
+        "hold_bars": 5,
+        "hypothesis_count": 1,
+        "hypothesis_ids": [
+          "HYP-RI-0001"
+        ],
+        "job_id": "RI-V1-Xavier-04-HYP-RI-0001",
+        "node": "Xavier-04",
+        "note": "Surprise only. Not FD tickvol level. Not weekday.",
+        "parent_dataset_ids": [
+          "tm-market-GOLD-H1-20260828-000001",
+          "tm-market-OIL-H1-20260828-000001"
+        ],
+        "permutation_iterations": 2000,
+        "role": "CROSS_CHECK",
+        "search_space_hash": "c060a77e5c08e7c226f63878f6b105e9255b7dedebd5074aa5782dbc9b1fd321",
+        "seed": 20260828,
+        "timeframe": "H1"
+      }
+    ]
+  },
+  "search_space_hash": "c060a77e5c08e7c226f63878f6b105e9255b7dedebd5074aa5782dbc9b1fd321"
+}

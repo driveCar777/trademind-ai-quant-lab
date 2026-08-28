@@ -1,0 +1,10 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "INSTITUTIONAL_TIME_V1.0",
+  "next_action": "KILL_FAMILY_THEN_NEXT_ALPHA",
+  "note": "Do not retune hold or window. Do not read Final OOS.",
+  "optimize_forbidden": true,
+  "outcome": "WEAK_EDGE",
+  "strategy_layer_allowed": false,
+  "widen_window_forbidden": true
+}

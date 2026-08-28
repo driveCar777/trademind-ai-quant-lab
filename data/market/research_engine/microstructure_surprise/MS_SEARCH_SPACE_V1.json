@@ -1,0 +1,95 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "MICROSTRUCTURE_SURPRISE_V1",
+  "executed": false,
+  "family_id": "FAM-MS-SURPRISE-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_BOTH_TARGETS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "TICKVOL_SAME_HOUR_SURPRISE",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-MS-0001",
+      "kind": "VOL_SURPRISE",
+      "mechanism": "Unexpected same-hour activity into gold, not a volume level.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "TICKVOL_SAME_HOUR_SURPRISE",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-MS-0002",
+      "kind": "VOL_SURPRISE",
+      "mechanism": "Unexpected same-hour activity into oil, not a volume level.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "OIL",
+      "target_asset": "OIL"
+    },
+    {
+      "event": "TICKVOL_SURPRISE_QUIET_PRICE",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-MS-0003",
+      "kind": "VOL_DIVERGENCE",
+      "mechanism": "Activity surprise with quiet price; inventory then catch-up.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-MS-0001",
+    "HYP-MS-0002",
+    "HYP-MS-0003"
+  ],
+  "lookback_same_hour": 20,
+  "not_fd_tickvol_level": true,
+  "not_weekday": true,
+  "parent_datasets": [
+    "tm-market-GOLD-H1-20260828-000001",
+    "tm-market-OIL-H1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "54ab70ff1cfc2f8cb4826bdde5075ca916c103d0a92fc7ea7b819298579892f1",
+  "seed": 20260828,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "surprise": {
+    "baseline": "SAME_UTC_HOUR_TRAILING",
+    "kind": "TICK_VOLUME_Z",
+    "quiet_price_mult": 0.5,
+    "z_cut": 2.0
+  },
+  "timeframe": "H1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_each_target_own_h1_dates"
+  }
+}

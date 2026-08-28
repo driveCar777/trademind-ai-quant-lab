@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-27 (Alpha Recovery V1.0：forensics + 纸面合同 `INSTITUTIONAL_TIME_V1.0`；未跑；Candidate=0)  
+> **更新时间:** 2026-08-28 (Alpha Mission V1.1 STOP B：IT/TS/MS/RI/AMS 已跑；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -336,7 +336,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **Alpha Program V1.0 2026-08-27：** 机器 Universe + 机制分类器 + 数据探针。策略层 BLOCKED。认证 CAGR=无。单元 **149 PASS**。
 - **ALPHA_PROGRAM_V1 DESIGN 2026-08-26：** 全仓盘点、机制库 V2、优先级 V2、路线 V2、验收门、失败知识库。Level 1=0。CAGR≥10% 不是 Level 1 门。
 - **Alpha Pipeline 2026-08-26：** 52 机制题打分（live=29）。簇：RT 1600 / Residual 576 / Calendar 540。两簇现已跑败。
-- **Alpha Recovery V1.0 FACT 2026-08-27：** 失败分析系统已落地。覆盖：direction 83% / RV 40% / transition 50% / risk premium 0% / event 0% / institutional time 0%。主因 **A**（无可用预测信息）。选出 **一个** 新家族：`INSTITUTIONAL_TIME_V1.0`（month-end/start，不是 weekday）。hash `1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457`。**未执行。** 只读 MT5：H1 5y 与 M15 2y 探针可达；GOLD/OIL D1 仍不够 10y（~7.7y）。冻结盘仍是 2000 根。单元 **167 PASS**。见 `ALPHA_RECOVERY_REPORT.md` / `DATA_CAPABILITY_REAL.md` / `NEXT_ALPHA_DECISION.md`。
+- **Alpha Recovery V1.0 FACT 2026-08-27：** 失败分析系统已落地。覆盖：direction 83% / RV 40% / transition 50% / risk premium 0% / event 0% / institutional time 0%。主因 **A**（无可用预测信息）。选出 **一个** 新家族：`INSTITUTIONAL_TIME_V1.0`（month-end/start，不是 weekday）。hash `1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457`。当时未执行。
+- **Alpha Mission V1.1 FACT 2026-08-28 STOP B：** IT 已跑（WEAK_EDGE，FDR 0/3，四 Xavier 01=04）。随后 Time Structure / Microstructure Surprise / Regime Interaction / Alt Market Structure 全部 **NO_CANDIDATE / FALSIFIED**。Level 仍 0。Candidate=0。GOLD/OIL D1 最大 **7.715y**（BROKER_LIMITATION，2018-12-12）。新 H1 约 7.7y 已冻成 `20260828-000001`。不要调参救 IT/TS/MS/RI/AMS。不要读 Final OOS。见 `ALPHA_MISSION_V1.1_REPORT.md`。
 
 ---
 
@@ -415,7 +416,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P46 | Alpha pipeline 评分 + 残差家族纸面合同 | DONE（52 题；未跑 V0.9） |
 | P47 | Regime Transition V0.9 执行（实现 + 四 Xavier） | DONE（`NO_CANDIDATE`；已冻结；不要调参） |
 | P48 | Cross Residual V0.91 执行 | DONE（`NO_CANDIDATE`；已冻结；不要调参） |
-| P49 | Alpha Recovery Program V1.0 | DONE（forensics + 纸面合同；**未跑**；等审查） |
+| P49 | Alpha Recovery Program V1.0 | DONE（forensics + 纸面合同；当时未跑） |
+| P50 | Alpha Mission V1.1 | DONE（STOP B；IT/TS/MS/RI/AMS 已跑；Level 0；Candidate=0） |
 
 ---
 

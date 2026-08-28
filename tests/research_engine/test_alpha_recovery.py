@@ -98,12 +98,28 @@ class TestAlphaRecovery(unittest.TestCase):
         h1 = [r for r in rows if r["timeframe"] == "H1"]
         m15 = [r for r in rows if r["timeframe"] == "M15"]
         self.assertTrue(d1)
-        self.assertTrue(all(r["coverage"] == "SHORTFALL" for r in d1))
-        self.assertTrue(all(r["coverage"] == "SHORTFALL" for r in h1))
+        gold_oil_d1 = [r for r in d1 if r["asset"] in ("GOLD", "OIL")]
+        self.assertTrue(gold_oil_d1)
+        self.assertTrue(all(r["coverage"] == "SHORTFALL" for r in gold_oil_d1))
+        fx_d1_new = [
+            r
+            for r in d1
+            if r["asset"] in ("EURUSD", "USDJPY") and "20260828" in (r.get("dataset_id") or "")
+        ]
+        self.assertTrue(fx_d1_new)
+        self.assertTrue(all(r["coverage"] == "MEETS_TARGET" for r in fx_d1_new))
+        h1_new = [r for r in h1 if "20260828" in (r.get("dataset_id") or "")]
+        self.assertTrue(h1_new)
+        self.assertTrue(all(r["coverage"] == "MEETS_TARGET" for r in h1_new))
+        self.assertTrue(m15)
         self.assertTrue(all(r["coverage"] == "SHORTFALL" for r in m15))
-        gold = [r for r in d1 if r["asset"] == "GOLD"][0]
+        gold_frozen = [
+            r
+            for r in d1
+            if r["asset"] == "GOLD" and "20260825" in (r.get("dataset_id") or "")
+        ][0]
         self.assertEqual(
-            gold["sha256"],
+            gold_frozen["sha256"],
             "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
         )
 
