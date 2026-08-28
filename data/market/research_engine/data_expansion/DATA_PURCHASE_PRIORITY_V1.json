@@ -1,0 +1,157 @@
+{
+  "priority_id": "DATA_PURCHASE_PRIORITY_V1",
+  "checked_at": "2026-08-28T16:00:00Z",
+  "FINAL_OOS_TOUCHED": false,
+  "method": "Score 1-5. Higher better. Cost 5=cheap. Integration 5=easy. Repeatability 5=hashable API.",
+  "axes": [
+    "expected_alpha_novelty",
+    "economic_mechanism_strength",
+    "historical_depth",
+    "timestamp_quality",
+    "coverage",
+    "cost",
+    "integration_difficulty",
+    "research_repeatability"
+  ],
+  "do_not_buy": [
+    "another GVZ/OVX retune",
+    "another CFTC z_cut",
+    "another EIA stocks/production/util z_cut",
+    "UST10 z_cut",
+    "overnight carry z_cut",
+    "Yahoo continuous futures as PRODUCTION curve"
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "id": "BUY-DATABENTO-GC-CL-CURVE",
+      "vendor": "Databento",
+      "what": "GC+CL daily OHLCV + instrument definitions + statistics (OI/volume) all contracts",
+      "cash_now": "$0 if $125 credits unused; else usage until Standard $199/mo",
+      "scores": {
+        "expected_alpha_novelty": 5,
+        "economic_mechanism_strength": 5,
+        "historical_depth": 5,
+        "timestamp_quality": 5,
+        "coverage": 4,
+        "cost": 5,
+        "integration_difficulty": 4,
+        "research_repeatability": 5
+      },
+      "total": 38,
+      "why": "Opens carry/roll/basis/curve that CFD and overnight rates cannot. Credits make this the minimum viable new eye."
+    },
+    {
+      "rank": 2,
+      "id": "BUY-ORATS-GLD-USO-SURFACE",
+      "vendor": "ORATS",
+      "what": "Near-EOD hist $599; optional $99/mo after",
+      "cash_now": 599,
+      "scores": {
+        "expected_alpha_novelty": 5,
+        "economic_mechanism_strength": 5,
+        "historical_depth": 5,
+        "timestamp_quality": 4,
+        "coverage": 3,
+        "cost": 3,
+        "integration_difficulty": 3,
+        "research_repeatability": 4
+      },
+      "total": 32,
+      "why": "Opens smile/skew/VRP. ETF proxy ≠ XAU/WTI listed, but still NEW vs GVZ index."
+    },
+    {
+      "rank": 3,
+      "id": "BUY-FIRSTRATE-GC-CL-CONTRACTS",
+      "vendor": "FirstRate Data",
+      "what": "Individual GC+CL contracts (sample first). Not adjusted continuous as PRODUCTION.",
+      "cash_now": "about $99.95 each if 2024 list still current; confirm cart",
+      "scores": {
+        "expected_alpha_novelty": 4,
+        "economic_mechanism_strength": 4,
+        "historical_depth": 4,
+        "timestamp_quality": 3,
+        "coverage": 3,
+        "cost": 4,
+        "integration_difficulty": 4,
+        "research_repeatability": 3
+      },
+      "total": 29,
+      "why": "Backup curve if Databento license/API is refused. Weaker timestamps/OI than Databento."
+    },
+    {
+      "rank": 4,
+      "id": "BUY-CME-DATAMINE-EOD",
+      "vendor": "CME DataMine",
+      "what": "Official EOD settlements/OI for COMEX/NYMEX",
+      "cash_now": "$105–$2100/mo package-dependent; login quote required",
+      "scores": {
+        "expected_alpha_novelty": 4,
+        "economic_mechanism_strength": 5,
+        "historical_depth": 5,
+        "timestamp_quality": 5,
+        "coverage": 4,
+        "cost": 2,
+        "integration_difficulty": 2,
+        "research_repeatability": 4
+      },
+      "total": 31,
+      "why": "Official tape. Worse cash/friction than Databento credits. Use if we need exchange-official settlements."
+    },
+    {
+      "rank": 5,
+      "id": "BUY-TE-CALENDAR-CONSENSUS",
+      "vendor": "Trading Economics",
+      "what": "Calendar with forecast/consensus + actual + timestamp",
+      "cash_now": "about $149–$199/mo; official page 403 from this host",
+      "scores": {
+        "expected_alpha_novelty": 4,
+        "economic_mechanism_strength": 4,
+        "historical_depth": 3,
+        "timestamp_quality": 3,
+        "coverage": 5,
+        "cost": 3,
+        "integration_difficulty": 3,
+        "research_repeatability": 3
+      },
+      "total": 28,
+      "why": "Only if forecast is market consensus and first-print vintages exist. Otherwise BLOCKED. Do not buy first."
+    }
+  ],
+  "minimum_viable_alpha_dataset": {
+    "option_a": {
+      "name": "Databento credits only (curve)",
+      "cash": "<= $125 credits",
+      "opens": "futures curve / roll / basis",
+      "recommended": true
+    },
+    "option_b": {
+      "name": "ORATS hist only (ETF surface)",
+      "cash": 599,
+      "opens": "smile/skew/VRP on GLD/USO",
+      "recommended": false
+    },
+    "option_c": {
+      "name": "Databento + ORATS",
+      "cash": "credits + $599",
+      "opens": "curve and surface",
+      "recommended": false,
+      "why_not_now": "Do not buy both before one family is executed."
+    },
+    "option_d": {
+      "name": "Macro consensus only",
+      "cash": "about $149+/mo",
+      "opens": "surprise if vintages exist",
+      "recommended": false
+    },
+    "chosen": "option_a"
+  },
+  "research_budget": {
+    "option_surface_usd": 599,
+    "option_surface_stop": "3 independent families NO_CANDIDATE → do not renew $99/mo",
+    "futures_curve_usd": 125,
+    "futures_curve_stop": "3 independent families NO_CANDIDATE → do not start $199/mo Standard",
+    "macro_usd_per_month": 199,
+    "macro_stop": "if no first-print vintage or 3 families fail, cancel"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "research_id": "VENDOR_RESEARCH_V1",
+  "checked_at": "2026-08-28T16:00:00Z",
+  "FINAL_OOS_TOUCHED": false,
+  "method": "Live public pages 2026-08-28. JS-only prices recorded as page-cited, not guessed. Decade-old PDFs are not current.",
+  "vendors": [
+    {
+      "vendor": "Databento",
+      "dataset": "CME Globex MDP 3.0 — futures + options-on-futures (GC/CL and all CME/CBOT/NYMEX/COMEX)",
+      "asset_coverage": "650k+ symbols; GC gold COMEX; CL WTI NYMEX; options on futures",
+      "historical_depth": "16+ years (vendor page 2026-08-28)",
+      "granularity": "L0 OHLC through L3; daily OHLCV + definitions + statistics sufficient for curve",
+      "timestamp_precision": "exchange nanosecond / session; better than broker CFD",
+      "revision_policy": "market data, not macro vintages; definitions can change — pin schema",
+      "api_download": "HTTP API + batch; Python client; metadata.get_cost",
+      "authentication": "API key after signup",
+      "price": {
+        "usage_usd_per_gb": "metered, not a single public number on JS pricing page",
+        "standard_usd_per_month": 199,
+        "standard_note": "CME Standard rose 179→199 on 2026-06-22 (Databento blog 2026-05-29)",
+        "new_user_credits_usd": 125,
+        "credits_expire": "6 months; one set per team; apply to historical or first month of a plan"
+      },
+      "trial_availability": "Yes — $125 credits. PROBE until production pull is hashed.",
+      "license": "Click-wrap + exchange license for live; historical usage-based typically internal research",
+      "commercial_use_restriction": "Accept Databento + CME terms; no redistribution of raw feed",
+      "data_redistribution_restriction": "Do not commit raw dumps to public Git; store immutable locally; Git keeps manifest/hash",
+      "opens": ["futures curve", "roll yield", "basis", "contract OI", "options-on-futures surface"],
+      "not_opens": ["macro consensus", "CFTC trader categories"],
+      "status": "HUMAN_REQUIRED",
+      "why_rank_1": "Lowest cash path to true contract-level GC/CL. CFD cannot do this. Credits exist.",
+      "pages": [
+        "https://databento.com/pricing",
+        "https://databento.com/docs/faqs",
+        "https://databento.com/blog/updates-to-subscription-pricing",
+        "https://databento.com/datasets/GLBX.MDP3"
+      ]
+    },
+    {
+      "vendor": "ORATS",
+      "dataset": "US equity/ETF option near-EOD surface since 2007",
+      "asset_coverage": "5000+ symbols including GLD / USO. Not XAU or WTI listed options.",
+      "historical_depth": "2007–present near-EOD; 1-minute from Aug 2020 at higher price",
+      "granularity": "strike/expiry/IV/greeks ~14 minutes before close",
+      "timestamp_precision": "near-EOD snapshot (not tick)",
+      "revision_policy": "vendor snapshot; not a government vintage",
+      "api_download": "S3 14-day window for hist; FTP for recurring; also Delayed API $99/20k req",
+      "authentication": "dashboard credentials / API key",
+      "price": {
+        "near_eod_recurring_usd_per_month": 99,
+        "near_eod_historical_one_time_usd": 599,
+        "intraday_hist_usd": 1500,
+        "intraday_s3_extra_note": "vendor warns S3 storage/transfer $1-2k possible on 1-minute"
+      },
+      "trial_availability": "No full hist trial found. Sample/docs only. Hist purchase is PRODUCTION after hash.",
+      "license": "ORATS commercial; OPRA delayed rules on recurring",
+      "commercial_use_restriction": "Internal research OK if license says so; do not redistribute chains",
+      "data_redistribution_restriction": "No public Git of full surface",
+      "opens": ["ETF option smile/skew/term/VRP"],
+      "not_opens": ["XAU listed options", "WTI listed options", "index GVZ already tested"],
+      "status": "PAYMENT_REQUIRED",
+      "pages": [
+        "https://orats.com/near-eod-data",
+        "https://orats.com/data-api"
+      ]
+    },
+    {
+      "vendor": "CME DataMine",
+      "dataset": "Official EOD settlements / End of Market Summary; COMEX/NYMEX history",
+      "asset_coverage": "CME, CBOT, NYMEX, COMEX including GC and CL",
+      "historical_depth": "Exchange archive; COMEX metals long; exact GC/CL start needs login quote",
+      "granularity": "EOD settlement, volume, OI; options if package includes them",
+      "timestamp_precision": "exchange settlement; website free view delayed to midnight CT",
+      "revision_policy": "official settlement; not a surprise vintage",
+      "api_download": "S3 / API / SFTP / browser after CME login",
+      "authentication": "CME Group login + order + license review",
+      "price": {
+        "eod_summary_usd_per_month_range": "105 to 2100 depending on End of Market Summary package (CME FAQ Q6, page still current 2026)",
+        "exact_gc_cl_quote": "NOT_PUBLIC_WITHOUT_LOGIN"
+      },
+      "trial_availability": "None verified. Website delayed settlements are not a research panel.",
+      "license": "CME market data license; internal-use can drop some license add-ons (FAQ Q6)",
+      "commercial_use_restriction": "Derived CFD/display/redistribution have extra flags at order",
+      "data_redistribution_restriction": "Strict. Do not publish raw settlements.",
+      "opens": ["official curve", "OI", "settlement"],
+      "not_opens": ["cheap API without login"],
+      "status": "HUMAN_REQUIRED",
+      "why_not_first": "Databento credits are cheaper to test the same economic object.",
+      "pages": [
+        "https://www.cmegroup.com/datamine.html",
+        "https://www.cmegroup.com/articles/faqs/access-to-cme-group-settlement-data-faq.html"
+      ]
+    },
+    {
+      "vendor": "FirstRate Data",
+      "dataset": "Individual GC/CL futures contracts + continuous (2008+); 130-futures bundle",
+      "asset_coverage": "GC from GCZ08; CL from CLZ08; plus 128 other futures if bundle",
+      "historical_depth": "Continuous ~2008; individual from Dec 2008; site updated through 2026-08-26",
+      "granularity": "1m/5m/30m/1h/1d bars; not guaranteed official OI/settlement tape",
+      "timestamp_precision": "bar timestamps; verify timezone before research",
+      "revision_policy": "vendor restatement possible; pin downloaded zip hash",
+      "api_download": "zip CSV download; sample on product page",
+      "authentication": "purchase account",
+      "price": {
+        "individual_ticker_list_usd": 99.95,
+        "individual_note": "2024-06-22 increase to 99.95; 2026 checkout not captured without cart",
+        "individual_updates_usd_per_year": 99.95,
+        "bundle_updates_usd_per_month": 59.95,
+        "bundle_one_time": "NOT_ON_PAGE_WITHOUT_CHECKOUT"
+      },
+      "trial_availability": "Download Sample = PROBE only",
+      "license": "Vendor retail license; confirm redistribution",
+      "commercial_use_restriction": "Internal research typical; do not assume exchange redistribution rights",
+      "data_redistribution_restriction": "No public Git of zips",
+      "opens": ["individual-contract curve if unadjusted contracts used"],
+      "not_opens": ["adjusted continuous as PRODUCTION curve", "options surface"],
+      "status": "PAYMENT_REQUIRED",
+      "why_not_first": "Databento has API + official statistics/OI + $125 credits. FirstRate is backup if Databento license fails.",
+      "pages": [
+        "https://firstratedata.com/i/futures/GC",
+        "https://firstratedata.com/i/futures/CL",
+        "https://firstratedata.com/b/29/futures-most-active",
+        "https://firstratedata.com/about/faq"
+      ]
+    },
+    {
+      "vendor": "Trading Economics",
+      "dataset": "Economic calendar + indicators + forecasts",
+      "asset_coverage": "196 countries; 300k+ calendar events claimed",
+      "historical_depth": "Calendar history on paid API; trial 100k points / 100 requests",
+      "granularity": "event-level actual / forecast",
+      "timestamp_precision": "calendar timestamp; must map to knowledge_time",
+      "revision_policy": "UNKNOWN whether first-print vintages exist. If only revised history: DATA_BLOCKED_FOR_LIVE_RESEARCH",
+      "api_download": "REST + Excel; guest sample",
+      "authentication": "API key",
+      "price": {
+        "public_standard_usd_per_month": "149–199 depending on page (third-party 2026 reviews; official pricing.aspx returned 403 from this machine)",
+        "trial": "non-refundable; auto-charge if not cancelled (official pricing.aspx text from prior index)"
+      },
+      "trial_availability": "Yes but limited. PROBE. Consensus field must be inspected — TE Forecast may be proprietary, not Bloomberg consensus.",
+      "license": "Paid; redistribution extra",
+      "commercial_use_restriction": "Redistribution needs higher tier",
+      "data_redistribution_restriction": "Do not republish calendar bulk",
+      "opens": ["macro surprise IF consensus is real market consensus AND vintages exist"],
+      "not_opens": ["actuals-only surprise", "curve", "surface"],
+      "status": "PAYMENT_REQUIRED",
+      "pages": [
+        "https://tradingeconomics.com/api/",
+        "https://tradingeconomics.com/api/pricing.aspx"
+      ]
+    },
+    {
+      "vendor": "SPDR / SSGA GLD",
+      "dataset": "GLD holdings archive",
+      "asset_coverage": "GLD only",
+      "historical_depth": "unknown; files 404",
+      "granularity": "daily holdings if file exists",
+      "timestamp_precision": "file date",
+      "revision_policy": "issuer file",
+      "api_download": "xls/xlsx historically",
+      "authentication": "none if public file",
+      "price": {"usd": 0},
+      "trial_availability": "N/A",
+      "license": "issuer terms",
+      "commercial_use_restriction": "check SSGA",
+      "data_redistribution_restriction": "do not scrape HTML as holdings",
+      "opens": ["gold ETF flow"],
+      "status": "DATA_BLOCKED",
+      "note": "GLD_US_archive_EN.xls(x) and SSGA holdings xlsx returned 404 in this mission.",
+      "pages": ["https://www.spdrgoldshares.com/"]
+    },
+    {
+      "vendor": "EIA",
+      "dataset": "Weekly petroleum (stocks, production, utilization)",
+      "asset_coverage": "US crude / refining",
+      "historical_depth": "stocks/production/util already acquired",
+      "granularity": "weekly",
+      "timestamp_precision": "WPSR Wednesday ~10:30 ET → knowledge 16:00Z",
+      "revision_policy": "current hist_xls is unvintaged — warn for live",
+      "api_download": "public hist_xls; API v2 is 403 without key",
+      "authentication": "none for xls",
+      "price": {"usd": 0},
+      "trial_availability": "public",
+      "license": "US government public",
+      "commercial_use_restriction": "none material",
+      "data_redistribution_restriction": "cite EIA",
+      "opens": ["inventory (tested)", "supply (tested)"],
+      "status": "TESTED_NO_CANDIDATE",
+      "note": "Cushing/gasoline xls exist; inventory isomorphs — do not contract."
+    }
+  ]
+}
