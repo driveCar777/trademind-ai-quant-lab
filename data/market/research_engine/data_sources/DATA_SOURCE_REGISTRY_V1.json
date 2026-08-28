@@ -1,0 +1,77 @@
+{
+  "registry_id": "DATA_SOURCE_REGISTRY_V1",
+  "checked_at": "2026-08-28T16:00:00Z",
+  "FINAL_OOS_TOUCHED": false,
+  "pipeline": ["fetch", "normalize", "timestamp", "validate", "hash", "immutable"],
+  "sources": [
+    {
+      "id": "SRC-EIA-PROD",
+      "vendor": "EIA",
+      "dataset_id": "tm-alt-EIA-USCRUDE-PROD-W1-20260828-000001",
+      "status": "TESTED_NO_CANDIDATE",
+      "qualification": "READY_FOR_RESEARCH_THEN_TESTED",
+      "sha256": "38578e542f77f891d0e5895a3d86ada33df42e4eb5295b2052b3f98ec8b88978",
+      "family": "SUPPLY_V1"
+    },
+    {
+      "id": "SRC-EIA-UTIL",
+      "vendor": "EIA",
+      "dataset_id": "tm-alt-EIA-USREFIN-UTIL-W1-20260828-000001",
+      "status": "TESTED_NO_CANDIDATE",
+      "qualification": "READY_FOR_RESEARCH_THEN_TESTED",
+      "sha256": "00fd05b519abae4f77a116ff7b43c70eb5633ae4d7537969986638d0f292a807",
+      "family": "SUPPLY_V1"
+    },
+    {
+      "id": "SRC-EIA-STOCKS",
+      "vendor": "EIA",
+      "dataset_id": "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001",
+      "status": "TESTED_NO_CANDIDATE",
+      "family": "INVENTORY_V1"
+    },
+    {
+      "id": "SRC-CBOE-GVZ",
+      "vendor": "CBOE",
+      "status": "TESTED_NO_CANDIDATE",
+      "note": "index IV ≠ option surface"
+    },
+    {
+      "id": "SRC-DATABENTO-GC-CL",
+      "vendor": "Databento",
+      "status": "CREDENTIAL_REQUIRED",
+      "env": "TRADEMIND_DATABENTO_API_KEY",
+      "qualification": "DATA_BLOCKED"
+    },
+    {
+      "id": "SRC-ORATS-SURFACE",
+      "vendor": "ORATS",
+      "status": "PAYMENT_REQUIRED",
+      "qualification": "DATA_BLOCKED"
+    },
+    {
+      "id": "SRC-CME-DATAMINE",
+      "vendor": "CME",
+      "status": "HUMAN_REQUIRED",
+      "qualification": "DATA_BLOCKED"
+    },
+    {
+      "id": "SRC-FIRSTRATE-GC-CL",
+      "vendor": "FirstRate Data",
+      "status": "PAYMENT_REQUIRED",
+      "qualification": "DATA_BLOCKED",
+      "sample": "PROBE"
+    },
+    {
+      "id": "SRC-TE-CONSENSUS",
+      "vendor": "Trading Economics",
+      "status": "PAYMENT_REQUIRED",
+      "qualification": "DATA_BLOCKED"
+    },
+    {
+      "id": "SRC-GLD-ETF",
+      "vendor": "SPDR",
+      "status": "DATA_BLOCKED",
+      "note": "archive xls 404"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ledger_id": "DATA_COST_LEDGER_V1",
+  "checked_at": "2026-08-28T16:00:00Z",
+  "currency": "USD",
+  "spent_total": 0,
+  "FINAL_OOS_TOUCHED": false,
+  "rows": [
+    {
+      "source": "EIA weekly petroleum xls",
+      "cost": 0,
+      "billing_period": "none",
+      "currency": "USD",
+      "coverage": "WCRFPUS2 production; WPULEUS3 utilization; prior WCESTUS1 stocks",
+      "license": "US government public",
+      "research_value": "SUPPLY_V1 and INVENTORY_V1 both NO_CANDIDATE"
+    }
+  ],
+  "proposed_not_spent": [
+    {
+      "source": "Databento new-user credits",
+      "cost": 0,
+      "billing_period": "credits expire 6 months",
+      "currency": "USD",
+      "coverage": "GC/CL curve probe then production pull",
+      "license": "Databento + CME terms after signup",
+      "status": "HUMAN_REQUIRED"
+    }
+  ]
+}
