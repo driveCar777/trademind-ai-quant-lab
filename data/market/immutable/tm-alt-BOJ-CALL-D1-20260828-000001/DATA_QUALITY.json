@@ -1,0 +1,12 @@
+{
+  "duplicate_count": 0,
+  "fail_reasons": [],
+  "first_timestamp": "2018-10-01T00:00:00Z",
+  "last_timestamp": "2026-08-26T00:00:00Z",
+  "look_ahead_guard": "BOJ_CALL_T_plus_1_01:00Z",
+  "row_count": 1927,
+  "validation_status": "PASS",
+  "warn_reasons": [
+    "publication_lag_applied_then_NEXT_BAR_OPEN"
+  ]
+}

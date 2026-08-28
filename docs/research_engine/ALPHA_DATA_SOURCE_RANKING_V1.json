@@ -1,0 +1,47 @@
+{
+  "ranking_id": "ALPHA_DATA_SOURCE_RANKING_V1",
+  "utc": "2026-08-28T15:00:00Z",
+  "FINAL_OOS_TOUCHED": false,
+  "method": "equal-weight 1-5 on nine axes; higher is better except cost/risk where 5=cheap/safe",
+  "top3_at_discovery": ["SRC-IV-CBOE", "SRC-COT-CFTC", "SRC-EIA-WPSR"],
+  "execution_order": [
+    "SRC-IV-CBOE",
+    "SRC-COT-CFTC",
+    "SRC-EIA-WPSR",
+    "SRC-UST-YIELD",
+    "SRC-FX-ON-CARRY"
+  ],
+  "all_obtainable_tested": true,
+  "rows": [
+    {
+      "id": "SRC-IV-CBOE",
+      "total": 40,
+      "status": "TESTED_NO_CANDIDATE",
+      "note": "Opened VRP / IV-shock. Index only. Killed."
+    },
+    {
+      "id": "SRC-COT-CFTC",
+      "total": 37,
+      "status": "TESTED_NO_CANDIDATE",
+      "note": "Opened positioning. Weekly sparse. Killed."
+    },
+    {
+      "id": "SRC-EIA-WPSR",
+      "total": 33,
+      "status": "TESTED_NO_CANDIDATE",
+      "note": "Oil inventory shock. Killed."
+    },
+    {
+      "id": "SRC-UST-YIELD",
+      "total": 33,
+      "status": "TESTED_NO_CANDIDATE",
+      "note": "10y discount-rate shock. Killed."
+    },
+    {
+      "id": "SRC-FX-ON-CARRY",
+      "total": 36,
+      "status": "TESTED_NO_CANDIDATE",
+      "note": "Overnight differential. V1A killed. Not V0.8 price."
+    }
+  ]
+}

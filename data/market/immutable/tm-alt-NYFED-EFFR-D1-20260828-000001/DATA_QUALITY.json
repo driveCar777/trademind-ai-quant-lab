@@ -1,0 +1,12 @@
+{
+  "duplicate_count": 0,
+  "fail_reasons": [],
+  "first_timestamp": "2018-01-02T00:00:00Z",
+  "last_timestamp": "2026-08-27T00:00:00Z",
+  "look_ahead_guard": "EFFR_T_plus_1_13:00Z",
+  "row_count": 2174,
+  "validation_status": "PASS",
+  "warn_reasons": [
+    "publication_lag_applied_then_NEXT_BAR_OPEN"
+  ]
+}

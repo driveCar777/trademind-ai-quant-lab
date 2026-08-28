@@ -1,0 +1,14 @@
+{
+  "duplicate_count": 0,
+  "fail_reasons": [],
+  "first_timestamp": "2018-01-05T00:00:00Z",
+  "last_timestamp": "2026-08-21T00:00:00Z",
+  "look_ahead_guard": "knowledge_time_utc=report_date 21:00Z",
+  "revision_policy": "CFTC_current_file_not_vintaged",
+  "row_count": 451,
+  "validation_status": "PASS",
+  "warn_reasons": [
+    "weekly_not_daily",
+    "use_friday_knowledge_not_tuesday_asof"
+  ]
+}

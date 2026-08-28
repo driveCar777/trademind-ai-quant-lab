@@ -1,0 +1,74 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "acquired": [
+    {
+      "dataset_id": "tm-alt-CFTC-GOLD-COT-W1-20260828-000002",
+      "logical": "GOLD",
+      "n": 451,
+      "sha256": "f8d95e0313ace8c81441b5f98a64404870db7fb7b6d4a1c8caf6834e8269d85a"
+    },
+    {
+      "dataset_id": "tm-alt-CFTC-OIL-COT-W1-20260828-000002",
+      "logical": "OIL",
+      "n": 451,
+      "sha256": "d36158264be2db7ecde4542f63e94f861e0033b60784f998e10826a7149c5724"
+    }
+  ],
+  "utc": "2026-08-28T14:23:28Z",
+  "years": [
+    {
+      "gold": 53,
+      "oil": 53,
+      "sha256": "df4bf7d72e8984d6ea04087f793c9f2bf3503ea8c2149f4b01eedeef4fbe40a8",
+      "year": 2018
+    },
+    {
+      "gold": 52,
+      "oil": 52,
+      "sha256": "942a438bcc6f66e65aaf594a1a1fdb8c1505fe4a0feece77a1fd97270317e753",
+      "year": 2019
+    },
+    {
+      "gold": 52,
+      "oil": 52,
+      "sha256": "0aa03c0fd6360f56b6897b6eaff30e8dba774c826bf93cac61598312e19bd1cd",
+      "year": 2020
+    },
+    {
+      "gold": 52,
+      "oil": 52,
+      "sha256": "12d5d49a8963367fd3439050e3e20e6a5338757dfa083432795c5556827ff8ae",
+      "year": 2021
+    },
+    {
+      "gold": 52,
+      "oil": 52,
+      "sha256": "74205d75d4d7b75a9f4159ef2e6abed53eeb4771a74e5a4bf78bc0451410ab7f",
+      "year": 2022
+    },
+    {
+      "gold": 52,
+      "oil": 52,
+      "sha256": "9fe75dba0256819d476bb0d01f9e8e5ac6ec2c4390f609a7e3259e85796b79ce",
+      "year": 2023
+    },
+    {
+      "gold": 53,
+      "oil": 53,
+      "sha256": "5e40f60993120d26c116ab347beaf93702f5da60c7bdccbbee43cb3d0a91d01a",
+      "year": 2024
+    },
+    {
+      "gold": 52,
+      "oil": 52,
+      "sha256": "17ac2fef1b53303d01e486bbf5768a4e062308a3c34a2970871f3eab89829cbc",
+      "year": 2025
+    },
+    {
+      "gold": 33,
+      "oil": 33,
+      "sha256": "9becfa9e237cfb177fb2e61959094c58ba20d541790e8b1a64a65058d8ae1baa",
+      "year": 2026
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "duplicate_count": 0,
+  "fail_reasons": [],
+  "first_timestamp": "2018-01-02T00:00:00Z",
+  "last_timestamp": "2026-08-27T00:00:00Z",
+  "look_ahead_guard": "knowledge_time_utc=date 21:00Z",
+  "row_count": 2164,
+  "validation_status": "PASS",
+  "warn_reasons": [
+    "same_day_close_uses_21:00Z_then_NEXT_BAR_OPEN"
+  ]
+}

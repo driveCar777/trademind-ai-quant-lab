@@ -1,0 +1,116 @@
+{
+  "registry_id": "DATA_SOURCE_REGISTRY_V1",
+  "utc": "2026-08-28T15:00:00Z",
+  "FINAL_OOS_TOUCHED": false,
+  "start_commit": "48bc5e8d072c8942f7c6e92266bef91d3ca78a43",
+  "sources": [
+    {
+      "id": "SRC-IV-CBOE",
+      "name": "CBOE GVZ/OVX implied vol indices",
+      "class": "options_iv",
+      "status": "TESTED_NO_CANDIDATE",
+      "needs_key": false,
+      "license": "CBOE public historical index CSV",
+      "history": "2009-09-18 to 2026-08-27, 4259 rows, 16.939y",
+      "timestamp": "session date + 21:00Z knowledge_time",
+      "limitation": "index level only; no smile, skew, or term structure",
+      "datasets": [
+        "tm-alt-CBOE-GVZ-D1-20260828-000001",
+        "tm-alt-CBOE-OVX-D1-20260828-000001"
+      ],
+      "family": "IMPLIED_VOL_V1"
+    },
+    {
+      "id": "SRC-COT-CFTC",
+      "name": "CFTC disaggregated futures COT",
+      "class": "positioning",
+      "status": "TESTED_NO_CANDIDATE",
+      "needs_key": false,
+      "license": "US government public",
+      "history": "2018-2026 weekly GOLD/OIL extracted",
+      "timestamp": "as-of Tuesday; knowledge Friday 21:00Z",
+      "limitation": "weekly; never use Tuesday knowledge",
+      "datasets": [
+        "tm-alt-CFTC-GOLD-COT-W1-20260828-000002",
+        "tm-alt-CFTC-OIL-COT-W1-20260828-000002"
+      ],
+      "family": "POSITIONING_V1"
+    },
+    {
+      "id": "SRC-EIA-WPSR",
+      "name": "EIA weekly petroleum inventory",
+      "class": "inventory",
+      "status": "TESTED_NO_CANDIDATE",
+      "needs_key": false,
+      "license": "US government public XLS",
+      "history": "1982-2026, 2291 weeks, 44.0y",
+      "timestamp": "week-ending Friday; knowledge following Wednesday 16:00Z",
+      "datasets": ["tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001"],
+      "family": "INVENTORY_V1"
+    },
+    {
+      "id": "SRC-UST-YIELD",
+      "name": "US Treasury daily 10y",
+      "class": "rates",
+      "status": "TESTED_NO_CANDIDATE",
+      "needs_key": false,
+      "license": "US Treasury public CSV",
+      "history": "2018-2026, 2164 rows, 8.649y",
+      "datasets": ["tm-alt-UST-DGS10-D1-20260828-000001"],
+      "family": "RATES_V1"
+    },
+    {
+      "id": "SRC-FX-ON-CARRY",
+      "name": "Overnight funding (EFFR, ESTR, BOJ call)",
+      "class": "carry_rates",
+      "status": "TESTED_NO_CANDIDATE",
+      "needs_key": false,
+      "license": "NY Fed / ECB SDMX / BOJ public API",
+      "history": "EFFR 8.649y; ESTR 6.905y from 2019-10; BOJ 7.901y",
+      "timestamp": "T+1 publication lag then NEXT_BAR_OPEN",
+      "datasets": [
+        "tm-alt-NYFED-EFFR-D1-20260828-000001",
+        "tm-alt-ECB-ESTR-D1-20260828-000001",
+        "tm-alt-BOJ-CALL-D1-20260828-000001"
+      ],
+      "family": "CARRY_V1A"
+    },
+    {
+      "id": "SRC-IV-SMILE",
+      "name": "XAU/WTI option surface",
+      "class": "options_surface",
+      "status": "DATA_BLOCKED",
+      "needs_key": true,
+      "why": "full smile/term structure requires paid vendor or broker option chain history"
+    },
+    {
+      "id": "SRC-MACRO-SURPRISE",
+      "name": "CPI/NFP/FOMC actual vs consensus",
+      "class": "macro_surprise",
+      "status": "DATA_BLOCKED",
+      "needs_key": true,
+      "why": "actuals exist publicly; consensus/whisper is paid. Without consensus there is no surprise."
+    },
+    {
+      "id": "SRC-FUTURES-CURVE",
+      "name": "Commodity futures curve / roll",
+      "class": "carry_term",
+      "status": "DATA_BLOCKED",
+      "why": "Ava GOLD/OIL are CFDs; no contract month or expiration"
+    },
+    {
+      "id": "SRC-GOLD-ETF-FLOWS",
+      "name": "GLD / official gold flows",
+      "class": "inventory_physical",
+      "status": "DATA_BLOCKED",
+      "why": "SPDR archive XLS 404; SPDR/WGC pages are HTML only"
+    },
+    {
+      "id": "SRC-NEWS",
+      "name": "News text",
+      "class": "news",
+      "status": "DATA_BLOCKED",
+      "why": "no structured event schema yet; LLM buy/sell forbidden"
+    }
+  ]
+}
