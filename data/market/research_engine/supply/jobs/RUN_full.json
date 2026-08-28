@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
+      "elapsed_seconds": 30.079389095306396,
+      "end": "2026-08-28T15:24:28Z",
+      "exit_code": 0,
+      "experiment": "SUPPLY_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-28T15:23:58Z",
+      "stderr": "",
+      "stdout": "SUP_JOB_DONE SUP-V1-Xavier-04-HYP-SUP-0001 12.6\nSUP_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
+      "elapsed_seconds": 30.20266032218933,
+      "end": "2026-08-28T15:24:28Z",
+      "exit_code": 0,
+      "experiment": "SUPPLY_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-28T15:23:58Z",
+      "stderr": "",
+      "stdout": "SUP_JOB_DONE SUP-V1-Xavier-02-HYP-SUP-0002 11.8\nSUP_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
+      "elapsed_seconds": 30.42756724357605,
+      "end": "2026-08-28T15:24:28Z",
+      "exit_code": 0,
+      "experiment": "SUPPLY_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-28T15:23:58Z",
+      "stderr": "",
+      "stdout": "SUP_JOB_DONE SUP-V1-Xavier-01-HYP-SUP-0001 13.7\nSUP_NODE_DONE Xavier-01 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
+      "elapsed_seconds": 30.741445779800415,
+      "end": "2026-08-28T15:24:28Z",
+      "exit_code": 0,
+      "experiment": "SUPPLY_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-28T15:23:58Z",
+      "stderr": "",
+      "stdout": "SUP_JOB_DONE SUP-V1-Xavier-03-HYP-SUP-0003 12.9\nSUP_NODE_DONE Xavier-03 1\n"
+    }
+  ],
+  "utc": "2026-08-28T15:24:28Z"
+}

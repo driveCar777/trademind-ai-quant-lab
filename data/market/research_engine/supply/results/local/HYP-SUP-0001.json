@@ -1,0 +1,103 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "elapsed_seconds": 3.83365535736084,
+  "event": "PROD_DROP_CROSS",
+  "hold_bars": 5,
+  "hypothesis_id": "HYP-SUP-0001",
+  "oos_exists": {
+    "end": "2026-08-28",
+    "exists": true,
+    "n": 360,
+    "start": "2025-07-06"
+  },
+  "parent_sha256": "78b7389a14ac815d007a69b2c83c97f542405fa2093f39ce1cefe0ccfa39ecca",
+  "predicted_sign": 1,
+  "research": {
+    "block_bootstrap_ci": {
+      "block_length": 5,
+      "high": -0.009434766167998782,
+      "iterations": 2000,
+      "low": -0.06262035976017731,
+      "method": "moving_block_bootstrap_delta_conservative",
+      "seed": 20260828
+    },
+    "bootstrap_ci": {
+      "high": 0.0105594892637677,
+      "iterations": 2000,
+      "low": -0.08376700796534009,
+      "method": "iid_bootstrap_delta",
+      "seed": 20260828
+    },
+    "cagr": -0.0014831917626654256,
+    "cost_paid": 7.192201616950428,
+    "delta": -0.03233380395593205,
+    "effect_size": -0.531700420006895,
+    "end_equity": 9901.768405376242,
+    "level_leak": false,
+    "max_drawdown": -0.016294508174508882,
+    "max_trade_share": 0.3272844469517281,
+    "mean_baseline": -0.0008945574278068761,
+    "mean_signal": -0.03322836138373893,
+    "n_bars": 1677,
+    "n_eligible": 1671,
+    "n_feature": 1677,
+    "n_signal": 7,
+    "n_skip_overlap": 0,
+    "n_trade": 7,
+    "occupancy": 0.0041741204531902205,
+    "raw_p": 0.12193903048475763,
+    "sharpe": -0.2915287486198758,
+    "total_return": -0.009823159462375775,
+    "trade_count": 7,
+    "turnover": 0.7237721313453831,
+    "win_count": 1
+  },
+  "side": 1,
+  "target_asset": "OIL",
+  "validation": {
+    "block_bootstrap_ci": {
+      "block_length": 5,
+      "high": -0.020548529114196416,
+      "iterations": 2000,
+      "low": -0.0329206046525671,
+      "method": "moving_block_bootstrap_delta_conservative",
+      "seed": 20260828
+    },
+    "bootstrap_ci": {
+      "high": -0.02309282066041996,
+      "iterations": 2000,
+      "low": -0.030527787427744202,
+      "method": "iid_bootstrap_delta",
+      "seed": 20260828
+    },
+    "cagr": -0.00282850200371787,
+    "cost_paid": 1.3440587523277474,
+    "delta": -0.026714495090176024,
+    "effect_size": null,
+    "end_equity": 9959.841229888269,
+    "level_leak": false,
+    "max_drawdown": -0.0040158770111731424,
+    "max_trade_share": 1.0,
+    "mean_baseline": -0.002753180880242787,
+    "mean_signal": -0.02946767597041881,
+    "n_bars": 359,
+    "n_eligible": 353,
+    "n_feature": 359,
+    "n_signal": 1,
+    "n_skip_overlap": 0,
+    "n_trade": 1,
+    "occupancy": 0.002785515320334262,
+    "raw_p": null,
+    "sharpe": -0.8389938107788051,
+    "total_return": -0.004015877011173119,
+    "trade_count": 1,
+    "turnover": 0.13634661080074495,
+    "win_count": 0
+  },
+  "window_hash": "35f3fdda79f3e0c3521ffda0aa69e31c9ac4ddb57f5823e2ec494e3fae00dd32"
+}
