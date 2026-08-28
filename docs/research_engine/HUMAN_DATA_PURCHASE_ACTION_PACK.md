@@ -1,11 +1,13 @@
 # HUMAN DATA PURCHASE ACTION PACK
 
-Mission: Data Expansion V3.0  
+Mission: Data Expansion V3.0, still valid after **MT5 Max V4.0**  
 Date checked: **2026-08-28**  
 Level: **0**  
 Candidate: **0**  
-Money spent this mission: **$0**  
-Stop reason: **HUMAN_REQUIRED / CREDENTIAL_REQUIRED**
+Money spent: **$0**  
+Stop reason: **HUMAN_REQUIRED / CREDENTIAL_REQUIRED** for *curve / surface / consensus only*
+
+**V4 fact:** Ava OHLC is no longer the bottleneck. SILVER, extra FX, DXY, indices, H1/M15 are frozen. CROSS_METAL and USD_METAL are **NO_CANDIDATE**. **Do not buy Databento to download more broker bars.** Buy it only if the next object is a real futures curve or option surface.
 
 This is the only pack you need to act on. Do not buy a stack.
 

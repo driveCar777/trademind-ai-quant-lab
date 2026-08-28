@@ -1,0 +1,155 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "6003216507cc59764dd344b5be5f0d0e434b43f7d16b1c628b410f6d6c5c2949",
+  "discovery_id": "CROSS_METAL_V1",
+  "elapsed_seconds": 12.9151771068573,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-cm-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28870596,
+    "pid": 31095,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 36.0,
+      "AUX-therm": 35.0,
+      "CPU-therm": 37.0,
+      "GPU-therm": 35.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 38.5,
+      "thermal-fan-est": 35.9
+    },
+    "ts": "2026-08-28T17:11:34Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "RATIO_CHEAP_CROSS",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-CM-0002",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 360,
+      "start": "2025-07-06"
+    },
+    "parent_sha256": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": -0.006905758148497794,
+        "iterations": 2000,
+        "low": -0.009739199200395529,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": 0.019724056904200874,
+        "iterations": 2000,
+        "low": -0.026635723864139475,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.0007733912937216703,
+      "cost_paid": 4.592400705089021,
+      "delta": -0.00829143582610352,
+      "effect_size": -0.4919554709044065,
+      "end_equity": 9948.614513771234,
+      "level_leak": false,
+      "max_drawdown": -0.007753312130104314,
+      "max_trade_share": 0.49989798138985686,
+      "mean_baseline": -0.000712100001956096,
+      "mean_signal": -0.009003535828059616,
+      "n_bars": 1679,
+      "n_eligible": 1673,
+      "n_feature": 1679,
+      "n_signal": 5,
+      "n_skip_overlap": 2,
+      "n_trade": 3,
+      "occupancy": 0.0029779630732578916,
+      "raw_p": 0.4017991004497751,
+      "sharpe": -0.3125121284384394,
+      "total_return": -0.00513854862287666,
+      "trade_count": 3,
+      "turnover": 0.461579724785086,
+      "win_count": 1
+    },
+    "side": 1,
+    "target_asset": "GOLD",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": -0.016986058890459108,
+        "iterations": 2000,
+        "low": -0.023720991023244577,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": -0.018415048239186074,
+        "iterations": 2000,
+        "low": -0.022480967331459392,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.014745761620151288,
+      "cost_paid": 10.982879756522042,
+      "delta": -0.020337309904955893,
+      "effect_size": -1.035630604675233,
+      "end_equity": 9790.590912571586,
+      "level_leak": false,
+      "max_drawdown": -0.020940908742841383,
+      "max_trade_share": 0.25148617956093217,
+      "mean_baseline": 0.001335609217413552,
+      "mean_signal": -0.019001700687542342,
+      "n_bars": 360,
+      "n_eligible": 354,
+      "n_feature": 360,
+      "n_signal": 4,
+      "n_skip_overlap": 0,
+      "n_trade": 4,
+      "occupancy": 0.011111111111111112,
+      "raw_p": null,
+      "sharpe": -1.6826994349210267,
+      "total_return": -0.02094090874284138,
+      "trade_count": 4,
+      "turnover": 1.1082092860357986,
+      "win_count": 0
+    },
+    "window_hash": "4d37ecb39329ac612487e2ecdaa4426d296c4ca0ffb66cac842eaa49ac463aae"
+  },
+  "job_id": "CM-V1-Xavier-02-HYP-CM-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "GOLD": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "SILVER": "181859ba5b0a6a7ed263317eb69f54c2601b6bbf8dd23fe053f895132d60ef90"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "ef6f3633e49de2b1f62657be638bb666ab7de1460021f6c0fc466a9bc2780df8",
+  "window_hashes": {
+    "GOLD": "4d37ecb39329ac612487e2ecdaa4426d296c4ca0ffb66cac842eaa49ac463aae",
+    "SILVER": "01770b07d2f3411b62082209c8bf9b41f923d9ddde2a90f9b3b782b3148d8197"
+  }
+}

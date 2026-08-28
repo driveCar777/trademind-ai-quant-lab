@@ -33,7 +33,9 @@ def disk_best(inventory, logical, timeframe):
     return best
 
 
-def should_acquire(probe, logical, timeframe, inventory):
+def should_acquire(probe, logical, timeframe, inventory, equity_cfd=False):
+    if equity_cfd:
+        return False, "equity_cfd_inventory_only"
     years = float(probe.get("calendar_span") or 0)
     rule = ACQUIRE_RULES.get(timeframe)
     if rule is None:
@@ -52,16 +54,24 @@ def fetch_bars(mt5, symbol, timeframe, first_unix, count_hint):
     const = tf_const(mt5, timeframe)
     collected = []
     methods = []
-    end = datetime.now(timezone.utc)
-    start = datetime.fromtimestamp(int(first_unix), tz=timezone.utc) if first_unix else datetime(1970, 1, 1, tzinfo=timezone.utc)
-    ranged = mt5.copy_rates_range(symbol, const, start, end)
-    if ranged is not None:
-        for row in ranged:
-            collected.append(bar_from_mt5_row(row))
-        methods.append("copy_rates_range:%s" % len(ranged))
+    # Never range from 1970: Ava copy_rates_range can stall minutes with no bars.
+    if first_unix:
+        end = datetime.now(timezone.utc)
+        start = datetime.fromtimestamp(int(first_unix), tz=timezone.utc)
+        ranged = mt5.copy_rates_range(symbol, const, start, end)
+        if ranged is not None:
+            for row in ranged:
+                collected.append(bar_from_mt5_row(row))
+            methods.append("copy_rates_range:%s" % len(ranged))
     want = max(int(count_hint or 0), 2000)
     want = min(want, 400000)
     pos = mt5.copy_rates_from_pos(symbol, const, 0, want)
+    if pos is None:
+        for step in (2000, 10000, 50000, 80000):
+            pos = mt5.copy_rates_from_pos(symbol, const, 0, step)
+            if pos is not None:
+                methods.append("copy_rates_from_pos_fallback:%s" % len(pos))
+                break
     if pos is not None:
         if not collected or len(pos) > len(collected):
             collected = [bar_from_mt5_row(row) for row in pos]
@@ -137,7 +147,10 @@ def freeze_new(mt5, cfg, logical, symbol, timeframe, bars, methods, logger, pack
     }
     digest = freeze_dataset(storage_root, dataset_id, bars, manifest, quality)
     if logger:
-        logger.emit("DATASET_FROZEN", dataset_id=dataset_id, row_count=len(bars), years=span)
+        try:
+            logger.emit("DATASET_FROZEN", dataset_id=dataset_id, row_count=len(bars), years=span)
+        except Exception:
+            pass
     return {
         "ok": True,
         "dataset_id": dataset_id,

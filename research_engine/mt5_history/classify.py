@@ -99,7 +99,14 @@ def _looks_fx_name(name):
     return len(compact) == 6 and compact.isalpha()
 
 
+def is_equity_cfd(spec):
+    name = str(spec.get("name") or "")
+    return name.startswith("#")
+
+
 def is_priority(spec, category):
+    if is_equity_cfd(spec):
+        return False
     name = str(spec.get("name") or "").upper()
     path = str(spec.get("path") or "").upper()
     tokens = (
@@ -123,12 +130,13 @@ def is_priority(spec, category):
         "BTC",
         "NAS",
         "SPX",
-        "DJ",
+        "DJ30",
         "DAX",
         "UK100",
-        "JPN",
+        "JPN225",
+        "NDX",
     )
     blob = name + " " + path
     if any(tok in blob for tok in tokens):
         return True
-    return category in ("Metals", "Energy")
+    return category in ("Metals", "Energy", "FX") and not is_equity_cfd(spec)

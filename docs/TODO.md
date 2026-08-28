@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** Data Expansion Mission V3.0 **WAIT_HUMAN**。Level 仍是 0。Candidate=0。
-> **最后更新:** 2026-08-28（SUPPLY_V1 已跑并杀死；工厂/供应商/采购包已写；等人买 Databento）
-> **阶段终点:** HUMAN_REQUIRED。禁止调参救任何已杀家族。禁止 RSI/MACD/MA。下一动作 = `HUMAN_DATA_PURCHASE_ACTION_PACK.md`。
+> **当前活跃模块:** MT5 Max Mission V4.0 **COMPLETE_NO_CANDIDATE**。Level 仍是 0。Candidate=0。
+> **最后更新:** 2026-08-29（新 MT5 历史已冻；CROSS_METAL + USD_METAL 已杀；不要再买 K 线）
+> **阶段终点:** 价格/CFD 信息集已抽完优先名单。禁止调参救 CM/UM/SUP。禁止 RSI/MACD/MA。下一美元 = 曲线/期权面（见采购包），不是再冻一根 Ava D1。
 
 ---
 
@@ -45,7 +45,19 @@
 | REC V1 | Alpha Recovery（forensics + 一个纸面合同） | ✅ DESIGN | 2026-08-27 |
 | MISSION V1.1 | IT → TS → MS → RI → AMS | ✅ STOP B | 2026-08-28 |
 | MISSION V2.0 | IV → COT → EIA → UST10 → FX overnight carry | ✅ STOP B | 2026-08-28 |
-| MISSION V3.0 | Data factory + EIA supply + vendor/purchase pack | ⏸ WAIT_HUMAN | 2026-08-28 |
+| MISSION V3.0 | Data factory + EIA supply + vendor/purchase pack | ⏸ WAIT_HUMAN 记录 | 2026-08-28 |
+| MISSION V4.0 | MT5 max history + CROSS_METAL + USD_METAL | ✅ NO_CANDIDATE | 2026-08-29 |
+
+## MT5 Max Mission V4.0 — COMPLETE_NO_CANDIDATE 2026-08-29
+
+2000 bars 不是上限。新 ID，未覆盖 `20260825`。
+
+- 能力图：`data/market/research_engine/mt5_history/MT5_HISTORY_CAPABILITY_V1.json`
+- CROSS_METAL_V1 四 Xavier **NO_CANDIDATE**。不要 gold-silver z_cut。
+- USD_METAL_V1 四 Xavier **NO_CANDIDATE**。不要 DXY z_cut。
+- VIX 1.45y，未开族。
+- 报告：`MT5_MAX_MISSION_V4_REPORT.md`。
+- Databento：只为曲线/期权面。不要为了再下一根 Ava K 线付钱。
 
 ## Data Expansion Mission V3.0 — WAIT_HUMAN 2026-08-28
 

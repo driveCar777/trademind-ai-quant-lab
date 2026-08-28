@@ -1,0 +1,34 @@
+{
+  "ledger_id": "RESEARCH_LEDGER_V4",
+  "mission": "MT5_MAX_MISSION_V4",
+  "FINAL_OOS_TOUCHED": false,
+  "start_commit": "7169971dc7f9a7cb26015b54f3a1d6f94b0e69eb",
+  "phase": "COMPLETE_NO_CANDIDATE",
+  "n": 2,
+  "rows": [
+    {
+      "research_id": "RESEARCH-2026-0013",
+      "family": "CROSS_METAL_V1",
+      "hypothesis": ["HYP-CM-0001", "HYP-CM-0002", "HYP-CM-0003"],
+      "data": ["tm-market-GOLD-D1-20260828-000001", "tm-market-SILVER-D1-20260828-000001"],
+      "contract_hash": "ef6f3633e49de2b1f62657be638bb666ab7de1460021f6c0fc466a9bc2780df8",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true,
+      "xavier_01_04_hash": "26fcf886b3c61125bcfb38a3085516c9da153edf90cad7ae637ddc2c1593f53a"
+    },
+    {
+      "research_id": "RESEARCH-2026-0014",
+      "family": "USD_METAL_V1",
+      "hypothesis": ["HYP-UM-0001", "HYP-UM-0002", "HYP-UM-0003"],
+      "data": ["tm-market-GOLD-D1-20260828-000001", "tm-market-SILVER-D1-20260828-000001", "tm-market-DXY-D1-20260828-000001"],
+      "contract_hash": "a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true,
+      "xavier_01_04_hash": "2257aff4dd248fe172cf018e0faef9f4945827a1d5eec816b22eab1c0f218d34"
+    }
+  ]
+}

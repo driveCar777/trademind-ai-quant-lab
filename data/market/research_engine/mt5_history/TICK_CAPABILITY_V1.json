@@ -1,0 +1,13 @@
+{
+  "rows": [
+    {
+      "ask": 4478.8,
+      "bid": 4478.29,
+      "note": "Broker ticks. Not an exchange order book.",
+      "package": "5.0.5735",
+      "status": "HIST_TICKS",
+      "symbol": "GOLD",
+      "tick_count_window": 648110
+    }
+  ]
+}

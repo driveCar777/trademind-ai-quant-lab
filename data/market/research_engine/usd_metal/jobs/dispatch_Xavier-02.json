@@ -1,0 +1,32 @@
+{
+  "discovery_id": "USD_METAL_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "USD_METAL_V1",
+      "family_id": "FAM-UM-DXY-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-UM-0002"
+      ],
+      "job_id": "UM-V1-Xavier-02-HYP-UM-0002",
+      "node": "Xavier-02",
+      "note": "Worker executes this list only. Not V0.91 residual. Not z_cut search.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-D1-20260828-000001",
+        "tm-market-SILVER-D1-20260828-000001",
+        "tm-market-DXY-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b",
+      "seed": 20260829,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-02"
+}

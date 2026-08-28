@@ -26,7 +26,7 @@ from research_engine.mt5_history.acquire import (
     logical_from_symbol,
     should_acquire,
 )
-from research_engine.mt5_history.classify import classify, is_priority, spec_dict
+from research_engine.mt5_history.classify import classify, is_equity_cfd, is_priority, spec_dict
 from research_engine.mt5_history.probe import merge_best, probe_from_pos, probe_range, unix_utc
 
 OUT = os.path.join(ROOT, "data", "market", "research_engine", "mt5_history")
@@ -42,9 +42,21 @@ MAX_COUNT = {
     "M5": 20000,
     "M1": 10000,
 }
-ALL_SYMBOL_TFS = ("D1", "W1", "MN1")
+ALL_SYMBOL_TFS = ("D1", "W1")
 PRIORITY_TFS = ("M15", "M30", "H1", "H4", "D1", "W1", "MN1")
 TINY_TFS = ("M1", "M5")
+FX_DEEP = {
+    "EURUSD",
+    "USDJPY",
+    "GBPUSD",
+    "USDCHF",
+    "AUDUSD",
+    "USDCAD",
+    "NZDUSD",
+    "EURJPY",
+    "EURGBP",
+    "AUDJPY",
+}
 
 
 def now():
@@ -124,18 +136,19 @@ def collect_symbols(mt5):
         spec["category"] = category
         spec["classify_reason"] = reason
         spec["priority"] = is_priority(spec, category)
+        spec["equity_cfd"] = is_equity_cfd(spec)
         rows.append(spec)
     rows.sort(key=lambda r: (r.get("category") or "", r.get("name") or ""))
     return rows
 
 
-def probe_one(mt5, symbol, timeframe, do_range):
+def probe_one(mt5, symbol, timeframe, do_range, steps=None):
     mt5.symbol_select(symbol, True)
-    time.sleep(0.08)
-    pos = probe_from_pos(mt5, symbol, timeframe, MAX_COUNT[timeframe])
+    time.sleep(0.04)
+    pos = probe_from_pos(mt5, symbol, timeframe, MAX_COUNT[timeframe], steps=steps)
     ranged = None
     if do_range and pos.get("status") == "OK":
-        time.sleep(0.08)
+        time.sleep(0.04)
         ranged = probe_range(mt5, symbol, timeframe, RANGE_START, datetime.now(timezone.utc))
     return merge_best(pos, ranged)
 
@@ -233,19 +246,27 @@ def main():
             name = spec.get("name")
             if not name:
                 continue
-            tfs = list(ALL_SYMBOL_TFS)
-            if spec.get("priority"):
-                for tf in PRIORITY_TFS:
-                    if tf not in tfs:
-                        tfs.append(tf)
-                if spec.get("category") in ("Metals", "Energy") or name in known:
-                    tfs = list(PRIORITY_TFS) + list(TINY_TFS)
-            if len(symbols) > 350 and not spec.get("priority") and spec.get("category") == "Other":
+            if spec.get("equity_cfd"):
                 tfs = ("D1",)
+            else:
+                tfs = list(ALL_SYMBOL_TFS)
+                if spec.get("priority"):
+                    if spec.get("category") == "FX" and name not in FX_DEEP:
+                        tfs = ("D1", "H1", "W1")
+                    else:
+                        tfs = list(PRIORITY_TFS)
+                        if name in known:
+                            tfs = list(PRIORITY_TFS) + list(TINY_TFS)
             for tf in tfs:
                 do_range = spec.get("priority") and tf in ("D1", "H1", "H4", "M15", "W1")
+                steps = None
+                if spec.get("equity_cfd"):
+                    steps = (10000,)
+                    do_range = False
+                elif not spec.get("priority") and tf in ("D1", "W1", "MN1"):
+                    steps = (10000, 20000)
                 try:
-                    row = probe_one(mt5, name, tf, do_range)
+                    row = probe_one(mt5, name, tf, do_range, steps=steps)
                 except Exception as exc:
                     row = {"status": "NOT_AVAILABLE", "reason": str(exc), "symbol": name, "timeframe": tf}
                 row["category"] = spec.get("category")
@@ -263,7 +284,7 @@ def main():
                     row.get("calendar_span"),
                     flush=True,
                 )
-                ok, why = should_acquire(row, logical, tf, disk)
+                ok, why = should_acquire(row, logical, tf, disk, spec.get("equity_cfd"))
                 if ok:
                     acquire_plan.append(
                         {

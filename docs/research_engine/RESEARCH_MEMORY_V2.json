@@ -67,6 +67,24 @@
       "failure": "0001/0003 research n=7; 0002 n=1; occupancy <0.5%",
       "why_failed": "Weekly supply z-cross too sparse on Ava D1 after costed gates",
       "reopen_conditions": "not another EIA weekly z_cut; Cushing/gasoline are inventory isomorphs"
+    },
+    {
+      "what": "CROSS_METAL_V1",
+      "why": "New SILVER D1 vs existing GOLD; relative value not residual",
+      "data": "GOLD+SILVER D1 20260828, 252-day log-ratio z",
+      "result": "NO_CANDIDATE",
+      "failure": "0001/0002 research sign fail; validation n<4; FDR 0/3",
+      "why_failed": "Gold/silver rich-cheap z-cross is not a two-target costed FDR edge",
+      "reopen_conditions": "not another gold-silver z_cut or sign flip; not SMA60 residual"
+    },
+    {
+      "what": "USD_METAL_V1",
+      "why": "New DXY series is not V0.8 pair return",
+      "data": "DXY+GOLD+SILVER D1 20260828, 252-day DXY z",
+      "result": "NO_CANDIDATE",
+      "failure": "0002 research n=3; 0001/0003 validation n=3; FDR 0/3",
+      "why_failed": "Dollar-index z-cross into metals is not a two-target costed FDR edge",
+      "reopen_conditions": "not another DXY z_cut or sign flip; not V0.8 EURUSD/USDJPY return"
     }
   ],
   "still_unknown": [

@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-28 (Data Expansion Mission V3.0 WAIT_HUMAN：SUPPLY_V1 NO_CANDIDATE；等人买 Databento；Level=0；Candidate=0)  
+> **更新时间:** 2026-08-29 (MT5 Max Mission V4.0 COMPLETE_NO_CANDIDATE：新历史已冻；CROSS_METAL + USD_METAL NO_CANDIDATE；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -339,7 +339,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **Alpha Recovery V1.0 FACT 2026-08-27：** 失败分析系统已落地。覆盖：direction 83% / RV 40% / transition 50% / risk premium 0% / event 0% / institutional time 0%。主因 **A**（无可用预测信息）。选出 **一个** 新家族：`INSTITUTIONAL_TIME_V1.0`（month-end/start，不是 weekday）。hash `1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457`。当时未执行。
 - **Alpha Mission V1.1 FACT 2026-08-28 STOP B：** IT 已跑（WEAK_EDGE，FDR 0/3，四 Xavier 01=04）。随后 Time Structure / Microstructure Surprise / Regime Interaction / Alt Market Structure 全部 **NO_CANDIDATE / FALSIFIED**。Level 仍 0。Candidate=0。GOLD/OIL D1 最大 **7.715y**（BROKER_LIMITATION，2018-12-12）。新 H1 约 7.7y 已冻成 `20260828-000001`。不要调参救 IT/TS/MS/RI/AMS。不要读 Final OOS。见 `ALPHA_MISSION_V1.1_REPORT.md`。
 - **Alpha Research Mission V2.0 FACT 2026-08-28 STOP B：** 信息集已扩大并测完当时无密钥公开源。IMPLIED_VOL / POSITIONING / INVENTORY / RATES / CARRY_V1A 全部 **NO_CANDIDATE**，四 Xavier，01=04。CARRY_V1 是 INVALID_ALIGNMENT（1971 FX 窗口早于 €STR），不是机制结论。Level 仍 0。Candidate=0。不要调 IV/COT/EIA stocks/UST10/overnight z_cut。不要读 Final OOS。见 `ALPHA_RESEARCH_MISSION_V2_REPORT.md`。
-- **Data Expansion Mission V3.0 FACT 2026-08-28 WAIT_HUMAN：** 数据工厂已落地。EIA 产量+开工率已冻成新 ID 并跑 SUPPLY_V1（hash `4f6548b3…b16f1`）四 Xavier **NO_CANDIDATE**。不是库存重包装。指数 IV ≠ option surface。CFD ≠ futures curve。花费 $0。下一人类动作 = Databento $125 credits，key 只进 `.env`。见 `DATA_EXPANSION_MISSION_V3_REPORT.md` 与 `HUMAN_DATA_PURCHASE_ACTION_PACK.md`。
+- **Data Expansion Mission V3.0 FACT 2026-08-28 WAIT_HUMAN：** 数据工厂已落地。EIA 产量+开工率已冻成新 ID 并跑 SUPPLY_V1（hash `4f6548b3…b16f1`）四 Xavier **NO_CANDIDATE**。不是库存重包装。指数 IV ≠ option surface。CFD ≠ futures curve。花费 $0。见 `DATA_EXPANSION_MISSION_V3_REPORT.md`。
+- **MT5 Max Mission V4.0 FACT 2026-08-29 COMPLETE_NO_CANDIDATE：** 2000 bars 不是上限。`maxbars=100000`。新 ID 冻了 SILVER/DXY/额外 FX/指数/H1/M15（约 59 个 `MT5_MAX_V4` 集）。未覆盖 `20260825`。CROSS_METAL_V1 hash `ef6f3633…780df8` 与 USD_METAL_V1 hash `a39952f9…474f0b` 四 Xavier **NO_CANDIDATE**，01=04。VIX 1.45y 未冻。不要再调 gold-silver / DXY / EIA z_cut。Databento 只为曲线/期权面，不是为了再下一根 Ava K 线。见 `MT5_MAX_MISSION_V4_REPORT.md`。
 
 ---
 
@@ -421,7 +422,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P49 | Alpha Recovery Program V1.0 | DONE（forensics + 纸面合同；当时未跑） |
 | P50 | Alpha Mission V1.1 | DONE（STOP B；IT/TS/MS/RI/AMS 已跑；Level 0；Candidate=0） |
 | P51 | Alpha Research Mission V2.0 | DONE（STOP B；IV/COT/EIA/UST10/CARRY_V1A 已跑；Level 0；Candidate=0） |
-| P52 | Data Expansion Mission V3.0 | WAIT_HUMAN（工厂+SUPPLY_V1 已跑；Databento credits 待买；Level 0；Candidate=0） |
+| P52 | Data Expansion Mission V3.0 | WAIT_HUMAN 记录保留（工厂+SUPPLY_V1 已跑；曲线/面仍 BLOCKED） |
+| P53 | MT5 Max Mission V4.0 | DONE（新历史已冻；CM+UM NO_CANDIDATE；Level 0；Candidate=0） |
 
 ---
 

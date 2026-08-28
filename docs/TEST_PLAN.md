@@ -774,6 +774,24 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 ---
 
+## MT5 Max Mission V4.0 — 2026-08-29 COMPLETE_NO_CANDIDATE
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| research_engine 单元 | ✅ **232 PASS**（V3 的 221 + MT5 history 5 + CROSS_METAL 3 + USD_METAL 3） |
+| CROSS_METAL_V1 合同锁 | `ef6f3633e49de2b1f62657be638bb666ab7de1460021f6c0fc466a9bc2780df8` |
+| CROSS_METAL 四 Xavier | ✅ 01=04 `26fcf886…593f53a`；NO_CANDIDATE |
+| USD_METAL_V1 合同锁 | `a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b` |
+| USD_METAL 四 Xavier | ✅ 01=04 `2257aff4…218d34`；NO_CANDIDATE |
+| 未覆盖 20260825 | ✅ |
+| GOLD ticks | HIST_TICKS ~648k / 2d；不是订单簿 |
+| 花费 | $0 |
+| Final OOS | ✅ 未访问 |
+
+不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
+
 ## Data Expansion Mission V3.0 — 2026-08-28 WAIT_HUMAN
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine --import-mode=importlib`

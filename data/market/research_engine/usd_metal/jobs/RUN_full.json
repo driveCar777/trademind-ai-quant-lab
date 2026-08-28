@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b",
+      "elapsed_seconds": 19.248880863189697,
+      "end": "2026-08-28T17:35:28Z",
+      "exit_code": 0,
+      "experiment": "USD_METAL_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-28T17:35:09Z",
+      "stderr": "",
+      "stdout": "UM_JOB_DONE UM-V1-Xavier-04-HYP-UM-0001 12.8\nUM_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b",
+      "elapsed_seconds": 19.461328983306885,
+      "end": "2026-08-28T17:35:28Z",
+      "exit_code": 0,
+      "experiment": "USD_METAL_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-28T17:35:09Z",
+      "stderr": "",
+      "stdout": "UM_JOB_DONE UM-V1-Xavier-03-HYP-UM-0003 13.0\nUM_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b",
+      "elapsed_seconds": 19.49396586418152,
+      "end": "2026-08-28T17:35:28Z",
+      "exit_code": 0,
+      "experiment": "USD_METAL_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-28T17:35:09Z",
+      "stderr": "",
+      "stdout": "UM_JOB_DONE UM-V1-Xavier-02-HYP-UM-0002 13.2\nUM_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b",
+      "elapsed_seconds": 19.662163257598877,
+      "end": "2026-08-28T17:35:28Z",
+      "exit_code": 0,
+      "experiment": "USD_METAL_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-28T17:35:09Z",
+      "stderr": "",
+      "stdout": "UM_JOB_DONE UM-V1-Xavier-01-HYP-UM-0001 13.7\nUM_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-28T17:35:28Z"
+}

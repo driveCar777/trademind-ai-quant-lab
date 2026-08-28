@@ -112,7 +112,12 @@ class TestAlphaRecovery(unittest.TestCase):
         self.assertTrue(h1_new)
         self.assertTrue(all(r["coverage"] == "MEETS_TARGET" for r in h1_new))
         self.assertTrue(m15)
-        self.assertTrue(all(r["coverage"] == "SHORTFALL" for r in m15))
+        frozen_m15 = [r for r in m15 if "20260825" in (r.get("dataset_id") or "")]
+        new_m15 = [r for r in m15 if "20260828" in (r.get("dataset_id") or "")]
+        self.assertTrue(frozen_m15)
+        self.assertTrue(all(r["coverage"] == "SHORTFALL" for r in frozen_m15))
+        self.assertTrue(new_m15)
+        self.assertTrue(all(r["coverage"] == "MEETS_TARGET" for r in new_m15))
         gold_frozen = [
             r
             for r in d1

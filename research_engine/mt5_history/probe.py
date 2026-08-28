@@ -26,12 +26,13 @@ def years_span(first_unix, last_unix):
     return (float(last_unix) - float(first_unix)) / (365.25 * 24 * 3600)
 
 
-def probe_from_pos(mt5, symbol, timeframe, max_count, sleep_s=0.12):
+def probe_from_pos(mt5, symbol, timeframe, max_count, sleep_s=0.05, steps=None):
     const = tf_const(mt5, timeframe)
     if const is None:
         return {"status": "NOT_AVAILABLE", "reason": "timeframe_const", "timeframe": timeframe}
     last = None
-    for step in PROBE_STEPS:
+    walk = steps if steps is not None else PROBE_STEPS
+    for step in walk:
         if step > int(max_count):
             break
         rates = mt5.copy_rates_from_pos(symbol, const, 0, int(step))

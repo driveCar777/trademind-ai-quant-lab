@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-08-29 — MT5 Max Mission V4.0 COMPLETE_NO_CANDIDATE
+
+- 2000 bars 不是上限。新 `20260828-000001` 冻了 SILVER/DXY/额外 FX/指数/H1/M15。未覆盖 `20260825`。
+- CROSS_METAL_V1 与 USD_METAL_V1 四 Xavier **NO_CANDIDATE**。01=04。不要 z_cut / 翻号。
+- VIX 1.45y 未冻。GOLD ticks ≈ 64 万 / 2 日，是经纪商 tick，不是订单簿。
+- Databento 不为再下一根 Ava K 线。曲线/期权面仍 BLOCKED。
+- 花费 $0。Level 仍 0。Candidate=0。Final OOS 未读。未 `order_send`。
+- 报告：`docs/research_engine/MT5_MAX_MISSION_V4_REPORT.md`。
+
 ## 2026-08-28 — Data Expansion Mission V3.0 WAIT_HUMAN
 
 - 数据工厂：`research_engine/data_expansion/` + `research_engine/data_sources/`（统一 fetch→hash，无字节不得 READY）。

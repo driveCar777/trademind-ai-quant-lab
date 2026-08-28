@@ -3,7 +3,7 @@
   "FINAL_OOS_TOUCHED": false,
   "start_commit": "48bc5e8d072c8942f7c6e92266bef91d3ca78a43",
   "end_commit": "6365ade9e99eb4f193e79c0accf7f636605e51ce",
-  "n": 7,
+  "n": 9,
   "rows": [
     {
       "research_id": "RESEARCH-2026-0006",
@@ -77,6 +77,28 @@
       "hypothesis": ["HYP-SUP-0001", "HYP-SUP-0002", "HYP-SUP-0003"],
       "data": ["tm-alt-EIA-USCRUDE-PROD-W1-20260828-000001", "tm-alt-EIA-USREFIN-UTIL-W1-20260828-000001"],
       "contract_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "research_id": "RESEARCH-2026-0013",
+      "family": "CROSS_METAL_V1",
+      "hypothesis": ["HYP-CM-0001", "HYP-CM-0002", "HYP-CM-0003"],
+      "data": ["tm-market-GOLD-D1-20260828-000001", "tm-market-SILVER-D1-20260828-000001"],
+      "contract_hash": "ef6f3633e49de2b1f62657be638bb666ab7de1460021f6c0fc466a9bc2780df8",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "research_id": "RESEARCH-2026-0014",
+      "family": "USD_METAL_V1",
+      "hypothesis": ["HYP-UM-0001", "HYP-UM-0002", "HYP-UM-0003"],
+      "data": ["tm-market-GOLD-D1-20260828-000001", "tm-market-SILVER-D1-20260828-000001", "tm-market-DXY-D1-20260828-000001"],
+      "contract_hash": "a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b",
       "result": "NO_CANDIDATE",
       "decision": "KILLED",
       "xavier": true,

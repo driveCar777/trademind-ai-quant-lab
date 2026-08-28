@@ -23,7 +23,7 @@ class ReadOnlyMT5(object):
     def __getattr__(self, name):
         if _is_forbidden(name):
             raise DataLayerReadOnlyError(name)
-        if name.startswith("TIMEFRAME_"):
+        if name.startswith("TIMEFRAME_") or name.startswith("COPY_TICKS_"):
             return getattr(self._mt5, name)
         if name not in MT5_ALLOWED:
             raise DataLayerReadOnlyError(name)

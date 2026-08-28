@@ -1,7 +1,7 @@
 {
   "database_id": "FAILED_ALPHA_DATABASE_V2",
   "FINAL_OOS_TOUCHED": false,
-  "n": 18,
+  "n": 20,
   "records": [
     {
       "family": "HYP-0001",
@@ -198,6 +198,32 @@
       "search_space_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
       "tag": "RESEARCH-2026-0012",
       "cross_check_match": true
+    },
+    {
+      "family": "CROSS_METAL_V1",
+      "mechanism": "252-day z of log(GOLD/SILVER) rich/cheap cross",
+      "what_was_tested": "HYP-CM-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; all INCONCLUSIVE; 0001/0002 research sign fail; validation n thin",
+      "why": "Not V0.91 SMA60 residual. Not OIL. Two-asset ratio z-cross is not a two-target FDR edge. Do not flip sign. Do not change z_cut.",
+      "forbidden_reopen_pattern": "gold-silver z_cut; hold change; sign flip; SMA60 residual",
+      "status": "KILLED",
+      "search_space_hash": "ef6f3633e49de2b1f62657be638bb666ab7de1460021f6c0fc466a9bc2780df8",
+      "tag": "RESEARCH-2026-0013",
+      "cross_check_match": true,
+      "xavier_01_04_hash": "26fcf886b3c61125bcfb38a3085516c9da153edf90cad7ae637ddc2c1593f53a"
+    },
+    {
+      "family": "USD_METAL_V1",
+      "mechanism": "252-day z of DXY close into GOLD/SILVER",
+      "what_was_tested": "HYP-UM-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; all INCONCLUSIVE; 0002 research n=3; 0001/0003 validation n=3",
+      "why": "Not V0.8 pair return. Not gold-silver ratio. Dollar-index z-cross is not a two-target FDR edge. Do not flip. Do not change z_cut.",
+      "forbidden_reopen_pattern": "DXY z_cut; hold change; sign flip; V0.8 EURUSD/USDJPY return",
+      "status": "KILLED",
+      "search_space_hash": "a39952f9dd4f3bcec04ce302ac9248b1dc5c2832cce762ee0ce16c0eec474f0b",
+      "tag": "RESEARCH-2026-0014",
+      "cross_check_match": true,
+      "xavier_01_04_hash": "2257aff4dd248fe172cf018e0faef9f4945827a1d5eec816b22eab1c0f218d34"
     }
   ]
 }

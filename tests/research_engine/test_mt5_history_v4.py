@@ -46,3 +46,11 @@ class TestMt5HistoryV4(unittest.TestCase):
         ok, why = should_acquire({"calendar_span": 2.4, "status": "OK"}, "GOLD", "M15", inventory)
         self.assertTrue(ok)
         self.assertIn("meets", why)
+
+    def test_equity_cfd_not_auto_acquired(self):
+        from research_engine.mt5_history.classify import is_equity_cfd
+
+        self.assertTrue(is_equity_cfd({"name": "#AAPL"}))
+        ok, why = should_acquire({"calendar_span": 20.0, "status": "OK"}, "AAPL", "D1", [], True)
+        self.assertFalse(ok)
+        self.assertEqual(why, "equity_cfd_inventory_only")
