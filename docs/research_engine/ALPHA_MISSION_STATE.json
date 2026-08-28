@@ -11,6 +11,7 @@
   "stop": "STOP_B",
   "stop_reason": "Researchable UNKNOWN on current broker data is exhausted. Remaining mechanisms are DATA_BLOCKED (IV, carry, news) or FORBIDDEN reopens.",
   "start_commit": "134bfe565a6972991cec5d75da22d80e5d62bae3",
+  "end_commit": "8ca1d3a79af8626b4ad5d6ffff383cbf2d237528",
   "github": {
     "remote": "https://github.com/driveCar777/trademind-ai-quant-lab",
     "branch": "main",
