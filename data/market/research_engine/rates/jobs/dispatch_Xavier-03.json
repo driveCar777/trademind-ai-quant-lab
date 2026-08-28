@@ -1,0 +1,32 @@
+{
+  "discovery_id": "RATES_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "RATES_V1",
+      "family_id": "FAM-RATES-UST10-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-RATES-0003"
+      ],
+      "job_id": "RATES-V1-Xavier-03-HYP-RATES-0003",
+      "node": "Xavier-03",
+      "note": "Worker executes this list only. Not V0.8 price proxy. Not z_cut search.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-D1-20260828-000001",
+        "tm-market-OIL-D1-20260828-000001",
+        "tm-alt-UST-DGS10-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "4bbbab85b281b6890b7b38342a82ea649fb56b6ac523b8a28cd6cac854fd54ef",
+      "seed": 20260828,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-03"
+}

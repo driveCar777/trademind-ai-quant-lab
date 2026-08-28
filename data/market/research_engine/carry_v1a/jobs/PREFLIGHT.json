@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "exit_code": 0,
+      "host": "192.168.1.200",
+      "node": "Xavier-01",
+      "ok": true,
+      "stderr": "",
+      "stdout": "Python 3.6.9\n8\n              total        used        free      shared  buff/cache   available\nMem:          31034        1223       27078        1558        2732       27901\nSSH_OK\n"
+    },
+    {
+      "exit_code": 0,
+      "host": "192.168.1.201",
+      "node": "Xavier-02",
+      "ok": true,
+      "stderr": "",
+      "stdout": "Python 3.6.8\n8\n              total        used        free      shared  buff/cache   available\nMem:          31034         910       27693        1661        2430       28144\nSSH_OK\n"
+    },
+    {
+      "exit_code": 0,
+      "host": "192.168.1.202",
+      "node": "Xavier-03",
+      "ok": true,
+      "stderr": "",
+      "stdout": "Python 3.6.8\n8\n              total        used        free      shared  buff/cache   available\nMem:          31034        1086       27405        1566        2543       28040\nSSH_OK\n"
+    },
+    {
+      "exit_code": 0,
+      "host": "192.168.1.203",
+      "node": "Xavier-04",
+      "ok": true,
+      "stderr": "",
+      "stdout": "Python 3.6.9\n8\n              total        used        free      shared  buff/cache   available\nMem:          14930        1220       11821         806        1888       12673\nSSH_OK\n"
+    }
+  ],
+  "utc": "2026-08-28T14:55:14Z"
+}

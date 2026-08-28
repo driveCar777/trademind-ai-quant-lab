@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-carry-v1a",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28548076,
+    "pid": 30707,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 33.0,
+      "AUX-therm": 32.0,
+      "CPU-therm": 35.0,
+      "GPU-therm": 34.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 33.0,
+      "Tdiode_tegra": 37.0,
+      "thermal-fan-est": 33.5
+    },
+    "ts": "2026-08-28T14:55:25Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "0d541fe5a87de43f1be0fcd1e84aeb1028d9e878373e90e09ead75c3daf505b8",
+      "elapsed_seconds": 19.349722862243652,
+      "job_id": "CARRY-V1A-Xavier-01-HYP-CARRYA-0001"
+    }
+  ],
+  "node": "Xavier-01"
+}

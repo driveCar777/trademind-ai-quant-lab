@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-rates-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28445688,
+    "pid": 5802,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 34.0,
+      "AUX-therm": 32.5,
+      "CPU-therm": 35.5,
+      "GPU-therm": 35.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 34.0,
+      "Tdiode_tegra": 37.75,
+      "thermal-fan-est": 34.0
+    },
+    "ts": "2026-08-28T14:36:42Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "7e75a66cc2783a7998473b07ee05fba3221e36821c5ebcb51d3523ee1a8e9d05",
+      "elapsed_seconds": 17.461283206939697,
+      "job_id": "RATES-V1-Xavier-01-HYP-RATES-0001"
+    }
+  ],
+  "node": "Xavier-01"
+}

@@ -1,0 +1,49 @@
+# Carry V1 Report
+
+**INVALID_ALIGNMENT.** EURUSD/USDJPY D1 parents start in 1971. The 70/15/15 research window ended before €STR (2019-10). Occupancy 0 is not a mechanism result. See CARRY_V1A.
+
+Executed. Hash lock `0ccbac180f72da54bcdca046922b13a7637e811da3bc85caed3f479d9018a7cb`.
+
+## Decision
+
+- Program: **NO_CANDIDATE**
+- Next: `KILL_FAMILY_THEN_NEXT_SOURCE`
+- Strategy layer allowed: False
+- FDR discoveries: []
+- EURUSD pass: []
+- USDJPY pass: []
+
+## Hypotheses
+
+### HYP-CARRY-0001
+
+- label: INCONCLUSIVE
+- target: EURUSD event: CARRY_USD_RICH_CROSS
+- RESEARCH n_trade=0 occupancy=0.0 TR=0.0 delta=None p=None
+- VALIDATION n_trade=0 TR=0.0
+- why: RESEARCH_TRADES<8, VALIDATION_TRADES<4, INSUFFICIENT_OCCUPANCY, RESEARCH_NOT_PROFITABLE, VALIDATION_NOT_PROFITABLE
+
+### HYP-CARRY-0002
+
+- label: INCONCLUSIVE
+- target: USDJPY event: CARRY_USD_RICH_CROSS
+- RESEARCH n_trade=0 occupancy=0.0 TR=0.0 delta=None p=None
+- VALIDATION n_trade=1 TR=-0.0056226434907251654
+- why: RESEARCH_TRADES<8, VALIDATION_TRADES<4, INSUFFICIENT_OCCUPANCY, RESEARCH_NOT_PROFITABLE, VALIDATION_NOT_PROFITABLE, VALIDATION_SIGN
+
+### HYP-CARRY-0003
+
+- label: INCONCLUSIVE
+- target: EURUSD event: CARRY_USD_CHEAP_CROSS
+- RESEARCH n_trade=0 occupancy=0.0 TR=0.0 delta=None p=None
+- VALIDATION n_trade=0 TR=0.0
+- why: RESEARCH_TRADES<8, VALIDATION_TRADES<4, INSUFFICIENT_OCCUPANCY, RESEARCH_NOT_PROFITABLE, VALIDATION_NOT_PROFITABLE
+
+## Hashes
+
+- CARRY-V1-Xavier-01-HYP-CARRY-0001: `79eac6e3172c68ee911a2a814a4ee932cbb1011c7c27ef8897fa8ef822c563c1`
+- CARRY-V1-Xavier-02-HYP-CARRY-0002: `e5c3cbb32862155c6c20dfabed21a9e848e3b240b26330328b36c413b76b217d`
+- CARRY-V1-Xavier-03-HYP-CARRY-0003: `d81bb71710535d92de4a183e76f8d1a7a5f0d43bc27a2a3893d6702411e9cfd0`
+- CARRY-V1-Xavier-04-HYP-CARRY-0001: `79eac6e3172c68ee911a2a814a4ee932cbb1011c7c27ef8897fa8ef822c563c1`
+
+CAGR >= 10% is not a gate. Not V0.8 FX price. Not RATES 10y on gold. Not a z_cut search.

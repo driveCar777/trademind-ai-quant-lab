@@ -1,0 +1,155 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "c05ebf48250f75ab083b2d6a0ced82e3f17e098f1f2e1534d9e6d486fd1283ac",
+  "discovery_id": "INVENTORY_V1",
+  "elapsed_seconds": 12.766301393508911,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-inv-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28709160,
+    "pid": 30535,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 33.5,
+      "AUX-therm": 34.0,
+      "CPU-therm": 36.0,
+      "GPU-therm": 35.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 35.0,
+      "Tdiode_tegra": 37.25,
+      "thermal-fan-est": 35.05
+    },
+    "ts": "2026-08-28T14:33:22Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "INV_DRAW_CROSS",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-INV-0003",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 360,
+      "start": "2025-07-06"
+    },
+    "parent_sha256": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": -0.004214809324503988,
+        "iterations": 2000,
+        "low": -0.007005364173219758,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": 0.01065711228356504,
+        "iterations": 2000,
+        "low": -0.01527728484412158,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": -0.0011185181163326785,
+      "cost_paid": 10.089249866387975,
+      "delta": -0.005621421870835877,
+      "effect_size": -0.3338292279618215,
+      "end_equity": 9925.756191595201,
+      "level_leak": false,
+      "max_drawdown": -0.007424380840479899,
+      "max_trade_share": 0.3997989822115756,
+      "mean_baseline": -0.000712100001956096,
+      "mean_signal": -0.006333521872791973,
+      "n_bars": 1679,
+      "n_eligible": 1673,
+      "n_feature": 1679,
+      "n_signal": 3,
+      "n_skip_overlap": 0,
+      "n_trade": 3,
+      "occupancy": 0.001786777843954735,
+      "raw_p": 0.5547226386806596,
+      "sharpe": -0.36281343139653227,
+      "total_return": -0.007424380840479916,
+      "trade_count": 3,
+      "turnover": 1.0121327145657182,
+      "win_count": 1
+    },
+    "side": 1,
+    "target_asset": "GOLD",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": -0.007116684996953884,
+        "iterations": 2000,
+        "low": -0.013546765244056961,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": -0.008333177070656717,
+        "iterations": 2000,
+        "low": -0.012321277716191474,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": -0.0027894753738703093,
+      "cost_paid": 5.847807004517572,
+      "delta": -0.010269464610330938,
+      "effect_size": -0.5208836872753725,
+      "end_equity": 9960.284591682297,
+      "level_leak": false,
+      "max_drawdown": -0.005240385890518085,
+      "max_trade_share": 0.8044446346375196,
+      "mean_baseline": 0.001335609217413552,
+      "mean_signal": -0.008933855392917385,
+      "n_bars": 360,
+      "n_eligible": 354,
+      "n_feature": 360,
+      "n_signal": 2,
+      "n_skip_overlap": 0,
+      "n_trade": 2,
+      "occupancy": 0.005555555555555556,
+      "raw_p": null,
+      "sharpe": -0.6155174794011222,
+      "total_return": -0.003971540831770315,
+      "trade_count": 2,
+      "turnover": 0.5864740805174165,
+      "win_count": 1
+    },
+    "window_hash": "4d37ecb39329ac612487e2ecdaa4426d296c4ca0ffb66cac842eaa49ac463aae"
+  },
+  "job_id": "INV-V1-Xavier-03-HYP-INV-0003",
+  "node": "Xavier-03",
+  "parent_hashes": {
+    "GOLD": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "OIL": "78b7389a14ac815d007a69b2c83c97f542405fa2093f39ce1cefe0ccfa39ecca"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "944195090e6fb835aba35be30a7a13ffee437256b9ed3e5610b23fc7116b2c05",
+  "window_hashes": {
+    "GOLD": "4d37ecb39329ac612487e2ecdaa4426d296c4ca0ffb66cac842eaa49ac463aae",
+    "OIL": "35f3fdda79f3e0c3521ffda0aa69e31c9ac4ddb57f5823e2ec494e3fae00dd32"
+  }
+}

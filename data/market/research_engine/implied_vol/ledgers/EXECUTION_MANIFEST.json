@@ -1,0 +1,66 @@
+{
+  "contract_hash": "f4bd4298a14eb0ac84cc7246319b4e3f323dc104583e5232902b8f289f5c3644",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "f4bd4298a14eb0ac84cc7246319b4e3f323dc104583e5232902b8f289f5c3644",
+      "elapsed_seconds": 15.970207452774048,
+      "end": "2026-08-28T14:18:33Z",
+      "exit_code": 0,
+      "experiment": "IMPLIED_VOL_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-28T14:18:17Z",
+      "stderr": "",
+      "stdout": "IV_JOB_DONE IV-V1-Xavier-03-HYP-IV-0003 12.9\nIV_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "f4bd4298a14eb0ac84cc7246319b4e3f323dc104583e5232902b8f289f5c3644",
+      "elapsed_seconds": 16.126378059387207,
+      "end": "2026-08-28T14:18:34Z",
+      "exit_code": 0,
+      "experiment": "IMPLIED_VOL_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-28T14:18:17Z",
+      "stderr": "",
+      "stdout": "IV_JOB_DONE IV-V1-Xavier-04-HYP-IV-0001 12.8\nIV_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "f4bd4298a14eb0ac84cc7246319b4e3f323dc104583e5232902b8f289f5c3644",
+      "elapsed_seconds": 16.68287992477417,
+      "end": "2026-08-28T14:18:34Z",
+      "exit_code": 0,
+      "experiment": "IMPLIED_VOL_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-28T14:18:17Z",
+      "stderr": "",
+      "stdout": "IV_JOB_DONE IV-V1-Xavier-02-HYP-IV-0002 13.6\nIV_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "f4bd4298a14eb0ac84cc7246319b4e3f323dc104583e5232902b8f289f5c3644",
+      "elapsed_seconds": 16.84546136856079,
+      "end": "2026-08-28T14:18:34Z",
+      "exit_code": 0,
+      "experiment": "IMPLIED_VOL_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-28T14:18:17Z",
+      "stderr": "",
+      "stdout": "IV_JOB_DONE IV-V1-Xavier-01-HYP-IV-0001 13.8\nIV_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-28T14:18:34Z"
+}

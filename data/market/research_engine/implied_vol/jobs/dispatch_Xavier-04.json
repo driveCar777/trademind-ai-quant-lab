@@ -1,0 +1,33 @@
+{
+  "discovery_id": "IMPLIED_VOL_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "IMPLIED_VOL_V1",
+      "family_id": "FAM-IV-CBOE-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-IV-0001"
+      ],
+      "job_id": "IV-V1-Xavier-04-HYP-IV-0001",
+      "node": "Xavier-04",
+      "note": "Worker executes this list only. Not V0.9. Not z_cut search.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-D1-20260828-000001",
+        "tm-market-OIL-D1-20260828-000001",
+        "tm-alt-CBOE-GVZ-D1-20260828-000001",
+        "tm-alt-CBOE-OVX-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "CROSS_CHECK",
+      "search_space_hash": "f4bd4298a14eb0ac84cc7246319b4e3f323dc104583e5232902b8f289f5c3644",
+      "seed": 20260828,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-04"
+}

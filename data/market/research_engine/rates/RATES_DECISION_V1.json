@@ -1,0 +1,10 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "RATES_V1",
+  "next_action": "KILL_FAMILY_THEN_NEXT_SOURCE",
+  "note": "Do not retune z_cut or flip sign. Do not read Final OOS.",
+  "optimize_forbidden": true,
+  "outcome": "NO_CANDIDATE",
+  "strategy_layer_allowed": false,
+  "zcut_change_forbidden": true
+}

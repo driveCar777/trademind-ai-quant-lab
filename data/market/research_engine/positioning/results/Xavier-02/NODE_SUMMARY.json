@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-pos-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28841812,
+    "pid": 28443,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 35.5,
+      "AUX-therm": 35.5,
+      "CPU-therm": 37.0,
+      "GPU-therm": 35.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 38.5,
+      "thermal-fan-est": 35.75
+    },
+    "ts": "2026-08-28T14:26:29Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "224f8f97924c7094ed2d232ff1d00014613d9c2839b6946c882fce101831a2d3",
+      "elapsed_seconds": 14.26931357383728,
+      "job_id": "POS-V1-Xavier-02-HYP-POS-0002"
+    }
+  ],
+  "node": "Xavier-02"
+}

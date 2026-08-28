@@ -1,0 +1,34 @@
+{
+  "discovery_id": "CARRY_V1A",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "CARRY_V1A",
+      "family_id": "FAM-CARRY-ON-0002",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-CARRYA-0001"
+      ],
+      "job_id": "CARRY-V1A-Xavier-04-HYP-CARRYA-0001",
+      "node": "Xavier-04",
+      "note": "Worker executes this list only. Not V0.8 price proxy. Not z_cut search.",
+      "parent_dataset_ids": [
+        "tm-market-EURUSD-D1-20260828-000001",
+        "tm-market-USDJPY-D1-20260828-000001",
+        "tm-alt-NYFED-EFFR-D1-20260828-000001",
+        "tm-alt-ECB-ESTR-D1-20260828-000001",
+        "tm-alt-BOJ-CALL-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "CROSS_CHECK",
+      "search_space_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+      "seed": 20260828,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-04"
+}

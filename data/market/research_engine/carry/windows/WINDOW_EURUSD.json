@@ -1,0 +1,28 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "dataset_id": "tm-market-EURUSD-D1-20260828-000001",
+  "final_oos": {
+    "ACCESS": "DENIED",
+    "end_date": "2026-08-28",
+    "exists": true,
+    "n": 2369,
+    "start_date": "2019-01-30"
+  },
+  "n": 15793,
+  "research": {
+    "bar_index_end": 11054,
+    "bar_index_start": 0,
+    "end_date": "2011-06-28",
+    "n": 11055,
+    "start_date": "1971-01-03"
+  },
+  "split": "70/15/15_on_target_sorted_d1_dates",
+  "validation": {
+    "bar_index_end": 13423,
+    "bar_index_start": 11055,
+    "end_date": "2019-01-29",
+    "n": 2369,
+    "start_date": "2011-06-29"
+  },
+  "window_hash": "3d02b7071d3c1e6b2630b1ec045f7c0d52267a9879a8e940b0a144dd96d5a782"
+}

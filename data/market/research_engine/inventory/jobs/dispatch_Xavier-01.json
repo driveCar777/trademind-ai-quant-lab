@@ -1,0 +1,32 @@
+{
+  "discovery_id": "INVENTORY_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "INVENTORY_V1",
+      "family_id": "FAM-INV-EIA-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-INV-0001"
+      ],
+      "job_id": "INV-V1-Xavier-01-HYP-INV-0001",
+      "node": "Xavier-01",
+      "note": "Worker executes this list only. Not V0.8 price proxy. Not z_cut search.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-D1-20260828-000001",
+        "tm-market-OIL-D1-20260828-000001",
+        "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "944195090e6fb835aba35be30a7a13ffee437256b9ed3e5610b23fc7116b2c05",
+      "seed": 20260828,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-01"
+}

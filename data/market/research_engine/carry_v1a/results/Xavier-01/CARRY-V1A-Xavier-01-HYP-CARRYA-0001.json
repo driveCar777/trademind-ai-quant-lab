@@ -1,0 +1,155 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "0d541fe5a87de43f1be0fcd1e84aeb1028d9e878373e90e09ead75c3daf505b8",
+  "discovery_id": "CARRY_V1A",
+  "elapsed_seconds": 12.04660415649414,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-carry-v1a",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28543988,
+    "pid": 30707,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 33.0,
+      "AUX-therm": 32.0,
+      "CPU-therm": 35.0,
+      "GPU-therm": 34.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 33.0,
+      "Tdiode_tegra": 37.0,
+      "thermal-fan-est": 33.5
+    },
+    "ts": "2026-08-28T14:55:25Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "CARRY_USD_RICH_CROSS",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-CARRYA-0001",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 324,
+      "start": "2025-08-17"
+    },
+    "parent_sha256": "4b1c1ae8b3d633bf4b133840ccdf39232a69277501c462ceb8413dd2eebd6ffb",
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.003790412629692204,
+        "iterations": 2000,
+        "low": -0.003321398880269795,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": 0.003163952005090142,
+        "iterations": 2000,
+        "low": -0.002724442341825213,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": -0.00608528582736878,
+      "cost_paid": 139.009503174015,
+      "delta": 0.0002037505111484139,
+      "effect_size": 0.02457775607712466,
+      "end_equity": 9641.093139095185,
+      "level_leak": false,
+      "max_drawdown": -0.045588237597926455,
+      "max_trade_share": 0.10146449446656389,
+      "mean_baseline": -0.0028362701550776327,
+      "mean_signal": -0.002632519643929219,
+      "n_bars": 1510,
+      "n_eligible": 1504,
+      "n_feature": 1510,
+      "n_signal": 26,
+      "n_skip_overlap": 0,
+      "n_trade": 25,
+      "occupancy": 0.017218543046357615,
+      "raw_p": 0.920039980009995,
+      "sharpe": -0.63836490619754,
+      "total_return": -0.035890686090481516,
+      "trade_count": 25,
+      "turnover": 13.889955449514966,
+      "win_count": 9
+    },
+    "side": -1,
+    "target_asset": "EURUSD",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": -1.4638909960504494e-05,
+        "iterations": 2000,
+        "low": -0.004405522469151416,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": -0.000258198286820957,
+        "iterations": 2000,
+        "low": -0.0020286065678864727,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": -0.016805470878164197,
+      "cost_paid": 42.006347091233025,
+      "delta": -0.0011291048041010888,
+      "effect_size": -0.14021949586548996,
+      "end_equity": 9785.108564859462,
+      "level_leak": false,
+      "max_drawdown": -0.02175878328715371,
+      "max_trade_share": 0.2501157452435264,
+      "mean_baseline": -0.003295710736600977,
+      "mean_signal": -0.004424815540702066,
+      "n_bars": 324,
+      "n_eligible": 318,
+      "n_feature": 324,
+      "n_signal": 9,
+      "n_skip_overlap": 0,
+      "n_trade": 8,
+      "occupancy": 0.027777777777777776,
+      "raw_p": null,
+      "sharpe": -1.828260984272474,
+      "total_return": -0.021489143514053843,
+      "trade_count": 8,
+      "turnover": 4.191990454720836,
+      "win_count": 1
+    },
+    "window_hash": "3ce8ad593ec3691fa45e3fda039d19ebef817291c89955a2d01d300adaf25ecf"
+  },
+  "job_id": "CARRY-V1A-Xavier-01-HYP-CARRYA-0001",
+  "node": "Xavier-01",
+  "parent_hashes": {
+    "EURUSD": "4b1c1ae8b3d633bf4b133840ccdf39232a69277501c462ceb8413dd2eebd6ffb",
+    "USDJPY": "235371baea924149bcdd8ffa164dc4599047d6549251f505666ed338ddbb1a0b"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+  "window_hashes": {
+    "EURUSD": "3ce8ad593ec3691fa45e3fda039d19ebef817291c89955a2d01d300adaf25ecf",
+    "USDJPY": "bcf134703d2279dfa4c57381e2282e2d6ad7c6769d5e232489d41d83989f43fd"
+  }
+}

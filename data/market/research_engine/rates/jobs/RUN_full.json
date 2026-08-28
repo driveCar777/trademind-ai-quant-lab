@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "4bbbab85b281b6890b7b38342a82ea649fb56b6ac523b8a28cd6cac854fd54ef",
+      "elapsed_seconds": 19.286368370056152,
+      "end": "2026-08-28T14:36:52Z",
+      "exit_code": 0,
+      "experiment": "RATES_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-28T14:36:33Z",
+      "stderr": "",
+      "stdout": "RATES_JOB_DONE RATES-V1-Xavier-04-HYP-RATES-0001 12.8\nRATES_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "4bbbab85b281b6890b7b38342a82ea649fb56b6ac523b8a28cd6cac854fd54ef",
+      "elapsed_seconds": 19.506991863250732,
+      "end": "2026-08-28T14:36:52Z",
+      "exit_code": 0,
+      "experiment": "RATES_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-28T14:36:33Z",
+      "stderr": "",
+      "stdout": "RATES_JOB_DONE RATES-V1-Xavier-03-HYP-RATES-0003 13.0\nRATES_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "4bbbab85b281b6890b7b38342a82ea649fb56b6ac523b8a28cd6cac854fd54ef",
+      "elapsed_seconds": 19.54626750946045,
+      "end": "2026-08-28T14:36:52Z",
+      "exit_code": 0,
+      "experiment": "RATES_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-28T14:36:33Z",
+      "stderr": "",
+      "stdout": "RATES_JOB_DONE RATES-V1-Xavier-02-HYP-RATES-0002 13.0\nRATES_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "4bbbab85b281b6890b7b38342a82ea649fb56b6ac523b8a28cd6cac854fd54ef",
+      "elapsed_seconds": 19.63143539428711,
+      "end": "2026-08-28T14:36:52Z",
+      "exit_code": 0,
+      "experiment": "RATES_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-28T14:36:33Z",
+      "stderr": "",
+      "stdout": "RATES_JOB_DONE RATES-V1-Xavier-01-HYP-RATES-0001 13.6\nRATES_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-28T14:36:52Z"
+}

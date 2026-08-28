@@ -1,0 +1,28 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "dataset_id": "tm-market-USDJPY-D1-20260828-000001",
+  "final_oos": {
+    "ACCESS": "DENIED",
+    "end_date": "2026-08-28",
+    "exists": true,
+    "n": 2370,
+    "start_date": "2019-01-29"
+  },
+  "n": 15798,
+  "research": {
+    "bar_index_end": 11057,
+    "bar_index_start": 0,
+    "end_date": "2011-06-26",
+    "n": 11058,
+    "start_date": "1971-01-03"
+  },
+  "split": "70/15/15_on_target_sorted_d1_dates",
+  "validation": {
+    "bar_index_end": 13427,
+    "bar_index_start": 11058,
+    "end_date": "2019-01-28",
+    "n": 2370,
+    "start_date": "2011-06-27"
+  },
+  "window_hash": "7ad19613656f48c56a9710dd1e2c610677b02fb57a5eca36ad12faf80bdec7dd"
+}

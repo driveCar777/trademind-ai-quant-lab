@@ -1,0 +1,97 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "carry_params": {
+    "z_cut": 2.0,
+    "z_lookback": 20
+  },
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "CARRY_V1",
+  "executed": false,
+  "family_id": "FAM-CARRY-ON-0001",
+  "feature_datasets": [
+    "tm-alt-NYFED-EFFR-D1-20260828-000001",
+    "tm-alt-ECB-ESTR-D1-20260828-000001",
+    "tm-alt-BOJ-CALL-D1-20260828-000001"
+  ],
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_BOTH_TARGETS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "CARRY_USD_RICH_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-CARRY-0001",
+      "mechanism": "EFFR minus ESTR z-cross above +2; USD funding richer; short EURUSD.",
+      "predicted_sign": -1,
+      "side": -1,
+      "target": "EURUSD",
+      "target_asset": "EURUSD"
+    },
+    {
+      "event": "CARRY_USD_RICH_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-CARRY-0002",
+      "mechanism": "EFFR minus BOJ call z-cross above +2; USD funding richer; long USDJPY.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "USDJPY",
+      "target_asset": "USDJPY"
+    },
+    {
+      "event": "CARRY_USD_CHEAP_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-CARRY-0003",
+      "mechanism": "EFFR minus ESTR z-cross below -2; EUR funding richer; long EURUSD.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "EURUSD",
+      "target_asset": "EURUSD"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-CARRY-0001",
+    "HYP-CARRY-0002",
+    "HYP-CARRY-0003"
+  ],
+  "knowledge_time_rule": "EFFR_T+1_13:00Z_ESTR_T+1_08:00Z_BOJ_T+1_01:00Z_then_NEXT_BAR_OPEN",
+  "not_price_only": true,
+  "not_rates_gold": true,
+  "not_v08_fx_price": true,
+  "not_zcut_search": true,
+  "parent_datasets": [
+    "tm-market-EURUSD-D1-20260828-000001",
+    "tm-market-USDJPY-D1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "0ccbac180f72da54bcdca046922b13a7637e811da3bc85caed3f479d9018a7cb",
+  "seed": 20260828,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_each_target_own_d1_dates"
+  }
+}

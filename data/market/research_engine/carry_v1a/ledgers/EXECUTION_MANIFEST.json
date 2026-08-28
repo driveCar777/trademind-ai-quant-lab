@@ -1,0 +1,66 @@
+{
+  "contract_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+      "elapsed_seconds": 21.77124309539795,
+      "end": "2026-08-28T14:55:36Z",
+      "exit_code": 0,
+      "experiment": "CARRY_V1A",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-28T14:55:14Z",
+      "stderr": "",
+      "stdout": "CARRY_JOB_DONE CARRY-V1A-Xavier-01-HYP-CARRYA-0001 12.0\nCARRY_NODE_DONE Xavier-01 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+      "elapsed_seconds": 21.95370388031006,
+      "end": "2026-08-28T14:55:36Z",
+      "exit_code": 0,
+      "experiment": "CARRY_V1A",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-28T14:55:14Z",
+      "stderr": "",
+      "stdout": "CARRY_JOB_DONE CARRY-V1A-Xavier-04-HYP-CARRYA-0001 11.5\nCARRY_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+      "elapsed_seconds": 22.338189601898193,
+      "end": "2026-08-28T14:55:37Z",
+      "exit_code": 0,
+      "experiment": "CARRY_V1A",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-28T14:55:14Z",
+      "stderr": "",
+      "stdout": "CARRY_JOB_DONE CARRY-V1A-Xavier-03-HYP-CARRYA-0003 11.7\nCARRY_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+      "elapsed_seconds": 24.31678557395935,
+      "end": "2026-08-28T14:55:39Z",
+      "exit_code": 0,
+      "experiment": "CARRY_V1A",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-28T14:55:14Z",
+      "stderr": "",
+      "stdout": "CARRY_JOB_DONE CARRY-V1A-Xavier-02-HYP-CARRYA-0002 13.7\nCARRY_NODE_DONE Xavier-02 1\n"
+    }
+  ],
+  "utc": "2026-08-28T14:55:39Z"
+}

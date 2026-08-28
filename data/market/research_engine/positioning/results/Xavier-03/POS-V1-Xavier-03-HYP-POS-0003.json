@@ -1,0 +1,142 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "57283dc2148d66bbce06913975a72c31957c82af512a45406feea2447c4236ce",
+  "discovery_id": "POSITIONING_V1",
+  "elapsed_seconds": 11.453028917312622,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-pos-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28709420,
+    "pid": 18848,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 33.0,
+      "AUX-therm": 33.5,
+      "CPU-therm": 35.5,
+      "GPU-therm": 34.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 34.0,
+      "Tdiode_tegra": 36.75,
+      "thermal-fan-est": 34.25
+    },
+    "ts": "2026-08-28T14:26:28Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "COM_LONG_CROSS",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-POS-0003",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 360,
+      "start": "2025-07-06"
+    },
+    "parent_sha256": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": -0.0010584684601228763,
+        "iterations": 2000,
+        "low": -0.014577466241547536,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": -0.0017984996566591752,
+        "iterations": 2000,
+        "low": -0.013704730149918423,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": -0.004222275031763645,
+      "cost_paid": 28.927414670260404,
+      "delta": -0.008035067007622233,
+      "effect_size": -0.477882938006461,
+      "end_equity": 9722.186878690502,
+      "level_leak": false,
+      "max_drawdown": -0.02814388550474505,
+      "max_trade_share": 0.1510129392944525,
+      "mean_baseline": -0.000712100001956096,
+      "mean_signal": -0.008747167009578328,
+      "n_bars": 1679,
+      "n_eligible": 1673,
+      "n_feature": 1679,
+      "n_signal": 10,
+      "n_skip_overlap": 0,
+      "n_trade": 10,
+      "occupancy": 0.005955926146515783,
+      "raw_p": 0.13843078460769614,
+      "sharpe": -0.8495155030109363,
+      "total_return": -0.02778131213094981,
+      "trade_count": 10,
+      "turnover": 2.905185752358003,
+      "win_count": 3
+    },
+    "side": 1,
+    "target_asset": "GOLD",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": null,
+      "cagr": 0.0,
+      "cost_paid": 0.0,
+      "delta": null,
+      "effect_size": null,
+      "end_equity": 10000.0,
+      "level_leak": false,
+      "max_drawdown": 0.0,
+      "max_trade_share": null,
+      "mean_baseline": 0.001335609217413552,
+      "mean_signal": null,
+      "n_bars": 360,
+      "n_eligible": 354,
+      "n_feature": 360,
+      "n_signal": 0,
+      "n_skip_overlap": 0,
+      "n_trade": 0,
+      "occupancy": 0.0,
+      "raw_p": null,
+      "sharpe": null,
+      "total_return": 0.0,
+      "trade_count": 0,
+      "turnover": 0.0,
+      "win_count": 0
+    },
+    "window_hash": "4d37ecb39329ac612487e2ecdaa4426d296c4ca0ffb66cac842eaa49ac463aae"
+  },
+  "job_id": "POS-V1-Xavier-03-HYP-POS-0003",
+  "node": "Xavier-03",
+  "parent_hashes": {
+    "GOLD": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "OIL": "78b7389a14ac815d007a69b2c83c97f542405fa2093f39ce1cefe0ccfa39ecca"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "4a1240f6059172baf283576aac082b0c62e0a0f56e5dae108e082dd76496caec",
+  "window_hashes": {
+    "GOLD": "4d37ecb39329ac612487e2ecdaa4426d296c4ca0ffb66cac842eaa49ac463aae",
+    "OIL": "35f3fdda79f3e0c3521ffda0aa69e31c9ac4ddb57f5823e2ec494e3fae00dd32"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "224f8f97924c7094ed2d232ff1d00014613d9c2839b6946c882fce101831a2d3",
+  "discovery_id": "POSITIONING_V1",
+  "elapsed_seconds": 12.94861388206482,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-pos-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28841316,
+    "pid": 28443,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 35.5,
+      "AUX-therm": 35.0,
+      "CPU-therm": 37.0,
+      "GPU-therm": 35.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 38.5,
+      "thermal-fan-est": 35.75
+    },
+    "ts": "2026-08-28T14:26:29Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "MM_WASH_CROSS",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-POS-0002",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 360,
+      "start": "2025-07-06"
+    },
+    "parent_sha256": "78b7389a14ac815d007a69b2c83c97f542405fa2093f39ce1cefe0ccfa39ecca",
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.04029108451588291,
+        "iterations": 2000,
+        "low": 0.02649639417917375,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": 0.02593097538573273,
+        "iterations": 2000,
+        "low": 0.02002688702052268,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": 0.0027476794777880897,
+      "cost_paid": 8.619349313459821,
+      "delta": 0.022938874061587927,
+      "effect_size": 0.3774310697675356,
+      "end_equity": 10184.167232516325,
+      "level_leak": false,
+      "max_drawdown": -0.005108893894485917,
+      "max_trade_share": 0.2817472995850677,
+      "mean_baseline": -0.0008945574278068769,
+      "mean_signal": 0.02204431663378105,
+      "n_bars": 1677,
+      "n_eligible": 1671,
+      "n_feature": 1677,
+      "n_signal": 8,
+      "n_skip_overlap": 0,
+      "n_trade": 8,
+      "occupancy": 0.004770423375074538,
+      "raw_p": 0.20889555222388806,
+      "sharpe": 0.45323652617474924,
+      "total_return": 0.018416723251632572,
+      "trade_count": 8,
+      "turnover": 0.8522956022544927,
+      "win_count": 6
+    },
+    "side": 1,
+    "target_asset": "OIL",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.009691719772325585,
+        "iterations": 2000,
+        "low": -0.0026803557660450964,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260828
+      },
+      "bootstrap_ci": {
+        "high": 0.007068845992845363,
+        "iterations": 2000,
+        "low": -0.00031221275580086707,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260828
+      },
+      "cagr": -0.0024229108969933133,
+      "cost_paid": 2.469917964363971,
+      "delta": 0.0035257537963459765,
+      "effect_size": 0.09927277473678145,
+      "end_equity": 9965.596830042308,
+      "level_leak": false,
+      "max_drawdown": -0.0051860053440674165,
+      "max_trade_share": 0.7481584695208161,
+      "mean_baseline": -0.002753180880242786,
+      "mean_signal": 0.0007725729161031907,
+      "n_bars": 359,
+      "n_eligible": 353,
+      "n_feature": 359,
+      "n_signal": 2,
+      "n_skip_overlap": 0,
+      "n_trade": 2,
+      "occupancy": 0.005571030640668524,
+      "raw_p": null,
+      "sharpe": -0.5253708706549659,
+      "total_return": -0.003440316995769188,
+      "trade_count": 2,
+      "turnover": 0.24858845903606352,
+      "win_count": 1
+    },
+    "window_hash": "35f3fdda79f3e0c3521ffda0aa69e31c9ac4ddb57f5823e2ec494e3fae00dd32"
+  },
+  "job_id": "POS-V1-Xavier-02-HYP-POS-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "GOLD": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "OIL": "78b7389a14ac815d007a69b2c83c97f542405fa2093f39ce1cefe0ccfa39ecca"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "4a1240f6059172baf283576aac082b0c62e0a0f56e5dae108e082dd76496caec",
+  "window_hashes": {
+    "GOLD": "4d37ecb39329ac612487e2ecdaa4426d296c4ca0ffb66cac842eaa49ac463aae",
+    "OIL": "35f3fdda79f3e0c3521ffda0aa69e31c9ac4ddb57f5823e2ec494e3fae00dd32"
+  }
+}

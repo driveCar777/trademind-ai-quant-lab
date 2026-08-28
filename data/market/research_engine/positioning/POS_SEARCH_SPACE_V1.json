@@ -1,0 +1,94 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "cot_params": {
+    "z_cut": 2.0,
+    "z_lookback": 52
+  },
+  "discovery_id": "POSITIONING_V1",
+  "executed": false,
+  "family_id": "FAM-POS-COT-0001",
+  "feature_datasets": [
+    "tm-alt-CFTC-GOLD-COT-W1-20260828-000002",
+    "tm-alt-CFTC-OIL-COT-W1-20260828-000002"
+  ],
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_BOTH_TARGETS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "MM_WASH_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-POS-0001",
+      "mechanism": "Gold managed-money net/OI z-cross below -2: speculator washout then bounce.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "MM_WASH_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-POS-0002",
+      "mechanism": "Oil managed-money net/OI z-cross below -2: speculator washout then bounce.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "OIL",
+      "target_asset": "OIL"
+    },
+    {
+      "event": "COM_LONG_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-POS-0003",
+      "mechanism": "Gold commercial net/OI z-cross above +2: commercials unusually long, subsequent gold bid.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-POS-0001",
+    "HYP-POS-0002",
+    "HYP-POS-0003"
+  ],
+  "knowledge_time_rule": "CFTC_Tuesday_asof_plus_Friday_21:00Z_then_NEXT_BAR_OPEN",
+  "not_v08_price_proxy": true,
+  "not_zcut_search": true,
+  "parent_datasets": [
+    "tm-market-GOLD-D1-20260828-000001",
+    "tm-market-OIL-D1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "4a1240f6059172baf283576aac082b0c62e0a0f56e5dae108e082dd76496caec",
+  "seed": 20260828,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_each_target_own_d1_dates"
+  }
+}

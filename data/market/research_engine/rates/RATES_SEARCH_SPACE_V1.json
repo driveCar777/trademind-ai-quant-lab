@@ -1,0 +1,93 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "RATES_V1",
+  "executed": false,
+  "family_id": "FAM-RATES-UST10-0001",
+  "feature_datasets": [
+    "tm-alt-UST-DGS10-D1-20260828-000001"
+  ],
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_BOTH_TARGETS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "RATE_UP_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RATES-0001",
+      "mechanism": "UST 10y z-cross above +2 tightens discount rates; gold sells off.",
+      "predicted_sign": -1,
+      "side": -1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "RATE_DOWN_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RATES-0002",
+      "mechanism": "UST 10y z-cross below -2 loosens financial conditions; gold bids.",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "RATE_UP_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RATES-0003",
+      "mechanism": "UST 10y z-cross above +2 tightens conditions; oil sells off.",
+      "predicted_sign": -1,
+      "side": -1,
+      "target": "OIL",
+      "target_asset": "OIL"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-RATES-0001",
+    "HYP-RATES-0002",
+    "HYP-RATES-0003"
+  ],
+  "knowledge_time_rule": "UST_session_date_plus_21:00Z_then_NEXT_BAR_OPEN",
+  "not_price_only": true,
+  "not_zcut_search": true,
+  "parent_datasets": [
+    "tm-market-GOLD-D1-20260828-000001",
+    "tm-market-OIL-D1-20260828-000001"
+  ],
+  "rates_params": {
+    "z_cut": 2.0,
+    "z_lookback": 20
+  },
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "4bbbab85b281b6890b7b38342a82ea649fb56b6ac523b8a28cd6cac854fd54ef",
+  "seed": 20260828,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_each_target_own_d1_dates"
+  }
+}
