@@ -1,0 +1,26 @@
+{
+  "memory_id": "KILLED_FAMILY_MEMORY_V3",
+  "checked_at": "2026-08-28T16:00:00Z",
+  "FINAL_OOS_TOUCHED": false,
+  "do_not_retune": true,
+  "records": [
+    {"family": "HYP-0001", "forbidden_reopen_pattern": "rewrite 14:11; parameter rescue", "status": "KILLED"},
+    {"family": "FACTOR_DISCOVERY_V0.1", "forbidden_reopen_pattern": "RSI MACD MA tickvol_z", "status": "KILLED"},
+    {"family": "STRATEGY_DISCOVERY_V0.5", "forbidden_reopen_pattern": "simple direction momentum reversal breakout", "status": "KILLED"},
+    {"family": "PROFIT_DISCOVERY_V0.6", "forbidden_reopen_pattern": "raise leverage to hit 10%", "status": "KILLED"},
+    {"family": "CROSS_ASSET_V0.8", "forbidden_reopen_pattern": "USDJPY→GOLD or EURUSD→GOLD variant", "status": "KILLED"},
+    {"family": "REGIME_TRANSITION_V0.9", "forbidden_reopen_pattern": "ADX14; VOL 33/67; hold change", "status": "KILLED"},
+    {"family": "CROSS_RESIDUAL_V0.91", "forbidden_reopen_pattern": "SMA60 residual parameter tweak", "status": "KILLED"},
+    {"family": "INSTITUTIONAL_TIME_V1.0", "forbidden_reopen_pattern": "month-end T-2; month-start T+3; flip sign; change hold", "status": "KILLED"},
+    {"family": "TIME_STRUCTURE_V1", "forbidden_reopen_pattern": "add Tokyo; weekday dummy; flip sign; change hold", "status": "KILLED"},
+    {"family": "MICROSTRUCTURE_SURPRISE_V1", "forbidden_reopen_pattern": "lower z_cut; raw tickvol level", "status": "KILLED"},
+    {"family": "REGIME_INTERACTION_V1", "forbidden_reopen_pattern": "ADX14; SMA60; V0.8 FX→metal", "status": "KILLED"},
+    {"family": "ALT_MARKET_STRUCTURE_V1", "forbidden_reopen_pattern": "weekday dummy; shrink gap_hours; flip sign", "status": "KILLED"},
+    {"family": "IMPLIED_VOL_V1", "forbidden_reopen_pattern": "GVZ z_cut; OVX sign flip; VRP lookback tweak", "status": "KILLED"},
+    {"family": "POSITIONING_V1", "forbidden_reopen_pattern": "lower z_cut; Tuesday as-of as knowledge; hold change", "status": "KILLED"},
+    {"family": "INVENTORY_V1", "forbidden_reopen_pattern": "EIA stocks z_cut; sign flip of build/draw; Cushing as rescue", "status": "KILLED"},
+    {"family": "RATES_V1", "forbidden_reopen_pattern": "UST10 z on GOLD/OIL; z_cut; hold change", "status": "KILLED"},
+    {"family": "CARRY_V1A", "forbidden_reopen_pattern": "overnight z_cut; drop occupancy gate; V0.8 EURUSD→GOLD", "status": "KILLED"},
+    {"family": "SUPPLY_V1", "forbidden_reopen_pattern": "production/util z_cut; hold change; sign flip; inventory isomorph", "status": "KILLED", "search_space_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1"}
+  ]
+}
