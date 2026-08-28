@@ -8,6 +8,10 @@ Not SUCCESS C (paid/trial sources are not exhausted; they need you).
 
 START_COMMIT: `98d1297f89e127d6f944ed5836b74bb05922c296`
 
+V3_START_COMMIT: `ddac36e4b318733ce6ca995872f35cbb7be6fd6f`
+
+END_COMMIT: `31bca81c3a6bf35812cb9d009554cef0489674f0`
+
 FINAL_OOS_TOUCHED: false
 
 order_send: false

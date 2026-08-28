@@ -2,6 +2,8 @@
   "mission_id": "DATA_EXPANSION_MISSION_V3",
   "title": "Data Expansion & Alpha Acquisition Mission V3.0",
   "start_commit": "98d1297f89e127d6f944ed5836b74bb05922c296",
+  "v3_start_commit": "ddac36e4b318733ce6ca995872f35cbb7be6fd6f",
+  "end_commit": "31bca81c3a6bf35812cb9d009554cef0489674f0",
   "started_at_utc": "2026-08-28T15:13:00Z",
   "secret_scan_at_start": "PASS",
   "level": 0,
