@@ -178,3 +178,7 @@ It is three living arrows (transition, residual, calendar) and a wall of killed/
 ## Next automatic task
 
 `RESEARCH_BACKLOG_V1.md` — 52 mechanisms, scored by the running pipeline.
+
+## 2026-08-28 V3 appendix
+
+Those three living arrows (transition / residual / calendar) were executed and killed in later missions. Public no-key add-ons (index IV, weekly COT, EIA stocks, UST10, overnight, EIA supply) are also killed. The living arrow is now **paid/trial new information** (Databento curve first). Not another indicator farm.

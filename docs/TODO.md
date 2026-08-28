@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** Alpha Research Mission V2.0 **STOP B**。Level 仍是 0。Candidate=0。
-> **最后更新:** 2026-08-28（IV/COT/EIA/UST10/CARRY_V1A 已跑并杀死；公开无密钥信息源耗尽）
-> **阶段终点:** STOP B。禁止调参救任何已杀家族。禁止 RSI/MACD/MA。下一美元 = 付费/人工新数据。
+> **当前活跃模块:** Data Expansion Mission V3.0 **WAIT_HUMAN**。Level 仍是 0。Candidate=0。
+> **最后更新:** 2026-08-28（SUPPLY_V1 已跑并杀死；工厂/供应商/采购包已写；等人买 Databento）
+> **阶段终点:** HUMAN_REQUIRED。禁止调参救任何已杀家族。禁止 RSI/MACD/MA。下一动作 = `HUMAN_DATA_PURCHASE_ACTION_PACK.md`。
 
 ---
 
@@ -45,6 +45,19 @@
 | REC V1 | Alpha Recovery（forensics + 一个纸面合同） | ✅ DESIGN | 2026-08-27 |
 | MISSION V1.1 | IT → TS → MS → RI → AMS | ✅ STOP B | 2026-08-28 |
 | MISSION V2.0 | IV → COT → EIA → UST10 → FX overnight carry | ✅ STOP B | 2026-08-28 |
+| MISSION V3.0 | Data factory + EIA supply + vendor/purchase pack | ⏸ WAIT_HUMAN | 2026-08-28 |
+
+## Data Expansion Mission V3.0 — WAIT_HUMAN 2026-08-28
+
+目标不是策略。目标是新 Information Set。
+
+- 工厂：`research_engine/data_expansion/` + `research_engine/data_sources/`
+- 免费新源：EIA 产量 + 开工率。SUPPLY_V1 四 Xavier **NO_CANDIDATE**。KILLED。不要 z_cut。
+- 仍 BLOCKED：futures curve、option surface、macro consensus、GLD file、structured news。
+- 人类唯一下一步：Databento 注册拿 $125 credits，key 写入 `.env` 的 `TRADEMIND_DATABENTO_API_KEY`。
+- 报告：`DATA_EXPANSION_MISSION_V3_REPORT.md`。采购包：`HUMAN_DATA_PURCHASE_ACTION_PACK.md`。
+
+key 进 `.env` 之后 Cursor 从 ACQUIRE 继续，不要再写一份排序然后停。
 
 ## Alpha Research Mission V2.0 — STOP B 2026-08-28
 

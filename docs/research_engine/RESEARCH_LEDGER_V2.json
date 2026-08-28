@@ -3,7 +3,7 @@
   "FINAL_OOS_TOUCHED": false,
   "start_commit": "48bc5e8d072c8942f7c6e92266bef91d3ca78a43",
   "end_commit": "6365ade9e99eb4f193e79c0accf7f636605e51ce",
-  "n": 6,
+  "n": 7,
   "rows": [
     {
       "research_id": "RESEARCH-2026-0006",
@@ -66,6 +66,17 @@
       "hypothesis": ["HYP-CARRYA-0001", "HYP-CARRYA-0002", "HYP-CARRYA-0003"],
       "data": ["tm-alt-NYFED-EFFR-D1-20260828-000001", "tm-alt-ECB-ESTR-D1-20260828-000001", "tm-alt-BOJ-CALL-D1-20260828-000001", "tm-market-EURUSD-D1-20260828-000001", "tm-market-USDJPY-D1-20260828-000001"],
       "contract_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "research_id": "RESEARCH-2026-0012",
+      "family": "SUPPLY_V1",
+      "hypothesis": ["HYP-SUP-0001", "HYP-SUP-0002", "HYP-SUP-0003"],
+      "data": ["tm-alt-EIA-USCRUDE-PROD-W1-20260828-000001", "tm-alt-EIA-USREFIN-UTIL-W1-20260828-000001"],
+      "contract_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
       "result": "NO_CANDIDATE",
       "decision": "KILLED",
       "xavier": true,

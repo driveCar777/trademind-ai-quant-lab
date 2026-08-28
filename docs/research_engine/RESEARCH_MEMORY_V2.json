@@ -58,6 +58,15 @@
       "failure": "0001 FALSIFIED after cost; 0002/0003 INCONCLUSIVE",
       "why_failed": "Overnight carry z-cross hold=5 is not a two-target FDR edge",
       "reopen_conditions": "futures curve / always-on occupancy redesign would be a new family and must not loosen 0.40 to farm; paid surface still blocked"
+    },
+    {
+      "what": "SUPPLY_V1",
+      "why": "Production and utilization are not inventory stocks",
+      "data": "EIA WCRFPUS2 + WPULEUS3 20260828",
+      "result": "NO_CANDIDATE",
+      "failure": "0001/0003 research n=7; 0002 n=1; occupancy <0.5%",
+      "why_failed": "Weekly supply z-cross too sparse on Ava D1 after costed gates",
+      "reopen_conditions": "not another EIA weekly z_cut; Cushing/gasoline are inventory isomorphs"
     }
   ],
   "still_unknown": [
@@ -71,7 +80,7 @@
     },
     {
       "mechanism": "commodity futures roll / basis",
-      "status": "DATA_BLOCKED"
+      "status": "DATA_BLOCKED HUMAN_REQUIRED Databento credits"
     },
     {
       "mechanism": "gold ETF / official sector flows",

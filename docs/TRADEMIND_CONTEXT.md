@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-28 (Alpha Research Mission V2.0 STOP B：IV/COT/EIA/UST10/overnight carry 已跑；Level=0；Candidate=0)  
+> **更新时间:** 2026-08-28 (Data Expansion Mission V3.0 WAIT_HUMAN：SUPPLY_V1 NO_CANDIDATE；等人买 Databento；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -338,7 +338,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **Alpha Pipeline 2026-08-26：** 52 机制题打分（live=29）。簇：RT 1600 / Residual 576 / Calendar 540。两簇现已跑败。
 - **Alpha Recovery V1.0 FACT 2026-08-27：** 失败分析系统已落地。覆盖：direction 83% / RV 40% / transition 50% / risk premium 0% / event 0% / institutional time 0%。主因 **A**（无可用预测信息）。选出 **一个** 新家族：`INSTITUTIONAL_TIME_V1.0`（month-end/start，不是 weekday）。hash `1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457`。当时未执行。
 - **Alpha Mission V1.1 FACT 2026-08-28 STOP B：** IT 已跑（WEAK_EDGE，FDR 0/3，四 Xavier 01=04）。随后 Time Structure / Microstructure Surprise / Regime Interaction / Alt Market Structure 全部 **NO_CANDIDATE / FALSIFIED**。Level 仍 0。Candidate=0。GOLD/OIL D1 最大 **7.715y**（BROKER_LIMITATION，2018-12-12）。新 H1 约 7.7y 已冻成 `20260828-000001`。不要调参救 IT/TS/MS/RI/AMS。不要读 Final OOS。见 `ALPHA_MISSION_V1.1_REPORT.md`。
-- **Alpha Research Mission V2.0 FACT 2026-08-28 STOP B：** 信息集已扩大并测完当前无密钥公开源。IMPLIED_VOL / POSITIONING / INVENTORY / RATES / CARRY_V1A 全部 **NO_CANDIDATE**，四 Xavier，01=04。CARRY_V1 是 INVALID_ALIGNMENT（1971 FX 窗口早于 €STR），不是机制结论。Level 仍 0。Candidate=0。仍 BLOCKED：option smile、macro consensus、futures curve、gold ETF file、news schema。不要调 IV/COT/EIA/UST10/overnight z_cut。不要读 Final OOS。见 `ALPHA_RESEARCH_MISSION_V2_REPORT.md`。
+- **Alpha Research Mission V2.0 FACT 2026-08-28 STOP B：** 信息集已扩大并测完当时无密钥公开源。IMPLIED_VOL / POSITIONING / INVENTORY / RATES / CARRY_V1A 全部 **NO_CANDIDATE**，四 Xavier，01=04。CARRY_V1 是 INVALID_ALIGNMENT（1971 FX 窗口早于 €STR），不是机制结论。Level 仍 0。Candidate=0。不要调 IV/COT/EIA stocks/UST10/overnight z_cut。不要读 Final OOS。见 `ALPHA_RESEARCH_MISSION_V2_REPORT.md`。
+- **Data Expansion Mission V3.0 FACT 2026-08-28 WAIT_HUMAN：** 数据工厂已落地。EIA 产量+开工率已冻成新 ID 并跑 SUPPLY_V1（hash `4f6548b3…b16f1`）四 Xavier **NO_CANDIDATE**。不是库存重包装。指数 IV ≠ option surface。CFD ≠ futures curve。花费 $0。下一人类动作 = Databento $125 credits，key 只进 `.env`。见 `DATA_EXPANSION_MISSION_V3_REPORT.md` 与 `HUMAN_DATA_PURCHASE_ACTION_PACK.md`。
 
 ---
 
@@ -420,6 +421,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P49 | Alpha Recovery Program V1.0 | DONE（forensics + 纸面合同；当时未跑） |
 | P50 | Alpha Mission V1.1 | DONE（STOP B；IT/TS/MS/RI/AMS 已跑；Level 0；Candidate=0） |
 | P51 | Alpha Research Mission V2.0 | DONE（STOP B；IV/COT/EIA/UST10/CARRY_V1A 已跑；Level 0；Candidate=0） |
+| P52 | Data Expansion Mission V3.0 | WAIT_HUMAN（工厂+SUPPLY_V1 已跑；Databento credits 待买；Level 0；Candidate=0） |
 
 ---
 

@@ -36,6 +36,8 @@ TradeMind 的研究引擎（合同、不可变数据、四 Xavier、hash、null�
 **还没研究、且现在磁盘上可能起步的主未知：Regime Transition（状态变化，不是状态水平）。**  
 Carry / IV / 新闻 / 订单流 / 另类数据：**不是 TODO，是 DATA BLOCKED。** 写 TODO 会假装能做。
 
+**2026-08-28 V3 appendix (does not rewrite the 2026-08-26 design):** V0.9 / residual / IT / public IV / COT / EIA stocks / UST / overnight / EIA supply are now **KILLED or INVALID**. Remaining coverage holes that can still change P(Level 1): **futures curve** and **option surface** (HUMAN). See `INFORMATION_GAP_MATRIX_V2.json`.
+
 ---
 
 ## Current Evidence

@@ -1,7 +1,7 @@
 {
   "database_id": "FAILED_ALPHA_DATABASE_V2",
   "FINAL_OOS_TOUCHED": false,
-  "n": 17,
+  "n": 18,
   "records": [
     {
       "family": "HYP-0001",
@@ -185,6 +185,18 @@
       "status": "KILLED",
       "search_space_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
       "tag": "RESEARCH-2026-0011",
+      "cross_check_match": true
+    },
+    {
+      "family": "SUPPLY_V1",
+      "mechanism": "EIA crude production WoW z-cross and refinery utilization z-cross",
+      "what_was_tested": "HYP-SUP-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; all INCONCLUSIVE; occupancy 0.06%–0.4%",
+      "why": "Not INVENTORY_V1 stocks. Weekly supply z-cross too sparse on 7.715y Ava D1. Do not lower z_cut. Do not open Cushing as rescue.",
+      "forbidden_reopen_pattern": "production/util z_cut; hold change; sign flip; inventory isomorph",
+      "status": "KILLED",
+      "search_space_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
+      "tag": "RESEARCH-2026-0012",
       "cross_check_match": true
     }
   ]

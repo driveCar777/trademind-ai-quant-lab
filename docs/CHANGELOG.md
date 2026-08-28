@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-08-28 — Data Expansion Mission V3.0 WAIT_HUMAN
+
+- 数据工厂：`research_engine/data_expansion/` + `research_engine/data_sources/`（统一 fetch→hash，无字节不得 READY）。
+- 新公开数据：EIA 产量 / 开工率 `20260828-000001`。SUPPLY_V1 四 Xavier **NO_CANDIDATE**。不是库存家族。
+- 供应商核验（当日页）：Databento $125 credits / Standard $199；ORATS $599+$99；CME DataMine $105–$2100；TE 价页 403。
+- 人类采购包：只买 Databento credits。见 `HUMAN_DATA_PURCHASE_ACTION_PACK.md`。
+- 花费 $0。Level 仍 0。Candidate=0。Final OOS 未读。未 `order_send`。
+
 ## 2026-08-28 — Alpha Research Mission V2.0 STOP B
 
 - 新公开数据（新 ID，未覆盖 20260825）：CBOE GVZ/OVX、CFTC COT Friday knowledge、EIA WCESTUS1、UST 10y、NY Fed EFFR、ECB €STR、BOJ overnight call。

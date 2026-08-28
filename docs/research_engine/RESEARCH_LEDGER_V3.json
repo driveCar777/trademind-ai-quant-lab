@@ -1,0 +1,20 @@
+{
+  "ledger_id": "RESEARCH_LEDGER_V3",
+  "FINAL_OOS_TOUCHED": false,
+  "start_commit": "98d1297f89e127d6f944ed5836b74bb05922c296",
+  "phase": "WAIT_HUMAN",
+  "n": 1,
+  "rows": [
+    {
+      "research_id": "RESEARCH-2026-0012",
+      "family": "SUPPLY_V1",
+      "hypothesis": ["HYP-SUP-0001", "HYP-SUP-0002", "HYP-SUP-0003"],
+      "data": ["tm-alt-EIA-USCRUDE-PROD-W1-20260828-000001", "tm-alt-EIA-USREFIN-UTIL-W1-20260828-000001"],
+      "contract_hash": "4f6548b39376eb773f772d739a06a8f0d436e52b02d5366b49aeacc61dbb16f1",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    }
+  ]
+}

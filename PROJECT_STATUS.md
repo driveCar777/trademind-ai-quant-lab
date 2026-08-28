@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-28（Mission V2.0 STOP B；IV/COT/EIA/UST10/CARRY_V1A 已跑；Level 0；Candidate=0）  
+**最后更新：** 2026-08-28（Mission V3.0 WAIT_HUMAN；SUPPLY_V1 NO_CANDIDATE；等人买 Databento；Level 0；Candidate=0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + V0.8/V0.9/V0.91 FROZEN + **Mission V1.1 STOP B** + **Mission V2.0 STOP B** |
-| 状态 | Level 0。Candidate=0。IV/COT/EIA/UST10/CARRY_V1A NO_CANDIDATE。 |
-| 当前 Phase | STOP B。公开无密钥信息源已耗尽。不要调参救。不要读 Final OOS。下一美元 = 付费/人工新数据。 |
+| 版本 | **V11.7** + … + **Mission V2.0 STOP B** + **Mission V3.0 WAIT_HUMAN** |
+| 状态 | Level 0。Candidate=0。SUPPLY_V1 NO_CANDIDATE。曲线/期权面仍 BLOCKED。 |
+| 当前 Phase | WAIT_HUMAN。下一动作 = Databento $125 credits。不要再调 EIA z_cut。不要读 Final OOS。 |
 
 ---
 
