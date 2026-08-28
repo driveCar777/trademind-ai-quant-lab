@@ -1,0 +1,13 @@
+{
+  "duplicate_count": 0,
+  "fail_reasons": [],
+  "first_timestamp": "1990-11-02T00:00:00Z",
+  "last_timestamp": "2026-08-21T00:00:00Z",
+  "look_ahead_guard": "knowledge_time_utc=Wednesday_16:00Z_after_week_ending_Friday",
+  "row_count": 1869,
+  "validation_status": "PASS",
+  "warn_reasons": [
+    "week_ending_not_release_date",
+    "revisions_not_vintaged"
+  ]
+}
