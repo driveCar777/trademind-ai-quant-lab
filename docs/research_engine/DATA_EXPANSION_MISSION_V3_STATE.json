@@ -1,0 +1,19 @@
+{
+  "mission_id": "DATA_EXPANSION_MISSION_V3",
+  "title": "Data Expansion & Alpha Acquisition Mission V3.0",
+  "start_commit": "98d1297f89e127d6f944ed5836b74bb05922c296",
+  "started_at_utc": "2026-08-28T15:13:00Z",
+  "secret_scan_at_start": "PASS",
+  "level": 0,
+  "level_1_candidate": 0,
+  "strategy": 0,
+  "paper": 0,
+  "mt5": "FORBIDDEN_ORDER_SEND",
+  "final_oos_touched": false,
+  "phase": "WAIT_HUMAN",
+  "human_action": "docs/research_engine/HUMAN_DATA_PURCHASE_ACTION_PACK.md",
+  "supply_v1": "NO_CANDIDATE",
+  "success_conditions": ["SUCCESS_A_READY_PLUS_NEW_MECHANISM", "SUCCESS_B_LEVEL_1_CANDIDATE", "SUCCESS_C_OBTAINABLE_SOURCES_EXHAUSTED"],
+  "stop_allowed": ["HUMAN_REQUIRED", "PAYMENT_REQUIRED", "LEGAL_LICENSE_REQUIRED", "CREDENTIAL_REQUIRED", "FINAL_OOS_ACCESS", "FREEZE_MODIFICATION", "REAL_TRADING", "ORDER_SEND"],
+  "note": "START pointer is Mission V2.0 END. Do not rewrite V2 history."
+}
