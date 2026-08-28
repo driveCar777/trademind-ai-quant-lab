@@ -16,16 +16,23 @@
     {"hypothesis": "HYP-TS-0001..0003", "mechanism": "London/NY session open", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "costed long session-open destroyed equity; do not flip", "related_family": "TIME_STRUCTURE_V1"},
     {"hypothesis": "HYP-MS-0001..0003", "mechanism": "same-hour vol surprise", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "costed surprise long lost money; not FD level", "related_family": "MICROSTRUCTURE_SURPRISE_V1"},
     {"hypothesis": "HYP-RI-0001..0003", "mechanism": "relative RV / joint vol", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "wrong sign after cost", "related_family": "REGIME_INTERACTION_V1"},
-    {"hypothesis": "HYP-AMS-0001..0003", "mechanism": ">=36h gap reopen", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "not weekday; costed long reopen lost money", "related_family": "ALT_MARKET_STRUCTURE_V1"}
+    {"hypothesis": "HYP-AMS-0001..0003", "mechanism": ">=36h gap reopen", "dataset": "GOLD/OIL H1 20260828", "status": "FALSIFIED", "result": "NO_CANDIDATE", "why_failed": "not weekday; costed long reopen lost money", "related_family": "ALT_MARKET_STRUCTURE_V1"},
+    {"hypothesis": "HYP-IV-0001..0003", "mechanism": "CBOE GVZ/OVX / VRP", "dataset": "GOLD/OIL D1 20260828 + CBOE", "status": "NO_CANDIDATE", "result": "killed", "why_failed": "index IV not two-target FDR", "related_family": "IMPLIED_VOL_V1"},
+    {"hypothesis": "HYP-POS-0001..0003", "mechanism": "CFTC positioning Friday knowledge", "dataset": "COT W1 000002", "status": "NO_CANDIDATE", "result": "killed", "why_failed": "validation n<4; do not lower z", "related_family": "POSITIONING_V1"},
+    {"hypothesis": "HYP-INV-0001..0003", "mechanism": "EIA inventory shock", "dataset": "EIA WCESTUS1", "status": "NO_CANDIDATE", "result": "killed", "why_failed": "sparse / not profitable", "related_family": "INVENTORY_V1"},
+    {"hypothesis": "HYP-RATES-0001..0003", "mechanism": "UST 10y z-cross", "dataset": "GOLD/OIL D1 20260828 + DGS10", "status": "NO_CANDIDATE", "result": "killed", "why_failed": "not profitable", "related_family": "RATES_V1"},
+    {"hypothesis": "HYP-CARRYA-0001..0003", "mechanism": "overnight FX carry differential", "dataset": "EURUSD/USDJPY D1 20260828 + EFFR/ESTR/BOJ", "status": "NO_CANDIDATE", "result": "killed", "why_failed": "0001 FALSIFIED after cost", "related_family": "CARRY_V1A"}
   ],
   "still_unknown": [
-    {"mechanism": "IV / options", "status": "DATA_BLOCKED"},
-    {"mechanism": "carry / funding", "status": "DATA_BLOCKED"},
-    {"mechanism": "news / alternative text", "status": "DATA_BLOCKED"},
+    {"mechanism": "option smile / term / skew", "status": "DATA_BLOCKED"},
+    {"mechanism": "macro surprise actual vs consensus", "status": "DATA_BLOCKED"},
+    {"mechanism": "commodity futures roll / basis", "status": "DATA_BLOCKED"},
+    {"mechanism": "gold ETF / official sector flows", "status": "DATA_BLOCKED"},
+    {"mechanism": "structured news events", "status": "DATA_BLOCKED"},
     {"mechanism": "true 10y GOLD/OIL D1", "status": "BROKER_LIMITATION 7.715y from 2018-12-12"}
   ],
   "ai_assisted": {
     "allowed": false,
-    "why": "All researchable economic families on current data are KILLED. AI feature generation would be result-adjacent farming or a reopen. Remaining mechanisms need new data (IV/carry/news) not a new z-cut."
+    "why": "Public no-key information sources that open a new mechanism are tested and killed. Remaining gaps need paid/human data. Not a new z-cut. See RESEARCH_MEMORY_V2.json."
   }
 }

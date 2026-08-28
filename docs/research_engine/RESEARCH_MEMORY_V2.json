@@ -1,0 +1,93 @@
+{
+  "memory_id": "RESEARCH_MEMORY_V2",
+  "FINAL_OOS_TOUCHED": false,
+  "level": 0,
+  "candidate": 0,
+  "stop": "B",
+  "rows": [
+    {
+      "what": "IMPLIED_VOL_V1",
+      "why": "First public IV information on this machine",
+      "data": "CBOE GVZ/OVX index levels",
+      "result": "NO_CANDIDATE",
+      "failure": "0001 validation sign; 0002 falsified; 0003 research sign",
+      "why_failed": "Index IV shock/VRP did not survive costed two-window FDR two-target",
+      "reopen_conditions": "full smile/term/skew history, not another GVZ z_cut"
+    },
+    {
+      "what": "POSITIONING_V1",
+      "why": "Positioning is not price-lag",
+      "data": "CFTC GOLD/OIL 000002 Friday knowledge",
+      "result": "NO_CANDIDATE",
+      "failure": "validation n<4 after leak-free Friday align",
+      "why_failed": "Weekly z<-2 washout is too rare on 70/15/15. Do not lower z",
+      "reopen_conditions": "longer COT or a different positioning statistic, not Tuesday knowledge"
+    },
+    {
+      "what": "INVENTORY_V1",
+      "why": "Physical oil stocks are not price",
+      "data": "EIA WCESTUS1",
+      "result": "NO_CANDIDATE",
+      "failure": "0001/0003 n=3; 0002 not profitable",
+      "why_failed": "Weekly inventory z-cross too sparse / no edge",
+      "reopen_conditions": "new physical series (product stocks, Cushing, gold ETF file), not EIA z_cut"
+    },
+    {
+      "what": "RATES_V1",
+      "why": "Discount-rate shock vs price-only",
+      "data": "UST 10y",
+      "result": "NO_CANDIDATE",
+      "failure": "not profitable; validation thin on up-cross",
+      "why_failed": "10y z-cross on GOLD/OIL is not a Level 1 edge",
+      "reopen_conditions": "not another UST10 z on GOLD/OIL"
+    },
+    {
+      "what": "CARRY_V1",
+      "why": "FX overnight differential",
+      "data": "EFFR ESTR BOJ + EURUSD/USDJPY D1 20260828",
+      "result": "INVALID_ALIGNMENT",
+      "failure": "research window before ESTR",
+      "why_failed": "70/15/15 on 1971 FX history",
+      "reopen_conditions": "do not reopen; superseded by V1A"
+    },
+    {
+      "what": "CARRY_V1A",
+      "why": "Same carry after overlap filter",
+      "data": "bars from first known carry",
+      "result": "NO_CANDIDATE",
+      "failure": "0001 FALSIFIED after cost; 0002/0003 INCONCLUSIVE",
+      "why_failed": "Overnight carry z-cross hold=5 is not a two-target FDR edge",
+      "reopen_conditions": "futures curve / always-on occupancy redesign would be a new family and must not loosen 0.40 to farm; paid surface still blocked"
+    }
+  ],
+  "still_unknown": [
+    {
+      "mechanism": "option smile / term / skew / risk reversal",
+      "status": "DATA_BLOCKED"
+    },
+    {
+      "mechanism": "macro surprise actual vs consensus",
+      "status": "DATA_BLOCKED"
+    },
+    {
+      "mechanism": "commodity futures roll / basis",
+      "status": "DATA_BLOCKED"
+    },
+    {
+      "mechanism": "gold ETF / official sector flows",
+      "status": "DATA_BLOCKED"
+    },
+    {
+      "mechanism": "structured news events",
+      "status": "DATA_BLOCKED"
+    },
+    {
+      "mechanism": "true 10y GOLD/OIL D1",
+      "status": "BROKER_LIMITATION 7.715y from 2018-12-12"
+    }
+  ],
+  "ai_assisted": {
+    "allowed": false,
+    "why": "Public no-key information that opens a new mechanism has been tested. LLM text→buy/sell is forbidden. ML waits until a new information source exists."
+  }
+}

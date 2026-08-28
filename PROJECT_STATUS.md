@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-28（Mission V1.1 STOP B；IT/TS/MS/RI/AMS 已跑；Level 0；Candidate=0）  
+**最后更新：** 2026-08-28（Mission V2.0 STOP B；IV/COT/EIA/UST10/CARRY_V1A 已跑；Level 0；Candidate=0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + V0.8/V0.9/V0.91 FROZEN + **Mission V1.1 STOP B** |
-| 状态 | Level 0。Candidate=0。IT WEAK_EDGE 已杀。TS/MS/RI/AMS FALSIFIED。 |
-| 当前 Phase | STOP B。不要调参救。不要读 Final OOS。下一美元 = 新数据（IV/carry/10y 商品），不是新 z-cut。 |
+| 版本 | **V11.7** + … + V0.8/V0.9/V0.91 FROZEN + **Mission V1.1 STOP B** + **Mission V2.0 STOP B** |
+| 状态 | Level 0。Candidate=0。IV/COT/EIA/UST10/CARRY_V1A NO_CANDIDATE。 |
+| 当前 Phase | STOP B。公开无密钥信息源已耗尽。不要调参救。不要读 Final OOS。下一美元 = 付费/人工新数据。 |
 
 ---
 

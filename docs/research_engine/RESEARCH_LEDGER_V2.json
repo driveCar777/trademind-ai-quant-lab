@@ -1,0 +1,75 @@
+{
+  "ledger_id": "RESEARCH_LEDGER_V2",
+  "FINAL_OOS_TOUCHED": false,
+  "start_commit": "48bc5e8d072c8942f7c6e92266bef91d3ca78a43",
+  "end_commit": "pending",
+  "n": 6,
+  "rows": [
+    {
+      "research_id": "RESEARCH-2026-0006",
+      "family": "IMPLIED_VOL_V1",
+      "hypothesis": ["HYP-IV-0001", "HYP-IV-0002", "HYP-IV-0003"],
+      "data": ["tm-alt-CBOE-GVZ-D1-20260828-000001", "tm-alt-CBOE-OVX-D1-20260828-000001", "tm-market-GOLD-D1-20260828-000001", "tm-market-OIL-D1-20260828-000001"],
+      "contract_hash": "f4bd4298a14eb0ac84cc7246319b4e3f323dc104583e5232902b8f289f5c3644",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "research_id": "RESEARCH-2026-0007",
+      "family": "POSITIONING_V1",
+      "hypothesis": ["HYP-POS-0001", "HYP-POS-0002", "HYP-POS-0003"],
+      "data": ["tm-alt-CFTC-GOLD-COT-W1-20260828-000002", "tm-alt-CFTC-OIL-COT-W1-20260828-000002"],
+      "contract_hash": "4a1240f6059172baf283576aac082b0c62e0a0f56e5dae108e082dd76496caec",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "research_id": "RESEARCH-2026-0008",
+      "family": "INVENTORY_V1",
+      "hypothesis": ["HYP-INV-0001", "HYP-INV-0002", "HYP-INV-0003"],
+      "data": ["tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001"],
+      "contract_hash": "944195090e6fb835aba35be30a7a13ffee437256b9ed3e5610b23fc7116b2c05",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "research_id": "RESEARCH-2026-0009",
+      "family": "RATES_V1",
+      "hypothesis": ["HYP-RATES-0001", "HYP-RATES-0002", "HYP-RATES-0003"],
+      "data": ["tm-alt-UST-DGS10-D1-20260828-000001"],
+      "contract_hash": "4bbbab85b281b6890b7b38342a82ea649fb56b6ac523b8a28cd6cac854fd54ef",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    },
+    {
+      "research_id": "RESEARCH-2026-0010",
+      "family": "CARRY_V1",
+      "hypothesis": ["HYP-CARRY-0001", "HYP-CARRY-0002", "HYP-CARRY-0003"],
+      "data": ["tm-alt-NYFED-EFFR-D1-20260828-000001", "tm-alt-ECB-ESTR-D1-20260828-000001", "tm-alt-BOJ-CALL-D1-20260828-000001"],
+      "contract_hash": "0ccbac180f72da54bcdca046922b13a7637e811da3bc85caed3f479d9018a7cb",
+      "result": "INVALID_ALIGNMENT",
+      "decision": "NOT_A_MECHANISM_RESULT",
+      "xavier": true,
+      "note": "Research window pre-ESTR. See CARRY_V1A."
+    },
+    {
+      "research_id": "RESEARCH-2026-0011",
+      "family": "CARRY_V1A",
+      "hypothesis": ["HYP-CARRYA-0001", "HYP-CARRYA-0002", "HYP-CARRYA-0003"],
+      "data": ["tm-alt-NYFED-EFFR-D1-20260828-000001", "tm-alt-ECB-ESTR-D1-20260828-000001", "tm-alt-BOJ-CALL-D1-20260828-000001", "tm-market-EURUSD-D1-20260828-000001", "tm-market-USDJPY-D1-20260828-000001"],
+      "contract_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+      "result": "NO_CANDIDATE",
+      "decision": "KILLED",
+      "xavier": true,
+      "cross_check_match": true
+    }
+  ]
+}

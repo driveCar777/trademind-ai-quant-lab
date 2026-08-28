@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-28 (Alpha Mission V1.1 STOP B：IT/TS/MS/RI/AMS 已跑；Level=0；Candidate=0)  
+> **更新时间:** 2026-08-28 (Alpha Research Mission V2.0 STOP B：IV/COT/EIA/UST10/overnight carry 已跑；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -338,6 +338,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **Alpha Pipeline 2026-08-26：** 52 机制题打分（live=29）。簇：RT 1600 / Residual 576 / Calendar 540。两簇现已跑败。
 - **Alpha Recovery V1.0 FACT 2026-08-27：** 失败分析系统已落地。覆盖：direction 83% / RV 40% / transition 50% / risk premium 0% / event 0% / institutional time 0%。主因 **A**（无可用预测信息）。选出 **一个** 新家族：`INSTITUTIONAL_TIME_V1.0`（month-end/start，不是 weekday）。hash `1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457`。当时未执行。
 - **Alpha Mission V1.1 FACT 2026-08-28 STOP B：** IT 已跑（WEAK_EDGE，FDR 0/3，四 Xavier 01=04）。随后 Time Structure / Microstructure Surprise / Regime Interaction / Alt Market Structure 全部 **NO_CANDIDATE / FALSIFIED**。Level 仍 0。Candidate=0。GOLD/OIL D1 最大 **7.715y**（BROKER_LIMITATION，2018-12-12）。新 H1 约 7.7y 已冻成 `20260828-000001`。不要调参救 IT/TS/MS/RI/AMS。不要读 Final OOS。见 `ALPHA_MISSION_V1.1_REPORT.md`。
+- **Alpha Research Mission V2.0 FACT 2026-08-28 STOP B：** 信息集已扩大并测完当前无密钥公开源。IMPLIED_VOL / POSITIONING / INVENTORY / RATES / CARRY_V1A 全部 **NO_CANDIDATE**，四 Xavier，01=04。CARRY_V1 是 INVALID_ALIGNMENT（1971 FX 窗口早于 €STR），不是机制结论。Level 仍 0。Candidate=0。仍 BLOCKED：option smile、macro consensus、futures curve、gold ETF file、news schema。不要调 IV/COT/EIA/UST10/overnight z_cut。不要读 Final OOS。见 `ALPHA_RESEARCH_MISSION_V2_REPORT.md`。
 
 ---
 
@@ -418,6 +419,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P48 | Cross Residual V0.91 执行 | DONE（`NO_CANDIDATE`；已冻结；不要调参） |
 | P49 | Alpha Recovery Program V1.0 | DONE（forensics + 纸面合同；当时未跑） |
 | P50 | Alpha Mission V1.1 | DONE（STOP B；IT/TS/MS/RI/AMS 已跑；Level 0；Candidate=0） |
+| P51 | Alpha Research Mission V2.0 | DONE（STOP B；IV/COT/EIA/UST10/CARRY_V1A 已跑；Level 0；Candidate=0） |
 
 ---
 

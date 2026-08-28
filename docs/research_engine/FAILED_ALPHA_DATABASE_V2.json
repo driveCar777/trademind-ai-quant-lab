@@ -1,7 +1,7 @@
 {
   "database_id": "FAILED_ALPHA_DATABASE_V2",
   "FINAL_OOS_TOUCHED": false,
-  "n": 12,
+  "n": 17,
   "records": [
     {
       "family": "HYP-0001",
@@ -126,6 +126,66 @@
       "status": "KILLED",
       "search_space_hash": "8e12e3b16eecb7095a2e7b22847e4be23ba7bd586506daf2cb2e12ea0ec0aad6",
       "tag": "RESEARCH-2026-0005"
+    },
+    {
+      "family": "IMPLIED_VOL_V1",
+      "mechanism": "CBOE GVZ/OVX z-cross and GVZ-RV20 VRP",
+      "what_was_tested": "HYP-IV-0001/0002/0003 D1 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE",
+      "why": "Not V0.9 realized vol. Index IV only. Do not change z_cut.",
+      "forbidden_reopen_pattern": "GVZ z_cut; OVX sign flip; VRP lookback tweak",
+      "status": "KILLED",
+      "search_space_hash": "f4bd4298a14eb0ac84cc7246319b4e3f323dc104583e5232902b8f289f5c3644",
+      "tag": "RESEARCH-2026-0006",
+      "cross_check_match": true
+    },
+    {
+      "family": "POSITIONING_V1",
+      "mechanism": "CFTC MM washout / commercial crowding",
+      "what_was_tested": "HYP-POS-0001/0002/0003 Friday knowledge local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE",
+      "why": "Weekly extremes too sparse for validation n>=4. Do not use Tuesday knowledge.",
+      "forbidden_reopen_pattern": "lower z_cut; Tuesday as-of as knowledge; hold change",
+      "status": "KILLED",
+      "search_space_hash": "4a1240f6059172baf283576aac082b0c62e0a0f56e5dae108e082dd76496caec",
+      "tag": "RESEARCH-2026-0007",
+      "cross_check_match": true
+    },
+    {
+      "family": "INVENTORY_V1",
+      "mechanism": "EIA crude stocks WoW z-cross",
+      "what_was_tested": "HYP-INV-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE",
+      "why": "Sparse weekly z-cross; 0002 not profitable. Do not flip 0002.",
+      "forbidden_reopen_pattern": "EIA z_cut; sign flip of build/draw",
+      "status": "KILLED",
+      "search_space_hash": "944195090e6fb835aba35be30a7a13ffee437256b9ed3e5610b23fc7116b2c05",
+      "tag": "RESEARCH-2026-0008",
+      "cross_check_match": true
+    },
+    {
+      "family": "RATES_V1",
+      "mechanism": "UST 10y z-cross discount-rate shock",
+      "what_was_tested": "HYP-RATES-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE",
+      "why": "Not profitable / validation thin. Not a 10y-level always-on book.",
+      "forbidden_reopen_pattern": "UST10 z on GOLD/OIL; z_cut; hold change",
+      "status": "KILLED",
+      "search_space_hash": "4bbbab85b281b6890b7b38342a82ea649fb56b6ac523b8a28cd6cac854fd54ef",
+      "tag": "RESEARCH-2026-0009",
+      "cross_check_match": true
+    },
+    {
+      "family": "CARRY_V1A",
+      "mechanism": "overnight EFFR-ESTR / EFFR-BOJ z-cross",
+      "what_was_tested": "HYP-CARRYA-0001/0002/0003 overlap bars local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; 0001 FALSIFIED after cost",
+      "why": "Not V0.8 FX price. Not RATES 10y on gold. Do not flip. Do not drop occupancy gate.",
+      "forbidden_reopen_pattern": "overnight z_cut; always-on by lowering occupancy_max; V0.8 EURUSD→GOLD",
+      "status": "KILLED",
+      "search_space_hash": "5974f11738baef21831a846991bd8d05dfa843e4c096e4f97ca636adcec03b46",
+      "tag": "RESEARCH-2026-0011",
+      "cross_check_match": true
     }
   ]
 }

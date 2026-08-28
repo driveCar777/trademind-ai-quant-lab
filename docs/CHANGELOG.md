@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-08-28 — Alpha Research Mission V2.0 STOP B
+
+- 新公开数据（新 ID，未覆盖 20260825）：CBOE GVZ/OVX、CFTC COT Friday knowledge、EIA WCESTUS1、UST 10y、NY Fed EFFR、ECB €STR、BOJ overnight call。
+- 五家族已跑：IV / Positioning / Inventory / Rates / Carry V1A。全部 **NO_CANDIDATE**。四 Xavier，01=04。
+- CARRY_V1 记为 INVALID_ALIGNMENT，不是机制结论。
+- Level 仍 0。Candidate=0。Final OOS 未读。未 `order_send`。
+- 报告：`docs/research_engine/ALPHA_RESEARCH_MISSION_V2_REPORT.md`。
+
 ## 2026-08-28 — Alpha Mission V1.1 STOP B
 
 - 新历史：GOLD/OIL D1/H1 `20260828-000001`。GOLD/OIL D1 **7.715y BROKER_LIMITATION**，不是 10y。未覆盖 `20260825`。

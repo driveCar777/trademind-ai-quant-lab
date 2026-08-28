@@ -774,6 +774,22 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 ---
 
+## Alpha Research Mission V2.0 — 2026-08-28 STOP B
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| research_engine 单元 | ✅ **210 PASS** |
+| 新增 IV / POS / INV / RATES / CARRY 合同与泄漏门 | ✅ |
+| IV / POS / INV / RATES / CARRY_V1A 四 Xavier | ✅ 01=04；程序 NO_CANDIDATE |
+| CARRY_V1 | INVALID_ALIGNMENT；不是机制结论 |
+| 冻结 20260825 / V0.8–0.91 / IT hashes | ✅ 未改 |
+| Final OOS | ✅ 未访问 |
+| 程序级 CANDIDATE / Level | 0 / Level 0 |
+
+不是交易许可。不是年化 10%。不要调参救。下一美元 = 付费/人工新数据。
+
 ## Alpha Mission V1.1 — 2026-08-28 STOP B
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine --import-mode=importlib`

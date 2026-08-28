@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** Alpha Mission V1.1 **STOP B**。Level 仍是 0。Candidate=0。
-> **最后更新:** 2026-08-28（IT/TS/MS/RI/AMS 已跑并杀死；不要调参救）
-> **阶段终点:** STOP B。禁止调参救任何已杀家族。禁止 RSI/MACD/MA。下一美元 = 新数据。
+> **当前活跃模块:** Alpha Research Mission V2.0 **STOP B**。Level 仍是 0。Candidate=0。
+> **最后更新:** 2026-08-28（IV/COT/EIA/UST10/CARRY_V1A 已跑并杀死；公开无密钥信息源耗尽）
+> **阶段终点:** STOP B。禁止调参救任何已杀家族。禁止 RSI/MACD/MA。下一美元 = 付费/人工新数据。
 
 ---
 
@@ -44,6 +44,18 @@
 | PROG V1 | Alpha Program 盘点/库/门/路线 | ✅ DESIGN | 2026-08-26 |
 | REC V1 | Alpha Recovery（forensics + 一个纸面合同） | ✅ DESIGN | 2026-08-27 |
 | MISSION V1.1 | IT → TS → MS → RI → AMS | ✅ STOP B | 2026-08-28 |
+| MISSION V2.0 | IV → COT → EIA → UST10 → FX overnight carry | ✅ STOP B | 2026-08-28 |
+
+## Alpha Research Mission V2.0 — STOP B 2026-08-28
+
+从 Level 0 推向 Level 1 再次失败。新信息公开源已测完。Candidate=0。Level 仍 0。
+
+- IMPLIED_VOL / POSITIONING / INVENTORY / RATES / CARRY_V1A：local 2000 + 四 Xavier。全部 **NO_CANDIDATE**。KILLED。
+- CARRY_V1：INVALID_ALIGNMENT（1971 FX 研究窗早于 €STR）。不是机制失败。
+- 仍 BLOCKED：option smile、macro consensus、futures curve、gold ETF file、news schema。
+- 报告：`ALPHA_RESEARCH_MISSION_V2_REPORT.md`。Ledger：`RESEARCH_LEDGER_V2.json`。Memory：`RESEARCH_MEMORY_V2.json`。
+
+下一最小任务：**付费或人工账户数据**。不要再开 GVZ/COT/EIA/UST10/overnight z_cut。不要读 Final OOS。
 
 ## Alpha Mission V1.1 — STOP B 2026-08-28
 
