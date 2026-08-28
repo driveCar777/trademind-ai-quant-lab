@@ -1,0 +1,838 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "calendar": [
+    {
+      "asset": "GOLD",
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "end": "2026-08-25T00:00:00Z",
+      "n_dates": 2000,
+      "n_month_end": 78,
+      "n_month_start": 78,
+      "n_quarter_end": 26,
+      "research_month_end_est": 55,
+      "sha256": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+      "start": "2020-03-26T00:00:00Z",
+      "validation_month_end_est": 12
+    },
+    {
+      "asset": "OIL",
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "end": "2026-08-25T00:00:00Z",
+      "n_dates": 2000,
+      "n_month_end": 78,
+      "n_month_start": 78,
+      "n_quarter_end": 26,
+      "research_month_end_est": 55,
+      "sha256": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+      "start": "2020-03-24T00:00:00Z",
+      "validation_month_end_est": 12
+    }
+  ],
+  "capability_overall": "PROBE_H1_5Y_M15_2Y_OK_GOLD_OIL_D1_SHORT_OF_10Y",
+  "content_hash": "d2097aa743b0aebff4837e29ac915031aaf1ab6f023aafddf7b149e22683a3ad",
+  "contract": {
+    "discovery_id": "INSTITUTIONAL_TIME_V1.0",
+    "executed": false,
+    "family_id": "FAM-IT-CALENDAR-0001",
+    "search_space_hash": "1d3c4a1fb628465fed18b4af978d767c2ffbe3f8d6ea23233da01aed3d524457"
+  },
+  "coverage_pct": {
+    "direction": 83,
+    "event": 0,
+    "microstructure": 60,
+    "relative_value": 40,
+    "risk_premium": 0,
+    "state_transition": 50,
+    "time_institutional": 0,
+    "volatility_realized": 40
+  },
+  "executed_new_family": false,
+  "gap": {
+    "FINAL_OOS_TOUCHED": false,
+    "code_counts": {
+      "A": 6,
+      "B": 2,
+      "C": 2,
+      "E": 3
+    },
+    "content_hash": "bfcf3ca1da019dc4521233fd3197a06a1e72b0a386647c43cfd610b5e5301e07",
+    "coverage": {
+      "direction": {
+        "covered_pct": 83,
+        "n_covered": 5,
+        "n_slots": 6,
+        "slots": [
+          {
+            "covered": true,
+            "note": "HYP-0001",
+            "slot": "same_sign_streak"
+          },
+          {
+            "covered": true,
+            "note": "FD/V0.6",
+            "slot": "unconditional_momentum"
+          },
+          {
+            "covered": true,
+            "note": "FD/V0.6",
+            "slot": "reversal_z"
+          },
+          {
+            "covered": true,
+            "note": "V0.5/V0.6",
+            "slot": "breakout_level"
+          },
+          {
+            "covered": true,
+            "note": "FD killed / forbidden",
+            "slot": "rsi_macd_farm"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "long_horizon_trend_follow"
+          }
+        ]
+      },
+      "event": {
+        "covered_pct": 0,
+        "n_covered": 0,
+        "n_slots": 3,
+        "slots": [
+          {
+            "covered": false,
+            "note": "no calendar feed",
+            "slot": "scheduled_macro_print"
+          },
+          {
+            "covered": false,
+            "note": "no news",
+            "slot": "news_text"
+          },
+          {
+            "covered": false,
+            "note": "no tape",
+            "slot": "auction_unscheduled"
+          }
+        ]
+      },
+      "microstructure": {
+        "covered_pct": 60,
+        "n_covered": 3,
+        "n_slots": 5,
+        "slots": [
+          {
+            "covered": true,
+            "note": "FD V0.1 REJECTED",
+            "slot": "tickvol_z_next_return"
+          },
+          {
+            "covered": true,
+            "note": "FD V0.1 REJECTED",
+            "slot": "tickvol_ratio_next_return"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "volume_surprise"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "volume_return_divergence"
+          },
+          {
+            "covered": true,
+            "note": "FD/V0.6 friction skip",
+            "slot": "spread_z_as_premium"
+          }
+        ]
+      },
+      "relative_value": {
+        "covered_pct": 40,
+        "n_covered": 2,
+        "n_slots": 5,
+        "slots": [
+          {
+            "covered": true,
+            "note": "V0.8",
+            "slot": "next_day_dollar_proxy"
+          },
+          {
+            "covered": true,
+            "note": "V0.91",
+            "slot": "log_spread_residual"
+          },
+          {
+            "covered": false,
+            "note": "diagnostic only in V0.91",
+            "slot": "cointegration_test_as_trade"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "basket_vs_leg"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "cross_term_structure"
+          }
+        ]
+      },
+      "risk_premium": {
+        "covered_pct": 0,
+        "n_covered": 0,
+        "n_slots": 4,
+        "slots": [
+          {
+            "covered": false,
+            "note": "no IV",
+            "slot": "iv_minus_rv"
+          },
+          {
+            "covered": false,
+            "note": "no rates",
+            "slot": "carry_rates"
+          },
+          {
+            "covered": false,
+            "note": "no funding",
+            "slot": "funding_basis"
+          },
+          {
+            "covered": false,
+            "note": "no options",
+            "slot": "options_skew"
+          }
+        ]
+      },
+      "state_transition": {
+        "covered_pct": 50,
+        "n_covered": 3,
+        "n_slots": 6,
+        "slots": [
+          {
+            "covered": true,
+            "note": "V0.9-0001",
+            "slot": "vol_enter_high"
+          },
+          {
+            "covered": true,
+            "note": "V0.9-0002",
+            "slot": "strength_enter_up"
+          },
+          {
+            "covered": true,
+            "note": "V0.9-0003",
+            "slot": "strength_exit"
+          },
+          {
+            "covered": false,
+            "note": "explicitly not a fourth ID",
+            "slot": "vol_exit_high"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "correlation_regime_shift"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "trend_flat_to_up"
+          }
+        ]
+      },
+      "time_institutional": {
+        "covered_pct": 0,
+        "n_covered": 0,
+        "n_slots": 7,
+        "slots": [
+          {
+            "covered": false,
+            "note": "backlog only; user forbids weekday fishing",
+            "slot": "weekday_dummy"
+          },
+          {
+            "covered": false,
+            "note": "never contracted",
+            "slot": "month_end_rebalance"
+          },
+          {
+            "covered": false,
+            "note": "never contracted",
+            "slot": "month_start_rebalance"
+          },
+          {
+            "covered": false,
+            "note": "never contracted",
+            "slot": "quarter_end_window"
+          },
+          {
+            "covered": false,
+            "note": "needs session clock",
+            "slot": "london_open"
+          },
+          {
+            "covered": false,
+            "note": "needs session clock",
+            "slot": "ny_open"
+          },
+          {
+            "covered": false,
+            "note": "no futures roll tape",
+            "slot": "roll_window"
+          }
+        ]
+      },
+      "volatility_realized": {
+        "covered_pct": 40,
+        "n_covered": 2,
+        "n_slots": 5,
+        "slots": [
+          {
+            "covered": true,
+            "note": "V0.5/V0.6/V0.9 bucket",
+            "slot": "atr_percentile_level"
+          },
+          {
+            "covered": true,
+            "note": "V0.9",
+            "slot": "vol_enter_high"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "rv_term_structure"
+          },
+          {
+            "covered": false,
+            "note": "not contracted",
+            "slot": "vol_of_vol"
+          },
+          {
+            "covered": false,
+            "note": "no IV",
+            "slot": "iv_term_structure"
+          }
+        ]
+      }
+    },
+    "coverage_pct": {
+      "direction": 83,
+      "event": 0,
+      "microstructure": 60,
+      "relative_value": 40,
+      "risk_premium": 0,
+      "state_transition": 50,
+      "time_institutional": 0,
+      "volatility_realized": 40
+    },
+    "dominant_code": "A",
+    "families": [
+      {
+        "codes": [
+          "A",
+          "E"
+        ],
+        "family": "HYP-0001",
+        "fdr_discoveries": 0,
+        "labels": [],
+        "mean_occupancy": null,
+        "mean_research_tr": null,
+        "min_raw_p": null,
+        "n_hypotheses": 0,
+        "outcome": "WEAK_SUPPORT_NOT_A_BOOK",
+        "research_trades": [],
+        "validation_trades": [],
+        "why": [
+          "Family rollup was not a costed book. Short-horizon persistence is not Level 1."
+        ]
+      },
+      {
+        "codes": [
+          "A"
+        ],
+        "family": "FACTOR_DISCOVERY_V0.1",
+        "fdr_discoveries": 0,
+        "labels": [],
+        "mean_occupancy": null,
+        "mean_research_tr": null,
+        "min_raw_p": null,
+        "n_hypotheses": 57,
+        "outcome": "NO_USEFUL_FACTORS_FOUND",
+        "research_trades": [],
+        "validation_trades": [],
+        "why": [
+          "FDR farm: PROMISING=0 CANDIDATE=0. No next-return displacement survived."
+        ]
+      },
+      {
+        "codes": [
+          "A",
+          "E"
+        ],
+        "family": "RESEARCH_ENGINE_V0.5",
+        "fdr_discoveries": 0,
+        "labels": [],
+        "mean_occupancy": null,
+        "mean_research_tr": null,
+        "min_raw_p": null,
+        "n_hypotheses": 15,
+        "outcome": "NO_USEFUL_STRATEGIES_FOUND",
+        "research_trades": [],
+        "validation_trades": [],
+        "why": [
+          "State-level sketches / 1-3 bar rules. The label recipe survived; the sketches did not."
+        ]
+      },
+      {
+        "codes": [
+          "B",
+          "C"
+        ],
+        "family": "PROFIT_DISCOVERY_V0.6",
+        "fdr_discoveries": 0,
+        "labels": [],
+        "mean_occupancy": null,
+        "mean_research_tr": -0.12011260394739061,
+        "min_raw_p": null,
+        "n_hypotheses": 7,
+        "outcome": "WEAK_EDGE_ONLY",
+        "research_trades": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "validation_trades": [],
+        "why": [
+          "Program CANDIDATE=0 after cost. One OIL D1 leftover ~0.2% CAGR. M15/H1 2000 bars cannot certify years."
+        ]
+      },
+      {
+        "codes": [
+          "A",
+          "E"
+        ],
+        "family": "CROSS_ASSET_ALPHA_V0.8",
+        "fdr_discoveries": 0,
+        "labels": [
+          "HYP-XA-0001:FALSIFIED",
+          "HYP-XA-0002:FALSIFIED",
+          "HYP-XA-0003:FALSIFIED"
+        ],
+        "mean_occupancy": 0.3362027737924438,
+        "mean_research_tr": -0.32469900863130824,
+        "min_raw_p": 0.31634182908545727,
+        "n_hypotheses": 3,
+        "outcome": "NO_CANDIDATE",
+        "research_trades": [
+          459,
+          459,
+          482
+        ],
+        "validation_trades": [
+          110,
+          90,
+          98
+        ],
+        "why": [
+          "3/3 FALSIFIED. Next-day dollar proxy is the wrong relative-value object."
+        ]
+      },
+      {
+        "codes": [
+          "A",
+          "C"
+        ],
+        "family": "REGIME_TRANSITION_V0.9",
+        "fdr_discoveries": 0,
+        "labels": [
+          "HYP-RT-0001:FALSIFIED",
+          "HYP-RT-0002:INCONCLUSIVE",
+          "HYP-RT-0003:INCONCLUSIVE"
+        ],
+        "mean_occupancy": 0.015050579817419196,
+        "mean_research_tr": -0.027590835643534595,
+        "min_raw_p": 0.2448775612193903,
+        "n_hypotheses": 3,
+        "outcome": "NO_CANDIDATE",
+        "research_trades": [
+          20,
+          12,
+          24
+        ],
+        "validation_trades": [
+          5,
+          3,
+          3
+        ],
+        "why": [
+          "Delta fired (occupancy 1-2%, not level). RESEARCH books lost money. 0002/0003 validation n<4.",
+          "mean_occupancy=0.0151"
+        ]
+      },
+      {
+        "codes": [
+          "B",
+          "A"
+        ],
+        "family": "CROSS_RESIDUAL_V0.91",
+        "fdr_discoveries": 0,
+        "labels": [
+          "HYP-XR-0001:FALSIFIED",
+          "HYP-XR-0002:WEAK_SUPPORT",
+          "HYP-XR-0003:FALSIFIED"
+        ],
+        "mean_occupancy": null,
+        "mean_research_tr": -1.8315438821889376,
+        "min_raw_p": 0.07246376811594203,
+        "n_hypotheses": 3,
+        "outcome": "NO_CANDIDATE",
+        "research_trades": [
+          437,
+          442,
+          218
+        ],
+        "validation_trades": [
+          154,
+          35,
+          38
+        ],
+        "why": [
+          "0001 perm p=0.072 and a positive delta, but costed two-leg TR is deeply negative.",
+          "0002/0003: no usable residual edge (A). 0001: fragment eaten by cost (B).",
+          "mean RESEARCH TR=-1.832"
+        ]
+      }
+    ],
+    "program_id": "ALPHA_GAP_REPORT_V1",
+    "reading": {
+      "A": "no usable predictive information in the object tested",
+      "B": "a statistical fragment exists but cost/friction removes the book",
+      "C": "timescale or occupancy is wrong",
+      "D": "required data was never present",
+      "E": "the tested expression was the wrong object for a nearby idea"
+    },
+    "search_space_why_empty": "Direction and state-level price rules were exhausted. The two new families (delta-state, residual) also failed after cost. Untested slots that still have on-disk data are institutional time and realized-vol term structure / volume-return divergence. IV, carry, news remain D."
+  },
+  "index": {
+    "hyp0001_n_files": 48,
+    "n_contracts": 7,
+    "n_datasets": 17,
+    "n_rankings": 7
+  },
+  "information_map": {
+    "FINAL_OOS_TOUCHED": false,
+    "by_class": {
+      "A_PRICE": [
+        "INFO-PRICE"
+      ],
+      "B_CROSS_ASSET": [
+        "INFO-XASSET-PROXY",
+        "INFO-RESIDUAL"
+      ],
+      "C_VOLATILITY": [
+        "INFO-RV-TERM",
+        "INFO-VOVOL",
+        "INFO-IV"
+      ],
+      "D_TIME": [
+        "INFO-MONTH-END",
+        "INFO-QUARTER-END",
+        "INFO-LONDON-OPEN",
+        "INFO-NY-OPEN",
+        "INFO-ROLL"
+      ],
+      "E_MICROSTRUCTURE": [
+        "INFO-VOL-SURPRISE",
+        "INFO-VOL-DIVERGE"
+      ],
+      "F_MACRO_PROXY": [
+        "INFO-RISK-ONOFF",
+        "INFO-USD-PROXY",
+        "INFO-COMMOD-BASKET"
+      ]
+    },
+    "content_hash": "d50132208f95ff87bb44ac72fe76151a8bec1be31006175bef8edd409ae26ce5",
+    "coverage_pct": {
+      "direction": 83,
+      "event": 0,
+      "microstructure": 60,
+      "relative_value": 40,
+      "risk_premium": 0,
+      "state_transition": 50,
+      "time_institutional": 0,
+      "volatility_realized": 40
+    },
+    "map_id": "ALPHA_INFORMATION_MAP_V1",
+    "n_sources": 16,
+    "not_indicator_farm": true,
+    "not_v08": true,
+    "sources": [
+      {
+        "class": "A_PRICE",
+        "data_on_disk": true,
+        "families": [
+          "HYP-0001",
+          "FD_V0.1",
+          "V0.5",
+          "V0.6"
+        ],
+        "id": "INFO-PRICE",
+        "mechanism": "Own-price continuation / reversal / breakout at short horizon",
+        "note": "Do not add RSI/MACD/MA.",
+        "previously_tested": true,
+        "status": "FAILED"
+      },
+      {
+        "class": "B_CROSS_ASSET",
+        "data_on_disk": true,
+        "families": [
+          "V0.8"
+        ],
+        "id": "INFO-XASSET-PROXY",
+        "mechanism": "Next-day dollar-proxy (USDJPY/EURUSD -> GOLD/OIL)",
+        "note": "Wrong relative-value object. Do not reopen.",
+        "previously_tested": true,
+        "status": "FAILED"
+      },
+      {
+        "class": "B_CROSS_ASSET",
+        "data_on_disk": true,
+        "families": [
+          "V0.91"
+        ],
+        "id": "INFO-RESIDUAL",
+        "mechanism": "GOLD/OIL log-spread residual fade",
+        "note": "Cost ate the book. Do not retune SMA60.",
+        "previously_tested": true,
+        "status": "FAILED"
+      },
+      {
+        "can_build_from_ohlc": true,
+        "class": "C_VOLATILITY",
+        "data_on_disk": true,
+        "families": [],
+        "id": "INFO-RV-TERM",
+        "mechanism": "Realized-vol term structure from OHLC (short RV vs long RV), not IV",
+        "note": "IV is BLOCKED. ATR percentile buckets were tested; term structure was not.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "can_build_from_ohlc": true,
+        "class": "C_VOLATILITY",
+        "data_on_disk": true,
+        "families": [],
+        "id": "INFO-VOVOL",
+        "mechanism": "Volatility of realized volatility from ATR/TR series",
+        "note": "Adjacent to V0.9 VOL_SHOCK (enter HIGH). Higher isomorph risk.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "class": "C_VOLATILITY",
+        "data_on_disk": false,
+        "families": [],
+        "id": "INFO-IV",
+        "mechanism": "IV / VRP / options",
+        "note": "DATA_BLOCKED. Do not invent IV.",
+        "previously_tested": false,
+        "status": "BLOCKED"
+      },
+      {
+        "class": "D_TIME",
+        "data_on_disk": true,
+        "families": [],
+        "id": "INFO-MONTH-END",
+        "mechanism": "Month-end / month-start benchmark and dealer inventory windows",
+        "note": "Not weekday dummies. D1 timestamps are enough.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "class": "D_TIME",
+        "data_on_disk": true,
+        "families": [],
+        "id": "INFO-QUARTER-END",
+        "mechanism": "Quarter-end window dressing / risk-budget reset",
+        "note": "Fewer events than month-end. Power risk.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "class": "D_TIME",
+        "data_on_disk": false,
+        "families": [],
+        "id": "INFO-LONDON-OPEN",
+        "mechanism": "London cash open inventory / spread shock",
+        "note": "Frozen H1 is months. Read-only probe meets ~5.03y H1 as new IDs only. Not selected this round.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "class": "D_TIME",
+        "data_on_disk": false,
+        "families": [],
+        "id": "INFO-NY-OPEN",
+        "mechanism": "New York open overlap flow",
+        "note": "Same as London: probe can freeze 5y H1; immutable packs cannot.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "class": "D_TIME",
+        "data_on_disk": false,
+        "families": [],
+        "id": "INFO-ROLL",
+        "mechanism": "Futures roll window",
+        "note": "No roll tape. Broker CFD continuous series is not a roll calendar.",
+        "previously_tested": false,
+        "status": "BLOCKED"
+      },
+      {
+        "class": "E_MICROSTRUCTURE",
+        "data_on_disk": true,
+        "families": [],
+        "id": "INFO-VOL-SURPRISE",
+        "mechanism": "Tick-volume surprise vs its own recent baseline",
+        "note": "FD killed tickvol_z as a next-return *level*. Surprise/divergence was not the contract.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "class": "E_MICROSTRUCTURE",
+        "data_on_disk": true,
+        "families": [],
+        "id": "INFO-VOL-DIVERGE",
+        "mechanism": "Volume up while return is small or opposite (absorption / disagreement)",
+        "note": "tick_volume is present. Not a delete. Not an RSI.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "class": "F_MACRO_PROXY",
+        "data_on_disk": true,
+        "families": [],
+        "id": "INFO-RISK-ONOFF",
+        "mechanism": "Same-day joint sign of GOLD/OIL/FX as a risk-on/off *label*, not a next-day GOLD forecast",
+        "note": "V0.8 predicted next GOLD/OIL from FX. A label without a new target is not alpha.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      },
+      {
+        "class": "F_MACRO_PROXY",
+        "data_on_disk": true,
+        "families": [
+          "V0.8"
+        ],
+        "id": "INFO-USD-PROXY",
+        "killed_isomorph": true,
+        "mechanism": "USD strength from EURUSD+USDJPY to trade GOLD tomorrow",
+        "note": "Isomorph of V0.8. Score must be zero.",
+        "previously_tested": true,
+        "status": "FAILED"
+      },
+      {
+        "class": "F_MACRO_PROXY",
+        "data_on_disk": true,
+        "families": [],
+        "id": "INFO-COMMOD-BASKET",
+        "mechanism": "Equal-weight GOLD+OIL residual vs a single leg",
+        "note": "Close to V0.91. High isomorph risk.",
+        "previously_tested": false,
+        "status": "UNKNOWN"
+      }
+    ]
+  },
+  "program_id": "ALPHA_RECOVERY_PROGRAM_V1",
+  "selection": {
+    "chosen": "OPP-IT-ME",
+    "eligible": [
+      "OPP-IT-ME",
+      "OPP-IT-QE",
+      "OPP-RV-TERM",
+      "OPP-VDIV"
+    ],
+    "top10": [
+      {
+        "id": "OPP-IT-ME",
+        "mechanism_text": "Month-end institutional rebalance window on D1",
+        "score": 20000,
+        "status": "UNKNOWN",
+        "why_not_tested": "Queued behind V0.9/V0.91. Backlog mentioned calendar; no contract was written. Not a weekday dummy."
+      },
+      {
+        "id": "OPP-IT-QE",
+        "mechanism_text": "Quarter-end window dressing / book flattening",
+        "score": 5120,
+        "status": "UNKNOWN",
+        "why_not_tested": "Same reason as month-end. Fewer events on the frozen D1 packs (~26 quarters)."
+      },
+      {
+        "id": "OPP-RV-TERM",
+        "mechanism_text": "Short vs long realized-vol term structure from OHLC",
+        "score": 3840,
+        "status": "UNKNOWN",
+        "why_not_tested": "IV is blocked so this was never opened. ATR *level* was used in V0.5/V0.9; slope of RV was not."
+      },
+      {
+        "id": "OPP-VDIV",
+        "mechanism_text": "Volume-return divergence (activity without a matching return)",
+        "score": 2880,
+        "status": "UNKNOWN",
+        "why_not_tested": "Not in the FD search space as a joint event. tick_volume is still on disk. Do not delete it."
+      },
+      {
+        "id": "OPP-IT-LON",
+        "mechanism_text": "London cash open inventory adjustment",
+        "score": 1920,
+        "status": "UNKNOWN",
+        "why_not_tested": "Never contracted. Frozen H1 is months. Broker probe meets ~5.03y H1 only as a new dataset_id. Not on-disk yet."
+      },
+      {
+        "id": "OPP-VOVOL",
+        "mechanism_text": "Vol-of-vol of ATR/TR, not enter-HIGH",
+        "score": 1620,
+        "status": "UNKNOWN",
+        "why_not_tested": "Adjacent to V0.9 VOL_SHOCK. Left untested to avoid a fourth RT ID."
+      },
+      {
+        "id": "OPP-VSURP",
+        "mechanism_text": "Tick-volume surprise versus its own baseline",
+        "score": 1620,
+        "status": "UNKNOWN",
+        "why_not_tested": "FD tested tickvol_z as next-return *level* and rejected it. Surprise was not the hypothesis."
+      },
+      {
+        "id": "OPP-IT-NY",
+        "mechanism_text": "New York open overlap flow",
+        "score": 960,
+        "status": "UNKNOWN",
+        "why_not_tested": "Same as London: 5y H1 is acquirable, not frozen. Do not contract yet."
+      },
+      {
+        "id": "OPP-RISK-LABEL",
+        "mechanism_text": "Same-day GOLD/OIL/FX joint sign as a label for a *new* target",
+        "score": 540,
+        "status": "UNKNOWN",
+        "why_not_tested": "V0.8 used FX to forecast next GOLD/OIL. A label without a new target is not a family."
+      }
+    ]
+  }
+}

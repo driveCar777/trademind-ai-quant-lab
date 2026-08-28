@@ -1,0 +1,15 @@
+{
+  "research_id": "tm-research-20260824-009903",
+  "volume": 0.01,
+  "mode": "demo",
+  "mt5_connected": true,
+  "account_mode": "demo",
+  "created_at": "2026-08-24T14:11:48Z",
+  "wire_test": false,
+  "symbol": "EURUSD",
+  "side": "SELL",
+  "status": "ACCEPTED",
+  "reason": "rsi_overbought;mt5_demo",
+  "order_id": "tm-order-20260824-000005",
+  "mt5_ticket": "67812602"
+}

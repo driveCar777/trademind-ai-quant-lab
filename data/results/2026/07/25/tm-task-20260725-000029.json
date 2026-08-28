@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "strategy": "RSI",
+  "symbol": "EURUSD",
+  "start": "2025-01-01",
+  "profit": 5.41,
+  "max_drawdown": 16.45,
+  "win_rate": 75.0,
+  "total_trades": 8,
+  "final_equity": 10540.81,
+  "calculation_time_ms": 7.82,
+  "timestamp": "2026-07-25T12:29:32.885022"
+}

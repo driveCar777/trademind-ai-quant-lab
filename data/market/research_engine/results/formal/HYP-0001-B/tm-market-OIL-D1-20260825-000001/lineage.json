@@ -1,0 +1,14 @@
+{
+  "code_fingerprint": "407d65227ba0a2437ac66e75386bbba94577b1993e2b7e17f250ac486f527d3a",
+  "dataset_hash": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+  "dataset_id": "tm-market-OIL-D1-20260825-000001",
+  "experiment_hash": "75bc39ea6eefe0c59f6d0255b48578b919600d2add7d7f9762ca0bd819478f5c",
+  "experiment_id": "tm-exp-20260825-141158-032",
+  "feature_version": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "hypothesis_hash": "5293dbe7d54f23a44a10e0458505e47e848a0cb6c4ce76959879bbce24d7d9be",
+  "hypothesis_id": "HYP-0001-B",
+  "lineage_hash": "09a9b2e37c52eef3643e21b0130966e589d86cc4edb0d22b0b5dc58e9cca4100",
+  "preregister_hash": "fbd14d199ba6390ac91f8700d48053ff75c99d7510183d58eeb1a101238cd3db",
+  "protocol_version": "0.3",
+  "result_hash": "8ae5bfca180f85c17b3405862d959d4887f2ec9def487633166f33c38dd8f778"
+}

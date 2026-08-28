@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "stock": "600519",
+  "date": "20260731",
+  "score": 37,
+  "roe": 30.96,
+  "trend": false,
+  "factors": {
+    "roe": 30.96,
+    "pe": 28.5,
+    "pb": 10.2,
+    "market_cap_bn": 22000,
+    "sector": "白酒",
+    "name": "贵州茅台",
+    "value_score": 0.5,
+    "quality_score": 27.9,
+    "momentum": 3.23,
+    "volatility": 1.56,
+    "liquidity_score": 53.0
+  },
+  "calculation_time_ms": 0.362,
+  "timestamp": "2026-07-31T04:57:33.895375"
+}

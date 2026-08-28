@@ -1,0 +1,17 @@
+{
+  "mode": "smoke",
+  "records": [
+    {
+      "attempts": 1,
+      "elapsed_seconds": 87.31989169120789,
+      "exit_code": 0,
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "stderr": "",
+      "stdout": "FD_JOB_DONE FD-V01-Xavier-01-tm-market-GOLD-M15-20260825-000001 57 86.0\nFD_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "started_finish_utc": "2026-08-26T00:31:31Z"
+}

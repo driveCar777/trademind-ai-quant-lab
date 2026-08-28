@@ -1,0 +1,62 @@
+{
+  "alternative_hypothesis": "continuation_mean differs from 0 (two-sided; direction not assumed)",
+  "block_bootstrap_iterations": 5000,
+  "block_length": 20,
+  "bootstrap_iterations": 5000,
+  "cost_model": "NONE",
+  "created_at": "2026-08-25T14:11:58Z",
+  "dataset_ids": [
+    "tm-market-GOLD-M15-20260825-000001",
+    "tm-market-GOLD-H1-20260825-000001",
+    "tm-market-GOLD-H4-20260825-000001",
+    "tm-market-GOLD-D1-20260825-000001",
+    "tm-market-EURUSD-M15-20260825-000001",
+    "tm-market-EURUSD-H1-20260825-000001",
+    "tm-market-EURUSD-H4-20260825-000001",
+    "tm-market-EURUSD-D1-20260825-000001",
+    "tm-market-USDJPY-M15-20260825-000001",
+    "tm-market-USDJPY-H1-20260825-000001",
+    "tm-market-USDJPY-H4-20260825-000001",
+    "tm-market-USDJPY-D1-20260825-000001",
+    "tm-market-OIL-M15-20260825-000001",
+    "tm-market-OIL-H1-20260825-000001",
+    "tm-market-OIL-H4-20260825-000001",
+    "tm-market-OIL-D1-20260825-000001"
+  ],
+  "execution_model": "NONE_PREDICTIVE_ONLY",
+  "expected_direction": "unspecified_two_sided",
+  "failure_threshold": "validation sign flips vs research at |d|>=0.10 on both windows",
+  "fdr_q": 0.05,
+  "feature_set": "close_to_close_return",
+  "final_oos_candidate_rule": "CANDIDATE_LOCKED_ACCESS_DENIED",
+  "horizon": 1,
+  "hypothesis_id": "HYP-0001-A",
+  "metrics": [
+    "condition_n",
+    "delta",
+    "effect_size",
+    "permutation_p",
+    "bootstrap_ci"
+  ],
+  "min_condition_n": 30,
+  "min_effect_size": 0.1,
+  "null_hypothesis": "P(next_return>0 | prior_3_same_sign) = P(next_return>0); continuation_mean = 0",
+  "parameters": {
+    "parameter_source": "pre_registered_fixed",
+    "prediction_horizon": 1,
+    "streak_length": 3
+  },
+  "permutation_iterations": 5000,
+  "preregister_hash": "485d56a8f5a8e6822231760be240500ce6deb194471cde78172c3b5e4630b6d8",
+  "research_window_rule": "protocol_70_15_15_candidate_research",
+  "seed": 20260825,
+  "stopping_rule": "one research pass and one validation pass; no retune",
+  "success_threshold": "same sign, validation CI excludes 0, |d|>=0.10, adjusted_p<=0.05, n>=30",
+  "timeframes": [
+    "M15",
+    "H1",
+    "H4",
+    "D1"
+  ],
+  "validation_window_rule": "protocol_70_15_15_candidate_validation"
+}

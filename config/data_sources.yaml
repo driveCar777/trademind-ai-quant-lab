@@ -1,0 +1,52 @@
+# TradeMind Data Layer V0.1 — Windows Master only.
+# No account / password. Use the already-logged-in MT5 terminal.
+# Do not wire this file into V11.7.
+
+data_layer:
+  schema_version: "0.1"
+  timezone: UTC
+  storage_root: data/market
+  storage_policy: single_immutable_copy
+  bars_format: csv
+  requested_bars: 2000
+  request_slack_factor: 3.0
+  rate_limit_seconds: 0.35
+  mt5:
+    terminal_path: null
+  logical_symbols:
+    - GOLD
+    - EURUSD
+    - USDJPY
+    - OIL
+  timeframes:
+    - M15
+    - H1
+    - H4
+    - D1
+  symbol_aliases:
+    GOLD:
+      - GOLD
+      - XAUUSD
+      - XAUUSDm
+      - XAUUSD.a
+      - XAUUSD.
+    EURUSD:
+      - EURUSD
+      - EURUSDm
+      - EURUSD.a
+    USDJPY:
+      - USDJPY
+      - USDJPYm
+      - USDJPY.a
+    OIL:
+      - CrudeOIL
+      - WTICrude
+      - XTIUSD
+      - USOIL
+      - CRUDE
+      - WTICOUSD
+  roles:
+    RESEARCH: usable
+    VALIDATION: reserved
+    FINAL_OOS: reserved
+  final_oos_locked: false

@@ -1,0 +1,48 @@
+﻿version: '3.8'
+
+services:
+  indicator-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: trademind/indicator-worker:1.0.0
+    container_name: indicator-worker-01
+    restart: unless-stopped
+    ports:
+      - "${TRADEMIND_API_PORT:-8000}:8000"
+    environment:
+      - TRADEMIND_WORKER_ID=xavier-worker-01
+      - TRADEMIND_NODE_NAME=xavier-01
+      - TRADEMIND_NODE_ROLE=indicator
+      - TRADEMIND_MASTER_HOST=localhost
+      - TRADEMIND_MASTER_PORT=9000
+      - TRADEMIND_LOG_LEVEL=INFO
+      - TRADEMIND_API_PORT=8000
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./logs:/app/logs
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - trademind-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 128M
+
+networks:
+  trademind-net:
+    driver: bridge
+    name: trademind-network

@@ -1,0 +1,22 @@
+{
+  "task_id": "tm-task-20260725-000019",
+  "worker_id": "worker-03",
+  "worker_type": "backtest-worker",
+  "status": "FAILED",
+  "created_at": "2026-07-25T11:12:32.926961Z",
+  "started_at": "2026-07-25T11:12:38.984243Z",
+  "finished_at": "2026-07-25T11:12:39.018307Z",
+  "duration_ms": 34,
+  "result_path": "results/2026/07/25/tm-task-20260725-000019.json",
+  "error": "{\"error\": \"Missing fields: strategy, symbol, start\"}",
+  "request": {
+    "worker_type": "backtest-worker",
+    "indicator": "EMA_MACD",
+    "data": {
+      "strategy": "EMA_MACD",
+      "symbol": "XAUUSD",
+      "start": "2025-01-01"
+    },
+    "params": {}
+  }
+}

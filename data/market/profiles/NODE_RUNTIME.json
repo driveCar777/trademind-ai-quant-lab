@@ -1,0 +1,30 @@
+{
+  "Xavier-01": {
+    "dataset_count": 4,
+    "elapsed_seconds": 19.453917980194092,
+    "errors": 0,
+    "peak_rss_kb": 16180,
+    "total_bars": 8000
+  },
+  "Xavier-02": {
+    "dataset_count": 4,
+    "elapsed_seconds": 19.223121881484985,
+    "errors": 0,
+    "peak_rss_kb": 15796,
+    "total_bars": 8000
+  },
+  "Xavier-03": {
+    "dataset_count": 4,
+    "elapsed_seconds": 18.985233545303345,
+    "errors": 0,
+    "peak_rss_kb": 15896,
+    "total_bars": 8000
+  },
+  "Xavier-04": {
+    "dataset_count": 4,
+    "elapsed_seconds": 19.432132482528687,
+    "errors": 0,
+    "peak_rss_kb": 16148,
+    "total_bars": 8000
+  }
+}

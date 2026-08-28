@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "620057f9-a76b-49f3-823b-eb6acea46671",
+  "indicator": "RSI",
+  "symbol": "XAUUSD",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      82.74384384802532,
+      77.79840917745204,
+      77.95046954275719,
+      79.83450014229854,
+      76.32295333807097,
+      66.68092230202527
+    ],
+    "latest": 66.68092230202527
+  },
+  "calculation_time_ms": 11.154,
+  "timestamp": "2026-07-24T12:19:13.061864"
+}

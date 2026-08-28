@@ -1,0 +1,5 @@
+{
+  "DETERMINISTIC": true,
+  "LEAKAGE_DETECTED": false,
+  "sentinel_ok": true
+}

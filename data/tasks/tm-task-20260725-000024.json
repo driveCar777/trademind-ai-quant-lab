@@ -1,0 +1,22 @@
+{
+  "task_id": "tm-task-20260725-000024",
+  "worker_id": "worker-03",
+  "worker_type": "backtest-worker",
+  "status": "FAILED",
+  "created_at": "2026-07-25T12:23:31.826942Z",
+  "started_at": "2026-07-25T12:23:37.863641Z",
+  "finished_at": "2026-07-25T12:23:37.897242Z",
+  "duration_ms": 33,
+  "result_path": "results/2026/07/25/tm-task-20260725-000024.json",
+  "error": "{\"error\": \"Missing required fields: strategy, symbol, start\"}",
+  "request": {
+    "worker_type": "backtest-worker",
+    "indicator": "backtest",
+    "data": {
+      "strategy": "RSI",
+      "symbol": "EURUSD",
+      "start": "2025-01-01"
+    },
+    "params": {}
+  }
+}

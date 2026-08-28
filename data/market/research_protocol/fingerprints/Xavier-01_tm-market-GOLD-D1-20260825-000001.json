@@ -1,0 +1,22 @@
+{
+  "BOUNDARY_LEAKAGE": false,
+  "DETERMINISTIC": true,
+  "FINAL_OOS_LOCKED": false,
+  "LEAKAGE_DETECTED": false,
+  "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+  "dataset_sha256": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+  "elapsed_seconds": 21.73798656463623,
+  "errors": [],
+  "execution": {
+    "current_bar_used_for_execution": false,
+    "entry_index": 121,
+    "exit_index": null,
+    "signal_index": 120
+  },
+  "feature_hash": "96d9ec4ad1c8c267a1b88923f36672dc55191736e84b63867eaa6fd056e7737a",
+  "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+  "purge_blocks": true,
+  "sentinel_ok": true,
+  "warmup_ok": true,
+  "window_hash": "56502c799da3e9ae4a09d96c18df96abe36781674999c514e43860136c6bc052"
+}

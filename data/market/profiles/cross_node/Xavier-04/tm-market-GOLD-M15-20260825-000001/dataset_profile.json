@@ -1,0 +1,243 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "anomalies": {
+    "anomaly_count": 0,
+    "anomaly_rows": []
+  },
+  "atr": {
+    "max_ATR14": 22.26714285714284,
+    "max_TR": 62.31999999999971,
+    "mean_ATR14": 8.390487094686888,
+    "mean_TR": 8.381879999999995,
+    "median_TR": 7.175000000000182,
+    "method": "simple_mean_of_true_range_14",
+    "note": "Data description, not a signal."
+  },
+  "candidate_windows": {
+    "FINAL_OOS_LOCKED": false,
+    "holdout_15": {
+      "bar_index_end": 1999,
+      "bar_index_start": 1700,
+      "end_utc": "2026-08-25T12:45:00Z",
+      "row_count": 300,
+      "start_utc": "2026-08-20T07:00:00Z"
+    },
+    "note": "Design suggestion only. Not Final OOS. Do not lock.",
+    "research_70": {
+      "bar_index_end": 1399,
+      "bar_index_start": 0,
+      "end_utc": "2026-08-17T00:45:00Z",
+      "row_count": 1400,
+      "start_utc": "2026-07-24T19:00:00Z"
+    },
+    "role": "CANDIDATE_WINDOW",
+    "validation_15": {
+      "bar_index_end": 1699,
+      "bar_index_start": 1400,
+      "end_utc": "2026-08-20T06:45:00Z",
+      "row_count": 300,
+      "start_utc": "2026-08-17T01:00:00Z"
+    }
+  },
+  "candle": {
+    "average_body": 4.246464999999979,
+    "average_body_to_range": 0.4735382713588264,
+    "average_lower_wick": 2.045205000000014,
+    "average_range": 8.347989999999996,
+    "average_upper_wick": 2.0563200000000017,
+    "zero_range_count": 0
+  },
+  "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+  "elapsed_seconds": 3.356447219848633,
+  "end_utc": "2026-08-25T12:45:00Z",
+  "extreme_moves": {
+    "note": "EXTREME_MOVE is not automatically bad data.",
+    "top_10_abs_return": [
+      {
+        "close": 4366.86,
+        "idx": 894,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4308.76,
+        "return_pct": 1.3484157855160057,
+        "timestamp": "2026-08-07T12:30:00Z"
+      },
+      {
+        "close": 4417.43,
+        "idx": 1630,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4369.35,
+        "return_pct": 1.1003925068946163,
+        "timestamp": "2026-08-19T12:30:00Z"
+      },
+      {
+        "close": 4080.86,
+        "idx": 272,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4043.86,
+        "return_pct": 0.9149673826492508,
+        "timestamp": "2026-07-29T18:00:00Z"
+      },
+      {
+        "close": 4087.57,
+        "idx": 8,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4052.87,
+        "return_pct": 0.8561833959638545,
+        "timestamp": "2026-07-26T22:00:00Z"
+      },
+      {
+        "close": 4076.0,
+        "idx": 468,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4043.17,
+        "return_pct": 0.8119866342498566,
+        "timestamp": "2026-08-02T22:00:00Z"
+      },
+      {
+        "close": 4604.98,
+        "idx": 1857,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4637.09,
+        "return_pct": -0.6924601420287417,
+        "timestamp": "2026-08-24T00:15:00Z"
+      },
+      {
+        "close": 4044.5,
+        "idx": 279,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4069.23,
+        "return_pct": -0.6077316838812261,
+        "timestamp": "2026-07-29T19:45:00Z"
+      },
+      {
+        "close": 4128.02,
+        "idx": 670,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4103.36,
+        "return_pct": 0.6009709116431599,
+        "timestamp": "2026-08-05T02:30:00Z"
+      },
+      {
+        "close": 4112.08,
+        "idx": 347,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4088.56,
+        "return_pct": 0.5752636625119842,
+        "timestamp": "2026-07-30T13:45:00Z"
+      },
+      {
+        "close": 4229.46,
+        "idx": 716,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4205.31,
+        "return_pct": 0.5742739536443123,
+        "timestamp": "2026-08-05T14:00:00Z"
+      }
+    ]
+  },
+  "gaps": {
+    "expected_seconds": 900,
+    "gap_count": 22,
+    "normal_interval_count": 1977,
+    "overlap_count": 0
+  },
+  "generated_at_utc": "2026-08-25T13:20:41Z",
+  "hash_ok": true,
+  "hostname": "xavier",
+  "logical_symbol": "GOLD",
+  "mt5_symbol": "GOLD",
+  "peak_rss_kb": 15928,
+  "price": {
+    "close": {
+      "max": 4693.49,
+      "mean": 4293.043435,
+      "median": 4342.01,
+      "min": 3999.24
+    },
+    "first_close": 4052.2,
+    "high": {
+      "max": 4696.8,
+      "mean": 4297.108015,
+      "median": 4345.57,
+      "min": 4005.59
+    },
+    "last_close": 4639.79,
+    "low": {
+      "max": 4683.91,
+      "mean": 4288.760025,
+      "median": 4337.1,
+      "min": 3995.81
+    },
+    "open": {
+      "max": 4693.49,
+      "mean": 4292.8134900000005,
+      "median": 4342.030000000001,
+      "min": 3999.14
+    },
+    "price_change_abs": 587.5900000000001,
+    "price_change_pct": 14.500518237007062
+  },
+  "profile_code_version": "6711bea15a6c1c52cf9d912ff13188cbe6b911e719c71212f1511342174dd9fb",
+  "profile_version": "0.1",
+  "python_version": "3.6.9",
+  "qualification": "QUALIFIED_WITH_WARNINGS",
+  "qualification_fail_reasons": [],
+  "qualification_note": "Research readiness of the dataset, not trade worthiness.",
+  "qualification_review_reasons": [],
+  "qualification_warn_reasons": [
+    "real_volume_all_zero",
+    "session_gaps",
+    "extreme_moves_listed"
+  ],
+  "returns": {
+    "max_return": 0.013484157855160057,
+    "mean_log_return": 6.773845076706206e-05,
+    "mean_return": 6.873286136247139e-05,
+    "median_log_return": 4.302063745928523e-05,
+    "median_return": 4.302156286007346e-05,
+    "min_return": -0.0069246014202874176,
+    "negative_return_count": 955,
+    "note": "Bar returns, not trade results. Not a win rate.",
+    "positive_return_count": 1040,
+    "std_log_return": 0.0014082602853114534,
+    "std_return": 0.001409320444032276,
+    "zero_return_count": 4
+  },
+  "row_count": 2000,
+  "sha256": "f14f9bddb9adfcd6825874397f9a2b8cc1a9b3218778d9df047036dc13c62717",
+  "sha256_actual": "f14f9bddb9adfcd6825874397f9a2b8cc1a9b3218778d9df047036dc13c62717",
+  "spread": {
+    "spread_max": 173,
+    "spread_mean": 35.186,
+    "spread_median": 29.0,
+    "spread_min": 29,
+    "spread_present": true,
+    "spread_zero_count": 0
+  },
+  "start_utc": "2026-07-24T19:00:00Z",
+  "timeframe": "M15",
+  "timezone": "UTC",
+  "trend": {
+    "note": "Describes path directional efficiency. Not a strategy score.",
+    "trend_efficiency": 0.06869063553947509
+  },
+  "validation_status": "WARN",
+  "volatility": {
+    "max_volatility_20": 0.0035741958128984903,
+    "max_volatility_50": 0.002489749921787898,
+    "mean_volatility_20": 0.0012716934207445399,
+    "mean_volatility_50": 0.0013324812942979054,
+    "note": "Stdev of simple returns over trailing windows. UNKNOWN if short."
+  },
+  "volume": {
+    "real_volume_row_count": 2000,
+    "real_volume_zero_count": 2000,
+    "tick_volume_max": 7305,
+    "tick_volume_mean": 2712.3045,
+    "tick_volume_median": 2507.0,
+    "tick_volume_min": 230,
+    "volume_policy": "tick_volume_only",
+    "zero_tick_volume_count": 0
+  },
+  "xavier": "Xavier-04"
+}

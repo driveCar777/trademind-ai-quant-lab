@@ -1,0 +1,30 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "n": 2,
+  "records": [
+    {
+      "do_not_repeat": true,
+      "family": "REGIME_TRANSITION_V0.9",
+      "outcome": "NO_CANDIDATE",
+      "utc": "2026-08-27T15:17:42Z",
+      "why": [
+        "HYP-RT-0001 FALSIFIED research TR<=0 validation sign flip",
+        "HYP-RT-0002 INCONCLUSIVE validation n<4 and wrong sign",
+        "HYP-RT-0003 INCONCLUSIVE validation n<4 research TR<=0",
+        "occupancy was ~1-2 percent so definition was delta not level",
+        "do not retune ADX/hold/VOL"
+      ]
+    },
+    {
+      "do_not_repeat": true,
+      "family": "CROSS_RESIDUAL_V0.91",
+      "outcome": "NO_CANDIDATE",
+      "utc": "2026-08-27T15:20:02Z",
+      "why": [
+        "costed two-leg TR<0",
+        "FDR 0/3",
+        "do not retune SMA60"
+      ]
+    }
+  ]
+}

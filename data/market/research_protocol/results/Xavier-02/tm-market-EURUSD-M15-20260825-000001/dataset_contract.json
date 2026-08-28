@@ -1,0 +1,17 @@
+{
+  "data_end_utc": "2026-08-25T12:45:00Z",
+  "data_start_utc": "2026-07-27T17:00:00Z",
+  "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+  "immutable": true,
+  "logical_symbol": "EURUSD",
+  "mt5_symbol": "EURUSD",
+  "profile_hash": null,
+  "qualification": null,
+  "row_count": 2000,
+  "schema_version": "0.1",
+  "sha256": "ed0a779dd43de803aaeb2d987e38092edcf9387359596d19a4cda476ee25d772",
+  "source": "mt5",
+  "timeframe": "M15",
+  "timezone": "UTC",
+  "volume_policy": "tick_volume_only"
+}

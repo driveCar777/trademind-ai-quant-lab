@@ -1,0 +1,96 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "align_key": "UTC_DATE",
+  "align_method": "INNER_JOIN_ALL_FOUR",
+  "aligned_end": "2026-08-25",
+  "aligned_n_dates": 1993,
+  "aligned_start": "2020-04-01",
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "CROSS_ASSET_ALPHA_V0.8",
+  "family_id": "FAM-FD-XASSET-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "horizon": "NEXT_ALIGNED_ROW",
+  "hypotheses": [
+    {
+      "hypothesis_id": "HYP-XA-0001",
+      "input_assets": [
+        "USDJPY"
+      ],
+      "kind": "Q3",
+      "predicted_sign": -1,
+      "side": -1,
+      "target_asset": "GOLD"
+    },
+    {
+      "hypothesis_id": "HYP-XA-0002",
+      "input_assets": [
+        "EURUSD"
+      ],
+      "kind": "Q3",
+      "predicted_sign": 1,
+      "side": 1,
+      "target_asset": "GOLD"
+    },
+    {
+      "hypothesis_id": "HYP-XA-0003",
+      "input_assets": [
+        "USDJPY",
+        "EURUSD"
+      ],
+      "kind": "DOLLAR_UP",
+      "predicted_sign": -1,
+      "side": -1,
+      "target_asset": "OIL"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-XA-0001",
+    "HYP-XA-0002",
+    "HYP-XA-0003"
+  ],
+  "note": "Worker executes listed IDs only. Not HYP-0001. Not V0.6.",
+  "parent_datasets": [
+    "tm-market-GOLD-D1-20260825-000001",
+    "tm-market-EURUSD-D1-20260825-000001",
+    "tm-market-USDJPY-D1-20260825-000001",
+    "tm-market-OIL-D1-20260825-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "same_window_pair": true,
+  "search_space_hash": "787a37f93aae630e2530c6c416c3acf8c5ddd5a9470ae7f442a409f431749827",
+  "seed": 20260825,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "final_oos": [
+      "2025-09-11",
+      "2026-08-25"
+    ],
+    "research": [
+      "2020-04-01",
+      "2024-09-26"
+    ],
+    "split": "70/15/15_on_sorted_aligned_dates",
+    "validation": [
+      "2024-09-27",
+      "2025-09-10"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "code_hash": "9222ab65c752c33aaac31b2b561e76c3984896045adc449c7dac58a800b5d10c",
+  "cost_hash": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+  "created_at": "2026-08-25T14:11:58Z",
+  "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+  "dataset_sha256": "f14f9bddb9adfcd6825874397f9a2b8cc1a9b3218778d9df047036dc13c62717",
+  "execution_hash": "59bebdb3416ddd81a21693f661b2b1c18b4d7b2cb8e56b6a17d858a82fe302d5",
+  "experiment_hash": "837766c764a24b720ef0e21e57e969be7a36ebf98189ae285b0b3676b3b1bdfd",
+  "experiment_id": "tm-exp-20260825-141158-002",
+  "family_id": "FAM-MOMENTUM-0001",
+  "feature_registry_hash": "37b1bbbeaf0000745a1f44e9fd9dacb0affc4555a4dd174d96489434a77326bd",
+  "hypothesis_id": "HYP-0001-B",
+  "node_assignment": [
+    "Xavier-01",
+    "Xavier-04"
+  ],
+  "preregister_hash": "fbd14d199ba6390ac91f8700d48053ff75c99d7510183d58eeb1a101238cd3db",
+  "protocol_hash": "9222ab65c752c33aaac31b2b561e76c3984896045adc449c7dac58a800b5d10c",
+  "seed": 20260825,
+  "status": "LOCKED",
+  "window_hash": "d37ded877f9b6b931549d4ab6c503431429ae899327cf19c2aeec45442aca684"
+}

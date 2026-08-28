@@ -1,0 +1,400 @@
+{
+  "research_id": "tm-research-20260824-010001",
+  "task_id": "tm-task-20260824-000048",
+  "preset": "backtest",
+  "summary": "GOLD RSI 本次未证伪 根=2000/H1 内-19.03外2.57 回撤19.83/3.46 成交27/13",
+  "ai_text": "数字以摘要为准，不是模型编的。\nK 线窗口 2026-04-23 17:00 ～ 2026-08-24 15:00，周期 H1，共 2000 根。来自本机 MT5，仓库不另存整段行情。\n连续持仓：样本外接着样本内的 RSI/仓位，切分不强平。\n样本内：收益 -19.03%，回撤 19.83%，成交 27。\n样本外：收益 2.57%，回撤 3.46%，成交 13。\n成交明细 40 笔见下方表格（时间+价格）。没有表格就还没留下买卖点。\n判定：本次未证伪。survived 只表示这次没被证伪；样本内亏损就不能当买卖依据。\n第 3、4 步不能挂这张回测单。要下单先跑黄金 MT5 指标研究。",
+  "ai_skipped": true,
+  "created_at": "2026-08-24T15:22:30Z",
+  "steps": [
+    {
+      "preset": "backtest",
+      "task_id": "tm-task-20260824-000048",
+      "summary": "连续切分 H1 内-19.03 外2.57"
+    }
+  ],
+  "sample_id": "",
+  "source": "mt5",
+  "symbol": "GOLD",
+  "verdict": "survived",
+  "bars": 2000,
+  "timeframe": "H1",
+  "window_from": "2026-04-23 17:00",
+  "window_to": "2026-08-24 15:00",
+  "trades": [
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 45,
+      "time": "2026-04-27 16:00",
+      "price": 4681.22655,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 106,
+      "time": "2026-04-30 08:00",
+      "price": 4611.64374,
+      "pnl_pct": -1.49
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 129,
+      "time": "2026-05-01 08:00",
+      "price": 4573.33877,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 174,
+      "time": "2026-05-05 07:00",
+      "price": 4540.8546,
+      "pnl_pct": -0.71
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 234,
+      "time": "2026-05-07 22:00",
+      "price": 4690.42574,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 278,
+      "time": "2026-05-11 19:00",
+      "price": 4728.69657,
+      "pnl_pct": 0.82
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 295,
+      "time": "2026-05-12 13:00",
+      "price": 4683.93926,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 436,
+      "time": "2026-05-20 16:00",
+      "price": 4529.84562,
+      "pnl_pct": -3.29
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 514,
+      "time": "2026-05-26 02:00",
+      "price": 4536.58205,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 574,
+      "time": "2026-05-28 16:00",
+      "price": 4506.32916,
+      "pnl_pct": -0.67
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 609,
+      "time": "2026-06-01 05:00",
+      "price": 4522.67816,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 631,
+      "time": "2026-06-02 04:00",
+      "price": 4512.72276,
+      "pnl_pct": -0.22
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 647,
+      "time": "2026-06-02 20:00",
+      "price": 4491.93745,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 684,
+      "time": "2026-06-04 11:00",
+      "price": 4506.89859,
+      "pnl_pct": 0.33
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 698,
+      "time": "2026-06-05 02:00",
+      "price": 4444.86042,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 805,
+      "time": "2026-06-11 17:00",
+      "price": 4147.61823,
+      "pnl_pct": -6.69
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 862,
+      "time": "2026-06-16 05:00",
+      "price": 4319.96565,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 869,
+      "time": "2026-06-16 12:00",
+      "price": 4350.27537,
+      "pnl_pct": 0.7
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 917,
+      "time": "2026-06-18 14:00",
+      "price": 4256.32207,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 1033,
+      "time": "2026-06-25 15:00",
+      "price": 4036.84911,
+      "pnl_pct": -5.16
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 1075,
+      "time": "2026-06-29 11:00",
+      "price": 4043.17914,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 1123,
+      "time": "2026-07-01 13:00",
+      "price": 4084.911,
+      "pnl_pct": 1.03
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 1191,
+      "time": "2026-07-06 12:00",
+      "price": 4143.47934,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 1253,
+      "time": "2026-07-09 05:00",
+      "price": 4077.68823,
+      "pnl_pct": -1.59
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 1279,
+      "time": "2026-07-10 08:00",
+      "price": 4101.96787,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 1324,
+      "time": "2026-07-14 07:00",
+      "price": 4016.58939,
+      "pnl_pct": -2.08
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 1343,
+      "time": "2026-07-15 03:00",
+      "price": 4035.22119,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1412,
+      "time": "2026-07-20 03:00",
+      "price": 4020.01596,
+      "pnl_pct": -0.38
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1484,
+      "time": "2026-07-23 06:00",
+      "price": 4122.47836,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1517,
+      "time": "2026-07-24 16:00",
+      "price": 4062.88305,
+      "pnl_pct": -1.45
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1539,
+      "time": "2026-07-27 15:00",
+      "price": 4082.4784,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1588,
+      "time": "2026-07-29 18:00",
+      "price": 4102.07382,
+      "pnl_pct": 0.48
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1623,
+      "time": "2026-07-31 07:00",
+      "price": 4071.52746,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1666,
+      "time": "2026-08-04 04:00",
+      "price": 4059.52641,
+      "pnl_pct": -0.29
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1847,
+      "time": "2026-08-14 01:00",
+      "price": 4322.4181,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1861,
+      "time": "2026-08-14 15:00",
+      "price": 4387.2084,
+      "pnl_pct": 1.5
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1905,
+      "time": "2026-08-18 13:00",
+      "price": 4398.62423,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1927,
+      "time": "2026-08-19 12:00",
+      "price": 4434.24132,
+      "pnl_pct": 0.81
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1949,
+      "time": "2026-08-20 11:00",
+      "price": 4471.38692,
+      "pnl_pct": null
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1963,
+      "time": "2026-08-21 02:00",
+      "price": 4529.12634,
+      "pnl_pct": 1.29
+    }
+  ],
+  "cut": 1400,
+  "carry": true,
+  "basket": [
+    {
+      "strategy": "RSI",
+      "verdict": "survived",
+      "is_profit": -19.03,
+      "oos_profit": 2.57,
+      "is_drawdown": 19.83,
+      "oos_drawdown": 3.46,
+      "is_trades": 27,
+      "oos_trades": 13
+    },
+    {
+      "strategy": "EMA_MACD",
+      "verdict": "survived",
+      "is_profit": -9.85,
+      "oos_profit": 7.16,
+      "is_drawdown": 12.84,
+      "oos_drawdown": 3.55,
+      "is_trades": 89,
+      "oos_trades": 41
+    },
+    {
+      "strategy": "SMA_CROSS",
+      "verdict": "survived",
+      "is_profit": -9.66,
+      "oos_profit": 8.19,
+      "is_drawdown": 11.46,
+      "oos_drawdown": 5.54,
+      "is_trades": 32,
+      "oos_trades": 12
+    },
+    {
+      "strategy": "BOLLINGER",
+      "verdict": "survived",
+      "is_profit": -17.36,
+      "oos_profit": 6.35,
+      "is_drawdown": 19.09,
+      "oos_drawdown": 1.96,
+      "is_trades": 31,
+      "oos_trades": 19
+    },
+    {
+      "strategy": "TURTLE",
+      "verdict": "falsified",
+      "is_profit": -14.25,
+      "oos_profit": -0.1,
+      "is_drawdown": 14.8,
+      "oos_drawdown": 3.92,
+      "is_trades": 78,
+      "oos_trades": 52
+    }
+  ]
+}

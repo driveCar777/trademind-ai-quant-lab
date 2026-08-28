@@ -1,0 +1,59 @@
+{
+  "alternative_hypothesis": "continuation_mean differs from 0 (two-sided; direction not assumed)",
+  "author": "TradeMind Research Engine V0.4",
+  "created_at_utc": "2026-08-25T14:11:58Z",
+  "direction": "unspecified_two_sided",
+  "engine_version": "0.4",
+  "entry_definition": "condition observed on close of bar t after three same-sign closed returns",
+  "exit_definition": "label is close[t+horizon]/close[t]-1; no position is opened",
+  "experiment_budget": 2,
+  "family_id": "FAM-MOMENTUM-0001",
+  "features": [
+    "close_to_close_return"
+  ],
+  "horizon": 1,
+  "hypothesis_id": "HYP-0001-A",
+  "null_hypothesis": "P(next_return>0 | prior_3_same_sign) = P(next_return>0); continuation_mean = 0",
+  "parameter_source": "pre_registered_fixed",
+  "parameters": {
+    "parameter_source": "pre_registered_fixed",
+    "prediction_horizon": 1,
+    "streak_length": 3
+  },
+  "parent_hypothesis_id": "HYP-0001",
+  "prediction": "Conditional continuation mean differs from zero.",
+  "protocol_version": "0.3",
+  "rationale": "Tests a falsifiable persistence claim. Not a trading rule. Not RSI.",
+  "rejection_criteria": "validation sign flips vs research at |d|>=0.10 on both windows",
+  "research_metrics": [
+    "condition_n",
+    "delta",
+    "effect_size",
+    "permutation_p",
+    "bootstrap_ci"
+  ],
+  "statement": "In the same timeframe, after three consecutive closed bars share a return sign, the next closed-bar return sign shows a measurable same-direction offset.",
+  "status": "LOCKED",
+  "stopping_rule": "one research pass and one validation pass; no retune",
+  "success_criteria": "same sign, validation CI excludes 0, |d|>=0.10, adjusted_p<=0.05, n>=30",
+  "target_definition": "continuation_mean = mean(streak_sign * horizon_return)",
+  "timeframes": [
+    "M15",
+    "H1",
+    "H4",
+    "D1"
+  ],
+  "title": "Short-Horizon Directional Persistence h=1",
+  "universe": [
+    "GOLD",
+    "EURUSD",
+    "USDJPY",
+    "OIL"
+  ],
+  "validation_metrics": [
+    "delta",
+    "direction_agreement",
+    "magnitude_ratio",
+    "adjusted_p"
+  ]
+}

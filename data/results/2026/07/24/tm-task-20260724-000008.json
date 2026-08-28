@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "d222737d-45c6-49dd-b850-ba31bb83b55b",
+  "indicator": "SMA",
+  "symbol": "XAUUSD",
+  "timeframe": "M15",
+  "result": {
+    "period": 10,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      44.763999999999996,
+      44.953,
+      45.122,
+      45.274,
+      45.541,
+      45.736000000000004,
+      45.853,
+      45.946,
+      46.045,
+      46.083,
+      46.039
+    ],
+    "latest": 46.039
+  },
+  "calculation_time_ms": 1.922,
+  "timestamp": "2026-07-24T12:18:27.776922"
+}

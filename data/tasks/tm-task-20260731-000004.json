@@ -1,0 +1,18 @@
+{
+  "task_id": "tm-task-20260731-000004",
+  "worker_id": "worker-04",
+  "worker_type": "monitor-worker",
+  "status": "FAILED",
+  "created_at": "2026-07-31T02:45:30.125210Z",
+  "started_at": "2026-07-31T02:45:30.237919Z",
+  "finished_at": "2026-07-31T02:45:30.244177Z",
+  "duration_ms": 6,
+  "result_path": "results/2026/07/31/tm-task-20260731-000004.json",
+  "error": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"\n        \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n        <title>Error response</title>\n    </head>\n    <body>\n        <h1>Error response</h1>\n        <p>Error code: 501</p>\n        <p>Message: Unsupported method ('POST').</p>\n        <p>Error code explanation: HTTPStatus.NOT_IMPLEMENTED - Server does not support this operation.</p>\n    </body>\n</html>\n",
+  "request": {
+    "worker_type": "monitor-worker",
+    "indicator": "status",
+    "data": {},
+    "params": {}
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "task_id": "tm-task-20260823-000012",
+  "worker_id": "worker-04",
+  "worker_type": "monitor-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-08-23T07:38:49.572942Z",
+  "started_at": "2026-08-23T07:38:49.583914Z",
+  "finished_at": "2026-08-23T07:38:55.333995Z",
+  "duration_ms": 5750,
+  "result_path": "results/2026/08/23/tm-task-20260823-000012.json",
+  "error": null,
+  "request": {
+    "worker_type": "monitor-worker",
+    "indicator": "status",
+    "data": {
+      "type": "metrics"
+    },
+    "params": {}
+  }
+}

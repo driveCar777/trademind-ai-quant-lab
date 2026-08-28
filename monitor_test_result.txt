@@ -1,0 +1,18 @@
+=== Monitor Worker Redeploy + Test ===
+SSH connected to Xavier-04
+Uploaded: 16187 bytes
+Health: {
+  "status": "healthy",
+  "service": "monitor-worker",
+  "version": "1.0.0",
+  "worker_id": "xavier-worker-04",
+  "hostname": "xavier",
+  "uptime_seconds": 2.796,
+  "timestamp": "2026-07-31T03:03:40.461213"
+}
+POST local: 
+
+=== POST from Windows ===
+FAILED: Remote end closed connection without response
+
+DONE

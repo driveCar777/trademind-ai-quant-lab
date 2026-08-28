@@ -1,0 +1,54 @@
+{
+  "FAULT_INJECTION_PASS": true,
+  "FINAL_OOS_LOCKED": false,
+  "datasets": [
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+      "elapsed_seconds": 35.02370476722717,
+      "errors": [],
+      "profile_hash": "a683c729e8c590e11a148e040d00b64c7a1914bcda1d41a392e09a0b92a38241",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+      "elapsed_seconds": 34.30552363395691,
+      "errors": [],
+      "profile_hash": "bd049a72d444d99c1f211ac4ca6d4e125c6dea14468cc7d021c0ad46de305e61",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-EURUSD-H4-20260825-000001",
+      "elapsed_seconds": 34.178892850875854,
+      "errors": [],
+      "profile_hash": "d8e5cf93b9085a28e9fd0fddd26027e1e497bf9ad80c589b6a218490cc5b20a0",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+      "elapsed_seconds": 34.19014072418213,
+      "errors": [],
+      "profile_hash": "f58e41d430275cebc5cc8bf961cde77a80b06a82775028d471b1eb95a8d21f39",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    }
+  ],
+  "elapsed_seconds": 150.07590770721436,
+  "node": "Xavier-02",
+  "python": "3.6.8",
+  "repeats": 20
+}

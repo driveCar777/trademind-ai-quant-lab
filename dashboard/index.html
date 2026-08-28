@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradeMind 控制台</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#070b12;--surface:#111827;--surface-2:#0c1220;--hover:#1c2533;
+  --line:#243044;--line-soft:#1b2536;
+  --text:#e2e8f0;--muted:#94a3b8;--faint:#64748b;
+  --ok:#10b981;--ok-bg:#063127;--bad:#f43f5e;--bad-bg:#3f1018;
+  --warn:#f59e0b;--blue:#3b82f6;--blue-press:#2563eb;--violet:#7c5cfc;--violet-press:#6d4eef;
+  --cyan:#22d3ee;
+  --r-sm:8px;--r:12px;--r-pill:999px;
+  --shadow:0 12px 40px rgba(0,0,0,.35);
+}
+html,body{background:var(--bg);color:var(--text);min-height:100vh}
+body{font-family:Inter,ui-sans-serif,system-ui,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.5}
+button,input,select,textarea{font:inherit}
+code,.mono{font-family:"JetBrains Mono",Consolas,Monaco,monospace}
+
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 28px;background:rgba(7,11,18,.88);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand strong{font-size:20px;letter-spacing:-.03em}
+.brand strong span{color:var(--ok)}
+.brand small{color:var(--muted);font-size:12px}
+.pills{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--surface);font-size:12px;color:var(--muted)}
+.pill b{color:var(--text);font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--faint);box-shadow:0 0 0 3px rgba(91,107,132,.18)}
+.dot.on{background:var(--ok);box-shadow:0 0 0 3px rgba(16,185,129,.18)}
+.dot.off{background:var(--bad);box-shadow:0 0 0 3px rgba(244,63,94,.18)}
+
+.wrap{max-width:1440px;margin:0 auto;padding:32px 32px 48px}
+
+.recipe{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.step-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.step-card.dim{opacity:.55}
+.step-card.ready{opacity:1;border-color:#3b4d7a}
+.step-card .who{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.step-card h2{font-size:16px;font-weight:600}
+.step-card .lead{font-size:13px;font-weight:500;color:var(--muted);margin-bottom:12px;min-height:40px}
+.step-card .btn{width:auto;min-width:220px;border-radius:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid var(--line);background:var(--surface-2);color:var(--muted);border-radius:999px;padding:6px 12px;font-size:12px;cursor:pointer}
+.chip.on{border-color:var(--blue);color:var(--text);background:#12233f}
+.chip:disabled{opacity:.4;cursor:not-allowed}
+.trade-ledger{margin-top:12px;max-height:280px;overflow:auto;border:1px solid var(--line);border-radius:10px;background:#0a1019}
+.trade-ledger table{width:100%}
+.trade-ledger th,.trade-ledger td{padding:7px 10px;font-size:12px}
+.trade-ledger tr{cursor:default}
+.ledger-card{margin-bottom:22px}
+.ticket{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#0a1019;margin-bottom:10px}
+.ticket div{font-size:12px;color:var(--faint)}
+.ticket b{display:block;margin-top:4px;color:var(--text);font-size:16px}
+.warn-chip{display:inline-block;margin-bottom:10px;padding:4px 10px;border-radius:999px;background:#2a1d07;color:#fbbf24;font-size:11px}
+.journal{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px}
+.nodes.strip{grid-template-columns:repeat(4,1fr);margin-bottom:16px}
+.nodes.strip .node p,.nodes.strip .node dl{display:none}
+.nodes.strip .node{padding:10px 12px}
+.howto{display:none}
+.next-ai{display:none;margin:0 0 16px;padding:12px 14px;border:1px solid #3b4d7a;border-radius:var(--r);background:#122033}
+.next-ai.show{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.next-ai p{margin:0;font-size:13px;color:var(--text)}
+.next-ai .btn{width:auto;min-width:200px;padding:8px 12px}
+.card.pulse{box-shadow:0 0 0 2px var(--violet)}
+.reco{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:260px}
+.reco p{color:var(--text);font-size:13px;max-width:360px;text-align:right}
+.reco .btn{width:auto;min-width:220px;padding:9px 14px}
+.choice.dim{opacity:.42}
+.choice.dim small{color:var(--bad)}
+.ops-note{font-size:12px;color:var(--faint);margin-left:8px}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer}
+.btn-ghost:hover{border-color:var(--blue)}
+.btn-ghost:disabled{opacity:.45;cursor:not-allowed}
+.node-ops{display:flex;gap:8px;margin-top:10px}
+.node-ops .btn-sm{flex:1;border-radius:8px}
+.btn-outline{background:transparent;border:1px solid var(--blue);color:#93c5fd}
+.flash{position:fixed;top:72px;left:50%;transform:translateX(-50%);z-index:30;padding:10px 16px;border-radius:10px;background:#1f2937;border:1px solid var(--blue);color:var(--text);font-size:13px;display:none}
+.flash.show{display:block}
+.steps{display:flex;flex-wrap:wrap;gap:10px 18px}
+.step{display:flex;align-items:center;gap:8px;color:var(--text);font-size:13px}
+.num{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#1d4ed8;color:#fff;font-size:12px;font-weight:700}
+.howto p{color:var(--muted);font-size:12px;max-width:320px}
+
+.sec{margin-bottom:10px;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.sec h2{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.sec span{font-size:12px;color:var(--faint)}
+
+.nodes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 14px 12px}
+.node .row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.node h3{font-size:14px}
+.badge{font-size:11px;padding:2px 8px;border-radius:var(--r-pill);font-weight:600}
+.badge.on{background:var(--ok-bg);color:var(--ok)}
+.badge.off{background:var(--bad-bg);color:var(--bad)}
+.node p{font-size:12px;color:var(--muted);margin-bottom:8px}
+.node dl{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;font-size:12px;color:var(--faint)}
+.node dt{color:var(--faint)}
+.node dd{color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:minmax(0,1.45fr) 400px;gap:20px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line-soft)}
+.card-h h3{font-size:15px}
+.card-h .meta{font-size:12px;color:var(--muted)}
+.card-h .meta b{color:var(--text);font-weight:600}
+.card-h .meta .ok{color:var(--ok)}
+.card-h .meta .bad{color:var(--bad)}
+.card-b{padding:16px}
+
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:11px;color:var(--faint);font-weight:600;padding:8px 14px;background:var(--surface-2)}
+td{padding:11px 14px;border-top:1px solid var(--line-soft);font-size:13px}
+tr{cursor:pointer}
+tr:hover td{background:var(--hover)}
+.tid{color:var(--cyan);font-size:12px}
+.st.COMPLETED{color:var(--ok);font-weight:600}
+.st.FAILED{color:var(--bad);font-weight:600}
+.st.RUNNING{color:var(--warn);font-weight:600}
+.st.CREATED{color:var(--faint)}
+.tag{font-size:11px;padding:2px 7px;border-radius:6px;background:#152033;color:#93c5fd}
+.empty{padding:48px 20px;text-align:center;color:var(--muted);font-size:13px}
+.empty b{display:block;color:var(--text);margin-bottom:6px}
+
+.stack{display:flex;flex-direction:column;gap:16px}
+.kicker{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.kicker em{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#1d4ed8;color:#fff;font-size:12px;font-weight:700}
+.kicker strong{font-size:15px}
+.hint{font-size:12px;color:var(--muted);margin-bottom:12px}
+
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.choice{text-align:left;padding:10px 11px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);cursor:pointer}
+.choice small{display:block;color:var(--faint);margin-top:2px;font-size:11px}
+.choice.on{border-color:#3b82f6;background:#12233f;box-shadow:inset 0 0 0 1px #3b82f6}
+.choice:hover{border-color:#3b6bb0}
+
+details.adv{margin:10px 0 14px;border:1px solid var(--line-soft);border-radius:10px;background:var(--surface-2)}
+details.adv summary{cursor:pointer;padding:8px 12px;color:var(--muted);font-size:12px}
+details.adv .pad{padding:0 12px 12px}
+label{display:block;font-size:12px;color:var(--muted);margin:8px 0 4px}
+textarea,select,input[type=text]{width:100%;background:#0a1019;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 10px;outline:none}
+textarea:focus,select:focus,input[type=text]:focus{border-color:var(--blue)}
+textarea{min-height:88px;resize:vertical;font-family:"JetBrains Mono",Consolas,monospace;font-size:12px}
+.tiny{min-height:44px}
+
+.btn{width:100%;border:0;border-radius:10px;padding:11px 14px;font-size:14px;font-weight:700;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-go{background:var(--blue);color:#fff}
+.btn-go:hover{background:var(--blue-press)}
+.btn-ai{background:var(--violet);color:#fff}
+.btn-ai:hover{background:var(--violet-press)}
+.btn-sm{width:auto;padding:7px 12px;font-size:12px}
+
+.warn{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;padding:5px 10px;border-radius:var(--r-pill);background:#2a1d07;color:#fbbf24;font-size:11px}
+.segs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+.seg{border:1px solid var(--line);background:var(--surface-2);color:var(--muted);border-radius:8px;padding:8px 8px;font-size:12px;cursor:pointer}
+.seg.on{background:#1d1638;border-color:var(--violet);color:var(--text)}
+.out{display:none;margin-top:10px;padding:10px;border:1px solid var(--line);border-radius:8px;background:#0a1019;color:var(--muted);font-size:12px;white-space:pre-wrap;word-break:break-word;max-height:220px;overflow:auto}
+.out.show{display:block}
+
+.foot{margin-top:28px;padding-top:16px;border-top:1px solid var(--line);text-align:center;color:var(--faint);font-size:11px}
+
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.62);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:40}
+.modal-bg.show{display:flex}
+.modal{width:min(760px,92vw);max-height:82vh;background:var(--surface);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.modal-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.modal-h h3{font-size:14px}
+.modal-h .acts{display:flex;align-items:center;gap:8px}
+.x{background:transparent;border:0;color:var(--muted);font-size:22px;cursor:pointer;padding:0 6px}
+.modal-b{padding:16px;overflow:auto}
+.modal-b pre{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:var(--muted);white-space:pre-wrap;word-break:break-word}
+.ai-report{white-space:pre-wrap;font-family:inherit;font-size:13px;line-height:1.7;color:var(--text)}
+.json-key{color:var(--cyan)}.json-string{color:var(--ok)}.json-number{color:var(--warn)}.json-bool{color:var(--violet)}.json-null{color:var(--faint)}
+
+@media (max-width:1100px){
+  .nodes{grid-template-columns:1fr 1fr}
+  .grid{grid-template-columns:1fr}
+  .journal{grid-template-columns:1fr}
+  .ticket{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .recipe{grid-template-columns:1fr}
+  .nodes,.choices,.segs{grid-template-columns:1fr}
+  .howto{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <strong><span>TradeMind</span> 控制台</strong>
+    <small>本机研究台 · 按步骤点 · 不发 MT5</small>
+  </div>
+  <div class="pills">
+    <span class="pill"><i class="dot" id="masterDot"></i>调度中心 <b id="masterStatus">正在连接…</b>
+      <button class="btn-ghost" id="masterRestartBtn" onclick="restartMaster()">重启调度中心</button>
+    </span>
+    <span class="pill"><i class="dot" id="aiDot"></i>通义千问 <b id="statAi">—</b>
+      <span class="ops-note">模型用桌面 TradeMind-Lab 开</span>
+    </span>
+    <span class="pill" id="masterVersion">v--</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="recipe">
+    <article class="step-card" id="step1">
+      <div class="who"><span class="num">1</span><h2>跑一笔研究</h2></div>
+      <p class="lead" id="recoText">正在看哪些节点在线…</p>
+      <p class="hint" id="sampleHint">真回测点紫色按钮。小字「黄金CSV样本」只读本机文件，不是 Ava 的 GOLD。</p>
+      <button class="btn btn-go" id="researchBtn" onclick="runResearch()" disabled>开始研究</button>
+      <button class="btn btn-ai" id="wfBtn" onclick="startGoldWf()" disabled style="margin-top:8px">黄金 MT5 证伪回测</button>
+      <div class="chips">
+        <button type="button" class="choice chip on" data-preset="indicator" onclick="applyPreset('indicator')">欧元美元 RSI</button>
+        <button type="button" class="choice chip" data-preset="factor" onclick="applyPreset('factor')">茅台因子</button>
+        <button type="button" class="choice chip" data-preset="backtest" onclick="applyPreset('backtest')">黄金CSV样本</button>
+        <button type="button" class="choice chip" data-preset="monitor" onclick="applyPreset('monitor')">监控报告</button>
+        <button type="button" class="chip" id="chainBtn" onclick="runChain()" disabled>因子后再回测（两步）</button>
+        <button type="button" class="chip" data-mt5="XAUUSD" onclick="applyMt5('XAUUSD')">黄金 MT5</button>
+        <button type="button" class="chip" data-mt5="EURUSD" onclick="applyMt5('EURUSD')">欧美 MT5</button>
+        <button type="button" class="chip" data-mt5="CRUDE" onclick="applyMt5('CRUDE')">原油 MT5</button>
+        <button type="button" class="chip" data-mt5="USDJPY" onclick="applyMt5('USDJPY')">美日 MT5</button>
+        <button type="button" class="chip" data-wf="XAUUSD" onclick="applyMt5Wf('XAUUSD')">黄金证伪回测</button>
+      </div>
+      <input type="hidden" id="workerType" value="indicator-worker">
+      <input type="hidden" id="indicator" value="RSI">
+      <details class="adv">
+        <summary>只要数字、不问通义千问</summary>
+        <div class="pad">
+          <p class="hint">这只会计算，不会自动研究、不会挂单。</p>
+          <button class="btn btn-go" id="recoBtn" onclick="runRecommended()">现在就计算</button>
+          <button class="btn btn-go" id="submitBtn" onclick="submitTask()" style="margin-top:8px">开始计算</button>
+          <label>任务数据（JSON）</label>
+          <textarea id="taskData" placeholder='{"symbol":"EURUSD","close":[...]}'></textarea>
+          <label>参数（JSON，可空）</label>
+          <textarea id="taskParams" class="tiny" placeholder='{"period":14}'></textarea>
+          <div class="out" id="submitResponse"></div>
+        </div>
+      </details>
+    </article>
+
+    <article class="step-card dim" id="step2">
+      <div class="who"><span class="num">2</span><h2>看这笔结果</h2></div>
+      <p class="lead" id="step2Text">还没有结果。先点上面的「开始研究」。</p>
+      <button class="btn btn-ai" id="openResultBtn" type="button" onclick="openLatestResearch()" disabled>打开完整解读</button>
+      <div id="tradeLedger" class="trade-ledger" style="display:none"></div>
+      <div class="next-ai" id="nextAi" style="margin-top:12px">
+        <p id="nextAiText">算完后可以问通义千问。不会自动提问。</p>
+        <button class="btn btn-ai" id="nextAiBtn" type="button" onclick="goAskAi()" disabled>用这笔数字问 AI</button>
+      </div>
+    </article>
+
+    <article class="step-card dim" id="step3">
+      <div class="who"><span class="num">3</span><h2>先看拟单</h2></div>
+      <span class="warn-chip">拟单预览 · 确认后才发模拟盘</span>
+      <div class="ticket" id="step3Ticket">
+        <div>品种<b id="ticketSymbol">—</b></div>
+        <div>方向<b id="ticketSide">—</b></div>
+        <div>手数<b id="ticketVolume">—</b></div>
+        <div>说明<b id="ticketReason">先完成研究</b></div>
+      </div>
+      <div class="next-ai" id="nextPaper">
+        <p id="nextPaperText">研究完成后这里出现拟单。能挂的单，去第 4 步确认。</p>
+        <button class="btn btn-ai" id="nextPaperBtn" type="button" onclick="openPaperFromBar()" disabled>去第 4 步确认</button>
+      </div>
+    </article>
+
+    <article class="step-card dim" id="step4">
+      <div class="who"><span class="num">4</span><h2>手点确认才落盘</h2></div>
+      <p class="lead">RSI≤30 才建议买、≥70 才建议卖。中间不是信号。要测通路，自己选方向，0.01 手。进终端不代表能赚钱。</p>
+      <button class="btn btn-go" id="paperOrderBtn" onclick="submitPaperOrder()" disabled>确认挂模拟盘</button>
+      <button class="btn btn-outline" id="wireBuyBtn" onclick="submitPaperOrder('BUY')" disabled style="margin-top:8px">测买 0.01</button>
+      <button class="btn btn-outline" id="wireSellBtn" onclick="submitPaperOrder('SELL')" disabled style="margin-top:8px">测卖 0.01</button>
+    </article>
+  </section>
+
+  <div class="journal">
+    <section class="card">
+      <div class="card-h">
+        <h3>今天的研究</h3>
+        <div class="meta">共 <b id="researchCount">0</b> · 今天 <b id="deskResearchCount">0</b></div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>编号</th><th>摘要</th><th>解读</th><th>时间</th></tr>
+        </thead>
+        <tbody id="researchBody">
+          <tr><td colspan="4" class="empty"><b>还没有研究</b>从第一步开始</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="card">
+      <div class="card-h">
+        <h3>今天的模拟单</h3>
+        <div class="meta">今天 <b id="deskOrderCount">0</b> · 终端 <b id="mt5Status">—</b></div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>编号</th><th>研究</th><th>品种</th><th>方向</th><th>状态</th></tr>
+        </thead>
+        <tbody id="ordersBody">
+          <tr><td colspan="5" class="empty"><b>还没有模拟单</b>先看拟单再确认</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <div class="sec">
+    <h2>计算节点</h2>
+    <span>离线就点启动。节点 <b id="statOnline">0/4</b> · 计算记录 <b id="statTotal">0</b> / 成功 <b class="ok" id="statCompleted">0</b> / 失败 <b class="bad" id="statFailed">0</b></span>
+  </div>
+  <section class="nodes strip" id="workersGrid">
+    <div class="node"><p>加载中…</p></div>
+    <div class="node"><p>加载中…</p></div>
+    <div class="node"><p>加载中…</p></div>
+    <div class="node"><p>加载中…</p></div>
+  </section>
+
+  <details class="adv" style="margin-bottom:20px">
+    <summary>计算记录明细（一般不用看）</summary>
+    <table>
+      <thead>
+        <tr><th>编号</th><th>结果</th><th>类型</th><th>耗时</th><th>时间</th></tr>
+      </thead>
+      <tbody id="tasksBody">
+        <tr><td colspan="5" class="empty"><b>还没有计算记录</b></td></tr>
+      </tbody>
+    </table>
+  </details>
+
+  <section class="card" id="aiCard" style="margin-bottom:20px">
+        <div class="card-b">
+          <div class="kicker"><em>?</em><strong>另外问通义千问</strong></div>
+          <p class="hint" id="aiHint">先选用途。解读买卖信号时，请留着框里的数字。</p>
+          <div class="warn" id="aiWarn">框里默认是示例数字，不是实盘，也不是节点刚算出来的结果。</div>
+          <div class="segs" id="aiSegs">
+            <button type="button" class="seg on" data-action="chat" onclick="setAiAction('chat')">随便聊聊</button>
+            <button type="button" class="seg" data-action="signal" onclick="setAiAction('signal')">解读买卖信号</button>
+            <button type="button" class="seg" data-action="describe" onclick="setAiAction('describe')">解读回测</button>
+            <button type="button" class="seg" data-action="generate" onclick="setAiAction('generate')">写投研报告</button>
+          </div>
+          <select id="aiAction" hidden onchange="onAiActionChange()">
+            <option value="chat">随便问问</option>
+            <option value="generate">写投研报告</option>
+            <option value="describe">解读回测</option>
+            <option value="signal">解读买卖信号</option>
+          </select>
+          <label for="aiInput">输入</label>
+          <textarea id="aiInput" placeholder="例如：用一句话介绍你自己"></textarea>
+          <button class="btn btn-ai" id="aiBtn" onclick="submitAI()" style="margin-top:10px">问 AI</button>
+          <div class="out" id="aiResponse"></div>
+        </div>
+      </section>
+</main>
+
+<div class="flash" id="opsFlash"></div>
+<footer class="foot">TradeMind 研究台 · 按 1→2→3→4 点 · 模拟盘可进 MT5 · 实盘拒绝 · 界面 2026-08-24</footer>
+
+<div class="modal-bg" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-h">
+      <h3 id="modalTitle">计算结果</h3>
+      <div class="acts">
+        <button class="btn btn-sm btn-ai" id="aiAnalyzeBtn" onclick="analyzeCurrentTask()">让 AI 解读</button>
+        <button class="x" onclick="document.getElementById('modalOverlay').classList.remove('show')">&times;</button>
+      </div>
+    </div>
+    <div class="modal-b">
+      <p class="hint" id="modalHint" style="margin-top:0">「让 AI 解读」会送算完的数字，不会自动提问。</p>
+      <pre id="modalContent"></pre>
+      <div id="modalLedger" class="trade-ledger" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = window.location.origin;
+let allTasks = [];
+let workersData = [];
+let currentTask = null;
+let currentResearchId = '';
+let selectedSource = 'csv';
+let selectedMt5 = '';
+let selectedWf = false;
+let aiOnline = false;
+let aiBusy = false;
+let lastAiBtnLabel = '问 AI';
+
+const AI_HINTS = {
+  chat: '随便聊天，不会分析行情。',
+  signal: '请保留或修改框里的 RSI / MACD 数字。缺数字就无法解读。',
+  describe: '粘贴回测数字：收益、回撤、胜率。',
+  generate: '粘贴股票代码和因子数字。'
+};
+
+function statusLabel(s) {
+  return {
+    ONLINE: '在线', OFFLINE: '离线', DEGRADED: '降级',
+    COMPLETED: '成功', FAILED: '失败', RUNNING: '运行中', CREATED: '已创建'
+  }[s] || s;
+}
+
+function workerTypeLabel(t) {
+  return {
+    'indicator-worker': '指标计算',
+    'stock-factor-worker': '股票因子',
+    'backtest-worker': '策略回测',
+    'monitor-worker': '集群监控'
+  }[t] || t;
+}
+
+function workerJobLabel(t) {
+  return {
+    'indicator-worker': '算 RSI / MACD / 均线',
+    'stock-factor-worker': '算 A 股因子',
+    'backtest-worker': '跑策略回测',
+    'monitor-worker': '集群状态报告'
+  }[t] || '计算节点';
+}
+
+function workerNameLabel(name) {
+  const map = {
+    'Indicator Worker 01': '指标节点 01',
+    'Stock Factor Worker 02': '因子节点 02',
+    'Backtest Worker 03': '回测节点 03',
+    'Monitor Worker 04': '监控节点 04'
+  };
+  return map[name] || name;
+}
+
+const PRESETS = {
+  indicator: {
+    worker_type: 'indicator-worker',
+    indicator: 'RSI',
+    data: JSON.stringify({symbol:'EURUSD',close:[1.082,1.0835,1.0828,1.0841,1.0836,1.0845,1.0839,1.0852,1.0848,1.0855,1.085,1.0862,1.0858,1.087,1.0865,1.0878,1.0872,1.0885,1.088,1.0892,1.0888,1.0895,1.089,1.0898,1.0893,1.0902,1.0897,1.091,1.0905,1.0915]}, null, 2),
+    params: JSON.stringify({period:14}, null, 2)
+  },
+  factor: {
+    worker_type: 'stock-factor-worker',
+    indicator: 'factor',
+    data: JSON.stringify({stock:'600519',date:'20260731'}, null, 2),
+    params: '{}'
+  },
+  backtest: {
+    worker_type: 'backtest-worker',
+    indicator: 'backtest',
+    data: JSON.stringify({strategy:'EMA_MACD',symbol:'XAUUSD',start:'2025-01-01'}, null, 2),
+    params: '{}'
+  },
+  monitor: {
+    worker_type: 'monitor-worker',
+    indicator: 'status',
+    data: JSON.stringify({type:'metrics'}, null, 2),
+    params: '{}'
+  }
+};
+
+function applyPreset(name) {
+  const p = PRESETS[name];
+  if (!p) return;
+  selectedSource = 'csv';
+  selectedMt5 = '';
+  selectedWf = false;
+  document.getElementById('workerType').value = p.worker_type;
+  document.getElementById('indicator').value = p.indicator;
+  document.getElementById('taskData').value = p.data;
+  document.getElementById('taskParams').value = p.params;
+  document.querySelectorAll('.choice').forEach(el => {
+    el.classList.toggle('on', el.getAttribute('data-preset') === name);
+  });
+  document.querySelectorAll('[data-mt5]').forEach(el => el.classList.remove('on'));
+  document.querySelectorAll('[data-wf]').forEach(el => el.classList.remove('on'));
+  updatePresetAvailability();
+}
+
+function applyMt5(symbol) {
+  applyPreset('indicator');
+  selectedSource = 'mt5';
+  selectedMt5 = symbol;
+  selectedWf = false;
+  document.querySelectorAll('[data-mt5]').forEach(el => {
+    el.classList.toggle('on', el.getAttribute('data-mt5') === symbol);
+  });
+  document.querySelectorAll('[data-wf]').forEach(el => el.classList.remove('on'));
+  updatePresetAvailability();
+}
+
+function applyMt5Wf(symbol) {
+  applyPreset('backtest');
+  selectedSource = 'mt5';
+  selectedMt5 = symbol;
+  selectedWf = true;
+  document.querySelectorAll('[data-wf]').forEach(el => {
+    el.classList.toggle('on', el.getAttribute('data-wf') === symbol);
+  });
+  document.querySelectorAll('[data-mt5]').forEach(el => el.classList.remove('on'));
+  updatePresetAvailability();
+}
+
+function startGoldWf() {
+  if (!isWorkerTypeOnline('backtest-worker')) {
+    showOpsFlash('回测节点离线。');
+    return;
+  }
+  applyMt5Wf('XAUUSD');
+  runResearch();
+}
+
+function isWorkerTypeOnline(wt) {
+  return workersData.some(w => w.worker_type === wt && w.status === 'ONLINE');
+}
+
+function recommendedPreset() {
+  const order = ['indicator', 'factor', 'backtest', 'monitor'];
+  for (let i = 0; i < order.length; i++) {
+    const name = order[i];
+    if (isWorkerTypeOnline(PRESETS[name].worker_type)) return name;
+  }
+  return null;
+}
+
+function selectedPreset() {
+  const on = document.querySelector('.choice.on');
+  const name = on && on.getAttribute('data-preset');
+  if (name && PRESETS[name] && isWorkerTypeOnline(PRESETS[name].worker_type)) return name;
+  return recommendedPreset();
+}
+
+function updatePresetAvailability() {
+  const labels = {
+    indicator: '欧元美元 RSI',
+    factor: '茅台因子',
+    backtest: '黄金CSV样本',
+    monitor: '监控报告'
+  };
+  document.querySelectorAll('.choice').forEach(el => {
+    const name = el.getAttribute('data-preset');
+    const online = !!(PRESETS[name] && isWorkerTypeOnline(PRESETS[name].worker_type));
+    el.classList.toggle('dim', !online);
+    el.title = online ? '' : '该节点离线，提交会被拒绝';
+  });
+  const recoText = document.getElementById('recoText');
+  const recoBtn = document.getElementById('recoBtn');
+  const researchBtn = document.getElementById('researchBtn');
+  const chainBtn = document.getElementById('chainBtn');
+  const wfBtn = document.getElementById('wfBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  if (!recoText || !recoBtn || !submitBtn) return;
+  const rec = recommendedPreset();
+  const selectedOnline = isWorkerTypeOnline(document.getElementById('workerType').value);
+  const chainReady = isWorkerTypeOnline('stock-factor-worker') && isWorkerTypeOnline('backtest-worker');
+  const wfOnline = isWorkerTypeOnline('backtest-worker');
+  submitBtn.disabled = !selectedOnline;
+  if (chainBtn) {
+    chainBtn.disabled = !chainReady;
+    chainBtn.title = chainReady ? '' : '因子和回测节点都要在线';
+  }
+  if (wfBtn) {
+    wfBtn.disabled = !wfOnline;
+    wfBtn.title = wfOnline ? 'Ava GOLD 真K线证伪，不是 CSV 样本' : '回测节点离线';
+  }
+  if (!rec) {
+    recoText.textContent = '计算节点都离线。先到下面点「启动」，或用桌面 TradeMind-Lab。';
+    recoBtn.disabled = true;
+    recoBtn.textContent = '现在就计算';
+    if (researchBtn) researchBtn.disabled = true;
+    return;
+  }
+  const mt5Online = isWorkerTypeOnline('indicator-worker');
+  document.querySelectorAll('[data-mt5]').forEach(el => {
+    el.classList.toggle('dim', !mt5Online);
+    el.title = mt5Online ? 'Master 拉本机 MT5，Xavier 只算 RSI' : '指标节点离线';
+  });
+  document.querySelectorAll('[data-wf]').forEach(el => {
+    el.classList.toggle('dim', !wfOnline);
+    el.title = wfOnline ? 'MT5 日线样本内外回测，目标是证伪' : '回测节点离线';
+  });
+  const picked = selectedPreset() || rec;
+  const mt5Labels = {XAUUSD: '黄金 MT5', EURUSD: '欧美 MT5', CRUDE: '原油 MT5', USDJPY: '美日 MT5'};
+  if (selectedWf && selectedMt5) {
+    recoText.textContent = '当前会做：黄金证伪回测。Master 拉 MT5 日线，切 70/30，Xavier 算 RSI。survived 不是赚钱保证。';
+  } else if (selectedSource === 'mt5' && selectedMt5) {
+    recoText.textContent = '当前会研究：' + (mt5Labels[selectedMt5] || selectedMt5) + '。Master 拉本机 MT5 M15，Xavier 只算 RSI。点「开始研究」才跑。';
+  } else {
+    recoText.textContent = '当前会研究：' + labels[picked] + '。点「开始研究」就是研究一笔。不是实时行情。小字只换类型，不会自动跑。';
+  }
+  recoBtn.disabled = false;
+  recoBtn.textContent = '现在就计算 · ' + labels[picked];
+  if (researchBtn) {
+    researchBtn.disabled = false;
+    researchBtn.textContent = '开始研究（' + labels[picked] + '）';
+  }
+}
+
+async function runRecommended() {
+  const rec = recommendedPreset();
+  if (!rec) {
+    showOpsFlash('没有在线节点。先启动，或用桌面 TradeMind-Lab。');
+    return;
+  }
+  applyPreset(rec);
+  await submitTask();
+}
+
+function ledgerHtml(data) {
+  const trades = data.trades || [];
+  const win = (data.window_from && data.window_to)
+    ? ('K 线 ' + data.window_from + ' ～ ' + data.window_to + ' · ' + (data.timeframe || '') + ' · ' + (data.bars || 0) + ' 根 · 本机 MT5，不是仓库 CSV')
+    : '没有 K 线窗口。旧记录或没留下 time。';
+  if (!trades.length) {
+    return '<p class="hint" style="padding:10px">' + win + '。没有成交明细，无法核对买卖点。</p>';
+  }
+  let html = '<p class="hint" style="padding:10px 10px 0">' + win + ' · ' + trades.length + ' 笔</p>';
+  html += '<table><thead><tr><th>分段</th><th>方向</th><th>时间(UTC)</th><th>价格</th><th>盈亏%</th></tr></thead><tbody>';
+  trades.forEach(function(item) {
+    html += '<tr><td>' + esc(item.split || '') + '</td><td>' + esc(item.side || '') + '</td><td class="mono">' + esc(item.time || '—') + '</td><td class="mono">' + esc(item.price == null ? '—' : item.price) + '</td><td>' + esc(item.pnl_pct == null ? '—' : item.pnl_pct) + '</td></tr>';
+  });
+  html += '</tbody></table>';
+  const basket = data.basket || [];
+  if (basket.length) {
+    html += '<p class="hint" style="padding:10px 10px 0">冻结参数策略篮（同一段 K 线，不按样本外调参）' + (data.carry ? ' · 连续持仓' : '') + '</p>';
+    html += '<table><thead><tr><th>策略</th><th>判定</th><th>内%</th><th>外%</th><th>回撤内/外</th><th>成交内/外</th></tr></thead><tbody>';
+    basket.forEach(function(item) {
+      html += '<tr><td>' + esc(item.strategy || '') + '</td><td>' + esc(item.verdict || '') + '</td><td class="mono">' + esc(item.is_profit) + '</td><td class="mono">' + esc(item.oos_profit) + '</td><td class="mono">' + esc(item.is_drawdown) + '/' + esc(item.oos_drawdown) + '</td><td class="mono">' + esc(item.is_trades) + '/' + esc(item.oos_trades) + '</td></tr>';
+    });
+    html += '</tbody></table>';
+  }
+  const mined = data.mine || [];
+  if (mined.length) {
+    html += '<p class="hint" style="padding:10px 10px 0">样本内筛选 ' + mined.length + ' 组，并发节点 ' + esc((data.mine_workers || []).join(',') || '—') + ' · 选中 ' + esc(data.picked || '') + ' · 样本外只验这一组</p>';
+    html += '<table><thead><tr><th>候选</th><th>节点</th><th>内分</th><th>内%/回撤</th><th>外%</th><th>判定</th><th>选中</th></tr></thead><tbody>';
+    mined.forEach(function(item) {
+      html += '<tr><td>' + esc(item.id || item.strategy) + '</td><td class="mono">' + esc(item.worker_id || '') + '</td><td class="mono">' + esc(item.is_score) + '</td><td class="mono">' + esc(item.is_profit) + '/' + esc(item.is_drawdown) + '</td><td class="mono">' + esc(item.oos_profit) + '</td><td>' + esc(item.verdict || '') + '</td><td>' + (item.picked ? '是' : '') + '</td></tr>';
+    });
+    html += '</tbody></table>';
+  }
+  const counts = data.regime_counts || {};
+  const table = data.regime_table || [];
+  if (counts.up != null || table.length) {
+    html += '<p class="hint" style="padding:10px 10px 0">行情分段 上' + esc(counts.up || 0) + ' 下' + esc(counts.down || 0) + ' 震' + esc(counts.range || 0) + ' · 上涨均线 / 震荡布林 / 下跌空仓 · 不训练</p>';
+  }
+  if (table.length) {
+    html += '<table><thead><tr><th>策略</th><th>分段</th><th>行情</th><th>笔数</th><th>平仓盈亏%合计</th></tr></thead><tbody>';
+    table.forEach(function(item) {
+      html += '<tr><td>' + esc(item.strategy || '') + '</td><td>' + esc(item.split || '') + '</td><td>' + esc(item.regime || '') + '</td><td class="mono">' + esc(item.n) + '</td><td class="mono">' + esc(item.pnl) + '</td></tr>';
+    });
+    html += '</tbody></table>';
+  }
+  return html;
+}
+
+function renderLedger(data) {
+  const box = document.getElementById('tradeLedger');
+  const modal = document.getElementById('modalLedger');
+  const html = ledgerHtml(data || {});
+  const hasRows = ((data && data.trades) || []).length > 0 || ((data && data.basket) || []).length > 0 || ((data && data.regime_table) || []).length > 0 || ((data && data.mine) || []).length > 0;
+  if (box) {
+    box.innerHTML = html;
+    box.style.display = hasRows || (data && data.verdict) ? 'block' : 'none';
+  }
+  if (modal) {
+    modal.innerHTML = html;
+    modal.style.display = hasRows ? 'block' : 'none';
+  }
+}
+
+async function finishResearch(result, data) {
+  const resp = document.getElementById('submitResponse');
+  if (!result.success) {
+    resp.style.color = 'var(--bad)';
+    resp.textContent = (result.message || '研究失败') + ' (' + (result.code || '') + ')';
+    return;
+  }
+  const steps = (data.steps || []).map(s => s.summary).filter(Boolean);
+  resp.style.color = 'var(--ok)';
+  resp.textContent = (steps.length ? steps.join(' → ') + '\n' : '') + (data.summary || '完成') + (data.ai_skipped ? '\n未问模型：' : '\n') + (data.ai_text || '');
+  showNextAi(data.summary || '研究完成', !data.ai_skipped && !!data.ai_text);
+  if (data.ai_text) {
+    document.getElementById('aiInput').value = data.ai_text;
+    document.getElementById('aiHint').textContent = '这是本轮研究的解读。数字来自预设/内置库，不是实时行情。';
+    setSampleWarn(true);
+  }
+  refreshTasks();
+  refreshResearch();
+  refreshDesk();
+  renderLedger(data);
+  if (data.research_id) {
+    showNextPaper(data.research_id, data.preset, data.summary);
+    fillDeskSteps(data);
+  }
+}
+
+async function runChain() {
+  const btn = document.getElementById('chainBtn');
+  const resp = document.getElementById('submitResponse');
+  if (!isWorkerTypeOnline('stock-factor-worker') || !isWorkerTypeOnline('backtest-worker')) {
+    showOpsFlash('因子或回测节点离线，无法两步研究。');
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = '两步研究中…';
+  resp.className = 'out show';
+  resp.style.color = 'var(--muted)';
+  resp.textContent = '正在跑因子，再跑回测（最多问一次模型）…';
+  try {
+    const r = await fetch(API + '/api/v1/research/run', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({chain: ['factor', 'backtest']}),
+      signal: AbortSignal.timeout(180000)
+    });
+    const result = await r.json();
+    await finishResearch(result, result.data || {});
+  } catch (e) {
+    resp.style.color = 'var(--bad)';
+    resp.textContent = '网络错误：' + e.message;
+  }
+  updatePresetAvailability();
+}
+
+async function runResearch() {
+  const rec = selectedPreset();
+  const useMt5 = selectedSource === 'mt5';
+  const useWf = !!selectedWf;
+  const mt5Symbol = selectedMt5 || 'EURUSD';
+  const btn = document.getElementById('researchBtn');
+  const resp = document.getElementById('submitResponse');
+  if (!rec) {
+    showOpsFlash('没有在线节点，无法研究。');
+    return;
+  }
+  if (!useMt5) applyPreset(rec);
+  btn.disabled = true;
+  btn.textContent = '研究中…';
+  resp.className = 'out show';
+  resp.style.color = 'var(--muted)';
+  resp.textContent = useWf
+    ? ('正在拉 ' + mt5Symbol + ' 日线，做样本内/外证伪回测…')
+    : (useMt5
+      ? ('正在拉 ' + mt5Symbol + ' 的 MT5 M15，交给 Xavier 算 RSI…')
+      : '正在研究一笔（先计算，再尽量问通义千问）…');
+  try {
+    const r = await fetch(API + '/api/v1/research/run', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(useWf
+        ? {preset: 'backtest', source: 'mt5', symbol: mt5Symbol}
+        : (useMt5
+          ? {preset: 'indicator', source: 'mt5', symbol: mt5Symbol}
+          : {preset: rec, sample_id: ({indicator:'eurusd',factor:'moutai',backtest:'xauusd'})[rec]})),
+      signal: AbortSignal.timeout(180000)
+    });
+    const result = await r.json();
+    await finishResearch(result, result.data || {});
+  } catch (e) {
+    resp.style.color = 'var(--bad)';
+    resp.textContent = '网络错误：' + e.message;
+  }
+  updatePresetAvailability();
+}
+
+function onWorkerTypeChange() {
+  const t = document.getElementById('workerType').value;
+  const key = {
+    'indicator-worker': 'indicator',
+    'stock-factor-worker': 'factor',
+    'backtest-worker': 'backtest',
+    'monitor-worker': 'monitor'
+  }[t];
+  if (key) applyPreset(key);
+}
+
+async function fetchJSON(path) {
+  try {
+    const r = await fetch(API + path, {signal: AbortSignal.timeout(8000)});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return await r.json();
+  } catch(e) { return null; }
+}
+
+async function refreshWorkers() {
+  const data = await fetchJSON('/workers');
+  if (!data || !data.data) return;
+  workersData = data.data.workers || [];
+  const grid = document.getElementById('workersGrid');
+  grid.innerHTML = workersData.map(w => {
+    const isOnline = w.status === 'ONLINE';
+    const startOff = isOnline ? 'disabled' : '';
+    const restartOff = isOnline ? '' : 'disabled';
+    return `<article class="node">
+      <div class="row">
+        <h3>${esc(workerNameLabel(w.name))}</h3>
+        <span class="badge ${isOnline?'on':'off'}">${statusLabel(w.status)}</span>
+      </div>
+      <p>${esc(workerJobLabel(w.worker_type))}</p>
+      <dl>
+        <dt>地址</dt><dd>${esc(w.host)}:${w.port}</dd>
+        <dt>延迟</dt><dd>${w.latency_ms != null ? w.latency_ms + ' 毫秒' : '—'}</dd>
+      </dl>
+      <div class="node-ops">
+        <button class="btn btn-sm btn-go" ${startOff} onclick="opsWorker('${esc(w.id)}','start')">启动</button>
+        <button class="btn btn-sm btn-outline" ${restartOff} onclick="opsWorker('${esc(w.id)}','restart')">重启</button>
+      </div>
+    </article>`;
+  }).join('');
+  const online = workersData.filter(w => w.status === 'ONLINE').length;
+  document.getElementById('statOnline').textContent = online + '/' + workersData.length;
+  updatePresetAvailability();
+  await refreshAiHealth();
+}
+
+async function refreshAiHealth() {
+  const data = await fetchJSON('/api/v1/ai/health');
+  const inner = data && data.data ? data.data : null;
+  const loaded = !!(inner && inner.model_loaded);
+  const status = inner ? (inner.status || 'unknown') : 'OFFLINE';
+  const isOnline = loaded || status === 'healthy';
+  const label = isOnline ? (status === 'degraded' ? '降级' : '在线') : '离线';
+  document.getElementById('statAi').textContent = label;
+  document.getElementById('aiDot').className = 'dot ' + (isOnline ? 'on' : 'off');
+  aiOnline = isOnline;
+  updateAiButtons();
+}
+
+async function refreshTasks() {
+  const data = await fetchJSON('/tasks?limit=50');
+  if (!data || !data.data) return;
+  allTasks = (data.data.tasks || []).reverse();
+  const tbody = document.getElementById('tasksBody');
+  if (!allTasks.length) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty"><b>还没有计算记录</b>点上面的「现在就计算」</td></tr>';
+  } else {
+    tbody.innerHTML = allTasks.map(t => {
+      const time = t.created_at ? new Date(t.created_at).toLocaleTimeString() : '—';
+      return `<tr onclick="showResult('${esc(t.task_id)}')">
+        <td class="tid mono">${esc(t.task_id)}</td>
+        <td><span class="st ${t.status}">${statusLabel(t.status)}</span></td>
+        <td><span class="tag">${esc(workerTypeLabel(t.worker_type))}</span></td>
+        <td class="mono" style="color:var(--faint)">${t.duration_ms != null ? t.duration_ms + ' 毫秒' : '—'}</td>
+        <td style="color:var(--faint);font-size:12px">${time}</td>
+      </tr>`;
+    }).join('');
+  }
+  document.getElementById('statTotal').textContent = allTasks.length;
+  document.getElementById('statCompleted').textContent = allTasks.filter(t => t.status === 'COMPLETED').length;
+  document.getElementById('statFailed').textContent = allTasks.filter(t => t.status === 'FAILED').length;
+}
+
+async function refreshResearch() {
+  const data = await fetchJSON('/api/v1/research?limit=20');
+  const tbody = document.getElementById('researchBody');
+  const countEl = document.getElementById('researchCount');
+  if (!tbody) return;
+  if (!data || !data.data) {
+    tbody.innerHTML = '<tr><td colspan="4" class="empty"><b>研究列表暂时读不到</b>重启调度中心后再试</td></tr>';
+    return;
+  }
+  const items = (data.data.items || []).slice().reverse();
+  if (countEl) countEl.textContent = data.data.count || items.length;
+  if (!items.length) {
+    tbody.innerHTML = '<tr><td colspan="4" class="empty"><b>还没有研究记录</b>点上面的「研究一笔」</td></tr>';
+    return;
+  }
+  tbody.innerHTML = items.map(item => {
+    const time = item.created_at ? new Date(item.created_at).toLocaleTimeString() : '—';
+    const ai = item.ai_skipped ? '未问模型' : '已解读';
+    return `<tr onclick="showResearch('${esc(item.research_id)}')">
+      <td class="tid mono">${esc(item.research_id)}</td>
+      <td>${esc(item.summary || '—')}</td>
+      <td><span class="st ${item.ai_skipped ? 'CREATED' : 'COMPLETED'}">${ai}</span></td>
+      <td style="color:var(--faint);font-size:12px">${time}</td>
+    </tr>`;
+  }).join('');
+  const ticketSide = document.getElementById('ticketSide');
+  const needFill = !currentResearchId || !ticketSide || ticketSide.textContent === '—';
+  if (items.length && needFill) {
+    fillDeskSteps(items[0]);
+  }
+}
+
+async function previewPaper(researchId) {
+  try {
+    const r = await fetch(API + '/api/v1/orders/preview', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({research_id: researchId}),
+      signal: AbortSignal.timeout(15000)
+    });
+    return await r.json();
+  } catch (e) {
+    return {success: false, message: e.message, data: {}};
+  }
+}
+
+async function showResearch(researchId) {
+  const data = await fetchJSON('/api/v1/research/' + researchId);
+  if (!data || !data.data) return;
+  const item = data.data;
+  currentResearchId = researchId;
+  const preview = await previewPaper(researchId);
+  const ticket = preview.data || {};
+  const canAccept = ticket.side === 'BUY' || ticket.side === 'SELL';
+  const line = canAccept
+    ? ('拟单 ' + (ticket.symbol || '') + ' ' + ticket.side + ' ' + ticket.volume + '（确认后才发模拟盘）')
+    : (ticket.reason === 'rsi_neutral'
+      ? ('RSI 在中间，不是买卖信号。要测通路，用第 4 步「测买 / 测卖」。')
+      : (ticket.reason === 'not_orderable_preset'
+        ? ('这是回测/证伪，不能当买卖单。要挂单：先点黄金 MT5 做指标研究，再走第 3、4 步。')
+        : ('不能挂单：' + (ticket.reason || preview.message || '看看是不是指标研究'))));
+  document.getElementById('modalTitle').textContent = '研究记录 · ' + researchId;
+  document.getElementById('modalHint').textContent = (item.summary || '') + '。' + line;
+  const text = (item.ai_text || '').trim() || '没有解读正文。';
+  document.getElementById('modalContent').className = 'ai-report';
+  document.getElementById('modalContent').textContent = text;
+  renderLedger(item);
+  applyTicket(ticket, canAccept, line);
+  document.getElementById('modalOverlay').classList.add('show');
+}
+
+function applyTicket(ticket, canAccept, line) {
+  const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  setText('ticketSymbol', ticket.symbol || '—');
+  setText('ticketSide', ticket.side || '—');
+  setText('ticketVolume', ticket.volume != null ? String(ticket.volume) : '—');
+  setText('ticketReason', line || ticket.reason || '—');
+  ['step2', 'step3', 'step4'].forEach(id => {
+    const card = document.getElementById(id);
+    if (card) { card.classList.remove('dim'); card.classList.add('ready'); }
+  });
+  const paper = document.getElementById('paperOrderBtn');
+  if (paper) {
+    paper.disabled = !canAccept;
+    paper.title = canAccept ? '模拟盘才发到 MT5，实盘会拒绝' : (line || '');
+  }
+  const canWire = !!(ticket.symbol && (ticket.wire_test || ticket.reason === 'rsi_neutral'));
+  ['wireBuyBtn', 'wireSellBtn'].forEach(function(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.disabled = !canWire;
+    el.title = canWire ? '测通模拟盘，不是预测' : (line || '');
+  });
+  const openBtn = document.getElementById('openResultBtn');
+  if (openBtn) openBtn.disabled = !currentResearchId;
+}
+
+function openLatestResearch() {
+  if (currentResearchId) showResearch(currentResearchId);
+}
+
+async function fillDeskSteps(data) {
+  currentResearchId = data.research_id || currentResearchId;
+  const step2 = document.getElementById('step2Text');
+  if (step2) step2.textContent = data.summary || '研究完成。点下面打开完整解读。';
+  const openBtn = document.getElementById('openResultBtn');
+  if (openBtn) openBtn.disabled = !currentResearchId;
+  const step2card = document.getElementById('step2');
+  if (step2card) { step2card.classList.remove('dim'); step2card.classList.add('ready'); }
+  renderLedger(data);
+  if (!currentResearchId) return;
+  const preview = await previewPaper(currentResearchId);
+  const ticket = preview.data || {};
+  const canAccept = ticket.side === 'BUY' || ticket.side === 'SELL';
+  const line = canAccept
+    ? ('拟单 ' + (ticket.symbol || '') + ' ' + ticket.side + ' ' + ticket.volume + '（确认后才发模拟盘）')
+    : (ticket.reason === 'rsi_neutral'
+      ? ('RSI 在中间，不是买卖信号。要测通路，用第 4 步「测买 / 测卖」。')
+      : (ticket.reason === 'not_orderable_preset'
+        ? ('这是回测/证伪，不能当买卖单。要挂单：先点黄金 MT5 做指标研究，再走第 3、4 步。')
+        : ('不能挂单：' + (ticket.reason || preview.message || '换一笔欧元美元 RSI 研究'))));
+  applyTicket(ticket, canAccept, line);
+}
+
+async function refreshMt5() {
+  const data = await fetchJSON('/api/v1/mt5/status');
+  const el = document.getElementById('mt5Status');
+  if (!el) return;
+  if (!data || !data.data) {
+    el.textContent = '未知';
+    return;
+  }
+  const d = data.data;
+  if (d.connected) {
+    const quotes = (d.symbols || []).filter(function(item) { return item && item.bid != null; })
+      .map(function(item) { return (item.logical || item.symbol) + ' ' + item.bid; }).slice(0, 4).join(' · ');
+    el.textContent = (d.account_mode || '已连接') + (d.login_masked ? (' ' + d.login_masked) : '') + (quotes ? (' · ' + quotes) : '');
+  } else {
+    el.textContent = d.reason === 'package_missing' ? '未装包' : '未连接';
+  }
+}
+
+async function refreshDesk() {
+  const data = await fetchJSON('/api/v1/desk/today');
+  const rc = document.getElementById('deskResearchCount');
+  const oc = document.getElementById('deskOrderCount');
+  if (data && data.data) {
+    if (rc) rc.textContent = data.data.research_count || 0;
+    if (oc) oc.textContent = data.data.order_count || 0;
+  }
+}
+
+async function refreshOrders() {
+  const data = await fetchJSON('/api/v1/orders?limit=20');
+  const tbody = document.getElementById('ordersBody');
+  if (!tbody) return;
+  if (!data || !data.data) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty"><b>模拟单暂时读不到</b>重启调度中心后再试</td></tr>';
+    return;
+  }
+  const items = (data.data.items || []).slice().reverse();
+  if (!items.length) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty"><b>还没有模拟单</b>打开指标研究，先看拟单再确认</td></tr>';
+    return;
+  }
+  tbody.innerHTML = items.map(item => {
+    return `<tr>
+      <td class="tid mono">${esc(item.order_id)}</td>
+      <td class="tid mono">${esc(item.research_id || '—')}</td>
+      <td>${esc(item.symbol || '—')}</td>
+      <td>${esc(item.side || '—')}</td>
+      <td><span class="st ${item.status === 'ACCEPTED' ? 'COMPLETED' : 'FAILED'}">${esc(item.status)}</span></td>
+    </tr>`;
+  }).join('');
+  refreshDesk();
+}
+
+async function submitPaperOrder(side) {
+  if (!currentResearchId) {
+    showOpsFlash('先点开一笔研究记录。');
+    return;
+  }
+  const hint = side
+    ? ('这是测通，不是预测。确认后模拟盘 ' + side + ' 0.01 手。实盘会拒绝。确定？')
+    : '确认后：模拟盘会发到本机 MT5 终端（0.01 手）。实盘账户会拒绝。确定？';
+  if (!confirm(hint)) return;
+  const btn = document.getElementById('paperOrderBtn');
+  const buy = document.getElementById('wireBuyBtn');
+  const sell = document.getElementById('wireSellBtn');
+  if (btn) btn.disabled = true;
+  if (buy) buy.disabled = true;
+  if (sell) sell.disabled = true;
+  try {
+    const payload = {research_id: currentResearchId, confirm: true};
+    if (side === 'BUY' || side === 'SELL') payload.side = side;
+    const r = await fetch(API + '/api/v1/orders/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(20000)
+    });
+    const result = await r.json();
+    const data = result.data || {};
+    showOpsFlash((result.message || '') + ' ' + (data.order_id || '') + ' ' + (data.side || '') + ' ' + (data.status || ''));
+    refreshOrders();
+    const journal = document.getElementById('ordersBody');
+    if (journal) journal.closest('section').scrollIntoView({behavior: 'smooth', block: 'start'});
+  } catch (e) {
+    showOpsFlash('挂单失败：' + e.message);
+  }
+  if (btn) btn.disabled = false;
+}
+
+async function showResult(taskId) {
+  const data = await fetchJSON('/task/' + taskId);
+  if (!data || !data.data) return;
+  currentTask = data.data;
+  document.getElementById('modalTitle').textContent = '计算结果 · ' + taskId;
+  const hint = document.getElementById('modalHint');
+  if (currentTask.result) {
+    hint.textContent = '摘要：' + summarizeResult(currentTask) + '。「让 AI 解读」会送这些数字，不会自动提问。';
+    fillAiFromTask(currentTask);
+  } else {
+    hint.textContent = '这条还没有结果正文。可看请求，或等计算完成后再点。';
+  }
+  const json = JSON.stringify(data.data, null, 2);
+  document.getElementById('modalContent').className = '';
+  document.getElementById('modalContent').innerHTML = syntaxHighlight(json);
+  document.getElementById('modalOverlay').classList.add('show');
+}
+
+function closeModal(e) {
+  if (e.target === e.currentTarget) e.target.classList.remove('show');
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('modalOverlay').classList.remove('show');
+});
+
+function syntaxHighlight(json) {
+  json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return json.replace(/"([^"]+)"(?=\s*:)/g, '<span class="json-key">"$1"</span>')
+    .replace(/:\s*"([^"]*)"/g, ': <span class="json-string">"$1"</span>')
+    .replace(/:\s*(\d+\.?\d*)/g, ': <span class="json-number">$1</span>')
+    .replace(/:\s*(true|false)/g, ': <span class="json-bool">$1</span>')
+    .replace(/:\s*(null)/g, ': <span class="json-null">$1</span>');
+}
+
+async function submitTask() {
+  const btn = document.getElementById('submitBtn');
+  const recoBtn = document.getElementById('recoBtn');
+  const resp = document.getElementById('submitResponse');
+  const workerType = document.getElementById('workerType').value;
+  if (!isWorkerTypeOnline(workerType)) {
+    resp.className = 'out show';
+    resp.style.color = 'var(--bad)';
+    resp.textContent = '这个类型的节点离线。先启动对应卡片，或换一种在线类型。';
+    return;
+  }
+  btn.disabled = true;
+  recoBtn.disabled = true;
+  btn.textContent = '提交中…';
+  resp.className = 'out show';
+  resp.style.color = 'var(--muted)';
+  resp.textContent = '正在发给调度中心…';
+
+  let dataObj = {}, paramsObj = {};
+  try { dataObj = JSON.parse(document.getElementById('taskData').value || '{}'); }
+  catch(e) { resp.textContent = '任务数据 JSON 写错了：' + e.message; btn.disabled = false; btn.textContent = '开始计算'; updatePresetAvailability(); return; }
+  try { paramsObj = JSON.parse(document.getElementById('taskParams').value || '{}'); }
+  catch(e) { resp.textContent = '参数 JSON 写错了：' + e.message; btn.disabled = false; btn.textContent = '开始计算'; updatePresetAvailability(); return; }
+
+  const body = {
+    worker_type: workerType,
+    indicator: document.getElementById('indicator').value,
+    data: dataObj,
+    params: paramsObj
+  };
+
+  try {
+    const r = await fetch(API + '/task', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(60000)
+    });
+    const result = await r.json();
+    if (!result.success) {
+      resp.textContent = (result.message || '提交失败') + '\n' + JSON.stringify(result, null, 2);
+      resp.style.color = 'var(--bad)';
+    } else {
+      const taskId = result.data && result.data.task_id;
+      let line = '已提交。';
+      if (taskId) {
+        const detail = await fetchJSON('/task/' + taskId);
+        if (detail && detail.data) {
+          currentTask = detail.data;
+          line = '算完了：' + summarizeResult(detail.data);
+          if (detail.data.result) fillAiFromTask(detail.data);
+        }
+      }
+      resp.textContent = line + '\n数字已填进下方。要点「用这笔数字问 AI」才会发送，不会自动提问。';
+      resp.style.color = 'var(--ok)';
+    }
+    refreshTasks();
+  } catch(e) {
+    resp.textContent = '网络错误：' + e.message;
+    resp.style.color = 'var(--bad)';
+  }
+  btn.textContent = '开始计算';
+  updatePresetAvailability();
+}
+
+function aiEndpoint(action) {
+  if (action === 'generate') return '/api/v1/ai/generate';
+  if (action === 'describe') return '/api/v1/ai/describe';
+  if (action === 'signal') return '/api/v1/ai/signal';
+  return '/api/v1/ai/chat';
+}
+
+function aiMaxTokens(action) {
+  if (action === 'generate') return 1024;
+  if (action === 'describe' || action === 'signal') return 768;
+  return 512;
+}
+
+function sampleSignalJson() {
+  return JSON.stringify({
+    symbol: 'EURUSD',
+    timeframe: 'H4',
+    indicators: {rsi_14: 28.5, macd_histogram: -0.0032, ema_20: 1.082, ema_50: 1.0845},
+    price: {current: 1.0815, high_24h: 1.089, low_24h: 1.078}
+  }, null, 2);
+}
+
+function hasSignalNumbers(text) {
+  try {
+    const obj = JSON.parse(text || '{}');
+    return obj && obj.indicators && typeof obj.indicators === 'object' && Object.keys(obj.indicators).length > 0;
+  } catch (e) {
+    return false;
+  }
+}
+
+function setAiAction(action) {
+  document.getElementById('aiAction').value = action;
+  document.querySelectorAll('#aiSegs .seg').forEach(el => {
+    el.classList.toggle('on', el.getAttribute('data-action') === action);
+  });
+  onAiActionChange();
+}
+
+function onAiActionChange() {
+  const action = document.getElementById('aiAction').value;
+  const box = document.getElementById('aiInput');
+  document.getElementById('aiHint').textContent = AI_HINTS[action] || AI_HINTS.chat;
+  if (action === 'signal') {
+    if (!hasSignalNumbers(box.value)) {
+      box.value = sampleSignalJson();
+      setSampleWarn(false);
+    }
+    box.placeholder = '这里是指标数字。换品种就改数字，不要删成空的。';
+  } else if (action === 'chat') {
+    box.placeholder = '例如：用一句话介绍你自己';
+  } else if (action === 'describe') {
+    box.placeholder = '粘贴回测结果 JSON，或先跑一条回测再点记录里的「让 AI 解读」';
+  } else {
+    box.placeholder = '粘贴股票与因子 JSON';
+  }
+}
+
+function setSampleWarn(fromWorker) {
+  const el = document.getElementById('aiWarn');
+  if (!el) return;
+  el.textContent = fromWorker
+    ? '这些数字来自节点刚算完的结果，不是实盘行情。'
+    : '框里默认是示例数字，不是实盘，也不是节点刚算出来的结果。';
+}
+
+function summarizeResult(task) {
+  const r = task && task.result ? task.result : {};
+  const wt = (task && task.worker_type) || '';
+  if (wt.indexOf('indicator') >= 0) {
+    const latest = r.result && r.result.latest;
+    const sym = r.symbol || '';
+    const ind = r.indicator || (task.request && task.request.indicator) || '指标';
+    if (latest != null) return sym + ' ' + ind + ' 最新 ' + Number(latest).toFixed(2);
+  }
+  if (wt.indexOf('factor') >= 0) {
+    const s = r.score || {};
+    return (r.stock || '') + ' 评分 ' + (s.total != null ? s.total : '—') + (s.grade ? (' ' + s.grade) : '');
+  }
+  if (wt.indexOf('backtest') >= 0) {
+    return (r.symbol || '') + ' 收益 ' + r.profit + ' 回撤 ' + r.max_drawdown + ' 胜率 ' + r.win_rate;
+  }
+  if (wt.indexOf('monitor') >= 0) {
+    const c = r.cluster || {};
+    return '集群健康 ' + (c.healthy_nodes != null ? c.healthy_nodes : '?') + '/' + (c.total_nodes != null ? c.total_nodes : '?');
+  }
+  return task && task.status === 'COMPLETED' ? '已完成' : statusLabel((task && task.status) || '');
+}
+
+function contextFromTask(task) {
+  const r = (task && task.result) || {};
+  const req = (task && task.request) || {};
+  const wt = (task && task.worker_type) || '';
+  if (wt.indexOf('indicator') >= 0) {
+    const latest = r.result && r.result.latest;
+    const period = (r.result && r.result.period) || (req.params && req.params.period) || 14;
+    const name = String(r.indicator || req.indicator || 'RSI').toLowerCase();
+    const indicators = {};
+    if (latest != null) indicators[name + '_' + period] = Number(Number(latest).toFixed(4));
+    return {
+      symbol: r.symbol || (req.data && req.data.symbol) || 'UNKNOWN',
+      indicators: indicators,
+      source: 'worker_result',
+      note: '来自节点计算结果'
+    };
+  }
+  if (wt.indexOf('factor') >= 0) {
+    return {stock: r.stock, date: r.date, score: r.score, factors: r.factors, source: 'worker_result'};
+  }
+  if (wt.indexOf('backtest') >= 0) {
+    return {
+      strategy: r.strategy, symbol: r.symbol,
+      profit: r.profit, max_drawdown: r.max_drawdown, win_rate: r.win_rate,
+      sharpe_ratio: r.sharpe_ratio, total_trades: r.total_trades,
+      source: 'worker_result'
+    };
+  }
+  if (r && Object.keys(r).length) return r;
+  return req.data || {};
+}
+
+function updateAiButtons() {
+  const ask = document.getElementById('aiBtn');
+  const next = document.getElementById('nextAiBtn');
+  const ready = !!(next && next.getAttribute('data-ready') === '1');
+  if (ask && !aiBusy) {
+    ask.disabled = !aiOnline;
+    ask.title = aiOnline ? '' : '通义千问离线，请用桌面 TradeMind-Lab';
+    ask.textContent = lastAiBtnLabel;
+  }
+  if (next) {
+    next.disabled = !ready || !aiOnline;
+    next.title = !aiOnline ? '通义千问离线，请用桌面 TradeMind-Lab' : (ready ? '' : '先算完一笔');
+  }
+}
+
+function showNextPaper(researchId, preset, summary) {
+  const box = document.getElementById('nextPaper');
+  const text = document.getElementById('nextPaperText');
+  const btn = document.getElementById('nextPaperBtn');
+  if (!box || !text || !btn) return;
+  currentResearchId = researchId;
+  text.textContent = (summary || '研究完成') + '。拟单在第 3 步，确认在第 4 步。';
+  btn.disabled = !researchId;
+  btn.setAttribute('data-id', researchId || '');
+  box.classList.add('show');
+  const step3 = document.getElementById('step3');
+  if (step3) step3.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+function openPaperFromBar() {
+  const step4 = document.getElementById('step4');
+  if (step4) step4.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+function showNextAi(summary, canAsk) {
+  const box = document.getElementById('nextAi');
+  const text = document.getElementById('nextAiText');
+  const next = document.getElementById('nextAiBtn');
+  if (!box || !text || !next) return;
+  text.textContent = '刚算完：' + summary + '。不会自动提问。';
+  next.setAttribute('data-ready', canAsk ? '1' : '0');
+  box.classList.add('show');
+  lastAiBtnLabel = canAsk ? '问 AI · 解读这笔结果' : '问 AI';
+  updateAiButtons();
+}
+
+function goAskAi() {
+  const card = document.getElementById('aiCard');
+  const box = document.getElementById('aiInput');
+  if (card) {
+    card.classList.add('pulse');
+    card.scrollIntoView({behavior: 'smooth', block: 'start'});
+    setTimeout(function() { card.classList.remove('pulse'); }, 1600);
+  }
+  if (box) box.focus();
+}
+
+function fillAiFromTask(task) {
+  if (!task) return;
+  const wt = task.worker_type || '';
+  let action = 'chat';
+  if (wt.indexOf('factor') >= 0) action = 'generate';
+  else if (wt.indexOf('backtest') >= 0) action = 'describe';
+  else if (wt.indexOf('indicator') >= 0) action = 'signal';
+  const summary = summarizeResult(task);
+  if (action === 'chat') {
+    showNextAi(summary, false);
+    return;
+  }
+  const ctx = contextFromTask(task);
+  setAiAction(action);
+  document.getElementById('aiInput').value = JSON.stringify(ctx, null, 2);
+  document.getElementById('aiHint').textContent = '框里已填刚算完的数字，不是示例。点「用这笔数字问 AI」只是定位，再点「问 AI」才发送。';
+  setSampleWarn(true);
+  showNextAi(summary, true);
+}
+
+function buildAiBody(action, text, task) {
+  if (action === 'chat') {
+    return {messages: [{role: 'user', content: text}], params: {max_tokens: aiMaxTokens(action)}};
+  }
+  let context = {};
+  try { context = text ? JSON.parse(text) : {}; }
+  catch (e) { context = {note: text}; }
+  if (task && task.result) {
+    context = Object.assign({}, contextFromTask(task), context);
+  } else if (task && task.request) {
+    context = Object.assign({}, task.request.data || {}, context);
+    if (task.request.indicator) context.indicator = task.request.indicator;
+    if (task.worker_type) context.worker_type = task.worker_type;
+  }
+  const typeMap = {
+    generate: 'research_report',
+    describe: 'strategy_description',
+    signal: 'signal_interpretation'
+  };
+  return {type: typeMap[action] || 'research_report', context: context, params: {max_tokens: aiMaxTokens(action)}};
+}
+
+function extractAiText(payload) {
+  if (!payload || !payload.data) return JSON.stringify(payload, null, 2);
+  const d = payload.data;
+  return d.report || d.description || d.interpretation || d.reply || JSON.stringify(d, null, 2);
+}
+
+async function submitAI(forcedAction, forcedText, task) {
+  const action = forcedAction || document.getElementById('aiAction').value;
+  const text = forcedText != null ? forcedText : document.getElementById('aiInput').value;
+  const btn = document.getElementById('aiBtn');
+  const resp = document.getElementById('aiResponse');
+  if (!aiOnline) {
+    resp.className = 'out show';
+    resp.style.color = 'var(--bad)';
+    resp.textContent = '通义千问离线。请用桌面 TradeMind-Lab，网页不能启动模型。';
+    return;
+  }
+  if (action === 'signal' && !hasSignalNumbers(text) && !task) {
+    resp.className = 'out show';
+    resp.style.color = 'var(--warn)';
+    resp.textContent = '解读信号需要数字。请点「解读买卖信号」后保留框里的 RSI/MACD，或自己改数字。';
+    return;
+  }
+  aiBusy = true;
+  btn.disabled = true;
+  btn.textContent = '思考中…';
+  resp.className = 'out show';
+  resp.style.color = 'var(--muted)';
+  resp.textContent = '正在问通义千问，请稍等…';
+  try {
+    const r = await fetch(API + aiEndpoint(action), {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(buildAiBody(action, text, task))
+    });
+    const result = await r.json();
+    if (!result.success) {
+      resp.textContent = (result.message || 'AI 请求失败') + ' (' + (result.code || r.status) + ')';
+      resp.style.color = 'var(--bad)';
+    } else {
+      resp.textContent = extractAiText(result);
+      resp.style.color = 'var(--text)';
+    }
+  } catch (e) {
+    resp.textContent = '网络错误：' + e.message;
+    resp.style.color = 'var(--bad)';
+  }
+  aiBusy = false;
+  updateAiButtons();
+}
+
+async function analyzeCurrentTask() {
+  if (!currentTask) return;
+  const wt = currentTask.worker_type || '';
+  let action = 'chat';
+  if (wt.indexOf('factor') >= 0) action = 'generate';
+  else if (wt.indexOf('backtest') >= 0) action = 'describe';
+  else if (wt.indexOf('indicator') >= 0) action = 'signal';
+  fillAiFromTask(currentTask);
+  if (action === 'chat') {
+    document.getElementById('aiInput').value = JSON.stringify(contextFromTask(currentTask), null, 2);
+    setAiAction('chat');
+  }
+  document.getElementById('modalContent').className = 'ai-report';
+  document.getElementById('modalContent').textContent = '正在问通义千问，请稍等…';
+  const btn = document.getElementById('aiAnalyzeBtn');
+  btn.disabled = true;
+  try {
+    const r = await fetch(API + aiEndpoint(action), {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(buildAiBody(action, document.getElementById('aiInput').value, currentTask))
+    });
+    const result = await r.json();
+    if (!result.success) {
+      document.getElementById('modalContent').textContent = (result.message || 'AI 请求失败') + ' (' + (result.code || r.status) + ')';
+    } else {
+      document.getElementById('modalTitle').textContent = currentTask.task_id + ' — AI 解读';
+      document.getElementById('modalContent').textContent = extractAiText(result);
+    }
+    document.getElementById('aiResponse').className = 'out show';
+    document.getElementById('aiResponse').textContent = document.getElementById('modalContent').textContent;
+  } catch (e) {
+    document.getElementById('modalContent').textContent = '网络错误：' + e.message;
+  }
+  btn.disabled = false;
+}
+
+function showOpsFlash(text) {
+  const el = document.getElementById('opsFlash');
+  el.textContent = text;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 8000);
+}
+
+async function opsWorker(id, action) {
+  showOpsFlash((action === 'restart' ? '正在重启 ' : '正在启动 ') + id + '…');
+  try {
+    const r = await fetch(API + '/api/v1/ops/worker/' + id + '/' + action, {
+      method: 'POST',
+      signal: AbortSignal.timeout(70000)
+    });
+    const result = await r.json();
+    const hint = (result.data && result.data.hint) || result.message || '完成';
+    showOpsFlash(hint);
+    await refreshWorkers();
+  } catch (e) {
+    showOpsFlash('失败：' + e.message + '。也可试桌面 TradeMind-Lab。');
+  }
+}
+
+async function restartMaster() {
+  if (!confirm('重启调度中心约断开 10 秒，页面会自动刷新。确定？')) return;
+  const btn = document.getElementById('masterRestartBtn');
+  btn.disabled = true;
+  showOpsFlash('调度中心正在重启，请等 10 秒…');
+  try {
+    const r = await fetch(API + '/api/v1/ops/master/restart', {method: 'POST', signal: AbortSignal.timeout(8000)});
+    const result = await r.json();
+    showOpsFlash((result.data && result.data.hint) || '已接手重启');
+  } catch (e) {
+    showOpsFlash('请求已发出。若页面打不开，请用桌面 TradeMind-Lab。');
+  }
+  setTimeout(() => location.reload(), 10000);
+}
+
+async function refreshHealth() {
+  const h = await fetchJSON('/health');
+  const online = !!(h && h.status === 'healthy');
+  document.getElementById('masterStatus').textContent = online ? '在线' : '离线';
+  document.getElementById('masterDot').className = 'dot ' + (online ? 'on' : 'off');
+  document.getElementById('masterVersion').textContent = online ? ('v' + h.version) : 'v--';
+}
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+async function refreshSamples() {
+  const box = document.getElementById('sampleHint');
+  if (!box) return;
+  const data = await fetchJSON('/api/v1/samples');
+  if (!data || !data.data || !data.data.items) {
+    box.textContent = '本机样本：eurusd / moutai / xauusd。黄金/欧美/原油/美日可拉本机 MT5 M15。';
+    return;
+  }
+  const names = data.data.items.map(function(item) { return item.sample_id; }).join(' / ');
+  box.textContent = names
+    ? ('本机样本：' + names + '。csv 不是行情。黄金/欧美/原油/美日可拉本机 MT5 M15。')
+    : '还没有样本。黄金/欧美/原油/美日可拉本机 MT5 M15。';
+}
+
+async function init() {
+  await Promise.all([refreshHealth(), refreshWorkers(), refreshTasks(), refreshResearch(), refreshOrders(), refreshDesk(), refreshMt5(), refreshSamples()]);
+  applyPreset(recommendedPreset() || 'indicator');
+  setInterval(refreshHealth, 15000);
+  setInterval(refreshWorkers, 10000);
+  setInterval(refreshTasks, 5000);
+  setInterval(refreshResearch, 8000);
+  setInterval(refreshOrders, 8000);
+  setInterval(refreshMt5, 20000);
+}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# ALPHA_PROGRAM_V1 — Index
+
+2026-08-26. Documentation program. Not an executed discovery.
+
+| Phase | File |
+| --- | --- |
+| 0 | `ALPHA_ASSET_INVENTORY_V1.md` |
+| 1 | `CANDIDATE_MECHANISM_LIBRARY_V2.md` |
+| 2 | `ALPHA_RESEARCH_PRIORITY_V2.md` |
+| 3 | `TRADEMIND_ALPHA_STRATEGY_ROADMAP_V2.md` |
+| 4 | `REGIME_TRANSITION_V0.9_MECHANISM_DESIGN.md` |
+| 5 | `RESEARCH_ENGINE_MISSING_COMPONENTS_V1.md` |
+| 6 | `CANDIDATE_ACCEPTANCE_GATE_V1.md` |
+| 7 | `FAILURE_KNOWLEDGE_BASE_V1.md` `DATA_REQUIREMENTS_NEXT_V1.md` `EXPERIMENT_GAP_AUDIT_V1.md` |
+| Log | `STATUS_UPDATE.md` |
+
+Locked executable contract (unchanged hash): `REGIME_TRANSITION_V0.9_CONTRACT.md`.

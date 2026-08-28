@@ -1,0 +1,15 @@
+{
+  "dataset_hash": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+  "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+  "elapsed_seconds": 21.737544775009155,
+  "error": [],
+  "experiment_id": "PROTOCOL_SELF_TEST",
+  "feature_hash": "96d9ec4ad1c8c267a1b88923f36672dc55191736e84b63867eaa6fd056e7737a",
+  "finished_at_utc": null,
+  "node": "Xavier-01",
+  "protocol_hash": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "result_hash": "6c8765697cfdc3953ca631d19359e3529f43333fa9374a922e9a77329e6e4c67",
+  "run_id": "Xavier-01-tm-market-GOLD-D1-20260825-000001",
+  "started_at_utc": null,
+  "status": "COMPLETED"
+}

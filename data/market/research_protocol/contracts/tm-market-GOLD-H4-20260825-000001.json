@@ -1,0 +1,17 @@
+{
+  "data_end_utc": "2026-08-25T12:00:00Z",
+  "data_start_utc": "2025-05-28T12:00:00Z",
+  "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+  "immutable": true,
+  "logical_symbol": "GOLD",
+  "mt5_symbol": "GOLD",
+  "profile_hash": "6a1788fa6fb719dd47ed33e1f0707f13e052d314cade0ecac325511295380e1e",
+  "qualification": "READY_WITH_REVIEW",
+  "row_count": 2000,
+  "schema_version": "0.1",
+  "sha256": "30dca0dd3ce587e772a5c0a3908e937aed762c205d2c42844836657d2bfc9572",
+  "source": "mt5",
+  "timeframe": "H4",
+  "timezone": "UTC",
+  "volume_policy": "tick_volume_only"
+}

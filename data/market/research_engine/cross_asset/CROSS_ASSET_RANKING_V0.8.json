@@ -1,0 +1,442 @@
+{
+  "align_hash": "1e8f6bbc82c542dbe9aa6751ea56af1a3a364c5ef0406ba2b4c89ef5a83aaf2b",
+  "content_hashes": {
+    "XA-V08-Xavier-01-HYP-XA-0001": "1140432aec46deaae51f4c45068c1882956efd0d04873a1629cde21beea98b20",
+    "XA-V08-Xavier-02-HYP-XA-0002": "b0509ae5240a87c3c61566d1a25255862b94ab5bb79ca9b8bcc630af88b7626a",
+    "XA-V08-Xavier-03-HYP-XA-0003": "da15b0dafac4b78daf0fb1dd81b63440c7f422028597b05a2b284505589e422b",
+    "XA-V08-Xavier-04-HYP-XA-0001": "1140432aec46deaae51f4c45068c1882956efd0d04873a1629cde21beea98b20"
+  },
+  "cross_check": [
+    {
+      "align_hash": "1e8f6bbc82c542dbe9aa6751ea56af1a3a364c5ef0406ba2b4c89ef5a83aaf2b",
+      "content_hash": "1140432aec46deaae51f4c45068c1882956efd0d04873a1629cde21beea98b20",
+      "feature_gate": {
+        "gate": 0.001631222812953359,
+        "kind": "Q3",
+        "n_freeze": 1394
+      },
+      "hypothesis_id": "HYP-XA-0001",
+      "input_assets": [
+        "USDJPY"
+      ],
+      "job_role": "CROSS_CHECK",
+      "node": "Xavier-04",
+      "predicted_sign": -1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.0008248815564110934,
+          "iterations": 2000,
+          "low": -0.0016848417096036925,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0004537524866024176,
+          "iterations": 2000,
+          "low": -0.0013326753139468834,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.08697257103224587,
+        "contemporaneous_corr": -0.42908653305270755,
+        "cost_paid": 1075.9949017612992,
+        "delta": -0.0004503532957688245,
+        "effect_size": -0.05413120008783232,
+        "end_equity": 6045.142658075021,
+        "max_drawdown": -0.3954857341924979,
+        "max_trade_share": 0.020291323938553336,
+        "mean_baseline": -0.0034816166131694175,
+        "mean_signal": -0.003931969908938242,
+        "n_aligned": 1395,
+        "n_feature": 1394,
+        "n_signal": 461,
+        "n_trade": 459,
+        "occupancy": 0.33070301291248205,
+        "raw_p": 0.31634182908545727,
+        "sharpe": -3.7648217271917552,
+        "total_return": -0.3954857341924979,
+        "trade_count": 459,
+        "turnover": 107.45554705412181,
+        "win_count": 119
+      },
+      "target_asset": "GOLD",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.0026604892215178156,
+          "iterations": 2000,
+          "low": -0.002494664879397626,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0017985491203288875,
+          "iterations": 2000,
+          "low": -0.0018919770644199793,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.10458167929595008,
+        "contemporaneous_corr": -0.40463934979045096,
+        "cost_paid": 282.4404299603468,
+        "delta": -5.05503583499425e-05,
+        "effect_size": -0.0054957762564198515,
+        "end_equity": 8775.438216408644,
+        "max_drawdown": -0.12464859005048652,
+        "max_trade_share": 0.02576040201935127,
+        "mean_baseline": -0.003958597357741126,
+        "mean_signal": -0.004009147716091069,
+        "n_aligned": 299,
+        "n_feature": 299,
+        "n_signal": 115,
+        "n_trade": 110,
+        "occupancy": 0.38461538461538464,
+        "raw_p": null,
+        "sharpe": -4.690898073090166,
+        "total_return": -0.12245617835913558,
+        "trade_count": 110,
+        "turnover": 28.19693692835312,
+        "win_count": 31
+      }
+    }
+  ],
+  "discovery_id": "CROSS_ASSET_ALPHA_V0.8",
+  "fdr": {
+    "discoveries": [],
+    "m": 3,
+    "q": 0.05
+  },
+  "gold_pass": [],
+  "hypotheses": [
+    {
+      "adjusted_p": 0.9155422288855574,
+      "align_hash": "1e8f6bbc82c542dbe9aa6751ea56af1a3a364c5ef0406ba2b4c89ef5a83aaf2b",
+      "content_hash": "1140432aec46deaae51f4c45068c1882956efd0d04873a1629cde21beea98b20",
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "RESEARCH_DD"
+      ],
+      "fdr_discovery": false,
+      "feature_gate": {
+        "gate": 0.001631222812953359,
+        "kind": "Q3",
+        "n_freeze": 1394
+      },
+      "hypothesis_id": "HYP-XA-0001",
+      "input_assets": [
+        "USDJPY"
+      ],
+      "job_role": "PRIMARY",
+      "label": "FALSIFIED",
+      "label_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "RESEARCH_DD"
+      ],
+      "node": "Xavier-01",
+      "predicted_sign": -1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.0008248815564110934,
+          "iterations": 2000,
+          "low": -0.0016848417096036925,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0004537524866024176,
+          "iterations": 2000,
+          "low": -0.0013326753139468834,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.08697257103224587,
+        "contemporaneous_corr": -0.42908653305270755,
+        "cost_paid": 1075.9949017612992,
+        "delta": -0.0004503532957688245,
+        "effect_size": -0.05413120008783232,
+        "end_equity": 6045.142658075021,
+        "max_drawdown": -0.3954857341924979,
+        "max_trade_share": 0.020291323938553336,
+        "mean_baseline": -0.0034816166131694175,
+        "mean_signal": -0.003931969908938242,
+        "n_aligned": 1395,
+        "n_feature": 1394,
+        "n_signal": 461,
+        "n_trade": 459,
+        "occupancy": 0.33070301291248205,
+        "raw_p": 0.31634182908545727,
+        "sharpe": -3.7648217271917552,
+        "total_return": -0.3954857341924979,
+        "trade_count": 459,
+        "turnover": 107.45554705412181,
+        "win_count": 119
+      },
+      "target_asset": "GOLD",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.0026604892215178156,
+          "iterations": 2000,
+          "low": -0.002494664879397626,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0017985491203288875,
+          "iterations": 2000,
+          "low": -0.0018919770644199793,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.10458167929595008,
+        "contemporaneous_corr": -0.40463934979045096,
+        "cost_paid": 282.4404299603468,
+        "delta": -5.05503583499425e-05,
+        "effect_size": -0.0054957762564198515,
+        "end_equity": 8775.438216408644,
+        "max_drawdown": -0.12464859005048652,
+        "max_trade_share": 0.02576040201935127,
+        "mean_baseline": -0.003958597357741126,
+        "mean_signal": -0.004009147716091069,
+        "n_aligned": 299,
+        "n_feature": 299,
+        "n_signal": 115,
+        "n_trade": 110,
+        "occupancy": 0.38461538461538464,
+        "raw_p": null,
+        "sharpe": -4.690898073090166,
+        "total_return": -0.12245617835913558,
+        "trade_count": 110,
+        "turnover": 28.19693692835312,
+        "win_count": 31
+      }
+    },
+    {
+      "adjusted_p": 0.9155422288855574,
+      "align_hash": "1e8f6bbc82c542dbe9aa6751ea56af1a3a364c5ef0406ba2b4c89ef5a83aaf2b",
+      "content_hash": "b0509ae5240a87c3c61566d1a25255862b94ab5bb79ca9b8bcc630af88b7626a",
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "RESEARCH_DD",
+        "RESEARCH_SIGN",
+        "VALIDATION_SIGN"
+      ],
+      "fdr_discovery": false,
+      "feature_gate": {
+        "gate": 0.0012857708031122073,
+        "kind": "Q3",
+        "n_freeze": 1394
+      },
+      "hypothesis_id": "HYP-XA-0002",
+      "input_assets": [
+        "EURUSD"
+      ],
+      "job_role": "PRIMARY",
+      "label": "FALSIFIED",
+      "label_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "RESEARCH_DD",
+        "RESEARCH_SIGN",
+        "VALIDATION_SIGN"
+      ],
+      "node": "Xavier-02",
+      "predicted_sign": 1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.0009041420634868201,
+          "iterations": 2000,
+          "low": -0.001149139168925966,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0007469238034150372,
+          "iterations": 2000,
+          "low": -0.0009124479194771678,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.06236863107974755,
+        "contemporaneous_corr": 0.41028300714379873,
+        "cost_paid": 1117.6504314757447,
+        "delta": -9.2186380380901e-05,
+        "effect_size": -0.011648851667970623,
+        "end_equity": 7003.0759686456995,
+        "max_drawdown": -0.30097929770121157,
+        "max_trade_share": 0.009118353003279839,
+        "mean_baseline": -0.00264177369169736,
+        "mean_signal": -0.002733960072078261,
+        "n_aligned": 1395,
+        "n_feature": 1394,
+        "n_signal": 461,
+        "n_trade": 459,
+        "occupancy": 0.33070301291248205,
+        "raw_p": 0.8205897051474262,
+        "sharpe": -3.105824431748865,
+        "total_return": -0.29969240313543,
+        "trade_count": 459,
+        "turnover": 111.85900682756841,
+        "win_count": 141
+      },
+      "target_asset": "GOLD",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.0022448140875953215,
+          "iterations": 2000,
+          "low": -0.003414635367610119,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0016133614113742019,
+          "iterations": 2000,
+          "low": -0.002820645287463214,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.04856561804628501,
+        "contemporaneous_corr": 0.4765566743724181,
+        "cost_paid": 228.2579229526764,
+        "delta": -0.0006031612853415248,
+        "effect_size": -0.06411035001341132,
+        "end_equity": 9428.272409596473,
+        "max_drawdown": -0.06049999460586521,
+        "max_trade_share": 0.03464526129242327,
+        "mean_baseline": -0.0020001293594421143,
+        "mean_signal": -0.002603290644783639,
+        "n_aligned": 299,
+        "n_feature": 299,
+        "n_signal": 99,
+        "n_trade": 90,
+        "occupancy": 0.3311036789297659,
+        "raw_p": null,
+        "sharpe": -2.3879398611820775,
+        "total_return": -0.05717275904035268,
+        "trade_count": 90,
+        "turnover": 22.84296577864018,
+        "win_count": 30
+      }
+    },
+    {
+      "adjusted_p": 0.9155422288855574,
+      "align_hash": "1e8f6bbc82c542dbe9aa6751ea56af1a3a364c5ef0406ba2b4c89ef5a83aaf2b",
+      "content_hash": "da15b0dafac4b78daf0fb1dd81b63440c7f422028597b05a2b284505589e422b",
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "RESEARCH_DD"
+      ],
+      "fdr_discovery": false,
+      "feature_gate": {
+        "gate": 0.0,
+        "kind": "DOLLAR_UP"
+      },
+      "hypothesis_id": "HYP-XA-0003",
+      "input_assets": [
+        "USDJPY",
+        "EURUSD"
+      ],
+      "job_role": "PRIMARY",
+      "label": "FALSIFIED",
+      "label_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "RESEARCH_DD"
+      ],
+      "node": "Xavier-03",
+      "predicted_sign": -1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.0036506802988189417,
+          "iterations": 2000,
+          "low": -0.003215392589009114,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.002840492763509819,
+          "iterations": 2000,
+          "low": -0.0026616978504511303,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.057400695773945354,
+        "contemporaneous_corr": 0.019006332974271917,
+        "cost_paid": 483.35144336540816,
+        "delta": 0.00013984110125147848,
+        "effect_size": 0.0050620723489398075,
+        "end_equity": 7210.811114340031,
+        "max_drawdown": -0.31074950509751204,
+        "max_trade_share": 0.13666043554128535,
+        "mean_baseline": -0.0049126702205782476,
+        "mean_signal": -0.004772829119326769,
+        "n_aligned": 1395,
+        "n_feature": 1394,
+        "n_signal": 484,
+        "n_trade": 482,
+        "occupancy": 0.3472022955523673,
+        "raw_p": 0.9155422288855573,
+        "sharpe": -0.8905597180184558,
+        "total_return": -0.2789188885659969,
+        "trade_count": 482,
+        "turnover": 48.21985246442616,
+        "win_count": 183
+      },
+      "target_asset": "OIL",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.008734395748783385,
+          "iterations": 2000,
+          "low": -0.004067074858696484,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.006695382056903724,
+          "iterations": 2000,
+          "low": -0.0022023477201510615,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.01096345128677556,
+        "contemporaneous_corr": 0.22650745349817517,
+        "cost_paid": 127.35098101155728,
+        "delta": 0.0021991944246124878,
+        "effect_size": 0.11552966167198712,
+        "end_equity": 9870.482956611357,
+        "max_drawdown": -0.041353317285503,
+        "max_trade_share": 0.028878002306806042,
+        "mean_baseline": -0.003180393937087674,
+        "mean_signal": -0.0009811995124751863,
+        "n_aligned": 299,
+        "n_feature": 299,
+        "n_signal": 107,
+        "n_trade": 98,
+        "occupancy": 0.35785953177257523,
+        "raw_p": null,
+        "sharpe": -0.47955466895570803,
+        "total_return": -0.012951704338864278,
+        "trade_count": 98,
+        "turnover": 12.73498979803687,
+        "win_count": 38
+      }
+    }
+  ],
+  "note": "CANDIDATE needs GOLD and OIL gates plus FDR. Not 10%.",
+  "oil_pass": [],
+  "outcome": "NO_CANDIDATE",
+  "search_space_hash": "787a37f93aae630e2530c6c416c3acf8c5ddd5a9470ae7f442a409f431749827"
+}

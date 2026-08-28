@@ -1,0 +1,307 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "candidates": [
+    {
+      "family": "TF-BRK20",
+      "research": {
+        "cagr": -0.002966456688570207,
+        "cost_paid": 32.49728805663263,
+        "end_equity": 9767.090143097337,
+        "max_drawdown": -0.04395745948386938,
+        "max_trade_share": 0.09328762188463866,
+        "n_bars": 2000,
+        "sharpe": -0.38819208279697176,
+        "timeframe": "D1",
+        "total_return": -0.02329098569026633,
+        "trade_count": 22,
+        "turnover": 3.255533231048457,
+        "win_count": 9
+      },
+      "research_trades": 22,
+      "strategy_id": "PD-V06-TF-BRK20-H5-R005",
+      "validation": {
+        "cagr": -0.0006504450961913877,
+        "cost_paid": 1.4806337610264657,
+        "end_equity": 9948.519366238974,
+        "max_drawdown": -0.005148063376102618,
+        "max_trade_share": 1.0,
+        "n_bars": 2000,
+        "sharpe": -0.4908576271245431,
+        "timeframe": "D1",
+        "total_return": -0.0051480633761026295,
+        "trade_count": 1,
+        "turnover": 0.15056337610264656,
+        "win_count": 0
+      },
+      "validation_trades": 1
+    },
+    {
+      "family": "TF-BRK20",
+      "research": {
+        "cagr": -0.005984901542321008,
+        "cost_paid": 64.43109145404011,
+        "end_equity": 9534.978522996615,
+        "max_drawdown": -0.08624761527874739,
+        "max_trade_share": 0.09415870895086173,
+        "n_bars": 2000,
+        "sharpe": -0.3886735128861695,
+        "timeframe": "D1",
+        "total_return": -0.04650214770033856,
+        "trade_count": 22,
+        "turnover": 6.454658920265637,
+        "win_count": 9
+      },
+      "research_trades": 22,
+      "strategy_id": "PD-V06-TF-BRK20-H5-R010",
+      "validation": {
+        "cagr": -0.0013038384224449695,
+        "cost_paid": 2.9612675220529314,
+        "end_equity": 9897.038732477948,
+        "max_drawdown": -0.010296126752205237,
+        "max_trade_share": 1.0,
+        "n_bars": 2000,
+        "sharpe": -0.4910097958186497,
+        "timeframe": "D1",
+        "total_return": -0.010296126752205259,
+        "trade_count": 1,
+        "turnover": 0.3011267522052931,
+        "win_count": 0
+      },
+      "validation_trades": 1
+    },
+    {
+      "family": "MR-Z20",
+      "research": {
+        "cagr": -0.0023104240423305056,
+        "cost_paid": 33.959921473018746,
+        "end_equity": 9818.185779011128,
+        "max_drawdown": -0.027300468305972804,
+        "max_trade_share": 0.16115499799492125,
+        "n_bars": 2000,
+        "sharpe": -0.26791201166319645,
+        "timeframe": "D1",
+        "total_return": -0.01818142209888718,
+        "trade_count": 22,
+        "turnover": 3.4076093918448116,
+        "win_count": 6
+      },
+      "research_trades": 22,
+      "strategy_id": "PD-V06-MR-Z20-H5-R005",
+      "validation": {
+        "cagr": 0.004109283408728626,
+        "cost_paid": 9.376713116906902,
+        "end_equity": 10330.6515462458,
+        "max_drawdown": -0.006108660929123796,
+        "max_trade_share": 0.8001864657286902,
+        "n_bars": 2000,
+        "sharpe": 0.6479427884992216,
+        "timeframe": "D1",
+        "total_return": 0.03306515462457993,
+        "trade_count": 6,
+        "turnover": 0.9546165736119246,
+        "win_count": 4
+      },
+      "validation_trades": 6
+    },
+    {
+      "family": "MR-Z20",
+      "research": {
+        "cagr": -0.0047099933902085,
+        "cost_paid": 67.53003588014921,
+        "end_equity": 9632.421214780248,
+        "max_drawdown": -0.05427267091871198,
+        "max_trade_share": 0.16049297619110586,
+        "n_bars": 2000,
+        "sharpe": -0.2695149795265424,
+        "timeframe": "D1",
+        "total_return": -0.03675787852197521,
+        "trade_count": 22,
+        "turnover": 6.77604343779623,
+        "win_count": 6
+      },
+      "research_trades": 22,
+      "strategy_id": "PD-V06-MR-Z20-H5-R010",
+      "validation": {
+        "cagr": 0.008123180146875075,
+        "cost_paid": 18.808868588286025,
+        "end_equity": 10662.812621430476,
+        "max_drawdown": -0.01216243627683818,
+        "max_trade_share": 0.8002821377130497,
+        "n_bars": 2000,
+        "sharpe": 0.6481607084121834,
+        "timeframe": "D1",
+        "total_return": 0.06628126214304753,
+        "trade_count": 6,
+        "turnover": 1.9148571901424556,
+        "win_count": 4
+      },
+      "validation_trades": 6
+    },
+    {
+      "family": "MOM-DIR",
+      "research": {
+        "cagr": 0.0013038367288549235,
+        "cost_paid": 120.81969861491929,
+        "end_equity": 10103.896007865998,
+        "max_drawdown": -0.059738319079433104,
+        "max_trade_share": 0.03640104523371379,
+        "n_bars": 2000,
+        "sharpe": 0.08111101422509726,
+        "timeframe": "D1",
+        "total_return": 0.010389600786599784,
+        "trade_count": 85,
+        "turnover": 12.095731135646659,
+        "win_count": 42
+      },
+      "research_trades": 85,
+      "strategy_id": "PD-V06-MOM-DIR-H8-R005",
+      "validation": {
+        "cagr": 0.0027693897450074,
+        "cost_paid": 26.598693214720033,
+        "end_equity": 10221.80336493898,
+        "max_drawdown": -0.022219016771859605,
+        "max_trade_share": 0.10420565083716088,
+        "n_bars": 2000,
+        "sharpe": 0.2435509092240877,
+        "timeframe": "D1",
+        "total_return": 0.022180336493897945,
+        "trade_count": 18,
+        "turnover": 2.642558526860288,
+        "win_count": 8
+      },
+      "validation_trades": 18
+    },
+    {
+      "family": "MOM-DIR",
+      "research": {
+        "cagr": 0.0022743101979201263,
+        "cost_paid": 245.08064821969694,
+        "end_equity": 10181.83921713796,
+        "max_drawdown": -0.11685139660340421,
+        "max_trade_share": 0.036892299703556,
+        "n_bars": 2000,
+        "sharpe": 0.08096838471741973,
+        "timeframe": "D1",
+        "total_return": 0.018183921713796014,
+        "trade_count": 85,
+        "turnover": 24.536265246502865,
+        "win_count": 42
+      },
+      "research_trades": 85,
+      "strategy_id": "PD-V06-MOM-DIR-H8-R010",
+      "validation": {
+        "cagr": 0.005432802085172828,
+        "cost_paid": 53.02290384216505,
+        "end_equity": 10439.162590525273,
+        "max_drawdown": -0.044042752107950944,
+        "max_trade_share": 0.10330035196104015,
+        "n_bars": 2000,
+        "sharpe": 0.24553635179650618,
+        "timeframe": "D1",
+        "total_return": 0.04391625905252727,
+        "trade_count": 18,
+        "turnover": 5.267887826393414,
+        "win_count": 8
+      },
+      "validation_trades": 18
+    },
+    {
+      "family": "DEF",
+      "research": {
+        "cagr": 0.0,
+        "cost_paid": 0.0,
+        "end_equity": 10000.0,
+        "max_drawdown": 0.0,
+        "max_trade_share": null,
+        "n_bars": 2000,
+        "sharpe": null,
+        "timeframe": "D1",
+        "total_return": 0.0,
+        "trade_count": 0,
+        "turnover": 0.0,
+        "win_count": 0
+      },
+      "research_trades": 0,
+      "strategy_id": "PD-V06-DEF-SKIP-HIVOL",
+      "validation": {
+        "cagr": 0.0,
+        "cost_paid": 0.0,
+        "end_equity": 10000.0,
+        "max_drawdown": 0.0,
+        "max_trade_share": null,
+        "n_bars": 2000,
+        "sharpe": null,
+        "timeframe": "D1",
+        "total_return": 0.0,
+        "trade_count": 0,
+        "turnover": 0.0,
+        "win_count": 0
+      },
+      "validation_trades": 0
+    }
+  ],
+  "content_hash": "c8d1baa9dd04b092548974f9441a378a0ff0f1bdb27157cc45c3c5279857d476",
+  "dataset_id": "tm-market-OIL-D1-20260825-000001",
+  "dataset_sha256": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+  "discovery_id": "PROFIT_DISCOVERY_V0.6",
+  "elapsed_seconds": 67.25652933120728,
+  "job_id": "PD-V06-Xavier-04-tm-market-OIL-D1-20260825-000001",
+  "lineage": {
+    "dataset_id": "tm-market-OIL-D1-20260825-000001",
+    "discovery_id": "PROFIT_DISCOVERY_V0.6",
+    "job_id": "PD-V06-Xavier-04-tm-market-OIL-D1-20260825-000001",
+    "node": "Xavier-04",
+    "search_space_hash": "0fba52a98d861046cd61db51861bf96bebfaa2d51b42001d37463776bb7891d7",
+    "strategy_ids": [
+      "PD-V06-TF-BRK20-H5-R005",
+      "PD-V06-TF-BRK20-H5-R010",
+      "PD-V06-MR-Z20-H5-R005",
+      "PD-V06-MR-Z20-H5-R010",
+      "PD-V06-MOM-DIR-H8-R005",
+      "PD-V06-MOM-DIR-H8-R010",
+      "PD-V06-DEF-SKIP-HIVOL"
+    ]
+  },
+  "node": "Xavier-04",
+  "portfolio": {
+    "research": {
+      "cagr": -0.001312082898055511,
+      "cost_paid": null,
+      "end_equity": 9896.390643324821,
+      "max_drawdown": -0.03883662092646227,
+      "max_trade_share": null,
+      "n_bars": 2000,
+      "sharpe": -0.15783095559803573,
+      "timeframe": "D1",
+      "total_return": -0.010360935667517834,
+      "trade_count": 0,
+      "turnover": 0.0,
+      "win_count": 0
+    },
+    "validation": {
+      "cagr": 0.0020899416356527922,
+      "cost_paid": null,
+      "end_equity": 10166.991425807917,
+      "max_drawdown": -0.006994884959845874,
+      "max_trade_share": null,
+      "n_bars": 2000,
+      "sharpe": 0.4258127595527412,
+      "timeframe": "D1",
+      "total_return": 0.016699142580791637,
+      "trade_count": 0,
+      "turnover": 0.0,
+      "win_count": 0
+    }
+  },
+  "search_space_hash": "0fba52a98d861046cd61db51861bf96bebfaa2d51b42001d37463776bb7891d7",
+  "skip_rate": 0.3728900255754476,
+  "timeframe": "D1",
+  "vol_cuts": {
+    "vol_high": 0.03271537622682658,
+    "vol_low": 0.024591092383670864
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "c62d00f8-eed7-4dce-8437-eee47bd2d891",
+  "indicator": "EMA",
+  "symbol": "EURUSD",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      45.78992063812349,
+      45.89526455304036,
+      45.98922927930165,
+      46.047998708728095,
+      46.20293221423102,
+      46.271874585666886,
+      46.2276246409113
+    ],
+    "latest": 46.2276246409113
+  },
+  "calculation_time_ms": 1.345,
+  "timestamp": "2026-07-24T12:19:19.200648"
+}

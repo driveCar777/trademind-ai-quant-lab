@@ -1,0 +1,44 @@
+{
+  "task_id": "tm-task-20260724-000017",
+  "worker_id": "worker-01",
+  "worker_type": "indicator-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-24T12:19:56.917323Z",
+  "started_at": "2026-07-24T12:20:02.994049Z",
+  "finished_at": "2026-07-24T12:20:03.030816Z",
+  "duration_ms": 36,
+  "result_path": "results/2026/07/24/tm-task-20260724-000017.json",
+  "error": null,
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "RSI",
+    "data": {
+      "symbol": "XAGUSD",
+      "close": [
+        48.0,
+        46.74,
+        49.690000000000005,
+        45.21,
+        49.129999999999995,
+        48.03,
+        51.5,
+        49.42,
+        48.24,
+        50.879999999999995,
+        49.09,
+        51.63,
+        47.21,
+        50.28,
+        48.68,
+        50.8,
+        49.230000000000004,
+        52.809999999999995,
+        50.22,
+        48.04
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

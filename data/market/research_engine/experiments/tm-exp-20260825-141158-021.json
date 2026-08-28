@@ -1,0 +1,21 @@
+{
+  "code_hash": "9222ab65c752c33aaac31b2b561e76c3984896045adc449c7dac58a800b5d10c",
+  "cost_hash": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+  "created_at": "2026-08-25T14:11:58Z",
+  "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+  "dataset_sha256": "5765d363efca784d8f36224d9392202ad9ccf75d8a19e1b23dd61fad85d4b8f9",
+  "execution_hash": "59bebdb3416ddd81a21693f661b2b1c18b4d7b2cb8e56b6a17d858a82fe302d5",
+  "experiment_hash": "ddf6a3c8eac84f172bed52b157497cde1a62ba42bbcac12ea6ecfc06bffe90c2",
+  "experiment_id": "tm-exp-20260825-141158-021",
+  "family_id": "FAM-MOMENTUM-0001",
+  "feature_registry_hash": "37b1bbbeaf0000745a1f44e9fd9dacb0affc4555a4dd174d96489434a77326bd",
+  "hypothesis_id": "HYP-0001-A",
+  "node_assignment": [
+    "Xavier-03"
+  ],
+  "preregister_hash": "485d56a8f5a8e6822231760be240500ce6deb194471cde78172c3b5e4630b6d8",
+  "protocol_hash": "9222ab65c752c33aaac31b2b561e76c3984896045adc449c7dac58a800b5d10c",
+  "seed": 20260825,
+  "status": "LOCKED",
+  "window_hash": "4019383491c1cce14a901259bbbe2df1fcd0ac77076e37d93cdfaa287f3fe08b"
+}

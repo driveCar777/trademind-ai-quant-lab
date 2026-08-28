@@ -1,0 +1,31 @@
+{
+  "discovery_id": "REGIME_TRANSITION_V0.9",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "REGIME_TRANSITION_V0.9",
+      "family_id": "FAM-RT-DELTA-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-RT-0001"
+      ],
+      "job_id": "RT-V09-Xavier-01-HYP-RT-0001",
+      "node": "Xavier-01",
+      "note": "Worker executes this list only. Not HYP-0001. Not V0.6. Not V0.8.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-D1-20260825-000001",
+        "tm-market-OIL-D1-20260825-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "3ccb614d8a7784b4fe7c57f6f6a7449c3ac87a8111f3d078bf2096415b8c6cea",
+      "seed": 20260825,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-01"
+}

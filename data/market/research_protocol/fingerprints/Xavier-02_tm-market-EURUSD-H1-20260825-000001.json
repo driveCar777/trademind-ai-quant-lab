@@ -1,0 +1,22 @@
+{
+  "BOUNDARY_LEAKAGE": false,
+  "DETERMINISTIC": true,
+  "FINAL_OOS_LOCKED": false,
+  "LEAKAGE_DETECTED": false,
+  "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+  "dataset_sha256": "cea73749b6b1c6511ca7ae222d976879c85d25bb4818976299b225827d5ea567",
+  "elapsed_seconds": 22.117481231689453,
+  "errors": [],
+  "execution": {
+    "current_bar_used_for_execution": false,
+    "entry_index": 121,
+    "exit_index": null,
+    "signal_index": 120
+  },
+  "feature_hash": "ff569aa859c43c5594fe38c3cf883be145a75f148e08d2a13ae630e8adaaf6a7",
+  "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+  "purge_blocks": true,
+  "sentinel_ok": true,
+  "warmup_ok": true,
+  "window_hash": "9b232930dd445b2250d7984c6829de2d5cd100854abe8a94be23cbdef04010c9"
+}

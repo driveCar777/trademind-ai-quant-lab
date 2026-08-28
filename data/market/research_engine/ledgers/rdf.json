@@ -1,0 +1,16 @@
+{
+  "allowed_mutations": [
+    "parameter",
+    "window",
+    "feature",
+    "cost",
+    "execution",
+    "sample",
+    "instrument",
+    "timeframe",
+    "universe"
+  ],
+  "events": [],
+  "overwrite_policy": "FORBIDDEN",
+  "required_action": "new_experiment_or_new_hypothesis"
+}

@@ -1,0 +1,439 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "bootstrap_iterations": 200,
+  "cost_model": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+  "discovery_id": "STRATEGY_DISCOVERY_V0.5",
+  "execution_model": "NEXT_CLOSED_BAR_FIXED_HOLD_NOT_TRADE",
+  "fdr_q": 0.05,
+  "note": "Foundation sketches. Not HYP-0001. Not FD V0.1 retune.",
+  "permutation_iterations": 200,
+  "search_space_hash": "a582b945a4f4d42cde6ceba36ad1f1f98de92accc9466cbdc6f4c77529b0bbdd",
+  "seed": 20260825,
+  "strategies": [
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "LONG_IN_UP",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "kind": "always"
+      },
+      "state_filter": {
+        "trend": [
+          "UP"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-LONG_IN_UP-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "SHORT_IN_DOWN",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": -1,
+      "signal_rule": {
+        "kind": "always"
+      },
+      "state_filter": {
+        "trend": [
+          "DOWN"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-SHORT_IN_DOWN-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "MOM_POS_IN_UP_STRONG",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "strength": [
+          "STRONG"
+        ],
+        "trend": [
+          "UP"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-MOM_POS_IN_UP_STRONG-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "MOM_NEG_IN_DOWN_STRONG",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": -1,
+      "signal_rule": {
+        "equals": "NEG",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "strength": [
+          "STRONG"
+        ],
+        "trend": [
+          "DOWN"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-MOM_NEG_IN_DOWN_STRONG-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "MOM_POS_IN_UP",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "trend": [
+          "UP"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-MOM_POS_IN_UP-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 3,
+      "horizon": 3,
+      "intended_book": "UNSPECIFIED",
+      "name": "MOM_POS_IN_UP_H3",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "trend": [
+          "UP"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-MOM_POS_IN_UP_H3-H3",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "MOM_POS_UP_MIDVOL",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "trend": [
+          "UP"
+        ],
+        "vol": [
+          "MID"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-MOM_POS_UP_MIDVOL-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "MOM_POS_UP_HIACT",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "activity": [
+          "HIGH"
+        ],
+        "trend": [
+          "UP"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-MOM_POS_UP_HIACT-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "MOM_POS_TIGHT",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "friction": [
+          "TIGHT"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-MOM_POS_TIGHT-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "FADE_EXT_FLAT",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "EXTENDED",
+        "fade": true,
+        "kind": "location"
+      },
+      "state_filter": {
+        "location": [
+          "EXTENDED"
+        ],
+        "trend": [
+          "FLAT"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-FADE_EXT_FLAT-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "FADE_EXT_FLAT_LOWVOL",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "EXTENDED",
+        "fade": true,
+        "kind": "location"
+      },
+      "state_filter": {
+        "location": [
+          "EXTENDED"
+        ],
+        "trend": [
+          "FLAT"
+        ],
+        "vol": [
+          "LOW"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-FADE_EXT_FLAT_LOWVOL-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "FADE_EXT_FLAT_HIVOL",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "EXTENDED",
+        "fade": true,
+        "kind": "location"
+      },
+      "state_filter": {
+        "location": [
+          "EXTENDED"
+        ],
+        "trend": [
+          "FLAT"
+        ],
+        "vol": [
+          "HIGH"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-FADE_EXT_FLAT_HIVOL-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "FADE_EXT_WEAK",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "equals": "EXTENDED",
+        "fade": true,
+        "kind": "location"
+      },
+      "state_filter": {
+        "location": [
+          "EXTENDED"
+        ],
+        "strength": [
+          "WEAK"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-FADE_EXT_WEAK-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "LONG_UP_TIGHT",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "SKIP_IF_FRICTION_WIDE",
+      "side": 1,
+      "signal_rule": {
+        "kind": "always"
+      },
+      "state_filter": {
+        "friction": [
+          "TIGHT"
+        ],
+        "trend": [
+          "UP"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-LONG_UP_TIGHT-H1",
+      "target": "future_return"
+    },
+    {
+      "causal": true,
+      "cost_rule": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+      "entry": "NEXT_CLOSED_BAR",
+      "exit": "FIXED_HORIZON",
+      "family_id": "FAM-SD-STATE-0001",
+      "holding": 1,
+      "horizon": 1,
+      "intended_book": "UNSPECIFIED",
+      "name": "SKIP_WIDE_ONLY",
+      "note": "Sketch. Not a profitable strategy. Not 10% annualized.",
+      "risk_rule": "MEASURE_WIDE_AS_TRADE",
+      "side": 1,
+      "signal_rule": {
+        "kind": "always"
+      },
+      "state_filter": {
+        "friction": [
+          "WIDE"
+        ]
+      },
+      "status": "REGISTERED",
+      "strategy_id": "SD-V05-SKIP_WIDE_ONLY-H1",
+      "target": "future_return"
+    }
+  ],
+  "strategy_count": 15,
+  "version": "0.5"
+}

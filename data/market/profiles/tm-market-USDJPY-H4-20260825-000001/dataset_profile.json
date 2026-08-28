@@ -1,0 +1,243 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "anomalies": {
+    "anomaly_count": 0,
+    "anomaly_rows": []
+  },
+  "atr": {
+    "max_ATR14": 1.5559285714285704,
+    "max_TR": 5.02800000000002,
+    "mean_ATR14": 0.40513922640017214,
+    "mean_TR": 0.40488249999999965,
+    "median_TR": 0.33899999999999864,
+    "method": "simple_mean_of_true_range_14",
+    "note": "Data description, not a signal."
+  },
+  "candidate_windows": {
+    "FINAL_OOS_LOCKED": false,
+    "holdout_15": {
+      "bar_index_end": 1999,
+      "bar_index_start": 1700,
+      "end_utc": "2026-08-25T12:00:00Z",
+      "row_count": 300,
+      "start_utc": "2026-06-18T08:00:00Z"
+    },
+    "note": "Design suggestion only. Not Final OOS. Do not lock.",
+    "research_70": {
+      "bar_index_end": 1399,
+      "bar_index_start": 0,
+      "end_utc": "2026-04-10T20:00:00Z",
+      "row_count": 1400,
+      "start_utc": "2025-05-29T16:00:00Z"
+    },
+    "role": "CANDIDATE_WINDOW",
+    "validation_15": {
+      "bar_index_end": 1699,
+      "bar_index_start": 1400,
+      "end_utc": "2026-06-18T04:00:00Z",
+      "row_count": 300,
+      "start_utc": "2026-04-12T20:00:00Z"
+    }
+  },
+  "candle": {
+    "average_body": 0.19290500000000005,
+    "average_body_to_range": 0.4397998576326342,
+    "average_lower_wick": 0.12132149999999978,
+    "average_range": 0.4022259999999996,
+    "average_upper_wick": 0.08799949999999977,
+    "zero_range_count": 5
+  },
+  "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+  "elapsed_seconds": 3.30961012840271,
+  "end_utc": "2026-08-25T12:00:00Z",
+  "extreme_moves": {
+    "note": "EXTREME_MOVE is not automatically bad data.",
+    "top_10_abs_return": [
+      {
+        "close": 156.372,
+        "idx": 1483,
+        "label": "EXTREME_MOVE",
+        "previous_close": 160.133,
+        "return_pct": -2.3486726658465122,
+        "timestamp": "2026-04-30T08:00:00Z"
+      },
+      {
+        "close": 159.467,
+        "idx": 1887,
+        "label": "EXTREME_MOVE",
+        "previous_close": 162.886,
+        "return_pct": -2.0990140343553056,
+        "timestamp": "2026-07-30T12:00:00Z"
+      },
+      {
+        "close": 148.051,
+        "idx": 284,
+        "label": "EXTREME_MOVE",
+        "previous_close": 150.513,
+        "return_pct": -1.6357391055922197,
+        "timestamp": "2025-08-01T12:00:00Z"
+      },
+      {
+        "close": 149.578,
+        "idx": 566,
+        "label": "EXTREME_MOVE",
+        "previous_close": 147.476,
+        "return_pct": 1.4253166616941089,
+        "timestamp": "2025-10-05T20:00:00Z"
+      },
+      {
+        "close": 155.885,
+        "idx": 1057,
+        "label": "EXTREME_MOVE",
+        "previous_close": 158.109,
+        "return_pct": -1.4066245438273708,
+        "timestamp": "2026-01-23T16:00:00Z"
+      },
+      {
+        "close": 146.824,
+        "idx": 377,
+        "label": "EXTREME_MOVE",
+        "previous_close": 148.704,
+        "return_pct": -1.2642565095760676,
+        "timestamp": "2025-08-22T12:00:00Z"
+      },
+      {
+        "close": 155.822,
+        "idx": 1507,
+        "label": "EXTREME_MOVE",
+        "previous_close": 157.772,
+        "return_pct": -1.2359607534923742,
+        "timestamp": "2026-05-06T04:00:00Z"
+      },
+      {
+        "close": 157.549,
+        "idx": 1895,
+        "label": "EXTREME_MOVE",
+        "previous_close": 159.17,
+        "return_pct": -1.0184079914556645,
+        "timestamp": "2026-07-31T20:00:00Z"
+      },
+      {
+        "close": 142.913,
+        "idx": 24,
+        "label": "EXTREME_MOVE",
+        "previous_close": 144.266,
+        "return_pct": -0.937850914283324,
+        "timestamp": "2025-06-04T12:00:00Z"
+      },
+      {
+        "close": 146.837,
+        "idx": 439,
+        "label": "EXTREME_MOVE",
+        "previous_close": 148.192,
+        "return_pct": -0.9143543511120831,
+        "timestamp": "2025-09-05T12:00:00Z"
+      }
+    ]
+  },
+  "gaps": {
+    "expected_seconds": 14400,
+    "gap_count": 68,
+    "normal_interval_count": 1931,
+    "overlap_count": 0
+  },
+  "generated_at_utc": "2026-08-25T13:20:31Z",
+  "hash_ok": true,
+  "hostname": "xavier",
+  "logical_symbol": "USDJPY",
+  "mt5_symbol": "USDJPY",
+  "peak_rss_kb": 15552,
+  "price": {
+    "close": {
+      "max": 163.926,
+      "mean": 154.5168235,
+      "median": 156.103,
+      "min": 142.423
+    },
+    "first_close": 144.133,
+    "high": {
+      "max": 163.983,
+      "mean": 154.6970725,
+      "median": 156.3315,
+      "min": 142.739
+    },
+    "last_close": 159.283,
+    "low": {
+      "max": 163.835,
+      "mean": 154.2948465,
+      "median": 155.88,
+      "min": 142.372
+    },
+    "open": {
+      "max": 163.926,
+      "mean": 154.5084175,
+      "median": 156.099,
+      "min": 142.423
+    },
+    "price_change_abs": 15.149999999999977,
+    "price_change_pct": 10.511125141362475
+  },
+  "profile_code_version": "6711bea15a6c1c52cf9d912ff13188cbe6b911e719c71212f1511342174dd9fb",
+  "profile_version": "0.1",
+  "python_version": "3.6.8",
+  "qualification": "QUALIFIED_WITH_WARNINGS",
+  "qualification_fail_reasons": [],
+  "qualification_note": "Research readiness of the dataset, not trade worthiness.",
+  "qualification_review_reasons": [],
+  "qualification_warn_reasons": [
+    "real_volume_all_zero",
+    "session_gaps",
+    "extreme_moves_listed"
+  ],
+  "returns": {
+    "max_return": 0.014253166616941088,
+    "mean_log_return": 4.999800395905532e-05,
+    "mean_return": 5.2009552586279146e-05,
+    "median_log_return": 0.00010363374462170623,
+    "median_return": 0.00010363911478368,
+    "min_return": -0.023486726658465122,
+    "negative_return_count": 926,
+    "note": "Bar returns, not trade results. Not a win rate.",
+    "positive_return_count": 1070,
+    "std_log_return": 0.0020065090395643883,
+    "std_return": 0.0020023910192085203,
+    "zero_return_count": 3
+  },
+  "row_count": 2000,
+  "sha256": "5765d363efca784d8f36224d9392202ad9ccf75d8a19e1b23dd61fad85d4b8f9",
+  "sha256_actual": "5765d363efca784d8f36224d9392202ad9ccf75d8a19e1b23dd61fad85d4b8f9",
+  "spread": {
+    "spread_max": 180,
+    "spread_mean": 13.374,
+    "spread_median": 13.0,
+    "spread_min": 13,
+    "spread_present": true,
+    "spread_zero_count": 0
+  },
+  "start_utc": "2025-05-29T16:00:00Z",
+  "timeframe": "H4",
+  "timezone": "UTC",
+  "trend": {
+    "note": "Describes path directional efficiency. Not a strategy score.",
+    "trend_efficiency": 0.03893180381454576
+  },
+  "validation_status": "WARN",
+  "volatility": {
+    "max_volatility_20": 0.005765552861718954,
+    "max_volatility_50": 0.004094572787750833,
+    "mean_volatility_20": 0.0017345653928136423,
+    "mean_volatility_50": 0.0018433809367258264,
+    "note": "Stdev of simple returns over trailing windows. UNKNOWN if short."
+  },
+  "volume": {
+    "real_volume_row_count": 2000,
+    "real_volume_zero_count": 2000,
+    "tick_volume_max": 89305,
+    "tick_volume_mean": 18749.9705,
+    "tick_volume_median": 17564.0,
+    "tick_volume_min": 1,
+    "volume_policy": "tick_volume_only",
+    "zero_tick_volume_count": 0
+  },
+  "xavier": "Xavier-03"
+}

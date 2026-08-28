@@ -1,0 +1,198 @@
+{
+  "DETERMINISTIC": true,
+  "boundary_ok": true,
+  "hashes": [
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222",
+    "55492f07863095379d1290aa0c3d4d47a5e00116254a2a32b0ee38ead31fa222"
+  ],
+  "purity": {
+    "LEAKAGE_DETECTED": false,
+    "cases": [
+      {
+        "attack": "future_price_corrupted",
+        "feature": "sma",
+        "ok": true
+      },
+      {
+        "attack": "future_price_corrupted",
+        "feature": "ema",
+        "ok": true
+      },
+      {
+        "attack": "future_price_corrupted",
+        "feature": "rsi",
+        "ok": true
+      },
+      {
+        "attack": "future_price_corrupted",
+        "feature": "atr",
+        "ok": true
+      },
+      {
+        "attack": "future_price_corrupted",
+        "feature": "macd",
+        "ok": true
+      },
+      {
+        "attack": "future_price_corrupted",
+        "feature": "bollinger",
+        "ok": true
+      },
+      {
+        "attack": "future_price_corrupted",
+        "feature": "vwap",
+        "ok": true
+      },
+      {
+        "attack": "future_volume_corrupted",
+        "feature": "sma",
+        "ok": true
+      },
+      {
+        "attack": "future_volume_corrupted",
+        "feature": "ema",
+        "ok": true
+      },
+      {
+        "attack": "future_volume_corrupted",
+        "feature": "rsi",
+        "ok": true
+      },
+      {
+        "attack": "future_volume_corrupted",
+        "feature": "atr",
+        "ok": true
+      },
+      {
+        "attack": "future_volume_corrupted",
+        "feature": "macd",
+        "ok": true
+      },
+      {
+        "attack": "future_volume_corrupted",
+        "feature": "bollinger",
+        "ok": true
+      },
+      {
+        "attack": "future_volume_corrupted",
+        "feature": "vwap",
+        "ok": true
+      },
+      {
+        "attack": "future_high_corrupted",
+        "feature": "sma",
+        "ok": true
+      },
+      {
+        "attack": "future_high_corrupted",
+        "feature": "ema",
+        "ok": true
+      },
+      {
+        "attack": "future_high_corrupted",
+        "feature": "rsi",
+        "ok": true
+      },
+      {
+        "attack": "future_high_corrupted",
+        "feature": "atr",
+        "ok": true
+      },
+      {
+        "attack": "future_high_corrupted",
+        "feature": "macd",
+        "ok": true
+      },
+      {
+        "attack": "future_high_corrupted",
+        "feature": "bollinger",
+        "ok": true
+      },
+      {
+        "attack": "future_high_corrupted",
+        "feature": "vwap",
+        "ok": true
+      },
+      {
+        "attack": "future_low_corrupted",
+        "feature": "sma",
+        "ok": true
+      },
+      {
+        "attack": "future_low_corrupted",
+        "feature": "ema",
+        "ok": true
+      },
+      {
+        "attack": "future_low_corrupted",
+        "feature": "rsi",
+        "ok": true
+      },
+      {
+        "attack": "future_low_corrupted",
+        "feature": "atr",
+        "ok": true
+      },
+      {
+        "attack": "future_low_corrupted",
+        "feature": "macd",
+        "ok": true
+      },
+      {
+        "attack": "future_low_corrupted",
+        "feature": "bollinger",
+        "ok": true
+      },
+      {
+        "attack": "future_low_corrupted",
+        "feature": "vwap",
+        "ok": true
+      },
+      {
+        "attack": "future_timestamp_corrupted",
+        "feature": "sma",
+        "ok": true
+      },
+      {
+        "attack": "future_timestamp_corrupted",
+        "feature": "ema",
+        "ok": true
+      },
+      {
+        "attack": "future_timestamp_corrupted",
+        "feature": "rsi",
+        "ok": true
+      },
+      {
+        "attack": "future_timestamp_corrupted",
+        "feature": "atr",
+        "ok": true
+      },
+      {
+        "attack": "future_timestamp_corrupted",
+        "feature": "macd",
+        "ok": true
+      },
+      {
+        "attack": "future_timestamp_corrupted",
+        "feature": "bollinger",
+        "ok": true
+      },
+      {
+        "attack": "future_timestamp_corrupted",
+        "feature": "vwap",
+        "ok": true
+      }
+    ],
+    "split": 50
+  },
+  "sentinel_ok": true
+}

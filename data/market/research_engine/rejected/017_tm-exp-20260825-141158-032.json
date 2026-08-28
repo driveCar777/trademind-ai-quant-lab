@@ -1,0 +1,8 @@
+{
+  "arm": "continuation",
+  "dataset_id": "tm-market-OIL-D1-20260825-000001",
+  "experiment_id": "tm-exp-20260825-141158-032",
+  "hypothesis_id": "HYP-0001-B",
+  "reason": "FALSIFIED",
+  "result_hash": "8ae5bfca180f85c17b3405862d959d4887f2ec9def487633166f33c38dd8f778"
+}

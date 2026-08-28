@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "57836ef5-be41-45bb-b8b0-34201be7f18e",
+  "indicator": "RSI",
+  "symbol": "USDJPY",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      48.037467097893725,
+      51.05880620299753,
+      48.279479571806675,
+      55.508978879292435,
+      50.286781647105926,
+      45.31644239589519
+    ],
+    "latest": 45.31644239589519
+  },
+  "calculation_time_ms": 11.309,
+  "timestamp": "2026-07-24T12:19:31.512852"
+}

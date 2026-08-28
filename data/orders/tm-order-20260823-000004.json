@@ -1,0 +1,13 @@
+{
+  "research_id": "tm-research-20260823-000013",
+  "volume": 0.01,
+  "mode": "paper",
+  "mt5_connected": true,
+  "account_mode": "demo",
+  "created_at": "2026-08-23T12:42:52Z",
+  "symbol": "EURUSD",
+  "side": "SELL",
+  "status": "ACCEPTED",
+  "reason": "rsi_overbought;paper_only",
+  "order_id": "tm-order-20260823-000004"
+}

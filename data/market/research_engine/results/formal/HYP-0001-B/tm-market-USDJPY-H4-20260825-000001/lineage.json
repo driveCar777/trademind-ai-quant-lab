@@ -1,0 +1,14 @@
+{
+  "code_fingerprint": "407d65227ba0a2437ac66e75386bbba94577b1993e2b7e17f250ac486f527d3a",
+  "dataset_hash": "5765d363efca784d8f36224d9392202ad9ccf75d8a19e1b23dd61fad85d4b8f9",
+  "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+  "experiment_hash": "74d0365f0af6e59d27731baa17651f4db0ca694c32cb8210999e6355a7cc4257",
+  "experiment_id": "tm-exp-20260825-141158-022",
+  "feature_version": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "hypothesis_hash": "5293dbe7d54f23a44a10e0458505e47e848a0cb6c4ce76959879bbce24d7d9be",
+  "hypothesis_id": "HYP-0001-B",
+  "lineage_hash": "e53222fc66a7805fbc4ee943ef821f298a067ea9c2122d0614e455c212c66887",
+  "preregister_hash": "fbd14d199ba6390ac91f8700d48053ff75c99d7510183d58eeb1a101238cd3db",
+  "protocol_version": "0.3",
+  "result_hash": "c9b89baff8ff0f9fd5005180cc01b975b0e662aceb7f41b54086ff03f417a941"
+}

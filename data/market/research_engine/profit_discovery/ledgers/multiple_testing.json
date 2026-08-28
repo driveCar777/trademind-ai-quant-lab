@@ -1,0 +1,10 @@
+{
+  "counts": {
+    "CANDIDATE": 0,
+    "NO_EDGE": 5,
+    "WEAK_EDGE": 2
+  },
+  "discovery_id": "PROFIT_DISCOVERY_V0.6",
+  "keep_failed": true,
+  "outcome": "WEAK_EDGE_ONLY"
+}

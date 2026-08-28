@@ -1,0 +1,38 @@
+{
+  "candidate_holdout_window": "CANDIDATE",
+  "code_fingerprint": "02e8ce5056342e1a0156470eecb80f84fa4afaf6eafe2ba25f16a1f19d3337da",
+  "config_hash": "1b325b5268428073ce57b72a8e931adf156e0bc6adfb5c05d156b75890155716",
+  "cost_model": "UNSPECIFIED",
+  "created_at_utc": "2026-08-25T13:52:08Z",
+  "dataset_id": "PROTOCOL_SELF_TEST",
+  "dataset_sha256": null,
+  "execution_model": {
+    "commission_model": "UNSPECIFIED",
+    "current_bar_allowed": false,
+    "entry_rule": "NEXT_BAR_OPEN",
+    "execution_bar_offset": 1,
+    "future_bar_allowed": false,
+    "note": "signal_time=close(t) after bar t ends; execution_time=open(t+1). Using close[t] at open[t] is look-ahead.",
+    "position_timing": "next_bar_open",
+    "price_field": "open",
+    "signal_field": "close",
+    "slippage_model": "UNSPECIFIED",
+    "spread_model": "dataset_spread_points"
+  },
+  "experiment_id": "tm-exp-20260825-135208-001",
+  "node_assignment": [
+    "Xavier-01",
+    "Xavier-02",
+    "Xavier-03",
+    "Xavier-04"
+  ],
+  "note": "Protocol validation only. Not a strategy experiment. Not GOLD M15 RSI.",
+  "parameter_set": {},
+  "protocol_version": "0.3",
+  "random_seed": 0,
+  "research_window": "CANDIDATE",
+  "status": "FROZEN",
+  "strategy_id": "NONE",
+  "strategy_version": "none",
+  "validation_window": "CANDIDATE"
+}

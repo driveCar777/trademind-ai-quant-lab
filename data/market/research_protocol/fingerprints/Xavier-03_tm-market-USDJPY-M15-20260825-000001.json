@@ -1,0 +1,22 @@
+{
+  "BOUNDARY_LEAKAGE": false,
+  "DETERMINISTIC": true,
+  "FINAL_OOS_LOCKED": false,
+  "LEAKAGE_DETECTED": false,
+  "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+  "dataset_sha256": "b3fd2f75e728f94fb3c6a66ffc6de7bca60e381d62253d46bcb405d435319387",
+  "elapsed_seconds": 22.167330503463745,
+  "errors": [],
+  "execution": {
+    "current_bar_used_for_execution": false,
+    "entry_index": 121,
+    "exit_index": null,
+    "signal_index": 120
+  },
+  "feature_hash": "211addded15c67403235ec5dd844e7e3fc96dd56494cf2c424815554de6f7a74",
+  "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+  "purge_blocks": true,
+  "sentinel_ok": true,
+  "warmup_ok": true,
+  "window_hash": "1c3cf55d9718500a465db883915c5a9aab210a9b107ebdbe2c54c1be18fd84dc"
+}

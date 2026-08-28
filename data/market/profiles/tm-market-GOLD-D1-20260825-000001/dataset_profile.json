@@ -1,0 +1,242 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "anomalies": {
+    "anomaly_count": 0,
+    "anomaly_rows": []
+  },
+  "atr": {
+    "max_ATR14": 295.52142857142854,
+    "max_TR": 774.3599999999997,
+    "mean_ATR14": 37.40704256236969,
+    "mean_TR": 37.550275000000006,
+    "median_TR": 25.33000000000004,
+    "method": "simple_mean_of_true_range_14",
+    "note": "Data description, not a signal."
+  },
+  "candidate_windows": {
+    "FINAL_OOS_LOCKED": false,
+    "holdout_15": {
+      "bar_index_end": 1999,
+      "bar_index_start": 1700,
+      "end_utc": "2026-08-25T00:00:00Z",
+      "row_count": 300,
+      "start_utc": "2025-09-10T00:00:00Z"
+    },
+    "note": "Design suggestion only. Not Final OOS. Do not lock.",
+    "research_70": {
+      "bar_index_end": 1399,
+      "bar_index_start": 0,
+      "end_utc": "2024-09-24T00:00:00Z",
+      "row_count": 1400,
+      "start_utc": "2020-03-26T00:00:00Z"
+    },
+    "role": "CANDIDATE_WINDOW",
+    "validation_15": {
+      "bar_index_end": 1699,
+      "bar_index_start": 1400,
+      "end_utc": "2025-09-09T00:00:00Z",
+      "row_count": 300,
+      "start_utc": "2024-09-25T00:00:00Z"
+    }
+  },
+  "candle": {
+    "average_body": 18.722545,
+    "average_body_to_range": 0.45198154766441295,
+    "average_lower_wick": 10.103425000000001,
+    "average_range": 37.147380000000005,
+    "average_upper_wick": 8.321410000000004,
+    "zero_range_count": 2
+  },
+  "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+  "elapsed_seconds": 3.367300033569336,
+  "end_utc": "2026-08-25T00:00:00Z",
+  "extreme_moves": {
+    "note": "EXTREME_MOVE is not automatically bad data.",
+    "top_10_abs_return": [
+      {
+        "close": 4892.73,
+        "idx": 1822,
+        "label": "EXTREME_MOVE",
+        "previous_close": 5438.1,
+        "return_pct": -10.028686489766661,
+        "timestamp": "2026-01-30T00:00:00Z"
+      },
+      {
+        "close": 5513.1,
+        "idx": 1820,
+        "label": "EXTREME_MOVE",
+        "previous_close": 5172.11,
+        "return_pct": 6.592860554009886,
+        "timestamp": "2026-01-28T00:00:00Z"
+      },
+      {
+        "close": 4703.98,
+        "idx": 1827,
+        "label": "EXTREME_MOVE",
+        "previous_close": 5012.13,
+        "return_pct": -6.148084746405232,
+        "timestamp": "2026-02-05T00:00:00Z"
+      },
+      {
+        "close": 4092.95,
+        "idx": 1735,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4360.09,
+        "return_pct": -6.126937746697896,
+        "timestamp": "2025-10-21T00:00:00Z"
+      },
+      {
+        "close": 1909.09,
+        "idx": 117,
+        "label": "EXTREME_MOVE",
+        "previous_close": 2028.13,
+        "return_pct": -5.8694462386533495,
+        "timestamp": "2020-08-11T00:00:00Z"
+      },
+      {
+        "close": 4966.06,
+        "idx": 1828,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4703.98,
+        "return_pct": 5.571452259575952,
+        "timestamp": "2026-02-06T00:00:00Z"
+      },
+      {
+        "close": 4277.89,
+        "idx": 1982,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4072.25,
+        "return_pct": 5.049788200626198,
+        "timestamp": "2026-08-05T00:00:00Z"
+      },
+      {
+        "close": 1870.75,
+        "idx": 194,
+        "label": "EXTREME_MOVE",
+        "previous_close": 1958.41,
+        "return_pct": -4.476080085375385,
+        "timestamp": "2020-11-09T00:00:00Z"
+      },
+      {
+        "close": 4219.66,
+        "idx": 1935,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4047.03,
+        "return_pct": 4.265597240445454,
+        "timestamp": "2026-06-11T00:00:00Z"
+      },
+      {
+        "close": 4047.03,
+        "idx": 1934,
+        "label": "EXTREME_MOVE",
+        "previous_close": 4221.76,
+        "return_pct": -4.1387951944212835,
+        "timestamp": "2026-06-10T00:00:00Z"
+      }
+    ]
+  },
+  "gaps": {
+    "expected_seconds": null,
+    "gap_count": 0,
+    "normal_interval_count": 1999,
+    "overlap_count": 0
+  },
+  "generated_at_utc": "2026-08-25T13:20:36Z",
+  "hash_ok": true,
+  "hostname": "xavier",
+  "logical_symbol": "GOLD",
+  "mt5_symbol": "GOLD",
+  "peak_rss_kb": 16180,
+  "price": {
+    "close": {
+      "max": 5513.1,
+      "mean": 2457.81716,
+      "median": 1957.56,
+      "min": 1577.47
+    },
+    "first_close": 1624.94,
+    "high": {
+      "max": 5597.71,
+      "mean": 2474.800845,
+      "median": 1969.795,
+      "min": 1599.13
+    },
+    "last_close": 4640.52,
+    "low": {
+      "max": 5328.9,
+      "mean": 2437.653465,
+      "median": 1944.17,
+      "min": 1565.64
+    },
+    "open": {
+      "max": 5512.76,
+      "mean": 2456.419165,
+      "median": 1957.53,
+      "min": 1577.49
+    },
+    "price_change_abs": 3015.5800000000004,
+    "price_change_pct": 185.58100606791638
+  },
+  "profile_code_version": "6711bea15a6c1c52cf9d912ff13188cbe6b911e719c71212f1511342174dd9fb",
+  "profile_version": "0.1",
+  "python_version": "3.6.9",
+  "qualification": "QUALIFIED_WITH_WARNINGS",
+  "qualification_fail_reasons": [],
+  "qualification_note": "Research readiness of the dataset, not trade worthiness.",
+  "qualification_review_reasons": [],
+  "qualification_warn_reasons": [
+    "real_volume_all_zero",
+    "extreme_moves_listed"
+  ],
+  "returns": {
+    "max_return": 0.06592860554009886,
+    "mean_log_return": 0.0005249402385699444,
+    "mean_return": 0.0005790289529142361,
+    "median_log_return": 0.0004784205308996783,
+    "median_return": 0.0004785349922546533,
+    "min_return": -0.10028686489766661,
+    "negative_return_count": 933,
+    "note": "Bar returns, not trade results. Not a win rate.",
+    "positive_return_count": 1064,
+    "std_log_return": 0.010398441977961909,
+    "std_return": 0.010365277713034027,
+    "zero_return_count": 2
+  },
+  "row_count": 2000,
+  "sha256": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+  "sha256_actual": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+  "spread": {
+    "spread_max": 254,
+    "spread_mean": 32.55,
+    "spread_median": 29.0,
+    "spread_min": 0,
+    "spread_present": true,
+    "spread_zero_count": 2
+  },
+  "start_utc": "2020-03-26T00:00:00Z",
+  "timeframe": "D1",
+  "timezone": "UTC",
+  "trend": {
+    "note": "Describes path directional efficiency. Not a strategy score.",
+    "trend_efficiency": 0.07844819512804237
+  },
+  "validation_status": "WARN",
+  "volatility": {
+    "max_volatility_20": 0.03712081339291373,
+    "max_volatility_50": 0.027636334640319553,
+    "mean_volatility_20": 0.009075508802976275,
+    "mean_volatility_50": 0.009429650606247161,
+    "note": "Stdev of simple returns over trailing windows. UNKNOWN if short."
+  },
+  "volume": {
+    "real_volume_row_count": 2000,
+    "real_volume_zero_count": 2000,
+    "tick_volume_max": 857925,
+    "tick_volume_mean": 138267.3385,
+    "tick_volume_median": 104662.5,
+    "tick_volume_min": 2,
+    "volume_policy": "tick_volume_only",
+    "zero_tick_volume_count": 0
+  },
+  "xavier": "Xavier-01"
+}

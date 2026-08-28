@@ -1,0 +1,29 @@
+{
+  "A_independent": {
+    "expect": "near_zero",
+    "research_neg_delta": 0.0002497231521263747,
+    "research_pos_delta": 0.000115091147392544,
+    "result_hash": "c9be4e181268fc139019673ce397c2dcf2ddf0b7682caba4ce36f5bd1169f5bc",
+    "sentinel_ok": true
+  },
+  "B_positive": {
+    "expect": "positive",
+    "research_neg_delta": -0.003773584905660377,
+    "research_pos_delta": 0.011226415094339625,
+    "result_hash": "8ec16dd14befc9ac8a0234967ec7499d671f3a09a0d65d7a3166a7f0db309a05",
+    "sentinel_ok": true
+  },
+  "C_negative": {
+    "expect": "negative",
+    "research_neg_delta": -0.011226415094339626,
+    "research_pos_delta": 0.0037735849056603826,
+    "result_hash": "4cd7b4ad783d6f5a36b1479766d146c10974419e528738c9251c2f175849ccb6",
+    "sentinel_ok": true
+  },
+  "D_leakage_sentinel": {
+    "ok": true
+  },
+  "E_tamper": {
+    "ok": true
+  }
+}

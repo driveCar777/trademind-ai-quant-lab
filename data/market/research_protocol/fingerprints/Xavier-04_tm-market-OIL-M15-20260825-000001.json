@@ -1,0 +1,22 @@
+{
+  "BOUNDARY_LEAKAGE": false,
+  "DETERMINISTIC": true,
+  "FINAL_OOS_LOCKED": false,
+  "LEAKAGE_DETECTED": false,
+  "dataset_id": "tm-market-OIL-M15-20260825-000001",
+  "dataset_sha256": "4dec29a0c249785916c6a81dbaafe3d40cde2f70244736cfa60953210ed5811e",
+  "elapsed_seconds": 21.854859352111816,
+  "errors": [],
+  "execution": {
+    "current_bar_used_for_execution": false,
+    "entry_index": 121,
+    "exit_index": null,
+    "signal_index": 120
+  },
+  "feature_hash": "1c9395457a3ebc033f9f345915d5dba0ffd5314f8ecb96134520f36ee80f267c",
+  "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+  "purge_blocks": true,
+  "sentinel_ok": true,
+  "warmup_ok": true,
+  "window_hash": "a9592d5de62c1b0cea9357fa061fb8c5c929f2b5fdd1732ba45086629527c22c"
+}

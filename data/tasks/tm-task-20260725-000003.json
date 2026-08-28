@@ -1,0 +1,21 @@
+{
+  "task_id": "tm-task-20260725-000003",
+  "worker_id": "worker-02",
+  "worker_type": "stock-factor-worker",
+  "status": "FAILED",
+  "created_at": "2026-07-25T07:35:55.034879Z",
+  "started_at": "2026-07-25T07:36:01.138076Z",
+  "finished_at": "2026-07-25T07:36:01.155517Z",
+  "duration_ms": 17,
+  "result_path": "results/2026/07/25/tm-task-20260725-000003.json",
+  "error": "{\"error\": \"Not found\"}",
+  "request": {
+    "worker_type": "stock-factor-worker",
+    "indicator": "factor",
+    "data": {
+      "stock": "601318",
+      "date": "20260724"
+    },
+    "params": {}
+  }
+}

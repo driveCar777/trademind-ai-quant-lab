@@ -1,0 +1,30 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "1b2e65b3e9bdf9a03033bcd34f479ee9a7231037b6ee431b8fd49d08a9290bd6",
+  "executed_v09": false,
+  "n_implementable": 29,
+  "n_questions": 52,
+  "note": "Scoring only. No Xavier. No V0.9 jobs.",
+  "program_id": "ALPHA_PROGRAM_PIPELINE_V1",
+  "top3_clusters": [
+    {
+      "best_id": "RB-0047",
+      "cluster": "REGIME_TRANSITION",
+      "keep_v09": true,
+      "score": 1600
+    },
+    {
+      "best_id": "RB-0009",
+      "cluster": "RESIDUAL",
+      "keep_v09": false,
+      "score": 576
+    },
+    {
+      "best_id": "RB-0005",
+      "cluster": "CALENDAR",
+      "keep_v09": false,
+      "score": 540
+    }
+  ],
+  "utc": "2026-08-26T15:31:49Z"
+}

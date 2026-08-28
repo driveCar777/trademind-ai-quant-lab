@@ -1,0 +1,198 @@
+{
+  "align_n": 1998,
+  "fdr": {
+    "discoveries": [],
+    "m": 3,
+    "q": 0.05
+  },
+  "hypotheses": [
+    {
+      "adjusted_p": 0.2173913043478261,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE"
+      ],
+      "fdr_discovery": false,
+      "hypothesis_id": "HYP-XR-0001",
+      "kind": "RICH",
+      "label": "FALSIFIED",
+      "label_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE"
+      ],
+      "predicted_sign": -1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.009855272912058349,
+          "iterations": 2000,
+          "low": -0.0037314243653100558,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.005905257755961063,
+          "iterations": 2000,
+          "low": 0.00033491492902123533,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "delta": 0.003032973637940637,
+        "effect_size": 0.09946433573911224,
+        "max_drawdown": 0.0,
+        "max_trade_share": 0.002288329519450801,
+        "mean_baseline": -0.005182351867958945,
+        "mean_signal": -0.002149378230018308,
+        "n_signal": 437,
+        "n_trade": 437,
+        "raw_p": 0.07246376811594203,
+        "sign_ok": true,
+        "total_return": -0.9392782865180006
+      },
+      "target_asset": "GOLD_OIL",
+      "validation": {
+        "delta": -0.0027215610529322826,
+        "effect_size": -0.1225954723371232,
+        "max_drawdown": 0.0,
+        "max_trade_share": 0.006493506493506494,
+        "mean_baseline": -0.004883500584524272,
+        "mean_signal": -0.007605061637456554,
+        "n_signal": 154,
+        "n_trade": 154,
+        "raw_p": null,
+        "sign_ok": true,
+        "total_return": -1.1711794921683094
+      }
+    },
+    {
+      "adjusted_p": 0.7901049475262368,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "RESEARCH_SIGN"
+      ],
+      "fdr_discovery": false,
+      "hypothesis_id": "HYP-XR-0002",
+      "kind": "CHEAP",
+      "label": "WEAK_SUPPORT",
+      "label_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "RESEARCH_SIGN"
+      ],
+      "predicted_sign": 1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.006402951738673824,
+          "iterations": 2000,
+          "low": -0.008627718428995788,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0020011424467882427,
+          "iterations": 2000,
+          "low": -0.004025793629112216,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "delta": -0.0009442356790624043,
+        "effect_size": -0.03073464643939448,
+        "max_drawdown": 0.0,
+        "max_trade_share": 0.0022624434389140274,
+        "mean_baseline": -0.006528605546219195,
+        "mean_signal": -0.007472841225281599,
+        "n_signal": 442,
+        "n_trade": 442,
+        "raw_p": 0.5557221389305347,
+        "total_return": -3.302995821574467
+      },
+      "target_asset": "GOLD_OIL",
+      "validation": {
+        "delta": 0.007104091241424807,
+        "effect_size": 0.3065438486226756,
+        "max_drawdown": 0.0,
+        "max_trade_share": 0.02857142857142857,
+        "mean_baseline": -0.001327267241319301,
+        "mean_signal": 0.005776824000105507,
+        "n_signal": 35,
+        "n_trade": 35,
+        "raw_p": null,
+        "sign_ok": true,
+        "total_return": 0.20218884000369272
+      }
+    },
+    {
+      "adjusted_p": 0.7901049475262368,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE"
+      ],
+      "fdr_discovery": false,
+      "hypothesis_id": "HYP-XR-0003",
+      "kind": "JOINT_RISKOFF",
+      "label": "FALSIFIED",
+      "label_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE"
+      ],
+      "predicted_sign": 0,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.007610497488278497,
+          "iterations": 2000,
+          "low": -0.005952648982674381,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0042627563872078625,
+          "iterations": 2000,
+          "low": -0.003138185407879076,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "delta": 0.0005952944652587236,
+        "effect_size": 0.018986840712328007,
+        "max_drawdown": 0.0,
+        "max_trade_share": 0.0045871559633027525,
+        "mean_baseline": -0.006340053816058473,
+        "mean_signal": -0.00574475935079975,
+        "n_signal": 218,
+        "n_trade": 218,
+        "raw_p": 0.7901049475262368,
+        "total_return": -1.2523575384743455
+      },
+      "target_asset": "GOLD_OIL",
+      "validation": {
+        "delta": -0.004269739609041885,
+        "effect_size": -0.18939577423541412,
+        "max_drawdown": 0.0,
+        "max_trade_share": 0.02631578947368421,
+        "mean_baseline": -0.002254900728049382,
+        "mean_signal": -0.006524640337091267,
+        "n_signal": 38,
+        "n_trade": 38,
+        "raw_p": null,
+        "total_return": -0.24793633280946817
+      }
+    }
+  ],
+  "n_pass": 0,
+  "note": "Not V0.8. Not 10%. One target pair.",
+  "outcome": "NO_CANDIDATE",
+  "residual_cuts": {
+    "n": 1339,
+    "p33": -0.045317295188970874,
+    "p67": 0.03281084736264406
+  },
+  "search_space_hash": "0ce685fe6442a1812700df2cde6daa4c9f4255d04a707710c367f5cb6afbdc57",
+  "stationarity": {
+    "ar1_delta_beta": -0.030332104009185876,
+    "mean_resid": -0.01356440191170021,
+    "n": 1338
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "activity": "tickvol_z20>=0 HIGH; volume_type=tick_volume",
+  "adx_period": 14,
+  "adx_strong": 25.0,
+  "axes": [
+    "TREND",
+    "TREND_STRENGTH",
+    "VOL",
+    "LOCATION",
+    "MOMENTUM",
+    "ACTIVITY",
+    "FRICTION",
+    "EVENT"
+  ],
+  "causal": true,
+  "event": "UNAVAILABLE",
+  "friction": "spread_z20 >=0.5 WIDE; <=-0.5 TIGHT",
+  "location": "|z_dist20|>=1 EXTENDED",
+  "momentum": "sign(RET_5)",
+  "state_contract_hash": "b1b451828402140d72d4fdef929e94e3c57e1a14aa81007e416c8db41785cd89",
+  "state_id": "MARKET_STATE_V0.5",
+  "trend_rule": "close>SMA20 and SMA20>SMA50 -> UP; inverse DOWN; else FLAT",
+  "version": "0.5",
+  "vol": "ATR14/close vs research 67/33"
+}

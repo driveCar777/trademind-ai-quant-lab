@@ -1,0 +1,17 @@
+service_name: trademind-master
+version: "1.2.0"
+host: "0.0.0.0"
+port: 9000
+log_level: INFO
+
+storage:
+  root: storage
+  workers_file: workers.json
+  tasks_dir: tasks
+
+worker:
+  request_timeout_seconds: 60
+
+ai_gateway:
+  url: "http://127.0.0.1:9100"
+  timeout_seconds: 120

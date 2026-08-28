@@ -1,0 +1,521 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "created_at_utc": "2026-08-25T13:34:09Z",
+  "cross_node": {
+    "dataset": "tm-market-GOLD-M15-20260825-000001",
+    "hashes": [
+      "0b063463826df38f5605ce91d6c944cbc9cef0098b7fc4b32363493819aa678c",
+      "0b063463826df38f5605ce91d6c944cbc9cef0098b7fc4b32363493819aa678c"
+    ],
+    "result": "PASS"
+  },
+  "datasets": [
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "extreme_concentration": {
+        "block_id": 7,
+        "flag": "EXTREME_CONCENTRATION",
+        "share": 0.7
+      },
+      "profile_hash": "b4af3147e6cf97754383fc4dce9131421ea790b247dbda5dfb80964d6b37023f",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [
+        "ATR_BLOCK_RATIO",
+        "VOLUME_BLOCK_RATIO"
+      ],
+      "xavier": "Xavier-01"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "94af90fec6343b88b24692618ad5ef5279441ab3cef03c944722e82ffa0c25d3",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-01"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "6a1788fa6fb719dd47ed33e1f0707f13e052d314cade0ecac325511295380e1e",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [
+        "ATR_BLOCK_RATIO"
+      ],
+      "xavier": "Xavier-01"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "0b063463826df38f5605ce91d6c944cbc9cef0098b7fc4b32363493819aa678c",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-01"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "4dca242880d0f6055a3e3da2e87b935d71968920f6d1c6bfbacee4b02262737c",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [
+        "VOLUME_BLOCK_RATIO"
+      ],
+      "xavier": "Xavier-03"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "b45641883486422ac3245e2c2876de2a829558cee5b243350a3751f69e475650",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [
+        "VOL_BLOCK_RATIO"
+      ],
+      "xavier": "Xavier-03"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "935b9e26823ef976433865121e47ac2e8535ca8a084d31518b087ea28440c267",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-03"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+      "extreme_concentration": {
+        "block_id": 1,
+        "flag": "EXTREME_CONCENTRATION",
+        "share": 0.9
+      },
+      "profile_hash": "af7469b3f8cef971167edca7e63cd5f18d0f4c79805e692c94642a5f9b131ede",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [
+        "ATR_BLOCK_RATIO",
+        "VOL_BLOCK_RATIO"
+      ],
+      "xavier": "Xavier-03"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "f58e41d430275cebc5cc8bf961cde77a80b06a82775028d471b1eb95a8d21f39",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-02"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "bd049a72d444d99c1f211ac4ca6d4e125c6dea14468cc7d021c0ad46de305e61",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-02"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-EURUSD-H4-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "d8e5cf93b9085a28e9fd0fddd26027e1e497bf9ad80c589b6a218490cc5b20a0",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-02"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "a683c729e8c590e11a148e040d00b64c7a1914bcda1d41a392e09a0b92a38241",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-02"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "0b063463826df38f5605ce91d6c944cbc9cef0098b7fc4b32363493819aa678c",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-04"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "extreme_concentration": {
+        "block_id": 0,
+        "flag": "EXTREME_CONCENTRATION",
+        "share": 0.6
+      },
+      "profile_hash": "615aae90828848346de2889639c8d3dd808d5d3e9ba7518545ffe029503c57ac",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-04"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-OIL-H1-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "1ef0b28466691d1cd736fba0caaf9166cf1d702bfad0c717b85b9dd94e2f969e",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-04"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-OIL-H4-20260825-000001",
+      "extreme_concentration": {
+        "block_id": 5,
+        "flag": "EXTREME_CONCENTRATION",
+        "share": 0.6
+      },
+      "profile_hash": "190aca061b8e9e5b73d40fcf726b4609cc2af26107f99b20ded88d82ecb223eb",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [
+        "ATR_BLOCK_RATIO",
+        "VOL_BLOCK_RATIO",
+        "VOLUME_BLOCK_RATIO"
+      ],
+      "xavier": "Xavier-04"
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "dataset_id": "tm-market-OIL-M15-20260825-000001",
+      "extreme_concentration": null,
+      "profile_hash": "e38139b6c7d74b4924f8c7ea329703e6153ff398905fabb048b4912371ec3c5a",
+      "qualification": "READY_WITH_REVIEW",
+      "repeats": 20,
+      "statistical_change": [],
+      "xavier": "Xavier-04"
+    }
+  ],
+  "dispatch": [
+    {
+      "attempts": 1,
+      "elapsed_seconds": 143.49628829956055,
+      "exit_code": 0,
+      "host": "192.168.1.200",
+      "local": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\research_readiness\\nodes\\Xavier-01",
+      "node": "Xavier-01",
+      "ok": true,
+      "stderr": "",
+      "stdout": "RR_START Xavier-01 tm-market-GOLD-M15-20260825-000001\nRR_DONE Xavier-01 tm-market-GOLD-M15-20260825-000001 True\nRR_START Xavier-01 tm-market-GOLD-H1-20260825-000001\nRR_DONE Xavier-01 tm-market-GOLD-H1-20260825-000001 True\nRR_START Xavier-01 tm-market-GOLD-H4-20260825-000001\nRR_DONE Xavier-01 tm-market-GOLD-H4-20260825-000001 True\nRR_START Xavier-01 tm-market-GOLD-D1-20260825-000001\nRR_DONE Xavier-01 tm-market-GOLD-D1-20260825-000001 True\n{\"ok\": true, \"node\": \"Xavier-01\", \"datasets\": 4}\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 144.8770773410797,
+      "exit_code": 0,
+      "host": "192.168.1.202",
+      "local": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\research_readiness\\nodes\\Xavier-03",
+      "node": "Xavier-03",
+      "ok": true,
+      "stderr": "",
+      "stdout": "RR_START Xavier-03 tm-market-USDJPY-M15-20260825-000001\nRR_DONE Xavier-03 tm-market-USDJPY-M15-20260825-000001 True\nRR_START Xavier-03 tm-market-USDJPY-H1-20260825-000001\nRR_DONE Xavier-03 tm-market-USDJPY-H1-20260825-000001 True\nRR_START Xavier-03 tm-market-USDJPY-H4-20260825-000001\nRR_DONE Xavier-03 tm-market-USDJPY-H4-20260825-000001 True\nRR_START Xavier-03 tm-market-USDJPY-D1-20260825-000001\nRR_DONE Xavier-03 tm-market-USDJPY-D1-20260825-000001 True\n{\"ok\": true, \"node\": \"Xavier-03\", \"datasets\": 4}\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 152.0502700805664,
+      "exit_code": 0,
+      "host": "192.168.1.201",
+      "local": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\research_readiness\\nodes\\Xavier-02",
+      "node": "Xavier-02",
+      "ok": true,
+      "stderr": "",
+      "stdout": "RR_START Xavier-02 tm-market-EURUSD-M15-20260825-000001\nRR_DONE Xavier-02 tm-market-EURUSD-M15-20260825-000001 True\nRR_START Xavier-02 tm-market-EURUSD-H1-20260825-000001\nRR_DONE Xavier-02 tm-market-EURUSD-H1-20260825-000001 True\nRR_START Xavier-02 tm-market-EURUSD-H4-20260825-000001\nRR_DONE Xavier-02 tm-market-EURUSD-H4-20260825-000001 True\nRR_START Xavier-02 tm-market-EURUSD-D1-20260825-000001\nRR_DONE Xavier-02 tm-market-EURUSD-D1-20260825-000001 True\n{\"ok\": true, \"node\": \"Xavier-02\", \"datasets\": 4}\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 174.41791534423828,
+      "exit_code": 0,
+      "host": "192.168.1.203",
+      "local": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\research_readiness\\nodes\\Xavier-04",
+      "node": "Xavier-04",
+      "ok": true,
+      "stderr": "",
+      "stdout": "RR_START Xavier-04 tm-market-OIL-M15-20260825-000001\nRR_DONE Xavier-04 tm-market-OIL-M15-20260825-000001 True\nRR_START Xavier-04 tm-market-OIL-H1-20260825-000001\nRR_DONE Xavier-04 tm-market-OIL-H1-20260825-000001 True\nRR_START Xavier-04 tm-market-OIL-H4-20260825-000001\nRR_DONE Xavier-04 tm-market-OIL-H4-20260825-000001 True\nRR_START Xavier-04 tm-market-OIL-D1-20260825-000001\nRR_DONE Xavier-04 tm-market-OIL-D1-20260825-000001 True\nRR_START Xavier-04 tm-market-GOLD-M15-20260825-000001\nRR_DONE Xavier-04 tm-market-GOLD-M15-20260825-000001 True\n{\"ok\": true, \"node\": \"Xavier-04\", \"datasets\": 5}\n"
+    }
+  ],
+  "node_summaries": {
+    "Xavier-01": {
+      "FAULT_INJECTION_PASS": true,
+      "FINAL_OOS_LOCKED": false,
+      "datasets": [
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+          "elapsed_seconds": 32.59714412689209,
+          "errors": [],
+          "profile_hash": "0b063463826df38f5605ce91d6c944cbc9cef0098b7fc4b32363493819aa678c",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+          "elapsed_seconds": 32.50416111946106,
+          "errors": [],
+          "profile_hash": "94af90fec6343b88b24692618ad5ef5279441ab3cef03c944722e82ffa0c25d3",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+          "elapsed_seconds": 32.29877066612244,
+          "errors": [],
+          "profile_hash": "6a1788fa6fb719dd47ed33e1f0707f13e052d314cade0ecac325511295380e1e",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+          "elapsed_seconds": 32.320249795913696,
+          "errors": [],
+          "profile_hash": "b4af3147e6cf97754383fc4dce9131421ea790b247dbda5dfb80964d6b37023f",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        }
+      ],
+      "elapsed_seconds": 141.495178937912,
+      "node": "Xavier-01",
+      "python": "3.6.9",
+      "repeats": 20
+    },
+    "Xavier-02": {
+      "FAULT_INJECTION_PASS": true,
+      "FINAL_OOS_LOCKED": false,
+      "datasets": [
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+          "elapsed_seconds": 35.02370476722717,
+          "errors": [],
+          "profile_hash": "a683c729e8c590e11a148e040d00b64c7a1914bcda1d41a392e09a0b92a38241",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+          "elapsed_seconds": 34.30552363395691,
+          "errors": [],
+          "profile_hash": "bd049a72d444d99c1f211ac4ca6d4e125c6dea14468cc7d021c0ad46de305e61",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-EURUSD-H4-20260825-000001",
+          "elapsed_seconds": 34.178892850875854,
+          "errors": [],
+          "profile_hash": "d8e5cf93b9085a28e9fd0fddd26027e1e497bf9ad80c589b6a218490cc5b20a0",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+          "elapsed_seconds": 34.19014072418213,
+          "errors": [],
+          "profile_hash": "f58e41d430275cebc5cc8bf961cde77a80b06a82775028d471b1eb95a8d21f39",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        }
+      ],
+      "elapsed_seconds": 150.07590770721436,
+      "node": "Xavier-02",
+      "python": "3.6.8",
+      "repeats": 20
+    },
+    "Xavier-03": {
+      "FAULT_INJECTION_PASS": true,
+      "FINAL_OOS_LOCKED": false,
+      "datasets": [
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+          "elapsed_seconds": 33.442222118377686,
+          "errors": [],
+          "profile_hash": "af7469b3f8cef971167edca7e63cd5f18d0f4c79805e692c94642a5f9b131ede",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+          "elapsed_seconds": 32.41979455947876,
+          "errors": [],
+          "profile_hash": "b45641883486422ac3245e2c2876de2a829558cee5b243350a3751f69e475650",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+          "elapsed_seconds": 32.275670289993286,
+          "errors": [],
+          "profile_hash": "935b9e26823ef976433865121e47ac2e8535ca8a084d31518b087ea28440c267",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+          "elapsed_seconds": 33.204010248184204,
+          "errors": [],
+          "profile_hash": "4dca242880d0f6055a3e3da2e87b935d71968920f6d1c6bfbacee4b02262737c",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        }
+      ],
+      "elapsed_seconds": 142.89518189430237,
+      "node": "Xavier-03",
+      "python": "3.6.8",
+      "repeats": 20
+    },
+    "Xavier-04": {
+      "FAULT_INJECTION_PASS": true,
+      "FINAL_OOS_LOCKED": false,
+      "datasets": [
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-OIL-M15-20260825-000001",
+          "elapsed_seconds": 32.77280831336975,
+          "errors": [],
+          "profile_hash": "e38139b6c7d74b4924f8c7ea329703e6153ff398905fabb048b4912371ec3c5a",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-OIL-H1-20260825-000001",
+          "elapsed_seconds": 31.78245234489441,
+          "errors": [],
+          "profile_hash": "1ef0b28466691d1cd736fba0caaf9166cf1d702bfad0c717b85b9dd94e2f969e",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-OIL-H4-20260825-000001",
+          "elapsed_seconds": 32.44312405586243,
+          "errors": [],
+          "profile_hash": "190aca061b8e9e5b73d40fcf726b4609cc2af26107f99b20ded88d82ecb223eb",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-OIL-D1-20260825-000001",
+          "elapsed_seconds": 32.204357385635376,
+          "errors": [],
+          "profile_hash": "615aae90828848346de2889639c8d3dd808d5d3e9ba7518545ffe029503c57ac",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        },
+        {
+          "DETERMINISTIC_REPEAT": true,
+          "block_count": 8,
+          "completed": 20,
+          "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+          "elapsed_seconds": 31.624250411987305,
+          "errors": [],
+          "profile_hash": "0b063463826df38f5605ce91d6c944cbc9cef0098b7fc4b32363493819aa678c",
+          "qualification": "READY_WITH_REVIEW",
+          "rolling_count": 19
+        }
+      ],
+      "elapsed_seconds": 172.3062617778778,
+      "node": "Xavier-04",
+      "python": "3.6.9",
+      "repeats": 20
+    }
+  },
+  "repeats": 20,
+  "sidecars": {
+    "Xavier-01": {
+      "exit_code": 0,
+      "stdout": "State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    \nLISTEN   0         5                   0.0.0.0:8002             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8003             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8004             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8005             0.0.0.0:*"
+    },
+    "Xavier-02": {
+      "exit_code": 0,
+      "stdout": "State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    \nLISTEN   0         5                   0.0.0.0:8002             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8003             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8004             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8005             0.0.0.0:*"
+    },
+    "Xavier-03": {
+      "exit_code": 0,
+      "stdout": "State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    \nLISTEN   0         5                   0.0.0.0:8002             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8003             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8004             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8005             0.0.0.0:*"
+    },
+    "Xavier-04": {
+      "exit_code": 0,
+      "stdout": "State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    \nLISTEN   0         5                   0.0.0.0:8002             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8003             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8004             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8005             0.0.0.0:*"
+    }
+  },
+  "snapshot": {
+    "HISTORICAL_DATA_MUTATION": "PASS",
+    "SNAPSHOT_STABILITY": true,
+    "diff": {
+      "HISTORICAL_MUTATION": false,
+      "changed_rows": 1,
+      "first_changed_timestamp": "2026-08-25T12:45:00Z",
+      "same_rows": 1999
+    }
+  },
+  "version": "0.2"
+}

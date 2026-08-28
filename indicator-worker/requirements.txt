@@ -1,0 +1,16 @@
+﻿# TradeMind Worker Template v1.0 - Python 3.8
+# Docker-only deployment
+
+fastapi==0.83.0
+uvicorn[standard]==0.18.3
+pydantic==1.10.13
+
+numpy==1.24.4
+pandas==2.0.3
+
+prometheus-fastapi-instrumentator==5.11.2
+pyyaml==6.0.1
+requests==2.31.0
+
+pytest==7.4.4
+httpx==0.24.1

@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "strategy": "EMA_MACD",
+  "symbol": "XAUUSD",
+  "start": "2025-01-01",
+  "profit": -12.31,
+  "max_drawdown": 21.41,
+  "win_rate": 20.0,
+  "total_trades": 30,
+  "final_equity": 8769.32,
+  "calculation_time_ms": 6.413,
+  "timestamp": "2026-07-31T02:39:50.311200"
+}

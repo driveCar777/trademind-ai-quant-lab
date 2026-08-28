@@ -1,0 +1,44 @@
+{
+  "task_id": "tm-task-20260725-000012",
+  "worker_id": null,
+  "worker_type": "indicator-worker",
+  "status": "FAILED",
+  "created_at": "2026-07-25T07:41:53.176022Z",
+  "started_at": null,
+  "finished_at": "2026-07-25T07:41:59.278797Z",
+  "duration_ms": null,
+  "result_path": "results/2026/07/25/tm-task-20260725-000012.json",
+  "error": "Worker for type 'indicator-worker' is offline",
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "RSI",
+    "data": {
+      "symbol": "EURUSD",
+      "close": [
+        44.0,
+        44.34,
+        44.09,
+        43.61,
+        44.33,
+        44.83,
+        45.1,
+        45.42,
+        45.84,
+        46.08,
+        45.89,
+        46.03,
+        45.61,
+        46.28,
+        46.28,
+        46.0,
+        46.03,
+        46.41,
+        46.22,
+        45.64
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

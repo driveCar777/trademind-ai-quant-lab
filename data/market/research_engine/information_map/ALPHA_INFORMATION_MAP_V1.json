@@ -1,0 +1,224 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "by_class": {
+    "A_PRICE": [
+      "INFO-PRICE"
+    ],
+    "B_CROSS_ASSET": [
+      "INFO-XASSET-PROXY",
+      "INFO-RESIDUAL"
+    ],
+    "C_VOLATILITY": [
+      "INFO-RV-TERM",
+      "INFO-VOVOL",
+      "INFO-IV"
+    ],
+    "D_TIME": [
+      "INFO-MONTH-END",
+      "INFO-QUARTER-END",
+      "INFO-LONDON-OPEN",
+      "INFO-NY-OPEN",
+      "INFO-ROLL"
+    ],
+    "E_MICROSTRUCTURE": [
+      "INFO-VOL-SURPRISE",
+      "INFO-VOL-DIVERGE"
+    ],
+    "F_MACRO_PROXY": [
+      "INFO-RISK-ONOFF",
+      "INFO-USD-PROXY",
+      "INFO-COMMOD-BASKET"
+    ]
+  },
+  "content_hash": "d50132208f95ff87bb44ac72fe76151a8bec1be31006175bef8edd409ae26ce5",
+  "coverage_pct": {
+    "direction": 83,
+    "event": 0,
+    "microstructure": 60,
+    "relative_value": 40,
+    "risk_premium": 0,
+    "state_transition": 50,
+    "time_institutional": 0,
+    "volatility_realized": 40
+  },
+  "map_id": "ALPHA_INFORMATION_MAP_V1",
+  "n_sources": 16,
+  "not_indicator_farm": true,
+  "not_v08": true,
+  "sources": [
+    {
+      "class": "A_PRICE",
+      "data_on_disk": true,
+      "families": [
+        "HYP-0001",
+        "FD_V0.1",
+        "V0.5",
+        "V0.6"
+      ],
+      "id": "INFO-PRICE",
+      "mechanism": "Own-price continuation / reversal / breakout at short horizon",
+      "note": "Do not add RSI/MACD/MA.",
+      "previously_tested": true,
+      "status": "FAILED"
+    },
+    {
+      "class": "B_CROSS_ASSET",
+      "data_on_disk": true,
+      "families": [
+        "V0.8"
+      ],
+      "id": "INFO-XASSET-PROXY",
+      "mechanism": "Next-day dollar-proxy (USDJPY/EURUSD -> GOLD/OIL)",
+      "note": "Wrong relative-value object. Do not reopen.",
+      "previously_tested": true,
+      "status": "FAILED"
+    },
+    {
+      "class": "B_CROSS_ASSET",
+      "data_on_disk": true,
+      "families": [
+        "V0.91"
+      ],
+      "id": "INFO-RESIDUAL",
+      "mechanism": "GOLD/OIL log-spread residual fade",
+      "note": "Cost ate the book. Do not retune SMA60.",
+      "previously_tested": true,
+      "status": "FAILED"
+    },
+    {
+      "can_build_from_ohlc": true,
+      "class": "C_VOLATILITY",
+      "data_on_disk": true,
+      "families": [],
+      "id": "INFO-RV-TERM",
+      "mechanism": "Realized-vol term structure from OHLC (short RV vs long RV), not IV",
+      "note": "IV is BLOCKED. ATR percentile buckets were tested; term structure was not.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "can_build_from_ohlc": true,
+      "class": "C_VOLATILITY",
+      "data_on_disk": true,
+      "families": [],
+      "id": "INFO-VOVOL",
+      "mechanism": "Volatility of realized volatility from ATR/TR series",
+      "note": "Adjacent to V0.9 VOL_SHOCK (enter HIGH). Higher isomorph risk.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "class": "C_VOLATILITY",
+      "data_on_disk": false,
+      "families": [],
+      "id": "INFO-IV",
+      "mechanism": "IV / VRP / options",
+      "note": "DATA_BLOCKED. Do not invent IV.",
+      "previously_tested": false,
+      "status": "BLOCKED"
+    },
+    {
+      "class": "D_TIME",
+      "data_on_disk": true,
+      "families": [],
+      "id": "INFO-MONTH-END",
+      "mechanism": "Month-end / month-start benchmark and dealer inventory windows",
+      "note": "Not weekday dummies. D1 timestamps are enough.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "class": "D_TIME",
+      "data_on_disk": true,
+      "families": [],
+      "id": "INFO-QUARTER-END",
+      "mechanism": "Quarter-end window dressing / risk-budget reset",
+      "note": "Fewer events than month-end. Power risk.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "class": "D_TIME",
+      "data_on_disk": false,
+      "families": [],
+      "id": "INFO-LONDON-OPEN",
+      "mechanism": "London cash open inventory / spread shock",
+      "note": "Frozen H1 is months. Read-only probe meets ~5.03y H1 as new IDs only. Not selected this round.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "class": "D_TIME",
+      "data_on_disk": false,
+      "families": [],
+      "id": "INFO-NY-OPEN",
+      "mechanism": "New York open overlap flow",
+      "note": "Same as London: probe can freeze 5y H1; immutable packs cannot.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "class": "D_TIME",
+      "data_on_disk": false,
+      "families": [],
+      "id": "INFO-ROLL",
+      "mechanism": "Futures roll window",
+      "note": "No roll tape. Broker CFD continuous series is not a roll calendar.",
+      "previously_tested": false,
+      "status": "BLOCKED"
+    },
+    {
+      "class": "E_MICROSTRUCTURE",
+      "data_on_disk": true,
+      "families": [],
+      "id": "INFO-VOL-SURPRISE",
+      "mechanism": "Tick-volume surprise vs its own recent baseline",
+      "note": "FD killed tickvol_z as a next-return *level*. Surprise/divergence was not the contract.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "class": "E_MICROSTRUCTURE",
+      "data_on_disk": true,
+      "families": [],
+      "id": "INFO-VOL-DIVERGE",
+      "mechanism": "Volume up while return is small or opposite (absorption / disagreement)",
+      "note": "tick_volume is present. Not a delete. Not an RSI.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "class": "F_MACRO_PROXY",
+      "data_on_disk": true,
+      "families": [],
+      "id": "INFO-RISK-ONOFF",
+      "mechanism": "Same-day joint sign of GOLD/OIL/FX as a risk-on/off *label*, not a next-day GOLD forecast",
+      "note": "V0.8 predicted next GOLD/OIL from FX. A label without a new target is not alpha.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    },
+    {
+      "class": "F_MACRO_PROXY",
+      "data_on_disk": true,
+      "families": [
+        "V0.8"
+      ],
+      "id": "INFO-USD-PROXY",
+      "killed_isomorph": true,
+      "mechanism": "USD strength from EURUSD+USDJPY to trade GOLD tomorrow",
+      "note": "Isomorph of V0.8. Score must be zero.",
+      "previously_tested": true,
+      "status": "FAILED"
+    },
+    {
+      "class": "F_MACRO_PROXY",
+      "data_on_disk": true,
+      "families": [],
+      "id": "INFO-COMMOD-BASKET",
+      "mechanism": "Equal-weight GOLD+OIL residual vs a single leg",
+      "note": "Close to V0.91. High isomorph risk.",
+      "previously_tested": false,
+      "status": "UNKNOWN"
+    }
+  ]
+}

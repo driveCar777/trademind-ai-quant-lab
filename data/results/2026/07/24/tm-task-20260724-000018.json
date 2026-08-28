@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "35dc609d-8c1b-4131-b1e3-7c37ae8b3f5b",
+  "indicator": "SMA",
+  "symbol": "BTCUSD",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      49.410714285714285,
+      49.445,
+      49.75642857142857,
+      49.70214285714286,
+      50.28785714285714,
+      50.35857142857143,
+      50.35214285714286
+    ],
+    "latest": 50.35214285714286
+  },
+  "calculation_time_ms": 2.005,
+  "timestamp": "2026-07-24T12:20:08.276763"
+}

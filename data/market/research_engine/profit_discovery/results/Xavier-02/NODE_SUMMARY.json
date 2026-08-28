@@ -1,0 +1,30 @@
+{
+  "jobs": [
+    {
+      "content_hash": "1a49907d180e467af1ace7021d62d1883c101f6d4385eb693e18cbd2e746203e",
+      "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+      "elapsed_seconds": 72.96845746040344,
+      "job_id": "PD-V06-Xavier-02-tm-market-EURUSD-M15-20260825-000001"
+    },
+    {
+      "content_hash": "f26d06ca560f9b0dda808a0892b7dc5648e393c4a2e34c5657568bddf4cb4fc0",
+      "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+      "elapsed_seconds": 70.29539036750793,
+      "job_id": "PD-V06-Xavier-02-tm-market-EURUSD-H1-20260825-000001"
+    },
+    {
+      "content_hash": "6e15829f16cc79011313ca20e2ece3b68d78b21f6d862ab2dcdd2b77ac9293eb",
+      "dataset_id": "tm-market-EURUSD-H4-20260825-000001",
+      "elapsed_seconds": 70.86050152778625,
+      "job_id": "PD-V06-Xavier-02-tm-market-EURUSD-H4-20260825-000001"
+    },
+    {
+      "content_hash": "b06e0f260630cde84f43336ab2d7fad232e24ee14d717d6f9ab51353b1146abc",
+      "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+      "elapsed_seconds": 69.85745692253113,
+      "job_id": "PD-V06-Xavier-02-tm-market-EURUSD-D1-20260825-000001"
+    }
+  ],
+  "node": "Xavier-02",
+  "ok": true
+}

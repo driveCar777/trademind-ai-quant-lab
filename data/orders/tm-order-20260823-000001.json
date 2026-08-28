@@ -1,0 +1,13 @@
+{
+  "research_id": "tm-research-20260823-000012",
+  "volume": 0.01,
+  "mode": "paper",
+  "mt5_connected": true,
+  "account_mode": "demo",
+  "created_at": "2026-08-23T07:56:40Z",
+  "symbol": "",
+  "side": "HOLD",
+  "status": "REFUSED",
+  "reason": "not_orderable_preset",
+  "order_id": "tm-order-20260823-000001"
+}

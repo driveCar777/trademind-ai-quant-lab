@@ -1,0 +1,8 @@
+{
+  "arm": "continuation",
+  "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+  "experiment_id": "tm-exp-20260825-141158-021",
+  "hypothesis_id": "HYP-0001-A",
+  "reason": "FALSIFIED",
+  "result_hash": "aff19482fdb80daf1cd47f674e281b440efee4679e15bf55dd2f128aa8f8125d"
+}

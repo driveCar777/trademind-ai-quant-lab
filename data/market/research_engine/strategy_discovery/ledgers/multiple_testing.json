@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "CANDIDATE": 0,
+    "INCONCLUSIVE": 2,
+    "PROMISING": 0,
+    "REJECTED": 13
+  },
+  "discovery_id": "STRATEGY_DISCOVERY_V0.5",
+  "fdr": {
+    "discoveries": 0,
+    "m": 203,
+    "q": 0.05
+  },
+  "keep_failed": true,
+  "outcome": "NO_USEFUL_STRATEGIES_FOUND",
+  "runner": "Windows-local"
+}

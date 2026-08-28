@@ -1,0 +1,7 @@
+{
+  "discovery_id": "CROSS_ASSET_ALPHA_V0.8",
+  "keep_failed": true,
+  "m": 3,
+  "outcome": "NO_CANDIDATE",
+  "q": 0.05
+}

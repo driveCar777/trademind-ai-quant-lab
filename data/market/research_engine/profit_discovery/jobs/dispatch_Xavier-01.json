@@ -1,0 +1,86 @@
+{
+  "discovery_id": "PROFIT_DISCOVERY_V0.6",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "discovery_id": "PROFIT_DISCOVERY_V0.6",
+      "job_id": "PD-V06-Xavier-01-tm-market-GOLD-M15-20260825-000001",
+      "node": "Xavier-01",
+      "search_space_hash": "0fba52a98d861046cd61db51861bf96bebfaa2d51b42001d37463776bb7891d7",
+      "seed": 20260825,
+      "strategy_count": 7,
+      "strategy_ids": [
+        "PD-V06-TF-BRK20-H5-R005",
+        "PD-V06-TF-BRK20-H5-R010",
+        "PD-V06-MR-Z20-H5-R005",
+        "PD-V06-MR-Z20-H5-R010",
+        "PD-V06-MOM-DIR-H8-R005",
+        "PD-V06-MOM-DIR-H8-R010",
+        "PD-V06-DEF-SKIP-HIVOL"
+      ],
+      "timeframe": "M15"
+    },
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+      "discovery_id": "PROFIT_DISCOVERY_V0.6",
+      "job_id": "PD-V06-Xavier-01-tm-market-GOLD-H1-20260825-000001",
+      "node": "Xavier-01",
+      "search_space_hash": "0fba52a98d861046cd61db51861bf96bebfaa2d51b42001d37463776bb7891d7",
+      "seed": 20260825,
+      "strategy_count": 7,
+      "strategy_ids": [
+        "PD-V06-TF-BRK20-H5-R005",
+        "PD-V06-TF-BRK20-H5-R010",
+        "PD-V06-MR-Z20-H5-R005",
+        "PD-V06-MR-Z20-H5-R010",
+        "PD-V06-MOM-DIR-H8-R005",
+        "PD-V06-MOM-DIR-H8-R010",
+        "PD-V06-DEF-SKIP-HIVOL"
+      ],
+      "timeframe": "H1"
+    },
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+      "discovery_id": "PROFIT_DISCOVERY_V0.6",
+      "job_id": "PD-V06-Xavier-01-tm-market-GOLD-H4-20260825-000001",
+      "node": "Xavier-01",
+      "search_space_hash": "0fba52a98d861046cd61db51861bf96bebfaa2d51b42001d37463776bb7891d7",
+      "seed": 20260825,
+      "strategy_count": 7,
+      "strategy_ids": [
+        "PD-V06-TF-BRK20-H5-R005",
+        "PD-V06-TF-BRK20-H5-R010",
+        "PD-V06-MR-Z20-H5-R005",
+        "PD-V06-MR-Z20-H5-R010",
+        "PD-V06-MOM-DIR-H8-R005",
+        "PD-V06-MOM-DIR-H8-R010",
+        "PD-V06-DEF-SKIP-HIVOL"
+      ],
+      "timeframe": "H4"
+    },
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "discovery_id": "PROFIT_DISCOVERY_V0.6",
+      "job_id": "PD-V06-Xavier-01-tm-market-GOLD-D1-20260825-000001",
+      "node": "Xavier-01",
+      "search_space_hash": "0fba52a98d861046cd61db51861bf96bebfaa2d51b42001d37463776bb7891d7",
+      "seed": 20260825,
+      "strategy_count": 7,
+      "strategy_ids": [
+        "PD-V06-TF-BRK20-H5-R005",
+        "PD-V06-TF-BRK20-H5-R010",
+        "PD-V06-MR-Z20-H5-R005",
+        "PD-V06-MR-Z20-H5-R010",
+        "PD-V06-MOM-DIR-H8-R005",
+        "PD-V06-MOM-DIR-H8-R010",
+        "PD-V06-DEF-SKIP-HIVOL"
+      ],
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-01"
+}

@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "request_id": "9724e477-6971-4c46-ad9d-8d000bd2b7bb",
+  "indicator": "RSI",
+  "symbol": "EURUSD",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      60.156948451594324
+    ],
+    "latest": 60.156948451594324
+  },
+  "calculation_time_ms": 12.241,
+  "timestamp": "2026-07-31T02:45:17.854150"
+}

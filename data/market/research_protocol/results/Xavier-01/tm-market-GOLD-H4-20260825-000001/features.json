@@ -1,0 +1,12 @@
+{
+  "bundle_hash": "89aefff009461b0abc3ba3f3fd6fc7c59f6dde41286288e185f13f3ac59bdcf4",
+  "digests": {
+    "atr": "0532f6d0c1e9eaf0ef43e3a84a57d8c696f979b4ef89071421be9be0380376dd",
+    "bollinger": "b9d68bf47ec82926cc0940efc8c31a1abc8d6b02b825db10bd80403b5eb41518",
+    "ema": "383dc166c4748905828bcf3f59866159e1323ecb9ed541d5b55748e8cf44d7ab",
+    "macd": "9e243a185e496083d4e8fd9d20fc6e52b769a78a863c9e63b63a06be13665873",
+    "rsi": "b94038554ca9f76488cf32bc603ad43fd61f0ac8ad502854f1ed4df0f352f620",
+    "sma": "1aa8bd7a6bb3ce77cab91be45ebb6b163ff0e307cb74c8dfc458ee554fbc73b5",
+    "vwap": "417c7707d7a004db6bfd16897a780c5f41eb82dd0be3f7414b1946f62fc1ad8a"
+  }
+}

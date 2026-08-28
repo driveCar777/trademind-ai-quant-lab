@@ -1,0 +1,15 @@
+{
+  "dataset_hash": "5765d363efca784d8f36224d9392202ad9ccf75d8a19e1b23dd61fad85d4b8f9",
+  "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+  "elapsed_seconds": 21.80883765220642,
+  "error": [],
+  "experiment_id": "PROTOCOL_SELF_TEST",
+  "feature_hash": "7aa30bea51b59de07c66b334aefc143f08113474a36250f7c7f7d86a07cd66f0",
+  "finished_at_utc": null,
+  "node": "Xavier-03",
+  "protocol_hash": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "result_hash": "507228b236b84ae0434ffed04f787b0e3d104646952ca6a08dcd0d731467ff5d",
+  "run_id": "Xavier-03-tm-market-USDJPY-H4-20260825-000001",
+  "started_at_utc": null,
+  "status": "COMPLETED"
+}

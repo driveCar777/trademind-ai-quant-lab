@@ -1,0 +1,45 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "dataset_id": "tm-market-OIL-H1-20260825-000001",
+  "embargo_bars": 1,
+  "final_oos_candidate": {
+    "bar_index_end": 1999,
+    "bar_index_start": 1700,
+    "end_timestamp_utc": "2026-08-25T13:00:00Z",
+    "row_count": 300,
+    "start_timestamp_utc": "2026-08-06T13:00:00Z"
+  },
+  "first_signal_index": 120,
+  "horizon": {
+    "execution_bar_offset": 1,
+    "max_holding_bars": 50
+  },
+  "lookback": {
+    "first_signal_index": 120,
+    "lookback_bars": 120,
+    "warmup_rule": "research_start + lookback"
+  },
+  "lookback_bars": 120,
+  "max_holding_bars": 50,
+  "note": "Candidate only. Not locked. Not chosen from returns or RSI.",
+  "purge_bars": 50,
+  "research": {
+    "bar_index_end": 1399,
+    "bar_index_start": 0,
+    "end_timestamp_utc": "2026-07-20T11:00:00Z",
+    "row_count": 1400,
+    "start_timestamp_utc": "2026-04-24T10:00:00Z"
+  },
+  "research_label_usable_end_index": 1349,
+  "role": "CANDIDATE_WINDOW",
+  "validation": {
+    "bar_index_end": 1699,
+    "bar_index_start": 1400,
+    "end_timestamp_utc": "2026-08-06T12:00:00Z",
+    "row_count": 300,
+    "start_timestamp_utc": "2026-07-20T12:00:00Z"
+  },
+  "validation_first_signal_index": 1401,
+  "validation_label_usable_end_index": 1649,
+  "window_reason": "protocol_70_15_15_by_bar_count_recorded_as_utc_timestamps"
+}

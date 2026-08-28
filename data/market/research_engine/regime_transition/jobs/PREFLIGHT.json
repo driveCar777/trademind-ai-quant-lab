@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "exit_code": 0,
+      "host": "192.168.1.200",
+      "node": "Xavier-01",
+      "ok": true,
+      "stderr": "",
+      "stdout": "Python 3.6.9\n8\n/dev/root        27G   14G   12G  54% /\nSSH_OK\n"
+    },
+    {
+      "exit_code": 0,
+      "host": "192.168.1.201",
+      "node": "Xavier-02",
+      "ok": true,
+      "stderr": "",
+      "stdout": "Python 3.6.8\n8\n/dev/root        28G   15G   12G  56% /\nSSH_OK\n"
+    },
+    {
+      "exit_code": 0,
+      "host": "192.168.1.202",
+      "node": "Xavier-03",
+      "ok": true,
+      "stderr": "",
+      "stdout": "Python 3.6.8\n8\n/dev/root        27G   19G  6.0G  77% /\nSSH_OK\n"
+    },
+    {
+      "exit_code": 0,
+      "host": "192.168.1.203",
+      "node": "Xavier-04",
+      "ok": true,
+      "stderr": "",
+      "stdout": "Python 3.6.9\n8\n/dev/mmcblk0p37  682M   66M  567M  11% /tmp\nSSH_OK\n"
+    }
+  ],
+  "utc": "2026-08-27T15:16:30Z"
+}

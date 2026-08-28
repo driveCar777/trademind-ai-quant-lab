@@ -1,0 +1,17 @@
+{
+  "data_end_utc": "2026-08-25T13:00:00Z",
+  "data_start_utc": "2026-04-24T10:00:00Z",
+  "dataset_id": "tm-market-OIL-H1-20260825-000001",
+  "immutable": true,
+  "logical_symbol": "OIL",
+  "mt5_symbol": "CrudeOIL",
+  "profile_hash": "1ef0b28466691d1cd736fba0caaf9166cf1d702bfad0c717b85b9dd94e2f969e",
+  "qualification": "READY_WITH_REVIEW",
+  "row_count": 2000,
+  "schema_version": "0.1",
+  "sha256": "e6fcb4fad172e7bdf3226f4be1a5af0561db074b0939bf40e3e1f46c607ee71a",
+  "source": "mt5",
+  "timeframe": "H1",
+  "timezone": "UTC",
+  "volume_policy": "tick_volume_only"
+}

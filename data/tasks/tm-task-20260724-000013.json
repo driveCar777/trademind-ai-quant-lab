@@ -1,0 +1,44 @@
+{
+  "task_id": "tm-task-20260724-000013",
+  "worker_id": "worker-01",
+  "worker_type": "indicator-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-24T12:19:32.396002Z",
+  "started_at": "2026-07-24T12:19:38.465566Z",
+  "finished_at": "2026-07-24T12:19:38.521756Z",
+  "duration_ms": 56,
+  "result_path": "results/2026/07/24/tm-task-20260724-000013.json",
+  "error": null,
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "EMA",
+    "data": {
+      "symbol": "AUDUSD",
+      "close": [
+        46.0,
+        45.540000000000006,
+        46.89,
+        44.41,
+        46.73,
+        46.43,
+        48.300000000000004,
+        47.42,
+        47.040000000000006,
+        48.48,
+        47.49,
+        48.83,
+        46.41,
+        48.28,
+        47.480000000000004,
+        48.4,
+        47.63,
+        49.61,
+        48.22,
+        46.84
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

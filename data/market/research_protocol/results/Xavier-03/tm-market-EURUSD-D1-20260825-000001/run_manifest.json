@@ -1,0 +1,15 @@
+{
+  "dataset_hash": "5c46942d797330185ce919e79cd1b94ac6ca11f25f4442c3a05963c174786ed3",
+  "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+  "elapsed_seconds": 21.383480072021484,
+  "error": [],
+  "experiment_id": "PROTOCOL_SELF_TEST",
+  "feature_hash": "b4ed3e8ab05ac8656c15ca4cc2015bd6f2766febe2d63ccead11f29e6ceacf2e",
+  "finished_at_utc": null,
+  "node": "Xavier-03",
+  "protocol_hash": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "result_hash": "6d5469e7431a94b89324c05778f9612b3026e1eb9320d26dca8bd81068c97bf8",
+  "run_id": "Xavier-03-tm-market-EURUSD-D1-20260825-000001",
+  "started_at_utc": null,
+  "status": "COMPLETED"
+}

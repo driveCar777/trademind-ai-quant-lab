@@ -1,0 +1,22 @@
+{
+  "task_id": "tm-task-20260731-000114",
+  "worker_id": "worker-03",
+  "worker_type": "backtest-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-31T08:02:45.878980Z",
+  "started_at": "2026-07-31T08:02:45.895419Z",
+  "finished_at": "2026-07-31T08:02:45.932205Z",
+  "duration_ms": 36,
+  "result_path": "results/2026/07/31/tm-task-20260731-000114.json",
+  "error": null,
+  "request": {
+    "worker_type": "backtest-worker",
+    "indicator": "backtest",
+    "data": {
+      "strategy": "EMA_MACD",
+      "symbol": "XAUUSD",
+      "start": "2025-01-01"
+    },
+    "params": {}
+  }
+}

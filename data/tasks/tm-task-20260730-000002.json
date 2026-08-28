@@ -1,0 +1,44 @@
+{
+  "task_id": "tm-task-20260730-000002",
+  "worker_id": "worker-01",
+  "worker_type": "indicator-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-30T14:37:36.584552Z",
+  "started_at": "2026-07-30T14:37:36.678600Z",
+  "finished_at": "2026-07-30T14:37:36.713870Z",
+  "duration_ms": 35,
+  "result_path": "results/2026/07/30/tm-task-20260730-000002.json",
+  "error": null,
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "RSI",
+    "data": {
+      "symbol": "EURUSD",
+      "close": [
+        1.08,
+        1.085,
+        1.09,
+        1.085,
+        1.08,
+        1.075,
+        1.07,
+        1.065,
+        1.06,
+        1.055,
+        1.05,
+        1.045,
+        1.04,
+        1.035,
+        1.03,
+        1.025,
+        1.02,
+        1.015,
+        1.01,
+        1.005
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

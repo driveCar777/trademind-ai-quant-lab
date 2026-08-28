@@ -1,0 +1,44 @@
+{
+  "task_id": "tm-task-20260724-000015",
+  "worker_id": "worker-01",
+  "worker_type": "indicator-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-24T12:19:44.638139Z",
+  "started_at": "2026-07-24T12:19:50.706677Z",
+  "finished_at": "2026-07-24T12:19:50.781707Z",
+  "duration_ms": 75,
+  "result_path": "results/2026/07/24/tm-task-20260724-000015.json",
+  "error": null,
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "RSI",
+    "data": {
+      "symbol": "NZDUSD",
+      "close": [
+        47.0,
+        46.14,
+        48.290000000000006,
+        44.81,
+        47.93,
+        47.23,
+        49.900000000000006,
+        48.42,
+        47.64,
+        49.68,
+        48.29,
+        50.230000000000004,
+        46.81,
+        49.28,
+        48.08,
+        49.6,
+        48.43,
+        51.209999999999994,
+        49.22,
+        47.44
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

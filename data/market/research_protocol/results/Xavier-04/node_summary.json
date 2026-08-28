@@ -1,0 +1,147 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "datasets": [
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-OIL-M15-20260825-000001",
+      "dataset_sha256": "4dec29a0c249785916c6a81dbaafe3d40cde2f70244736cfa60953210ed5811e",
+      "elapsed_seconds": 21.854859352111816,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "1c9395457a3ebc033f9f345915d5dba0ffd5314f8ecb96134520f36ee80f267c",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "a9592d5de62c1b0cea9357fa061fb8c5c929f2b5fdd1732ba45086629527c22c"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-OIL-H1-20260825-000001",
+      "dataset_sha256": "e6fcb4fad172e7bdf3226f4be1a5af0561db074b0939bf40e3e1f46c607ee71a",
+      "elapsed_seconds": 21.345978498458862,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "461a39342da9b94b9cd6a5b3c18e49756c489fdce496403d8cbde8766c00da27",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "38f6815050ea434741dc7577e13d4eb5e5d5c6be94e9413ef37802eb023040fd"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-OIL-H4-20260825-000001",
+      "dataset_sha256": "afe2bfe11722f017ac7da93c74605ebb3d4d9248cd38d4ef53342bd0caf9308f",
+      "elapsed_seconds": 21.436779260635376,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "b79fe5ef081cd046efece2823c9d5ff1ee8991828aec1a12c000a32d70745ee6",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "c5aea5d7751afaa6803817ccd5e9891af63bd75ad358403985c8d53b0abe578f"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "dataset_sha256": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+      "elapsed_seconds": 21.44166111946106,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "a6903c6130a1de1f78f8ff56b10e4241c200dbf3575e4998397bd8ba0262bbd9",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "4dbe5af9cdb7a08e8e9c0831dc0f8eacd4d11855c60756375c8d0483664876dd"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "dataset_sha256": "f14f9bddb9adfcd6825874397f9a2b8cc1a9b3218778d9df047036dc13c62717",
+      "elapsed_seconds": 21.060229778289795,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "57dd2fbed870a8d0e1b84699c20d00d1d37bb685d8b53bf044169e2d8d1e406b",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "d37ded877f9b6b931549d4ab6c503431429ae899327cf19c2aeec45442aca684"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "dataset_sha256": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+      "elapsed_seconds": 21.078073740005493,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "96d9ec4ad1c8c267a1b88923f36672dc55191736e84b63867eaa6fd056e7737a",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "56502c799da3e9ae4a09d96c18df96abe36781674999c514e43860136c6bc052"
+    }
+  ],
+  "elapsed_seconds": 128.9334044456482,
+  "node": "Xavier-04",
+  "python": "3.6.9",
+  "registry_hash": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "repeats": 10,
+  "synthetic": {
+    "DETERMINISTIC": true,
+    "LEAKAGE_DETECTED": false,
+    "sentinel_ok": true
+  }
+}

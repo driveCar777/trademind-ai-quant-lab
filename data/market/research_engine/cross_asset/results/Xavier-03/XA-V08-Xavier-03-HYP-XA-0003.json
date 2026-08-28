@@ -1,0 +1,118 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "align_hash": "1e8f6bbc82c542dbe9aa6751ea56af1a3a364c5ef0406ba2b4c89ef5a83aaf2b",
+  "align_n": 1993,
+  "content_hash": "da15b0dafac4b78daf0fb1dd81b63440c7f422028597b05a2b284505589e422b",
+  "discovery_id": "CROSS_ASSET_ALPHA_V0.8",
+  "elapsed_seconds": 14.713564395904541,
+  "hypothesis": {
+    "feature_gate": {
+      "gate": 0.0,
+      "kind": "DOLLAR_UP"
+    },
+    "hypothesis_id": "HYP-XA-0003",
+    "input_assets": [
+      "USDJPY",
+      "EURUSD"
+    ],
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.0036506802988189417,
+        "iterations": 2000,
+        "low": -0.003215392589009114,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260825
+      },
+      "bootstrap_ci": {
+        "high": 0.002840492763509819,
+        "iterations": 2000,
+        "low": -0.0026616978504511303,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260825
+      },
+      "cagr": -0.057400695773945354,
+      "contemporaneous_corr": 0.019006332974271917,
+      "cost_paid": 483.35144336540816,
+      "delta": 0.00013984110125147848,
+      "effect_size": 0.0050620723489398075,
+      "end_equity": 7210.811114340031,
+      "max_drawdown": -0.31074950509751204,
+      "max_trade_share": 0.13666043554128535,
+      "mean_baseline": -0.0049126702205782476,
+      "mean_signal": -0.004772829119326769,
+      "n_aligned": 1395,
+      "n_feature": 1394,
+      "n_signal": 484,
+      "n_trade": 482,
+      "occupancy": 0.3472022955523673,
+      "raw_p": 0.9155422288855573,
+      "sharpe": -0.8905597180184558,
+      "total_return": -0.2789188885659969,
+      "trade_count": 482,
+      "turnover": 48.21985246442616,
+      "win_count": 183
+    },
+    "target_asset": "OIL",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.008734395748783385,
+        "iterations": 2000,
+        "low": -0.004067074858696484,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260825
+      },
+      "bootstrap_ci": {
+        "high": 0.006695382056903724,
+        "iterations": 2000,
+        "low": -0.0022023477201510615,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260825
+      },
+      "cagr": -0.01096345128677556,
+      "contemporaneous_corr": 0.22650745349817517,
+      "cost_paid": 127.35098101155728,
+      "delta": 0.0021991944246124878,
+      "effect_size": 0.11552966167198712,
+      "end_equity": 9870.482956611357,
+      "max_drawdown": -0.041353317285503,
+      "max_trade_share": 0.028878002306806042,
+      "mean_baseline": -0.003180393937087674,
+      "mean_signal": -0.0009811995124751863,
+      "n_aligned": 299,
+      "n_feature": 299,
+      "n_signal": 107,
+      "n_trade": 98,
+      "occupancy": 0.35785953177257523,
+      "raw_p": null,
+      "sharpe": -0.47955466895570803,
+      "total_return": -0.012951704338864278,
+      "trade_count": 98,
+      "turnover": 12.73498979803687,
+      "win_count": 38
+    }
+  },
+  "job_id": "XA-V08-Xavier-03-HYP-XA-0003",
+  "node": "Xavier-03",
+  "oos_exists": {
+    "end": "2026-08-25",
+    "exists": true,
+    "n": 299,
+    "start": "2025-09-11"
+  },
+  "parent_hashes": {
+    "tm-market-EURUSD-D1-20260825-000001": "5c46942d797330185ce919e79cd1b94ac6ca11f25f4442c3a05963c174786ed3",
+    "tm-market-GOLD-D1-20260825-000001": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+    "tm-market-OIL-D1-20260825-000001": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+    "tm-market-USDJPY-D1-20260825-000001": "c00389ce1cbeeed3e1ceb9a09e549fa8335556cf2fd8c644db8f8a44f7ce3ad7"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "787a37f93aae630e2530c6c416c3acf8c5ddd5a9470ae7f442a409f431749827"
+}

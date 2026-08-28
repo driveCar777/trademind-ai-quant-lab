@@ -1,0 +1,118 @@
+{
+  "success": true,
+  "cluster": {
+    "total_nodes": 4,
+    "healthy_nodes": 1,
+    "this_node": {
+      "id": "xavier-worker-04",
+      "host": "192.168.1.203",
+      "port": 8080,
+      "role": "monitor"
+    }
+  },
+  "this_node_metrics": {
+    "timestamp": "2026-08-23T07:38:55.179465",
+    "hostname": "xavier",
+    "uptime_seconds": 92064.9,
+    "cpu_percent": 0.0,
+    "memory": {
+      "total_kb": 15289148,
+      "used_kb": 1828952,
+      "available_kb": 13460196,
+      "total_gb": 14.58,
+      "used_gb": 1.74,
+      "percent": 12.0,
+      "swap_total_kb": 0,
+      "swap_used_kb": 0
+    },
+    "disk": {
+      "total_gb": 26.16,
+      "used_gb": 16.08,
+      "free_gb": 10.08,
+      "percent": 61.5
+    },
+    "network": {
+      "dummy0": {
+        "rx_bytes": 0,
+        "rx_packets": 0,
+        "tx_bytes": 0,
+        "tx_packets": 0
+      },
+      "eth0": {
+        "rx_bytes": 27289973,
+        "rx_packets": 502903,
+        "tx_bytes": 20842944,
+        "tx_packets": 246252
+      },
+      "wan0": {
+        "rx_bytes": 27289469,
+        "rx_packets": 502896,
+        "tx_bytes": 20835189,
+        "tx_packets": 246144
+      },
+      "dji0": {
+        "rx_bytes": 0,
+        "rx_packets": 0,
+        "tx_bytes": 3931,
+        "tx_packets": 56
+      }
+    },
+    "load_avg": {
+      "1min": 1.03,
+      "5min": 1.04,
+      "15min": 1.07
+    },
+    "gpu": {
+      "name": "AGX Xavier (thermal fallback)",
+      "temperature_c": 35.5
+    },
+    "process_count": 278
+  },
+  "workers": [
+    {
+      "id": "worker-01",
+      "name": "Indicator Worker",
+      "host": "192.168.1.200",
+      "port": 8080,
+      "role": "indicator",
+      "reachable": false,
+      "status": "unreachable",
+      "worker_version": null,
+      "latency_ms": 3003.4
+    },
+    {
+      "id": "worker-02",
+      "name": "Stock Factor Worker",
+      "host": "192.168.1.201",
+      "port": 8080,
+      "role": "factor",
+      "reachable": false,
+      "status": "unreachable",
+      "worker_version": null,
+      "latency_ms": 3003.8
+    },
+    {
+      "id": "worker-03",
+      "name": "Backtest Worker",
+      "host": "192.168.1.202",
+      "port": 8080,
+      "role": "backtest",
+      "reachable": false,
+      "status": "unreachable",
+      "worker_version": null,
+      "latency_ms": 3003.9
+    },
+    {
+      "id": "worker-04",
+      "name": "Monitor Worker",
+      "host": "192.168.1.203",
+      "port": 8080,
+      "role": "monitor",
+      "reachable": true,
+      "status": "monitor-worker",
+      "worker_version": "1.0.0",
+      "latency_ms": 0
+    }
+  ],
+  "timestamp": "2026-08-23T07:39:04.299365"
+}

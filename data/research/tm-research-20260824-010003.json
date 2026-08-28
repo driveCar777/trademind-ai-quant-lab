@@ -1,0 +1,1132 @@
+{
+  "research_id": "tm-research-20260824-010003",
+  "task_id": "tm-mine-rsi-21-30-75",
+  "preset": "backtest",
+  "summary": "GOLD RSI 本次未证伪 根=2000/H1 内-3.3外8.03 回撤10.39/2.29 成交17/7",
+  "ai_text": "数字以摘要为准，不是模型编的。\nK 线窗口 2026-04-23 17:00 ～ 2026-08-24 15:00，周期 H1，共 2000 根。来自本机 MT5，仓库不另存整段行情。\n连续持仓：样本外接着样本内的仓位，切分不强平。\n行情分段（冻结）：上涨均线 / 震荡布林 / 下跌空仓。特征是相对均线偏离，不用张量训练。\nK 线分段 上687 下735 震578。\n样本内：收益 -3.3%，回撤 10.39%，成交 17。\n样本外：收益 8.03%，回撤 2.29%，成交 7。\n成交明细 24 笔见下方表格（时间+价格）。没有表格就还没留下买卖点。\n判定：本次未证伪。survived 只表示这次没被证伪；样本内亏损就不能当买卖依据。\n第 3、4 步不能挂这张回测单。要下单先跑黄金 MT5 指标研究。",
+  "ai_skipped": true,
+  "created_at": "2026-08-24T15:54:41Z",
+  "steps": [
+    {
+      "preset": "backtest",
+      "task_id": "tm-mine-rsi-21-30-75",
+      "summary": "样本内筛选 H1 选中 rsi-21-30-75 内-3.3 外8.03"
+    }
+  ],
+  "sample_id": "",
+  "source": "mt5",
+  "symbol": "GOLD",
+  "verdict": "survived",
+  "bars": 2000,
+  "timeframe": "H1",
+  "window_from": "2026-04-23 17:00",
+  "window_to": "2026-08-24 15:00",
+  "trades": [
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 53,
+      "time": "2026-04-28 01:00",
+      "price": 4675.24057,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 192,
+      "time": "2026-05-06 02:00",
+      "price": 4636.0593,
+      "pnl_pct": -0.84,
+      "regime": "up"
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 353,
+      "time": "2026-05-15 02:00",
+      "price": 4622.53792,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 443,
+      "time": "2026-05-21 00:00",
+      "price": 4540.62483,
+      "pnl_pct": -1.77,
+      "regime": "up"
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 546,
+      "time": "2026-05-27 11:00",
+      "price": 4432.61819,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 582,
+      "time": "2026-05-29 01:00",
+      "price": 4501.84365,
+      "pnl_pct": 1.56,
+      "regime": "up"
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 616,
+      "time": "2026-06-01 12:00",
+      "price": 4506.61211,
+      "pnl_pct": null,
+      "regime": "range"
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 638,
+      "time": "2026-06-02 11:00",
+      "price": 4522.84263,
+      "pnl_pct": 0.36,
+      "regime": "range"
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 654,
+      "time": "2026-06-03 04:00",
+      "price": 4473.69923,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 836,
+      "time": "2026-06-15 02:00",
+      "price": 4325.18049,
+      "pnl_pct": -3.32,
+      "regime": "up"
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 918,
+      "time": "2026-06-18 15:00",
+      "price": 4230.61639,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 1158,
+      "time": "2026-07-03 02:00",
+      "price": 4179.06675,
+      "pnl_pct": -1.22,
+      "regime": "up"
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 1234,
+      "time": "2026-07-08 09:00",
+      "price": 4047.27323,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 1261,
+      "time": "2026-07-09 13:00",
+      "price": 4117.85802,
+      "pnl_pct": 1.74,
+      "regime": "up"
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 1308,
+      "time": "2026-07-13 14:00",
+      "price": 4019.16515,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本内",
+      "side": "SELL",
+      "idx": 1331,
+      "time": "2026-07-14 14:00",
+      "price": 4080.80511,
+      "pnl_pct": 1.53,
+      "regime": "up"
+    },
+    {
+      "split": "样本内",
+      "side": "BUY",
+      "idx": 1350,
+      "time": "2026-07-15 10:00",
+      "price": 4032.00798,
+      "pnl_pct": null,
+      "regime": "range"
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1451,
+      "time": "2026-07-21 19:00",
+      "price": 4080.23568,
+      "pnl_pct": 1.2,
+      "regime": "up"
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1489,
+      "time": "2026-07-23 11:00",
+      "price": 4089.51543,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1525,
+      "time": "2026-07-27 01:00",
+      "price": 4105.87002,
+      "pnl_pct": 0.4,
+      "regime": "up"
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1548,
+      "time": "2026-07-28 01:00",
+      "price": 4049.10506,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1690,
+      "time": "2026-08-05 05:00",
+      "price": 4157.17866,
+      "pnl_pct": 2.67,
+      "regime": "up"
+    },
+    {
+      "split": "样本外",
+      "side": "BUY",
+      "idx": 1844,
+      "time": "2026-08-13 22:00",
+      "price": 4358.93458,
+      "pnl_pct": null,
+      "regime": "down"
+    },
+    {
+      "split": "样本外",
+      "side": "SELL",
+      "idx": 1929,
+      "time": "2026-08-19 14:00",
+      "price": 4483.67184,
+      "pnl_pct": 2.86,
+      "regime": "up"
+    }
+  ],
+  "cut": 1400,
+  "carry": true,
+  "basket": [
+    {
+      "id": "rsi-14-30-70",
+      "strategy": "RSI",
+      "params": {
+        "period": 14,
+        "oversold": 30,
+        "overbought": 70
+      },
+      "worker_id": "worker-03",
+      "verdict": "survived",
+      "is_profit": -19.03,
+      "oos_profit": 2.57,
+      "is_drawdown": 19.83,
+      "oos_drawdown": 3.46,
+      "is_trades": 27,
+      "oos_trades": 13,
+      "is_score": -24.979,
+      "picked": false
+    },
+    {
+      "id": "rsi-10-25-70",
+      "strategy": "RSI",
+      "params": {
+        "period": 10,
+        "oversold": 25,
+        "overbought": 70
+      },
+      "worker_id": "worker-01-bt",
+      "verdict": "falsified",
+      "is_profit": -13.69,
+      "oos_profit": -0.91,
+      "is_drawdown": 15.37,
+      "oos_drawdown": 2.32,
+      "is_trades": 55,
+      "oos_trades": 11,
+      "is_score": -18.301,
+      "picked": false
+    },
+    {
+      "id": "rsi-21-30-75",
+      "strategy": "RSI",
+      "params": {
+        "period": 21,
+        "oversold": 30,
+        "overbought": 75
+      },
+      "worker_id": "worker-02-bt",
+      "verdict": "survived",
+      "is_profit": -3.3,
+      "oos_profit": 8.03,
+      "is_drawdown": 10.39,
+      "oos_drawdown": 2.29,
+      "is_trades": 17,
+      "oos_trades": 7,
+      "is_score": -6.417,
+      "picked": true
+    },
+    {
+      "id": "rsi-14-25-75",
+      "strategy": "RSI",
+      "params": {
+        "period": 14,
+        "oversold": 25,
+        "overbought": 75
+      },
+      "worker_id": "worker-04-bt",
+      "verdict": "survived",
+      "is_profit": -13.97,
+      "oos_profit": 5.82,
+      "is_drawdown": 14.87,
+      "oos_drawdown": 2.56,
+      "is_trades": 23,
+      "oos_trades": 9,
+      "is_score": -18.431,
+      "picked": false
+    },
+    {
+      "id": "macd-12-26-9",
+      "strategy": "EMA_MACD",
+      "params": {},
+      "worker_id": "worker-03",
+      "verdict": "survived",
+      "is_profit": -9.85,
+      "oos_profit": 7.16,
+      "is_drawdown": 12.84,
+      "oos_drawdown": 3.55,
+      "is_trades": 89,
+      "oos_trades": 41,
+      "is_score": -13.702,
+      "picked": false
+    },
+    {
+      "id": "sma-20-50",
+      "strategy": "SMA_CROSS",
+      "params": {
+        "fast": 20,
+        "slow": 50
+      },
+      "worker_id": "worker-01-bt",
+      "verdict": "survived",
+      "is_profit": -9.66,
+      "oos_profit": 7.8,
+      "is_drawdown": 11.46,
+      "oos_drawdown": 5.54,
+      "is_trades": 32,
+      "oos_trades": 12,
+      "is_score": -13.098,
+      "picked": false
+    },
+    {
+      "id": "sma-10-40",
+      "strategy": "SMA_CROSS",
+      "params": {
+        "fast": 10,
+        "slow": 40
+      },
+      "worker_id": "worker-02-bt",
+      "verdict": "survived",
+      "is_profit": -14.15,
+      "oos_profit": 10.16,
+      "is_drawdown": 16.02,
+      "oos_drawdown": 2.88,
+      "is_trades": 48,
+      "oos_trades": 16,
+      "is_score": -18.956,
+      "picked": false
+    },
+    {
+      "id": "sma-15-60",
+      "strategy": "SMA_CROSS",
+      "params": {
+        "fast": 15,
+        "slow": 60
+      },
+      "worker_id": "worker-04-bt",
+      "verdict": "survived",
+      "is_profit": -10.95,
+      "oos_profit": 7.78,
+      "is_drawdown": 12.39,
+      "oos_drawdown": 5.74,
+      "is_trades": 32,
+      "oos_trades": 12,
+      "is_score": -14.667,
+      "picked": false
+    },
+    {
+      "id": "boll-20-2",
+      "strategy": "BOLLINGER",
+      "params": {
+        "period": 20,
+        "num_std": 2.0
+      },
+      "worker_id": "worker-03",
+      "verdict": "survived",
+      "is_profit": -17.36,
+      "oos_profit": 6.35,
+      "is_drawdown": 19.09,
+      "oos_drawdown": 1.96,
+      "is_trades": 31,
+      "oos_trades": 19,
+      "is_score": -23.087,
+      "picked": false
+    },
+    {
+      "id": "boll-15-2",
+      "strategy": "BOLLINGER",
+      "params": {
+        "period": 15,
+        "num_std": 2.0
+      },
+      "worker_id": "worker-01-bt",
+      "verdict": "survived",
+      "is_profit": -17.34,
+      "oos_profit": 2.65,
+      "is_drawdown": 19.07,
+      "oos_drawdown": 2.14,
+      "is_trades": 41,
+      "oos_trades": 19,
+      "is_score": -23.061,
+      "picked": false
+    },
+    {
+      "id": "turtle",
+      "strategy": "TURTLE",
+      "params": {},
+      "worker_id": "worker-02-bt",
+      "verdict": "falsified",
+      "is_profit": -14.25,
+      "oos_profit": -0.45,
+      "is_drawdown": 14.8,
+      "oos_drawdown": 3.92,
+      "is_trades": 78,
+      "oos_trades": 52,
+      "is_score": -18.69,
+      "picked": false
+    },
+    {
+      "id": "regime",
+      "strategy": "REGIME_SWITCH",
+      "params": {},
+      "worker_id": "worker-04-bt",
+      "verdict": "survived",
+      "is_profit": -15.43,
+      "oos_profit": 3.48,
+      "is_drawdown": 15.6,
+      "oos_drawdown": 6.26,
+      "is_trades": 106,
+      "oos_trades": 60,
+      "is_score": -20.11,
+      "picked": false
+    }
+  ],
+  "regime_counts": {
+    "up": 687,
+    "down": 735,
+    "range": 578
+  },
+  "regime_table": [
+    {
+      "strategy": "boll-15-2",
+      "regime": "down",
+      "split": "样本内",
+      "n": 8,
+      "pnl": -7.0
+    },
+    {
+      "strategy": "boll-15-2",
+      "regime": "down",
+      "split": "样本外",
+      "n": 3,
+      "pnl": 2.96
+    },
+    {
+      "strategy": "boll-15-2",
+      "regime": "range",
+      "split": "样本内",
+      "n": 10,
+      "pnl": -9.96
+    },
+    {
+      "strategy": "boll-15-2",
+      "regime": "range",
+      "split": "样本外",
+      "n": 5,
+      "pnl": -1.55
+    },
+    {
+      "strategy": "boll-15-2",
+      "regime": "up",
+      "split": "样本内",
+      "n": 2,
+      "pnl": -0.64
+    },
+    {
+      "strategy": "boll-15-2",
+      "regime": "up",
+      "split": "样本外",
+      "n": 2,
+      "pnl": 1.75
+    },
+    {
+      "strategy": "boll-20-2",
+      "regime": "down",
+      "split": "样本内",
+      "n": 6,
+      "pnl": -10.17
+    },
+    {
+      "strategy": "boll-20-2",
+      "regime": "down",
+      "split": "样本外",
+      "n": 2,
+      "pnl": 3.72
+    },
+    {
+      "strategy": "boll-20-2",
+      "regime": "range",
+      "split": "样本内",
+      "n": 8,
+      "pnl": -6.27
+    },
+    {
+      "strategy": "boll-20-2",
+      "regime": "range",
+      "split": "样本外",
+      "n": 6,
+      "pnl": 0.54
+    },
+    {
+      "strategy": "boll-20-2",
+      "regime": "up",
+      "split": "样本内",
+      "n": 1,
+      "pnl": -1.44
+    },
+    {
+      "strategy": "boll-20-2",
+      "regime": "up",
+      "split": "样本外",
+      "n": 2,
+      "pnl": 2.48
+    },
+    {
+      "strategy": "macd-12-26-9",
+      "regime": "down",
+      "split": "样本内",
+      "n": 20,
+      "pnl": 3.76
+    },
+    {
+      "strategy": "macd-12-26-9",
+      "regime": "down",
+      "split": "样本外",
+      "n": 5,
+      "pnl": 3.49
+    },
+    {
+      "strategy": "macd-12-26-9",
+      "regime": "range",
+      "split": "样本内",
+      "n": 13,
+      "pnl": -9.7
+    },
+    {
+      "strategy": "macd-12-26-9",
+      "regime": "range",
+      "split": "样本外",
+      "n": 5,
+      "pnl": -1.18
+    },
+    {
+      "strategy": "macd-12-26-9",
+      "regime": "up",
+      "split": "样本内",
+      "n": 11,
+      "pnl": -1.94
+    },
+    {
+      "strategy": "macd-12-26-9",
+      "regime": "up",
+      "split": "样本外",
+      "n": 11,
+      "pnl": 5.86
+    },
+    {
+      "strategy": "regime",
+      "regime": "range",
+      "split": "样本内",
+      "n": 35,
+      "pnl": -10.74
+    },
+    {
+      "strategy": "regime",
+      "regime": "range",
+      "split": "样本外",
+      "n": 14,
+      "pnl": -2.21
+    },
+    {
+      "strategy": "regime",
+      "regime": "up",
+      "split": "样本内",
+      "n": 18,
+      "pnl": -3.15
+    },
+    {
+      "strategy": "regime",
+      "regime": "up",
+      "split": "样本外",
+      "n": 16,
+      "pnl": 7.44
+    },
+    {
+      "strategy": "rsi-10-25-70",
+      "regime": "down",
+      "split": "样本内",
+      "n": 15,
+      "pnl": -7.0
+    },
+    {
+      "strategy": "rsi-10-25-70",
+      "regime": "down",
+      "split": "样本外",
+      "n": 2,
+      "pnl": 1.4
+    },
+    {
+      "strategy": "rsi-10-25-70",
+      "regime": "range",
+      "split": "样本内",
+      "n": 10,
+      "pnl": -4.46
+    },
+    {
+      "strategy": "rsi-10-25-70",
+      "regime": "range",
+      "split": "样本外",
+      "n": 3,
+      "pnl": -2.59
+    },
+    {
+      "strategy": "rsi-10-25-70",
+      "regime": "up",
+      "split": "样本内",
+      "n": 2,
+      "pnl": -0.64
+    },
+    {
+      "strategy": "rsi-10-25-70",
+      "regime": "up",
+      "split": "样本外",
+      "n": 1,
+      "pnl": -0.41
+    },
+    {
+      "strategy": "rsi-14-25-75",
+      "regime": "down",
+      "split": "样本内",
+      "n": 8,
+      "pnl": -9.45
+    },
+    {
+      "strategy": "rsi-14-25-75",
+      "regime": "down",
+      "split": "样本外",
+      "n": 2,
+      "pnl": 2.95
+    },
+    {
+      "strategy": "rsi-14-25-75",
+      "regime": "range",
+      "split": "样本内",
+      "n": 2,
+      "pnl": -3.46
+    },
+    {
+      "strategy": "rsi-14-25-75",
+      "regime": "range",
+      "split": "样本外",
+      "n": 2,
+      "pnl": 1.85
+    },
+    {
+      "strategy": "rsi-14-25-75",
+      "regime": "up",
+      "split": "样本内",
+      "n": 1,
+      "pnl": -0.22
+    },
+    {
+      "strategy": "rsi-14-25-75",
+      "regime": "up",
+      "split": "样本外",
+      "n": 1,
+      "pnl": 0.19
+    },
+    {
+      "strategy": "rsi-14-30-70",
+      "regime": "down",
+      "split": "样本内",
+      "n": 4,
+      "pnl": -14.81
+    },
+    {
+      "strategy": "rsi-14-30-70",
+      "regime": "down",
+      "split": "样本外",
+      "n": 1,
+      "pnl": 1.5
+    },
+    {
+      "strategy": "rsi-14-30-70",
+      "regime": "range",
+      "split": "样本内",
+      "n": 7,
+      "pnl": -4.69
+    },
+    {
+      "strategy": "rsi-14-30-70",
+      "regime": "range",
+      "split": "样本外",
+      "n": 4,
+      "pnl": -0.45
+    },
+    {
+      "strategy": "rsi-14-30-70",
+      "regime": "up",
+      "split": "样本内",
+      "n": 2,
+      "pnl": 0.48
+    },
+    {
+      "strategy": "rsi-14-30-70",
+      "regime": "up",
+      "split": "样本外",
+      "n": 2,
+      "pnl": 0.91
+    },
+    {
+      "strategy": "rsi-21-30-75",
+      "regime": "down",
+      "split": "样本内",
+      "n": 7,
+      "pnl": -2.32
+    },
+    {
+      "strategy": "rsi-21-30-75",
+      "regime": "down",
+      "split": "样本外",
+      "n": 3,
+      "pnl": 5.93
+    },
+    {
+      "strategy": "rsi-21-30-75",
+      "regime": "range",
+      "split": "样本内",
+      "n": 1,
+      "pnl": 0.36
+    },
+    {
+      "strategy": "rsi-21-30-75",
+      "regime": "up",
+      "split": "样本外",
+      "n": 1,
+      "pnl": 1.2
+    },
+    {
+      "strategy": "sma-10-40",
+      "regime": "down",
+      "split": "样本外",
+      "n": 1,
+      "pnl": -0.08
+    },
+    {
+      "strategy": "sma-10-40",
+      "regime": "range",
+      "split": "样本内",
+      "n": 13,
+      "pnl": -7.09
+    },
+    {
+      "strategy": "sma-10-40",
+      "regime": "range",
+      "split": "样本外",
+      "n": 3,
+      "pnl": 4.27
+    },
+    {
+      "strategy": "sma-10-40",
+      "regime": "up",
+      "split": "样本内",
+      "n": 11,
+      "pnl": -6.7
+    },
+    {
+      "strategy": "sma-10-40",
+      "regime": "up",
+      "split": "样本外",
+      "n": 4,
+      "pnl": 6.08
+    },
+    {
+      "strategy": "sma-15-60",
+      "regime": "down",
+      "split": "样本内",
+      "n": 1,
+      "pnl": -0.28
+    },
+    {
+      "strategy": "sma-15-60",
+      "regime": "range",
+      "split": "样本内",
+      "n": 4,
+      "pnl": -4.4
+    },
+    {
+      "strategy": "sma-15-60",
+      "regime": "up",
+      "split": "样本内",
+      "n": 11,
+      "pnl": -5.99
+    },
+    {
+      "strategy": "sma-15-60",
+      "regime": "up",
+      "split": "样本外",
+      "n": 6,
+      "pnl": 8.17
+    },
+    {
+      "strategy": "sma-20-50",
+      "regime": "down",
+      "split": "样本内",
+      "n": 1,
+      "pnl": -0.61
+    },
+    {
+      "strategy": "sma-20-50",
+      "regime": "range",
+      "split": "样本内",
+      "n": 7,
+      "pnl": -7.56
+    },
+    {
+      "strategy": "sma-20-50",
+      "regime": "range",
+      "split": "样本外",
+      "n": 1,
+      "pnl": 0.54
+    },
+    {
+      "strategy": "sma-20-50",
+      "regime": "up",
+      "split": "样本内",
+      "n": 8,
+      "pnl": -1.0
+    },
+    {
+      "strategy": "sma-20-50",
+      "regime": "up",
+      "split": "样本外",
+      "n": 5,
+      "pnl": 7.61
+    },
+    {
+      "strategy": "turtle",
+      "regime": "down",
+      "split": "样本内",
+      "n": 2,
+      "pnl": -0.89
+    },
+    {
+      "strategy": "turtle",
+      "regime": "down",
+      "split": "样本外",
+      "n": 1,
+      "pnl": -0.34
+    },
+    {
+      "strategy": "turtle",
+      "regime": "range",
+      "split": "样本内",
+      "n": 18,
+      "pnl": -6.96
+    },
+    {
+      "strategy": "turtle",
+      "regime": "range",
+      "split": "样本外",
+      "n": 5,
+      "pnl": -1.25
+    },
+    {
+      "strategy": "turtle",
+      "regime": "up",
+      "split": "样本内",
+      "n": 19,
+      "pnl": -5.46
+    },
+    {
+      "strategy": "turtle",
+      "regime": "up",
+      "split": "样本外",
+      "n": 20,
+      "pnl": 2.51
+    }
+  ],
+  "mine": [
+    {
+      "id": "rsi-14-30-70",
+      "strategy": "RSI",
+      "params": {
+        "period": 14,
+        "oversold": 30,
+        "overbought": 70
+      },
+      "worker_id": "worker-03",
+      "verdict": "survived",
+      "is_profit": -19.03,
+      "oos_profit": 2.57,
+      "is_drawdown": 19.83,
+      "oos_drawdown": 3.46,
+      "is_trades": 27,
+      "oos_trades": 13,
+      "is_score": -24.979,
+      "picked": false
+    },
+    {
+      "id": "rsi-10-25-70",
+      "strategy": "RSI",
+      "params": {
+        "period": 10,
+        "oversold": 25,
+        "overbought": 70
+      },
+      "worker_id": "worker-01-bt",
+      "verdict": "falsified",
+      "is_profit": -13.69,
+      "oos_profit": -0.91,
+      "is_drawdown": 15.37,
+      "oos_drawdown": 2.32,
+      "is_trades": 55,
+      "oos_trades": 11,
+      "is_score": -18.301,
+      "picked": false
+    },
+    {
+      "id": "rsi-21-30-75",
+      "strategy": "RSI",
+      "params": {
+        "period": 21,
+        "oversold": 30,
+        "overbought": 75
+      },
+      "worker_id": "worker-02-bt",
+      "verdict": "survived",
+      "is_profit": -3.3,
+      "oos_profit": 8.03,
+      "is_drawdown": 10.39,
+      "oos_drawdown": 2.29,
+      "is_trades": 17,
+      "oos_trades": 7,
+      "is_score": -6.417,
+      "picked": true
+    },
+    {
+      "id": "rsi-14-25-75",
+      "strategy": "RSI",
+      "params": {
+        "period": 14,
+        "oversold": 25,
+        "overbought": 75
+      },
+      "worker_id": "worker-04-bt",
+      "verdict": "survived",
+      "is_profit": -13.97,
+      "oos_profit": 5.82,
+      "is_drawdown": 14.87,
+      "oos_drawdown": 2.56,
+      "is_trades": 23,
+      "oos_trades": 9,
+      "is_score": -18.431,
+      "picked": false
+    },
+    {
+      "id": "macd-12-26-9",
+      "strategy": "EMA_MACD",
+      "params": {},
+      "worker_id": "worker-03",
+      "verdict": "survived",
+      "is_profit": -9.85,
+      "oos_profit": 7.16,
+      "is_drawdown": 12.84,
+      "oos_drawdown": 3.55,
+      "is_trades": 89,
+      "oos_trades": 41,
+      "is_score": -13.702,
+      "picked": false
+    },
+    {
+      "id": "sma-20-50",
+      "strategy": "SMA_CROSS",
+      "params": {
+        "fast": 20,
+        "slow": 50
+      },
+      "worker_id": "worker-01-bt",
+      "verdict": "survived",
+      "is_profit": -9.66,
+      "oos_profit": 7.8,
+      "is_drawdown": 11.46,
+      "oos_drawdown": 5.54,
+      "is_trades": 32,
+      "oos_trades": 12,
+      "is_score": -13.098,
+      "picked": false
+    },
+    {
+      "id": "sma-10-40",
+      "strategy": "SMA_CROSS",
+      "params": {
+        "fast": 10,
+        "slow": 40
+      },
+      "worker_id": "worker-02-bt",
+      "verdict": "survived",
+      "is_profit": -14.15,
+      "oos_profit": 10.16,
+      "is_drawdown": 16.02,
+      "oos_drawdown": 2.88,
+      "is_trades": 48,
+      "oos_trades": 16,
+      "is_score": -18.956,
+      "picked": false
+    },
+    {
+      "id": "sma-15-60",
+      "strategy": "SMA_CROSS",
+      "params": {
+        "fast": 15,
+        "slow": 60
+      },
+      "worker_id": "worker-04-bt",
+      "verdict": "survived",
+      "is_profit": -10.95,
+      "oos_profit": 7.78,
+      "is_drawdown": 12.39,
+      "oos_drawdown": 5.74,
+      "is_trades": 32,
+      "oos_trades": 12,
+      "is_score": -14.667,
+      "picked": false
+    },
+    {
+      "id": "boll-20-2",
+      "strategy": "BOLLINGER",
+      "params": {
+        "period": 20,
+        "num_std": 2.0
+      },
+      "worker_id": "worker-03",
+      "verdict": "survived",
+      "is_profit": -17.36,
+      "oos_profit": 6.35,
+      "is_drawdown": 19.09,
+      "oos_drawdown": 1.96,
+      "is_trades": 31,
+      "oos_trades": 19,
+      "is_score": -23.087,
+      "picked": false
+    },
+    {
+      "id": "boll-15-2",
+      "strategy": "BOLLINGER",
+      "params": {
+        "period": 15,
+        "num_std": 2.0
+      },
+      "worker_id": "worker-01-bt",
+      "verdict": "survived",
+      "is_profit": -17.34,
+      "oos_profit": 2.65,
+      "is_drawdown": 19.07,
+      "oos_drawdown": 2.14,
+      "is_trades": 41,
+      "oos_trades": 19,
+      "is_score": -23.061,
+      "picked": false
+    },
+    {
+      "id": "turtle",
+      "strategy": "TURTLE",
+      "params": {},
+      "worker_id": "worker-02-bt",
+      "verdict": "falsified",
+      "is_profit": -14.25,
+      "oos_profit": -0.45,
+      "is_drawdown": 14.8,
+      "oos_drawdown": 3.92,
+      "is_trades": 78,
+      "oos_trades": 52,
+      "is_score": -18.69,
+      "picked": false
+    },
+    {
+      "id": "regime",
+      "strategy": "REGIME_SWITCH",
+      "params": {},
+      "worker_id": "worker-04-bt",
+      "verdict": "survived",
+      "is_profit": -15.43,
+      "oos_profit": 3.48,
+      "is_drawdown": 15.6,
+      "oos_drawdown": 6.26,
+      "is_trades": 106,
+      "oos_trades": 60,
+      "is_score": -20.11,
+      "picked": false
+    }
+  ],
+  "picked": "rsi-21-30-75",
+  "mine_workers": [
+    "worker-03",
+    "worker-01-bt",
+    "worker-02-bt",
+    "worker-04-bt"
+  ]
+}

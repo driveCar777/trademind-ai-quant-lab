@@ -1,0 +1,15 @@
+{
+  "research_id": "tm-research-20260824-009901",
+  "volume": 0.01,
+  "mode": "paper",
+  "mt5_connected": true,
+  "account_mode": "demo",
+  "created_at": "2026-08-24T14:01:37Z",
+  "wire_test": true,
+  "symbol": "GOLD",
+  "side": "BUY",
+  "status": "ACCEPTED",
+  "reason": "wire_test;send_disabled",
+  "order_id": "tm-order-20260824-000003",
+  "mt5_ticket": ""
+}

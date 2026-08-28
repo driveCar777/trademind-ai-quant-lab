@@ -1,0 +1,21 @@
+{
+  "task_id": "tm-task-20260731-000118",
+  "worker_id": null,
+  "worker_type": "stock-factor-worker",
+  "status": "FAILED",
+  "created_at": "2026-07-31T08:05:12.797115Z",
+  "started_at": null,
+  "finished_at": "2026-07-31T08:05:12.839014Z",
+  "duration_ms": null,
+  "result_path": "results/2026/07/31/tm-task-20260731-000118.json",
+  "error": "Worker for type 'stock-factor-worker' is offline",
+  "request": {
+    "worker_type": "stock-factor-worker",
+    "indicator": "factor",
+    "data": {
+      "stock": "600519",
+      "date": "20260731"
+    },
+    "params": {}
+  }
+}

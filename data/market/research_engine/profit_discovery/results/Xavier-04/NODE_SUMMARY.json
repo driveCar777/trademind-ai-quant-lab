@@ -1,0 +1,30 @@
+{
+  "jobs": [
+    {
+      "content_hash": "6437ee17447d16c156b372be1f76866fc3625ac6b3760fcba520b3ef7c267b71",
+      "dataset_id": "tm-market-OIL-M15-20260825-000001",
+      "elapsed_seconds": 69.6484866142273,
+      "job_id": "PD-V06-Xavier-04-tm-market-OIL-M15-20260825-000001"
+    },
+    {
+      "content_hash": "8edb3de0d6f6c6d21c458ddcaba0dc73758e056f637879900bac7302ace33831",
+      "dataset_id": "tm-market-OIL-H1-20260825-000001",
+      "elapsed_seconds": 68.33653378486633,
+      "job_id": "PD-V06-Xavier-04-tm-market-OIL-H1-20260825-000001"
+    },
+    {
+      "content_hash": "6912a9d4e5e33f85ecc8e77e7c9942cdad242dbd67eb430e864dcdb1d8eb0d81",
+      "dataset_id": "tm-market-OIL-H4-20260825-000001",
+      "elapsed_seconds": 67.53606271743774,
+      "job_id": "PD-V06-Xavier-04-tm-market-OIL-H4-20260825-000001"
+    },
+    {
+      "content_hash": "c8d1baa9dd04b092548974f9441a378a0ff0f1bdb27157cc45c3c5279857d476",
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "elapsed_seconds": 67.25652933120728,
+      "job_id": "PD-V06-Xavier-04-tm-market-OIL-D1-20260825-000001"
+    }
+  ],
+  "node": "Xavier-04",
+  "ok": true
+}

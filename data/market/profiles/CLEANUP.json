@@ -1,0 +1,46 @@
+{
+  "leftovers": {
+    "Xavier-01": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "10971 bash -c pgrep -af research_probe.py || true; rm -rf /tmp/tm-data-qual-v01; pgrep -af research_probe.py || true\n10971 bash -c pgrep -af research_probe.py || true; rm -rf /tmp/tm-data-qual-v01; pgrep -af research_probe.py || true"
+    },
+    "Xavier-02": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "23259 bash -c pgrep -af research_probe.py || true; rm -rf /tmp/tm-data-qual-v01; pgrep -af research_probe.py || true\n23259 bash -c pgrep -af research_probe.py || true; rm -rf /tmp/tm-data-qual-v01; pgrep -af research_probe.py || true"
+    },
+    "Xavier-03": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "18269 bash -c pgrep -af research_probe.py || true; rm -rf /tmp/tm-data-qual-v01; pgrep -af research_probe.py || true\n18269 bash -c pgrep -af research_probe.py || true; rm -rf /tmp/tm-data-qual-v01; pgrep -af research_probe.py || true"
+    },
+    "Xavier-04": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "14541 bash -c pgrep -af research_probe.py || true; rm -rf /tmp/tm-data-qual-v01; pgrep -af research_probe.py || true\n14541 bash -c pgrep -af research_probe.py || true; rm -rf /tmp/tm-data-qual-v01; pgrep -af research_probe.py || true"
+    }
+  },
+  "sidecars": {
+    "Xavier-01": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    \nLISTEN   0         5                   0.0.0.0:8002             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8003             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8004             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8005             0.0.0.0:*"
+    },
+    "Xavier-02": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    \nLISTEN   0         5                   0.0.0.0:8002             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8003             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8004             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8005             0.0.0.0:*"
+    },
+    "Xavier-03": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    \nLISTEN   0         5                   0.0.0.0:8002             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8003             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8004             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8005             0.0.0.0:*"
+    },
+    "Xavier-04": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "State    Recv-Q    Send-Q        Local Address:Port        Peer Address:Port    \nLISTEN   0         5                   0.0.0.0:8002             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8003             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8004             0.0.0.0:*       \nLISTEN   0         5                   0.0.0.0:8005             0.0.0.0:*"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "FAULT_INJECTION_PASS": true,
+  "cases": [
+    {
+      "detected": true,
+      "kind": "delete_row",
+      "reasons": [
+        "hash_mismatch",
+        "row_count",
+        "qualification_invalid"
+      ]
+    },
+    {
+      "detected": true,
+      "kind": "duplicate_row",
+      "reasons": [
+        "hash_mismatch",
+        "row_count",
+        "qualification_invalid",
+        "duplicate_timestamp"
+      ]
+    },
+    {
+      "detected": true,
+      "kind": "swap_rows",
+      "reasons": [
+        "hash_mismatch",
+        "qualification_invalid",
+        "out_of_order"
+      ]
+    },
+    {
+      "detected": true,
+      "kind": "change_close",
+      "reasons": [
+        "hash_mismatch",
+        "qualification_invalid"
+      ]
+    },
+    {
+      "detected": true,
+      "kind": "change_timestamp",
+      "reasons": [
+        "hash_mismatch",
+        "qualification_invalid",
+        "out_of_order"
+      ]
+    },
+    {
+      "detected": true,
+      "kind": "high_lt_low",
+      "reasons": [
+        "hash_mismatch",
+        "qualification_invalid",
+        "high_lt_low"
+      ]
+    },
+    {
+      "detected": true,
+      "kind": "change_tick_volume",
+      "reasons": [
+        "hash_mismatch",
+        "qualification_invalid"
+      ]
+    },
+    {
+      "detected": true,
+      "kind": "truncate",
+      "reasons": [
+        "hash_mismatch",
+        "row_count",
+        "qualification_invalid"
+      ]
+    }
+  ]
+}

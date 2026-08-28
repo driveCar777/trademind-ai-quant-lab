@@ -1,0 +1,20 @@
+{
+  "abandoned_count": 0,
+  "experiment_count": 32,
+  "failed_count": 0,
+  "family_id": "FAM-MOMENTUM-0001",
+  "hypothesis_ids": [
+    "HYP-0001",
+    "HYP-0001-A",
+    "HYP-0001-B"
+  ],
+  "oos_access_timestamp": null,
+  "oos_accessed": false,
+  "parameter_changes": [],
+  "reason_for_change": [],
+  "rejected_count": 0,
+  "supported_count": 0,
+  "validation_count": 0,
+  "variant_count": 2,
+  "window_changes": []
+}

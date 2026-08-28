@@ -1,0 +1,13 @@
+{
+  "family_hash": "17d3bbf29ccc3ec77b9caa595e1316e70255e3e2bcd28f1bb53a012e7b5c68d6",
+  "family_id": "FAM-MOMENTUM-0001",
+  "number_of_variants": 2,
+  "parent_hypothesis_id": "HYP-0001",
+  "rejected_count": 0,
+  "supported_count": 2,
+  "validation_count": 2,
+  "variants_tested": [
+    "HYP-0001-A",
+    "HYP-0001-B"
+  ]
+}

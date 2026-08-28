@@ -1,0 +1,90 @@
+{
+  "elapsed_seconds": 2.5674641132354736,
+  "feature_gate": {
+    "gate": 0.0012857708031122073,
+    "kind": "Q3",
+    "n_freeze": 1394
+  },
+  "hypothesis_id": "HYP-XA-0002",
+  "input_assets": [
+    "EURUSD"
+  ],
+  "predicted_sign": 1,
+  "research": {
+    "block_bootstrap_ci": {
+      "block_length": 5,
+      "high": 0.0009041420634868201,
+      "iterations": 2000,
+      "low": -0.001149139168925966,
+      "method": "moving_block_bootstrap_delta_conservative",
+      "seed": 20260825
+    },
+    "bootstrap_ci": {
+      "high": 0.0007469238034150372,
+      "iterations": 2000,
+      "low": -0.0009124479194771678,
+      "method": "iid_bootstrap_delta",
+      "seed": 20260825
+    },
+    "cagr": -0.06236863107974755,
+    "contemporaneous_corr": 0.41028300714379873,
+    "cost_paid": 1117.6504314757447,
+    "delta": -9.218638038090057e-05,
+    "effect_size": -0.01164885166797057,
+    "end_equity": 7003.0759686456995,
+    "max_drawdown": -0.30097929770121157,
+    "max_trade_share": 0.009118353003279839,
+    "mean_baseline": -0.002641773691697359,
+    "mean_signal": -0.0027339600720782597,
+    "n_aligned": 1395,
+    "n_feature": 1394,
+    "n_signal": 461,
+    "n_trade": 459,
+    "occupancy": 0.33070301291248205,
+    "raw_p": 0.8205897051474262,
+    "sharpe": -3.105824431748865,
+    "total_return": -0.29969240313543,
+    "trade_count": 459,
+    "turnover": 111.85900682756841,
+    "win_count": 141
+  },
+  "target_asset": "GOLD",
+  "validation": {
+    "block_bootstrap_ci": {
+      "block_length": 5,
+      "high": 0.0022448140875953215,
+      "iterations": 2000,
+      "low": -0.003414635367610119,
+      "method": "moving_block_bootstrap_delta_conservative",
+      "seed": 20260825
+    },
+    "bootstrap_ci": {
+      "high": 0.0016133614113742019,
+      "iterations": 2000,
+      "low": -0.002820645287463214,
+      "method": "iid_bootstrap_delta",
+      "seed": 20260825
+    },
+    "cagr": -0.04856561804628501,
+    "contemporaneous_corr": 0.4765566743724181,
+    "cost_paid": 228.2579229526764,
+    "delta": -0.0006031612853415248,
+    "effect_size": -0.06411035001341132,
+    "end_equity": 9428.272409596473,
+    "max_drawdown": -0.06049999460586521,
+    "max_trade_share": 0.03464526129242327,
+    "mean_baseline": -0.002000129359442115,
+    "mean_signal": -0.00260329064478364,
+    "n_aligned": 299,
+    "n_feature": 299,
+    "n_signal": 99,
+    "n_trade": 90,
+    "occupancy": 0.3311036789297659,
+    "raw_p": null,
+    "sharpe": -2.3879398611820775,
+    "total_return": -0.05717275904035268,
+    "trade_count": 90,
+    "turnover": 22.84296577864018,
+    "win_count": 30
+  }
+}

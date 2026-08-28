@@ -1,0 +1,6 @@
+{
+  "note": "V0.1 stores one bars file under immutable/. raw/ and validated/ are reserved and empty to avoid duplicate copies.",
+  "raw_copies": false,
+  "storage_policy": "single_immutable_copy",
+  "validated_copies": false
+}

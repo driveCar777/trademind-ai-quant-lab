@@ -1,0 +1,26 @@
+{
+  "A": {
+    "baseline_n": 1230,
+    "condition_n": 153,
+    "control": "A_RANDOM_DIRECTION",
+    "observed_effect": 0.00018880137134584006,
+    "p_value": 0.27634473105378926,
+    "seed": 20260825
+  },
+  "B": {
+    "baseline_n": 1230,
+    "condition_n": 0,
+    "control": "B_NEVER_TRADE",
+    "observed_effect": 0.0,
+    "p_value": 1.0,
+    "seed": 20260825
+  },
+  "C": {
+    "baseline_n": 1230,
+    "condition_n": 1227,
+    "control": "C_NAIVE_MOMENTUM",
+    "observed_effect": -1.1973649035217418e-05,
+    "p_value": 0.883623275344931,
+    "seed": 20260825
+  }
+}

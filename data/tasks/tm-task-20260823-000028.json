@@ -1,0 +1,54 @@
+{
+  "task_id": "tm-task-20260823-000028",
+  "worker_id": "worker-01",
+  "worker_type": "indicator-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-08-23T13:10:44.760879Z",
+  "started_at": "2026-08-23T13:10:44.780485Z",
+  "finished_at": "2026-08-23T13:10:44.806313Z",
+  "duration_ms": 25,
+  "result_path": "results/2026/08/23/tm-task-20260823-000028.json",
+  "error": null,
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "RSI",
+    "data": {
+      "symbol": "EURUSD",
+      "close": [
+        1.082,
+        1.0835,
+        1.0828,
+        1.0841,
+        1.0836,
+        1.0845,
+        1.0839,
+        1.0852,
+        1.0848,
+        1.0855,
+        1.085,
+        1.0862,
+        1.0858,
+        1.087,
+        1.0865,
+        1.0878,
+        1.0872,
+        1.0885,
+        1.088,
+        1.0892,
+        1.0888,
+        1.0895,
+        1.089,
+        1.0898,
+        1.0893,
+        1.0902,
+        1.0897,
+        1.091,
+        1.0905,
+        1.0915
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

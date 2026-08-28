@@ -1,0 +1,17 @@
+{
+  "data_end_utc": "2026-08-25T12:00:00Z",
+  "data_start_utc": "2025-05-29T12:00:00Z",
+  "dataset_id": "tm-market-EURUSD-H4-20260825-000001",
+  "immutable": true,
+  "logical_symbol": "EURUSD",
+  "mt5_symbol": "EURUSD",
+  "profile_hash": "d8e5cf93b9085a28e9fd0fddd26027e1e497bf9ad80c589b6a218490cc5b20a0",
+  "qualification": "READY_WITH_REVIEW",
+  "row_count": 2000,
+  "schema_version": "0.1",
+  "sha256": "97e565003169ece3db4c0a838fd438772270c776cc3a3e82d78c29476c75b9e7",
+  "source": "mt5",
+  "timeframe": "H4",
+  "timezone": "UTC",
+  "volume_policy": "tick_volume_only"
+}

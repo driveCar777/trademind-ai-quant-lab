@@ -1,0 +1,9 @@
+{
+  "STATUS": "QUARANTINED_CONTRACT_MISMATCH",
+  "created_at": "2026-08-25T16:34:20Z",
+  "note": "sidecar 8002-8005 not targeted",
+  "windows_research_pids_stopped": [
+    25012,
+    36392
+  ]
+}

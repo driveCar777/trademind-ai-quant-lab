@@ -1,0 +1,8 @@
+{
+  "arm": "continuation",
+  "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+  "experiment_id": "tm-exp-20260825-141158-001",
+  "hypothesis_id": "HYP-0001-A",
+  "reason": "FALSIFIED",
+  "result_hash": "80508fa6146ca7cab9d30b8f221ae440a92e531fa0fe1c5721d63cca98ce16b5"
+}

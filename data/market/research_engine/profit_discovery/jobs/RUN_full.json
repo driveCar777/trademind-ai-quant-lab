@@ -1,0 +1,49 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "elapsed_seconds": 273.69657468795776,
+      "exit_code": 0,
+      "host": "192.168.1.202",
+      "job_count": 4,
+      "node": "Xavier-03",
+      "ok": true,
+      "stderr": "",
+      "stdout": "PD_JOB_DONE PD-V06-Xavier-03-tm-market-USDJPY-M15-20260825-000001 69.0\nPD_JOB_DONE PD-V06-Xavier-03-tm-market-USDJPY-H1-20260825-000001 67.7\nPD_JOB_DONE PD-V06-Xavier-03-tm-market-USDJPY-H4-20260825-000001 67.9\nPD_JOB_DONE PD-V06-Xavier-03-tm-market-USDJPY-D1-20260825-000001 66.7\nPD_NODE_DONE Xavier-03 4\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 275.16635179519653,
+      "exit_code": 0,
+      "host": "192.168.1.203",
+      "job_count": 4,
+      "node": "Xavier-04",
+      "ok": true,
+      "stderr": "",
+      "stdout": "PD_JOB_DONE PD-V06-Xavier-04-tm-market-OIL-M15-20260825-000001 69.6\nPD_JOB_DONE PD-V06-Xavier-04-tm-market-OIL-H1-20260825-000001 68.3\nPD_JOB_DONE PD-V06-Xavier-04-tm-market-OIL-H4-20260825-000001 67.5\nPD_JOB_DONE PD-V06-Xavier-04-tm-market-OIL-D1-20260825-000001 67.3\nPD_NODE_DONE Xavier-04 4\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 286.28101778030396,
+      "exit_code": 0,
+      "host": "192.168.1.201",
+      "job_count": 4,
+      "node": "Xavier-02",
+      "ok": true,
+      "stderr": "",
+      "stdout": "PD_JOB_DONE PD-V06-Xavier-02-tm-market-EURUSD-M15-20260825-000001 73.0\nPD_JOB_DONE PD-V06-Xavier-02-tm-market-EURUSD-H1-20260825-000001 70.3\nPD_JOB_DONE PD-V06-Xavier-02-tm-market-EURUSD-H4-20260825-000001 70.9\nPD_JOB_DONE PD-V06-Xavier-02-tm-market-EURUSD-D1-20260825-000001 69.9\nPD_NODE_DONE Xavier-02 4\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 296.5604615211487,
+      "exit_code": 0,
+      "host": "192.168.1.200",
+      "job_count": 4,
+      "node": "Xavier-01",
+      "ok": true,
+      "stderr": "",
+      "stdout": "PD_JOB_DONE PD-V06-Xavier-01-tm-market-GOLD-M15-20260825-000001 73.5\nPD_JOB_DONE PD-V06-Xavier-01-tm-market-GOLD-H1-20260825-000001 73.6\nPD_JOB_DONE PD-V06-Xavier-01-tm-market-GOLD-H4-20260825-000001 73.8\nPD_JOB_DONE PD-V06-Xavier-01-tm-market-GOLD-D1-20260825-000001 73.3\nPD_NODE_DONE Xavier-01 4\n"
+    }
+  ],
+  "utc": "2026-08-26T14:23:07Z"
+}

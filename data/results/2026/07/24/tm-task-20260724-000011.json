@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "088c8ea6-7996-44be-81d9-90e0d6e4048a",
+  "indicator": "SMA",
+  "symbol": "GBPUSD",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      46.06071428571429,
+      46.195,
+      46.35642857142857,
+      46.45214285714285,
+      46.73785714285714,
+      46.85857142857143,
+      46.902142857142856
+    ],
+    "latest": 46.902142857142856
+  },
+  "calculation_time_ms": 2.041,
+  "timestamp": "2026-07-24T12:19:25.333898"
+}

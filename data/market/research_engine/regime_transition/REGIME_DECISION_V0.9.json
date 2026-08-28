@@ -1,0 +1,9 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "REGIME_TRANSITION_V0.9",
+  "next_action": "FAILED_ALPHA_THEN_RESIDUAL_V0.91",
+  "note": "Do not retune hold/ADX/VOL. Do not read Final OOS.",
+  "optimize_forbidden": true,
+  "outcome": "NO_CANDIDATE",
+  "strategy_layer_allowed": false
+}

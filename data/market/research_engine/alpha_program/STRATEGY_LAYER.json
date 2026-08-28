@@ -1,0 +1,6 @@
+{
+  "allowed": false,
+  "reason": "NO_CANDIDATE",
+  "families_checked": ["REGIME_TRANSITION_V0.9", "CROSS_RESIDUAL_V0.91"],
+  "FINAL_OOS_TOUCHED": false
+}

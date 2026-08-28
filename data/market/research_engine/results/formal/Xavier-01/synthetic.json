@@ -1,0 +1,32 @@
+{
+  "STATUS": "SYNTHETIC_ONLY",
+  "suite": {
+    "A_independent": {
+      "expect": "near_zero",
+      "research_neg_delta": 0.0002497231521263747,
+      "research_pos_delta": 0.000115091147392544,
+      "result_hash": "df7199247bccce8dafab0033a94f2ecd5f832be2b742532166e235fd98e84dfb",
+      "sentinel_ok": true
+    },
+    "B_positive": {
+      "expect": "positive",
+      "research_neg_delta": -0.003773584905660377,
+      "research_pos_delta": 0.011226415094339625,
+      "result_hash": "41c0c7fb13782ebb0487911e6da6929ee7dfa7f5d2fa2cb21f3b9ddef910a92c",
+      "sentinel_ok": true
+    },
+    "C_negative": {
+      "expect": "negative",
+      "research_neg_delta": -0.011226415094339626,
+      "research_pos_delta": 0.0037735849056603826,
+      "result_hash": "93cfd0f21add031d01ad6542c357d362065f53220d7fe89923bc206865a24209",
+      "sentinel_ok": true
+    },
+    "D_leakage_sentinel": {
+      "ok": true
+    },
+    "E_tamper": {
+      "ok": true
+    }
+  }
+}

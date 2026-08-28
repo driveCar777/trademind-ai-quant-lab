@@ -1,0 +1,20 @@
+﻿# TradeMind 全局默认配置
+
+master:
+  host: localhost
+  port: 9000
+  log_level: INFO
+
+workers:
+  indicator:
+    host: 192.168.1.111
+    port: 8000
+  factor:
+    host: 192.168.1.112
+    port: 8000
+  backtest:
+    host: 192.168.1.113
+    port: 8000
+
+network:
+  name: trademind-network

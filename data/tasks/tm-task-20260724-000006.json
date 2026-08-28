@@ -1,0 +1,44 @@
+{
+  "task_id": "tm-task-20260724-000006",
+  "worker_id": "worker-01",
+  "worker_type": "indicator-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-24T12:18:10.211562Z",
+  "started_at": "2026-07-24T12:18:16.264099Z",
+  "finished_at": "2026-07-24T12:18:16.335172Z",
+  "duration_ms": 71,
+  "result_path": "results/2026/07/24/tm-task-20260724-000006.json",
+  "error": null,
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "RSI",
+    "data": {
+      "symbol": "XAUUSD",
+      "close": [
+        44.0,
+        44.34,
+        44.09,
+        43.61,
+        44.33,
+        44.83,
+        45.1,
+        45.42,
+        45.84,
+        46.08,
+        45.89,
+        46.03,
+        45.61,
+        46.28,
+        46.28,
+        46.0,
+        46.03,
+        46.41,
+        46.22,
+        45.64
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

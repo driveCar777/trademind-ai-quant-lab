@@ -1,0 +1,90 @@
+{
+  "elapsed_seconds": 2.568459987640381,
+  "feature_gate": {
+    "gate": 0.0,
+    "kind": "DOLLAR_UP"
+  },
+  "hypothesis_id": "HYP-XA-0003",
+  "input_assets": [
+    "USDJPY",
+    "EURUSD"
+  ],
+  "predicted_sign": -1,
+  "research": {
+    "block_bootstrap_ci": {
+      "block_length": 5,
+      "high": 0.0036506802988189417,
+      "iterations": 2000,
+      "low": -0.003215392589009114,
+      "method": "moving_block_bootstrap_delta_conservative",
+      "seed": 20260825
+    },
+    "bootstrap_ci": {
+      "high": 0.002840492763509819,
+      "iterations": 2000,
+      "low": -0.0026616978504511303,
+      "method": "iid_bootstrap_delta",
+      "seed": 20260825
+    },
+    "cagr": -0.057400695773945354,
+    "contemporaneous_corr": 0.01900633297427192,
+    "cost_paid": 483.35144336540816,
+    "delta": 0.00013984110125148629,
+    "effect_size": 0.00506207234894009,
+    "end_equity": 7210.811114340031,
+    "max_drawdown": -0.31074950509751204,
+    "max_trade_share": 0.13666043554128535,
+    "mean_baseline": -0.004912670220578253,
+    "mean_signal": -0.0047728291193267665,
+    "n_aligned": 1395,
+    "n_feature": 1394,
+    "n_signal": 484,
+    "n_trade": 482,
+    "occupancy": 0.3472022955523673,
+    "raw_p": 0.9155422288855573,
+    "sharpe": -0.8905597180184558,
+    "total_return": -0.2789188885659969,
+    "trade_count": 482,
+    "turnover": 48.21985246442616,
+    "win_count": 183
+  },
+  "target_asset": "OIL",
+  "validation": {
+    "block_bootstrap_ci": {
+      "block_length": 5,
+      "high": 0.008734395748783385,
+      "iterations": 2000,
+      "low": -0.004067074858696484,
+      "method": "moving_block_bootstrap_delta_conservative",
+      "seed": 20260825
+    },
+    "bootstrap_ci": {
+      "high": 0.006695382056903724,
+      "iterations": 2000,
+      "low": -0.0022023477201510615,
+      "method": "iid_bootstrap_delta",
+      "seed": 20260825
+    },
+    "cagr": -0.01096345128677556,
+    "contemporaneous_corr": 0.22650745349817517,
+    "cost_paid": 127.35098101155728,
+    "delta": 0.002199194424612491,
+    "effect_size": 0.11552966167198729,
+    "end_equity": 9870.482956611357,
+    "max_drawdown": -0.041353317285503,
+    "max_trade_share": 0.028878002306806042,
+    "mean_baseline": -0.003180393937087678,
+    "mean_signal": -0.0009811995124751872,
+    "n_aligned": 299,
+    "n_feature": 299,
+    "n_signal": 107,
+    "n_trade": 98,
+    "occupancy": 0.35785953177257523,
+    "raw_p": null,
+    "sharpe": -0.47955466895570803,
+    "total_return": -0.012951704338864278,
+    "trade_count": 98,
+    "turnover": 12.73498979803687,
+    "win_count": 38
+  }
+}

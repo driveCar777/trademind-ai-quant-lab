@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "97339426-534b-49bf-b642-859ace07be7a",
+  "indicator": "EMA",
+  "symbol": "USDCHF",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      48.648712906819064,
+      48.61288451924319,
+      48.82449991667743,
+      48.825233261120445,
+      49.249868826304386,
+      49.312552982797136,
+      49.10287925175752
+    ],
+    "latest": 49.10287925175752
+  },
+  "calculation_time_ms": 1.652,
+  "timestamp": "2026-07-24T12:19:56.049107"
+}

@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "a10696a5-2f9a-41c2-aaa1-1131a2529644",
+  "indicator": "RSI",
+  "symbol": "NZDUSD",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      41.0745117429932,
+      45.12807334442092,
+      42.69350296148273,
+      49.64476677623372,
+      45.39950933446924,
+      41.944441470316455
+    ],
+    "latest": 41.944441470316455
+  },
+  "calculation_time_ms": 11.045,
+  "timestamp": "2026-07-24T12:19:49.925260"
+}

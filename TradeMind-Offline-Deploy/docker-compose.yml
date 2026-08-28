@@ -1,0 +1,233 @@
+# TradeMind AI Quant Lab v1.0
+# Jetson AGX Xavier Industrial 部署配置
+# 注意: 所有镜像必须是 linux/arm64 版本
+
+version: "3.8"
+
+services:
+  # ============================================
+  # 基础服务
+  # ============================================
+  
+  redis:
+    image: redis:7-alpine
+    container_name: trademind-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - /extSSD/trademind-data/redis:/data
+    command: redis-server --appendonly yes --maxmemory 2gb --maxmemory-policy allkeys-lru
+    deploy:
+      resources:
+        limits:
+          memory: 2.5G
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ============================================
+  # 量化计算 Worker 服务
+  # ============================================
+  
+  indicator-worker:
+    build:
+      context: ./services/indicator-worker
+      dockerfile: Dockerfile
+    image: trademind/indicator-worker:v1.0
+    container_name: trademind-indicator-worker
+    restart: unless-stopped
+    privileged: true  # 需要访问 GPU
+    environment:
+      - WORKER_ID=indicator-worker-01
+      - WORKER_TYPE=indicator
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MASTER_API_URL=http://10.10.249.1:8080/api  # 预留主节点IP
+      - LOG_LEVEL=INFO
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - /extSSD/trademind-data/market-data:/data/market:ro
+      - /extSSD/trademind-data/cache:/cache
+      - /opt/trademind/logs/indicator:/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 6G
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  factor-worker:
+    build:
+      context: ./services/factor-worker
+      dockerfile: Dockerfile
+    image: trademind/factor-worker:v1.0
+    container_name: trademind-factor-worker
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - WORKER_ID=factor-worker-01
+      - WORKER_TYPE=factor
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MASTER_API_URL=http://10.10.249.1:8080/api
+      - LOG_LEVEL=INFO
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - /extSSD/trademind-data/market-data:/data/market:ro
+      - /extSSD/trademind-data/cache:/cache
+      - /opt/trademind/logs/factor:/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 8G
+
+  backtest-worker:
+    build:
+      context: ./services/backtest-worker
+      dockerfile: Dockerfile
+    image: trademind/backtest-worker:v1.0
+    container_name: trademind-backtest-worker
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - WORKER_ID=backtest-worker-01
+      - WORKER_TYPE=backtest
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MASTER_API_URL=http://10.10.249.1:8080/api
+      - LOG_LEVEL=INFO
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - /extSSD/trademind-data/market-data:/data/market:ro
+      - /extSSD/trademind-data/backtest-results:/results
+      - /extSSD/trademind-data/cache:/cache
+      - /opt/trademind/logs/backtest:/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '6.0'
+          memory: 12G
+
+  # ============================================
+  # API 网关
+  # ============================================
+  
+  api-gateway:
+    build:
+      context: ./services/api-gateway
+      dockerfile: Dockerfile
+    image: trademind/api-gateway:v1.0
+    container_name: trademind-api-gateway
+    restart: unless-stopped
+    ports:
+      - "8080:8080"  # 主API端口
+    environment:
+      - API_ID=gateway-01
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - LOG_LEVEL=INFO
+    volumes:
+      - /opt/trademind/config:/config:ro
+      - /opt/trademind/logs/api:/logs
+    depends_on:
+      - redis
+      - indicator-worker
+      - factor-worker
+      - backtest-worker
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ============================================
+  # 监控服务
+  # ============================================
+  
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: trademind-node-exporter
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    ports:
+      - "9100:9100"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  monitor-agent:
+    build:
+      context: ./services/monitor-agent
+      dockerfile: Dockerfile
+    image: trademind/monitor-agent:v1.0
+    container_name: trademind-monitor-agent
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "8081:8080"  # 监控API
+    environment:
+      - AGENT_ID=monitor-01
+      - LOG_LEVEL=INFO
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /opt/trademind/logs/monitor:/logs
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+# ============================================
+# 网络配置
+# ============================================
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+# ============================================
+# 数据卷 (使用SSD路径)
+# ============================================
+volumes:
+  redis_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /extSSD/trademind-data/redis

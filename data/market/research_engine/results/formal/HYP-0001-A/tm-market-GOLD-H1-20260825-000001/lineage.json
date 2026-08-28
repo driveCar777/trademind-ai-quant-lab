@@ -1,0 +1,14 @@
+{
+  "code_fingerprint": "407d65227ba0a2437ac66e75386bbba94577b1993e2b7e17f250ac486f527d3a",
+  "dataset_hash": "07339c1831fdfa5db38c8e849cbb4dd1ce2f021c8304c4599b72c05588ba8166",
+  "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+  "experiment_hash": "83963c7ce8534e18b7ae08127feac9d9db678505eaa37ba0a72022cb3963e950",
+  "experiment_id": "tm-exp-20260825-141158-003",
+  "feature_version": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "hypothesis_hash": "669898fdfa29a0e37a35687bb0946d00a2a4b6fd9a63b1ebe50566b61735f255",
+  "hypothesis_id": "HYP-0001-A",
+  "lineage_hash": "f099470a418b25e20d495f4587c445c93d7c13c2a75f0b3505f1f082374ecd0a",
+  "preregister_hash": "485d56a8f5a8e6822231760be240500ce6deb194471cde78172c3b5e4630b6d8",
+  "protocol_version": "0.3",
+  "result_hash": "57d1a7aeb184866f7d48c9d1e59062391fde842d84c8656ba0b66ebcffd222d7"
+}

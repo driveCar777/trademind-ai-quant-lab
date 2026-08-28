@@ -1,0 +1,192 @@
+{
+  "families": [
+    {
+      "codes": [
+        "A",
+        "E"
+      ],
+      "family": "HYP-0001",
+      "fdr_discoveries": 0,
+      "labels": [],
+      "mean_occupancy": null,
+      "mean_research_tr": null,
+      "min_raw_p": null,
+      "n_hypotheses": 0,
+      "outcome": "WEAK_SUPPORT_NOT_A_BOOK",
+      "research_trades": [],
+      "validation_trades": [],
+      "why": [
+        "Family rollup was not a costed book. Short-horizon persistence is not Level 1."
+      ]
+    },
+    {
+      "codes": [
+        "A"
+      ],
+      "family": "FACTOR_DISCOVERY_V0.1",
+      "fdr_discoveries": 0,
+      "labels": [],
+      "mean_occupancy": null,
+      "mean_research_tr": null,
+      "min_raw_p": null,
+      "n_hypotheses": 57,
+      "outcome": "NO_USEFUL_FACTORS_FOUND",
+      "research_trades": [],
+      "validation_trades": [],
+      "why": [
+        "FDR farm: PROMISING=0 CANDIDATE=0. No next-return displacement survived."
+      ]
+    },
+    {
+      "codes": [
+        "A",
+        "E"
+      ],
+      "family": "RESEARCH_ENGINE_V0.5",
+      "fdr_discoveries": 0,
+      "labels": [],
+      "mean_occupancy": null,
+      "mean_research_tr": null,
+      "min_raw_p": null,
+      "n_hypotheses": 15,
+      "outcome": "NO_USEFUL_STRATEGIES_FOUND",
+      "research_trades": [],
+      "validation_trades": [],
+      "why": [
+        "State-level sketches / 1-3 bar rules. The label recipe survived; the sketches did not."
+      ]
+    },
+    {
+      "codes": [
+        "B",
+        "C"
+      ],
+      "family": "PROFIT_DISCOVERY_V0.6",
+      "fdr_discoveries": 0,
+      "labels": [],
+      "mean_occupancy": null,
+      "mean_research_tr": -0.12011260394739061,
+      "min_raw_p": null,
+      "n_hypotheses": 7,
+      "outcome": "WEAK_EDGE_ONLY",
+      "research_trades": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "validation_trades": [],
+      "why": [
+        "Program CANDIDATE=0 after cost. One OIL D1 leftover ~0.2% CAGR. M15/H1 2000 bars cannot certify years."
+      ]
+    },
+    {
+      "codes": [
+        "A",
+        "E"
+      ],
+      "family": "CROSS_ASSET_ALPHA_V0.8",
+      "fdr_discoveries": 0,
+      "labels": [
+        "HYP-XA-0001:FALSIFIED",
+        "HYP-XA-0002:FALSIFIED",
+        "HYP-XA-0003:FALSIFIED"
+      ],
+      "mean_occupancy": 0.3362027737924438,
+      "mean_research_tr": -0.32469900863130824,
+      "min_raw_p": 0.31634182908545727,
+      "n_hypotheses": 3,
+      "outcome": "NO_CANDIDATE",
+      "research_trades": [
+        459,
+        459,
+        482
+      ],
+      "validation_trades": [
+        110,
+        90,
+        98
+      ],
+      "why": [
+        "3/3 FALSIFIED. Next-day dollar proxy is the wrong relative-value object."
+      ]
+    },
+    {
+      "codes": [
+        "A",
+        "C"
+      ],
+      "family": "REGIME_TRANSITION_V0.9",
+      "fdr_discoveries": 0,
+      "labels": [
+        "HYP-RT-0001:FALSIFIED",
+        "HYP-RT-0002:INCONCLUSIVE",
+        "HYP-RT-0003:INCONCLUSIVE"
+      ],
+      "mean_occupancy": 0.015050579817419196,
+      "mean_research_tr": -0.027590835643534595,
+      "min_raw_p": 0.2448775612193903,
+      "n_hypotheses": 3,
+      "outcome": "NO_CANDIDATE",
+      "research_trades": [
+        20,
+        12,
+        24
+      ],
+      "validation_trades": [
+        5,
+        3,
+        3
+      ],
+      "why": [
+        "Delta fired (occupancy 1-2%, not level). RESEARCH books lost money. 0002/0003 validation n<4.",
+        "mean_occupancy=0.0151"
+      ]
+    },
+    {
+      "codes": [
+        "B",
+        "A"
+      ],
+      "family": "CROSS_RESIDUAL_V0.91",
+      "fdr_discoveries": 0,
+      "labels": [
+        "HYP-XR-0001:FALSIFIED",
+        "HYP-XR-0002:WEAK_SUPPORT",
+        "HYP-XR-0003:FALSIFIED"
+      ],
+      "mean_occupancy": null,
+      "mean_research_tr": -1.8315438821889376,
+      "min_raw_p": 0.07246376811594203,
+      "n_hypotheses": 3,
+      "outcome": "NO_CANDIDATE",
+      "research_trades": [
+        437,
+        442,
+        218
+      ],
+      "validation_trades": [
+        154,
+        35,
+        38
+      ],
+      "why": [
+        "0001 perm p=0.072 and a positive delta, but costed two-leg TR is deeply negative.",
+        "0002/0003: no usable residual edge (A). 0001: fragment eaten by cost (B).",
+        "mean RESEARCH TR=-1.832"
+      ]
+    }
+  ]
+}

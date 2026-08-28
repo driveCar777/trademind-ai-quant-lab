@@ -1,0 +1,147 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "datasets": [
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+      "dataset_sha256": "b3fd2f75e728f94fb3c6a66ffc6de7bca60e381d62253d46bcb405d435319387",
+      "elapsed_seconds": 22.167330503463745,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "211addded15c67403235ec5dd844e7e3fc96dd56494cf2c424815554de6f7a74",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "1c3cf55d9718500a465db883915c5a9aab210a9b107ebdbe2c54c1be18fd84dc"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+      "dataset_sha256": "9f977e764835be6af3f968bcf6ad3ab0192f0cc563b3cdc6209087714aeb2cd5",
+      "elapsed_seconds": 21.7069194316864,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "0dca1cbf2a2d7f1f1a9012f8f5200eb815d9d53e29c1dd2d8a9bbe9da47e38d7",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "471daa2a8dbe6c2b9d46a5ad8cbf942db8475d095e9c050f87fef708f6b272d6"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+      "dataset_sha256": "5765d363efca784d8f36224d9392202ad9ccf75d8a19e1b23dd61fad85d4b8f9",
+      "elapsed_seconds": 21.809290885925293,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "7aa30bea51b59de07c66b334aefc143f08113474a36250f7c7f7d86a07cd66f0",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "4019383491c1cce14a901259bbbe2df1fcd0ac77076e37d93cdfaa287f3fe08b"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+      "dataset_sha256": "c00389ce1cbeeed3e1ceb9a09e549fa8335556cf2fd8c644db8f8a44f7ce3ad7",
+      "elapsed_seconds": 21.79524540901184,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "70bf447fe0dd9ec03b37037aafd69e0dbb7990e02decb9b82c3585914129f44c",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "ee091b979d19a22f85481e584a3eb93b1fff0256c1e81545cdad39b0998be4da"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+      "dataset_sha256": "ed0a779dd43de803aaeb2d987e38092edcf9387359596d19a4cda476ee25d772",
+      "elapsed_seconds": 21.640334606170654,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "53d80fa8d10c330ddd051c99c050b6f12f7a20cc77aae1f39d8b0b56106b0a87",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "a1cded8b331b14a1881ff110094e681170c9d8f2c343a8865819cbb850e53657"
+    },
+    {
+      "BOUNDARY_LEAKAGE": false,
+      "DETERMINISTIC": true,
+      "FINAL_OOS_LOCKED": false,
+      "LEAKAGE_DETECTED": false,
+      "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+      "dataset_sha256": "5c46942d797330185ce919e79cd1b94ac6ca11f25f4442c3a05963c174786ed3",
+      "elapsed_seconds": 21.383869647979736,
+      "errors": [],
+      "execution": {
+        "current_bar_used_for_execution": false,
+        "entry_index": 121,
+        "exit_index": null,
+        "signal_index": 120
+      },
+      "feature_hash": "b4ed3e8ab05ac8656c15ca4cc2015bd6f2766febe2d63ccead11f29e6ceacf2e",
+      "leakage_hash": "8ec244b71c74defd9bb5afd4817ca11924df43c3d6ba12a587ee8549909a0e64",
+      "purge_blocks": true,
+      "sentinel_ok": true,
+      "warmup_ok": true,
+      "window_hash": "57202bb507176292034b1834337b695abcefa1c6ea5524db7bc601cf79ec7e3f"
+    }
+  ],
+  "elapsed_seconds": 131.23380136489868,
+  "node": "Xavier-03",
+  "python": "3.6.8",
+  "registry_hash": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "repeats": 10,
+  "synthetic": {
+    "DETERMINISTIC": true,
+    "LEAKAGE_DETECTED": false,
+    "sentinel_ok": true
+  }
+}

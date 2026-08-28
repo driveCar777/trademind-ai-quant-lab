@@ -1,0 +1,2265 @@
+{
+  "success": true,
+  "strategy": "REGIME_SWITCH",
+  "symbol": "GOLD",
+  "start": "mt5-REGIME_SWITCH-H1",
+  "slippage_bps": 10,
+  "commission_bps": 5,
+  "initial_capital": 10000,
+  "profit": -12.19,
+  "max_drawdown": 17.67,
+  "win_rate": 25.3,
+  "total_trades": 166,
+  "final_equity": 8780.58,
+  "sharpe_ratio": -1.1389,
+  "sortino_ratio": -1.5537,
+  "calmar_ratio": -0.092,
+  "profit_factor": 0.75,
+  "avg_trade_duration": 0,
+  "max_consecutive_wins": 0,
+  "max_consecutive_losses": 0,
+  "equity_curve": [
+    10000.0,
+    10000.0,
+    9959.21,
+    9915.05,
+    9769.53,
+    9874.49,
+    9677.16,
+    9593.51,
+    9515.14,
+    9364.76,
+    9364.76,
+    9319.84,
+    9305.82,
+    9098.34,
+    9098.34,
+    9095.56,
+    8988.69,
+    8984.82,
+    8868.71,
+    8733.99,
+    8722.66,
+    8983.47,
+    9033.73,
+    8785.61,
+    8733.85,
+    8733.85,
+    8812.62,
+    8618.94,
+    8726.05,
+    8928.81,
+    8756.77,
+    8720.66,
+    8580.38,
+    8580.38,
+    8457.0,
+    8429.62,
+    8692.63,
+    8562.19,
+    8423.32,
+    8567.18,
+    8390.58,
+    8258.33,
+    8643.54,
+    8775.21,
+    8791.76,
+    8693.7,
+    8588.94,
+    8499.0,
+    8509.41,
+    8794.03
+  ],
+  "trades": [
+    {
+      "type": "BUY",
+      "idx": 43,
+      "price": 4682.66799,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 53,
+      "price": 4665.89943,
+      "pnl_pct": -0.36,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 99,
+      "price": 4583.66909,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 100,
+      "price": 4560.20523,
+      "pnl_pct": -0.51,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 111,
+      "price": 4615.28067,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 126,
+      "price": 4600.15524,
+      "pnl_pct": -0.33,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 127,
+      "price": 4599.20461,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 130,
+      "price": 4558.07736,
+      "pnl_pct": -0.89,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 132,
+      "price": 4583.18861,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 150,
+      "price": 4583.96145,
+      "pnl_pct": 0.02,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 175,
+      "price": 4562.93838,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 177,
+      "price": 4539.07638,
+      "pnl_pct": -0.52,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 178,
+      "price": 4567.25269,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 180,
+      "price": 4574.66076,
+      "pnl_pct": 0.16,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 191,
+      "price": 4630.55593,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 233,
+      "price": 4682.313,
+      "pnl_pct": 1.12,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 237,
+      "price": 4727.46274,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 238,
+      "price": 4708.46682,
+      "pnl_pct": -0.4,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 239,
+      "price": 4724.20949,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 240,
+      "price": 4706.25903,
+      "pnl_pct": -0.38,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 241,
+      "price": 4732.14742,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 243,
+      "price": 4703.0922,
+      "pnl_pct": -0.61,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 249,
+      "price": 4752.60786,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 250,
+      "price": 4711.03425,
+      "pnl_pct": -0.87,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 271,
+      "price": 4704.52983,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 272,
+      "price": 4731.42384,
+      "pnl_pct": 0.57,
+      "regime": "up"
+    },
+    {
+      "type": "BUY",
+      "idx": 284,
+      "price": 4734.70998,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 285,
+      "price": 4715.35992,
+      "pnl_pct": -0.41,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 300,
+      "price": 4700.60591,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 317,
+      "price": 4679.0163,
+      "pnl_pct": -0.46,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 320,
+      "price": 4700.0954,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 322,
+      "price": 4680.75456,
+      "pnl_pct": -0.41,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 324,
+      "price": 4692.7881,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 331,
+      "price": 4670.13519,
+      "pnl_pct": -0.48,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 332,
+      "price": 4707.01231,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 346,
+      "price": 4666.85847,
+      "pnl_pct": -0.85,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 447,
+      "price": 4542.8383,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 448,
+      "price": 4523.31216,
+      "pnl_pct": -0.43,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 451,
+      "price": 4536.91238,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 452,
+      "price": 4525.99947,
+      "pnl_pct": -0.24,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 455,
+      "price": 4508.44394,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 480,
+      "price": 4496.00949,
+      "pnl_pct": -0.28,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 481,
+      "price": 4524.42991,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 485,
+      "price": 4503.62187,
+      "pnl_pct": -0.46,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 486,
+      "price": 4513.68918,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 487,
+      "price": 4560.30513,
+      "pnl_pct": 1.03,
+      "regime": "up"
+    },
+    {
+      "type": "BUY",
+      "idx": 491,
+      "price": 4565.81125,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 511,
+      "price": 4554.9405,
+      "pnl_pct": -0.24,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 512,
+      "price": 4553.99945,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 516,
+      "price": 4520.76471,
+      "pnl_pct": -0.73,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 517,
+      "price": 4531.67715,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 520,
+      "price": 4519.05642,
+      "pnl_pct": -0.28,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 522,
+      "price": 4538.91438,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 523,
+      "price": 4502.52297,
+      "pnl_pct": -0.8,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 572,
+      "price": 4473.65919,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 573,
+      "price": 4477.70781,
+      "pnl_pct": 0.09,
+      "regime": "up"
+    },
+    {
+      "type": "BUY",
+      "idx": 583,
+      "price": 4506.17167,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 617,
+      "price": 4445.59995,
+      "pnl_pct": -1.34,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 630,
+      "price": 4503.68919,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 631,
+      "price": 4512.72276,
+      "pnl_pct": 0.2,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 674,
+      "price": 4470.12566,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 675,
+      "price": 4470.43509,
+      "pnl_pct": 0.01,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 702,
+      "price": 4457.27282,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 708,
+      "price": 4401.87372,
+      "pnl_pct": -1.24,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 747,
+      "price": 4347.67333,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 748,
+      "price": 4326.21945,
+      "pnl_pct": -0.49,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 751,
+      "price": 4336.52219,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 756,
+      "price": 4296.11958,
+      "pnl_pct": -0.93,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 813,
+      "price": 4195.44125,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 876,
+      "price": 4329.58608,
+      "pnl_pct": 3.2,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 895,
+      "price": 4367.63327,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 898,
+      "price": 4281.92379,
+      "pnl_pct": -1.96,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 904,
+      "price": 4322.06775,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 908,
+      "price": 4303.692,
+      "pnl_pct": -0.43,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 973,
+      "price": 4165.19103,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 974,
+      "price": 4142.72313,
+      "pnl_pct": -0.54,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1049,
+      "price": 4034.86083,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1072,
+      "price": 4042.87308,
+      "pnl_pct": 0.2,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1073,
+      "price": 4035.42139,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1078,
+      "price": 4021.48449,
+      "pnl_pct": -0.35,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1093,
+      "price": 4033.36934,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1095,
+      "price": 4011.54444,
+      "pnl_pct": -0.54,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1096,
+      "price": 4027.59357,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1099,
+      "price": 4005.75024,
+      "pnl_pct": -0.54,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1100,
+      "price": 4032.8288,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1106,
+      "price": 4011.89409,
+      "pnl_pct": -0.52,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1120,
+      "price": 4002.18819,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1121,
+      "price": 4026.33963,
+      "pnl_pct": 0.6,
+      "regime": "up"
+    },
+    {
+      "type": "BUY",
+      "idx": 1122,
+      "price": 4026.7227,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1123,
+      "price": 4084.911,
+      "pnl_pct": 1.45,
+      "regime": "up"
+    },
+    {
+      "type": "BUY",
+      "idx": 1128,
+      "price": 4066.03197,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1193,
+      "price": 4133.81205,
+      "pnl_pct": 1.67,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1194,
+      "price": 4152.39825,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1202,
+      "price": 4141.69416,
+      "pnl_pct": -0.26,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1213,
+      "price": 4160.69654,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1220,
+      "price": 4122.80307,
+      "pnl_pct": -0.91,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1230,
+      "price": 4131.83771,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1232,
+      "price": 4116.85902,
+      "pnl_pct": -0.36,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1265,
+      "price": 4140.15602,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1277,
+      "price": 4107.45843,
+      "pnl_pct": -0.79,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1279,
+      "price": 4101.96787,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1292,
+      "price": 4072.18374,
+      "pnl_pct": -0.73,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1352,
+      "price": 4071.69763,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1355,
+      "price": 4042.78317,
+      "pnl_pct": -0.71,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1357,
+      "price": 4066.25219,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1363,
+      "price": 4040.48547,
+      "pnl_pct": -0.63,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1400,
+      "price": 4005.03103,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1401,
+      "price": 4014.89109,
+      "pnl_pct": 0.25,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1417,
+      "price": 4022.84883,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1421,
+      "price": 4003.98201,
+      "pnl_pct": -0.47,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1432,
+      "price": 4028.65463,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1484,
+      "price": 4114.24164,
+      "pnl_pct": 2.12,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1485,
+      "price": 4099.41532,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1489,
+      "price": 4081.34457,
+      "pnl_pct": -0.44,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1527,
+      "price": 4094.97088,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1537,
+      "price": 4069.69623,
+      "pnl_pct": -0.62,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1540,
+      "price": 4086.35227,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1541,
+      "price": 4072.08384,
+      "pnl_pct": -0.35,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1547,
+      "price": 4061.92787,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1548,
+      "price": 4041.01494,
+      "pnl_pct": -0.51,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1586,
+      "price": 4031.17715,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1588,
+      "price": 4102.07382,
+      "pnl_pct": 1.76,
+      "regime": "up"
+    },
+    {
+      "type": "BUY",
+      "idx": 1592,
+      "price": 4088.3843,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1597,
+      "price": 4041.77418,
+      "pnl_pct": -1.14,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1601,
+      "price": 4065.4614,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1618,
+      "price": 4071.89403,
+      "pnl_pct": 0.16,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1620,
+      "price": 4083.99992,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1621,
+      "price": 4070.24568,
+      "pnl_pct": -0.34,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1625,
+      "price": 4059.07502,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1628,
+      "price": 4036.52943,
+      "pnl_pct": -0.56,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1633,
+      "price": 4057.61356,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1634,
+      "price": 4046.5494,
+      "pnl_pct": -0.27,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1637,
+      "price": 4067.45339,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1649,
+      "price": 4045.11084,
+      "pnl_pct": -0.55,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1650,
+      "price": 4066.43237,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1651,
+      "price": 4043.56239,
+      "pnl_pct": -0.56,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1658,
+      "price": 4055.82177,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1673,
+      "price": 4070.66526,
+      "pnl_pct": 0.37,
+      "regime": "up"
+    },
+    {
+      "type": "BUY",
+      "idx": 1674,
+      "price": 4074.84077,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1683,
+      "price": 4071.36456,
+      "pnl_pct": -0.09,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1685,
+      "price": 4086.27219,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1784,
+      "price": 4353.09255,
+      "pnl_pct": 6.53,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1785,
+      "price": 4373.25889,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1794,
+      "price": 4364.66097,
+      "pnl_pct": -0.2,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1801,
+      "price": 4400.51612,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1816,
+      "price": 4397.07852,
+      "pnl_pct": -0.08,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1818,
+      "price": 4417.42301,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1820,
+      "price": 4403.93166,
+      "pnl_pct": -0.31,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1822,
+      "price": 4418.63422,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1824,
+      "price": 4403.95164,
+      "pnl_pct": -0.33,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1828,
+      "price": 4387.43305,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1830,
+      "price": 4365.57006,
+      "pnl_pct": -0.5,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1832,
+      "price": 4388.7844,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1836,
+      "price": 4368.53709,
+      "pnl_pct": -0.46,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1837,
+      "price": 4387.85347,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1838,
+      "price": 4360.52511,
+      "pnl_pct": -0.62,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1857,
+      "price": 4373.37901,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1859,
+      "price": 4379.616,
+      "pnl_pct": 0.14,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1871,
+      "price": 4397.40301,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1881,
+      "price": 4380.44517,
+      "pnl_pct": -0.39,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1882,
+      "price": 4412.66826,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1894,
+      "price": 4395.53007,
+      "pnl_pct": -0.39,
+      "regime": "range"
+    },
+    {
+      "type": "BUY",
+      "idx": 1925,
+      "price": 4371.58722,
+      "regime": "range"
+    },
+    {
+      "type": "SELL",
+      "idx": 1926,
+      "price": 4360.21542,
+      "pnl_pct": -0.26,
+      "regime": "down"
+    },
+    {
+      "type": "BUY",
+      "idx": 1933,
+      "price": 4499.53504,
+      "regime": "up"
+    },
+    {
+      "type": "SELL",
+      "idx": 1999,
+      "price": 4665.39993,
+      "pnl_pct": 3.69,
+      "regime": "up"
+    }
+  ],
+  "cut": 1400,
+  "is": {
+    "profit": -15.43,
+    "max_drawdown": 15.6,
+    "total_trades": 106,
+    "trades": [
+      {
+        "type": "BUY",
+        "idx": 43,
+        "price": 4682.66799,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 53,
+        "price": 4665.89943,
+        "pnl_pct": -0.36,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 99,
+        "price": 4583.66909,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 100,
+        "price": 4560.20523,
+        "pnl_pct": -0.51,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 111,
+        "price": 4615.28067,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 126,
+        "price": 4600.15524,
+        "pnl_pct": -0.33,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 127,
+        "price": 4599.20461,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 130,
+        "price": 4558.07736,
+        "pnl_pct": -0.89,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 132,
+        "price": 4583.18861,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 150,
+        "price": 4583.96145,
+        "pnl_pct": 0.02,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 175,
+        "price": 4562.93838,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 177,
+        "price": 4539.07638,
+        "pnl_pct": -0.52,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 178,
+        "price": 4567.25269,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 180,
+        "price": 4574.66076,
+        "pnl_pct": 0.16,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 191,
+        "price": 4630.55593,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 233,
+        "price": 4682.313,
+        "pnl_pct": 1.12,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 237,
+        "price": 4727.46274,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 238,
+        "price": 4708.46682,
+        "pnl_pct": -0.4,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 239,
+        "price": 4724.20949,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 240,
+        "price": 4706.25903,
+        "pnl_pct": -0.38,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 241,
+        "price": 4732.14742,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 243,
+        "price": 4703.0922,
+        "pnl_pct": -0.61,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 249,
+        "price": 4752.60786,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 250,
+        "price": 4711.03425,
+        "pnl_pct": -0.87,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 271,
+        "price": 4704.52983,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 272,
+        "price": 4731.42384,
+        "pnl_pct": 0.57,
+        "regime": "up"
+      },
+      {
+        "type": "BUY",
+        "idx": 284,
+        "price": 4734.70998,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 285,
+        "price": 4715.35992,
+        "pnl_pct": -0.41,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 300,
+        "price": 4700.60591,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 317,
+        "price": 4679.0163,
+        "pnl_pct": -0.46,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 320,
+        "price": 4700.0954,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 322,
+        "price": 4680.75456,
+        "pnl_pct": -0.41,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 324,
+        "price": 4692.7881,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 331,
+        "price": 4670.13519,
+        "pnl_pct": -0.48,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 332,
+        "price": 4707.01231,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 346,
+        "price": 4666.85847,
+        "pnl_pct": -0.85,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 447,
+        "price": 4542.8383,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 448,
+        "price": 4523.31216,
+        "pnl_pct": -0.43,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 451,
+        "price": 4536.91238,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 452,
+        "price": 4525.99947,
+        "pnl_pct": -0.24,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 455,
+        "price": 4508.44394,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 480,
+        "price": 4496.00949,
+        "pnl_pct": -0.28,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 481,
+        "price": 4524.42991,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 485,
+        "price": 4503.62187,
+        "pnl_pct": -0.46,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 486,
+        "price": 4513.68918,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 487,
+        "price": 4560.30513,
+        "pnl_pct": 1.03,
+        "regime": "up"
+      },
+      {
+        "type": "BUY",
+        "idx": 491,
+        "price": 4565.81125,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 511,
+        "price": 4554.9405,
+        "pnl_pct": -0.24,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 512,
+        "price": 4553.99945,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 516,
+        "price": 4520.76471,
+        "pnl_pct": -0.73,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 517,
+        "price": 4531.67715,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 520,
+        "price": 4519.05642,
+        "pnl_pct": -0.28,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 522,
+        "price": 4538.91438,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 523,
+        "price": 4502.52297,
+        "pnl_pct": -0.8,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 572,
+        "price": 4473.65919,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 573,
+        "price": 4477.70781,
+        "pnl_pct": 0.09,
+        "regime": "up"
+      },
+      {
+        "type": "BUY",
+        "idx": 583,
+        "price": 4506.17167,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 617,
+        "price": 4445.59995,
+        "pnl_pct": -1.34,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 630,
+        "price": 4503.68919,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 631,
+        "price": 4512.72276,
+        "pnl_pct": 0.2,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 674,
+        "price": 4470.12566,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 675,
+        "price": 4470.43509,
+        "pnl_pct": 0.01,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 702,
+        "price": 4457.27282,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 708,
+        "price": 4401.87372,
+        "pnl_pct": -1.24,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 747,
+        "price": 4347.67333,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 748,
+        "price": 4326.21945,
+        "pnl_pct": -0.49,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 751,
+        "price": 4336.52219,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 756,
+        "price": 4296.11958,
+        "pnl_pct": -0.93,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 813,
+        "price": 4195.44125,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 876,
+        "price": 4329.58608,
+        "pnl_pct": 3.2,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 895,
+        "price": 4367.63327,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 898,
+        "price": 4281.92379,
+        "pnl_pct": -1.96,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 904,
+        "price": 4322.06775,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 908,
+        "price": 4303.692,
+        "pnl_pct": -0.43,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 973,
+        "price": 4165.19103,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 974,
+        "price": 4142.72313,
+        "pnl_pct": -0.54,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1049,
+        "price": 4034.86083,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1072,
+        "price": 4042.87308,
+        "pnl_pct": 0.2,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1073,
+        "price": 4035.42139,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1078,
+        "price": 4021.48449,
+        "pnl_pct": -0.35,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1093,
+        "price": 4033.36934,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1095,
+        "price": 4011.54444,
+        "pnl_pct": -0.54,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1096,
+        "price": 4027.59357,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1099,
+        "price": 4005.75024,
+        "pnl_pct": -0.54,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1100,
+        "price": 4032.8288,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1106,
+        "price": 4011.89409,
+        "pnl_pct": -0.52,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1120,
+        "price": 4002.18819,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1121,
+        "price": 4026.33963,
+        "pnl_pct": 0.6,
+        "regime": "up"
+      },
+      {
+        "type": "BUY",
+        "idx": 1122,
+        "price": 4026.7227,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1123,
+        "price": 4084.911,
+        "pnl_pct": 1.45,
+        "regime": "up"
+      },
+      {
+        "type": "BUY",
+        "idx": 1128,
+        "price": 4066.03197,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1193,
+        "price": 4133.81205,
+        "pnl_pct": 1.67,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1194,
+        "price": 4152.39825,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1202,
+        "price": 4141.69416,
+        "pnl_pct": -0.26,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1213,
+        "price": 4160.69654,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1220,
+        "price": 4122.80307,
+        "pnl_pct": -0.91,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1230,
+        "price": 4131.83771,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1232,
+        "price": 4116.85902,
+        "pnl_pct": -0.36,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1265,
+        "price": 4140.15602,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1277,
+        "price": 4107.45843,
+        "pnl_pct": -0.79,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1279,
+        "price": 4101.96787,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1292,
+        "price": 4072.18374,
+        "pnl_pct": -0.73,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1352,
+        "price": 4071.69763,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1355,
+        "price": 4042.78317,
+        "pnl_pct": -0.71,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1357,
+        "price": 4066.25219,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1363,
+        "price": 4040.48547,
+        "pnl_pct": -0.63,
+        "regime": "range"
+      }
+    ]
+  },
+  "oos": {
+    "profit": 3.83,
+    "max_drawdown": 6.26,
+    "total_trades": 60,
+    "trades": [
+      {
+        "type": "BUY",
+        "idx": 1400,
+        "price": 4005.03103,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1401,
+        "price": 4014.89109,
+        "pnl_pct": 0.25,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1417,
+        "price": 4022.84883,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1421,
+        "price": 4003.98201,
+        "pnl_pct": -0.47,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1432,
+        "price": 4028.65463,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1484,
+        "price": 4114.24164,
+        "pnl_pct": 2.12,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1485,
+        "price": 4099.41532,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1489,
+        "price": 4081.34457,
+        "pnl_pct": -0.44,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1527,
+        "price": 4094.97088,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1537,
+        "price": 4069.69623,
+        "pnl_pct": -0.62,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1540,
+        "price": 4086.35227,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1541,
+        "price": 4072.08384,
+        "pnl_pct": -0.35,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1547,
+        "price": 4061.92787,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1548,
+        "price": 4041.01494,
+        "pnl_pct": -0.51,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1586,
+        "price": 4031.17715,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1588,
+        "price": 4102.07382,
+        "pnl_pct": 1.76,
+        "regime": "up"
+      },
+      {
+        "type": "BUY",
+        "idx": 1592,
+        "price": 4088.3843,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1597,
+        "price": 4041.77418,
+        "pnl_pct": -1.14,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1601,
+        "price": 4065.4614,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1618,
+        "price": 4071.89403,
+        "pnl_pct": 0.16,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1620,
+        "price": 4083.99992,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1621,
+        "price": 4070.24568,
+        "pnl_pct": -0.34,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1625,
+        "price": 4059.07502,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1628,
+        "price": 4036.52943,
+        "pnl_pct": -0.56,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1633,
+        "price": 4057.61356,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1634,
+        "price": 4046.5494,
+        "pnl_pct": -0.27,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1637,
+        "price": 4067.45339,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1649,
+        "price": 4045.11084,
+        "pnl_pct": -0.55,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1650,
+        "price": 4066.43237,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1651,
+        "price": 4043.56239,
+        "pnl_pct": -0.56,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1658,
+        "price": 4055.82177,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1673,
+        "price": 4070.66526,
+        "pnl_pct": 0.37,
+        "regime": "up"
+      },
+      {
+        "type": "BUY",
+        "idx": 1674,
+        "price": 4074.84077,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1683,
+        "price": 4071.36456,
+        "pnl_pct": -0.09,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1685,
+        "price": 4086.27219,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1784,
+        "price": 4353.09255,
+        "pnl_pct": 6.53,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1785,
+        "price": 4373.25889,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1794,
+        "price": 4364.66097,
+        "pnl_pct": -0.2,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1801,
+        "price": 4400.51612,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1816,
+        "price": 4397.07852,
+        "pnl_pct": -0.08,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1818,
+        "price": 4417.42301,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1820,
+        "price": 4403.93166,
+        "pnl_pct": -0.31,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1822,
+        "price": 4418.63422,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1824,
+        "price": 4403.95164,
+        "pnl_pct": -0.33,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1828,
+        "price": 4387.43305,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1830,
+        "price": 4365.57006,
+        "pnl_pct": -0.5,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1832,
+        "price": 4388.7844,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1836,
+        "price": 4368.53709,
+        "pnl_pct": -0.46,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1837,
+        "price": 4387.85347,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1838,
+        "price": 4360.52511,
+        "pnl_pct": -0.62,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1857,
+        "price": 4373.37901,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1859,
+        "price": 4379.616,
+        "pnl_pct": 0.14,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1871,
+        "price": 4397.40301,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1881,
+        "price": 4380.44517,
+        "pnl_pct": -0.39,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1882,
+        "price": 4412.66826,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1894,
+        "price": 4395.53007,
+        "pnl_pct": -0.39,
+        "regime": "range"
+      },
+      {
+        "type": "BUY",
+        "idx": 1925,
+        "price": 4371.58722,
+        "regime": "range"
+      },
+      {
+        "type": "SELL",
+        "idx": 1926,
+        "price": 4360.21542,
+        "pnl_pct": -0.26,
+        "regime": "down"
+      },
+      {
+        "type": "BUY",
+        "idx": 1933,
+        "price": 4499.53504,
+        "regime": "up"
+      },
+      {
+        "type": "SELL",
+        "idx": 1999,
+        "price": 4665.39993,
+        "pnl_pct": 3.69,
+        "regime": "up"
+      }
+    ]
+  },
+  "regime_counts": {
+    "up": 687,
+    "down": 735,
+    "range": 578
+  },
+  "regime_counts_is": {
+    "up": 356,
+    "down": 612,
+    "range": 432
+  },
+  "regime_counts_oos": {
+    "up": 331,
+    "down": 123,
+    "range": 146
+  },
+  "calculation_time_ms": 92.121,
+  "timestamp": "2026-08-24T15:22:57.401664"
+}

@@ -1,0 +1,12 @@
+﻿# TradeMind Master API v1.1 - Python 3.8+
+# Windows direct run (Python 3.13 requires pydantic v2)
+
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.4
+pydantic-settings==2.7.0
+pyyaml==6.0.1
+requests==2.31.0
+
+pytest==7.4.4
+httpx==0.28.1

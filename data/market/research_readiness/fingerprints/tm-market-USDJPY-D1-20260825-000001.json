@@ -1,0 +1,13 @@
+{
+  "first_close": 107.294,
+  "first_timestamp": "2020-04-01T00:00:00Z",
+  "last_close": 159.29,
+  "last_timestamp": "2026-08-25T00:00:00Z",
+  "mean_ATR14": 0.97820889352218,
+  "mean_return": 0.00021125094323458488,
+  "mean_tick_volume": 68427.0725,
+  "profile_hash": "4dca242880d0f6055a3e3da2e87b935d71968920f6d1c6bfbacee4b02262737c",
+  "row_count": 2000,
+  "sha256": "c00389ce1cbeeed3e1ceb9a09e549fa8335556cf2fd8c644db8f8a44f7ce3ad7",
+  "std_return": 0.0052023168631225684
+}

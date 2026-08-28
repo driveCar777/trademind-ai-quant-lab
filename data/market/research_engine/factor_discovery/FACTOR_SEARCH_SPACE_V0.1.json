@@ -1,0 +1,1183 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "bootstrap_iterations": 200,
+  "candidate_count": 57,
+  "candidates": [
+    {
+      "candidate_id": "FD-V01-0001-RET_1_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "ret",
+      "name": "RET_1_HIGH",
+      "params": {
+        "n": 1
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RET_3_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "ret",
+      "name": "RET_3_HIGH",
+      "params": {
+        "n": 3
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RET_5_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "ret",
+      "name": "RET_5_HIGH",
+      "params": {
+        "n": 5
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RET_8_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "ret",
+      "name": "RET_8_HIGH",
+      "params": {
+        "n": 8
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RET_10_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "ret",
+      "name": "RET_10_HIGH",
+      "params": {
+        "n": 10
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RET_20_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "ret",
+      "name": "RET_20_HIGH",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-SIGNCONS_3-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "sign_cons",
+      "name": "SIGNCONS_3",
+      "params": {
+        "n": 3
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-SIGNCONS_5-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "sign_cons",
+      "name": "SIGNCONS_5",
+      "params": {
+        "n": 5
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-SIGNCONS_8-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "sign_cons",
+      "name": "SIGNCONS_8",
+      "params": {
+        "n": 8
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-ACCEL_5_20-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 1,
+      "kind": "accel",
+      "name": "ACCEL_5_20",
+      "params": {
+        "long": 20,
+        "short": 5
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RET_5_HIGH_H3-H3-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "horizon": 3,
+      "kind": "ret",
+      "name": "RET_5_HIGH_H3",
+      "params": {
+        "n": 5
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-DISTMEAN_10_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "dist_mean",
+      "name": "DISTMEAN_10_HIGH",
+      "params": {
+        "n": 10
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGEPOS_10_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "range_pos",
+      "name": "RANGEPOS_10_HIGH",
+      "params": {
+        "n": 10
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGEPOS_10_LOW-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "range_pos",
+      "name": "RANGEPOS_10_LOW",
+      "params": {
+        "n": 10
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-DISTMEAN_20_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "dist_mean",
+      "name": "DISTMEAN_20_HIGH",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGEPOS_20_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "range_pos",
+      "name": "RANGEPOS_20_HIGH",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGEPOS_20_LOW-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "range_pos",
+      "name": "RANGEPOS_20_LOW",
+      "params": {
+        "n": 20
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-DISTMEAN_40_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "dist_mean",
+      "name": "DISTMEAN_40_HIGH",
+      "params": {
+        "n": 40
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGEPOS_40_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "range_pos",
+      "name": "RANGEPOS_40_HIGH",
+      "params": {
+        "n": 40
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGEPOS_40_LOW-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "range_pos",
+      "name": "RANGEPOS_40_LOW",
+      "params": {
+        "n": 40
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-ZDIST_20_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "z_dist",
+      "name": "ZDIST_20_HIGH",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-CLOSELOC_20_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "close_loc",
+      "name": "CLOSELOC_20_HIGH",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-EXTREME_ABSRET-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 1,
+      "kind": "abs_ret",
+      "name": "EXTREME_ABSRET",
+      "params": {
+        "n": 1
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-DISTMEAN_20_HIGH_H3-H3-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "horizon": 3,
+      "kind": "dist_mean",
+      "name": "DISTMEAN_20_HIGH_H3",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGE_10_HIGH_RET-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "roll_range",
+      "name": "RANGE_10_HIGH_RET",
+      "params": {
+        "n": 10
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGE_10_HIGH_ABS-H1-future_abs_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "roll_range",
+      "name": "RANGE_10_HIGH_ABS",
+      "params": {
+        "n": 10
+      },
+      "side": "high",
+      "target": "future_abs_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGE_10_LOW_ABS-H1-future_abs_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "roll_range",
+      "name": "RANGE_10_LOW_ABS",
+      "params": {
+        "n": 10
+      },
+      "side": "low",
+      "target": "future_abs_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGE_20_HIGH_RET-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "roll_range",
+      "name": "RANGE_20_HIGH_RET",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGE_20_HIGH_ABS-H1-future_abs_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "roll_range",
+      "name": "RANGE_20_HIGH_ABS",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_abs_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RANGE_20_LOW_ABS-H1-future_abs_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "roll_range",
+      "name": "RANGE_20_LOW_ABS",
+      "params": {
+        "n": 20
+      },
+      "side": "low",
+      "target": "future_abs_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-TR_14_HIGH_ABS-H1-future_abs_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "tr_like",
+      "name": "TR_14_HIGH_ABS",
+      "params": {
+        "n": 14
+      },
+      "side": "high",
+      "target": "future_abs_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-VOLRATIO_5_20_HIGH-H1-future_abs_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "vol_ratio",
+      "name": "VOLRATIO_5_20_HIGH",
+      "params": {
+        "long": 20,
+        "short": 5
+      },
+      "side": "high",
+      "target": "future_abs_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-VOLRATIO_5_20_LOW-H1-future_abs_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOL-0001",
+      "horizon": 1,
+      "kind": "vol_ratio",
+      "name": "VOLRATIO_5_20_LOW",
+      "params": {
+        "long": 20,
+        "short": 5
+      },
+      "side": "low",
+      "target": "future_abs_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-DISTHIGH_20-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "horizon": 1,
+      "kind": "dist_high",
+      "name": "DISTHIGH_20",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-DISTLOW_20-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "horizon": 1,
+      "kind": "dist_low",
+      "name": "DISTLOW_20",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-DISTHIGH_40-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "horizon": 1,
+      "kind": "dist_high",
+      "name": "DISTHIGH_40",
+      "params": {
+        "n": 40
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-DISTLOW_40-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "horizon": 1,
+      "kind": "dist_low",
+      "name": "DISTLOW_40",
+      "params": {
+        "n": 40
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-NEARHIGH_20-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "horizon": 1,
+      "kind": "dist_high",
+      "name": "NEARHIGH_20",
+      "params": {
+        "n": 20
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-NEARLOW_20-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "horizon": 1,
+      "kind": "dist_low",
+      "name": "NEARLOW_20",
+      "params": {
+        "n": 20
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-EFF_10_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "horizon": 1,
+      "kind": "efficiency",
+      "name": "EFF_10_HIGH",
+      "params": {
+        "n": 10
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-EFF_10_LOW-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "horizon": 1,
+      "kind": "efficiency",
+      "name": "EFF_10_LOW",
+      "params": {
+        "n": 10
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-EFF_20_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "horizon": 1,
+      "kind": "efficiency",
+      "name": "EFF_20_HIGH",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-EFF_20_LOW-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "horizon": 1,
+      "kind": "efficiency",
+      "name": "EFF_20_LOW",
+      "params": {
+        "n": 20
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-EFF_40_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "horizon": 1,
+      "kind": "efficiency",
+      "name": "EFF_40_HIGH",
+      "params": {
+        "n": 40
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-EFF_40_LOW-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "horizon": 1,
+      "kind": "efficiency",
+      "name": "EFF_40_LOW",
+      "params": {
+        "n": 40
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-TVZ_20_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOLUME-0001",
+      "horizon": 1,
+      "kind": "tickvol_z",
+      "name": "TVZ_20_HIGH",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "volume_type": "tick_volume"
+    },
+    {
+      "candidate_id": "FD-V01-0001-TVZ_20_LOW-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOLUME-0001",
+      "horizon": 1,
+      "kind": "tickvol_z",
+      "name": "TVZ_20_LOW",
+      "params": {
+        "n": 20
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "volume_type": "tick_volume"
+    },
+    {
+      "candidate_id": "FD-V01-0001-TVRATIO_5_20_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOLUME-0001",
+      "horizon": 1,
+      "kind": "tickvol_ratio",
+      "name": "TVRATIO_5_20_HIGH",
+      "params": {
+        "long": 20,
+        "short": 5
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "volume_type": "tick_volume"
+    },
+    {
+      "candidate_id": "FD-V01-0001-PV_ALIGN-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-VOLUME-0001",
+      "horizon": 1,
+      "kind": "pv_align",
+      "name": "PV_ALIGN",
+      "params": {
+        "n": 5
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "volume_type": "tick_volume"
+    },
+    {
+      "candidate_id": "FD-V01-0001-SPREADZ_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-SPREAD-0001",
+      "horizon": 1,
+      "kind": "spread_z",
+      "name": "SPREADZ_HIGH",
+      "params": {
+        "n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-SPREADZ_LOW-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-SPREAD-0001",
+      "horizon": 1,
+      "kind": "spread_z",
+      "name": "SPREADZ_LOW",
+      "params": {
+        "n": 20
+      },
+      "side": "low",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-RET5_HIGH_IN_LOW_SPREAD-H1-future_return",
+      "causal": true,
+      "combo": true,
+      "family_id": "FAM-FD-SPREAD-0001",
+      "horizon": 1,
+      "kind": "combo_ret_spread",
+      "name": "RET5_HIGH_IN_LOW_SPREAD",
+      "params": {
+        "n": 5,
+        "spread_n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-HTF_RET_HIGH-H1-future_return",
+      "causal": true,
+      "combo": false,
+      "family_id": "FAM-FD-MTF-0001",
+      "horizon": 1,
+      "kind": "htf_ret",
+      "name": "HTF_RET_HIGH",
+      "params": {
+        "group": 4
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-M15RET5_AND_HTF-H1-future_return",
+      "causal": true,
+      "combo": true,
+      "family_id": "FAM-FD-MTF-0001",
+      "horizon": 1,
+      "kind": "combo_m15_htf",
+      "name": "M15RET5_AND_HTF",
+      "params": {
+        "group": 4,
+        "n": 5
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-M15REV_IN_HTF-H1-future_return",
+      "causal": true,
+      "combo": true,
+      "family_id": "FAM-FD-MTF-0001",
+      "horizon": 1,
+      "kind": "combo_m15rev_htf",
+      "name": "M15REV_IN_HTF",
+      "params": {
+        "group": 4,
+        "n": 5
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-MOM5_AND_VOLHIGH-H1-future_return",
+      "causal": true,
+      "combo": true,
+      "family_id": "FAM-FD-COMBO-0001",
+      "horizon": 1,
+      "kind": "combo_ret_range",
+      "name": "MOM5_AND_VOLHIGH",
+      "params": {
+        "n": 5,
+        "range_n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    },
+    {
+      "candidate_id": "FD-V01-0001-EFF20_AND_NEARHIGH-H1-future_return",
+      "causal": true,
+      "combo": true,
+      "family_id": "FAM-FD-COMBO-0001",
+      "horizon": 1,
+      "kind": "combo_eff_nearhigh",
+      "name": "EFF20_AND_NEARHIGH",
+      "params": {
+        "eff_n": 20,
+        "high_n": 20
+      },
+      "side": "high",
+      "target": "future_return",
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ]
+    }
+  ],
+  "cost_model": "RAW_SPREAD_OVER_CLOSE_SCREEN_ONLY",
+  "discovery_id": "FACTOR_DISCOVERY_V0.1",
+  "execution_model": "NONE_PREDICTIVE_NOT_TRADE",
+  "families": [
+    "FAM-FD-MOMENTUM-0001",
+    "FAM-FD-REVERSAL-0001",
+    "FAM-FD-VOL-0001",
+    "FAM-FD-BREAKOUT-0001",
+    "FAM-FD-EFFICIENCY-0001",
+    "FAM-FD-VOLUME-0001",
+    "FAM-FD-SPREAD-0001",
+    "FAM-FD-MTF-0001",
+    "FAM-FD-COMBO-0001"
+  ],
+  "fdr_q": 0.05,
+  "note": "Screening contract. Not HYP-0001. Not a strategy.",
+  "permutation_iterations": 200,
+  "reserved_not_computed": [
+    {
+      "family_id": "FAM-FD-XASSET-0001",
+      "reason": "needs aligned cross-file timestamps",
+      "status": "DRAFT"
+    },
+    {
+      "family_id": "FAM-FD-NEWS-0001",
+      "reason": "no live news API this version",
+      "status": "DRAFT"
+    }
+  ],
+  "search_space_hash": "add0211ffb189d50639b656af1b009ac15849d9f3d426af8469f9700eb05dc5a",
+  "seed": 20260825,
+  "version": "0.1"
+}

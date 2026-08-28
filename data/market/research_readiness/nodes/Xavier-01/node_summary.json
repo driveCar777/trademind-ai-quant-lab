@@ -1,0 +1,54 @@
+{
+  "FAULT_INJECTION_PASS": true,
+  "FINAL_OOS_LOCKED": false,
+  "datasets": [
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "elapsed_seconds": 32.59714412689209,
+      "errors": [],
+      "profile_hash": "0b063463826df38f5605ce91d6c944cbc9cef0098b7fc4b32363493819aa678c",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+      "elapsed_seconds": 32.50416111946106,
+      "errors": [],
+      "profile_hash": "94af90fec6343b88b24692618ad5ef5279441ab3cef03c944722e82ffa0c25d3",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+      "elapsed_seconds": 32.29877066612244,
+      "errors": [],
+      "profile_hash": "6a1788fa6fb719dd47ed33e1f0707f13e052d314cade0ecac325511295380e1e",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "elapsed_seconds": 32.320249795913696,
+      "errors": [],
+      "profile_hash": "b4af3147e6cf97754383fc4dce9131421ea790b247dbda5dfb80964d6b37023f",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    }
+  ],
+  "elapsed_seconds": 141.495178937912,
+  "node": "Xavier-01",
+  "python": "3.6.9",
+  "repeats": 20
+}

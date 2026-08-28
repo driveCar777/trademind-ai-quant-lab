@@ -1,0 +1,152 @@
+[
+  {
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "mem_available_kb": 28844220,
+    "temps_c": {
+      "AO-therm": 36.0,
+      "AUX-therm": 35.5,
+      "CPU-therm": 38.5,
+      "GPU-therm": 36.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 38.75,
+      "thermal-fan-est": 36.55
+    },
+    "throttle_raw": "2265600",
+    "ts": "2026-08-25T13:31:14Z"
+  },
+  {
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "mem_available_kb": 28863600,
+    "temps_c": {
+      "AO-therm": 36.5,
+      "AUX-therm": 35.5,
+      "CPU-therm": 38.0,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 39.5,
+      "thermal-fan-est": 36.6
+    },
+    "throttle_raw": "2265600",
+    "ts": "2026-08-25T13:31:49Z"
+  },
+  {
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "mem_available_kb": 28862504,
+    "temps_c": {
+      "AO-therm": 36.5,
+      "AUX-therm": 36.0,
+      "CPU-therm": 38.0,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 39.75,
+      "thermal-fan-est": 36.75
+    },
+    "throttle_raw": "2265600",
+    "ts": "2026-08-25T13:32:23Z"
+  },
+  {
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "mem_available_kb": 28860796,
+    "temps_c": {
+      "AO-therm": 36.5,
+      "AUX-therm": 36.0,
+      "CPU-therm": 38.5,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 39.5,
+      "thermal-fan-est": 36.6
+    },
+    "throttle_raw": "2265600",
+    "ts": "2026-08-25T13:32:58Z"
+  },
+  {
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "mem_available_kb": 28862944,
+    "temps_c": {
+      "AO-therm": 36.5,
+      "AUX-therm": 36.0,
+      "CPU-therm": 38.0,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 39.5,
+      "thermal-fan-est": 36.9
+    },
+    "throttle_raw": "2265600",
+    "ts": "2026-08-25T13:33:32Z"
+  },
+  {
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "mem_available_kb": 28862928,
+    "temps_c": {
+      "AO-therm": 37.0,
+      "AUX-therm": 36.5,
+      "CPU-therm": 38.0,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 39.75,
+      "thermal-fan-est": 36.75
+    },
+    "throttle_raw": "2265600",
+    "ts": "2026-08-25T13:33:44Z"
+  }
+]

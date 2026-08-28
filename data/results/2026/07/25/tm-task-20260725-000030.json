@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "strategy": "SMA_CROSS",
+  "symbol": "600519",
+  "start": "2025-01-01",
+  "profit": 6.66,
+  "max_drawdown": 8.93,
+  "win_rate": 33.3,
+  "total_trades": 7,
+  "final_equity": 10665.73,
+  "calculation_time_ms": 7.18,
+  "timestamp": "2026-07-25T12:29:38.989554"
+}

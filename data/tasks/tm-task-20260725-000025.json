@@ -1,0 +1,22 @@
+{
+  "task_id": "tm-task-20260725-000025",
+  "worker_id": "worker-03",
+  "worker_type": "backtest-worker",
+  "status": "FAILED",
+  "created_at": "2026-07-25T12:23:37.902142Z",
+  "started_at": "2026-07-25T12:23:43.967477Z",
+  "finished_at": "2026-07-25T12:23:43.992109Z",
+  "duration_ms": 24,
+  "result_path": "results/2026/07/25/tm-task-20260725-000025.json",
+  "error": "{\"error\": \"Missing required fields: strategy, symbol, start\"}",
+  "request": {
+    "worker_type": "backtest-worker",
+    "indicator": "backtest",
+    "data": {
+      "strategy": "SMA_CROSS",
+      "symbol": "600519",
+      "start": "2025-01-01"
+    },
+    "params": {}
+  }
+}

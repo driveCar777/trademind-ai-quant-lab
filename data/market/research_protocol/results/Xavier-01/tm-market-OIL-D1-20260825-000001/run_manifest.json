@@ -1,0 +1,15 @@
+{
+  "dataset_hash": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+  "dataset_id": "tm-market-OIL-D1-20260825-000001",
+  "elapsed_seconds": 21.72162961959839,
+  "error": [],
+  "experiment_id": "PROTOCOL_SELF_TEST",
+  "feature_hash": "a6903c6130a1de1f78f8ff56b10e4241c200dbf3575e4998397bd8ba0262bbd9",
+  "finished_at_utc": null,
+  "node": "Xavier-01",
+  "protocol_hash": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "result_hash": "31415ecc373e02c390fbc02f1550f2abf999015a67b4ad8f2be0b467b6199c5c",
+  "run_id": "Xavier-01-tm-market-OIL-D1-20260825-000001",
+  "started_at_utc": null,
+  "status": "COMPLETED"
+}

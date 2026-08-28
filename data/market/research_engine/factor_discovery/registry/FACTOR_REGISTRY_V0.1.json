@@ -1,0 +1,1393 @@
+{
+  "discovery_id": "FACTOR_DISCOVERY_V0.1",
+  "factors": [
+    {
+      "causal": true,
+      "definition": "ret",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-RET_1_HIGH-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 1
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "ret",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-RET_3_HIGH-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 3
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "ret",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-RET_5_HIGH-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "ret",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-RET_8_HIGH-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 8
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "ret",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-RET_10_HIGH-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "ret",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-RET_20_HIGH-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "sign_cons",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-SIGNCONS_3-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 3
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "sign_cons",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-SIGNCONS_5-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "sign_cons",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-SIGNCONS_8-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 8
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "accel",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-ACCEL_5_20-H1-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "long": 20,
+        "short": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "ret",
+      "economic_rationale": "FAM-FD-MOMENTUM-0001",
+      "factor_id": "FD-V01-0001-RET_5_HIGH_H3-H3-future_return",
+      "family_id": "FAM-FD-MOMENTUM-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_mean",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-DISTMEAN_10_HIGH-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "range_pos",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-RANGEPOS_10_HIGH-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "range_pos",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-RANGEPOS_10_LOW-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_mean",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-DISTMEAN_20_HIGH-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "range_pos",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-RANGEPOS_20_HIGH-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "range_pos",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-RANGEPOS_20_LOW-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_mean",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-DISTMEAN_40_HIGH-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 40
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "range_pos",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-RANGEPOS_40_HIGH-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 40
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "range_pos",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-RANGEPOS_40_LOW-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 40
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "z_dist",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-ZDIST_20_HIGH-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "close_loc",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-CLOSELOC_20_HIGH-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "abs_ret",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-EXTREME_ABSRET-H1-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 1
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_mean",
+      "economic_rationale": "FAM-FD-REVERSAL-0001",
+      "factor_id": "FD-V01-0001-DISTMEAN_20_HIGH_H3-H3-future_return",
+      "family_id": "FAM-FD-REVERSAL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "roll_range",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-RANGE_10_HIGH_RET-H1-future_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "roll_range",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-RANGE_10_HIGH_ABS-H1-future_abs_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_abs_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "roll_range",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-RANGE_10_LOW_ABS-H1-future_abs_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_abs_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "roll_range",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-RANGE_20_HIGH_RET-H1-future_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "roll_range",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-RANGE_20_HIGH_ABS-H1-future_abs_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_abs_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "roll_range",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-RANGE_20_LOW_ABS-H1-future_abs_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_abs_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "tr_like",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-TR_14_HIGH_ABS-H1-future_abs_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 14
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_abs_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "vol_ratio",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-VOLRATIO_5_20_HIGH-H1-future_abs_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "long": 20,
+        "short": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_abs_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "vol_ratio",
+      "economic_rationale": "FAM-FD-VOL-0001",
+      "factor_id": "FD-V01-0001-VOLRATIO_5_20_LOW-H1-future_abs_return",
+      "family_id": "FAM-FD-VOL-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "long": 20,
+        "short": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_abs_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_high",
+      "economic_rationale": "FAM-FD-BREAKOUT-0001",
+      "factor_id": "FD-V01-0001-DISTHIGH_20-H1-future_return",
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_low",
+      "economic_rationale": "FAM-FD-BREAKOUT-0001",
+      "factor_id": "FD-V01-0001-DISTLOW_20-H1-future_return",
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_high",
+      "economic_rationale": "FAM-FD-BREAKOUT-0001",
+      "factor_id": "FD-V01-0001-DISTHIGH_40-H1-future_return",
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 40
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_low",
+      "economic_rationale": "FAM-FD-BREAKOUT-0001",
+      "factor_id": "FD-V01-0001-DISTLOW_40-H1-future_return",
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 40
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_high",
+      "economic_rationale": "FAM-FD-BREAKOUT-0001",
+      "factor_id": "FD-V01-0001-NEARHIGH_20-H1-future_return",
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "dist_low",
+      "economic_rationale": "FAM-FD-BREAKOUT-0001",
+      "factor_id": "FD-V01-0001-NEARLOW_20-H1-future_return",
+      "family_id": "FAM-FD-BREAKOUT-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "efficiency",
+      "economic_rationale": "FAM-FD-EFFICIENCY-0001",
+      "factor_id": "FD-V01-0001-EFF_10_HIGH-H1-future_return",
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "efficiency",
+      "economic_rationale": "FAM-FD-EFFICIENCY-0001",
+      "factor_id": "FD-V01-0001-EFF_10_LOW-H1-future_return",
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 10
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "efficiency",
+      "economic_rationale": "FAM-FD-EFFICIENCY-0001",
+      "factor_id": "FD-V01-0001-EFF_20_HIGH-H1-future_return",
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "efficiency",
+      "economic_rationale": "FAM-FD-EFFICIENCY-0001",
+      "factor_id": "FD-V01-0001-EFF_20_LOW-H1-future_return",
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "efficiency",
+      "economic_rationale": "FAM-FD-EFFICIENCY-0001",
+      "factor_id": "FD-V01-0001-EFF_40_HIGH-H1-future_return",
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 40
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "efficiency",
+      "economic_rationale": "FAM-FD-EFFICIENCY-0001",
+      "factor_id": "FD-V01-0001-EFF_40_LOW-H1-future_return",
+      "family_id": "FAM-FD-EFFICIENCY-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 40
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "tickvol_z",
+      "economic_rationale": "FAM-FD-VOLUME-0001",
+      "factor_id": "FD-V01-0001-TVZ_20_HIGH-H1-future_return",
+      "family_id": "FAM-FD-VOLUME-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": "tick_volume"
+    },
+    {
+      "causal": true,
+      "definition": "tickvol_z",
+      "economic_rationale": "FAM-FD-VOLUME-0001",
+      "factor_id": "FD-V01-0001-TVZ_20_LOW-H1-future_return",
+      "family_id": "FAM-FD-VOLUME-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": "tick_volume"
+    },
+    {
+      "causal": true,
+      "definition": "tickvol_ratio",
+      "economic_rationale": "FAM-FD-VOLUME-0001",
+      "factor_id": "FD-V01-0001-TVRATIO_5_20_HIGH-H1-future_return",
+      "family_id": "FAM-FD-VOLUME-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "long": 20,
+        "short": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": "tick_volume"
+    },
+    {
+      "causal": true,
+      "definition": "pv_align",
+      "economic_rationale": "FAM-FD-VOLUME-0001",
+      "factor_id": "FD-V01-0001-PV_ALIGN-H1-future_return",
+      "family_id": "FAM-FD-VOLUME-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": "tick_volume"
+    },
+    {
+      "causal": true,
+      "definition": "spread_z",
+      "economic_rationale": "FAM-FD-SPREAD-0001",
+      "factor_id": "FD-V01-0001-SPREADZ_HIGH-H1-future_return",
+      "family_id": "FAM-FD-SPREAD-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "spread_z",
+      "economic_rationale": "FAM-FD-SPREAD-0001",
+      "factor_id": "FD-V01-0001-SPREADZ_LOW-H1-future_return",
+      "family_id": "FAM-FD-SPREAD-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "combo_ret_spread",
+      "economic_rationale": "FAM-FD-SPREAD-0001",
+      "factor_id": "FD-V01-0001-RET5_HIGH_IN_LOW_SPREAD-H1-future_return",
+      "family_id": "FAM-FD-SPREAD-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 5,
+        "spread_n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "htf_ret",
+      "economic_rationale": "FAM-FD-MTF-0001",
+      "factor_id": "FD-V01-0001-HTF_RET_HIGH-H1-future_return",
+      "family_id": "FAM-FD-MTF-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "group": 4
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "combo_m15_htf",
+      "economic_rationale": "FAM-FD-MTF-0001",
+      "factor_id": "FD-V01-0001-M15RET5_AND_HTF-H1-future_return",
+      "family_id": "FAM-FD-MTF-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "group": 4,
+        "n": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "combo_m15rev_htf",
+      "economic_rationale": "FAM-FD-MTF-0001",
+      "factor_id": "FD-V01-0001-M15REV_IN_HTF-H1-future_return",
+      "family_id": "FAM-FD-MTF-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "group": 4,
+        "n": 5
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "combo_ret_range",
+      "economic_rationale": "FAM-FD-COMBO-0001",
+      "factor_id": "FD-V01-0001-MOM5_AND_VOLHIGH-H1-future_return",
+      "family_id": "FAM-FD-COMBO-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "n": 5,
+        "range_n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    },
+    {
+      "causal": true,
+      "definition": "combo_eff_nearhigh",
+      "economic_rationale": "FAM-FD-COMBO-0001",
+      "factor_id": "FD-V01-0001-EFF20_AND_NEARHIGH-H1-future_return",
+      "family_id": "FAM-FD-COMBO-0001",
+      "inputs": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "spread"
+      ],
+      "lookback": {
+        "eff_n": 20,
+        "high_n": 20
+      },
+      "status": "REGISTERED",
+      "target_compatibility": [
+        "future_return"
+      ],
+      "version": "0.1",
+      "volume_type": null
+    }
+  ],
+  "lifecycle": [
+    "DRAFT",
+    "REGISTERED",
+    "TESTED",
+    "REJECTED",
+    "CANDIDATE",
+    "PROMISING",
+    "ARCHIVED"
+  ],
+  "note": "Failed factors are kept. Do not delete.",
+  "search_space_hash": "add0211ffb189d50639b656af1b009ac15849d9f3d426af8469f9700eb05dc5a"
+}

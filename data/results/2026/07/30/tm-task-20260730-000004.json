@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "stock": "000858",
+  "date": "20260725",
+  "score": 51,
+  "roe": 25.32,
+  "trend": false,
+  "factors": {
+    "roe": 25.32,
+    "pe": 22.3,
+    "pb": 6.8,
+    "market_cap_bn": 5800,
+    "sector": "白酒",
+    "name": "五粮液",
+    "value_score": 13.0,
+    "quality_score": 22.8,
+    "momentum": -4.24,
+    "volatility": 2.05,
+    "liquidity_score": 15.6
+  },
+  "calculation_time_ms": 0.308,
+  "timestamp": "2026-07-30T14:37:37.090495"
+}

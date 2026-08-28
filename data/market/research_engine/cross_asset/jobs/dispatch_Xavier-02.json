@@ -1,0 +1,32 @@
+{
+  "discovery_id": "CROSS_ASSET_ALPHA_V0.8",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "CROSS_ASSET_ALPHA_V0.8",
+      "family_id": "FAM-FD-XASSET-0001",
+      "fdr_q": 0.05,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-XA-0002"
+      ],
+      "job_id": "XA-V08-Xavier-02-HYP-XA-0002",
+      "node": "Xavier-02",
+      "note": "Worker executes this list only. Not HYP-0001. Not V0.6.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-D1-20260825-000001",
+        "tm-market-EURUSD-D1-20260825-000001",
+        "tm-market-USDJPY-D1-20260825-000001",
+        "tm-market-OIL-D1-20260825-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "787a37f93aae630e2530c6c416c3acf8c5ddd5a9470ae7f442a409f431749827",
+      "seed": 20260825,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-02"
+}

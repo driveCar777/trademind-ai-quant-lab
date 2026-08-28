@@ -1,0 +1,230 @@
+{
+  "contracts": [
+    "docs/research_engine/CONTRACT_BATCH_TOP3_V1.md",
+    "docs/research_engine/CROSS_ASSET_ALPHA_V0.8_CONTRACT.md",
+    "docs/research_engine/CROSS_RESIDUAL_V0.91_CONTRACT.md",
+    "docs/research_engine/HYP-0001_CONTRACT_MISMATCH_ROOT_CAUSE.md",
+    "docs/research_engine/INSTITUTIONAL_TIME_V1.0_CONTRACT.md",
+    "docs/research_engine/REGIME_TRANSITION_V0.9_CONTRACT.md",
+    "docs/research_engine/RESEARCH_CONTRACT_TEMPLATE_V1.md"
+  ],
+  "datasets": [
+    {
+      "asset": "EURUSD",
+      "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+      "end": "2026-08-25T00:00:00Z",
+      "n": 2000,
+      "sha256": "5c46942d797330185ce919e79cd1b94ac6ca11f25f4442c3a05963c174786ed3",
+      "start": "2020-04-01T00:00:00Z",
+      "timeframe": "D1"
+    },
+    {
+      "asset": "EURUSD",
+      "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+      "end": "2026-08-25T12:00:00Z",
+      "n": 2000,
+      "sha256": "cea73749b6b1c6511ca7ae222d976879c85d25bb4818976299b225827d5ea567",
+      "start": "2026-04-30T05:00:00Z",
+      "timeframe": "H1"
+    },
+    {
+      "asset": "EURUSD",
+      "dataset_id": "tm-market-EURUSD-H4-20260825-000001",
+      "end": "2026-08-25T12:00:00Z",
+      "n": 2000,
+      "sha256": "97e565003169ece3db4c0a838fd438772270c776cc3a3e82d78c29476c75b9e7",
+      "start": "2025-05-29T12:00:00Z",
+      "timeframe": "H4"
+    },
+    {
+      "asset": "EURUSD",
+      "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+      "end": "2026-08-25T12:45:00Z",
+      "n": 2000,
+      "sha256": "ed0a779dd43de803aaeb2d987e38092edcf9387359596d19a4cda476ee25d772",
+      "start": "2026-07-27T17:00:00Z",
+      "timeframe": "M15"
+    },
+    {
+      "asset": "GOLD",
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "end": "2026-08-25T00:00:00Z",
+      "n": 2000,
+      "sha256": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+      "start": "2020-03-26T00:00:00Z",
+      "timeframe": "D1"
+    },
+    {
+      "asset": "GOLD",
+      "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+      "end": "2026-08-25T12:00:00Z",
+      "n": 2000,
+      "sha256": "07339c1831fdfa5db38c8e849cbb4dd1ce2f021c8304c4599b72c05588ba8166",
+      "start": "2026-04-24T14:00:00Z",
+      "timeframe": "H1"
+    },
+    {
+      "asset": "GOLD",
+      "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+      "end": "2026-08-25T12:00:00Z",
+      "n": 2000,
+      "sha256": "30dca0dd3ce587e772a5c0a3908e937aed762c205d2c42844836657d2bfc9572",
+      "start": "2025-05-28T12:00:00Z",
+      "timeframe": "H4"
+    },
+    {
+      "asset": "GOLD",
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "end": "2026-08-25T12:45:00Z",
+      "n": 2000,
+      "sha256": "f14f9bddb9adfcd6825874397f9a2b8cc1a9b3218778d9df047036dc13c62717",
+      "start": "2026-07-24T19:00:00Z",
+      "timeframe": "M15"
+    },
+    {
+      "asset": "GOLD",
+      "dataset_id": "tm-market-GOLD-M15-20260825-000002",
+      "end": "2026-08-25T12:45:00Z",
+      "n": 2000,
+      "sha256": "5181f5b27c7f17a02964a3301b95f609a4e6bdc4b93964b9063262a8b99f8950",
+      "start": "2026-07-24T19:00:00Z",
+      "timeframe": "M15"
+    },
+    {
+      "asset": "OIL",
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "end": "2026-08-25T00:00:00Z",
+      "n": 2000,
+      "sha256": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+      "start": "2020-03-24T00:00:00Z",
+      "timeframe": "D1"
+    },
+    {
+      "asset": "OIL",
+      "dataset_id": "tm-market-OIL-H1-20260825-000001",
+      "end": "2026-08-25T13:00:00Z",
+      "n": 2000,
+      "sha256": "e6fcb4fad172e7bdf3226f4be1a5af0561db074b0939bf40e3e1f46c607ee71a",
+      "start": "2026-04-24T10:00:00Z",
+      "timeframe": "H1"
+    },
+    {
+      "asset": "OIL",
+      "dataset_id": "tm-market-OIL-H4-20260825-000001",
+      "end": "2026-08-25T12:00:00Z",
+      "n": 2000,
+      "sha256": "afe2bfe11722f017ac7da93c74605ebb3d4d9248cd38d4ef53342bd0caf9308f",
+      "start": "2025-05-27T20:00:00Z",
+      "timeframe": "H4"
+    },
+    {
+      "asset": "OIL",
+      "dataset_id": "tm-market-OIL-M15-20260825-000001",
+      "end": "2026-08-25T13:00:00Z",
+      "n": 2000,
+      "sha256": "4dec29a0c249785916c6a81dbaafe3d40cde2f70244736cfa60953210ed5811e",
+      "start": "2026-07-24T19:15:00Z",
+      "timeframe": "M15"
+    },
+    {
+      "asset": "USDJPY",
+      "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+      "end": "2026-08-25T00:00:00Z",
+      "n": 2000,
+      "sha256": "c00389ce1cbeeed3e1ceb9a09e549fa8335556cf2fd8c644db8f8a44f7ce3ad7",
+      "start": "2020-04-01T00:00:00Z",
+      "timeframe": "D1"
+    },
+    {
+      "asset": "USDJPY",
+      "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+      "end": "2026-08-25T13:00:00Z",
+      "n": 2000,
+      "sha256": "9f977e764835be6af3f968bcf6ad3ab0192f0cc563b3cdc6209087714aeb2cd5",
+      "start": "2026-04-30T06:00:00Z",
+      "timeframe": "H1"
+    },
+    {
+      "asset": "USDJPY",
+      "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+      "end": "2026-08-25T12:00:00Z",
+      "n": 2000,
+      "sha256": "5765d363efca784d8f36224d9392202ad9ccf75d8a19e1b23dd61fad85d4b8f9",
+      "start": "2025-05-29T16:00:00Z",
+      "timeframe": "H4"
+    },
+    {
+      "asset": "USDJPY",
+      "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+      "end": "2026-08-25T06:30:00Z",
+      "n": 2000,
+      "sha256": "b3fd2f75e728f94fb3c6a66ffc6de7bca60e381d62253d46bcb405d435319387",
+      "start": "2026-07-27T10:45:00Z",
+      "timeframe": "M15"
+    }
+  ],
+  "hyp0001_results": {
+    "n_files": 48,
+    "verdicts": {
+      "continuation": {
+        "FALSIFIED": 17,
+        "INCONCLUSIVE": 15,
+        "WEAK_SUPPORT": 16
+      },
+      "negative": {
+        "FALSIFIED": 7,
+        "INCONCLUSIVE": 34,
+        "WEAK_SUPPORT": 7
+      },
+      "positive": {
+        "FALSIFIED": 11,
+        "INCONCLUSIVE": 24,
+        "WEAK_SUPPORT": 13
+      }
+    }
+  },
+  "rankings": [
+    {
+      "exists": true,
+      "family": "HYP-0001",
+      "outcome": null,
+      "path": "data/market/research_engine/registry/HOME_ROWS.json"
+    },
+    {
+      "exists": true,
+      "family": "FACTOR_DISCOVERY_V0.1",
+      "outcome": "NO_USEFUL_FACTORS_FOUND",
+      "path": "data/market/research_engine/factor_discovery/FACTOR_RANKING_V0.1.json"
+    },
+    {
+      "exists": true,
+      "family": "RESEARCH_ENGINE_V0.5",
+      "outcome": "NO_USEFUL_STRATEGIES_FOUND",
+      "path": "data/market/research_engine/strategy_discovery/STRATEGY_RANKING_V0.5.json"
+    },
+    {
+      "exists": true,
+      "family": "PROFIT_DISCOVERY_V0.6",
+      "outcome": "WEAK_EDGE_ONLY",
+      "path": "data/market/research_engine/profit_discovery/PROFIT_RANKING_V0.6.json"
+    },
+    {
+      "exists": true,
+      "family": "CROSS_ASSET_ALPHA_V0.8",
+      "outcome": "NO_CANDIDATE",
+      "path": "data/market/research_engine/cross_asset/CROSS_ASSET_RANKING_V0.8.json"
+    },
+    {
+      "exists": true,
+      "family": "REGIME_TRANSITION_V0.9",
+      "outcome": "NO_CANDIDATE",
+      "path": "data/market/research_engine/regime_transition/REGIME_RANKING_V0.9.json"
+    },
+    {
+      "exists": true,
+      "family": "CROSS_RESIDUAL_V0.91",
+      "outcome": "NO_CANDIDATE",
+      "path": "data/market/research_engine/cross_residual/RESIDUAL_RANKING_V0.91.json"
+    }
+  ]
+}

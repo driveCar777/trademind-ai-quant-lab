@@ -1,0 +1,30 @@
+{
+  "jobs": [
+    {
+      "content_hash": "54923a878b2b06f6ac37d36fcdbeaeb5af95873ccc4523fa18bee9397963528a",
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "elapsed_seconds": 73.54806184768677,
+      "job_id": "PD-V06-Xavier-01-tm-market-GOLD-M15-20260825-000001"
+    },
+    {
+      "content_hash": "7b1bc91df09c39d6b2a551affb65d2fc634d513a910e190804be780e994a5cd5",
+      "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+      "elapsed_seconds": 73.58972191810608,
+      "job_id": "PD-V06-Xavier-01-tm-market-GOLD-H1-20260825-000001"
+    },
+    {
+      "content_hash": "460362364d695851b73f1f9a9be3ed3eaa45db7ba9fb6a9a14d2df6325f1ad55",
+      "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+      "elapsed_seconds": 73.76623892784119,
+      "job_id": "PD-V06-Xavier-01-tm-market-GOLD-H4-20260825-000001"
+    },
+    {
+      "content_hash": "0ccbf81233a81d419d771930a9e573702ec95396e8ab1a6971dc328972115293",
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "elapsed_seconds": 73.34901237487793,
+      "job_id": "PD-V06-Xavier-01-tm-market-GOLD-D1-20260825-000001"
+    }
+  ],
+  "node": "Xavier-01",
+  "ok": true
+}

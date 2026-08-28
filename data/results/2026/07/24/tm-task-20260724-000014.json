@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "6452ca48-9ff9-4777-bb1e-e472960bfd91",
+  "indicator": "SMA",
+  "symbol": "USDCAD",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      47.496428571428574,
+      47.587857142857146,
+      47.81357142857143,
+      47.84499999999999,
+      48.25928571428572,
+      48.35857142857143,
+      48.380714285714284
+    ],
+    "latest": 48.380714285714284
+  },
+  "calculation_time_ms": 1.771,
+  "timestamp": "2026-07-24T12:19:43.785460"
+}

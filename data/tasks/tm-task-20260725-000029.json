@@ -1,0 +1,22 @@
+{
+  "task_id": "tm-task-20260725-000029",
+  "worker_id": "worker-03",
+  "worker_type": "backtest-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-25T12:29:26.647081Z",
+  "started_at": "2026-07-25T12:29:32.700618Z",
+  "finished_at": "2026-07-25T12:29:32.744313Z",
+  "duration_ms": 43,
+  "result_path": "results/2026/07/25/tm-task-20260725-000029.json",
+  "error": null,
+  "request": {
+    "worker_type": "backtest-worker",
+    "indicator": "backtest",
+    "data": {
+      "strategy": "RSI",
+      "symbol": "EURUSD",
+      "start": "2025-01-01"
+    },
+    "params": {}
+  }
+}

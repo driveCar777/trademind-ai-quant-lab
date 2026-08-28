@@ -1,0 +1,44 @@
+{
+  "task_id": "tm-task-20260724-000010",
+  "worker_id": "worker-01",
+  "worker_type": "indicator-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-24T12:19:13.939386Z",
+  "started_at": "2026-07-24T12:19:19.995057Z",
+  "finished_at": "2026-07-24T12:19:20.055448Z",
+  "duration_ms": 60,
+  "result_path": "results/2026/07/24/tm-task-20260724-000010.json",
+  "error": null,
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "EMA",
+    "data": {
+      "symbol": "EURUSD",
+      "close": [
+        44.5,
+        44.64,
+        44.790000000000006,
+        43.81,
+        44.93,
+        45.23,
+        45.9,
+        45.92,
+        46.14,
+        46.68,
+        46.29,
+        46.730000000000004,
+        45.81,
+        46.78,
+        46.58,
+        46.6,
+        46.43,
+        47.209999999999994,
+        46.72,
+        45.94
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

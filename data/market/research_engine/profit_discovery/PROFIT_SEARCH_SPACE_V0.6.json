@@ -1,0 +1,166 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "close_fill": "FORBIDDEN",
+  "discovery_id": "PROFIT_DISCOVERY_V0.6",
+  "fill": "NEXT_BAR_OPEN",
+  "note": "Not HYP-0001. Not FD. Not V0.5 next-bar p-value.",
+  "search_space_hash": "0fba52a98d861046cd61db51861bf96bebfaa2d51b42001d37463776bb7891d7",
+  "seed": 20260825,
+  "strategies": [
+    {
+      "causal": true,
+      "cost": {
+        "commission_bp_per_side": 5.0,
+        "slippage_bp_per_side": 10.0,
+        "spread": "BROKER_POINTS_RULE"
+      },
+      "entry": "NEXT_BAR_OPEN",
+      "exit": "FIXED_HOLD_OR_ATR_STOP",
+      "family": "TF-BRK20",
+      "holding": 5,
+      "name": "TF-BRK20",
+      "risk": {
+        "leverage_cap": 1.0,
+        "risk_frac": 0.005,
+        "skip_high_vol": true,
+        "skip_wide_spread": true,
+        "stop_atr_mult": 1.5
+      },
+      "status": "REGISTERED",
+      "strategy_id": "PD-V06-TF-BRK20-H5-R005"
+    },
+    {
+      "causal": true,
+      "cost": {
+        "commission_bp_per_side": 5.0,
+        "slippage_bp_per_side": 10.0,
+        "spread": "BROKER_POINTS_RULE"
+      },
+      "entry": "NEXT_BAR_OPEN",
+      "exit": "FIXED_HOLD_OR_ATR_STOP",
+      "family": "TF-BRK20",
+      "holding": 5,
+      "name": "TF-BRK20",
+      "risk": {
+        "leverage_cap": 1.0,
+        "risk_frac": 0.01,
+        "skip_high_vol": true,
+        "skip_wide_spread": true,
+        "stop_atr_mult": 1.5
+      },
+      "status": "REGISTERED",
+      "strategy_id": "PD-V06-TF-BRK20-H5-R010"
+    },
+    {
+      "causal": true,
+      "cost": {
+        "commission_bp_per_side": 5.0,
+        "slippage_bp_per_side": 10.0,
+        "spread": "BROKER_POINTS_RULE"
+      },
+      "entry": "NEXT_BAR_OPEN",
+      "exit": "FIXED_HOLD_OR_ATR_STOP",
+      "family": "MR-Z20",
+      "holding": 5,
+      "name": "MR-Z20",
+      "risk": {
+        "leverage_cap": 1.0,
+        "risk_frac": 0.005,
+        "skip_high_vol": true,
+        "skip_wide_spread": true,
+        "stop_atr_mult": 1.5
+      },
+      "status": "REGISTERED",
+      "strategy_id": "PD-V06-MR-Z20-H5-R005"
+    },
+    {
+      "causal": true,
+      "cost": {
+        "commission_bp_per_side": 5.0,
+        "slippage_bp_per_side": 10.0,
+        "spread": "BROKER_POINTS_RULE"
+      },
+      "entry": "NEXT_BAR_OPEN",
+      "exit": "FIXED_HOLD_OR_ATR_STOP",
+      "family": "MR-Z20",
+      "holding": 5,
+      "name": "MR-Z20",
+      "risk": {
+        "leverage_cap": 1.0,
+        "risk_frac": 0.01,
+        "skip_high_vol": true,
+        "skip_wide_spread": true,
+        "stop_atr_mult": 1.5
+      },
+      "status": "REGISTERED",
+      "strategy_id": "PD-V06-MR-Z20-H5-R010"
+    },
+    {
+      "causal": true,
+      "cost": {
+        "commission_bp_per_side": 5.0,
+        "slippage_bp_per_side": 10.0,
+        "spread": "BROKER_POINTS_RULE"
+      },
+      "entry": "NEXT_BAR_OPEN",
+      "exit": "FIXED_HOLD_OR_ATR_STOP",
+      "family": "MOM-DIR",
+      "holding": 8,
+      "name": "MOM-DIR",
+      "risk": {
+        "leverage_cap": 1.0,
+        "risk_frac": 0.005,
+        "skip_high_vol": true,
+        "skip_wide_spread": true,
+        "stop_atr_mult": 1.5
+      },
+      "status": "REGISTERED",
+      "strategy_id": "PD-V06-MOM-DIR-H8-R005"
+    },
+    {
+      "causal": true,
+      "cost": {
+        "commission_bp_per_side": 5.0,
+        "slippage_bp_per_side": 10.0,
+        "spread": "BROKER_POINTS_RULE"
+      },
+      "entry": "NEXT_BAR_OPEN",
+      "exit": "FIXED_HOLD_OR_ATR_STOP",
+      "family": "MOM-DIR",
+      "holding": 8,
+      "name": "MOM-DIR",
+      "risk": {
+        "leverage_cap": 1.0,
+        "risk_frac": 0.01,
+        "skip_high_vol": true,
+        "skip_wide_spread": true,
+        "stop_atr_mult": 1.5
+      },
+      "status": "REGISTERED",
+      "strategy_id": "PD-V06-MOM-DIR-H8-R010"
+    },
+    {
+      "causal": true,
+      "cost": {
+        "commission_bp_per_side": 5.0,
+        "slippage_bp_per_side": 10.0,
+        "spread": "BROKER_POINTS_RULE"
+      },
+      "entry": "NONE",
+      "exit": "NONE",
+      "family": "DEF",
+      "holding": 0,
+      "name": "DEF-SKIP",
+      "note": "Overlay / cash. Not a profit engine by itself.",
+      "risk": {
+        "risk_frac": 0.0,
+        "skip_high_vol": true,
+        "skip_wide_spread": true
+      },
+      "status": "REGISTERED",
+      "strategy_id": "PD-V06-DEF-SKIP-HIVOL"
+    }
+  ],
+  "strategy_count": 7,
+  "version": "0.6"
+}

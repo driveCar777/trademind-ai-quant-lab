@@ -1,0 +1,56 @@
+{
+  "HISTORICAL_MUTATION": false,
+  "added_rows": 0,
+  "added_timestamps": [],
+  "changed_columns": {
+    "close": 1,
+    "tick_volume": 1
+  },
+  "changed_rows": 1,
+  "changed_sample": [
+    {
+      "a": {
+        "close": 4639.79,
+        "high": 4644.25,
+        "low": 4637.15,
+        "open": 4638.32,
+        "real_volume": 0,
+        "spread": 29,
+        "tick_volume": 2934,
+        "timestamp_utc": "2026-08-25T12:45:00Z"
+      },
+      "b": {
+        "close": 4640.23,
+        "high": 4644.25,
+        "low": 4637.15,
+        "open": 4638.32,
+        "real_volume": 0,
+        "spread": 29,
+        "tick_volume": 2984,
+        "timestamp_utc": "2026-08-25T12:45:00Z"
+      },
+      "changed_fields": [
+        "close",
+        "tick_volume"
+      ],
+      "class": "LATEST_OR_FORMING_BAR",
+      "timestamp_unix": 1787661900,
+      "timestamp_utc": "2026-08-25T12:45:00Z"
+    }
+  ],
+  "dataset_a": "tm-market-GOLD-M15-20260825-000001",
+  "dataset_b": "tm-market-GOLD-M15-20260825-000002",
+  "first_changed_timestamp": "2026-08-25T12:45:00Z",
+  "historical_mutation_count": 0,
+  "historical_sample": [],
+  "last_changed_timestamp": "2026-08-25T12:45:00Z",
+  "latest_or_forming_changes": 1,
+  "note": "Do not overwrite either snapshot. HISTORICAL_MUTATION is a Data Layer risk.",
+  "overlap_end": "2026-08-25T12:45:00Z",
+  "overlap_start": "2026-07-24T19:00:00Z",
+  "removed_rows": 0,
+  "removed_timestamps": [],
+  "same_rows": 1999,
+  "sha256_a": "f14f9bddb9adfcd6825874397f9a2b8cc1a9b3218778d9df047036dc13c62717",
+  "sha256_b": "5181f5b27c7f17a02964a3301b95f609a4e6bdc4b93964b9063262a8b99f8950"
+}

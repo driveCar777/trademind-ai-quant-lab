@@ -1,0 +1,27 @@
+{
+  "research_id": "tm-research-20260824-009993",
+  "task_id": "tm-task-20260824-000031",
+  "preset": "backtest",
+  "summary": "GOLD RSI 本次未证伪 根=2000/H1 内-19.77外2.02 回撤19.83/3.37 成交28/12",
+  "ai_text": "数字以摘要为准，不是模型编的。\n周期 H1，共 2000 根。\n样本内：收益 -19.77%，回撤 19.83%，成交 28。\n样本外：收益 2.02%，回撤 3.37%，成交 12。\n判定：本次未证伪。survived 只表示这次没被证伪；样本内亏损就不能当买卖依据。\n第 3、4 步不能挂这张回测单。要下单先跑黄金 MT5 指标研究。",
+  "ai_skipped": true,
+  "created_at": "2026-08-24T14:48:59Z",
+  "steps": [
+    {
+      "preset": "backtest",
+      "task_id": "tm-task-20260824-000030",
+      "summary": "样本内 H1 -19.77"
+    },
+    {
+      "preset": "backtest",
+      "task_id": "tm-task-20260824-000031",
+      "summary": "样本外 H1 2.02"
+    }
+  ],
+  "sample_id": "",
+  "source": "mt5",
+  "symbol": "GOLD",
+  "verdict": "survived",
+  "bars": 2000,
+  "timeframe": "H1"
+}

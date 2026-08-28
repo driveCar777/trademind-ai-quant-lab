@@ -1,0 +1,467 @@
+{
+  "fdr": {
+    "discoveries": [],
+    "m": 3,
+    "q": 0.05
+  },
+  "gold_pass": [],
+  "hypotheses": [
+    {
+      "FINAL_OOS": {
+        "FINAL_OOS_LOCKED": false,
+        "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+        "access": "DENIED"
+      },
+      "FINAL_OOS_TOUCHED": false,
+      "adjusted_p": 0.5487804878048781,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_SIGN"
+      ],
+      "elapsed_seconds": 3.623635768890381,
+      "fdr_discovery": false,
+      "feature": "VOL_SHOCK",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RT-0001",
+      "label": "FALSIFIED",
+      "label_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_SIGN"
+      ],
+      "oos_exists": {
+        "end": "2026-08-25",
+        "exists": true,
+        "n": 300,
+        "start": "2025-09-10"
+      },
+      "parent_sha256": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+      "predicted_sign": -1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.0014212147107966738,
+          "iterations": 40,
+          "low": -0.023350981999257565,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.003901187300825874,
+          "iterations": 40,
+          "low": -0.018659327647389312,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.005382711445376165,
+        "cost_paid": 18.338262221322182,
+        "delta": -0.008703546138834953,
+        "effect_size": -0.20429139076916494,
+        "end_equity": 9704.81142792117,
+        "level_leak": false,
+        "level_share": 0.3131014063656551,
+        "max_drawdown": -0.03032215861194345,
+        "max_trade_share": 0.07533629513656656,
+        "mean_baseline": -0.0071263095225773026,
+        "mean_signal": -0.015829855661412255,
+        "n_bars": 1351,
+        "n_eligible": 1344,
+        "n_feature": 1351,
+        "n_signal": 25,
+        "n_skip_overlap": 5,
+        "n_trade": 20,
+        "n_warmup_drop": 49,
+        "occupancy": 0.018504811250925242,
+        "raw_p": 0.36585365853658536,
+        "sharpe": -0.6636418758720646,
+        "total_return": -0.029518857207883054,
+        "trade_count": 20,
+        "turnover": 1.8199837066393425,
+        "win_count": 6
+      },
+      "side": -1,
+      "target_asset": "OIL",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.015193249470053492,
+          "iterations": 40,
+          "low": 0.00184075515173734,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.034270630739675505,
+          "iterations": 40,
+          "low": -0.020368117660514908,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": 0.002683555284705985,
+        "cost_paid": 4.665911652688122,
+        "delta": 0.009109144563794889,
+        "effect_size": 0.24510757306095246,
+        "end_equity": 10031.848558820995,
+        "level_leak": false,
+        "level_share": 0.18666666666666668,
+        "max_drawdown": -0.005465423441100659,
+        "max_trade_share": 0.3615559217543185,
+        "mean_baseline": -0.002244973901847802,
+        "mean_signal": 0.006864170661947086,
+        "n_bars": 300,
+        "n_eligible": 270,
+        "n_feature": 300,
+        "n_signal": 6,
+        "n_skip_overlap": 0,
+        "n_trade": 5,
+        "n_warmup_drop": 49,
+        "occupancy": 0.02,
+        "raw_p": null,
+        "sharpe": 0.39830497046085706,
+        "total_return": 0.003184855882099491,
+        "trade_count": 5,
+        "turnover": 0.4684168887924962,
+        "win_count": 3
+      },
+      "vol_cuts": {
+        "vol_high": 0.033715453981234704,
+        "vol_low": 0.025413689704956853
+      },
+      "window_hash": "680e0b4c4afd97f494cd0a7eb250396165aab34a69f616c630d4defcda822d2b"
+    },
+    {
+      "FINAL_OOS": {
+        "FINAL_OOS_LOCKED": false,
+        "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+        "access": "DENIED"
+      },
+      "FINAL_OOS_TOUCHED": false,
+      "adjusted_p": 0.5487804878048781,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "VALIDATION_TRADES<4",
+        "INSUFFICIENT_OCCUPANCY",
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "RESEARCH_SIGN",
+        "VALIDATION_SIGN"
+      ],
+      "elapsed_seconds": 6.637767314910889,
+      "fdr_discovery": false,
+      "feature": "ENTER_STRONG_UP",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RT-0002",
+      "label": "INCONCLUSIVE",
+      "label_why": [
+        "VALIDATION_TRADES<4",
+        "INSUFFICIENT_OCCUPANCY",
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "RESEARCH_SIGN",
+        "VALIDATION_SIGN"
+      ],
+      "oos_exists": {
+        "end": "2026-08-25",
+        "exists": true,
+        "n": 300,
+        "start": "2025-09-10"
+      },
+      "parent_sha256": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+      "predicted_sign": 1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": -0.001547976038569369,
+          "iterations": 40,
+          "low": -0.0081100299910684,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": -0.0012481088681135753,
+          "iterations": 40,
+          "low": -0.009297512759987246,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.003979556877649615,
+        "cost_paid": 37.30296916378835,
+        "delta": -0.005437783482546399,
+        "effect_size": -0.3374958536418444,
+        "end_equity": 9781.062895846415,
+        "level_leak": false,
+        "level_share": 0.16284233900814213,
+        "max_drawdown": -0.02406433808622965,
+        "max_trade_share": 0.1772447069816239,
+        "mean_baseline": -0.0010160557312620091,
+        "mean_signal": -0.006453839213808409,
+        "n_bars": 1351,
+        "n_eligible": 1340,
+        "n_feature": 1351,
+        "n_signal": 12,
+        "n_skip_overlap": 0,
+        "n_trade": 12,
+        "n_warmup_drop": 49,
+        "occupancy": 0.008882309400444115,
+        "raw_p": 0.21951219512195122,
+        "sharpe": -0.7977042372109067,
+        "total_return": -0.02189371041535848,
+        "trade_count": 12,
+        "turnover": 3.7393786231283253,
+        "win_count": 5
+      },
+      "side": 1,
+      "target_asset": "GOLD",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": -0.0025963410030685388,
+          "iterations": 40,
+          "low": -0.009498958002631605,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.014529502147397245,
+          "iterations": 40,
+          "low": -0.018636242996053404,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.0046145530190622175,
+        "cost_paid": 10.21163605566502,
+        "delta": -0.006083600042010161,
+        "effect_size": -0.29454714790186315,
+        "end_equity": 9945.271552929953,
+        "level_leak": false,
+        "level_share": 0.29,
+        "max_drawdown": -0.010666352734173051,
+        "max_trade_share": 0.33656326137530224,
+        "mean_baseline": 0.001208800719816651,
+        "mean_signal": -0.00487479932219351,
+        "n_bars": 300,
+        "n_eligible": 276,
+        "n_feature": 300,
+        "n_signal": 4,
+        "n_skip_overlap": 0,
+        "n_trade": 3,
+        "n_warmup_drop": 49,
+        "occupancy": 0.013333333333333334,
+        "raw_p": null,
+        "sharpe": -0.5424494166703933,
+        "total_return": -0.005472844707004709,
+        "trade_count": 3,
+        "turnover": 1.023389446117221,
+        "win_count": 1
+      },
+      "vol_cuts": {
+        "vol_high": 0.01293842743304508,
+        "vol_low": 0.010409985114004938
+      },
+      "window_hash": "eacae6f4ff7d5b0522da83afedf603f870249ac7d7a769fcaad858c25dcf6579"
+    },
+    {
+      "FINAL_OOS": {
+        "FINAL_OOS_LOCKED": false,
+        "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+        "access": "DENIED"
+      },
+      "FINAL_OOS_TOUCHED": false,
+      "adjusted_p": 0.9512195121951219,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "VALIDATION_TRADES<4",
+        "INSUFFICIENT_OCCUPANCY",
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE"
+      ],
+      "elapsed_seconds": 6.450290679931641,
+      "fdr_discovery": false,
+      "feature": "EXIT_STRONG",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RT-0003",
+      "label": "INCONCLUSIVE",
+      "label_why": [
+        "VALIDATION_TRADES<4",
+        "INSUFFICIENT_OCCUPANCY",
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE"
+      ],
+      "oos_exists": {
+        "end": "2026-08-25",
+        "exists": true,
+        "n": 300,
+        "start": "2025-09-10"
+      },
+      "parent_sha256": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+      "predicted_sign": -1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.008446016873931136,
+          "iterations": 40,
+          "low": -0.004774742352873057,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.005506830945186723,
+          "iterations": 40,
+          "low": -0.004735956179204753,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.005722855500488788,
+        "cost_paid": 70.72051041689679,
+        "delta": -0.00027877316494883536,
+        "effect_size": -0.01797733465710675,
+        "end_equity": 9686.400606926378,
+        "level_leak": false,
+        "level_share": 0.613619541080681,
+        "max_drawdown": -0.03246487305196518,
+        "max_trade_share": 0.10140393071700907,
+        "mean_baseline": -0.004072671886013788,
+        "mean_signal": -0.004351445050962624,
+        "n_bars": 1351,
+        "n_eligible": 1340,
+        "n_feature": 1351,
+        "n_signal": 24,
+        "n_skip_overlap": 0,
+        "n_trade": 24,
+        "n_warmup_drop": 49,
+        "occupancy": 0.01776461880088823,
+        "raw_p": 0.9512195121951219,
+        "sharpe": -0.6482817833027861,
+        "total_return": -0.03135993930736225,
+        "trade_count": 24,
+        "turnover": 7.0599070975568425,
+        "win_count": 9
+      },
+      "side": -1,
+      "target_asset": "GOLD",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": -0.0027143531798776935,
+          "iterations": 40,
+          "low": -0.008503914616758982,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.009658073149400623,
+          "iterations": 40,
+          "low": -0.02840934872122646,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "cagr": -0.0039704847829005185,
+        "cost_paid": 7.005873931412756,
+        "delta": -0.004998280214032513,
+        "effect_size": -0.2850827144889922,
+        "end_equity": 9952.907344902182,
+        "level_leak": false,
+        "level_share": 0.5633333333333334,
+        "max_drawdown": -0.005727682425534082,
+        "max_trade_share": 0.7617630986810132,
+        "mean_baseline": -0.006605218855567561,
+        "mean_signal": -0.011603499069600074,
+        "n_bars": 300,
+        "n_eligible": 276,
+        "n_feature": 300,
+        "n_signal": 3,
+        "n_skip_overlap": 0,
+        "n_trade": 3,
+        "n_warmup_drop": 49,
+        "occupancy": 0.01,
+        "raw_p": null,
+        "sharpe": -0.8181743387490508,
+        "total_return": -0.00470926550978179,
+        "trade_count": 3,
+        "turnover": 0.6985830540829554,
+        "win_count": 1
+      },
+      "vol_cuts": {
+        "vol_high": 0.01293842743304508,
+        "vol_low": 0.010409985114004938
+      },
+      "window_hash": "eacae6f4ff7d5b0522da83afedf603f870249ac7d7a769fcaad858c25dcf6579"
+    }
+  ],
+  "mode": "smoke",
+  "note": "CANDIDATE needs GOLD and OIL gates plus FDR. 0002+0003 only is WEAK_EDGE. Not 10%.",
+  "oil_pass": [],
+  "outcome": "NO_CANDIDATE",
+  "path_benchmark": {
+    "GOLD": {
+      "long": {
+        "research": {
+          "cagr": -0.0628964756921444,
+          "max_drawdown": -0.5562210193851769,
+          "mean_return": -0.0010160557312620091,
+          "n_trade": 1340,
+          "total_return": -0.30276972207020825
+        },
+        "validation": {
+          "cagr": 0.09832101143495531,
+          "max_drawdown": -0.113796836174341,
+          "mean_return": 0.001208800719816651,
+          "n_trade": 276,
+          "total_return": 0.11770097081243902
+        }
+      },
+      "short": {
+        "research": {
+          "cagr": -0.24887154001673395,
+          "max_drawdown": -0.7981779886535884,
+          "mean_return": -0.004072671886013788,
+          "n_trade": 1340,
+          "total_return": -0.7958183879191224
+        },
+        "validation": {
+          "cagr": -0.34549820014925536,
+          "max_drawdown": -0.3990309690546812,
+          "mean_return": -0.006605218855567561,
+          "n_trade": 276,
+          "total_return": -0.3952487749630431
+        }
+      }
+    },
+    "OIL": {
+      "long": {
+        "research": {
+          "cagr": -0.03093447914691949,
+          "max_drawdown": -0.4148480317519371,
+          "mean_return": -0.0003421043392359304,
+          "n_trade": 1344,
+          "total_return": -0.16007931873521886
+        },
+        "validation": {
+          "cagr": -0.03487062881383973,
+          "max_drawdown": -0.1645439295443948,
+          "mean_return": -0.0016100452218845065,
+          "n_trade": 270,
+          "total_return": -0.04123844324937476
+        }
+      },
+      "short": {
+        "research": {
+          "cagr": -0.17222932880578756,
+          "max_drawdown": -0.6692745468676493,
+          "mean_return": -0.0071263095225773026,
+          "n_trade": 1344,
+          "total_return": -0.6498368893083749
+        },
+        "validation": {
+          "cagr": -0.061936116961497256,
+          "max_drawdown": -0.13666492721867363,
+          "mean_return": -0.002244973901847802,
+          "n_trade": 270,
+          "total_return": -0.07305590894116798
+        }
+      }
+    }
+  },
+  "search_space_hash": "3ccb614d8a7784b4fe7c57f6f6a7449c3ac87a8111f3d078bf2096415b8c6cea",
+  "single_target": false
+}

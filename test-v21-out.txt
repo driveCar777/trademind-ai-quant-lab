@@ -1,0 +1,22 @@
+=== V2.1 Backtest Worker Smoke Test ===
+Strategies: 7 — BOLLINGER, EMA_MACD, GRID, RSI, SMA_CROSS, TURTLE, VWAP
+
+[PASS] BOLLINGER: profit=-4.93% sharpe=-0.3531 sortino=-0.4924 calmar=-0.1616 pf=0.75 trades=12 eq=50
+[PASS] EMA_MACD: profit=-12.31% sharpe=-0.8390 sortino=-1.1220 calmar=-0.4048 pf=0.53 trades=15 eq=50
+[PASS] GRID: profit=-6.88% sharpe=-0.3756 sortino=-0.5230 calmar=-0.2117 pf=0.37 trades=16 eq=50
+[PASS] RSI: profit=-14.93% sharpe=-0.8111 sortino=-1.1022 calmar=-0.4233 pf=0.10 trades=6 eq=50
+[PASS] SMA_CROSS: profit=3.41% sharpe=0.1179 sortino=0.1657 calmar=0.2308 pf=10.39 trades=4 eq=50
+[PASS] TURTLE: profit=-5.85% sharpe=-0.7032 sortino=-0.9236 calmar=-0.4250 pf=0.65 trades=22 eq=50
+[PASS] VWAP: profit=-12.40% sharpe=-0.6267 sortino=-0.8625 calmar=-0.4554 pf=0.15 trades=8 eq=50
+
+=== Slippage Test ===
+Without cost: profit=-12.31%
+With cost:    profit=-25.65%
+[PASS] Slippage reduces profit
+
+=== Cross-Symbol (10x7=70 combos) ===
+[PASS] 70/70 combos OK
+
+==================================================
+Results: 9 passed, 0 failed
+==================================================

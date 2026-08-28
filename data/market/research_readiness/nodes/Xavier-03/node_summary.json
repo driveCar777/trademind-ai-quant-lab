@@ -1,0 +1,54 @@
+{
+  "FAULT_INJECTION_PASS": true,
+  "FINAL_OOS_LOCKED": false,
+  "datasets": [
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+      "elapsed_seconds": 33.442222118377686,
+      "errors": [],
+      "profile_hash": "af7469b3f8cef971167edca7e63cd5f18d0f4c79805e692c94642a5f9b131ede",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+      "elapsed_seconds": 32.41979455947876,
+      "errors": [],
+      "profile_hash": "b45641883486422ac3245e2c2876de2a829558cee5b243350a3751f69e475650",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+      "elapsed_seconds": 32.275670289993286,
+      "errors": [],
+      "profile_hash": "935b9e26823ef976433865121e47ac2e8535ca8a084d31518b087ea28440c267",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+      "elapsed_seconds": 33.204010248184204,
+      "errors": [],
+      "profile_hash": "4dca242880d0f6055a3e3da2e87b935d71968920f6d1c6bfbacee4b02262737c",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    }
+  ],
+  "elapsed_seconds": 142.89518189430237,
+  "node": "Xavier-03",
+  "python": "3.6.8",
+  "repeats": 20
+}

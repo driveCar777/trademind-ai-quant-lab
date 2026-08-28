@@ -1,0 +1,50 @@
+{
+  "mode": "full",
+  "records": [
+    {
+      "attempts": 1,
+      "elapsed_seconds": 314.56117153167725,
+      "exit_code": 0,
+      "host": "192.168.1.202",
+      "job_count": 4,
+      "node": "Xavier-03",
+      "ok": true,
+      "stderr": "",
+      "stdout": "FD_JOB_DONE FD-V01-Xavier-03-tm-market-USDJPY-M15-20260825-000001 57 80.5\nFD_JOB_DONE FD-V01-Xavier-03-tm-market-USDJPY-H1-20260825-000001 54 77.0\nFD_JOB_DONE FD-V01-Xavier-03-tm-market-USDJPY-H4-20260825-000001 54 77.2\nFD_JOB_DONE FD-V01-Xavier-03-tm-market-USDJPY-D1-20260825-000001 54 78.0\nFD_NODE_DONE Xavier-03 4\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 320.6332643032074,
+      "exit_code": 0,
+      "host": "192.168.1.201",
+      "job_count": 4,
+      "node": "Xavier-02",
+      "ok": true,
+      "stderr": "",
+      "stdout": "FD_JOB_DONE FD-V01-Xavier-02-tm-market-EURUSD-M15-20260825-000001 57 82.9\nFD_JOB_DONE FD-V01-Xavier-02-tm-market-EURUSD-H1-20260825-000001 54 77.1\nFD_JOB_DONE FD-V01-Xavier-02-tm-market-EURUSD-H4-20260825-000001 54 78.4\nFD_JOB_DONE FD-V01-Xavier-02-tm-market-EURUSD-D1-20260825-000001 54 79.9\nFD_NODE_DONE Xavier-02 4\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 330.43093156814575,
+      "exit_code": 0,
+      "host": "192.168.1.200",
+      "job_count": 4,
+      "node": "Xavier-01",
+      "ok": true,
+      "stderr": "",
+      "stdout": "FD_JOB_DONE FD-V01-Xavier-01-tm-market-GOLD-M15-20260825-000001 57 86.1\nFD_JOB_DONE FD-V01-Xavier-01-tm-market-GOLD-H1-20260825-000001 54 81.5\nFD_JOB_DONE FD-V01-Xavier-01-tm-market-GOLD-H4-20260825-000001 54 79.1\nFD_JOB_DONE FD-V01-Xavier-01-tm-market-GOLD-D1-20260825-000001 54 81.8\nFD_NODE_DONE Xavier-01 4\n"
+    },
+    {
+      "attempts": 1,
+      "elapsed_seconds": 411.4614622592926,
+      "exit_code": 0,
+      "host": "192.168.1.203",
+      "job_count": 5,
+      "node": "Xavier-04",
+      "ok": true,
+      "stderr": "",
+      "stdout": "FD_JOB_DONE FD-V01-Xavier-04-tm-market-OIL-M15-20260825-000001 57 85.6\nFD_JOB_DONE FD-V01-Xavier-04-tm-market-OIL-H1-20260825-000001 54 81.9\nFD_JOB_DONE FD-V01-Xavier-04-tm-market-OIL-H4-20260825-000001 54 78.7\nFD_JOB_DONE FD-V01-Xavier-04-tm-market-OIL-D1-20260825-000001 54 79.1\nFD_JOB_DONE FD-V01-Xavier-04-tm-market-GOLD-M15-20260825-000001 57 83.6\nFD_NODE_DONE Xavier-04 5\n"
+    }
+  ],
+  "started_finish_utc": "2026-08-26T00:38:46Z"
+}

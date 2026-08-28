@@ -1,0 +1,30 @@
+{
+  "jobs": [
+    {
+      "content_hash": "9225c8f2d4cebb27dd4b56528e0d7e4bffe9846a0f006f69a27eb3a7d4bae115",
+      "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+      "elapsed_seconds": 68.99584150314331,
+      "job_id": "PD-V06-Xavier-03-tm-market-USDJPY-M15-20260825-000001"
+    },
+    {
+      "content_hash": "ac0c16c5f87373fbe81f55e15561feb2d93a47b50fd5aa70aeb5a8c34c264c4a",
+      "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+      "elapsed_seconds": 67.72968459129333,
+      "job_id": "PD-V06-Xavier-03-tm-market-USDJPY-H1-20260825-000001"
+    },
+    {
+      "content_hash": "111453d337764be7bdfd15b263f6f32775740e459973513c8bce57dd91ece681",
+      "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+      "elapsed_seconds": 67.9155957698822,
+      "job_id": "PD-V06-Xavier-03-tm-market-USDJPY-H4-20260825-000001"
+    },
+    {
+      "content_hash": "cf2511ab9a1a3a72eaf514b16aa3ac78ab40479e6509a1ab3b9cee3cc8daf285",
+      "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+      "elapsed_seconds": 66.74587440490723,
+      "job_id": "PD-V06-Xavier-03-tm-market-USDJPY-D1-20260825-000001"
+    }
+  ],
+  "node": "Xavier-03",
+  "ok": true
+}

@@ -1,0 +1,22 @@
+{
+  "task_id": "tm-task-20260725-000030",
+  "worker_id": "worker-03",
+  "worker_type": "backtest-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-25T12:29:32.748888Z",
+  "started_at": "2026-07-25T12:29:38.811178Z",
+  "finished_at": "2026-07-25T12:29:38.849369Z",
+  "duration_ms": 38,
+  "result_path": "results/2026/07/25/tm-task-20260725-000030.json",
+  "error": null,
+  "request": {
+    "worker_type": "backtest-worker",
+    "indicator": "backtest",
+    "data": {
+      "strategy": "SMA_CROSS",
+      "symbol": "600519",
+      "start": "2025-01-01"
+    },
+    "params": {}
+  }
+}

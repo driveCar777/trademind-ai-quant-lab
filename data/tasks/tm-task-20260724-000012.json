@@ -1,0 +1,44 @@
+{
+  "task_id": "tm-task-20260724-000012",
+  "worker_id": "worker-01",
+  "worker_type": "indicator-worker",
+  "status": "COMPLETED",
+  "created_at": "2026-07-24T12:19:26.204877Z",
+  "started_at": "2026-07-24T12:19:32.255599Z",
+  "finished_at": "2026-07-24T12:19:32.366411Z",
+  "duration_ms": 110,
+  "result_path": "results/2026/07/24/tm-task-20260724-000012.json",
+  "error": null,
+  "request": {
+    "worker_type": "indicator-worker",
+    "indicator": "RSI",
+    "data": {
+      "symbol": "USDJPY",
+      "close": [
+        45.5,
+        45.24,
+        46.190000000000005,
+        44.21,
+        46.129999999999995,
+        46.03,
+        47.5,
+        46.92,
+        46.74,
+        47.879999999999995,
+        47.09,
+        48.13,
+        46.21,
+        47.78,
+        47.18,
+        47.8,
+        47.230000000000004,
+        48.809999999999995,
+        47.72,
+        46.54
+      ]
+    },
+    "params": {
+      "period": 14
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "task_id": "tm-task-20260731-000009",
+  "worker_id": "worker-04",
+  "worker_type": "monitor-worker",
+  "status": "FAILED",
+  "created_at": "2026-07-31T03:37:11.876590Z",
+  "started_at": "2026-07-31T03:37:11.939862Z",
+  "finished_at": "2026-07-31T03:37:12.083578Z",
+  "duration_ms": 143,
+  "result_path": "results/2026/07/31/tm-task-20260731-000009.json",
+  "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+  "request": {
+    "worker_type": "monitor-worker",
+    "indicator": "metrics",
+    "data": {
+      "type": "metrics"
+    },
+    "params": {}
+  }
+}

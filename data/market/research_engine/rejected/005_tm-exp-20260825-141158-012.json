@@ -1,0 +1,8 @@
+{
+  "arm": "negative",
+  "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+  "experiment_id": "tm-exp-20260825-141158-012",
+  "hypothesis_id": "HYP-0001-B",
+  "reason": "FALSIFIED",
+  "result_hash": "c69704eeb980c77e2cdb4a26b34686425dafed72310f7ec4e99535587a91d5d2"
+}

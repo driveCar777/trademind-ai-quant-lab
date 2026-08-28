@@ -1,0 +1,9 @@
+﻿[
+  {
+    "worker_id": "xavier-worker-01",
+    "type": "indicator",
+    "host": "127.0.0.1",
+    "port": 8000,
+    "status": "online"
+  }
+]

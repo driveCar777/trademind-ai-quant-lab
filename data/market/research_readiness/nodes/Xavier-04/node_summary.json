@@ -1,0 +1,65 @@
+{
+  "FAULT_INJECTION_PASS": true,
+  "FINAL_OOS_LOCKED": false,
+  "datasets": [
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-OIL-M15-20260825-000001",
+      "elapsed_seconds": 32.77280831336975,
+      "errors": [],
+      "profile_hash": "e38139b6c7d74b4924f8c7ea329703e6153ff398905fabb048b4912371ec3c5a",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-OIL-H1-20260825-000001",
+      "elapsed_seconds": 31.78245234489441,
+      "errors": [],
+      "profile_hash": "1ef0b28466691d1cd736fba0caaf9166cf1d702bfad0c717b85b9dd94e2f969e",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-OIL-H4-20260825-000001",
+      "elapsed_seconds": 32.44312405586243,
+      "errors": [],
+      "profile_hash": "190aca061b8e9e5b73d40fcf726b4609cc2af26107f99b20ded88d82ecb223eb",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "elapsed_seconds": 32.204357385635376,
+      "errors": [],
+      "profile_hash": "615aae90828848346de2889639c8d3dd808d5d3e9ba7518545ffe029503c57ac",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    },
+    {
+      "DETERMINISTIC_REPEAT": true,
+      "block_count": 8,
+      "completed": 20,
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "elapsed_seconds": 31.624250411987305,
+      "errors": [],
+      "profile_hash": "0b063463826df38f5605ce91d6c944cbc9cef0098b7fc4b32363493819aa678c",
+      "qualification": "READY_WITH_REVIEW",
+      "rolling_count": 19
+    }
+  ],
+  "elapsed_seconds": 172.3062617778778,
+  "node": "Xavier-04",
+  "python": "3.6.9",
+  "repeats": 20
+}

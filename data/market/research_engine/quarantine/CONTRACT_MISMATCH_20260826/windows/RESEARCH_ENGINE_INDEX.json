@@ -1,0 +1,89 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+  "created_at_utc": "2026-08-25T15:17:13Z",
+  "cross": [
+    {
+      "a": "Xavier-01",
+      "b": "Xavier-04",
+      "dataset": "tm-market-GOLD-M15-20260825-000001",
+      "hypothesis": "HYP-0001-A",
+      "reason": "missing",
+      "result": "FAIL"
+    },
+    {
+      "a": "Xavier-01",
+      "b": "Xavier-04",
+      "dataset": "tm-market-GOLD-H1-20260825-000001",
+      "hypothesis": "HYP-0001-A",
+      "reason": "missing",
+      "result": "FAIL"
+    },
+    {
+      "a": "Xavier-02",
+      "b": "Xavier-03",
+      "dataset": "tm-market-EURUSD-M15-20260825-000001",
+      "hypothesis": "HYP-0001-A",
+      "reason": "missing",
+      "result": "FAIL"
+    },
+    {
+      "a": "Xavier-02",
+      "b": "Xavier-03",
+      "dataset": "tm-market-USDJPY-D1-20260825-000001",
+      "hypothesis": "HYP-0001-A",
+      "reason": "missing",
+      "result": "FAIL"
+    }
+  ],
+  "datasets": 16,
+  "deterministic": false,
+  "dispatch": [
+    {
+      "attempts": 2,
+      "elapsed_seconds": 2944.4708371162415,
+      "error": "exit_1",
+      "exit_code": 1,
+      "host": "192.168.1.201",
+      "node": "Xavier-02",
+      "ok": false,
+      "stderr": "Traceback (most recent call last):\n  File \"research_engine/node_runner.py\", line 299, in <module>\n    sys.exit(main())\n  File \"research_engine/node_runner.py\", line 276, in main\n    rows.append(run_dataset(os.path.join(args.jobs_dir, name), out_dir, args.node, args.repeats))\n  File \"research_engine/node_runner.py\", line 159, in run_dataset\n    manifest, bars, sha = load_dataset(dataset_dir)\n  File \"/tmp/tm-research-engine-v04/research_protocol/bars.py\", line 54, in load_dataset\n    manifest = load_json(os.path.join(dataset_dir, \"manifest.json\"))\n  File \"/tmp/tm-research-engine-v04/research_protocol/bars.py\", line 21, in load_json\n    handle = open(path, \"r\")\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/tm-research-engine-v04/jobs/datasets/manifest.json'\n"
+    },
+    {
+      "attempts": 2,
+      "elapsed_seconds": 3061.700597524643,
+      "error": "exit_1",
+      "exit_code": 1,
+      "host": "192.168.1.200",
+      "node": "Xavier-01",
+      "ok": false,
+      "stderr": "Traceback (most recent call last):\n  File \"research_engine/node_runner.py\", line 299, in <module>\n    sys.exit(main())\n  File \"research_engine/node_runner.py\", line 276, in main\n    rows.append(run_dataset(os.path.join(args.jobs_dir, name), out_dir, args.node, args.repeats))\n  File \"research_engine/node_runner.py\", line 159, in run_dataset\n    manifest, bars, sha = load_dataset(dataset_dir)\n  File \"/tmp/tm-research-engine-v04/research_protocol/bars.py\", line 54, in load_dataset\n    manifest = load_json(os.path.join(dataset_dir, \"manifest.json\"))\n  File \"/tmp/tm-research-engine-v04/research_protocol/bars.py\", line 21, in load_json\n    handle = open(path, \"r\")\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/tm-research-engine-v04/jobs/datasets/manifest.json'\n"
+    },
+    {
+      "attempts": 2,
+      "elapsed_seconds": 3913.392332792282,
+      "error": "exit_1",
+      "exit_code": 1,
+      "host": "192.168.1.203",
+      "node": "Xavier-04",
+      "ok": false,
+      "stderr": "Traceback (most recent call last):\n  File \"research_engine/node_runner.py\", line 299, in <module>\n    sys.exit(main())\n  File \"research_engine/node_runner.py\", line 276, in main\n    rows.append(run_dataset(os.path.join(args.jobs_dir, name), out_dir, args.node, args.repeats))\n  File \"research_engine/node_runner.py\", line 159, in run_dataset\n    manifest, bars, sha = load_dataset(dataset_dir)\n  File \"/tmp/tm-research-engine-v04/research_protocol/bars.py\", line 54, in load_dataset\n    manifest = load_json(os.path.join(dataset_dir, \"manifest.json\"))\n  File \"/tmp/tm-research-engine-v04/research_protocol/bars.py\", line 21, in load_json\n    handle = open(path, \"r\")\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/tm-research-engine-v04/jobs/datasets/manifest.json'\n"
+    },
+    {
+      "attempts": 2,
+      "elapsed_seconds": 3915.141634941101,
+      "error": "exit_1",
+      "exit_code": 1,
+      "host": "192.168.1.202",
+      "node": "Xavier-03",
+      "ok": false,
+      "stderr": "Traceback (most recent call last):\n  File \"research_engine/node_runner.py\", line 299, in <module>\n    sys.exit(main())\n  File \"research_engine/node_runner.py\", line 276, in main\n    rows.append(run_dataset(os.path.join(args.jobs_dir, name), out_dir, args.node, args.repeats))\n  File \"research_engine/node_runner.py\", line 159, in run_dataset\n    manifest, bars, sha = load_dataset(dataset_dir)\n  File \"/tmp/tm-research-engine-v04/research_protocol/bars.py\", line 54, in load_dataset\n    manifest = load_json(os.path.join(dataset_dir, \"manifest.json\"))\n  File \"/tmp/tm-research-engine-v04/research_protocol/bars.py\", line 21, in load_json\n    handle = open(path, \"r\")\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/tm-research-engine-v04/jobs/datasets/manifest.json'\n"
+    }
+  ],
+  "engine_version": "0.4",
+  "experiments": 32,
+  "holdout_denied": false,
+  "job_count": 0,
+  "protocol_hash": "9222ab65c752c33aaac31b2b561e76c3984896045adc449c7dac58a800b5d10c",
+  "seed": 20260825
+}

@@ -1,0 +1,39 @@
+# TradeMind Indicator Worker Dependencies
+# Python 3.10 ARM64
+
+# 核心计算库
+numpy==1.24.3
+pandas==2.0.3
+scipy==1.11.1
+
+# 高性能DataFrame (可选，更快)
+polars==0.18.15
+
+# 技术指标 (需要离线编译TA-Lib C库)
+ta-lib==0.4.28
+
+# JIT编译加速
+numba==0.57.1
+
+# Web服务
+fastapi==0.103.1
+uvicorn[standard]==0.23.2
+
+# 网络和通信
+requests==2.31.0
+httpx==0.24.1
+
+# 配置和工具
+pydantic==2.3.0
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# 缓存和队列
+redis==5.0.0
+
+# 日志
+loguru==0.7.2
+
+# 监控
+prometheus-client==0.17.1
+psutil==5.9.5

@@ -1,0 +1,1194 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "candidates": [
+    {
+      "candidate_id": "SD-V05-LONG_IN_UP-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "LONG_IN_UP",
+      "raw_p": 0.9701492537313433,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0005846594517369312,
+          "iterations": 200,
+          "low": -0.0006166739632080063,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0002950459107086276,
+          "iterations": 200,
+          "low": -0.0003931389469268898,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.00010896958737198318,
+        "delta": -4.634701056276301e-06,
+        "economic_magnitude_bps": -0.04634701056276301,
+        "economic_magnitude_return": -4.634701056276301e-06,
+        "effect_size": -0.0014665794037611417,
+        "hit_rate": 0.4852941176470588,
+        "occupancy": 272,
+        "permutation_p": 0.9701492537313433,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 272
+      },
+      "side": 1,
+      "sign_consistency": false,
+      "signal_rule": {
+        "kind": "always"
+      },
+      "state_filter": {
+        "trend": [
+          "UP"
+        ]
+      },
+      "strategy_id": "SD-V05-LONG_IN_UP-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0009743591588762554,
+          "iterations": 200,
+          "low": -0.0006368343929159917,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0007603991398837358,
+          "iterations": 200,
+          "low": -0.0004640803574274578,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.00022264074435653038,
+        "delta": 0.000172020276147931,
+        "economic_magnitude_bps": 1.7202027614793098,
+        "economic_magnitude_return": 0.000172020276147931,
+        "effect_size": 0.061920311155764254,
+        "hit_rate": 0.4666666666666667,
+        "occupancy": 75,
+        "permutation_p": 0.6218905472636815,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 75
+      }
+    },
+    {
+      "candidate_id": "SD-V05-SHORT_IN_DOWN-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "SHORT_IN_DOWN",
+      "raw_p": 0.13432835820895522,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0007503603668101256,
+          "iterations": 200,
+          "low": -0.0001778641654622371,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.000598351228692498,
+          "iterations": 200,
+          "low": -5.725518177979159e-05,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.00017512145846497606,
+        "delta": 0.00027945634478068293,
+        "economic_magnitude_bps": 2.794563447806829,
+        "economic_magnitude_return": 0.00027945634478068293,
+        "effect_size": 0.08558882104676402,
+        "hit_rate": 0.5366379310344828,
+        "occupancy": 464,
+        "permutation_p": 0.13432835820895522,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 464
+      },
+      "side": -1,
+      "sign_consistency": false,
+      "signal_rule": {
+        "kind": "always"
+      },
+      "state_filter": {
+        "trend": [
+          "DOWN"
+        ]
+      },
+      "strategy_id": "SD-V05-SHORT_IN_DOWN-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0005644872938064232,
+          "iterations": 200,
+          "low": -0.000654579434062386,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0004752677445216348,
+          "iterations": 200,
+          "low": -0.0008594803002075967,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.00012487313057112993,
+        "delta": -0.0001754935987797293,
+        "economic_magnitude_bps": -1.7549359877972932,
+        "economic_magnitude_return": -0.0001754935987797293,
+        "effect_size": -0.06528520806815909,
+        "hit_rate": 0.43859649122807015,
+        "occupancy": 57,
+        "permutation_p": 0.6666666666666666,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 57
+      }
+    },
+    {
+      "candidate_id": "SD-V05-MOM_POS_IN_UP_STRONG-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "MOM_POS_IN_UP_STRONG",
+      "raw_p": 0.39303482587064675,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0008004672368748198,
+          "iterations": 200,
+          "low": -0.0001302052932143875,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0009046883853229103,
+          "iterations": 200,
+          "low": -0.0002339102950674897,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.00020282588305557456,
+        "delta": 0.0003071607693712814,
+        "economic_magnitude_bps": 3.071607693712814,
+        "economic_magnitude_return": 0.0003071607693712814,
+        "effect_size": 0.0980220419481381,
+        "hit_rate": 0.5268817204301075,
+        "occupancy": 93,
+        "permutation_p": 0.39303482587064675,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 93
+      },
+      "side": 1,
+      "sign_consistency": true,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "strength": [
+          "STRONG"
+        ],
+        "trend": [
+          "UP"
+        ]
+      },
+      "strategy_id": "SD-V05-MOM_POS_IN_UP_STRONG-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0011871148065419946,
+          "iterations": 200,
+          "low": -0.0005723758569133808,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0010191721266138774,
+          "iterations": 200,
+          "low": -0.0006474916289644358,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.00016648917743225522,
+        "delta": 0.00011586870922365583,
+        "economic_magnitude_bps": 1.1586870922365584,
+        "economic_magnitude_return": 0.00011586870922365583,
+        "effect_size": 0.04075193592912084,
+        "hit_rate": 0.45454545454545453,
+        "occupancy": 44,
+        "permutation_p": 0.835820895522388,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 44
+      }
+    },
+    {
+      "candidate_id": "SD-V05-MOM_NEG_IN_DOWN_STRONG-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "MOM_NEG_IN_DOWN_STRONG",
+      "raw_p": 0.7960199004975125,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0005777816231953279,
+          "iterations": 200,
+          "low": -0.0003587315907810505,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0006237049880001334,
+          "iterations": 200,
+          "low": -0.0004493538782831658,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -3.512654193418206e-05,
+        "delta": 6.920834438152482e-05,
+        "economic_magnitude_bps": 0.6920834438152482,
+        "economic_magnitude_return": 6.920834438152482e-05,
+        "effect_size": 0.021447647376631813,
+        "hit_rate": 0.5177664974619289,
+        "occupancy": 197,
+        "permutation_p": 0.7960199004975125,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 197
+      },
+      "side": -1,
+      "sign_consistency": true,
+      "signal_rule": {
+        "equals": "NEG",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "strength": [
+          "STRONG"
+        ],
+        "trend": [
+          "DOWN"
+        ]
+      },
+      "strategy_id": "SD-V05-MOM_NEG_IN_DOWN_STRONG-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0004092165415841357,
+          "iterations": 200,
+          "low": -0.00021655732027609908,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.000901257263123363,
+          "iterations": 200,
+          "low": -0.0006661326624809196,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.00010324050711517652,
+        "delta": 5.2620038906577126e-05,
+        "economic_magnitude_bps": 0.5262003890657713,
+        "economic_magnitude_return": 5.2620038906577126e-05,
+        "effect_size": 0.019234113163532716,
+        "hit_rate": 0.5,
+        "occupancy": 20,
+        "permutation_p": 0.9303482587064676,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 20
+      }
+    },
+    {
+      "candidate_id": "SD-V05-MOM_POS_IN_UP-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "MOM_POS_IN_UP",
+      "raw_p": 0.5472636815920398,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0005364587720517431,
+          "iterations": 200,
+          "low": -0.000721015881441978,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.00035918641944877676,
+          "iterations": 200,
+          "low": -0.0007664656489341063,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.0002493902748890735,
+        "delta": -0.00014505538857336662,
+        "economic_magnitude_bps": -1.4505538857336662,
+        "economic_magnitude_return": -0.00014505538857336662,
+        "effect_size": -0.04523120531347949,
+        "hit_rate": 0.4632768361581921,
+        "occupancy": 177,
+        "permutation_p": 0.5472636815920398,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 177
+      },
+      "side": 1,
+      "sign_consistency": false,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "trend": [
+          "UP"
+        ]
+      },
+      "strategy_id": "SD-V05-MOM_POS_IN_UP-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0013695898080897534,
+          "iterations": 200,
+          "low": -0.0005647536286885066,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0011683447404722052,
+          "iterations": 200,
+          "low": -0.000566534301190247,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.000369449554337554,
+        "delta": 0.0003188290861289546,
+        "economic_magnitude_bps": 3.1882908612895458,
+        "economic_magnitude_return": 0.0003188290861289546,
+        "effect_size": 0.11247344480028854,
+        "hit_rate": 0.49019607843137253,
+        "occupancy": 51,
+        "permutation_p": 0.5373134328358209,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 51
+      }
+    },
+    {
+      "candidate_id": "SD-V05-MOM_POS_IN_UP_H3-H3",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 3,
+      "insufficient_n": false,
+      "name": "MOM_POS_IN_UP_H3",
+      "raw_p": 0.8905472636815921,
+      "research": {
+        "baseline_mean": -0.00031384175573446696,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0017571781355921108,
+          "iterations": 200,
+          "low": -0.0020880372587520255,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0008746549977440932,
+          "iterations": 200,
+          "low": -0.0011893238774675118,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.00039575508001389587,
+        "delta": -8.191332427942891e-05,
+        "economic_magnitude_bps": -0.8191332427942891,
+        "economic_magnitude_return": -8.191332427942891e-05,
+        "effect_size": -0.014539051598464992,
+        "hit_rate": 0.4406779661016949,
+        "occupancy": 177,
+        "permutation_p": 0.8905472636815921,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 177
+      },
+      "side": 1,
+      "sign_consistency": false,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "trend": [
+          "UP"
+        ]
+      },
+      "strategy_id": "SD-V05-MOM_POS_IN_UP_H3-H3",
+      "validation": {
+        "baseline_mean": 0.00014793922246825097,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0036894433015685285,
+          "iterations": 200,
+          "low": -0.0021949066442357966,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0020278311473734423,
+          "iterations": 200,
+          "low": -0.00041649441012554887,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.0009692213964220754,
+        "delta": 0.0008212821739538244,
+        "economic_magnitude_bps": 8.212821739538244,
+        "economic_magnitude_return": 0.0008212821739538244,
+        "effect_size": 0.1822529951112386,
+        "hit_rate": 0.5294117647058824,
+        "occupancy": 51,
+        "permutation_p": 0.22388059701492538,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 51
+      }
+    },
+    {
+      "candidate_id": "SD-V05-MOM_POS_UP_MIDVOL-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "MOM_POS_UP_MIDVOL",
+      "raw_p": 0.8258706467661692,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0008454469229063061,
+          "iterations": 200,
+          "low": -0.0011435697045446796,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0006759789120128737,
+          "iterations": 200,
+          "low": -0.0008705417489476518,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.0002174676302984415,
+        "delta": -0.00011313274398273462,
+        "economic_magnitude_bps": -1.131327439827346,
+        "economic_magnitude_return": -0.00011313274398273462,
+        "effect_size": -0.03597363108171306,
+        "hit_rate": 0.49019607843137253,
+        "occupancy": 51,
+        "permutation_p": 0.8258706467661692,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 51
+      },
+      "side": 1,
+      "sign_consistency": false,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "trend": [
+          "UP"
+        ],
+        "vol": [
+          "MID"
+        ]
+      },
+      "strategy_id": "SD-V05-MOM_POS_UP_MIDVOL-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0020842857364525196,
+          "iterations": 200,
+          "low": 0.0014585118745922847,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.006097829399905425,
+          "iterations": 200,
+          "low": -0.0019139078042723098,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.0017783097019835603,
+        "delta": 0.001727689233774961,
+        "economic_magnitude_bps": 17.276892337749608,
+        "economic_magnitude_return": 0.001727689233774961,
+        "effect_size": 0.6069180153834517,
+        "hit_rate": 0.4,
+        "occupancy": 5,
+        "permutation_p": 0.11442786069651742,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 5
+      }
+    },
+    {
+      "candidate_id": "SD-V05-MOM_POS_UP_HIACT-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "MOM_POS_UP_HIACT",
+      "raw_p": 0.3582089552238806,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.00022935703105358437,
+          "iterations": 200,
+          "low": -0.0010010958399716283,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.00035939422941872075,
+          "iterations": 200,
+          "low": -0.0010754450397777275,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.0004304166547676513,
+        "delta": -0.0003260817684519444,
+        "economic_magnitude_bps": -3.260817684519444,
+        "economic_magnitude_return": -0.0003260817684519444,
+        "effect_size": -0.10197327251582945,
+        "hit_rate": 0.4375,
+        "occupancy": 80,
+        "permutation_p": 0.3582089552238806,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 80
+      },
+      "side": 1,
+      "sign_consistency": false,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "activity": [
+          "HIGH"
+        ],
+        "trend": [
+          "UP"
+        ]
+      },
+      "strategy_id": "SD-V05-MOM_POS_UP_HIACT-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0010855301555678714,
+          "iterations": 200,
+          "low": 0.0004246349880088392,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0024980537815665694,
+          "iterations": 200,
+          "low": -0.0008933170637789778,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.000771378616966735,
+        "delta": 0.0007207581487581356,
+        "economic_magnitude_bps": 7.207581487581356,
+        "economic_magnitude_return": 0.0007207581487581356,
+        "effect_size": 0.24841044887593525,
+        "hit_rate": 0.5217391304347826,
+        "occupancy": 23,
+        "permutation_p": 0.263681592039801,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 23
+      }
+    },
+    {
+      "candidate_id": "SD-V05-MOM_POS_TIGHT-H1",
+      "cost_sensitive": null,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": true,
+      "name": "MOM_POS_TIGHT",
+      "raw_p": null,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": null,
+        "bootstrap_ci": null,
+        "conditional_mean": null,
+        "delta": null,
+        "economic_magnitude_bps": null,
+        "economic_magnitude_return": null,
+        "effect_size": null,
+        "hit_rate": null,
+        "occupancy": 0,
+        "permutation_p": null,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 0
+      },
+      "side": 1,
+      "sign_consistency": null,
+      "signal_rule": {
+        "equals": "POS",
+        "kind": "momentum"
+      },
+      "state_filter": {
+        "friction": [
+          "TIGHT"
+        ]
+      },
+      "strategy_id": "SD-V05-MOM_POS_TIGHT-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": null,
+        "bootstrap_ci": null,
+        "conditional_mean": null,
+        "delta": null,
+        "economic_magnitude_bps": null,
+        "economic_magnitude_return": null,
+        "effect_size": null,
+        "hit_rate": null,
+        "occupancy": 0,
+        "permutation_p": null,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 0
+      }
+    },
+    {
+      "candidate_id": "SD-V05-FADE_EXT_FLAT-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "FADE_EXT_FLAT",
+      "raw_p": 0.8756218905472637,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.00040432421564182684,
+          "iterations": 200,
+          "low": -0.0004643246689576906,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0004038111010171816,
+          "iterations": 200,
+          "low": -0.0004279649288182067,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.00013061350303962272,
+        "delta": -2.627861672391584e-05,
+        "economic_magnitude_bps": -0.26278616723915843,
+        "economic_magnitude_return": -2.627861672391584e-05,
+        "effect_size": -0.008366076534767033,
+        "hit_rate": 0.52,
+        "occupancy": 250,
+        "permutation_p": 0.8756218905472637,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 250
+      },
+      "side": 1,
+      "sign_consistency": true,
+      "signal_rule": {
+        "equals": "EXTENDED",
+        "fade": true,
+        "kind": "location"
+      },
+      "state_filter": {
+        "location": [
+          "EXTENDED"
+        ],
+        "trend": [
+          "FLAT"
+        ]
+      },
+      "strategy_id": "SD-V05-FADE_EXT_FLAT-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0003948100711139406,
+          "iterations": 200,
+          "low": -0.0008904730860917537,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0007390283749412127,
+          "iterations": 200,
+          "low": -0.0012895752510674436,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.00018804922988008863,
+        "delta": -0.000238669698088688,
+        "economic_magnitude_bps": -2.3866969808868803,
+        "economic_magnitude_return": -0.000238669698088688,
+        "effect_size": -0.08037634682853799,
+        "hit_rate": 0.46551724137931033,
+        "occupancy": 58,
+        "permutation_p": 0.5323383084577115,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 58
+      }
+    },
+    {
+      "candidate_id": "SD-V05-FADE_EXT_FLAT_LOWVOL-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "FADE_EXT_FLAT_LOWVOL",
+      "raw_p": 0.7313432835820896,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0005128533086111258,
+          "iterations": 200,
+          "low": -0.0006129086547338248,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0003994205662584553,
+          "iterations": 200,
+          "low": -0.0006815293953418479,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.0002042786765764868,
+        "delta": -9.994379026077991e-05,
+        "economic_magnitude_bps": -0.9994379026077991,
+        "economic_magnitude_return": -9.994379026077991e-05,
+        "effect_size": -0.03202203331164749,
+        "hit_rate": 0.504950495049505,
+        "occupancy": 101,
+        "permutation_p": 0.7313432835820896,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 101
+      },
+      "side": 1,
+      "sign_consistency": true,
+      "signal_rule": {
+        "equals": "EXTENDED",
+        "fade": true,
+        "kind": "location"
+      },
+      "state_filter": {
+        "location": [
+          "EXTENDED"
+        ],
+        "trend": [
+          "FLAT"
+        ],
+        "vol": [
+          "LOW"
+        ]
+      },
+      "strategy_id": "SD-V05-FADE_EXT_FLAT_LOWVOL-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": -0.00015551514111022583,
+          "iterations": 200,
+          "low": -0.0015221700743099549,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0003430525928064844,
+          "iterations": 200,
+          "low": -0.0015112881374037743,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.0005540269635349792,
+        "delta": -0.0006046474317435786,
+        "economic_magnitude_bps": -6.046474317435787,
+        "economic_magnitude_return": -0.0006046474317435786,
+        "effect_size": -0.21333275675574764,
+        "hit_rate": 0.42,
+        "occupancy": 50,
+        "permutation_p": 0.21393034825870647,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 50
+      }
+    },
+    {
+      "candidate_id": "SD-V05-FADE_EXT_FLAT_HIVOL-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "FADE_EXT_FLAT_HIVOL",
+      "raw_p": 0.6169154228855721,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0007682276387649111,
+          "iterations": 200,
+          "low": -0.0009180973366422362,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.0012064984357601741,
+          "iterations": 200,
+          "low": -0.0007656731901472342,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.00016482497989017908,
+        "delta": 0.000269159866205886,
+        "economic_magnitude_bps": 2.6915986620588597,
+        "economic_magnitude_return": 0.000269159866205886,
+        "effect_size": 0.08450373269627878,
+        "hit_rate": 0.64,
+        "occupancy": 50,
+        "permutation_p": 0.6169154228855721,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 50
+      },
+      "side": 1,
+      "sign_consistency": false,
+      "signal_rule": {
+        "equals": "EXTENDED",
+        "fade": true,
+        "kind": "location"
+      },
+      "state_filter": {
+        "location": [
+          "EXTENDED"
+        ],
+        "trend": [
+          "FLAT"
+        ],
+        "vol": [
+          "HIGH"
+        ]
+      },
+      "strategy_id": "SD-V05-FADE_EXT_FLAT_HIVOL-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": -0.0019333423346512653,
+          "iterations": 200,
+          "low": -0.0025591161965115,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": -0.001963347631229382,
+          "iterations": 200,
+          "low": -0.002654095073214584,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.0022393183691202245,
+        "delta": -0.002289938837328824,
+        "economic_magnitude_bps": -22.89938837328824,
+        "economic_magnitude_return": -0.002289938837328824,
+        "effect_size": -0.8185713679672578,
+        "hit_rate": 0.5,
+        "occupancy": 2,
+        "permutation_p": 0.12935323383084577,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 2
+      }
+    },
+    {
+      "candidate_id": "SD-V05-FADE_EXT_WEAK-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": false,
+      "name": "FADE_EXT_WEAK",
+      "raw_p": 0.582089552238806,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0004878688216882459,
+          "iterations": 200,
+          "low": -0.0007291716541069919,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.00030568984468751963,
+          "iterations": 200,
+          "low": -0.00048770410609726996,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.00022455971595817758,
+        "delta": -0.0001202248296424707,
+        "economic_magnitude_bps": -1.202248296424707,
+        "economic_magnitude_return": -0.0001202248296424707,
+        "effect_size": -0.03740175985997505,
+        "hit_rate": 0.49480968858131485,
+        "occupancy": 289,
+        "permutation_p": 0.582089552238806,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 289
+      },
+      "side": 1,
+      "sign_consistency": true,
+      "signal_rule": {
+        "equals": "EXTENDED",
+        "fade": true,
+        "kind": "location"
+      },
+      "state_filter": {
+        "location": [
+          "EXTENDED"
+        ],
+        "strength": [
+          "WEAK"
+        ]
+      },
+      "strategy_id": "SD-V05-FADE_EXT_WEAK-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.000502664489788982,
+          "iterations": 200,
+          "low": -0.0010726802811773257,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.000710394795150674,
+          "iterations": 200,
+          "low": -0.0012373015603134754,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": -0.00021325156205588534,
+        "delta": -0.0002638720302644847,
+        "economic_magnitude_bps": -2.638720302644847,
+        "economic_magnitude_return": -0.0002638720302644847,
+        "effect_size": -0.08889075599620869,
+        "hit_rate": 0.45614035087719296,
+        "occupancy": 57,
+        "permutation_p": 0.5522388059701493,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 57
+      }
+    },
+    {
+      "candidate_id": "SD-V05-LONG_UP_TIGHT-H1",
+      "cost_sensitive": null,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": true,
+      "name": "LONG_UP_TIGHT",
+      "raw_p": null,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": null,
+        "bootstrap_ci": null,
+        "conditional_mean": null,
+        "delta": null,
+        "economic_magnitude_bps": null,
+        "economic_magnitude_return": null,
+        "effect_size": null,
+        "hit_rate": null,
+        "occupancy": 0,
+        "permutation_p": null,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 0
+      },
+      "side": 1,
+      "sign_consistency": null,
+      "signal_rule": {
+        "kind": "always"
+      },
+      "state_filter": {
+        "friction": [
+          "TIGHT"
+        ],
+        "trend": [
+          "UP"
+        ]
+      },
+      "strategy_id": "SD-V05-LONG_UP_TIGHT-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": null,
+        "bootstrap_ci": null,
+        "conditional_mean": null,
+        "delta": null,
+        "economic_magnitude_bps": null,
+        "economic_magnitude_return": null,
+        "effect_size": null,
+        "hit_rate": null,
+        "occupancy": 0,
+        "permutation_p": null,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 0
+      }
+    },
+    {
+      "candidate_id": "SD-V05-SKIP_WIDE_ONLY-H1",
+      "cost_sensitive": true,
+      "family_id": "FAM-SD-STATE-0001",
+      "horizon": 1,
+      "insufficient_n": true,
+      "name": "SKIP_WIDE_ONLY",
+      "raw_p": null,
+      "research": {
+        "baseline_mean": -0.00010433488631570688,
+        "baseline_n": 1230,
+        "block_bootstrap_ci": {
+          "block_length": 20,
+          "high": 0.0010492410417190044,
+          "iterations": 200,
+          "low": 0.0001364142689713432,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260825
+        },
+        "bootstrap_ci": {
+          "high": 0.001395958455934905,
+          "iterations": 200,
+          "low": -6.029397660820942e-05,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260825
+        },
+        "conditional_mean": 0.0006012739733786577,
+        "delta": 0.0007056088596943646,
+        "economic_magnitude_bps": 7.0560885969436455,
+        "economic_magnitude_return": 0.0007056088596943646,
+        "effect_size": 0.22468566497037445,
+        "hit_rate": 0.52,
+        "occupancy": 25,
+        "permutation_p": 0.24875621890547264,
+        "raw_spread_over_close": 0.01039074993859539,
+        "sample_size": 25
+      },
+      "side": 1,
+      "sign_consistency": null,
+      "signal_rule": {
+        "kind": "always"
+      },
+      "state_filter": {
+        "friction": [
+          "WIDE"
+        ]
+      },
+      "strategy_id": "SD-V05-SKIP_WIDE_ONLY-H1",
+      "validation": {
+        "baseline_mean": 5.0620468208599394e-05,
+        "baseline_n": 249,
+        "block_bootstrap_ci": null,
+        "bootstrap_ci": null,
+        "conditional_mean": null,
+        "delta": null,
+        "economic_magnitude_bps": null,
+        "economic_magnitude_return": null,
+        "effect_size": null,
+        "hit_rate": null,
+        "occupancy": 0,
+        "permutation_p": null,
+        "raw_spread_over_close": 0.01108177860083926,
+        "sample_size": 0
+      }
+    }
+  ],
+  "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+  "dataset_sha256": "07339c1831fdfa5db38c8e849cbb4dd1ce2f021c8304c4599b72c05588ba8166",
+  "discovery_id": "STRATEGY_DISCOVERY_V0.5",
+  "elapsed_seconds": 6.828061103820801,
+  "job_id": "SD-V05-Windows-local-tm-market-GOLD-H1-20260825-000001",
+  "node": "Windows-local",
+  "occupancy": {
+    "DOWN|STRONG|HIGH": 185,
+    "DOWN|STRONG|LOW": 70,
+    "DOWN|STRONG|MID": 118,
+    "DOWN|WEAK|HIGH": 55,
+    "DOWN|WEAK|LOW": 92,
+    "DOWN|WEAK|MID": 90,
+    "FLAT|STRONG|HIGH": 101,
+    "FLAT|STRONG|LOW": 100,
+    "FLAT|STRONG|MID": 104,
+    "FLAT|WEAK|HIGH": 35,
+    "FLAT|WEAK|LOW": 290,
+    "FLAT|WEAK|MID": 129,
+    "UP|STRONG|HIGH": 117,
+    "UP|STRONG|LOW": 131,
+    "UP|STRONG|MID": 134,
+    "UP|WEAK|HIGH": 35,
+    "UP|WEAK|LOW": 103,
+    "UP|WEAK|MID": 62
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "a582b945a4f4d42cde6ceba36ad1f1f98de92accc9466cbdc6f4c77529b0bbdd",
+  "vol_cuts": {
+    "vol_high": 0.004703807826734868,
+    "vol_low": 0.003915070112703624
+  }
+}

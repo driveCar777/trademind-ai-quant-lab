@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "CANDIDATE": 0,
+    "INCONCLUSIVE": 5,
+    "PROMISING": 0,
+    "REJECTED": 52
+  },
+  "discovery_id": "FACTOR_DISCOVERY_V0.1",
+  "fdr_discoveries": 0,
+  "keep_failed": true,
+  "outcome": "NO_USEFUL_FACTORS_FOUND",
+  "search_space_hash": "add0211ffb189d50639b656af1b009ac15849d9f3d426af8469f9700eb05dc5a",
+  "tested_count": 876
+}

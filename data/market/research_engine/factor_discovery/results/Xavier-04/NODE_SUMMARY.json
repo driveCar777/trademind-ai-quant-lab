@@ -1,0 +1,41 @@
+{
+  "jobs": [
+    {
+      "candidate_count": 57,
+      "dataset_id": "tm-market-OIL-M15-20260825-000001",
+      "elapsed_seconds": 85.62186288833618,
+      "job_id": "FD-V01-Xavier-04-tm-market-OIL-M15-20260825-000001",
+      "result_hash": "264b3a57af832030c606ab17fb6801a36c7bcf1f728a364acf3c1d619ccd7d2c"
+    },
+    {
+      "candidate_count": 54,
+      "dataset_id": "tm-market-OIL-H1-20260825-000001",
+      "elapsed_seconds": 81.85891199111938,
+      "job_id": "FD-V01-Xavier-04-tm-market-OIL-H1-20260825-000001",
+      "result_hash": "bdec0f9d13846a77a5c9aa53a6c9e22ac21641304e29b85bee20785ba174ebcd"
+    },
+    {
+      "candidate_count": 54,
+      "dataset_id": "tm-market-OIL-H4-20260825-000001",
+      "elapsed_seconds": 78.6903018951416,
+      "job_id": "FD-V01-Xavier-04-tm-market-OIL-H4-20260825-000001",
+      "result_hash": "8af10a3bf76a64f16b01ed03ee12a496722deed957ca4fcca430ec35bcc0a11b"
+    },
+    {
+      "candidate_count": 54,
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "elapsed_seconds": 79.10137891769409,
+      "job_id": "FD-V01-Xavier-04-tm-market-OIL-D1-20260825-000001",
+      "result_hash": "3bcc2a5429143da490fe336814a7fbb23059443376e12d17f0626f25269a62d4"
+    },
+    {
+      "candidate_count": 57,
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "elapsed_seconds": 83.63488149642944,
+      "job_id": "FD-V01-Xavier-04-tm-market-GOLD-M15-20260825-000001",
+      "result_hash": "6e762f2c728240f23457a89d4884e3c945479c7e000fca2965a99ae5772d69bf"
+    }
+  ],
+  "node": "Xavier-04",
+  "ok": true
+}

@@ -1,0 +1,14 @@
+{
+  "code_fingerprint": "407d65227ba0a2437ac66e75386bbba94577b1993e2b7e17f250ac486f527d3a",
+  "dataset_hash": "5c46942d797330185ce919e79cd1b94ac6ca11f25f4442c3a05963c174786ed3",
+  "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+  "experiment_hash": "efec8a9948cd3cb0dff457829e6519491e7fccce4f49a70ab88486294015b4f7",
+  "experiment_id": "tm-exp-20260825-141158-016",
+  "feature_version": "e931dcede36a5d165fa67604be9bc54d8ac6617ce5ec6cba3cf9c0c9e3a14126",
+  "hypothesis_hash": "5293dbe7d54f23a44a10e0458505e47e848a0cb6c4ce76959879bbce24d7d9be",
+  "hypothesis_id": "HYP-0001-B",
+  "lineage_hash": "986003064442fb580e242bb2e77cf5da2ab7b80be76eb4f1893354cc1e5f2fba",
+  "preregister_hash": "fbd14d199ba6390ac91f8700d48053ff75c99d7510183d58eeb1a101238cd3db",
+  "protocol_version": "0.3",
+  "result_hash": "8c5d41f7355161beaa881df3dd6d9c3d59ab840365800199d60ea8e95fa8caf0"
+}

@@ -1,0 +1,84 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "adx_period": 14,
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "REGIME_TRANSITION_V0.9",
+  "family_id": "FAM-RT-DELTA-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_ALIGNED_ROWS",
+  "hypotheses": [
+    {
+      "feature": "VOL_SHOCK",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RT-0001",
+      "predicted_sign": -1,
+      "side": -1,
+      "target": "OIL",
+      "target_asset": "OIL",
+      "title": "Vol enters HIGH -> next 5D OIL down"
+    },
+    {
+      "feature": "ENTER_STRONG_UP",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RT-0002",
+      "predicted_sign": 1,
+      "side": 1,
+      "target": "GOLD",
+      "target_asset": "GOLD",
+      "title": "Trend strength ignites UP -> next 5D GOLD up"
+    },
+    {
+      "feature": "EXIT_STRONG",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-RT-0003",
+      "predicted_sign": -1,
+      "side": -1,
+      "target": "GOLD",
+      "target_asset": "GOLD",
+      "title": "Trend strength dies -> next 5D GOLD down"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-RT-0001",
+    "HYP-RT-0002",
+    "HYP-RT-0003"
+  ],
+  "note": "Worker executes listed IDs only. Delta-state. Not HYP-0001. Not V0.6. Not V0.8.",
+  "parent_datasets": [
+    "tm-market-GOLD-D1-20260825-000001",
+    "tm-market-OIL-D1-20260825-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "3ccb614d8a7784b4fe7c57f6f6a7449c3ac87a8111f3d078bf2096415b8c6cea",
+  "seed": 20260825,
+  "sma_fast": 20,
+  "sma_slow": 50,
+  "state_source": "MARKET_STATE_V0.5",
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "vol_percentiles": [
+    33,
+    67
+  ],
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_target_sorted_d1_dates"
+  }
+}

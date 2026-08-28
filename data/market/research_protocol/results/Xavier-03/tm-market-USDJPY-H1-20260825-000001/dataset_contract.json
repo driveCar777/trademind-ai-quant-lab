@@ -1,0 +1,17 @@
+{
+  "data_end_utc": "2026-08-25T13:00:00Z",
+  "data_start_utc": "2026-04-30T06:00:00Z",
+  "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+  "immutable": true,
+  "logical_symbol": "USDJPY",
+  "mt5_symbol": "USDJPY",
+  "profile_hash": null,
+  "qualification": null,
+  "row_count": 2000,
+  "schema_version": "0.1",
+  "sha256": "9f977e764835be6af3f968bcf6ad3ab0192f0cc563b3cdc6209087714aeb2cd5",
+  "source": "mt5",
+  "timeframe": "H1",
+  "timezone": "UTC",
+  "volume_policy": "tick_volume_only"
+}

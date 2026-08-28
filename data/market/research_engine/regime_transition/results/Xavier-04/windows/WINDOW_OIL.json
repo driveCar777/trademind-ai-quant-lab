@@ -1,0 +1,28 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "dataset_id": "tm-market-OIL-D1-20260825-000001",
+  "final_oos": {
+    "ACCESS": "DENIED",
+    "end_date": "2026-08-25",
+    "exists": true,
+    "n": 300,
+    "start_date": "2025-09-10"
+  },
+  "n": 2000,
+  "research": {
+    "bar_index_end": 1399,
+    "bar_index_start": 0,
+    "end_date": "2024-09-24",
+    "n": 1400,
+    "start_date": "2020-03-24"
+  },
+  "split": "70/15/15_on_target_sorted_d1_dates",
+  "validation": {
+    "bar_index_end": 1699,
+    "bar_index_start": 1400,
+    "end_date": "2025-09-09",
+    "n": 300,
+    "start_date": "2024-09-25"
+  },
+  "window_hash": "680e0b4c4afd97f494cd0a7eb250396165aab34a69f616c630d4defcda822d2b"
+}

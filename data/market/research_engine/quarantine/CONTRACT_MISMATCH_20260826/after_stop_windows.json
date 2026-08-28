@@ -1,0 +1,29 @@
+{
+  "at": "2026-08-25T16:34:38Z",
+  "processes": [
+    {
+      "CommandLine": "C:\\ProgramData\\miniconda3\\python.exe -u C:\\Users\\Phoenix\\.cursor\\stitch-mcp-proxy.py",
+      "Name": "python.exe",
+      "ParentProcessId": 30116,
+      "ProcessId": 28964
+    },
+    {
+      "CommandLine": "C:\\ProgramData\\miniconda3\\python.exe -u C:\\Users\\Phoenix\\.cursor\\stitch-mcp-proxy.py",
+      "Name": "python.exe",
+      "ParentProcessId": 7304,
+      "ProcessId": 19656
+    },
+    {
+      "CommandLine": "\"D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\master\\api\\.venv\\Scripts\\python.exe\" tmp\\quarantine_and_stop_mismatch.py",
+      "Name": "python.exe",
+      "ParentProcessId": 34740,
+      "ProcessId": 32996
+    },
+    {
+      "CommandLine": "\"D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\master\\api\\.venv\\Scripts\\python.exe\" tmp\\quarantine_and_stop_mismatch.py",
+      "Name": "python.exe",
+      "ParentProcessId": 32996,
+      "ProcessId": 14480
+    }
+  ]
+}

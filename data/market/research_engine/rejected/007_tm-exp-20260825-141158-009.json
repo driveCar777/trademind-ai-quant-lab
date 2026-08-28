@@ -1,0 +1,8 @@
+{
+  "arm": "continuation",
+  "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+  "experiment_id": "tm-exp-20260825-141158-009",
+  "hypothesis_id": "HYP-0001-A",
+  "reason": "FALSIFIED",
+  "result_hash": "90219249c6b2423164fe05587b241bf20ce9cf48857294f02ab290ed0b41c251"
+}

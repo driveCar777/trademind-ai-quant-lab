@@ -1,0 +1,46 @@
+[
+  {
+    "attempts": 1,
+    "elapsed_seconds": 143.49628829956055,
+    "exit_code": 0,
+    "host": "192.168.1.200",
+    "local": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\research_readiness\\nodes\\Xavier-01",
+    "node": "Xavier-01",
+    "ok": true,
+    "stderr": "",
+    "stdout": "RR_START Xavier-01 tm-market-GOLD-M15-20260825-000001\nRR_DONE Xavier-01 tm-market-GOLD-M15-20260825-000001 True\nRR_START Xavier-01 tm-market-GOLD-H1-20260825-000001\nRR_DONE Xavier-01 tm-market-GOLD-H1-20260825-000001 True\nRR_START Xavier-01 tm-market-GOLD-H4-20260825-000001\nRR_DONE Xavier-01 tm-market-GOLD-H4-20260825-000001 True\nRR_START Xavier-01 tm-market-GOLD-D1-20260825-000001\nRR_DONE Xavier-01 tm-market-GOLD-D1-20260825-000001 True\n{\"ok\": true, \"node\": \"Xavier-01\", \"datasets\": 4}\n"
+  },
+  {
+    "attempts": 1,
+    "elapsed_seconds": 144.8770773410797,
+    "exit_code": 0,
+    "host": "192.168.1.202",
+    "local": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\research_readiness\\nodes\\Xavier-03",
+    "node": "Xavier-03",
+    "ok": true,
+    "stderr": "",
+    "stdout": "RR_START Xavier-03 tm-market-USDJPY-M15-20260825-000001\nRR_DONE Xavier-03 tm-market-USDJPY-M15-20260825-000001 True\nRR_START Xavier-03 tm-market-USDJPY-H1-20260825-000001\nRR_DONE Xavier-03 tm-market-USDJPY-H1-20260825-000001 True\nRR_START Xavier-03 tm-market-USDJPY-H4-20260825-000001\nRR_DONE Xavier-03 tm-market-USDJPY-H4-20260825-000001 True\nRR_START Xavier-03 tm-market-USDJPY-D1-20260825-000001\nRR_DONE Xavier-03 tm-market-USDJPY-D1-20260825-000001 True\n{\"ok\": true, \"node\": \"Xavier-03\", \"datasets\": 4}\n"
+  },
+  {
+    "attempts": 1,
+    "elapsed_seconds": 152.0502700805664,
+    "exit_code": 0,
+    "host": "192.168.1.201",
+    "local": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\research_readiness\\nodes\\Xavier-02",
+    "node": "Xavier-02",
+    "ok": true,
+    "stderr": "",
+    "stdout": "RR_START Xavier-02 tm-market-EURUSD-M15-20260825-000001\nRR_DONE Xavier-02 tm-market-EURUSD-M15-20260825-000001 True\nRR_START Xavier-02 tm-market-EURUSD-H1-20260825-000001\nRR_DONE Xavier-02 tm-market-EURUSD-H1-20260825-000001 True\nRR_START Xavier-02 tm-market-EURUSD-H4-20260825-000001\nRR_DONE Xavier-02 tm-market-EURUSD-H4-20260825-000001 True\nRR_START Xavier-02 tm-market-EURUSD-D1-20260825-000001\nRR_DONE Xavier-02 tm-market-EURUSD-D1-20260825-000001 True\n{\"ok\": true, \"node\": \"Xavier-02\", \"datasets\": 4}\n"
+  },
+  {
+    "attempts": 1,
+    "elapsed_seconds": 174.41791534423828,
+    "exit_code": 0,
+    "host": "192.168.1.203",
+    "local": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\research_readiness\\nodes\\Xavier-04",
+    "node": "Xavier-04",
+    "ok": true,
+    "stderr": "",
+    "stdout": "RR_START Xavier-04 tm-market-OIL-M15-20260825-000001\nRR_DONE Xavier-04 tm-market-OIL-M15-20260825-000001 True\nRR_START Xavier-04 tm-market-OIL-H1-20260825-000001\nRR_DONE Xavier-04 tm-market-OIL-H1-20260825-000001 True\nRR_START Xavier-04 tm-market-OIL-H4-20260825-000001\nRR_DONE Xavier-04 tm-market-OIL-H4-20260825-000001 True\nRR_START Xavier-04 tm-market-OIL-D1-20260825-000001\nRR_DONE Xavier-04 tm-market-OIL-D1-20260825-000001 True\nRR_START Xavier-04 tm-market-GOLD-M15-20260825-000001\nRR_DONE Xavier-04 tm-market-GOLD-M15-20260825-000001 True\n{\"ok\": true, \"node\": \"Xavier-04\", \"datasets\": 5}\n"
+  }
+]

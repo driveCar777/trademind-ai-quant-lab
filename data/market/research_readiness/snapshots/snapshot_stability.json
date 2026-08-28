@@ -1,0 +1,10 @@
+{
+  "HISTORICAL_DATA_MUTATION": "PASS",
+  "SNAPSHOT_STABILITY": true,
+  "diff": {
+    "HISTORICAL_MUTATION": false,
+    "changed_rows": 1,
+    "first_changed_timestamp": "2026-08-25T12:45:00Z",
+    "same_rows": 1999
+  }
+}

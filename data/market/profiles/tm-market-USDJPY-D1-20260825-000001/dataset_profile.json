@@ -1,0 +1,242 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "anomalies": {
+    "anomaly_count": 0,
+    "anomaly_rows": []
+  },
+  "atr": {
+    "max_ATR14": 2.5250714285714326,
+    "max_TR": 6.905000000000001,
+    "mean_ATR14": 0.97820889352218,
+    "mean_TR": 0.9765670000000001,
+    "median_TR": 0.7909999999999968,
+    "method": "simple_mean_of_true_range_14",
+    "note": "Data description, not a signal."
+  },
+  "candidate_windows": {
+    "FINAL_OOS_LOCKED": false,
+    "holdout_15": {
+      "bar_index_end": 1999,
+      "bar_index_start": 1700,
+      "end_utc": "2026-08-25T00:00:00Z",
+      "row_count": 300,
+      "start_utc": "2025-09-10T00:00:00Z"
+    },
+    "note": "Design suggestion only. Not Final OOS. Do not lock.",
+    "research_70": {
+      "bar_index_end": 1399,
+      "bar_index_start": 0,
+      "end_utc": "2024-09-24T00:00:00Z",
+      "row_count": 1400,
+      "start_utc": "2020-04-01T00:00:00Z"
+    },
+    "role": "CANDIDATE_WINDOW",
+    "validation_15": {
+      "bar_index_end": 1699,
+      "bar_index_start": 1400,
+      "end_utc": "2025-09-09T00:00:00Z",
+      "row_count": 300,
+      "start_utc": "2024-09-25T00:00:00Z"
+    }
+  },
+  "candle": {
+    "average_body": 0.4912944999999997,
+    "average_body_to_range": 0.4717847683440816,
+    "average_lower_wick": 0.2684515000000004,
+    "average_range": 0.9708375000000002,
+    "average_upper_wick": 0.2110915000000001,
+    "zero_range_count": 0
+  },
+  "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+  "elapsed_seconds": 3.2845966815948486,
+  "end_utc": "2026-08-25T00:00:00Z",
+  "extreme_moves": {
+    "note": "EXTREME_MOVE is not automatically bad data.",
+    "top_10_abs_return": [
+      {
+        "close": 131.888,
+        "idx": 849,
+        "label": "EXTREME_MOVE",
+        "previous_close": 136.97,
+        "return_pct": -3.710301525881575,
+        "timestamp": "2022-12-20T00:00:00Z"
+      },
+      {
+        "close": 141.732,
+        "idx": 815,
+        "label": "EXTREME_MOVE",
+        "previous_close": 146.198,
+        "return_pct": -3.0547613510444793,
+        "timestamp": "2022-11-10T00:00:00Z"
+      },
+      {
+        "close": 143.747,
+        "idx": 1569,
+        "label": "EXTREME_MOVE",
+        "previous_close": 147.399,
+        "return_pct": -2.477628749177394,
+        "timestamp": "2025-04-10T00:00:00Z"
+      },
+      {
+        "close": 147.392,
+        "idx": 1666,
+        "label": "EXTREME_MOVE",
+        "previous_close": 150.807,
+        "return_pct": -2.2644837441232784,
+        "timestamp": "2025-08-01T00:00:00Z"
+      },
+      {
+        "close": 138.768,
+        "idx": 816,
+        "label": "EXTREME_MOVE",
+        "previous_close": 141.732,
+        "return_pct": -2.091270849208364,
+        "timestamp": "2022-11-11T00:00:00Z"
+      },
+      {
+        "close": 129.173,
+        "idx": 869,
+        "label": "EXTREME_MOVE",
+        "previous_close": 131.9,
+        "return_pct": -2.067475360121307,
+        "timestamp": "2023-01-12T00:00:00Z"
+      },
+      {
+        "close": 158.286,
+        "idx": 1335,
+        "label": "EXTREME_MOVE",
+        "previous_close": 161.59,
+        "return_pct": -2.0446809827340813,
+        "timestamp": "2024-07-11T00:00:00Z"
+      },
+      {
+        "close": 142.12,
+        "idx": 1402,
+        "label": "EXTREME_MOVE",
+        "previous_close": 145.079,
+        "return_pct": -2.039578436575937,
+        "timestamp": "2024-09-27T00:00:00Z"
+      },
+      {
+        "close": 156.987,
+        "idx": 1899,
+        "label": "EXTREME_MOVE",
+        "previous_close": 160.196,
+        "return_pct": -2.003171115383657,
+        "timestamp": "2026-04-30T00:00:00Z"
+      },
+      {
+        "close": 144.238,
+        "idx": 1151,
+        "label": "EXTREME_MOVE",
+        "previous_close": 147.18,
+        "return_pct": -1.9989128957738873,
+        "timestamp": "2023-12-07T00:00:00Z"
+      }
+    ]
+  },
+  "gaps": {
+    "expected_seconds": null,
+    "gap_count": 0,
+    "normal_interval_count": 1999,
+    "overlap_count": 0
+  },
+  "generated_at_utc": "2026-08-25T13:20:36Z",
+  "hash_ok": true,
+  "hostname": "xavier",
+  "logical_symbol": "USDJPY",
+  "mt5_symbol": "USDJPY",
+  "peak_rss_kb": 15896,
+  "price": {
+    "close": {
+      "max": 163.862,
+      "mean": 135.274046,
+      "median": 142.369,
+      "min": 102.682
+    },
+    "first_close": 107.294,
+    "high": {
+      "max": 163.983,
+      "mean": 135.714485,
+      "median": 143.079,
+      "min": 103.186
+    },
+    "last_close": 159.29,
+    "low": {
+      "max": 163.64,
+      "mean": 134.7436475,
+      "median": 141.709,
+      "min": 102.588
+    },
+    "open": {
+      "max": 163.862,
+      "mean": 135.2414465,
+      "median": 142.3005,
+      "min": 102.68
+    },
+    "price_change_abs": 51.995999999999995,
+    "price_change_pct": 48.46123734784797
+  },
+  "profile_code_version": "6711bea15a6c1c52cf9d912ff13188cbe6b911e719c71212f1511342174dd9fb",
+  "profile_version": "0.1",
+  "python_version": "3.6.8",
+  "qualification": "QUALIFIED_WITH_WARNINGS",
+  "qualification_fail_reasons": [],
+  "qualification_note": "Research readiness of the dataset, not trade worthiness.",
+  "qualification_review_reasons": [],
+  "qualification_warn_reasons": [
+    "real_volume_all_zero",
+    "extreme_moves_listed"
+  ],
+  "returns": {
+    "max_return": 0.019816171610272576,
+    "mean_log_return": 0.00019767569295663415,
+    "mean_return": 0.00021125094323458488,
+    "median_log_return": 0.00045240376362984256,
+    "median_return": 0.0004525061136464006,
+    "min_return": -0.03710301525881575,
+    "negative_return_count": 872,
+    "note": "Bar returns, not trade results. Not a win rate.",
+    "positive_return_count": 1127,
+    "std_log_return": 0.005208954446461685,
+    "std_return": 0.0052023168631225684,
+    "zero_return_count": 0
+  },
+  "row_count": 2000,
+  "sha256": "c00389ce1cbeeed3e1ceb9a09e549fa8335556cf2fd8c644db8f8a44f7ce3ad7",
+  "sha256_actual": "c00389ce1cbeeed3e1ceb9a09e549fa8335556cf2fd8c644db8f8a44f7ce3ad7",
+  "spread": {
+    "spread_max": 58,
+    "spread_mean": 11.533,
+    "spread_median": 11.0,
+    "spread_min": 1,
+    "spread_present": true,
+    "spread_zero_count": 0
+  },
+  "start_utc": "2020-04-01T00:00:00Z",
+  "timeframe": "D1",
+  "timezone": "UTC",
+  "trend": {
+    "note": "Describes path directional efficiency. Not a strategy score.",
+    "trend_efficiency": 0.05266206985958414
+  },
+  "validation_status": "WARN",
+  "volatility": {
+    "max_volatility_20": 0.011327847503854302,
+    "max_volatility_50": 0.010113432818225227,
+    "mean_volatility_20": 0.004699617243949721,
+    "mean_volatility_50": 0.004890847323632621,
+    "note": "Stdev of simple returns over trailing windows. UNKNOWN if short."
+  },
+  "volume": {
+    "real_volume_row_count": 2000,
+    "real_volume_zero_count": 2000,
+    "tick_volume_max": 495861,
+    "tick_volume_mean": 68427.0725,
+    "tick_volume_median": 63847.0,
+    "tick_volume_min": 321,
+    "volume_policy": "tick_volume_only",
+    "zero_tick_volume_count": 0
+  },
+  "xavier": "Xavier-03"
+}

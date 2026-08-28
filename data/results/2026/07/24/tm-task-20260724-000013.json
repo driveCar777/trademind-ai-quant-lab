@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "request_id": "f005a288-22a6-439a-bc27-060b896719bc",
+  "indicator": "EMA",
+  "symbol": "AUDUSD",
+  "timeframe": "M15",
+  "result": {
+    "period": 14,
+    "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      47.219316772471274,
+      47.25407453614177,
+      47.40686459798954,
+      47.436615984924266,
+      47.726400520267696,
+      47.792213784232004,
+      47.66525194633441
+    ],
+    "latest": 47.66525194633441
+  },
+  "calculation_time_ms": 1.602,
+  "timestamp": "2026-07-24T12:19:37.672811"
+}
