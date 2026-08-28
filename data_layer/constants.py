@@ -43,6 +43,10 @@ MT5_ALLOWED = (
     "copy_rates_from_pos",
     "copy_rates_from",
     "copy_rates_range",
+    "copy_ticks_from",
+    "copy_ticks_from_pos",
+    "copy_ticks_range",
+    "symbol_info_tick",
     "last_error",
 )
 

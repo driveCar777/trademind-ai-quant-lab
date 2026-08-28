@@ -1,0 +1,11 @@
+{
+  "mission_id": "MT5_MAX_MISSION_V4",
+  "start_commit": "f830a20784dcb37619b6090b8be06c8dd8977cfe",
+  "started_at_utc": "2026-08-28T15:41:00Z",
+  "level": 0,
+  "level_1_candidate": 0,
+  "order_send": "FORBIDDEN",
+  "overwrite_20260825": false,
+  "phase": "START",
+  "note": "2000 bars is a frozen sample length, not MT5 max history."
+}
