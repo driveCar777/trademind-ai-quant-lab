@@ -47,6 +47,12 @@ ACCEPT_TOKENS = (
     "volume shock",
     "days to expiry",
     "term structure",
+    "futures leadership",
+    "quote absorption",
+    "curve steepening",
+    "inventory change curve",
+    "real yield proxy",
+    "weekly positioning",
 )
 
 

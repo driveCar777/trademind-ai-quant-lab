@@ -1,0 +1,95 @@
+{
+  "NO_NEW_PURCHASE": true,
+  "catalog_id": "ALPHA_OPPORTUNITY_V8",
+  "do_not_reopen": [
+    "TERM_STRUCTURE_V1",
+    "FUTURES_OI_FLOW_V1",
+    "VOLUME_PRICE_FLOW_V1",
+    "DTE_ROLL_WINDOW_V1",
+    "POSITIONING_V1",
+    "INVENTORY_V1",
+    "RATES_V1",
+    "CROSS_ASSET_V0.8",
+    "BREADTH_V1",
+    "SIZE_SPREAD_V1",
+    "FUT_CFD_LEAD_V1"
+  ],
+  "max_hypotheses": 3,
+  "max_mechanisms": 20,
+  "n": 5,
+  "selected": "CURVE_OI_JOINT_V1",
+  "top5": [
+    {
+      "cost": 0,
+      "data": "tm-fut-GLBX-CURVE + tm-market-GOLD/OIL-D1-20260828",
+      "economic_rationale": "The listed front is the venue price. The CFD is a broker quote with different close and spread. A gap is quote disagreement, not a pair-to-metal lead.",
+      "executed": "NO_CANDIDATE",
+      "history": "2018-12 to 2026-08 overlap",
+      "id": "FUT_CFD_LEAD_V1",
+      "mechanism": "Official exchange settlement versus broker GOLD/OIL CFD same-session return gap: futures leadership, CFD overshoot, absorption. Exchange basis between venue settlement and a parallel CFD quote. Not price momentum. Broker GOLD is not exchange spot.",
+      "novelty_guard": {
+        "decision": "ACCEPT",
+        "new_mechanism": true,
+        "why": "exchange structure: exchange basis,futures leadership"
+      },
+      "rank": 1,
+      "selected": false
+    },
+    {
+      "cost": 0,
+      "data": "frozen curve + OI-flow panel",
+      "economic_rationale": "A curve move confirmed by new participation is different from a curve level or an OI sign alone.",
+      "id": "CURVE_OI_JOINT_V1",
+      "mechanism": "Curve steepening with official contract open interest expansion and a settlement change. Joint curve move plus oi shock, not OI-rising-implies-buy and not slope-as-level.",
+      "novelty_guard": {
+        "decision": "ACCEPT",
+        "new_mechanism": true,
+        "why": "exchange structure: contract open interest,oi shock,curve steepening"
+      },
+      "rank": 2,
+      "selected": true
+    },
+    {
+      "cost": 0,
+      "data": "OI-flow + CFTC GOLD/OIL 000002",
+      "economic_rationale": "Exchange OI is daily; CFTC is a delayed census. Disagreement is a speed gap, not an extreme z.",
+      "id": "OI_COT_BUILD_V1",
+      "mechanism": "Daily official open interest flow versus weekly positioning change (build or unwind). Not a COT extreme.",
+      "novelty_guard": {
+        "decision": "ACCEPT",
+        "new_mechanism": true,
+        "why": "exchange structure: open interest flow,weekly positioning"
+      },
+      "rank": 3,
+      "selected": false
+    },
+    {
+      "cost": 0,
+      "data": "curve CL + EIA WCESTUS1",
+      "economic_rationale": "A physical stock change should reprice deferred vs front if storage tightness changed.",
+      "id": "CURVE_EIA_REPRICE_V1",
+      "mechanism": "EIA crude stocks week-over-week sign plus CL curve steepening. Inventory change curve repricing, not inventory z-score.",
+      "novelty_guard": {
+        "decision": "ACCEPT",
+        "new_mechanism": true,
+        "why": "exchange structure: curve steepening,inventory change curve"
+      },
+      "rank": 4,
+      "selected": false
+    },
+    {
+      "cost": 0,
+      "data": "curve GC + UST DGS10",
+      "economic_rationale": "A higher nominal long rate tightens the gold financing/storage trade-off on the curve, not a metal momentum bet.",
+      "id": "CURVE_REALYIELD_V1",
+      "mechanism": "UST10 yield change as a real-yield proxy plus GC curve slope change. Not a standardized yield threshold.",
+      "novelty_guard": {
+        "decision": "ACCEPT",
+        "new_mechanism": true,
+        "why": "exchange structure: curve slope"
+      },
+      "rank": 5,
+      "selected": false
+    }
+  ]
+}
