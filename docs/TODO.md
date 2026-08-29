@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** MT5 Max Mission V4.0 **COMPLETE_NO_CANDIDATE**。Level 仍是 0。Candidate=0。
-> **最后更新:** 2026-08-29（新 MT5 历史已冻；CROSS_METAL + USD_METAL 已杀；不要再买 K 线）
-> **阶段终点:** 价格/CFD 信息集已抽完优先名单。禁止调参救 CM/UM/SUP。禁止 RSI/MACD/MA。下一美元 = 曲线/期权面（见采购包），不是再冻一根 Ava D1。
+> **当前活跃模块:** Market Universe V5.0 **IN PROGRESS**。Level 仍是 0。Candidate=0。
+> **最后更新:** 2026-08-29（V5 START；从真实 MT5 重建 universe；不改 V4）
+> **阶段终点:** 新机制或 CURRENT_INFORMATION_SET_EXHAUSTED。禁止调参救 CM/UM。禁止 RSI。禁止覆盖 `20260825`。
 
 ---
 
@@ -47,6 +47,7 @@
 | MISSION V2.0 | IV → COT → EIA → UST10 → FX overnight carry | ✅ STOP B | 2026-08-28 |
 | MISSION V3.0 | Data factory + EIA supply + vendor/purchase pack | ⏸ WAIT_HUMAN 记录 | 2026-08-28 |
 | MISSION V4.0 | MT5 max history + CROSS_METAL + USD_METAL | ✅ NO_CANDIDATE | 2026-08-29 |
+| MISSION V5.0 | Market universe + cross-section / corr / dispersion | 🔄 IN PROGRESS | 2026-08-29 |
 
 ## MT5 Max Mission V4.0 — COMPLETE_NO_CANDIDATE 2026-08-29
 

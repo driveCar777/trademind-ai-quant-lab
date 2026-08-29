@@ -198,9 +198,10 @@ POST /task → requests.post() → indicator-worker → RSI → 保存结果 →
 **Alpha Mission V1.1** ✅ STOP B。IT WEAK_EDGE 已杀；TS/MS/RI/AMS FALSIFIED。Level=0 Candidate=0。  
 **Alpha Research Mission V2.0** ✅ STOP B。IV/COT/EIA/UST10/CARRY_V1A **NO_CANDIDATE**。Level=0 Candidate=0。  
 **Data Expansion Mission V3.0** ✅ WAIT_HUMAN 记录保留（SUPPLY_V1 NO_CANDIDATE）。  
-**MT5 Max Mission V4.0** ✅ COMPLETE_NO_CANDIDATE。2000 bars 不是上限。新 ID 已冻 SILVER/DXY/额外 FX/指数/H1/M15。**CROSS_METAL_V1** 与 **USD_METAL_V1** 四 Xavier **NO_CANDIDATE**。VIX 太短未开族。不要再调 gold-silver / DXY / EIA z_cut。  
+**MT5 Max Mission V4.0** ✅ COMPLETE_NO_CANDIDATE。不要再调 gold-silver / DXY / EIA z_cut。  
+**Market Universe V5.0** 🔄 IN PROGRESS。从真实终端重建 universe + 横截面/相关/离散。不要改 V4 hash。不要覆盖 `20260825`。  
 V11：MT5 日线样本内外回测 + 风控证伪。`survived` 不是年化保证。 
-FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要回头调 XA / RT / XR / IT / TS / MS / RI / AMS / IV / POS / INV / RATES / CARRY / SUP / CM / UM。不要无 Candidate 写策略。下一美元 = Databento **曲线/期权面**，不是再下一根 Ava K 线。
+FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要回头调 XA / RT / XR / IT / TS / MS / RI / AMS / IV / POS / INV / RATES / CARRY / SUP / CM / UM。不要无 Candidate 写策略。
 
 ---
 

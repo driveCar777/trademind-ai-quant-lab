@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-29（Mission V4.0 COMPLETE_NO_CANDIDATE；CM+UM 已杀；Level 0；Candidate=0）  
+**最后更新：** 2026-08-29（Mission V5.0 IN PROGRESS；universe 重建；Level 0；Candidate=0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + **Mission V3.0** + **Mission V4.0 COMPLETE_NO_CANDIDATE** |
-| 状态 | Level 0。Candidate=0。CM/UM/SUP 均 NO_CANDIDATE。曲线/期权面仍 BLOCKED。 |
-| 当前 Phase | MT5 优先 OHLC 已抽完。不要再调 gold-silver / DXY / EIA z_cut。不要读 Final OOS。下一美元 = 曲线/面，不是再下一根 Ava K 线。 |
+| 版本 | **V11.7** + … + **Mission V4.0** + **Mission V5.0 IN PROGRESS** |
+| 状态 | Level 0。Candidate=0。V5 从真实终端重建 universe，再测横截面/相关/离散。 |
+| 当前 Phase | V5 START。不要改 V4 hash。不要覆盖 `20260825`。不要读 Final OOS。 |
 
 ---
 

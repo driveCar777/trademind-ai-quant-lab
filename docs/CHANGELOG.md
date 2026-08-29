@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-08-29 — Market Universe V5.0 START
+
+- START pointer `d29d3b7`。不改 V4 hash。不覆盖 `20260825`。
+- 目标：真实终端 universe + 横截面 / 相关 / 离散，不是再写金银比或 DXY z。
+
 ## 2026-08-29 — MT5 Max Mission V4.0 COMPLETE_NO_CANDIDATE
 
 - 2000 bars 不是上限。新 `20260828-000001` 冻了 SILVER/DXY/额外 FX/指数/H1/M15。未覆盖 `20260825`。
