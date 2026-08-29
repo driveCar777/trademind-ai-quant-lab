@@ -1,0 +1,146 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "7a864c9efe22de0d86474f9ab1cf44d22ef369c40a3d310fe9f4af6056ed9347",
+  "discovery_id": "CURVE_REALYIELD_V1",
+  "elapsed_seconds": 17.82876181602478,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-curate-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 21790996,
+    "pid": 18291,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 37.0,
+      "AUX-therm": 37.0,
+      "CPU-therm": 38.5,
+      "GPU-therm": 37.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 40.0,
+      "thermal-fan-est": 37.6
+    },
+    "ts": "2026-08-29T21:15:26Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "YIELD_UP_FLATTEN",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-CURATE-0002",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.004032249564010545,
+        "iterations": 2000,
+        "low": -0.005333583480315205,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260906
+      },
+      "bootstrap_ci": {
+        "high": 0.003337055751221484,
+        "iterations": 2000,
+        "low": -0.004576380225204852,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260906
+      },
+      "cagr": -0.002696140162905869,
+      "cost_paid": 206.36983845078242,
+      "delta": -0.0006788561183796601,
+      "effect_size": -0.029807820042096405,
+      "end_equity": 9697.931135167608,
+      "level_leak": false,
+      "max_drawdown": -0.11719150034104593,
+      "max_trade_share": 0.048602088015253384,
+      "mean_baseline": 0.00019593636028624196,
+      "mean_signal": -0.00048291975809341807,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 224,
+      "n_skip_overlap": 88,
+      "n_trade": 104,
+      "occupancy": 0.0782122905027933,
+      "raw_p": 0.7666166916541729,
+      "sharpe": -0.07068076674576251,
+      "total_return": -0.030206886483239215,
+      "trade_count": 104,
+      "turnover": 51.59724456401469,
+      "win_count": 57
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.005162279264440597,
+        "iterations": 2000,
+        "low": -0.0032796618105223876,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260906
+      },
+      "cagr": 0.06251105766951603,
+      "cost_paid": 201.93180268067792,
+      "delta": 0.000872541142051863,
+      "effect_size": 0.04387564203725386,
+      "end_equity": 11589.299403239092,
+      "fail_reason": "LEVEL_LEAK",
+      "level_leak": true,
+      "max_drawdown": -0.06627738501755605,
+      "max_trade_share": 0.03745821800968852,
+      "mean_baseline": 0.002361260597531571,
+      "mean_signal": 0.003233801739583434,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 250,
+      "n_skip_overlap": 120,
+      "n_trade": 94,
+      "occupancy": 0.40716612377850164,
+      "raw_p": null,
+      "sharpe": 0.9852702967883301,
+      "total_return": 0.15892994032390928,
+      "trade_count": 94,
+      "turnover": 50.39338910987346,
+      "win_count": 50
+    },
+    "window_hash": "cd2ead0ec9b0b146b0f8e5c07b0e950323ac6282acf7709ca59f4423d35d5064"
+  },
+  "job_id": "CURATE-V1-Xavier-02-HYP-CURATE-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+  "window_hashes": {
+    "BOOK": "cd2ead0ec9b0b146b0f8e5c07b0e950323ac6282acf7709ca59f4423d35d5064"
+  }
+}

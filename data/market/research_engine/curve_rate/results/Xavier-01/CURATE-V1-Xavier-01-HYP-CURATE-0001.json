@@ -1,0 +1,145 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "1ac4369d9d64c6d6252d2f808cc4c00a40e3fd15916411125219339fc4596f7f",
+  "discovery_id": "CURVE_REALYIELD_V1",
+  "elapsed_seconds": 19.385347366333008,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-curate-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 23009068,
+    "pid": 22488,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 35.5,
+      "AUX-therm": 35.0,
+      "CPU-therm": 38.0,
+      "GPU-therm": 37.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 40.0,
+      "thermal-fan-est": 36.2
+    },
+    "ts": "2026-08-29T21:15:28Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "YIELD_UP_STEEPEN",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-CURATE-0001",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.006314878924681515,
+        "iterations": 2000,
+        "low": -0.004604777808747721,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260906
+      },
+      "bootstrap_ci": {
+        "high": 0.005449856385433587,
+        "iterations": 2000,
+        "low": -0.004410986833253404,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260906
+      },
+      "cagr": -0.0021882351363524677,
+      "cost_paid": 196.20202741979105,
+      "delta": 0.0006442939489084929,
+      "effect_size": 0.028084940818706154,
+      "end_equity": 9754.19130532029,
+      "level_leak": false,
+      "max_drawdown": -0.12385739166097558,
+      "max_trade_share": 0.07406500771022546,
+      "mean_baseline": -0.0009959363602862407,
+      "mean_signal": -0.00035164241137774783,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 178,
+      "n_skip_overlap": 62,
+      "n_trade": 98,
+      "occupancy": 0.06215083798882681,
+      "raw_p": 0.7926036981509246,
+      "sharpe": -0.04139491716000526,
+      "total_return": -0.024580869467971,
+      "trade_count": 98,
+      "turnover": 49.048026521584774,
+      "win_count": 51
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.010506401864862881,
+        "iterations": 2000,
+        "low": -0.004856588760226082,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260906
+      },
+      "cagr": -0.002695746743763605,
+      "cost_paid": 83.91070042124984,
+      "delta": 0.0029971046907120917,
+      "effect_size": 0.14735224845046088,
+      "end_equity": 9934.551459289698,
+      "level_leak": false,
+      "max_drawdown": -0.062037273166074006,
+      "max_trade_share": 0.07855105646069255,
+      "mean_baseline": -0.0031612605975315667,
+      "mean_signal": -0.00016415590681947512,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 58,
+      "n_skip_overlap": 12,
+      "n_trade": 42,
+      "occupancy": 0.09446254071661238,
+      "raw_p": null,
+      "sharpe": -0.027966679481330046,
+      "total_return": -0.006544854071030226,
+      "trade_count": 42,
+      "turnover": 20.97859821329801,
+      "win_count": 21
+    },
+    "window_hash": "cd2ead0ec9b0b146b0f8e5c07b0e950323ac6282acf7709ca59f4423d35d5064"
+  },
+  "job_id": "CURATE-V1-Xavier-01-HYP-CURATE-0001",
+  "node": "Xavier-01",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+  "window_hashes": {
+    "BOOK": "cd2ead0ec9b0b146b0f8e5c07b0e950323ac6282acf7709ca59f4423d35d5064"
+  }
+}

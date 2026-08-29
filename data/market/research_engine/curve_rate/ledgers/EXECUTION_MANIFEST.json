@@ -1,0 +1,66 @@
+{
+  "contract_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+      "elapsed_seconds": 21.311300039291382,
+      "end": "2026-08-29T21:15:26Z",
+      "exit_code": 0,
+      "experiment": "CURVE_REALYIELD_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T21:15:05Z",
+      "stderr": "",
+      "stdout": "CURATE_JOB_DONE CURATE-V1-Xavier-02-HYP-CURATE-0002 17.8\nCURATE_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+      "elapsed_seconds": 22.64594554901123,
+      "end": "2026-08-29T21:15:27Z",
+      "exit_code": 0,
+      "experiment": "CURVE_REALYIELD_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T21:15:05Z",
+      "stderr": "",
+      "stdout": "CURATE_JOB_DONE CURATE-V1-Xavier-03-HYP-CURATE-0003 18.9\nCURATE_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+      "elapsed_seconds": 22.944570779800415,
+      "end": "2026-08-29T21:15:28Z",
+      "exit_code": 0,
+      "experiment": "CURVE_REALYIELD_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T21:15:05Z",
+      "stderr": "",
+      "stdout": "CURATE_JOB_DONE CURATE-V1-Xavier-04-HYP-CURATE-0001 19.1\nCURATE_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+      "elapsed_seconds": 22.947837591171265,
+      "end": "2026-08-29T21:15:28Z",
+      "exit_code": 0,
+      "experiment": "CURVE_REALYIELD_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T21:15:05Z",
+      "stderr": "",
+      "stdout": "CURATE_JOB_DONE CURATE-V1-Xavier-01-HYP-CURATE-0001 19.4\nCURATE_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T21:15:28Z"
+}

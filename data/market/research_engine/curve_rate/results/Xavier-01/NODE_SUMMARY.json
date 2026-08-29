@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-curate-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 23028164,
+    "pid": 22488,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 35.5,
+      "AUX-therm": 35.0,
+      "CPU-therm": 38.0,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 39.75,
+      "thermal-fan-est": 36.2
+    },
+    "ts": "2026-08-29T21:15:28Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "1ac4369d9d64c6d6252d2f808cc4c00a40e3fd15916411125219339fc4596f7f",
+      "elapsed_seconds": 19.907397270202637,
+      "job_id": "CURATE-V1-Xavier-01-HYP-CURATE-0001"
+    }
+  ],
+  "node": "Xavier-01"
+}

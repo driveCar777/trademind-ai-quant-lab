@@ -1,0 +1,46 @@
+{
+  "AUTO_PURCHASE_MAX_USD": 30.0,
+  "CREDIT_FLOOR_USD": 60.0,
+  "NEW_MECHANISM": true,
+  "catalog_id": "OPTION_MVD_V8",
+  "dataset": "GLBX.MDP3",
+  "do_not_download_first": true,
+  "gvz_ovx_already_tested": true,
+  "gvz_ovx_is_not_surface": true,
+  "hypotheses_if_purchased_max": 3,
+  "license": "Databento historical credits; CME licensed data",
+  "mechanism_questions": [
+    "IV minus realized on the official future",
+    "skew extreme from call/put settlements",
+    "IV term structure across two expiries"
+  ],
+  "minimum_fields": [
+    "instrument_id",
+    "raw_symbol",
+    "expiration",
+    "strike_price",
+    "instrument_class / C/P",
+    "underlying",
+    "settlement or daily close"
+  ],
+  "not_included": [
+    "all historical strikes forever",
+    "every expiry",
+    "tick / MBO / MBP",
+    "$199/month live"
+  ],
+  "quote_first": true,
+  "schemas": [
+    "definition",
+    "statistics"
+  ],
+  "source": "Databento",
+  "stype_in": "parent",
+  "symbols_try": [
+    "GC.OPT",
+    "CL.OPT",
+    "OG.OPT",
+    "LO.OPT"
+  ],
+  "why": "Definition answers expiry/strike/call-put. Statistics settlement lets a later local layer derive IV/skew/term. ohlcv-1d of the full option chain is not minimum viable."
+}

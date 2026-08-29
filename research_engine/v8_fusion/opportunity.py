@@ -53,7 +53,8 @@ TOP = [
         "economic_rationale": "A higher nominal long rate tightens the gold financing/storage trade-off on the curve, not a metal momentum bet.",
         "data": "curve GC + UST DGS10",
         "cost": 0,
-        "selected": True,
+        "selected": False,
+        "executed": "WEAK_EDGE",
     },
 ]
 
@@ -89,5 +90,6 @@ def opportunity_v8():
             "CURVE_OI_JOINT_V1",
             "OI_COT_BUILD_V1",
             "CURVE_EIA_REPRICE_V1",
+            "CURVE_REALYIELD_V1",
         ],
     }

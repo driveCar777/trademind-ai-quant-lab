@@ -1,7 +1,7 @@
 {
   "FINAL_OOS_TOUCHED": false,
   "database_id": "FAILED_ALPHA_DATABASE_V2",
-  "n": 35,
+  "n": 36,
   "records": [
     {
       "family": "HYP-0001",
@@ -419,6 +419,19 @@
       "what_was_tested": "HYP-CUEIA-0001/0002/0003 local 2000 + four Xavier",
       "why": "Inventory wow x CL curve is not a two-hyp FDR edge. Do not retune wow. Do not reopen inventory z. Next is UST10 change x GC curve, still $0.",
       "xavier_01_04_hash": "741dd8406e2a75ceac7313123db4e1bdf8369e102adf293b271628af5469fe38"
+    },
+    {
+      "cross_check_match": true,
+      "family": "CURVE_REALYIELD_V1",
+      "forbidden_reopen_pattern": "retune yield change or GC steepening hold; RATES_V1 z-cut",
+      "mechanism": "UST10 yield change as real-yield proxy plus GC curve steepening: yield-up+steepen / yield-up+flatten / yield-down+flatten",
+      "search_space_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+      "status": "KILLED",
+      "tag": "RESEARCH-2026-0030",
+      "what_failed": "WEAK_EDGE; only 0003 book-pass; FDR 0/3; p=0.65",
+      "what_was_tested": "HYP-CURATE-0001/0002/0003 local 2000 + four Xavier",
+      "why": "UST10 change x GC curve is not a two-hyp FDR edge. Do not retune. Existing-information fusion TOP5 exhausted. Next = options metadata quote, not another Pack E.",
+      "xavier_01_04_hash": "1ac4369d9d64c6d6252d2f808cc4c00a40e3fd15916411125219339fc4596f7f"
     }
   ]
 }

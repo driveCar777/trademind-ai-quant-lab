@@ -1,0 +1,67 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "bootstrap_iterations": 2000,
+  "close_fill": "FORBIDDEN",
+  "do_not": [
+    "rates z-cut / yield level always-on",
+    "Ava CFD as future or spot",
+    "retune yield change or steepening or hold",
+    "spend remaining Databento credits before quote"
+  ],
+  "executed": false,
+  "family_code": "FAM-CURATE-0001",
+  "family_id": "CURVE_REALYIELD_V1",
+  "fdr_q": 0.05,
+  "fill": "NEXT_BAR_OPEN",
+  "hold_bars": 5,
+  "hypotheses": [
+    {
+      "cost": "one-way 2 bps research cost; no leverage",
+      "dataset": "Frozen GLBX GC curve plus UST DGS10. No new Databento bytes.",
+      "economic_mechanism": "UST10 yield change as a real yield proxy plus GC curve steepening: a higher nominal long rate with a richer curve is a financing/storage repricing, not a standardized yield threshold. Not price momentum.",
+      "failure_gate": "If FALSIFIED, do not retune yield change or steepening. Existing fusion TOP5 is exhausted.",
+      "feature": "lagged UST10 close change > 0 and lagged GC steepening > 0",
+      "horizon": 5,
+      "hypothesis": "When the UST10 yield rises and the official GC curve steepens, gold financing and storage are richer. After T 21:00Z knowledge, next-session GC front return is negative.",
+      "hypothesis_id": "HYP-CURATE-0001",
+      "name": "YIELD_UP_STEEPEN",
+      "target": "next-session GC front open-to-open after T 21:00Z knowledge",
+      "validation": "pre-registered; leakage; knowledge-time; determinism; lineage; FDR q=0.05; four Xavier"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same frozen GC curve plus UST10",
+      "economic_mechanism": "Real yield proxy versus curve slope: yield up with curve steepening reversed (flattening) is a tightness signal that is not a standardized yield threshold. Not price momentum.",
+      "failure_gate": "No hold search. Do not reopen RATES_V1 z-cross as a rescue.",
+      "feature": "lagged UST10 close change > 0 and lagged GC steepening < 0",
+      "horizon": 5,
+      "hypothesis": "When the UST10 yield rises while the official GC curve flattens, tightness is rising despite a higher financing rate. After knowledge, next-session GC front return is positive.",
+      "hypothesis_id": "HYP-CURATE-0002",
+      "name": "YIELD_UP_FLATTEN",
+      "target": "next-session GC front open-to-open after T 21:00Z knowledge",
+      "validation": "same gates; not a z score search"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same frozen GC curve plus UST10",
+      "economic_mechanism": "Real yield proxy down plus GC curve slope flattening is easier financing into a tighter gold curve, not a rates threshold. Not price momentum.",
+      "failure_gate": "If failed, existing-information fusion TOP5 is exhausted. Options quote next.",
+      "feature": "lagged UST10 close change < 0 and lagged GC steepening < 0",
+      "horizon": 5,
+      "hypothesis": "When the UST10 yield falls and the official GC curve flattens, financing eases while tightness rises. After knowledge, next-session GC front return is positive.",
+      "hypothesis_id": "HYP-CURATE-0003",
+      "name": "YIELD_DOWN_FLATTEN",
+      "target": "next-session GC front open-to-open after T 21:00Z knowledge",
+      "validation": "same gates"
+    }
+  ],
+  "hypothesis_ids": [
+    "HYP-CURATE-0001",
+    "HYP-CURATE-0002",
+    "HYP-CURATE-0003"
+  ],
+  "parents": "tm-fut-GLBX-CURVE-D1-20260829-000001 + UST DGS10",
+  "permutation_iterations": 2000,
+  "search_space_hash": "8ce8bac13d58f03b9fc8eeeb7ac003ce3fdfe57674a8a689b2333e56397ef9cb",
+  "seed": 20260906
+}
