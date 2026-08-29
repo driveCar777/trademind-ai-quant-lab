@@ -1,0 +1,145 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "db7e8b2ca8224bbe97934228c5a33a9e1b59d3475d1853f8e8b236b478626cb2",
+  "discovery_id": "VOLUME_PRICE_FLOW_V1",
+  "elapsed_seconds": 21.124650716781616,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-futvol-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 23181004,
+    "pid": 32099,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 34.0,
+      "AUX-therm": 34.5,
+      "CPU-therm": 37.0,
+      "GPU-therm": 35.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 35.0,
+      "Tdiode_tegra": 37.75,
+      "thermal-fan-est": 35.55
+    },
+    "ts": "2026-08-29T17:41:16Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "VOL_PRESSURE_DOWN",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-FUTVOL-0003",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.00509351081244908,
+        "iterations": 2000,
+        "low": -0.013350980976985219,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260831
+      },
+      "bootstrap_ci": {
+        "high": 0.002792541313468566,
+        "iterations": 2000,
+        "low": -0.009893785695221936,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260831
+      },
+      "cagr": -0.07516072252896211,
+      "cost_paid": 634.974078155128,
+      "delta": -0.0027461845312662936,
+      "effect_size": -0.0722428573855647,
+      "end_equity": 4115.997238177007,
+      "level_leak": false,
+      "max_drawdown": -0.64318416547276,
+      "max_trade_share": 0.10467225446058151,
+      "mean_baseline": -0.0011204706019872326,
+      "mean_signal": -0.0038666551332535264,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 809,
+      "n_skip_overlap": 375,
+      "n_trade": 348,
+      "occupancy": 0.28247206703910616,
+      "raw_p": 0.18990504747626186,
+      "sharpe": -0.3527510691192006,
+      "total_return": -0.5884002761822993,
+      "trade_count": 348,
+      "turnover": 158.48106810459882,
+      "win_count": 158
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.001449082461333514,
+        "iterations": 2000,
+        "low": -0.014281469339290052,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260831
+      },
+      "cagr": -0.1544776587652198,
+      "cost_paid": 155.21073860301036,
+      "delta": -0.006325002636668494,
+      "effect_size": -0.17769960246538657,
+      "end_equity": 6648.579763014749,
+      "level_leak": false,
+      "max_drawdown": -0.3508064356884793,
+      "max_trade_share": 0.0732142927948525,
+      "mean_baseline": -0.002295957316150688,
+      "mean_signal": -0.008620959952819182,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 233,
+      "n_skip_overlap": 135,
+      "n_trade": 91,
+      "occupancy": 0.3794788273615635,
+      "raw_p": null,
+      "sharpe": -1.4303527067975361,
+      "total_return": -0.3351420236985251,
+      "trade_count": 91,
+      "turnover": 38.64287417583346,
+      "win_count": 37
+    },
+    "window_hash": "bdc3bb385dbc0b8164b534c6c20d1becdfd47aac006acb37eba62a1206ea8b41"
+  },
+  "job_id": "FUTVOL-V1-Xavier-03-HYP-FUTVOL-0003",
+  "node": "Xavier-03",
+  "parent_hashes": {
+    "tm-fut-GLBX-VOLFLOW-D1-20260830-000001": "0d9454f2c5782a73a364e131866578241c21476b1f0c551b3ff3f99ec713e416"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "e2e78ae9b815ac74c876fb969bf4b72aac095f37f919be71b7019e9cc04c70f0",
+  "window_hashes": {
+    "BOOK": "bdc3bb385dbc0b8164b534c6c20d1becdfd47aac006acb37eba62a1206ea8b41"
+  }
+}

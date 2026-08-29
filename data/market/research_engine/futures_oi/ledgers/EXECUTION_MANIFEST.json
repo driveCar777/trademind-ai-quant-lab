@@ -1,0 +1,66 @@
+{
+  "contract_hash": "8ff94bd0dd6249b428497176d654e62944ed3ecf329440dd7539ec57dbcabbbc",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "8ff94bd0dd6249b428497176d654e62944ed3ecf329440dd7539ec57dbcabbbc",
+      "elapsed_seconds": 27.559621810913086,
+      "end": "2026-08-29T17:27:37Z",
+      "exit_code": 0,
+      "experiment": "FUTURES_OI_FLOW_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T17:27:09Z",
+      "stderr": "",
+      "stdout": "FUTOI_JOB_DONE FUTOI-V1-Xavier-03-HYP-FUTOI-0003 20.5\nFUTOI_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "8ff94bd0dd6249b428497176d654e62944ed3ecf329440dd7539ec57dbcabbbc",
+      "elapsed_seconds": 27.955442667007446,
+      "end": "2026-08-29T17:27:37Z",
+      "exit_code": 0,
+      "experiment": "FUTURES_OI_FLOW_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T17:27:09Z",
+      "stderr": "",
+      "stdout": "FUTOI_JOB_DONE FUTOI-V1-Xavier-04-HYP-FUTOI-0001 21.2\nFUTOI_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "8ff94bd0dd6249b428497176d654e62944ed3ecf329440dd7539ec57dbcabbbc",
+      "elapsed_seconds": 28.003599882125854,
+      "end": "2026-08-29T17:27:37Z",
+      "exit_code": 0,
+      "experiment": "FUTURES_OI_FLOW_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T17:27:09Z",
+      "stderr": "",
+      "stdout": "FUTOI_JOB_DONE FUTOI-V1-Xavier-02-HYP-FUTOI-0002 20.9\nFUTOI_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "8ff94bd0dd6249b428497176d654e62944ed3ecf329440dd7539ec57dbcabbbc",
+      "elapsed_seconds": 28.7558012008667,
+      "end": "2026-08-29T17:27:38Z",
+      "exit_code": 0,
+      "experiment": "FUTURES_OI_FLOW_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T17:27:09Z",
+      "stderr": "",
+      "stdout": "FUTOI_JOB_DONE FUTOI-V1-Xavier-01-HYP-FUTOI-0001 22.0\nFUTOI_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T17:27:38Z"
+}

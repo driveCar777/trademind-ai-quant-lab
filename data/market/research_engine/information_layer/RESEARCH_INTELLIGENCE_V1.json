@@ -1,0 +1,32 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "NO_NEW_PURCHASE": true,
+  "catalog_id": "RESEARCH_INTELLIGENCE_V7",
+  "credits_remaining_usd_estimate": 93.18,
+  "n_failed_families": 31,
+  "questions": {
+    "what_data_exists": "110 frozen datasets; Pack E complete=True",
+    "what_features_derived": [
+      "front_contract",
+      "second_contract",
+      "third_contract",
+      "curve_slope",
+      "curve_curvature",
+      "contango",
+      "backwardation",
+      "roll_yield",
+      "days_to_expiry",
+      "OI_change",
+      "volume_change",
+      "price_change_x_OI_change"
+    ],
+    "what_is_untested": [
+      "official OI x price flow",
+      "cleared volume x price",
+      "third-contract curvature",
+      "curve + EIA/COT/UST10 fusion"
+    ],
+    "what_was_tested": "28 killed families in FAILED_ALPHA_V2 including TERM_STRUCTURE_V1",
+    "why_failed": "cost, occupancy/level-leak, wrong sign, sparse weekly events, CFD-only information"
+  }
+}

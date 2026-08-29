@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V6.1 **NO_CANDIDATE**。Pack E 已拉（$31.82）。TERM_STRUCTURE 三条 FALSIFIED。Level 仍是 0。Candidate=0。
-> **最后更新:** 2026-08-29（四 Xavier 已跑；LEVEL_LEAK；不要调斜率/持有天数）
-> **阶段终点:** 下一条信息=期权或带日期宏观，先报价。禁止 $199/月。禁止 tick。禁止调参救 BREADTH/SIZE/TERM_STRUCTURE。禁止 RSI。禁止覆盖 `20260825`/`20260828`。
+> **当前活跃模块:** V7 **STOP B+C**。现有 GC/CL 结构信息已用尽。OI/Volume NO_CANDIDATE。DTE WEAK_EDGE。Level 仍是 0。Candidate=0。
+> **最后更新:** 2026-08-30（三家族四 Xavier；$0 新购买；不要调 OI/volume/dte/斜率）
+> **阶段终点:** 先报价期权期货。禁止 $199/月。禁止 tick。禁止调参救已杀家族。禁止 RSI。禁止覆盖 `20260825`/`20260828`。
 
 ---
 
@@ -49,7 +49,8 @@
 | MISSION V4.0 | MT5 max history + CROSS_METAL + USD_METAL | ✅ NO_CANDIDATE | 2026-08-29 |
 | MISSION V5.0 | Market universe + cross-section / corr / dispersion | ✅ Top5 NO_CANDIDATE | 2026-08-29 |
 | MISSION V5.1 | 841 inventory + BREADTH + SIZE | ✅ EXTERNAL_DATA_GATE | 2026-08-29 |
-| MISSION V6.0 | Databento catalog + pack E + TERM_STRUCTURE ready | ⏸ CREDENTIAL_REQUIRED | 2026-08-29 |
+| MISSION V6.0 | Databento catalog + pack E + TERM_STRUCTURE ready | ✅ NO_CANDIDATE | 2026-08-29 |
+| MISSION V7.0 | Information fusion / max existing data | ✅ STOP B+C | 2026-08-30 |
 
 ## V6 External Exchange — CREDENTIAL_REQUIRED 2026-08-29
 

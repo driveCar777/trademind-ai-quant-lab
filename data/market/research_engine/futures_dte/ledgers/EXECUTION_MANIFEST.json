@@ -1,0 +1,66 @@
+{
+  "contract_hash": "7b7451abdb1554a6b92b17b5afc6169bd9d283dbaf9f6a83ba6ff6cc53d4f365",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "7b7451abdb1554a6b92b17b5afc6169bd9d283dbaf9f6a83ba6ff6cc53d4f365",
+      "elapsed_seconds": 26.08719253540039,
+      "end": "2026-08-29T17:43:52Z",
+      "exit_code": 0,
+      "experiment": "DTE_ROLL_WINDOW_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T17:43:26Z",
+      "stderr": "",
+      "stdout": "FUTDTE_JOB_DONE FUTDTE-V1-Xavier-02-HYP-FUTDTE-0002 19.3\nFUTDTE_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "7b7451abdb1554a6b92b17b5afc6169bd9d283dbaf9f6a83ba6ff6cc53d4f365",
+      "elapsed_seconds": 26.29737687110901,
+      "end": "2026-08-29T17:43:52Z",
+      "exit_code": 0,
+      "experiment": "DTE_ROLL_WINDOW_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T17:43:26Z",
+      "stderr": "",
+      "stdout": "FUTDTE_JOB_DONE FUTDTE-V1-Xavier-04-HYP-FUTDTE-0001 19.4\nFUTDTE_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "7b7451abdb1554a6b92b17b5afc6169bd9d283dbaf9f6a83ba6ff6cc53d4f365",
+      "elapsed_seconds": 26.848387002944946,
+      "end": "2026-08-29T17:43:53Z",
+      "exit_code": 0,
+      "experiment": "DTE_ROLL_WINDOW_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T17:43:26Z",
+      "stderr": "",
+      "stdout": "FUTDTE_JOB_DONE FUTDTE-V1-Xavier-03-HYP-FUTDTE-0003 19.7\nFUTDTE_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "7b7451abdb1554a6b92b17b5afc6169bd9d283dbaf9f6a83ba6ff6cc53d4f365",
+      "elapsed_seconds": 27.02406358718872,
+      "end": "2026-08-29T17:43:53Z",
+      "exit_code": 0,
+      "experiment": "DTE_ROLL_WINDOW_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T17:43:26Z",
+      "stderr": "",
+      "stdout": "FUTDTE_JOB_DONE FUTDTE-V1-Xavier-01-HYP-FUTDTE-0001 20.2\nFUTDTE_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T17:43:53Z"
+}

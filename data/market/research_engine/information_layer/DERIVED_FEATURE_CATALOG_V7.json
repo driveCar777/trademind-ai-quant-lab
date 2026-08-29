@@ -1,0 +1,69 @@
+{
+  "catalog_id": "DERIVED_FUTURES_FEATURE_CATALOG_V1",
+  "do_not_auto_hypothesize": true,
+  "features": [
+    {
+      "n": 8184,
+      "name": "front_contract",
+      "status": "DERIVED"
+    },
+    {
+      "n": 8184,
+      "name": "second_contract",
+      "status": "DERIVED"
+    },
+    {
+      "n": 0,
+      "name": "third_contract",
+      "note": "not required for OI flow",
+      "status": "AVAILABLE_NEEDS_RESCAN"
+    },
+    {
+      "family": "TERM_STRUCTURE_V1",
+      "name": "curve_slope",
+      "status": "TESTED_KILLED"
+    },
+    {
+      "name": "curve_curvature",
+      "status": "AVAILABLE_NEEDS_RESCAN"
+    },
+    {
+      "family": "TERM_STRUCTURE_V1",
+      "name": "contango",
+      "status": "TESTED_KILLED"
+    },
+    {
+      "family": "TERM_STRUCTURE_V1",
+      "name": "backwardation",
+      "status": "TESTED_KILLED"
+    },
+    {
+      "family": "TERM_STRUCTURE_V1",
+      "name": "roll_yield",
+      "status": "TESTED_KILLED"
+    },
+    {
+      "n": 8184,
+      "name": "days_to_expiry",
+      "status": "DERIVED"
+    },
+    {
+      "n": 6728,
+      "name": "OI_change",
+      "status": "DERIVED_UNUSED_IN_V6"
+    },
+    {
+      "dataset": "tm-fut-GLBX-VOLFLOW-D1-20260830-000001",
+      "n": null,
+      "name": "volume_change",
+      "status": "DERIVED_NEW"
+    },
+    {
+      "n": 4282,
+      "name": "price_change_x_OI_change",
+      "status": "DERIVED_NEW"
+    }
+  ],
+  "not_hypotheses": true,
+  "parent": "tm-fut-GLBX-CURVE-D1-20260829-000001"
+}

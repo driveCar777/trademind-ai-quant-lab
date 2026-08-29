@@ -1,0 +1,12 @@
+{
+  "catalog_id": "VOLUME",
+  "hits": {
+    "price_change_x_volume_change": 4848,
+    "vol_confirm_up": 1546,
+    "vol_fade_thin": 1922,
+    "vol_pressure_down": 1380,
+    "volume": 6777,
+    "volume_change": 6728
+  },
+  "sha256": "0d9454f2c5782a73a364e131866578241c21476b1f0c551b3ff3f99ec713e416"
+}

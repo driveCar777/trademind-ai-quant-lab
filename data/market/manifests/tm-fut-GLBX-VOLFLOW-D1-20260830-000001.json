@@ -1,0 +1,21 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "broker_cfd": false,
+  "dataset_id": "tm-fut-GLBX-VOLFLOW-D1-20260830-000001",
+  "hits": {
+    "price_change_x_volume_change": 4848,
+    "vol_confirm_up": 1546,
+    "vol_fade_thin": 1922,
+    "vol_pressure_down": 1380,
+    "volume": 6777,
+    "volume_change": 6728
+  },
+  "note": "Local Pack E statistics rescan. $0. No new Databento request.",
+  "parent_dataset_id": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+  "retrieved_at_utc": "2026-08-29T17:39:46Z",
+  "row_count": 8184,
+  "schema": "volume_flow_d1",
+  "sha256": "0d9454f2c5782a73a364e131866578241c21476b1f0c551b3ff3f99ec713e416",
+  "source": "derived",
+  "timeframe": "D1"
+}

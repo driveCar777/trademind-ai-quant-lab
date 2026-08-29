@@ -1,0 +1,12 @@
+{
+  "hits": {
+    "price_change_x_volume_change": 4848,
+    "vol_confirm_up": 1546,
+    "vol_fade_thin": 1922,
+    "vol_pressure_down": 1380,
+    "volume": 6777,
+    "volume_change": 6728
+  },
+  "n": 8184,
+  "validation_status": "PASS"
+}

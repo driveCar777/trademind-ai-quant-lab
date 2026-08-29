@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-08-30 — V7 Information Fusion STOP B+C
+
+- No new purchase. Credits still ≈ $93. Pack E 60-file hash preserve PASS.
+- Derived OI-flow + volume-flow panels. Three new families, four Xavier each. Candidate=0.
+- OI NO_CANDIDATE. Volume NO_CANDIDATE. DTE WEAK_EDGE FDR 0/3. Do not retune.
+- Next = quote options-on-futures. Not $199/mo. Not another Pack E.
+
 ## 2026-08-29 — V6.1 TERM_STRUCTURE_V1 NO_CANDIDATE
 
 - Pack E billed **$31.816129**. Slim curve `tm-fut-GLBX-CURVE-D1-20260829-000001` (8184 rows) frozen. Raw stays gitignored.

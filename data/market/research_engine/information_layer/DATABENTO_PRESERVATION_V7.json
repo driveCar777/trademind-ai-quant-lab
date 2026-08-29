@@ -1,0 +1,22 @@
+{
+  "checked": 60,
+  "complete": true,
+  "hash_mismatch": [],
+  "jobs": {
+    "definition": {
+      "id": "GLBX-20260829-5GS5SFP8GN",
+      "state": "done"
+    },
+    "ohlcv-1d": {
+      "id": "GLBX-20260829-TFDARUT9MQ",
+      "state": "done"
+    },
+    "statistics": {
+      "id": "GLBX-20260829-BWK4P7EGU4",
+      "state": "done"
+    }
+  },
+  "missing": [],
+  "note": "Raw stays on D:. Git keeps hashes only.",
+  "re_purchase_forbidden": true
+}

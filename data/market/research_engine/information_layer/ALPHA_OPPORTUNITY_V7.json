@@ -1,0 +1,140 @@
+{
+  "NO_NEW_PURCHASE": true,
+  "catalog_id": "ALPHA_OPPORTUNITY_V7",
+  "executed": [
+    {"id": "FUTURES_OI_FLOW_V1", "outcome": "NO_CANDIDATE", "tag": "RESEARCH-2026-0023"},
+    {"id": "VOLUME_PRICE_FLOW_V1", "outcome": "NO_CANDIDATE", "tag": "RESEARCH-2026-0024"},
+    {"id": "DTE_ROLL_WINDOW_V1", "outcome": "WEAK_EDGE", "tag": "RESEARCH-2026-0025"}
+  ],
+  "candidate_count": 0,
+  "do_not_reopen": [
+    "TERM_STRUCTURE_V1",
+    "BREADTH_V1",
+    "SIZE_SPREAD_V1",
+    "POSITIONING_V1",
+    "RSI"
+  ],
+  "max_hypotheses": 3,
+  "selected": "FUTURES_OI_FLOW_V1",
+  "top10": [
+    {
+      "complexity": "low",
+      "cost": 0,
+      "history": "2010-2026 GC/CL official statistics",
+      "id": "FUTURES_OI_FLOW_V1",
+      "mechanism": "Official contract open interest flow with same-session price: new longs, short covering, new shorts. Not price momentum. Not curve slope.",
+      "novelty": "information novelty high: OI unused in V6.1",
+      "novelty_guard": {
+        "decision": "ACCEPT",
+        "new_mechanism": true,
+        "why": "exchange structure: contract open interest,open interest flow,new longs,short covering"
+      },
+      "potential_edge": "positioning confirmation, not a curve level",
+      "rank": 1,
+      "sample": "6728 oi_change rows on frozen curve",
+      "selected": true
+    },
+    {
+      "id": "VOLUME_PRICE_FLOW_V1",
+      "mechanism": "cleared volume change times price change",
+      "novelty_guard": {
+        "decision": "ACCEPT",
+        "new_mechanism": true,
+        "why": "exchange structure: cleared volume"
+      },
+      "rank": 2,
+      "selected": false,
+      "why_not_first": "volume not in slim curve panel; needs raw statistics rescan, still $0"
+    },
+    {
+      "id": "DTE_ROLL_WINDOW_V1",
+      "mechanism": "days-to-expiry roll window, not slope",
+      "novelty_guard": {
+        "decision": "REJECT",
+        "new_mechanism": false,
+        "why": "not a registered new-information mechanism"
+      },
+      "rank": 3,
+      "selected": false
+    },
+    {
+      "id": "CURVE_CURVATURE_V1",
+      "mechanism": "front-second-third curvature",
+      "novelty_guard": {
+        "decision": "REJECT",
+        "new_mechanism": false,
+        "why": "not a registered new-information mechanism"
+      },
+      "rank": 4,
+      "selected": false,
+      "why_not_first": "needs third outright rescan"
+    },
+    {
+      "id": "OI_PLUS_CURVE_STATE_V1",
+      "mechanism": "OI flow filtered by backwardation",
+      "novelty_guard": {
+        "decision": "ACCEPT",
+        "new_mechanism": true,
+        "why": "exchange structure: backwardation,oi flow"
+      },
+      "rank": 5,
+      "selected": false,
+      "why_not_first": "risk of TERM_STRUCTURE retune"
+    },
+    {
+      "id": "CL_CURVE_PLUS_EIA_V1",
+      "mechanism": "CL structure + EIA stocks, not EIA z alone",
+      "novelty_guard": {
+        "decision": "REJECT",
+        "new_mechanism": false,
+        "why": "not a registered new-information mechanism"
+      },
+      "rank": 6,
+      "selected": false
+    },
+    {
+      "id": "GC_CURVE_PLUS_COT_V1",
+      "mechanism": "GC structure + CFTC, not weekly COT z alone",
+      "novelty_guard": {
+        "decision": "REJECT",
+        "new_mechanism": false,
+        "why": "not a registered new-information mechanism"
+      },
+      "rank": 7,
+      "selected": false
+    },
+    {
+      "id": "GC_CURVE_PLUS_UST10_V1",
+      "mechanism": "GC structure + UST10, not rates z-cut",
+      "novelty_guard": {
+        "decision": "REJECT",
+        "new_mechanism": false,
+        "why": "old information or killed pattern: z-cut"
+      },
+      "rank": 8,
+      "selected": false
+    },
+    {
+      "id": "OI_PLUS_GVZ_V1",
+      "mechanism": "OI flow + GVZ, not GVZ z-cross",
+      "novelty_guard": {
+        "decision": "REJECT",
+        "new_mechanism": false,
+        "why": "old information or killed pattern: gvz"
+      },
+      "rank": 9,
+      "selected": false
+    },
+    {
+      "id": "OFFICIAL_OI_VS_COT_V1",
+      "mechanism": "daily exchange OI vs weekly COT disagreement",
+      "novelty_guard": {
+        "decision": "REJECT",
+        "new_mechanism": false,
+        "why": "old information or killed pattern: weekly cot"
+      },
+      "rank": 10,
+      "selected": false
+    }
+  ]
+}

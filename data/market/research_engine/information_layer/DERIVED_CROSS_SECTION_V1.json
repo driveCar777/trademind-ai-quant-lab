@@ -1,0 +1,61 @@
+{
+  "auto_research": false,
+  "available": {
+    "breadth": "killed as 7-ag participation",
+    "cross_section_dispersion": true,
+    "cross_section_rank": true,
+    "leader_laggard": true,
+    "relative_return": true,
+    "relative_volatility": true
+  },
+  "catalog_id": "DERIVED_CROSS_SECTION_V1",
+  "do_not_reopen": [
+    "BREADTH_V1",
+    "SIZE_SPREAD_V1",
+    "XS_REV_V1"
+  ],
+  "fx_d1_parents": [
+    {
+      "dataset_id": "tm-market-AUDUSD-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-GBPUSD-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-NZDUSD-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-USDCAD-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-USDCHF-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-EURJPY-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-EURGBP-D1-20260828-000001",
+      "exists": true
+    },
+    {
+      "dataset_id": "tm-market-GBPJPY-D1-20260828-000001",
+      "exists": true
+    }
+  ],
+  "not_research": true,
+  "stock_cfd_841": "classified only; not a true exchange breadth"
+}

@@ -200,7 +200,8 @@ POST /task → requests.post() → indicator-worker → RSI → 保存结果 →
 **Data Expansion Mission V3.0** ✅ WAIT_HUMAN 记录保留（SUPPLY_V1 NO_CANDIDATE）。  
 **MT5 Max Mission V4.0** ✅ COMPLETE_NO_CANDIDATE。不要再调 gold-silver / DXY / EIA z_cut。  
 **Market Universe V5.1** ✅ EXTERNAL_DATA_GATE。841 全是 CFD。BREADTH WEAK_EDGE。SIZE NO_CANDIDATE。不要改 V4 hash。不要覆盖 `20260825`/`20260828`。不要调 BREADTH/SIZE。  
-**V6 External Exchange** ⏸ STOP C / CREDENTIAL_REQUIRED。`KEY_PRESENT=false`。repo `.env` 无 Databento 变量。pack E 未报价。不要 $199/月。不要下 tick。  
+**V6 External Exchange** ✅ Pack E 已拉（$31.82）。TERM_STRUCTURE NO_CANDIDATE。  
+**V7 Information Fusion** ✅ STOP B+C。OI/Volume NO_CANDIDATE。DTE WEAK_EDGE。Level=0 Candidate=0。不要调 OI/volume/dte/斜率。不要花剩余 ≈$93，除非期权报价后 HUMAN GATE。不要 $199/月。不要 tick。  
 V11：MT5 日线样本内外回测 + 风控证伪。`survived` 不是年化保证。 
 FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要回头调 XA / RT / XR / IT / TS / MS / RI / AMS / IV / POS / INV / RATES / CARRY / SUP / CM / UM / BREADTH / SIZE。不要无 Candidate 写策略。
 

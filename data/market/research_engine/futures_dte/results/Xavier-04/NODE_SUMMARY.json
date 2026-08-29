@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-futdte-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 7513884,
+    "pid": 12985,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 35.0,
+      "AUX-therm": 35.5,
+      "CPU-therm": 37.5,
+      "GPU-therm": 35.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 40.5,
+      "thermal-fan-est": 36.1
+    },
+    "ts": "2026-08-29T17:43:52Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "c51ea76174848f48e165f53717719e75eef260960c651dad949f270279c1c738",
+      "elapsed_seconds": 19.979490280151367,
+      "job_id": "FUTDTE-V1-Xavier-04-HYP-FUTDTE-0001"
+    }
+  ],
+  "node": "Xavier-04"
+}

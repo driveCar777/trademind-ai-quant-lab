@@ -1,0 +1,147 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "cec2cde1d396689ea44449b03d6cd7061913429d25cb7bbbfe460212cb7ce946",
+  "discovery_id": "FUTURES_OI_FLOW_V1",
+  "elapsed_seconds": 20.945705890655518,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-futoi-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 21902336,
+    "pid": 6197,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 36.0,
+      "AUX-therm": 35.5,
+      "CPU-therm": 37.5,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 39.0,
+      "thermal-fan-est": 36.25
+    },
+    "ts": "2026-08-29T17:27:37Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "SHORT_COVER",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-FUTOI-0002",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.006113170442192565,
+        "iterations": 2000,
+        "low": -0.006645376130640947,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260830
+      },
+      "bootstrap_ci": {
+        "high": 0.003356088325749072,
+        "iterations": 2000,
+        "low": -0.003920976118201671,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260830
+      },
+      "cagr": -0.030078547397157762,
+      "cost_paid": 624.3068036510875,
+      "delta": -0.00032347174719024965,
+      "effect_size": -0.009528983247806518,
+      "end_equity": 7068.262054005614,
+      "fail_reason": "LEVEL_LEAK",
+      "level_leak": true,
+      "max_drawdown": -0.3635255406358795,
+      "max_trade_share": 0.03573635692515254,
+      "mean_baseline": -0.0011204706019872326,
+      "mean_signal": -0.0014439423491774822,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 1155,
+      "n_skip_overlap": 696,
+      "n_trade": 398,
+      "occupancy": 0.4032821229050279,
+      "raw_p": 0.8620689655172413,
+      "sharpe": -0.24580661626396716,
+      "total_return": -0.2931737945994386,
+      "trade_count": 398,
+      "turnover": 155.96132935565464,
+      "win_count": 175
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.00884424015698075,
+        "iterations": 2000,
+        "low": -0.00868220549874453,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260830
+      },
+      "cagr": -0.05807375623613065,
+      "cost_paid": 203.35650273915005,
+      "delta": 0.00019957943645731264,
+      "effect_size": 0.005349309870048721,
+      "end_equity": 8645.598668825336,
+      "fail_reason": "LEVEL_LEAK",
+      "level_leak": true,
+      "max_drawdown": -0.22176174567917392,
+      "max_trade_share": 0.05256635669752431,
+      "mean_baseline": -0.002295957316150688,
+      "mean_signal": -0.0020963778796933754,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 381,
+      "n_skip_overlap": 264,
+      "n_trade": 111,
+      "occupancy": 0.6205211726384365,
+      "raw_p": null,
+      "sharpe": -0.2747569653511541,
+      "total_return": -0.1354401331174664,
+      "trade_count": 111,
+      "turnover": 50.78157344336572,
+      "win_count": 49
+    },
+    "window_hash": "39ed033b211d6998e424299c5c5d58c81055fd43e258a7fc2333767e6c9bb212"
+  },
+  "job_id": "FUTOI-V1-Xavier-02-HYP-FUTOI-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "tm-fut-GLBX-OIFLOW-D1-20260830-000001": "c0e59d2b1d998c873705348c98ee8bf218f05058416c14831cce97b63fc7a8e1"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "8ff94bd0dd6249b428497176d654e62944ed3ecf329440dd7539ec57dbcabbbc",
+  "window_hashes": {
+    "BOOK": "39ed033b211d6998e424299c5c5d58c81055fd43e258a7fc2333767e6c9bb212"
+  }
+}

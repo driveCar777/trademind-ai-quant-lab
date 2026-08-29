@@ -1,0 +1,68 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "bootstrap_iterations": 2000,
+  "close_fill": "FORBIDDEN",
+  "do_not": [
+    "Ava CFD as future or spot",
+    "price momentum on front only",
+    "retune OI sign/hold",
+    "reuse TERM_STRUCTURE slope",
+    "spend remaining Databento credits"
+  ],
+  "executed": false,
+  "family_code": "FAM-FUTOI-0001",
+  "family_id": "FUTURES_OI_FLOW_V1",
+  "fdr_q": 0.05,
+  "fill": "NEXT_BAR_OPEN",
+  "hold_bars": 5,
+  "hypotheses": [
+    {
+      "cost": "one-way 2 bps research cost; no leverage",
+      "dataset": "Derived OI-flow panel from frozen GLBX GC/CL curve. No new Databento bytes.",
+      "economic_mechanism": "Official contract open interest flow confirms a price rise as new longs, an oi shock of fresh demand, not short covering and not curve slope. Not price momentum.",
+      "failure_gate": "If FALSIFIED, do not retune OI sign or hold. Next = volume x price rescan at $0.",
+      "feature": "front_oi_change > 0 and settlement change > 0, lagged to OI knowledge",
+      "horizon": 5,
+      "hypothesis": "When official front contract open interest rises with the same-session settlement, new longs are being added. After OI knowledge T+1 21:00Z, next-session front return is positive.",
+      "hypothesis_id": "HYP-FUTOI-0001",
+      "name": "NEW_LONGS",
+      "target": "next-session front open-to-open after OI knowledge_time",
+      "validation": "pre-registered; leakage; knowledge-time; determinism; lineage; FDR q=0.05; four Xavier"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same derived OI-flow panel",
+      "economic_mechanism": "Contract open interest decline with a higher settlement is short covering, an oi shock that is not new demand. Fade after knowledge time. Not price momentum.",
+      "failure_gate": "No hold search. Do not flip covering to continuation as a rescue.",
+      "feature": "front_oi_change < 0 and settlement change > 0, lagged to OI knowledge",
+      "horizon": 5,
+      "hypothesis": "When settlement rises while official front open interest falls, the rise is short covering. After OI knowledge, fade the covering bounce.",
+      "hypothesis_id": "HYP-FUTOI-0002",
+      "name": "SHORT_COVER",
+      "target": "next-session front open-to-open after knowledge_time",
+      "validation": "same gates; not a z_cut search"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same derived OI-flow panel",
+      "economic_mechanism": "Official contract open interest rising into a lower settlement is an oi shock of new shorts, not a curve inversion. Not price momentum.",
+      "failure_gate": "If failed, do not replace official OI with COT. Next family is volume x price.",
+      "feature": "front_oi_change > 0 and settlement change < 0, lagged to OI knowledge",
+      "horizon": 5,
+      "hypothesis": "When settlement falls while official front open interest rises, new shorts are being added. After OI knowledge, next-session front return is negative.",
+      "hypothesis_id": "HYP-FUTOI-0003",
+      "name": "NEW_SHORTS",
+      "target": "next-session front open-to-open after knowledge_time",
+      "validation": "same gates"
+    }
+  ],
+  "hypothesis_ids": [
+    "HYP-FUTOI-0001",
+    "HYP-FUTOI-0002",
+    "HYP-FUTOI-0003"
+  ],
+  "parents": "tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+  "permutation_iterations": 2000,
+  "search_space_hash": "8ff94bd0dd6249b428497176d654e62944ed3ecf329440dd7539ec57dbcabbbc",
+  "seed": 20260830
+}

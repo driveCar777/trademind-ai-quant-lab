@@ -37,8 +37,15 @@ ACCEPT_TOKENS = (
     "roll yield",
     "exchange basis",
     "contract open interest",
+    "open interest flow",
     "oi shock",
+    "oi flow",
+    "new longs",
+    "short covering",
     "volume oi divergence",
+    "cleared volume",
+    "volume shock",
+    "days to expiry",
     "term structure",
 )
 

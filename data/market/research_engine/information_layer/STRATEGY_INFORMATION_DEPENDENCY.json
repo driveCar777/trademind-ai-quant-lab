@@ -1,0 +1,5 @@
+{
+  "candidate": 0,
+  "note": "No Candidate. Historical would have been Databento settlement/OI/volume/DTE. Live would need the same fields with OI/volume delay T+1. Strategy layer is forbidden without Level 1.",
+  "strategy_layer_allowed": false
+}

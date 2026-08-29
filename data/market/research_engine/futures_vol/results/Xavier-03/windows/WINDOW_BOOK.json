@@ -1,0 +1,28 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "dataset_id": "FUTVOL_VOL_BOOK",
+  "final_oos": {
+    "ACCESS": "DENIED",
+    "end_date": "2026-08-28",
+    "exists": true,
+    "n": 614,
+    "start_date": "2024-03-20"
+  },
+  "n": 4092,
+  "research": {
+    "bar_index_end": 2863,
+    "bar_index_start": 0,
+    "end_date": "2021-10-08",
+    "n": 2864,
+    "start_date": "2010-06-04"
+  },
+  "split": "70/15/15_on_target_sorted_d1_dates",
+  "validation": {
+    "bar_index_end": 3477,
+    "bar_index_start": 2864,
+    "end_date": "2024-03-19",
+    "n": 614,
+    "start_date": "2021-10-11"
+  },
+  "window_hash": "bdc3bb385dbc0b8164b534c6c20d1becdfd47aac006acb37eba62a1206ea8b41"
+}

@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-futvol-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 21912368,
+    "pid": 9886,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 36.5,
+      "AUX-therm": 35.5,
+      "CPU-therm": 38.0,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 39.25,
+      "thermal-fan-est": 36.55
+    },
+    "ts": "2026-08-29T17:41:16Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "6d4f0fe42f3837af2f6fdd557c11654c7349cb0331e01329fa4fb99285ff7de2",
+      "elapsed_seconds": 21.7522451877594,
+      "job_id": "FUTVOL-V1-Xavier-02-HYP-FUTVOL-0002"
+    }
+  ],
+  "node": "Xavier-02"
+}

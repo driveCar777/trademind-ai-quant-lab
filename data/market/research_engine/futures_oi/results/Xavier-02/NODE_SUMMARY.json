@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-futoi-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 21921308,
+    "pid": 6197,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 36.0,
+      "AUX-therm": 35.5,
+      "CPU-therm": 37.5,
+      "GPU-therm": 36.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 39.0,
+      "thermal-fan-est": 36.25
+    },
+    "ts": "2026-08-29T17:27:37Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "cec2cde1d396689ea44449b03d6cd7061913429d25cb7bbbfe460212cb7ce946",
+      "elapsed_seconds": 21.49258589744568,
+      "job_id": "FUTOI-V1-Xavier-02-HYP-FUTOI-0002"
+    }
+  ],
+  "node": "Xavier-02"
+}

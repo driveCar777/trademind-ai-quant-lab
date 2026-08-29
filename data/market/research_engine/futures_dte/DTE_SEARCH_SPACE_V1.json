@@ -1,0 +1,69 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "bootstrap_iterations": 2000,
+  "close_fill": "FORBIDDEN",
+  "do_not": [
+    "Ava CFD as future or spot",
+    "price momentum on front only",
+    "retune dte cut/hold",
+    "reuse TERM_STRUCTURE slope",
+    "reuse OI or volume events",
+    "spend remaining Databento credits"
+  ],
+  "executed": false,
+  "family_code": "FAM-FUTDTE-0001",
+  "family_id": "DTE_ROLL_WINDOW_V1",
+  "fdr_q": 0.05,
+  "fill": "NEXT_BAR_OPEN",
+  "hold_bars": 5,
+  "hypotheses": [
+    {
+      "cost": "one-way 2 bps research cost; no leverage",
+      "dataset": "Derived OI-flow panel days_to_expiry / front symbol. $0. No new Databento bytes.",
+      "economic_mechanism": "Days to expiry near the official contract expiry is a calendar-structure roll window, not price momentum and not curve slope.",
+      "failure_gate": "If FALSIFIED, do not search dte cut. Next is fusion or EXTERNAL_DATA_GATE.",
+      "feature": "days_to_expiry <= 5 on the official front",
+      "horizon": 5,
+      "hypothesis": "When days to expiry of the official front is 5 or fewer, roll congestion pressures the front. After settlement knowledge, next-session front return is negative.",
+      "hypothesis_id": "HYP-FUTDTE-0001",
+      "name": "NEAR_EXPIRY",
+      "target": "next-session front open-to-open after settlement knowledge_time",
+      "validation": "pre-registered; leakage; knowledge-time; determinism; lineage; FDR q=0.05; four Xavier"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same derived panel front symbol",
+      "economic_mechanism": "A days to expiry reset via official front identity change is the exchange roll, not a slope cut and not price momentum.",
+      "failure_gate": "No hold search. Do not flip roll to fade as a rescue.",
+      "feature": "front raw_symbol changes versus previous session",
+      "horizon": 5,
+      "hypothesis": "When the official front contract identity changes, the new front is the roll. After settlement knowledge, next-session new-front return is positive.",
+      "hypothesis_id": "HYP-FUTDTE-0002",
+      "name": "FRONT_ROLL",
+      "target": "next-session front open-to-open after knowledge_time",
+      "validation": "same gates; not a z_cut search"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same derived panel",
+      "economic_mechanism": "Post-roll flow is the day after the days to expiry identity change, not open-interest covering and not curve inversion. Not price momentum.",
+      "failure_gate": "If failed, do not replace DTE with slope. Next is unused fusion or purchase case.",
+      "feature": "previous session was a front identity change",
+      "horizon": 5,
+      "hypothesis": "The session after an official front roll, residual roll flow continues. After settlement knowledge, next-session front return is positive.",
+      "hypothesis_id": "HYP-FUTDTE-0003",
+      "name": "POST_ROLL",
+      "target": "next-session front open-to-open after knowledge_time",
+      "validation": "same gates"
+    }
+  ],
+  "hypothesis_ids": [
+    "HYP-FUTDTE-0001",
+    "HYP-FUTDTE-0002",
+    "HYP-FUTDTE-0003"
+  ],
+  "parents": "tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+  "permutation_iterations": 2000,
+  "search_space_hash": "7b7451abdb1554a6b92b17b5afc6169bd9d283dbaf9f6a83ba6ff6cc53d4f365",
+  "seed": 20260901
+}
