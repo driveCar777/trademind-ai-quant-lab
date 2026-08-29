@@ -1,0 +1,98 @@
+{
+  "catalog_id": "PROVENANCE_V8",
+  "items": [
+    {
+      "kind": "OBSERVED",
+      "name": "GC/CL official settlement",
+      "source": "Databento statistics"
+    },
+    {
+      "kind": "OBSERVED",
+      "knowledge": "T+1 21:00Z",
+      "name": "GC/CL official open interest",
+      "source": "Databento statistics"
+    },
+    {
+      "kind": "OBSERVED",
+      "knowledge": "T+1 21:00Z",
+      "name": "GC/CL cleared volume",
+      "source": "Databento statistics"
+    },
+    {
+      "kind": "OBSERVED",
+      "name": "GC/CL expiry / front identity",
+      "source": "Databento definition"
+    },
+    {
+      "from": "two official settlements",
+      "kind": "DERIVED",
+      "name": "curve slope / roll / backwardation"
+    },
+    {
+      "from": "OI change x settlement change",
+      "kind": "DERIVED",
+      "name": "OI shock / new longs / cover"
+    },
+    {
+      "from": "cleared volume change x settlement change",
+      "kind": "DERIVED",
+      "name": "volume shock"
+    },
+    {
+      "from": "definition + calendar",
+      "kind": "DERIVED",
+      "name": "days to expiry / front roll"
+    },
+    {
+      "kind": "OBSERVED",
+      "name": "MT5 GOLD/OIL OHLC",
+      "source": "broker CFD quote, not exchange spot"
+    },
+    {
+      "kind": "OBSERVED",
+      "name": "CFTC mm_net_oi",
+      "source": "CFTC disagg COT"
+    },
+    {
+      "kind": "OBSERVED",
+      "name": "EIA crude stocks",
+      "source": "EIA WCESTUS1"
+    },
+    {
+      "kind": "OBSERVED",
+      "name": "UST10 / EFFR",
+      "source": "public rates"
+    },
+    {
+      "from": "official settlement vs broker close",
+      "kind": "DERIVED",
+      "name": "futures minus CFD return gap"
+    },
+    {
+      "from": "official OI + CFTC",
+      "kind": "DERIVED",
+      "name": "daily OI vs weekly positioning change"
+    },
+    {
+      "from": "EIA wow + official slope change",
+      "kind": "DERIVED",
+      "name": "inventory wow + curve steepening"
+    },
+    {
+      "from": "DGS10 change + official slope",
+      "kind": "DERIVED",
+      "name": "UST10 change + GC curve"
+    },
+    {
+      "from": "controlled state vector",
+      "kind": "DERIVED",
+      "name": "MARKET_INFORMATION_STATE"
+    },
+    {
+      "kind": "INFERRED",
+      "name": "economic narrative / LLM gloss",
+      "not_a_feature": true
+    }
+  ],
+  "rule": "OBSERVED is a vendor or broker field. DERIVED is a deterministic transform. INFERRED is an LLM or narrative claim."
+}

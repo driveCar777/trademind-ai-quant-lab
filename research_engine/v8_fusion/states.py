@@ -1,0 +1,39 @@
+"""Controlled market states. Max 20. Each needs an economic sentence."""
+from __future__ import print_function
+
+
+def market_states():
+    return {
+        "catalog_id": "MARKET_INFORMATION_STATE_V8",
+        "max_states": 20,
+        "n": 16,
+        "groups": {
+            "FUTURES_STATE": [
+                {"id": "FS_BACKWARDATION", "why": "front settlement above second: tightness / convenience yield"},
+                {"id": "FS_CONTANGO", "why": "front below second: storage / financing compensation"},
+                {"id": "FS_STEEPENING", "why": "slope rose: tightness easing or storage richer"},
+                {"id": "FS_FLATTENING", "why": "slope fell: tightness rising"},
+            ],
+            "POSITIONING_STATE": [
+                {"id": "PS_OI_EXPAND", "why": "official front OI rose: new participation"},
+                {"id": "PS_OI_CONTRACT", "why": "official front OI fell: covering or liquidation"},
+                {"id": "PS_COT_BUILD", "why": "weekly MM net rose after knowledge Friday: slower positioning build"},
+                {"id": "PS_COT_UNWIND", "why": "weekly MM net fell: slower positioning unwind"},
+            ],
+            "PRICE_STATE": [
+                {"id": "PR_FUT_UP", "why": "official front settlement rose"},
+                {"id": "PR_CFD_LAG", "why": "broker CFD return smaller than official settlement return"},
+                {"id": "PR_CFD_LEAD", "why": "broker CFD return larger than official settlement return"},
+            ],
+            "FX_STATE": [
+                {"id": "FX_USD_UP", "why": "DXY D1 close rose; USD stronger vs the FX basket, not a pair-to-metal lead"},
+            ],
+            "MACRO_STATE": [
+                {"id": "MA_INV_BUILD", "why": "EIA crude stocks wow > 0 after Wednesday knowledge"},
+                {"id": "MA_INV_DRAW", "why": "EIA crude stocks wow < 0"},
+                {"id": "MA_YIELD_UP", "why": "UST10 yield rose after its public knowledge time"},
+                {"id": "MA_YIELD_DOWN", "why": "UST10 yield fell"},
+            ],
+        },
+        "do_not": "Do not cross all 16 into 1000 combinations. Only mechanism-named joints enter research.",
+    }

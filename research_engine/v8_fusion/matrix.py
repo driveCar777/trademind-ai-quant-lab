@@ -1,0 +1,65 @@
+"""Mechanism-only fusion matrix. Not a feature farm."""
+from __future__ import print_function
+
+
+def fusion_matrix():
+    return {
+        "catalog_id": "INFORMATION_FUSION_MATRIX_V8",
+        "rule": "economic mechanism only. A tested alone plus B tested alone is not A+B.",
+        "killed_alone": [
+            "TERM_STRUCTURE_V1",
+            "FUTURES_OI_FLOW_V1",
+            "VOLUME_PRICE_FLOW_V1",
+            "DTE_ROLL_WINDOW_V1",
+            "POSITIONING_V1",
+            "INVENTORY_V1",
+            "RATES_V1",
+            "CROSS_ASSET_V0.8",
+            "CROSS_METAL_V1",
+            "USD_METAL_V1",
+        ],
+        "cells": [
+            {
+                "id": "FUT_CFD_LEAD_V1",
+                "legs": ["GLBX settlement", "MT5 GOLD/OIL CFD"],
+                "mechanism": "Official front settlement vs broker CFD same-session return gap. Leadership / absorption of a parallel quote. Broker GOLD is not exchange spot.",
+                "new": True,
+                "selected_rank": 1,
+            },
+            {
+                "id": "CURVE_OI_JOINT_V1",
+                "legs": ["curve steepening", "OI change", "settlement change"],
+                "mechanism": "Curve move and official OI move and price move together. Not OI-rising-implies-buy. Not slope level alone.",
+                "new": True,
+                "selected_rank": 2,
+            },
+            {
+                "id": "OI_COT_BUILD_V1",
+                "legs": ["daily official OI", "weekly CFTC positioning change"],
+                "mechanism": "Fast exchange OI versus slow reported positioning build/unwind. Not a COT extreme z-cut.",
+                "new": True,
+                "selected_rank": 3,
+            },
+            {
+                "id": "CURVE_EIA_REPRICE_V1",
+                "legs": ["CL curve steepening", "EIA stocks wow"],
+                "mechanism": "Physical inventory change reprices the oil curve. Not inventory z-score.",
+                "new": True,
+                "selected_rank": 4,
+            },
+            {
+                "id": "CURVE_REALYIELD_V1",
+                "legs": ["UST10 change", "GC curve"],
+                "mechanism": "Nominal long-rate change as a real-yield proxy hitting gold curve tightness. Not a rates z-cut.",
+                "new": True,
+                "selected_rank": 5,
+            },
+            {
+                "id": "CURVE_FX_STRUCT_V1",
+                "legs": ["GC curve", "DXY D1 change"],
+                "mechanism": "USD basket move versus gold curve structure. Not USDJPY to GOLD.",
+                "new": True,
+                "selected_rank": None,
+            },
+        ],
+    }
