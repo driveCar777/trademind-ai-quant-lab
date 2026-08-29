@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-29 — V6.1 Pack E quote $31.82 GATE A PASS
+
+- Key loaded from local ignored env. Not printed. Not committed.
+- `metadata.get_cost` Pack E (GC+CL parent ohlcv-1d + definition + statistics, 2010-06-06–2026-08-29) = **$31.815091** ≤ $125.
+- Next: batch acquire to `data/market/raw/databento/` (gitignored). No $199/month.
+
 ## 2026-08-29 — V6.1 START blocked: KEY_PRESENT=false
 
 - Repo `.env` exists but is the 2026-07-13 Xavier worker file. No `TRADEMIND_DATABENTO_API_KEY`. Process env empty. Cost probe not run. $0 spent.

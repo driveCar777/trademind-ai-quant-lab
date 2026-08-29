@@ -63,7 +63,7 @@ class DatabentoHttpError(RuntimeError):
 
 
 class HistoricalClient(object):
-    def __init__(self, api_key, timeout=120):
+    def __init__(self, api_key, timeout=600):
         self.api_key = api_key
         self.timeout = timeout
         self.opener = _proxy_opener()
@@ -75,19 +75,25 @@ class HistoricalClient(object):
         req.add_header("Authorization", _basic_auth(self.api_key))
         req.add_header("Accept", accept)
         req.add_header("Content-Type", "application/x-www-form-urlencoded")
-        try:
-            handle = self.opener.open(req, timeout=self.timeout)
+        last = None
+        for attempt in range(4):
             try:
-                return handle.read()
-            finally:
-                handle.close()
-        except HTTPError as exc:
-            detail = exc.read() if hasattr(exc, "read") else b""
-            raise DatabentoHttpError(
-                "HTTP %s %s %s" % (exc.code, method, detail[:400])
-            )
-        except URLError as exc:
-            raise DatabentoHttpError("URL %s %s" % (method, exc.reason))
+                handle = self.opener.open(req, timeout=self.timeout)
+                try:
+                    return handle.read()
+                finally:
+                    handle.close()
+            except HTTPError as exc:
+                detail = exc.read() if hasattr(exc, "read") else b""
+                raise DatabentoHttpError(
+                    "HTTP %s %s %s" % (exc.code, method, detail[:400])
+                )
+            except URLError as exc:
+                last = exc
+                if attempt < 3:
+                    continue
+                raise DatabentoHttpError("URL %s %s" % (method, exc.reason))
+        raise DatabentoHttpError("URL %s %s" % (method, last.reason if last else "unknown"))
 
     def get_cost(self, dataset, schema, symbols, start, end, stype_in="parent"):
         raw = self._post(
@@ -145,6 +151,36 @@ class HistoricalClient(object):
             accept="text/csv",
         )
         return raw
+
+    def submit_batch(self, dataset, schema, symbols, start, end, stype_in="parent"):
+        raw = self._post(
+            "batch.submit_job",
+            {
+                "dataset": dataset,
+                "schema": schema,
+                "symbols": ",".join(symbols) if isinstance(symbols, (list, tuple)) else symbols,
+                "stype_in": stype_in,
+                "stype_out": "raw_symbol",
+                "start": start,
+                "end": end,
+                "encoding": "csv",
+                "compression": "zstd",
+                "pretty_px": "true",
+                "pretty_ts": "true",
+                "map_symbols": "true",
+                "split_duration": "year",
+                "delivery": "download",
+            },
+        )
+        return json.loads(raw.decode("utf-8"))
+
+    def list_jobs(self, states="queued,processing,done"):
+        raw = self._post("batch.list_jobs", {"states": states})
+        return json.loads(raw.decode("utf-8"))
+
+    def list_files(self, job_id):
+        raw = self._post("batch.list_files", {"job_id": job_id})
+        return json.loads(raw.decode("utf-8"))
 
 
 def min_pack_requests(start="2010-06-06", end="2026-08-29"):

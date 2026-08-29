@@ -1,0 +1,66 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "KEY_PRESENT": true,
+  "checked_at_utc": "2026-08-29T14:08:12Z",
+  "credit_balance_usd": "UNKNOWN_API",
+  "credit_cap_usd": 125.0,
+  "dataset": "GLBX.MDP3",
+  "end": "2026-08-29",
+  "method": "sum of single-root quotes (same Pack E fields; not a reduced pack)",
+  "pack_e_usd": 31.815090882463,
+  "probe_id": "V6.1_COST_PROBE",
+  "quote_complete": true,
+  "quotes": [
+    {
+      "billable_size": 8664432,
+      "cost_usd": 1.533182,
+      "schema": "ohlcv-1d",
+      "symbols": [
+        "GC.FUT"
+      ]
+    },
+    {
+      "billable_size": 43108296,
+      "cost_usd": 7.628069,
+      "schema": "ohlcv-1d",
+      "symbols": [
+        "CL.FUT"
+      ]
+    },
+    {
+      "billable_size": 1592059040,
+      "cost_usd": 2.520624890924,
+      "schema": "definition",
+      "symbols": [
+        "GC.FUT"
+      ]
+    },
+    {
+      "billable_size": 7966310040,
+      "cost_usd": 12.612647440284,
+      "schema": "definition",
+      "symbols": [
+        "CL.FUT"
+      ]
+    },
+    {
+      "billable_size": 1036704880,
+      "cost_usd": 0.965506657958,
+      "schema": "statistics",
+      "symbols": [
+        "GC.FUT"
+      ]
+    },
+    {
+      "billable_size": 7038443040,
+      "cost_usd": 6.555060893297,
+      "schema": "statistics",
+      "symbols": [
+        "CL.FUT"
+      ]
+    }
+  ],
+  "start": "2010-06-06",
+  "stype_in": "parent",
+  "within_credits": true
+}
