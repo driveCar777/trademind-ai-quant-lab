@@ -1,0 +1,28 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "dataset_id": "IDX_ASYNC_ALIGNED_BOOK",
+  "final_oos": {
+    "ACCESS": "DENIED",
+    "end_date": "2026-08-28",
+    "exists": true,
+    "n": 297,
+    "start_date": "2025-07-09"
+  },
+  "n": 1975,
+  "research": {
+    "bar_index_end": 1381,
+    "bar_index_start": 0,
+    "end_date": "2024-05-16",
+    "n": 1382,
+    "start_date": "2018-12-12"
+  },
+  "split": "70/15/15_on_target_sorted_d1_dates",
+  "validation": {
+    "bar_index_end": 1677,
+    "bar_index_start": 1382,
+    "end_date": "2025-07-08",
+    "n": 296,
+    "start_date": "2024-05-17"
+  },
+  "window_hash": "9846b37315202276c2925b1214b167e9f40d600a80fdc2c28b1a326b1ec82c34"
+}

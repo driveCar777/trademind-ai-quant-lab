@@ -1,0 +1,149 @@
+"""Locked GER40→US500 async space. Worker cannot change percentiles."""
+from __future__ import print_function
+
+from research_engine.holdout import final_oos_access
+from research_engine.idx_async import (
+    ALLOWED_HYPOTHESIS_IDS,
+    BASKET,
+    DOWN_PCTL,
+    FAMILY_ID,
+    HOLD_BARS,
+    PARENTS,
+    PCT_LOOKBACK,
+    UP_PCTL,
+    IA_ID,
+    IA_SEED,
+)
+from research_protocol.hashing import canonical_hash
+
+
+CANONICAL_PAYLOAD = {
+    "basket": list(BASKET),
+    "close_fill": "FORBIDDEN",
+    "cost": {
+        "commission_bp_per_side": 5.0,
+        "slippage_bp_per_side": 10.0,
+        "spread": "BROKER_POINTS_RULE",
+    },
+    "discovery_id": IA_ID,
+    "family_id": FAMILY_ID,
+    "fill": "NEXT_BAR_OPEN",
+    "gates": {
+        "insufficient_occupancy": "FAIL_NOT_WIDEN",
+        "occupancy_max": 0.40,
+        "program_candidate": "FDR_AND_TWO_HYPS_AFTER_COST",
+        "research_n_trade_min": 8,
+        "validation_n_trade_min": 4,
+    },
+    "hold_bars": HOLD_BARS,
+    "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+    "hypothesis_count": 3,
+    "hypothesis_ids": list(ALLOWED_HYPOTHESIS_IDS),
+    "idx_params": {
+        "down_pctl": DOWN_PCTL,
+        "pct_lookback": PCT_LOOKBACK,
+        "up_pctl": UP_PCTL,
+    },
+    "knowledge_time_rule": "aligned_d1_closes_then_NEXT_BAR_OPEN",
+    "not_hold_search": True,
+    "not_pctl_search": True,
+    "not_v08_fx_return": True,
+    "not_xs_rank_book": True,
+    "parent_datasets": list(PARENTS),
+    "risk": {"leverage_cap": 1.0, "risk_frac": 0.005, "stop_atr_mult": 1.5},
+    "seed": IA_SEED,
+    "stats": {
+        "block_length": 5,
+        "bootstrap": 2000,
+        "fdr_q": 0.05,
+        "m": 3,
+        "permutation": 2000,
+    },
+    "timeframe": "D1",
+    "windows": {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "split": "70/15/15_on_aligned_book_dates",
+    },
+}
+
+HYPOTHESIS_SPECS = {
+    "HYP-IA-0001": {
+        "hypothesis_id": "HYP-IA-0001",
+        "target_asset": "BOOK",
+        "event": "GER_UP_CROSS",
+        "side_mode": "US500_LONG",
+        "predicted_sign": 1,
+        "hold_bars": HOLD_BARS,
+        "mechanism": "GER40 1d return crosses above 252d 80th pctile: long US500 next open.",
+    },
+    "HYP-IA-0002": {
+        "hypothesis_id": "HYP-IA-0002",
+        "target_asset": "BOOK",
+        "event": "GER_DOWN_CROSS",
+        "side_mode": "US500_SHORT",
+        "predicted_sign": 1,
+        "hold_bars": HOLD_BARS,
+        "mechanism": "GER40 1d return crosses below 252d 20th pctile: short US500 next open.",
+    },
+    "HYP-IA-0003": {
+        "hypothesis_id": "HYP-IA-0003",
+        "target_asset": "BOOK",
+        "event": "GER_UP_CROSS",
+        "side_mode": "GER40_LONG",
+        "predicted_sign": 1,
+        "hold_bars": HOLD_BARS,
+        "mechanism": "Same up cross: long GER40 continuation.",
+    },
+}
+
+
+def deny_oos():
+    try:
+        final_oos_access(reason="idx_async_v1_contract")
+    except Exception as exc:
+        if type(exc).__name__ != "FinalOosAccessDenied":
+            raise
+        return True
+    raise RuntimeError("FINAL_OOS_WAS_NOT_DENIED")
+
+
+def canonical_search_space_hash():
+    return canonical_hash(CANONICAL_PAYLOAD)
+
+
+def _with_side(spec):
+    row = dict(spec)
+    row["side"] = int(row.get("predicted_sign") or 1)
+    row["target"] = row.get("target_asset")
+    row["hold_bars"] = HOLD_BARS
+    return row
+
+
+def build_search_space():
+    deny_oos()
+    from research_engine.idx_async import LOCKED_HASH
+
+    digest = canonical_search_space_hash()
+    if LOCKED_HASH and digest != LOCKED_HASH:
+        raise RuntimeError("CONTRACT_MISMATCH:%s" % digest)
+    space = dict(CANONICAL_PAYLOAD)
+    space["search_space_hash"] = digest
+    space["hypotheses"] = [_with_side(HYPOTHESIS_SPECS[hid]) for hid in ALLOWED_HYPOTHESIS_IDS]
+    space["FINAL_OOS_ACCESS"] = "DENIED"
+    space["executed"] = False
+    return space
+
+
+def hypothesis_map(space=None):
+    if space is None:
+        return dict((hid, _with_side(HYPOTHESIS_SPECS[hid])) for hid in ALLOWED_HYPOTHESIS_IDS)
+    out = {}
+    for row in space.get("hypotheses") or []:
+        hid = row.get("hypothesis_id")
+        if hid in HYPOTHESIS_SPECS:
+            merged = dict(HYPOTHESIS_SPECS[hid])
+            merged.update(row)
+            out[hid] = _with_side(merged)
+        else:
+            out[hid] = _with_side(row)
+    return out

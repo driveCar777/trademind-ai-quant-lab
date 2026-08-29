@@ -1,0 +1,359 @@
+{
+  "book_pass": [],
+  "fdr": {
+    "discoveries": [],
+    "m": 3,
+    "q": 0.05
+  },
+  "fdr_pass": [],
+  "hypotheses": [
+    {
+      "FINAL_OOS": {
+        "FINAL_OOS_LOCKED": false,
+        "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+        "access": "DENIED"
+      },
+      "FINAL_OOS_TOUCHED": false,
+      "adjusted_p": 0.34146341463414637,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "VALIDATION_SIGN"
+      ],
+      "elapsed_seconds": 0.1540694236755371,
+      "event": "CRACK_CHEAP_CROSS",
+      "fdr_discovery": false,
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-ER-0001",
+      "label": "FALSIFIED",
+      "label_why": [
+        "RESEARCH_NOT_PROFITABLE",
+        "VALIDATION_NOT_PROFITABLE",
+        "VALIDATION_SIGN"
+      ],
+      "oos_exists": {
+        "end": "2026-08-28",
+        "exists": true,
+        "n": 359,
+        "start": "2025-07-07"
+      },
+      "predicted_sign": 1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.013173486998238747,
+          "iterations": 40,
+          "low": -0.003506071211615905,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260829
+        },
+        "bootstrap_ci": {
+          "high": 0.014387154665964573,
+          "iterations": 40,
+          "low": -0.0030688519878653655,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260829
+        },
+        "cagr": -0.0011107197386271972,
+        "cost_paid": 40.73812626715455,
+        "delta": 0.004705919620413034,
+        "effect_size": 0.19762129679651325,
+        "end_equity": 9926.447301462547,
+        "level_leak": false,
+        "max_drawdown": -0.011162360487744346,
+        "max_trade_share": 0.08451133395729514,
+        "mean_baseline": -0.0021345609582369466,
+        "mean_signal": 0.002571358662176087,
+        "n_bars": 1675,
+        "n_eligible": 1669,
+        "n_feature": 1675,
+        "n_signal": 47,
+        "n_skip_overlap": 9,
+        "n_trade": 38,
+        "occupancy": 0.028059701492537312,
+        "raw_p": 0.24390243902439024,
+        "sharpe": -0.25363196423696127,
+        "total_return": -0.007355269853745239,
+        "trade_count": 38,
+        "turnover": 4.066610610574791,
+        "win_count": 15
+      },
+      "side_mode": "LONG_PRODUCTS_SHORT_CRUDE",
+      "target_asset": "BOOK",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.011533405618557757,
+          "iterations": 40,
+          "low": -0.01011871081383465,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260829
+        },
+        "bootstrap_ci": {
+          "high": 0.011701409666309415,
+          "iterations": 40,
+          "low": -0.010513404640159674,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260829
+        },
+        "cagr": -0.0022934302829846764,
+        "cost_paid": 14.064929748533194,
+        "delta": -0.0009735241821159173,
+        "effect_size": -0.06040426667449591,
+        "end_equity": 9967.434451011624,
+        "level_leak": false,
+        "max_drawdown": -0.00802750778518439,
+        "max_trade_share": 0.22177851612730812,
+        "mean_baseline": -0.0020834472882722698,
+        "mean_signal": -0.003056971470388187,
+        "n_bars": 359,
+        "n_eligible": 353,
+        "n_feature": 359,
+        "n_signal": 12,
+        "n_skip_overlap": 3,
+        "n_trade": 9,
+        "occupancy": 0.033426183844011144,
+        "raw_p": null,
+        "sharpe": -0.3280022634765911,
+        "total_return": -0.0032565548988375825,
+        "trade_count": 9,
+        "turnover": 1.4081479957152654,
+        "win_count": 3
+      },
+      "window_hash": "4d7973a534d5b270adde7a0ba14b68f6e44ad82341f5c801ada6253817ddc269"
+    },
+    {
+      "FINAL_OOS": {
+        "FINAL_OOS_LOCKED": false,
+        "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+        "access": "DENIED"
+      },
+      "FINAL_OOS_TOUCHED": false,
+      "adjusted_p": 0.34146341463414637,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "VALIDATION_NOT_PROFITABLE",
+        "VALIDATION_SIGN"
+      ],
+      "elapsed_seconds": 0.11399650573730469,
+      "event": "CRACK_CHEAP_CROSS",
+      "fdr_discovery": false,
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-ER-0002",
+      "label": "WEAK_SUPPORT",
+      "label_why": [
+        "VALIDATION_NOT_PROFITABLE",
+        "VALIDATION_SIGN"
+      ],
+      "oos_exists": {
+        "end": "2026-08-28",
+        "exists": true,
+        "n": 359,
+        "start": "2025-07-07"
+      },
+      "predicted_sign": 1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.026346064205341517,
+          "iterations": 40,
+          "low": -0.007130928502861349,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260829
+        },
+        "bootstrap_ci": {
+          "high": 0.022134830815316486,
+          "iterations": 40,
+          "low": -0.006314356513721714,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260829
+        },
+        "cagr": 0.0006290232175665267,
+        "cost_paid": 40.38073456876506,
+        "delta": 0.007949563265009743,
+        "effect_size": 0.16924259446646253,
+        "end_equity": 10041.85934385471,
+        "level_leak": false,
+        "max_drawdown": -0.013621586235446603,
+        "max_trade_share": 0.07674341047106925,
+        "mean_baseline": 0.00025083584647992726,
+        "mean_signal": 0.00820039911148967,
+        "n_bars": 1675,
+        "n_eligible": 1669,
+        "n_feature": 1675,
+        "n_signal": 47,
+        "n_skip_overlap": 9,
+        "n_trade": 38,
+        "occupancy": 0.028059701492537312,
+        "raw_p": 0.34146341463414637,
+        "sharpe": 0.07415246044316004,
+        "total_return": 0.004185934385471102,
+        "trade_count": 38,
+        "turnover": 4.0339614529553325,
+        "win_count": 19
+      },
+      "side_mode": "LONG_PRODUCTS",
+      "target_asset": "BOOK",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.022171841649714395,
+          "iterations": 40,
+          "low": -0.023986979028262474,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260829
+        },
+        "bootstrap_ci": {
+          "high": 0.017369325572215065,
+          "iterations": 40,
+          "low": -0.018716239816544814,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260829
+        },
+        "cagr": -0.003755808896281909,
+        "cost_paid": 14.19586169231629,
+        "delta": -0.003655360711233822,
+        "effect_size": -0.11439382684586957,
+        "end_equity": 9946.685844700361,
+        "level_leak": false,
+        "max_drawdown": -0.01538620376507297,
+        "max_trade_share": 0.2397440609421285,
+        "mean_baseline": -0.0023259146557880806,
+        "mean_signal": -0.005981275367021903,
+        "n_bars": 359,
+        "n_eligible": 353,
+        "n_feature": 359,
+        "n_signal": 12,
+        "n_skip_overlap": 3,
+        "n_trade": 9,
+        "occupancy": 0.033426183844011144,
+        "raw_p": null,
+        "sharpe": -0.2873250189156114,
+        "total_return": -0.005331415529963857,
+        "trade_count": 9,
+        "turnover": 1.4215420839119954,
+        "win_count": 3
+      },
+      "window_hash": "4d7973a534d5b270adde7a0ba14b68f6e44ad82341f5c801ada6253817ddc269"
+    },
+    {
+      "FINAL_OOS": {
+        "FINAL_OOS_LOCKED": false,
+        "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+        "access": "DENIED"
+      },
+      "FINAL_OOS_TOUCHED": false,
+      "adjusted_p": 0.34146341463414637,
+      "dataset_status": "NO_EDGE",
+      "dataset_why": [
+        "VALIDATION_NOT_PROFITABLE",
+        "VALIDATION_SIGN"
+      ],
+      "elapsed_seconds": 0.14163684844970703,
+      "event": "CRACK_RICH_CROSS",
+      "fdr_discovery": false,
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-ER-0003",
+      "label": "WEAK_SUPPORT",
+      "label_why": [
+        "VALIDATION_NOT_PROFITABLE",
+        "VALIDATION_SIGN"
+      ],
+      "oos_exists": {
+        "end": "2026-08-28",
+        "exists": true,
+        "n": 359,
+        "start": "2025-07-07"
+      },
+      "predicted_sign": 1,
+      "research": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": 0.016161953813930766,
+          "iterations": 40,
+          "low": -0.014120560009924924,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260829
+        },
+        "bootstrap_ci": {
+          "high": 0.01602135344741169,
+          "iterations": 40,
+          "low": -0.010434388326951295,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260829
+        },
+        "cagr": 0.003562641613133799,
+        "cost_paid": 45.78840708776512,
+        "delta": 0.004154090848269241,
+        "effect_size": 0.16226706775528393,
+        "end_equity": 10239.053208103911,
+        "level_leak": false,
+        "max_drawdown": -0.011087185295683916,
+        "max_trade_share": 0.1223205717033507,
+        "mean_baseline": -0.0037433407829329845,
+        "mean_signal": 0.0004107500653362569,
+        "n_bars": 1675,
+        "n_eligible": 1669,
+        "n_feature": 1675,
+        "n_signal": 60,
+        "n_skip_overlap": 16,
+        "n_trade": 44,
+        "occupancy": 0.03582089552238806,
+        "raw_p": 0.21951219512195122,
+        "sharpe": 0.45009400704166097,
+        "total_return": 0.023905320810390984,
+        "trade_count": 44,
+        "turnover": 4.599334124136618,
+        "win_count": 20
+      },
+      "side_mode": "SHORT_PRODUCTS_LONG_CRUDE",
+      "target_asset": "BOOK",
+      "validation": {
+        "block_bootstrap_ci": {
+          "block_length": 5,
+          "high": -0.005046677067967346,
+          "iterations": 40,
+          "low": -0.017834716791550697,
+          "method": "moving_block_bootstrap_delta_conservative",
+          "seed": 20260829
+        },
+        "bootstrap_ci": {
+          "high": -0.007736903789462348,
+          "iterations": 40,
+          "low": -0.010639025468916269,
+          "method": "iid_bootstrap_delta",
+          "seed": 20260829
+        },
+        "cagr": -0.015991070289263498,
+        "cost_paid": 18.25783764402824,
+        "delta": -0.009314128756690063,
+        "effect_size": -0.590417765329476,
+        "end_equity": 9773.591680158292,
+        "level_leak": false,
+        "max_drawdown": -0.023286929452120783,
+        "max_trade_share": 0.17371690059608574,
+        "mean_baseline": -0.002425309806183582,
+        "mean_signal": -0.011739438562873645,
+        "n_bars": 359,
+        "n_eligible": 353,
+        "n_feature": 359,
+        "n_signal": 25,
+        "n_skip_overlap": 7,
+        "n_trade": 16,
+        "occupancy": 0.06963788300835655,
+        "raw_p": null,
+        "sharpe": -2.1144077091799365,
+        "total_return": -0.022640831984170884,
+        "trade_count": 16,
+        "turnover": 1.8223532018352988,
+        "win_count": 2
+      },
+      "window_hash": "4d7973a534d5b270adde7a0ba14b68f6e44ad82341f5c801ada6253817ddc269"
+    }
+  ],
+  "mode": "smoke",
+  "note": "CANDIDATE needs two book hyps plus FDR. Not single-name momentum. Not 10%.",
+  "outcome": "NO_CANDIDATE",
+  "search_space_hash": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef"
+}

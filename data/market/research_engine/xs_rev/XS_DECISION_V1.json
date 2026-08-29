@@ -1,0 +1,10 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "XS_REV_V1",
+  "next_action": "KILL_FAMILY_THEN_NEXT_MECHANISM",
+  "note": "Do not retune lookback/k/hold or flip to momentum. Do not read Final OOS.",
+  "optimize_forbidden": true,
+  "outcome": "NO_CANDIDATE",
+  "strategy_layer_allowed": false,
+  "zcut_change_forbidden": true
+}

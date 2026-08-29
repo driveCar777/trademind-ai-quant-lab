@@ -11,6 +11,10 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
+from research_engine.local_fs import force_project_temp
+
+force_project_temp(ROOT)
+
 from data_layer.config import load_data_sources
 from data_layer.readonly_mt5 import import_readonly_mt5, initialize_readonly
 from research_engine.alpha_program.evidence.extract import years_between
@@ -132,11 +136,33 @@ def tick_probe(mt5, symbol):
     return out
 
 
+def _ckpt_path():
+    return os.path.join(OUT, "CHECKPOINT.json")
+
+
+def _save_ckpt(assets, ticks, extra=None):
+    payload = {"utc": now(), "n": len(assets), "assets": assets, "ticks": ticks}
+    if extra:
+        payload.update(extra)
+    dump_json(_ckpt_path(), payload)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     cfg = load_data_sources()
     disk = disk_inventory(cfg["storage_root"])
-    print("V5_UNI_INIT", now(), flush=True)
+    print("V5_UNI_INIT", now(), "OUT", OUT, "TEMP", os.environ.get("TEMP"), flush=True)
+    ckpt = None
+    if os.path.isfile(_ckpt_path()):
+        ckpt = load_json(_ckpt_path())
+    done = set()
+    assets = []
+    ticks = []
+    if ckpt:
+        assets = list(ckpt.get("assets") or [])
+        ticks = list(ckpt.get("ticks") or [])
+        done = set(row.get("symbol") for row in assets)
+        print("V5_UNI_RESUME", len(assets), flush=True)
     mt5, ver = import_readonly_mt5()
     path = cfg.get("terminal_path") or r"C:\Program Files\Ava Trade MT5 Terminal"
     try:
@@ -147,16 +173,17 @@ def main():
     maxbars = getattr(info, "maxbars", None) if info is not None else None
     print("V5_UNI_READY", ver, "MAXBARS", maxbars, flush=True)
     symbols = mt5.symbols_get() or []
-    assets = []
-    ticks = []
     try:
         for item in symbols:
             spec = spec_dict(item)
             name = spec.get("name") or getattr(item, "name", None)
+            if name in done:
+                continue
             category, reason = classify(spec)
             klass = CLASS_MAP.get(category, "OTHER")
             equity = is_equity_cfd(spec)
             mt5.symbol_select(name, True)
+            print("UNI_SYM", len(assets) + 1, name, klass, "EQ" if equity else "MKT", flush=True)
             history = {}
             if equity:
                 history["D1"] = probe_tf(mt5, name, "D1", (10000,))
@@ -187,11 +214,15 @@ def main():
                 "qualification": (history.get("D1") or {}).get("qualification"),
             }
             assets.append(row)
-            if len(assets) % 50 == 0:
-                print("UNI_PROG", len(assets), "/", len(symbols), flush=True)
-        for sym in ("GOLD", "EURUSD", "SILVER"):
-            print("TICK", sym, flush=True)
-            ticks.append(tick_probe(mt5, sym))
+            done.add(name)
+            if len(assets) % 10 == 0:
+                _save_ckpt(assets, ticks)
+                print("UNI_CKPT", len(assets), "/", len(symbols), flush=True)
+        if not ticks:
+            for sym in ("GOLD", "EURUSD", "SILVER"):
+                print("TICK", sym, flush=True)
+                ticks.append(tick_probe(mt5, sym))
+            _save_ckpt(assets, ticks)
     finally:
         try:
             mt5.shutdown()

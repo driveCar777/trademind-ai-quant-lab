@@ -1,0 +1,28 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "dataset_id": "XS_REV_ALIGNED_BOOK",
+  "final_oos": {
+    "ACCESS": "DENIED",
+    "end_date": "2026-08-28",
+    "exists": true,
+    "n": 1450,
+    "start_date": "2022-01-09"
+  },
+  "n": 9662,
+  "research": {
+    "bar_index_end": 6762,
+    "bar_index_start": 0,
+    "end_date": "2017-05-14",
+    "n": 6763,
+    "start_date": "1994-01-31"
+  },
+  "split": "70/15/15_on_target_sorted_d1_dates",
+  "validation": {
+    "bar_index_end": 8211,
+    "bar_index_start": 6763,
+    "end_date": "2022-01-07",
+    "n": 1449,
+    "start_date": "2017-05-15"
+  },
+  "window_hash": "8f74b83b415ca253dc9082dee652d1da2091c6b73d952e0924ea42e22c15ba20"
+}

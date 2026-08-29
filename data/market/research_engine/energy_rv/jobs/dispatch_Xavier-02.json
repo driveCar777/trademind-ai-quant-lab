@@ -1,0 +1,32 @@
+{
+  "discovery_id": "ENERGY_RV_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "ENERGY_RV_V1",
+      "family_id": "FAM-ER-CRACK-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-ER-0002"
+      ],
+      "job_id": "ER-V1-Xavier-02-HYP-ER-0002",
+      "node": "Xavier-02",
+      "note": "Worker executes this list only. Not single-name momentum. Not lookback search.",
+      "parent_dataset_ids": [
+        "tm-market-OIL-D1-20260828-000001",
+        "tm-market-GASOLINE-D1-20260828-000001",
+        "tm-market-HEATOIL-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef",
+      "seed": 20260829,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-02"
+}

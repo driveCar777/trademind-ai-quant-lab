@@ -1,0 +1,10 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "CORR_SHOCK_V1",
+  "next_action": "KILL_FAMILY_THEN_NEXT_MECHANISM",
+  "note": "Do not retune corr lookback or percentiles. Do not flip signs. Do not read Final OOS.",
+  "optimize_forbidden": true,
+  "outcome": "NO_CANDIDATE",
+  "strategy_layer_allowed": false,
+  "zcut_change_forbidden": true
+}

@@ -1,0 +1,28 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "dataset_id": "CORR_SHOCK_ALIGNED_BOOK",
+  "final_oos": {
+    "ACCESS": "DENIED",
+    "end_date": "2026-08-28",
+    "exists": true,
+    "n": 360,
+    "start_date": "2025-07-06"
+  },
+  "n": 2399,
+  "research": {
+    "bar_index_end": 1678,
+    "bar_index_start": 0,
+    "end_date": "2024-05-10",
+    "n": 1679,
+    "start_date": "2018-12-12"
+  },
+  "split": "70/15/15_on_target_sorted_d1_dates",
+  "validation": {
+    "bar_index_end": 2038,
+    "bar_index_start": 1679,
+    "end_date": "2025-07-04",
+    "n": 360,
+    "start_date": "2024-05-12"
+  },
+  "window_hash": "f3bbe0849300645c9abda4d01dc5c6890dd2cbc69c16b45dc58db6bbb6714be1"
+}

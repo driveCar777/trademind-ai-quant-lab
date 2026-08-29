@@ -1,0 +1,25 @@
+{
+  "ledger_id": "DATA_COST_LEDGER_V5",
+  "utc": "2026-08-29T00:52:00Z",
+  "spent_usd": 0,
+  "committed_usd": 0,
+  "rows": [
+    {
+      "item": "Ava MT5 terminal OHLC / broker ticks",
+      "vendor": "Ava Trade Ltd.",
+      "monthly_usd": 0,
+      "annual_usd": 0,
+      "research_value": "Current information set. Already extracted through V4. V5 is inventory + new structure, not a repurchase.",
+      "buy": false
+    },
+    {
+      "item": "Databento futures curve / option surface",
+      "vendor": "Databento",
+      "monthly_usd": null,
+      "annual_usd": null,
+      "research_value": "Only if MT5 universe is exhausted and curve/OI/surface is the missing object. Not more Ava bars.",
+      "buy": false,
+      "status": "NOT_YET"
+    }
+  ]
+}

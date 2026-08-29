@@ -1,0 +1,104 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "basket": [
+    "OIL",
+    "GASOLINE",
+    "HEATOIL"
+  ],
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "crack_params": {
+    "cheap_pctl": 0.2,
+    "pct_lookback": 252,
+    "ret_lookback": 20,
+    "rich_pctl": 0.8
+  },
+  "discovery_id": "ENERGY_RV_V1",
+  "executed": false,
+  "family_id": "FAM-ER-CRACK-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_TWO_HYPS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "CRACK_CHEAP_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-ER-0001",
+      "mechanism": "20d product-crude crack crosses below 252d 20th pctile: long GAS+HEAT short OIL.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "LONG_PRODUCTS_SHORT_CRUDE",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    },
+    {
+      "event": "CRACK_CHEAP_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-ER-0002",
+      "mechanism": "Same cheap cross: long GAS+HEAT only.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "LONG_PRODUCTS",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    },
+    {
+      "event": "CRACK_RICH_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-ER-0003",
+      "mechanism": "Crack crosses above 252d 80th pctile: short GAS+HEAT long OIL.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "SHORT_PRODUCTS_LONG_CRUDE",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-ER-0001",
+    "HYP-ER-0002",
+    "HYP-ER-0003"
+  ],
+  "knowledge_time_rule": "aligned_d1_closes_then_NEXT_BAR_OPEN",
+  "not_eia_weekly": true,
+  "not_hold_search": true,
+  "not_oil_sma60": true,
+  "not_pctl_search": true,
+  "not_v08_fx_return": true,
+  "parent_datasets": [
+    "tm-market-OIL-D1-20260828-000001",
+    "tm-market-GASOLINE-D1-20260828-000001",
+    "tm-market-HEATOIL-D1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef",
+  "seed": 20260829,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_aligned_book_dates"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "basket": [
+    "GOLD",
+    "US500"
+  ],
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "VOL_TERM_V1",
+  "executed": false,
+  "family_id": "FAM-VT-TERM-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_TWO_HYPS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "VOL_STEEP_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-VT-0001",
+      "mechanism": "H1/D1 RV ratio crosses above 252d 80th pctile: short GOLD.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "GOLD_SHORT",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    },
+    {
+      "event": "VOL_STEEP_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-VT-0002",
+      "mechanism": "Same steep cross: short US500. Gold vol term as risk signal.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "US500_SHORT",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    },
+    {
+      "event": "VOL_FLAT_CROSS",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-VT-0003",
+      "mechanism": "Ratio crosses below 252d 20th pctile: short GOLD (fade compressed term).",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "GOLD_SHORT",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-VT-0001",
+    "HYP-VT-0002",
+    "HYP-VT-0003"
+  ],
+  "knowledge_time_rule": "aligned_d1_closes_then_NEXT_BAR_OPEN",
+  "not_atr_level": true,
+  "not_hold_search": true,
+  "not_pctl_search": true,
+  "not_v08_fx_return": true,
+  "parent_datasets": [
+    "tm-market-GOLD-D1-20260828-000001",
+    "tm-market-GOLD-H1-20260828-000001",
+    "tm-market-US500-D1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "4e5292b4422d214ecb7ee94a2369bb1b9409416f6b52b151b7d4e40a9289923d",
+  "seed": 20260829,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "vol_params": {
+    "d1_rv_lookback": 20,
+    "flat_pctl": 0.2,
+    "h1_rv_days": 5,
+    "pct_lookback": 252,
+    "steep_pctl": 0.8
+  },
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_aligned_book_dates"
+  }
+}

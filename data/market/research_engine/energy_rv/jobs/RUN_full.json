@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef",
+      "elapsed_seconds": 16.670128345489502,
+      "end": "2026-08-29T00:58:03Z",
+      "exit_code": 0,
+      "experiment": "ENERGY_RV_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T00:57:46Z",
+      "stderr": "",
+      "stdout": "ER_JOB_DONE ER-V1-Xavier-04-HYP-ER-0001 13.0\nER_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef",
+      "elapsed_seconds": 16.81981134414673,
+      "end": "2026-08-29T00:58:03Z",
+      "exit_code": 0,
+      "experiment": "ENERGY_RV_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T00:57:46Z",
+      "stderr": "",
+      "stdout": "ER_JOB_DONE ER-V1-Xavier-03-HYP-ER-0003 13.5\nER_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef",
+      "elapsed_seconds": 16.86613965034485,
+      "end": "2026-08-29T00:58:03Z",
+      "exit_code": 0,
+      "experiment": "ENERGY_RV_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T00:57:46Z",
+      "stderr": "",
+      "stdout": "ER_JOB_DONE ER-V1-Xavier-02-HYP-ER-0002 13.5\nER_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef",
+      "elapsed_seconds": 17.33628797531128,
+      "end": "2026-08-29T00:58:03Z",
+      "exit_code": 0,
+      "experiment": "ENERGY_RV_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T00:57:46Z",
+      "stderr": "",
+      "stdout": "ER_JOB_DONE ER-V1-Xavier-01-HYP-ER-0001 14.0\nER_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T00:58:03Z"
+}

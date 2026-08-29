@@ -1,0 +1,32 @@
+{
+  "discovery_id": "VOL_TERM_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "VOL_TERM_V1",
+      "family_id": "FAM-VT-TERM-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-VT-0001"
+      ],
+      "job_id": "VT-V1-Xavier-04-HYP-VT-0001",
+      "node": "Xavier-04",
+      "note": "Worker executes this list only. Not single-name momentum. Not lookback search.",
+      "parent_dataset_ids": [
+        "tm-market-GOLD-D1-20260828-000001",
+        "tm-market-GOLD-H1-20260828-000001",
+        "tm-market-US500-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "CROSS_CHECK",
+      "search_space_hash": "4e5292b4422d214ecb7ee94a2369bb1b9409416f6b52b151b7d4e40a9289923d",
+      "seed": 20260829,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-04"
+}

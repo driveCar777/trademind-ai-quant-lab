@@ -1,0 +1,66 @@
+{
+  "contract_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+      "elapsed_seconds": 69.06581425666809,
+      "end": "2026-08-29T00:53:04Z",
+      "exit_code": 0,
+      "experiment": "XS_REV_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T00:51:55Z",
+      "stderr": "",
+      "stdout": "XS_JOB_DONE XS-V1-Xavier-03-HYP-XS-0003 60.8\nXS_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+      "elapsed_seconds": 74.22927618026733,
+      "end": "2026-08-29T00:53:09Z",
+      "exit_code": 0,
+      "experiment": "XS_REV_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T00:51:55Z",
+      "stderr": "",
+      "stdout": "XS_JOB_DONE XS-V1-Xavier-02-HYP-XS-0002 65.7\nXS_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+      "elapsed_seconds": 74.50873708724976,
+      "end": "2026-08-29T00:53:09Z",
+      "exit_code": 0,
+      "experiment": "XS_REV_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T00:51:55Z",
+      "stderr": "",
+      "stdout": "XS_JOB_DONE XS-V1-Xavier-04-HYP-XS-0001 66.1\nXS_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+      "elapsed_seconds": 78.61423182487488,
+      "end": "2026-08-29T00:53:13Z",
+      "exit_code": 0,
+      "experiment": "XS_REV_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T00:51:55Z",
+      "stderr": "",
+      "stdout": "XS_JOB_DONE XS-V1-Xavier-01-HYP-XS-0001 70.1\nXS_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T00:53:13Z"
+}

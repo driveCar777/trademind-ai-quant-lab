@@ -1,0 +1,62 @@
+{
+  "priority_id": "ALPHA_PRIORITY_V5",
+  "utc": "2026-08-29T00:52:00Z",
+  "scoring_axes": [
+    "Information Novelty",
+    "Economic Plausibility",
+    "Available History",
+    "Cross-Asset Coverage",
+    "Cost Survivability",
+    "Statistical Power",
+    "Competition Risk"
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "mechanism": "XS_REV_V1",
+      "scores": {"novelty": 4, "econ": 4, "history": 5, "cross": 5, "cost": 3, "power": 5, "competition": 2},
+      "total": 28,
+      "data_available": true,
+      "legal": true,
+      "status": "KILLED"
+    },
+    {
+      "rank": 2,
+      "mechanism": "CORR_SHOCK_V1",
+      "scores": {"novelty": 5, "econ": 5, "history": 4, "cross": 4, "cost": 3, "power": 3, "competition": 3},
+      "total": 27,
+      "data_available": true,
+      "legal": true,
+      "status": "KILLED"
+    },
+    {
+      "rank": 3,
+      "mechanism": "ENERGY_RV_V1",
+      "scores": {"novelty": 5, "econ": 5, "history": 3, "cross": 4, "cost": 2, "power": 3, "competition": 3},
+      "total": 25,
+      "data_available": true,
+      "legal": true,
+      "status": "KILLED"
+    },
+    {
+      "rank": 4,
+      "mechanism": "VOL_TERM_V1",
+      "scores": {"novelty": 5, "econ": 4, "history": 4, "cross": 2, "cost": 3, "power": 4, "competition": 3},
+      "total": 25,
+      "data_available": true,
+      "legal": true,
+      "status": "KILLED"
+    },
+    {
+      "rank": 5,
+      "mechanism": "IDX_ASYNC_V1",
+      "scores": {"novelty": 4, "econ": 4, "history": 3, "cross": 3, "cost": 3, "power": 3, "competition": 3},
+      "total": 23,
+      "data_available": true,
+      "legal": true,
+      "status": "KILLED"
+    }
+  ],
+  "do_not_construct_top6_by_hand": true,
+  "after_top5": "DATA_EXPANSION_GATE then EXTERNAL_DATA_GATE"
+}

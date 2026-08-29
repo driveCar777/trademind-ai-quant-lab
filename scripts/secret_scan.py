@@ -18,6 +18,8 @@ SKIP_DIR = {
     "monitor-binaries",
     "monitor-assets",
     "data/mine",
+    "data/mt5_terminal",
+    ".tmp",
 }
 FORBIDDEN = (
     "Auto@418",
@@ -33,6 +35,10 @@ def skip(rel):
     if parts[0] in SKIP_DIR:
         return True
     if rel.replace("\\", "/").startswith("tmp/"):
+        return True
+    if rel.replace("\\", "/").startswith("data/mt5_terminal/"):
+        return True
+    if rel.replace("\\", "/").startswith(".tmp/"):
         return True
     if rel.endswith(".example"):
         return True

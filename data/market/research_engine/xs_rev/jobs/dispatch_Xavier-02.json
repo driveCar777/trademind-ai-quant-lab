@@ -1,0 +1,39 @@
+{
+  "discovery_id": "XS_REV_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "XS_REV_V1",
+      "family_id": "FAM-XS-FX-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-XS-0002"
+      ],
+      "job_id": "XS-V1-Xavier-02-HYP-XS-0002",
+      "node": "Xavier-02",
+      "note": "Worker executes this list only. Not single-name momentum. Not lookback search.",
+      "parent_dataset_ids": [
+        "tm-market-EURUSD-D1-20260828-000001",
+        "tm-market-USDJPY-D1-20260828-000001",
+        "tm-market-GBPUSD-D1-20260828-000001",
+        "tm-market-AUDUSD-D1-20260828-000001",
+        "tm-market-USDCHF-D1-20260828-000001",
+        "tm-market-USDCAD-D1-20260828-000001",
+        "tm-market-NZDUSD-D1-20260828-000001",
+        "tm-market-EURJPY-D1-20260828-000001",
+        "tm-market-EURGBP-D1-20260828-000001",
+        "tm-market-GBPJPY-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+      "seed": 20260829,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-02"
+}

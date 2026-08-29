@@ -1,0 +1,161 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "90b05bf9fff2b786b2f28b6d34232cc7631e46ac5d9588caef6bff6a34c36c13",
+  "discovery_id": "XS_REV_V1",
+  "elapsed_seconds": 65.72625207901001,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-xs-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28810568,
+    "pid": 29555,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 37.0,
+      "AUX-therm": 37.0,
+      "CPU-therm": 39.0,
+      "GPU-therm": 37.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 40.25,
+      "thermal-fan-est": 37.75
+    },
+    "ts": "2026-08-29T00:53:10Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "XS_REBAL",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-XS-0002",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 1450,
+      "start": "2022-01-09"
+    },
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.0009962069026882856,
+        "iterations": 2000,
+        "low": -0.0007451673079916618,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": 0.0006847035065637675,
+        "iterations": 2000,
+        "low": -0.00046907060679371145,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.06370683246350017,
+      "cost_paid": 2336.0815999147912,
+      "delta": 0.0001202482982938075,
+      "effect_size": 0.012315962020711757,
+      "end_equity": 1709.5616002442541,
+      "level_leak": false,
+      "max_drawdown": -0.8298586698730386,
+      "max_trade_share": 0.004944295030177219,
+      "mean_baseline": -0.003564342409270564,
+      "mean_signal": -0.0034440941109767564,
+      "n_bars": 6763,
+      "n_eligible": 6757,
+      "n_feature": 6763,
+      "n_signal": 1349,
+      "n_skip_overlap": 0,
+      "n_trade": 1348,
+      "occupancy": 0.19946769185272809,
+      "raw_p": 0.6916541729135433,
+      "sharpe": -2.8970211409559026,
+      "total_return": -0.8290438399755746,
+      "trade_count": 1348,
+      "turnover": 233.90587783147166,
+      "win_count": 403
+    },
+    "side_mode": "LAG_LONG",
+    "target_asset": "BOOK",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.0013141662406798125,
+        "iterations": 2000,
+        "low": -0.0013517853357616289,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": 0.0009396649905202903,
+        "iterations": 2000,
+        "low": -0.0008215803839170051,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.07968605991616251,
+      "cost_paid": 1288.0428648998254,
+      "delta": 6.355995341033541e-06,
+      "effect_size": 0.0009442647113912741,
+      "end_equity": 6205.476185432533,
+      "level_leak": false,
+      "max_drawdown": -0.3812544793275823,
+      "max_trade_share": 0.010023469601864062,
+      "mean_baseline": -0.0027218503230879796,
+      "mean_signal": -0.002715494327746946,
+      "n_bars": 1449,
+      "n_eligible": 1443,
+      "n_feature": 1449,
+      "n_signal": 290,
+      "n_skip_overlap": 0,
+      "n_trade": 289,
+      "occupancy": 0.20013802622498275,
+      "raw_p": null,
+      "sharpe": -3.615458092618586,
+      "total_return": -0.37945238145674665,
+      "trade_count": 289,
+      "turnover": 128.9296105374658,
+      "win_count": 82
+    },
+    "window_hash": "8f74b83b415ca253dc9082dee652d1da2091c6b73d952e0924ea42e22c15ba20"
+  },
+  "job_id": "XS-V1-Xavier-02-HYP-XS-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "AUDUSD": "e1760e5e46094e43ecb8300ce0beb1f2753f66518f1c7fee722c369ec4c4d7b1",
+    "EURGBP": "4d9e875200695a90832aa4c8c8f9e53b06f2c7ef7a4b10c3210e525faefcd359",
+    "EURJPY": "bdb05695938500b7a3d00ff3728f48867b2a96183e56073baa917b7c0293a9bc",
+    "EURUSD": "4b1c1ae8b3d633bf4b133840ccdf39232a69277501c462ceb8413dd2eebd6ffb",
+    "GBPJPY": "71d0564d22ef7b253613dcf51a0ed0f098cb3ec934fb4f76c451435d4171dcba",
+    "GBPUSD": "029ebc6a051d0d483826f8bcf671695f07074cc3ff67c6848016dc025c21cf63",
+    "NZDUSD": "d4563c2caf970433c758a7ed293347d873374abc8169a40a236ee4c2c4c46775",
+    "USDCAD": "6c42e2606f85966e252672e1fe780e3aaf63ab66714c4bafa09b9a1088868ad4",
+    "USDCHF": "785f9f2c86ffc896c0b58fb894d3c472df19ce581f600da3bc11713e88191926",
+    "USDJPY": "235371baea924149bcdd8ffa164dc4599047d6549251f505666ed338ddbb1a0b"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+  "window_hashes": {
+    "BOOK": "8f74b83b415ca253dc9082dee652d1da2091c6b73d952e0924ea42e22c15ba20"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "basket": [
+    "EURUSD",
+    "USDJPY",
+    "GBPUSD",
+    "AUDUSD",
+    "USDCHF",
+    "USDCAD",
+    "NZDUSD",
+    "EURJPY",
+    "EURGBP",
+    "GBPJPY"
+  ],
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "XS_REV_V1",
+  "executed": false,
+  "family_id": "FAM-XS-FX-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_TWO_HYPS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "XS_REBAL",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-XS-0001",
+      "mechanism": "10-FX 20d rank: long 3 laggards, short 3 leaders, rebalance every 5.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "REV",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    },
+    {
+      "event": "XS_REBAL",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-XS-0002",
+      "mechanism": "Same ranks: long 3 laggards only. Cross-section without the short leg.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "LAG_LONG",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    },
+    {
+      "event": "XS_REBAL_WIDE",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-XS-0003",
+      "mechanism": "Reversal only when 20d-return dispersion is above its 252-day median.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "REV",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-XS-0001",
+    "HYP-XS-0002",
+    "HYP-XS-0003"
+  ],
+  "knowledge_time_rule": "aligned_d1_closes_then_NEXT_BAR_OPEN",
+  "not_cross_metal_ratio": true,
+  "not_hold_search": true,
+  "not_single_asset_momentum": true,
+  "not_v08_fx_return": true,
+  "not_zcut_search": true,
+  "parent_datasets": [
+    "tm-market-EURUSD-D1-20260828-000001",
+    "tm-market-USDJPY-D1-20260828-000001",
+    "tm-market-GBPUSD-D1-20260828-000001",
+    "tm-market-AUDUSD-D1-20260828-000001",
+    "tm-market-USDCHF-D1-20260828-000001",
+    "tm-market-USDCAD-D1-20260828-000001",
+    "tm-market-NZDUSD-D1-20260828-000001",
+    "tm-market-EURJPY-D1-20260828-000001",
+    "tm-market-EURGBP-D1-20260828-000001",
+    "tm-market-GBPJPY-D1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+  "seed": 20260829,
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_aligned_book_dates"
+  },
+  "xs_params": {
+    "disp_lookback": 252,
+    "k_leg": 3,
+    "lookback": 20,
+    "rebalance_every": 5
+  }
+}

@@ -1,0 +1,7 @@
+# ENERGY_RV_V1 Report
+
+Executed. Hash `b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef`.
+
+**NO_CANDIDATE.** Four Xavier PASS. 01=04 `1ecfee057670c528d3eab5fb4c146df3d51761ea52cd253dc9658cf9523ed3df`.
+
+0001 FALSIFIED. 0002/0003 WEAK_SUPPORT (validation fail). Do not reopen EIA or SMA60.

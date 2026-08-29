@@ -1,5 +1,7 @@
 """Read-only MT5 facade. Trade execution APIs raise DATA_LAYER_READ_ONLY."""
 
+import os
+
 from data_layer.constants import MT5_ALLOWED, MT5_FORBIDDEN
 from data_layer.errors import DataLayerReadOnlyError, Mt5UnavailableError
 
@@ -42,6 +44,11 @@ def import_readonly_mt5():
 
 
 def initialize_readonly(mt5, terminal_path=None):
+    from research_engine.local_fs import force_project_temp
+
+    force_project_temp()
+    if os.environ.get("TEMP", "").upper().startswith("C:\\"):
+        raise RuntimeError("TEMP_MUST_BE_ON_D")
     if terminal_path:
         ok = mt5.initialize(path=terminal_path)
     else:

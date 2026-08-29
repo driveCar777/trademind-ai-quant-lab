@@ -1,7 +1,7 @@
 {
   "database_id": "FAILED_ALPHA_DATABASE_V2",
   "FINAL_OOS_TOUCHED": false,
-  "n": 20,
+  "n": 25,
   "records": [
     {
       "family": "HYP-0001",
@@ -224,6 +224,71 @@
       "tag": "RESEARCH-2026-0014",
       "cross_check_match": true,
       "xavier_01_04_hash": "2257aff4dd248fe172cf018e0faef9f4945827a1d5eec816b22eab1c0f218d34"
+    },
+    {
+      "family": "XS_REV_V1",
+      "mechanism": "10-FX 20-day return rank book: long 3 laggards short 3 leaders; rebalance every 5; hold 5",
+      "what_was_tested": "HYP-XS-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; 3/3 FALSIFIED; FDR 0/3; occupancy 0.20/0.09",
+      "why": "Not single-name momentum. Not V0.8 pair return. Cross-section FX reversal lost after cost on both arms. Do not flip to momentum. Do not change lookback/k/hold.",
+      "forbidden_reopen_pattern": "CS momentum sign flip; lookback/k/hold search; same 10-FX rank book",
+      "status": "KILLED",
+      "search_space_hash": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
+      "tag": "RESEARCH-2026-0015",
+      "cross_check_match": true,
+      "xavier_01_04_hash": "9f1b5f4adf55374dfd7b99008b54d165edf2c8dc1e08e271eab0bac01e45ff06"
+    },
+    {
+      "family": "CORR_SHOCK_V1",
+      "mechanism": "60d GOLD/US500 return-corr percentile cross; risk-off book and spike fade",
+      "what_was_tested": "HYP-CS-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; 0001/0003 FALSIFIED; 0002 WEAK_SUPPORT research TR<0; FDR 0/3; n_trade 10-15",
+      "why": "Not DXY z. Not gold-silver. Correlation regime crosses did not produce a two-hyp FDR edge. Do not search percentiles. Do not flip.",
+      "forbidden_reopen_pattern": "corr lookback/pctl search; sign flip; DXY z; gold-silver z",
+      "status": "KILLED",
+      "search_space_hash": "0d729861f138c5e974ec5b99cc308523e97ee4f12c04f17d51678a325ce1647d",
+      "tag": "RESEARCH-2026-0016",
+      "cross_check_match": true,
+      "xavier_01_04_hash": "313dcdd48841d370d30d79c053ab095e74fe503f87c58a72629bf4897ad261b6"
+    },
+    {
+      "family": "ENERGY_RV_V1",
+      "mechanism": "20d gasoline+heatoil minus crude return crack percentile cross",
+      "what_was_tested": "HYP-ER-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; 0001 FALSIFIED; 0002/0003 WEAK_SUPPORT validation fail; FDR 0/3",
+      "why": "Not EIA weekly. Not SMA60 residual. Product-crude RV did not confirm on validation. Do not search pctl. Do not flip.",
+      "forbidden_reopen_pattern": "crack lookback/pctl search; sign flip; EIA production/util z; SMA60 residual",
+      "status": "KILLED",
+      "search_space_hash": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef",
+      "tag": "RESEARCH-2026-0017",
+      "cross_check_match": true,
+      "xavier_01_04_hash": "1ecfee057670c528d3eab5fb4c146df3d51761ea52cd253dc9658cf9523ed3df"
+    },
+    {
+      "family": "VOL_TERM_V1",
+      "mechanism": "GOLD H1 RV / D1 RV ratio percentile cross; fade steep and flat",
+      "what_was_tested": "HYP-VT-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; 3/3 FALSIFIED; FDR 0/3",
+      "why": "Not ATR high/low. H1/D1 vol-term proxy lost after cost on GOLD and US500. Do not search pctl. Do not flip.",
+      "forbidden_reopen_pattern": "vol-term lookback/pctl search; ATR level; sign flip",
+      "status": "KILLED",
+      "search_space_hash": "4e5292b4422d214ecb7ee94a2369bb1b9409416f6b52b151b7d4e40a9289923d",
+      "tag": "RESEARCH-2026-0018",
+      "cross_check_match": true,
+      "xavier_01_04_hash": "7b9ec42194c61b8ac1e6896c4c86ed4d4a3e7d2118f56b61208710db9ecbc0eb"
+    },
+    {
+      "family": "IDX_ASYNC_V1",
+      "mechanism": "GER40 1d return percentile cross into US500 / GER40 continuation",
+      "what_was_tested": "HYP-IA-0001/0002/0003 local 2000 + four Xavier",
+      "what_failed": "NO_CANDIDATE; 0002/0003 FALSIFIED; 0001 WEAK_SUPPORT research TR<0; FDR 0/3",
+      "why": "Not V0.8 FX pair. Not 10-FX rank book. Europe-to-US daily lead did not produce two-hyp FDR edge. Do not search pctl. Do not flip.",
+      "forbidden_reopen_pattern": "GER40 pctl search; sign flip; V0.8 EURUSD→GOLD",
+      "status": "KILLED",
+      "search_space_hash": "2e4c5c14fea78e7fc1e2afbdc3ac75f6684ebef42eb152104c182cd590828cb8",
+      "tag": "RESEARCH-2026-0019",
+      "cross_check_match": true,
+      "xavier_01_04_hash": "bb2558ac64f43430ae02a51ff62a79e462e75fa61c84156b2ef00d3cc40074f0"
     }
   ]
 }

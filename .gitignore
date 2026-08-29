@@ -23,6 +23,8 @@ venv/
 
 # Local / temp
 tmp/
+.tmp/
+data/mt5_terminal/
 .cursor/
 *.log
 bt-*.log
