@@ -1,0 +1,8 @@
+"""V8 existing-information fusion. No new purchase until TOP5 fail."""
+
+MISSION_ID = "V8_INFORMATION_FUSION"
+NO_NEW_PURCHASE = True
+CREDIT_REMAINING_USD = 93.18
+CREDIT_FLOOR_USD = 60.0
+AUTO_PURCHASE_MAX_USD = 30.0
+BILLED_PACK_E_USD = 31.82
