@@ -1,0 +1,11 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "FUT_CFD_LEAD_V1",
+  "hold_change_forbidden": true,
+  "next_action": "KILL_FAMILY_THEN_NEXT_INFORMATION",
+  "note": "Do not retune gap/hold. Do not use Ava CFD as spot. Do not read Final OOS.",
+  "oi_sign_change_forbidden": true,
+  "optimize_forbidden": true,
+  "outcome": "NO_CANDIDATE",
+  "strategy_layer_allowed": false
+}

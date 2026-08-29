@@ -1,7 +1,7 @@
 {
   "FINAL_OOS_TOUCHED": false,
   "database_id": "FAILED_ALPHA_DATABASE_V2",
-  "n": 31,
+  "n": 32,
   "records": [
     {
       "family": "HYP-0001",
@@ -367,6 +367,19 @@
       "what_was_tested": "HYP-FUTDTE-0001/0002/0003 local 2000 + four Xavier",
       "why": "Calendar roll window is sparse and not FDR. Do not search dte<=N. Official GC/CL structure (slope/OI/volume/DTE) is exhausted.",
       "xavier_01_04_hash": "c51ea76174848f48e165f53717719e75eef260960c651dad949f270279c1c738"
+    },
+    {
+      "cross_check_match": true,
+      "family": "FUT_CFD_LEAD_V1",
+      "forbidden_reopen_pattern": "retune gap hold occupancy; Ava GOLD/OIL as spot; USDJPY to GOLD",
+      "mechanism": "official settlement versus broker GOLD/OIL CFD same-session return gap: futures leadership / overshoot / absorption",
+      "search_space_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+      "status": "KILLED",
+      "tag": "RESEARCH-2026-0026",
+      "what_failed": "NO_CANDIDATE; 0001/0002 FALSIFIED LEVEL_LEAK occ 0.51/0.52; 0003 WEAK_SUPPORT research unprofitable; FDR 0/3",
+      "what_was_tested": "HYP-FUTCFD-0001/0002/0003 local 2000 + four Xavier",
+      "why": "Broker CFD gap is a quote-disagreement regime, not a rare lead. Do not retune gap. Do not call Ava GOLD spot. Next is curve steepening x official OI, still .",
+      "xavier_01_04_hash": "cf2820e881ac3bc68909c33a5362dbcde2727aa2b675658bfd5e636e18ddb2b7"
     }
   ]
 }

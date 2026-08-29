@@ -1,0 +1,147 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "635e2ac77b2140b5c5f634288288b563aa5fd1c3549b032fc2649857aa5d6753",
+  "discovery_id": "FUT_CFD_LEAD_V1",
+  "elapsed_seconds": 9.978192567825317,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-futcfd-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 23145480,
+    "pid": 16976,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 36.5,
+      "AUX-therm": 37.0,
+      "CPU-therm": 39.0,
+      "GPU-therm": 38.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 38.0,
+      "Tdiode_tegra": 40.25,
+      "thermal-fan-est": 37.7
+    },
+    "ts": "2026-08-29T20:57:26Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "ABSORB",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-FUTCFD-0003",
+    "one_way_bp_floor": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 291,
+      "start": "2025-07-03"
+    },
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.006232765970844736,
+        "iterations": 2000,
+        "low": -0.018220720080240442,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260902
+      },
+      "bootstrap_ci": {
+        "high": 0.007648876198456389,
+        "iterations": 2000,
+        "low": -0.014284598166800687,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260902
+      },
+      "cagr": -0.0035664340093490843,
+      "cost_paid": 92.92449395081475,
+      "delta": -0.0034367644435893763,
+      "effect_size": -0.0874523157139484,
+      "end_equity": 9809.72417307073,
+      "level_leak": false,
+      "max_drawdown": -0.1287099773622314,
+      "max_trade_share": 0.11637988604404731,
+      "mean_baseline": 0.0027362970635915087,
+      "mean_signal": -0.0007004673799978677,
+      "n_bars": 1356,
+      "n_eligible": 1350,
+      "n_feature": 1356,
+      "n_signal": 52,
+      "n_skip_overlap": 5,
+      "n_trade": 46,
+      "occupancy": 0.038348082595870206,
+      "raw_p": 0.5407296351824088,
+      "sharpe": -0.03963584602273232,
+      "total_return": -0.019027582692927036,
+      "trade_count": 46,
+      "turnover": 23.23599105435261,
+      "win_count": 20
+    },
+    "target_asset": "CFD",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.03164384386623319,
+        "iterations": 2000,
+        "low": 0.0057693847571300754,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260902
+      },
+      "cagr": 0.11165145567229695,
+      "cost_paid": 27.383060424663093,
+      "delta": 0.017270917133252038,
+      "effect_size": 0.6009371916756877,
+      "end_equity": 11295.368924250784,
+      "level_leak": false,
+      "max_drawdown": -0.004522979956986446,
+      "max_trade_share": 0.353788659578377,
+      "mean_baseline": 0.001564369409515015,
+      "mean_signal": 0.018835286542767053,
+      "n_bars": 291,
+      "n_eligible": 285,
+      "n_feature": 291,
+      "n_signal": 15,
+      "n_skip_overlap": 2,
+      "n_trade": 13,
+      "occupancy": 0.05154639175257732,
+      "raw_p": null,
+      "sharpe": 2.1040219787077548,
+      "total_return": 0.12953689242507838,
+      "trade_count": 13,
+      "turnover": 6.779627506932002,
+      "win_count": 11
+    },
+    "window_hash": "f5767c2afb8a7d254029847e621db012e2e850d3faf827bf0a11cd31ac35ebf5"
+  },
+  "job_id": "FUTCFD-V1-Xavier-03-HYP-FUTCFD-0003",
+  "node": "Xavier-03",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e",
+    "tm-market-GOLD-D1-20260828-000001": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "tm-market-OIL-D1-20260828-000001": "78b7389a14ac815d007a69b2c83c97f542405fa2093f39ce1cefe0ccfa39ecca"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+  "window_hashes": {
+    "BOOK": "f5767c2afb8a7d254029847e621db012e2e850d3faf827bf0a11cd31ac35ebf5"
+  }
+}

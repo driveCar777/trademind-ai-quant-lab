@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-futcfd-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 23156764,
+    "pid": 16976,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 36.5,
+      "AUX-therm": 37.0,
+      "CPU-therm": 39.5,
+      "GPU-therm": 37.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 38.0,
+      "Tdiode_tegra": 40.25,
+      "thermal-fan-est": 37.7
+    },
+    "ts": "2026-08-29T20:57:26Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "635e2ac77b2140b5c5f634288288b563aa5fd1c3549b032fc2649857aa5d6753",
+      "elapsed_seconds": 10.532880067825317,
+      "job_id": "FUTCFD-V1-Xavier-03-HYP-FUTCFD-0003"
+    }
+  ],
+  "node": "Xavier-03"
+}

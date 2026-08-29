@@ -1,0 +1,33 @@
+{
+  "discovery_id": "FUT_CFD_LEAD_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "FUT_CFD_LEAD_V1",
+      "family_code": "FAM-FUTCFD-0001",
+      "family_id": "FUT_CFD_LEAD_V1",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-FUTCFD-0003"
+      ],
+      "job_id": "FUTCFD-V1-Xavier-03-HYP-FUTCFD-0003",
+      "node": "Xavier-03",
+      "note": "Worker executes this list only. Do not retune gap. Do not ship the API key.",
+      "parent_dataset_ids": [
+        "tm-fut-GLBX-CURVE-D1-20260829-000001",
+        "tm-market-GOLD-D1-20260828-000001",
+        "tm-market-OIL-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+      "seed": 20260902,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-03"
+}

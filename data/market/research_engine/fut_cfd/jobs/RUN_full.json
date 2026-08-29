@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+      "elapsed_seconds": 14.777148246765137,
+      "end": "2026-08-29T20:57:26Z",
+      "exit_code": 0,
+      "experiment": "FUT_CFD_LEAD_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T20:57:12Z",
+      "stderr": "",
+      "stdout": "FUTCFD_JOB_DONE FUTCFD-V1-Xavier-03-HYP-FUTCFD-0003 10.0\nFUTCFD_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+      "elapsed_seconds": 16.296680450439453,
+      "end": "2026-08-29T20:57:28Z",
+      "exit_code": 0,
+      "experiment": "FUT_CFD_LEAD_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T20:57:12Z",
+      "stderr": "",
+      "stdout": "FUTCFD_JOB_DONE FUTCFD-V1-Xavier-04-HYP-FUTCFD-0001 11.5\nFUTCFD_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+      "elapsed_seconds": 16.366755485534668,
+      "end": "2026-08-29T20:57:28Z",
+      "exit_code": 0,
+      "experiment": "FUT_CFD_LEAD_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T20:57:12Z",
+      "stderr": "",
+      "stdout": "FUTCFD_JOB_DONE FUTCFD-V1-Xavier-02-HYP-FUTCFD-0002 11.6\nFUTCFD_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+      "elapsed_seconds": 16.545467615127563,
+      "end": "2026-08-29T20:57:28Z",
+      "exit_code": 0,
+      "experiment": "FUT_CFD_LEAD_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T20:57:12Z",
+      "stderr": "",
+      "stdout": "FUTCFD_JOB_DONE FUTCFD-V1-Xavier-01-HYP-FUTCFD-0001 11.7\nFUTCFD_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T20:57:28Z"
+}

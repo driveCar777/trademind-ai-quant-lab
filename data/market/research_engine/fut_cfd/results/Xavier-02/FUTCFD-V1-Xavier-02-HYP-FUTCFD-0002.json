@@ -1,0 +1,149 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "83c1ad0628c2b9acdaa2a4a40ca82d763986e3365629d70113cad8c86f225955",
+  "discovery_id": "FUT_CFD_LEAD_V1",
+  "elapsed_seconds": 11.56023621559143,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-futcfd-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 21803380,
+    "pid": 25123,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 37.5,
+      "AUX-therm": 37.0,
+      "CPU-therm": 38.5,
+      "GPU-therm": 37.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 38.0,
+      "Tdiode_tegra": 40.5,
+      "thermal-fan-est": 37.6
+    },
+    "ts": "2026-08-29T20:57:28Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "CFD_OVERSHOOT",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-FUTCFD-0002",
+    "one_way_bp_floor": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 291,
+      "start": "2025-07-03"
+    },
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.0097622763421626,
+        "iterations": 2000,
+        "low": -0.015416149925460072,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260902
+      },
+      "bootstrap_ci": {
+        "high": 0.008049313257619848,
+        "iterations": 2000,
+        "low": -0.012892228748899502,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260902
+      },
+      "cagr": -0.15774782687205047,
+      "cost_paid": 286.95036435554334,
+      "delta": -0.0019496258738385865,
+      "effect_size": -0.04022085685116086,
+      "end_equity": 3972.8628368073646,
+      "fail_reason": "LEVEL_LEAK",
+      "level_leak": true,
+      "max_drawdown": -0.710745697472047,
+      "max_trade_share": 0.19264385344141133,
+      "mean_baseline": -0.004216772572363328,
+      "mean_signal": -0.006166398446201915,
+      "n_bars": 1356,
+      "n_eligible": 1350,
+      "n_feature": 1356,
+      "n_signal": 703,
+      "n_skip_overlap": 467,
+      "n_trade": 234,
+      "occupancy": 0.5184365781710915,
+      "raw_p": 0.5612193903048476,
+      "sharpe": -0.45445361087897684,
+      "total_return": -0.6027137163192635,
+      "trade_count": 234,
+      "turnover": 71.45058174894399,
+      "win_count": 99
+    },
+    "target_asset": "CFD",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.015366653761708737,
+        "iterations": 2000,
+        "low": -0.01023199577844994,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260902
+      },
+      "cagr": -0.01707935398907101,
+      "cost_paid": 98.5937652837405,
+      "delta": 0.002231196237451219,
+      "effect_size": 0.06985587688836259,
+      "end_equity": 9803.706212832423,
+      "fail_reason": "LEVEL_LEAK",
+      "level_leak": true,
+      "max_drawdown": -0.10830553382781107,
+      "max_trade_share": 0.12399155842077307,
+      "mean_baseline": -0.002701147962295595,
+      "mean_signal": -0.000469951724844376,
+      "n_bars": 291,
+      "n_eligible": 285,
+      "n_feature": 291,
+      "n_signal": 155,
+      "n_skip_overlap": 102,
+      "n_trade": 50,
+      "occupancy": 0.5326460481099656,
+      "raw_p": null,
+      "sharpe": -0.031261562621904146,
+      "total_return": -0.01962937871675763,
+      "trade_count": 50,
+      "turnover": 24.643556319840936,
+      "win_count": 23
+    },
+    "window_hash": "f5767c2afb8a7d254029847e621db012e2e850d3faf827bf0a11cd31ac35ebf5"
+  },
+  "job_id": "FUTCFD-V1-Xavier-02-HYP-FUTCFD-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e",
+    "tm-market-GOLD-D1-20260828-000001": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "tm-market-OIL-D1-20260828-000001": "78b7389a14ac815d007a69b2c83c97f542405fa2093f39ce1cefe0ccfa39ecca"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+  "window_hashes": {
+    "BOOK": "f5767c2afb8a7d254029847e621db012e2e850d3faf827bf0a11cd31ac35ebf5"
+  }
+}

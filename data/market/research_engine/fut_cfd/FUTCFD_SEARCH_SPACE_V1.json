@@ -1,0 +1,73 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "bootstrap_iterations": 2000,
+  "close_fill": "FORBIDDEN",
+  "do_not": [
+    "call broker GOLD exchange spot",
+    "USDJPY to GOLD",
+    "search the 20 bp gap",
+    "retune hold",
+    "spend Databento credits"
+  ],
+  "executed": false,
+  "family_code": "FAM-FUTCFD-0001",
+  "family_id": "FUT_CFD_LEAD_V1",
+  "fdr_q": 0.05,
+  "fill": "NEXT_BAR_OPEN",
+  "gap": 0.002,
+  "hold_bars": 5,
+  "hypotheses": [
+    {
+      "cost": "quoted CFD spread floored at 2 bp one-way; no leverage",
+      "dataset": "tm-fut-GLBX-CURVE-D1-20260829-000001 + tm-market-GOLD-D1-20260828-000001 + tm-market-OIL-D1-20260828-000001",
+      "economic_mechanism": "Official exchange settlement versus a parallel broker CFD quote is futures leadership / exchange basis, not price momentum and not treating broker GOLD as exchange spot.",
+      "failure_gate": "If FALSIFIED, do not search the gap. Next = curve+OI joint.",
+      "feature": "fut_ret - cfd_ret > 0.002",
+      "horizon": 5,
+      "hypothesis": "When official front settlement return exceeds the broker CFD return by more than 20 bp, the CFD lagged the venue. After settlement knowledge, next CFD open-to-open is positive.",
+      "hypothesis_id": "HYP-FUTCFD-0001",
+      "name": "FUT_LEAD",
+      "target": "next-session broker CFD open-to-open after settlement knowledge_time",
+      "validation": "pre-registered; leakage; knowledge-time; determinism; lineage; FDR q=0.05; four Xavier"
+    },
+    {
+      "cost": "quoted CFD spread floored at 2 bp one-way",
+      "dataset": "same three frozen parents",
+      "economic_mechanism": "CFD overshoot versus official settlement is quote disagreement and futures leadership in reverse, not a pair-to-metal lead and not price momentum.",
+      "failure_gate": "No hold search. Do not flip overshoot to continuation.",
+      "feature": "fut_ret - cfd_ret < -0.002",
+      "horizon": 5,
+      "hypothesis": "When the broker CFD return exceeds official settlement by more than 20 bp, the CFD ran ahead of the venue. Fade the CFD after knowledge.",
+      "hypothesis_id": "HYP-FUTCFD-0002",
+      "name": "CFD_OVERSHOOT",
+      "target": "next-session broker CFD open-to-open after knowledge_time",
+      "validation": "same gates"
+    },
+    {
+      "cost": "quoted CFD spread floored at 2 bp one-way",
+      "dataset": "same three frozen parents",
+      "economic_mechanism": "Quote absorption: venue settlement moved, the broker quote stayed quiet. Exchange basis, not curve slope and not USDJPY to GOLD.",
+      "failure_gate": "If failed, do not call GOLD spot. Next family is curve+OI joint.",
+      "feature": "fut_ret > 0.002 and abs(cfd_ret) < 0.001",
+      "horizon": 5,
+      "hypothesis": "When official settlement rises more than 20 bp and the CFD barely moves, the CFD absorbed the venue move. After knowledge, CFD catches up.",
+      "hypothesis_id": "HYP-FUTCFD-0003",
+      "name": "ABSORB",
+      "target": "next-session broker CFD open-to-open after knowledge_time",
+      "validation": "same gates"
+    }
+  ],
+  "hypothesis_ids": [
+    "HYP-FUTCFD-0001",
+    "HYP-FUTCFD-0002",
+    "HYP-FUTCFD-0003"
+  ],
+  "parents": [
+    "tm-fut-GLBX-CURVE-D1-20260829-000001",
+    "tm-market-GOLD-D1-20260828-000001",
+    "tm-market-OIL-D1-20260828-000001"
+  ],
+  "permutation_iterations": 2000,
+  "search_space_hash": "f271a988674cba3c01898bfff244e3ae8cadd1cc441ba51cd278ead25d2c0013",
+  "seed": 20260902
+}
