@@ -1,0 +1,68 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "bootstrap_iterations": 2000,
+  "close_fill": "FORBIDDEN",
+  "do_not": [
+    "COT extreme / mm_net_oi z",
+    "weekly cot token reuse",
+    "Ava CFD as future or spot",
+    "retune OI or weekly positioning sign or hold",
+    "spend remaining Databento credits"
+  ],
+  "executed": false,
+  "family_code": "FAM-OICOT-0001",
+  "family_id": "OI_COT_BUILD_V1",
+  "fdr_q": 0.05,
+  "fill": "NEXT_BAR_OPEN",
+  "hold_bars": 5,
+  "hypotheses": [
+    {
+      "cost": "one-way 2 bps research cost; no leverage",
+      "dataset": "Frozen GLBX curve OI plus CFTC GOLD/OIL weekly series. No new Databento bytes.",
+      "economic_mechanism": "Daily official open interest flow plus weekly positioning change in the same direction is a position build, a speed-aligned crowding transition, not a COT extreme. Not price momentum.",
+      "failure_gate": "If FALSIFIED, do not retune OI or weekly positioning sign. Next = EIA wow x CL curve.",
+      "feature": "week-sum official front_oi_change > 0 and weekly mm_net change > 0, after Friday 21:00Z",
+      "horizon": 5,
+      "hypothesis": "When official daily open interest flow and weekly positioning both rise in the same census week, a build is confirmed after Friday knowledge. Next-session front return is negative.",
+      "hypothesis_id": "HYP-OICOT-0001",
+      "name": "BUILD_ALIGN",
+      "target": "next-session front open-to-open after Friday knowledge_time",
+      "validation": "pre-registered; leakage; knowledge-time; determinism; lineage; FDR q=0.05; four Xavier"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same frozen official OI plus weekly positioning",
+      "economic_mechanism": "Daily official open interest flow up against a weekly positioning unwind is a speed gap between the exchange clock and the census clock, not a COT extreme. Not price momentum.",
+      "failure_gate": "No hold search. Do not replace weekly positioning with a COT extreme as a rescue.",
+      "feature": "week-sum official front_oi_change > 0 and weekly mm_net change < 0",
+      "horizon": 5,
+      "hypothesis": "When official daily open interest expands while weekly positioning falls, exchange participation and the delayed census disagree. After Friday knowledge, next-session front return is positive.",
+      "hypothesis_id": "HYP-OICOT-0002",
+      "name": "SPEED_GAP",
+      "target": "next-session front open-to-open after Friday knowledge_time",
+      "validation": "same gates; not a z score search"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same frozen official OI plus weekly positioning",
+      "economic_mechanism": "Daily official open interest flow down plus weekly positioning unwind is a confirmed position unwinding, not a COT extreme. Not price momentum.",
+      "failure_gate": "If failed, do not reopen POSITIONING_V1 extremes.",
+      "feature": "week-sum official front_oi_change < 0 and weekly mm_net change < 0",
+      "horizon": 5,
+      "hypothesis": "When official daily open interest and weekly positioning both fall, an unwind is confirmed after Friday knowledge. Next-session front return is positive.",
+      "hypothesis_id": "HYP-OICOT-0003",
+      "name": "UNWIND_ALIGN",
+      "target": "next-session front open-to-open after Friday knowledge_time",
+      "validation": "same gates"
+    }
+  ],
+  "hypothesis_ids": [
+    "HYP-OICOT-0001",
+    "HYP-OICOT-0002",
+    "HYP-OICOT-0003"
+  ],
+  "parents": "tm-fut-GLBX-CURVE-D1-20260829-000001 + CFTC GOLD/OIL 000002",
+  "permutation_iterations": 2000,
+  "search_space_hash": "b8aa91d8ddd4ccf9a66a80dbb6874e7494352f3945c265332db193a9d7220f23",
+  "seed": 20260904
+}

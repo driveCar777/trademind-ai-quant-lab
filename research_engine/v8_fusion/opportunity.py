@@ -34,6 +34,7 @@ TOP = [
         "data": "OI-flow + CFTC GOLD/OIL 000002",
         "cost": 0,
         "selected": False,
+        "executed": "WEAK_EDGE",
     },
     {
         "rank": 4,
@@ -42,7 +43,7 @@ TOP = [
         "economic_rationale": "A physical stock change should reprice deferred vs front if storage tightness changed.",
         "data": "curve CL + EIA WCESTUS1",
         "cost": 0,
-        "selected": False,
+        "selected": True,
     },
     {
         "rank": 5,
@@ -84,5 +85,7 @@ def opportunity_v8():
             "BREADTH_V1",
             "SIZE_SPREAD_V1",
             "FUT_CFD_LEAD_V1",
+            "CURVE_OI_JOINT_V1",
+            "OI_COT_BUILD_V1",
         ],
     }

@@ -1,0 +1,145 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "20fb32160a26169c8aee9396d71f290d7b3a28199d9a816b84d491815b8ead28",
+  "discovery_id": "OI_COT_BUILD_V1",
+  "elapsed_seconds": 19.233675718307495,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-oicot-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 23131368,
+    "pid": 32073,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 35.0,
+      "AUX-therm": 35.5,
+      "CPU-therm": 38.0,
+      "GPU-therm": 36.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 36.0,
+      "Tdiode_tegra": 38.5,
+      "thermal-fan-est": 36.55
+    },
+    "ts": "2026-08-29T21:06:20Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "UNWIND_ALIGN",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-OICOT-0003",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.016485429615321595,
+        "iterations": 2000,
+        "low": -0.0023474986648260145,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260904
+      },
+      "bootstrap_ci": {
+        "high": 0.015208213531033882,
+        "iterations": 2000,
+        "low": -0.0015156583282885743,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260904
+      },
+      "cagr": 0.022539907882311194,
+      "cost_paid": 164.01824856397175,
+      "delta": 0.006868005214881216,
+      "effect_size": 0.20260947280701927,
+      "end_equity": 12881.860328048526,
+      "level_leak": false,
+      "max_drawdown": -0.07572765458337281,
+      "max_trade_share": 0.051635362842268336,
+      "mean_baseline": 0.0003204706019872344,
+      "mean_signal": 0.00718847581686845,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 89,
+      "n_skip_overlap": 7,
+      "n_trade": 74,
+      "occupancy": 0.031075418994413406,
+      "raw_p": 0.08895552223888056,
+      "sharpe": 0.49431147123512337,
+      "total_return": 0.28818603280485267,
+      "trade_count": 74,
+      "turnover": 40.85226821216232,
+      "win_count": 44
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.015030239713271694,
+        "iterations": 2000,
+        "low": -0.010436092248777173,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260904
+      },
+      "cagr": 0.04059871405848403,
+      "cost_paid": 131.78923611375308,
+      "delta": 0.0021571674531098532,
+      "effect_size": 0.058421556601971084,
+      "end_equity": 11016.465438491181,
+      "level_leak": false,
+      "max_drawdown": -0.12785765318119366,
+      "max_trade_share": 0.06922522068329172,
+      "mean_baseline": 0.0014959573161506894,
+      "mean_signal": 0.0036531247692605426,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 73,
+      "n_skip_overlap": 5,
+      "n_trade": 63,
+      "occupancy": 0.11889250814332247,
+      "raw_p": null,
+      "sharpe": 0.3841155098042091,
+      "total_return": 0.10164654384911809,
+      "trade_count": 63,
+      "turnover": 32.889896294708,
+      "win_count": 31
+    },
+    "window_hash": "ea84b8c181df2ba074f6eeb9c607785c8e05e63c0e495b812cc9f4b0be8b0883"
+  },
+  "job_id": "OICOT-V1-Xavier-03-HYP-OICOT-0003",
+  "node": "Xavier-03",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "b8aa91d8ddd4ccf9a66a80dbb6874e7494352f3945c265332db193a9d7220f23",
+  "window_hashes": {
+    "BOOK": "ea84b8c181df2ba074f6eeb9c607785c8e05e63c0e495b812cc9f4b0be8b0883"
+  }
+}

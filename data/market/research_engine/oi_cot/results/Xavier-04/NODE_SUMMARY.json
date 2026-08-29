@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-oicot-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 7510452,
+    "pid": 22334,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 35.5,
+      "AUX-therm": 36.5,
+      "CPU-therm": 38.5,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 41.0,
+      "thermal-fan-est": 36.75
+    },
+    "ts": "2026-08-29T21:06:20Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "29ee472b9f6e484902c82cb53505f791e92a48b297ac138f6dcd2f1feba5c7bb",
+      "elapsed_seconds": 25.353153705596924,
+      "job_id": "OICOT-V1-Xavier-04-HYP-OICOT-0001"
+    }
+  ],
+  "node": "Xavier-04"
+}

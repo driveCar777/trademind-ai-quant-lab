@@ -1,0 +1,66 @@
+{
+  "contract_hash": "b8aa91d8ddd4ccf9a66a80dbb6874e7494352f3945c265332db193a9d7220f23",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "b8aa91d8ddd4ccf9a66a80dbb6874e7494352f3945c265332db193a9d7220f23",
+      "elapsed_seconds": 27.33851385116577,
+      "end": "2026-08-29T21:06:19Z",
+      "exit_code": 0,
+      "experiment": "OI_COT_BUILD_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T21:05:52Z",
+      "stderr": "",
+      "stdout": "OICOT_JOB_DONE OICOT-V1-Xavier-02-HYP-OICOT-0002 18.0\nOICOT_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "b8aa91d8ddd4ccf9a66a80dbb6874e7494352f3945c265332db193a9d7220f23",
+      "elapsed_seconds": 28.70684576034546,
+      "end": "2026-08-29T21:06:20Z",
+      "exit_code": 0,
+      "experiment": "OI_COT_BUILD_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T21:05:52Z",
+      "stderr": "",
+      "stdout": "OICOT_JOB_DONE OICOT-V1-Xavier-03-HYP-OICOT-0003 19.2\nOICOT_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "b8aa91d8ddd4ccf9a66a80dbb6874e7494352f3945c265332db193a9d7220f23",
+      "elapsed_seconds": 28.706395864486694,
+      "end": "2026-08-29T21:06:20Z",
+      "exit_code": 0,
+      "experiment": "OI_COT_BUILD_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T21:05:52Z",
+      "stderr": "",
+      "stdout": "OICOT_JOB_DONE OICOT-V1-Xavier-04-HYP-OICOT-0001 19.2\nOICOT_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "b8aa91d8ddd4ccf9a66a80dbb6874e7494352f3945c265332db193a9d7220f23",
+      "elapsed_seconds": 29.27514362335205,
+      "end": "2026-08-29T21:06:21Z",
+      "exit_code": 0,
+      "experiment": "OI_COT_BUILD_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T21:05:52Z",
+      "stderr": "",
+      "stdout": "OICOT_JOB_DONE OICOT-V1-Xavier-01-HYP-OICOT-0001 19.9\nOICOT_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T21:06:21Z"
+}

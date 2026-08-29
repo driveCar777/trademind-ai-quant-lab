@@ -1,7 +1,7 @@
 {
   "FINAL_OOS_TOUCHED": false,
   "database_id": "FAILED_ALPHA_DATABASE_V2",
-  "n": 33,
+  "n": 34,
   "records": [
     {
       "family": "HYP-0001",
@@ -393,6 +393,19 @@
       "what_was_tested": "HYP-CUROI-0001/0002/0003 local 2000 + four Xavier",
       "why": "Joint curve-move x OI is not a two-hyp FDR edge. Do not retune steepening or OI sign. Next is daily OI versus weekly positioning change, still .",
       "xavier_01_04_hash": "dc00f4cc8da356b7507700eaeedf501c4fbbaa12269703ea378f67ac17018a6c"
+    },
+    {
+      "cross_check_match": true,
+      "family": "OI_COT_BUILD_V1",
+      "forbidden_reopen_pattern": "retune OI or weekly positioning sign hold; COT extreme; weekly cot z",
+      "mechanism": "daily official OI week-sum versus weekly positioning mm_net change: build align / speed gap / unwind",
+      "search_space_hash": "b8aa91d8ddd4ccf9a66a80dbb6874e7494352f3945c265332db193a9d7220f23",
+      "status": "KILLED",
+      "tag": "RESEARCH-2026-0028",
+      "what_failed": "WEAK_EDGE; only 0003 book-pass; FDR 0/3; p=0.089",
+      "what_was_tested": "HYP-OICOT-0001/0002/0003 local 2000 + four Xavier",
+      "why": "Daily OI versus weekly positioning is not a two-hyp FDR edge. Do not retune. Do not reopen COT extremes. Next is EIA wow x CL curve, still $0.",
+      "xavier_01_04_hash": "29ee472b9f6e484902c82cb53505f791e92a48b297ac138f6dcd2f1feba5c7bb"
     }
   ]
 }
