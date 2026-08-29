@@ -1,7 +1,7 @@
 {
   "FINAL_OOS_TOUCHED": false,
   "database_id": "FAILED_ALPHA_DATABASE_V2",
-  "n": 32,
+  "n": 33,
   "records": [
     {
       "family": "HYP-0001",
@@ -380,6 +380,19 @@
       "what_was_tested": "HYP-FUTCFD-0001/0002/0003 local 2000 + four Xavier",
       "why": "Broker CFD gap is a quote-disagreement regime, not a rare lead. Do not retune gap. Do not call Ava GOLD spot. Next is curve steepening x official OI, still .",
       "xavier_01_04_hash": "cf2820e881ac3bc68909c33a5362dbcde2727aa2b675658bfd5e636e18ddb2b7"
+    },
+    {
+      "cross_check_match": true,
+      "family": "CURVE_OI_JOINT_V1",
+      "forbidden_reopen_pattern": "retune steepening OI sign hold; slope-as-level; OI-rising-implies-buy",
+      "mechanism": "curve steepening times official front OI change: steepen+expand / flatten+expand / steepen+contract",
+      "search_space_hash": "65ba0698e1f88cba9960199f32ba543dd5af6669ac0070fd0e63e4eac3c58c69",
+      "status": "KILLED",
+      "tag": "RESEARCH-2026-0027",
+      "what_failed": "NO_CANDIDATE; 3/3 FALSIFIED; 0003 validation LEVEL_LEAK occ 0.53; FDR 0/3",
+      "what_was_tested": "HYP-CUROI-0001/0002/0003 local 2000 + four Xavier",
+      "why": "Joint curve-move x OI is not a two-hyp FDR edge. Do not retune steepening or OI sign. Next is daily OI versus weekly positioning change, still .",
+      "xavier_01_04_hash": "dc00f4cc8da356b7507700eaeedf501c4fbbaa12269703ea378f67ac17018a6c"
     }
   ]
 }

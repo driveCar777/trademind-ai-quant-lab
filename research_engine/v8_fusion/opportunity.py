@@ -23,7 +23,8 @@ TOP = [
         "economic_rationale": "A curve move confirmed by new participation is different from a curve level or an OI sign alone.",
         "data": "frozen curve + OI-flow panel",
         "cost": 0,
-        "selected": True,
+        "selected": False,
+        "executed": "NO_CANDIDATE",
     },
     {
         "rank": 3,

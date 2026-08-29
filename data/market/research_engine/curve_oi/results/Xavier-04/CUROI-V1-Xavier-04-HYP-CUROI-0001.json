@@ -1,0 +1,145 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "dc00f4cc8da356b7507700eaeedf501c4fbbaa12269703ea378f67ac17018a6c",
+  "discovery_id": "CURVE_OI_JOINT_V1",
+  "elapsed_seconds": 20.760395526885986,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-curoi-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 7485112,
+    "pid": 15842,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 36.0,
+      "AUX-therm": 37.0,
+      "CPU-therm": 39.0,
+      "GPU-therm": 37.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 38.0,
+      "Tdiode_tegra": 41.5,
+      "thermal-fan-est": 37.4
+    },
+    "ts": "2026-08-29T21:02:23Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "STEEPEN_OI_EXPAND",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-CUROI-0001",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.007037888521481661,
+        "iterations": 2000,
+        "low": -0.004628033751944988,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260903
+      },
+      "bootstrap_ci": {
+        "high": 0.004848105590997673,
+        "iterations": 2000,
+        "low": -0.0026638392630386814,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260903
+      },
+      "cagr": -0.0014012390272737374,
+      "cost_paid": 553.9655321087793,
+      "delta": 0.0012369713692048409,
+      "effect_size": 0.03688563182097663,
+      "end_equity": 9841.954276466846,
+      "level_leak": false,
+      "max_drawdown": -0.18780661141889615,
+      "max_trade_share": 0.021484652783391962,
+      "mean_baseline": -0.0011204706019872326,
+      "mean_signal": 0.00011650076721760821,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 588,
+      "n_skip_overlap": 249,
+      "n_trade": 270,
+      "occupancy": 0.2053072625698324,
+      "raw_p": 0.56071964017991,
+      "sharpe": 0.01852432809163568,
+      "total_return": -0.01580457235331545,
+      "trade_count": 270,
+      "turnover": 138.51117901762376,
+      "win_count": 132
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.00947931778352984,
+        "iterations": 2000,
+        "low": -0.006524964316535537,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260903
+      },
+      "cagr": -0.012483161785815211,
+      "cost_paid": 99.93841498799536,
+      "delta": 0.001298921614259714,
+      "effect_size": 0.03707826162838115,
+      "end_equity": 9699.052340341266,
+      "level_leak": false,
+      "max_drawdown": -0.0727310208842945,
+      "max_trade_share": 0.07161544786657428,
+      "mean_baseline": -0.002295957316150688,
+      "mean_signal": -0.000997035701890974,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 82,
+      "n_skip_overlap": 29,
+      "n_trade": 51,
+      "occupancy": 0.13355048859934854,
+      "raw_p": null,
+      "sharpe": -0.160714243003538,
+      "total_return": -0.03009476596587335,
+      "trade_count": 51,
+      "turnover": 24.974553284765303,
+      "win_count": 24
+    },
+    "window_hash": "532774b73d56c04b5211fd6ff3d890625e4032d02782a9b7079ffae35395b6b4"
+  },
+  "job_id": "CUROI-V1-Xavier-04-HYP-CUROI-0001",
+  "node": "Xavier-04",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e"
+  },
+  "role": "CROSS_CHECK",
+  "search_space_hash": "65ba0698e1f88cba9960199f32ba543dd5af6669ac0070fd0e63e4eac3c58c69",
+  "window_hashes": {
+    "BOOK": "532774b73d56c04b5211fd6ff3d890625e4032d02782a9b7079ffae35395b6b4"
+  }
+}

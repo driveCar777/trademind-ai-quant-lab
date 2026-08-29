@@ -1,0 +1,68 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "bootstrap_iterations": 2000,
+  "close_fill": "FORBIDDEN",
+  "do_not": [
+    "Ava CFD as future or spot",
+    "OI-rising-implies-buy",
+    "slope as a level / backwardation cut",
+    "retune steepening or OI sign or hold",
+    "spend remaining Databento credits"
+  ],
+  "executed": false,
+  "family_code": "FAM-CUROI-0001",
+  "family_id": "CURVE_OI_JOINT_V1",
+  "fdr_q": 0.05,
+  "fill": "NEXT_BAR_OPEN",
+  "hold_bars": 5,
+  "hypotheses": [
+    {
+      "cost": "one-way 2 bps research cost; no leverage",
+      "dataset": "Frozen GLBX GC/CL curve. No new Databento bytes.",
+      "economic_mechanism": "Curve steepening plus an official contract open interest expansion is an oi shock into a richer storage curve, not OI-rising-implies-buy and not slope-as-level. Not price momentum.",
+      "failure_gate": "If FALSIFIED, do not retune steepening or OI sign. Next = daily OI versus weekly positioning change.",
+      "feature": "lagged steepening > 0 and lagged front_oi_change > 0",
+      "horizon": 5,
+      "hypothesis": "When the official curve steepens and official front open interest expands, tightness is easing with new participation. After OI knowledge T+1 21:00Z, next-session front return is negative.",
+      "hypothesis_id": "HYP-CUROI-0001",
+      "name": "STEEPEN_OI_EXPAND",
+      "target": "next-session front open-to-open after OI knowledge_time",
+      "validation": "pre-registered; leakage; knowledge-time; determinism; lineage; FDR q=0.05; four Xavier"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same frozen official curve",
+      "economic_mechanism": "Curve steepening reversed (flattening) plus contract open interest expansion is an oi shock into a tighter curve. Joint curve move plus oi shock, not a curve level. Not price momentum.",
+      "failure_gate": "No hold search. Do not drop the curve leg as a rescue.",
+      "feature": "lagged steepening < 0 and lagged front_oi_change > 0",
+      "horizon": 5,
+      "hypothesis": "When the official curve flattens and official front open interest expands, tightness is rising with new participation. After OI knowledge, next-session front return is positive.",
+      "hypothesis_id": "HYP-CUROI-0002",
+      "name": "FLATTEN_OI_EXPAND",
+      "target": "next-session front open-to-open after knowledge_time",
+      "validation": "same gates; not a z score search"
+    },
+    {
+      "cost": "one-way 2 bps",
+      "dataset": "same frozen official curve",
+      "economic_mechanism": "Curve steepening with official open interest flow down is an oi shock of covering or liquidation as the curve eases, not slope-as-level. Not price momentum.",
+      "failure_gate": "If failed, do not replace official OI with weekly positioning as a rescue of this family.",
+      "feature": "lagged steepening > 0 and lagged front_oi_change < 0",
+      "horizon": 5,
+      "hypothesis": "When the official curve steepens while official front open interest contracts, participation is leaving as tightness eases. After OI knowledge, next-session front return is positive.",
+      "hypothesis_id": "HYP-CUROI-0003",
+      "name": "STEEPEN_OI_CONTRACT",
+      "target": "next-session front open-to-open after knowledge_time",
+      "validation": "same gates"
+    }
+  ],
+  "hypothesis_ids": [
+    "HYP-CUROI-0001",
+    "HYP-CUROI-0002",
+    "HYP-CUROI-0003"
+  ],
+  "parents": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+  "permutation_iterations": 2000,
+  "search_space_hash": "65ba0698e1f88cba9960199f32ba543dd5af6669ac0070fd0e63e4eac3c58c69",
+  "seed": 20260903
+}

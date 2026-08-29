@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "65ba0698e1f88cba9960199f32ba543dd5af6669ac0070fd0e63e4eac3c58c69",
+      "elapsed_seconds": 23.53621220588684,
+      "end": "2026-08-29T21:02:22Z",
+      "exit_code": 0,
+      "experiment": "CURVE_OI_JOINT_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T21:01:58Z",
+      "stderr": "",
+      "stdout": "CUROI_JOB_DONE CUROI-V1-Xavier-02-HYP-CUROI-0002 19.8\nCUROI_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "65ba0698e1f88cba9960199f32ba543dd5af6669ac0070fd0e63e4eac3c58c69",
+      "elapsed_seconds": 24.664374113082886,
+      "end": "2026-08-29T21:02:23Z",
+      "exit_code": 0,
+      "experiment": "CURVE_OI_JOINT_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T21:01:58Z",
+      "stderr": "",
+      "stdout": "CUROI_JOB_DONE CUROI-V1-Xavier-04-HYP-CUROI-0001 20.8\nCUROI_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "65ba0698e1f88cba9960199f32ba543dd5af6669ac0070fd0e63e4eac3c58c69",
+      "elapsed_seconds": 25.019155502319336,
+      "end": "2026-08-29T21:02:24Z",
+      "exit_code": 0,
+      "experiment": "CURVE_OI_JOINT_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T21:01:58Z",
+      "stderr": "",
+      "stdout": "CUROI_JOB_DONE CUROI-V1-Xavier-03-HYP-CUROI-0003 21.1\nCUROI_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "65ba0698e1f88cba9960199f32ba543dd5af6669ac0070fd0e63e4eac3c58c69",
+      "elapsed_seconds": 25.6535222530365,
+      "end": "2026-08-29T21:02:24Z",
+      "exit_code": 0,
+      "experiment": "CURVE_OI_JOINT_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T21:01:58Z",
+      "stderr": "",
+      "stdout": "CUROI_JOB_DONE CUROI-V1-Xavier-01-HYP-CUROI-0001 21.6\nCUROI_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T21:02:24Z"
+}

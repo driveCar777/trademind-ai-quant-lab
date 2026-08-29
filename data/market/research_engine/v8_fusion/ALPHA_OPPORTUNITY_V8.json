@@ -12,12 +12,13 @@
     "CROSS_ASSET_V0.8",
     "BREADTH_V1",
     "SIZE_SPREAD_V1",
-    "FUT_CFD_LEAD_V1"
+    "FUT_CFD_LEAD_V1",
+    "CURVE_OI_JOINT_V1"
   ],
   "max_hypotheses": 3,
   "max_mechanisms": 20,
   "n": 5,
-  "selected": "CURVE_OI_JOINT_V1",
+  "selected": "OI_COT_BUILD_V1",
   "top5": [
     {
       "cost": 0,
@@ -39,6 +40,7 @@
       "cost": 0,
       "data": "frozen curve + OI-flow panel",
       "economic_rationale": "A curve move confirmed by new participation is different from a curve level or an OI sign alone.",
+      "executed": "NO_CANDIDATE",
       "id": "CURVE_OI_JOINT_V1",
       "mechanism": "Curve steepening with official contract open interest expansion and a settlement change. Joint curve move plus oi shock, not OI-rising-implies-buy and not slope-as-level.",
       "novelty_guard": {
@@ -47,7 +49,7 @@
         "why": "exchange structure: contract open interest,oi shock,curve steepening"
       },
       "rank": 2,
-      "selected": true
+      "selected": false
     },
     {
       "cost": 0,
@@ -61,7 +63,7 @@
         "why": "exchange structure: open interest flow,weekly positioning"
       },
       "rank": 3,
-      "selected": false
+      "selected": true
     },
     {
       "cost": 0,

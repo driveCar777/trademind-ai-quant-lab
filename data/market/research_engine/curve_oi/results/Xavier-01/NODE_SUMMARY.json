@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-curoi-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 23025276,
+    "pid": 25140,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 35.0,
+      "AUX-therm": 34.0,
+      "CPU-therm": 37.5,
+      "GPU-therm": 36.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 35.0,
+      "Tdiode_tegra": 39.0,
+      "thermal-fan-est": 35.8
+    },
+    "ts": "2026-08-29T21:02:24Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "dc00f4cc8da356b7507700eaeedf501c4fbbaa12269703ea378f67ac17018a6c",
+      "elapsed_seconds": 22.241013288497925,
+      "job_id": "CUROI-V1-Xavier-01-HYP-CUROI-0001"
+    }
+  ],
+  "node": "Xavier-01"
+}

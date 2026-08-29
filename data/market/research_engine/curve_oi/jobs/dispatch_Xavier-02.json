@@ -1,0 +1,31 @@
+{
+  "discovery_id": "CURVE_OI_JOINT_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "CURVE_OI_JOINT_V1",
+      "family_code": "FAM-CUROI-0001",
+      "family_id": "CURVE_OI_JOINT_V1",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-CUROI-0002"
+      ],
+      "job_id": "CUROI-V1-Xavier-02-HYP-CUROI-0002",
+      "node": "Xavier-02",
+      "note": "Worker executes this list only. Do not retune steepening or OI. Do not ship the API key.",
+      "parent_dataset_ids": [
+        "tm-fut-GLBX-CURVE-D1-20260829-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "65ba0698e1f88cba9960199f32ba543dd5af6669ac0070fd0e63e4eac3c58c69",
+      "seed": 20260903,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-02"
+}
