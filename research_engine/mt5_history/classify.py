@@ -82,6 +82,8 @@ def classify(spec):
     if _has(blob, ("bond", "yield", "rate", "treasury", "bund")):
         return "Rates", reason
     name = str(spec.get("name") or "").upper()
+    if is_equity_cfd(spec):
+        return "Other", "equity_or_share_cfd_prefix"
     if _looks_fx_name(name):
         return "FX", "name_fallback_6letter"
     return "Other", "unmatched_spec"
@@ -101,7 +103,7 @@ def _looks_fx_name(name):
 
 def is_equity_cfd(spec):
     name = str(spec.get("name") or "")
-    return name.startswith("#")
+    return name.startswith("#") or name.startswith("_")
 
 
 def is_priority(spec, category):

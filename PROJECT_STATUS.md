@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-29（Mission V5.0 IN PROGRESS；universe 重建；Level 0；Candidate=0）  
+**最后更新：** 2026-08-29（Mission V5.1 EXTERNAL_DATA_GATE；841 已盘完；Level 0；Candidate=0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + **Mission V4.0** + **Mission V5.0 IN PROGRESS** |
-| 状态 | Level 0。Candidate=0。V5 从真实终端重建 universe，再测横截面/相关/离散。 |
-| 当前 Phase | V5 START。不要改 V4 hash。不要覆盖 `20260825`。不要读 Final OOS。 |
+| 版本 | **V11.7** + … + **Mission V4.0** + **Mission V5.1 EXTERNAL_DATA_GATE** |
+| 状态 | Level 0。Candidate=0。841 全是 CFD。BREADTH WEAK_EDGE。SIZE NO_CANDIDATE。 |
+| 当前 Phase | 停止新 MT5 家族。曲线/期权面才是下一信息。不要改 V4 hash。不要覆盖 `20260825`/`20260828`。 |
 
 ---
 

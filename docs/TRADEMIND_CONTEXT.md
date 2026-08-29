@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-29 (Market Universe V5.0 IN PROGRESS：指针 d29d3b7；不改 V4；Level=0；Candidate=0)  
+> **更新时间:** 2026-08-29 (Market Universe V5.1 EXTERNAL_DATA_GATE：841 已盘完；BREADTH WEAK_EDGE；SIZE NO_CANDIDATE；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -341,7 +341,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **Alpha Research Mission V2.0 FACT 2026-08-28 STOP B：** 信息集已扩大并测完当时无密钥公开源。IMPLIED_VOL / POSITIONING / INVENTORY / RATES / CARRY_V1A 全部 **NO_CANDIDATE**，四 Xavier，01=04。CARRY_V1 是 INVALID_ALIGNMENT（1971 FX 窗口早于 €STR），不是机制结论。Level 仍 0。Candidate=0。不要调 IV/COT/EIA stocks/UST10/overnight z_cut。不要读 Final OOS。见 `ALPHA_RESEARCH_MISSION_V2_REPORT.md`。
 - **Data Expansion Mission V3.0 FACT 2026-08-28 WAIT_HUMAN：** 数据工厂已落地。EIA 产量+开工率已冻成新 ID 并跑 SUPPLY_V1（hash `4f6548b3…b16f1`）四 Xavier **NO_CANDIDATE**。不是库存重包装。指数 IV ≠ option surface。CFD ≠ futures curve。花费 $0。见 `DATA_EXPANSION_MISSION_V3_REPORT.md`。
 - **MT5 Max Mission V4.0 FACT 2026-08-29 COMPLETE_NO_CANDIDATE：** 2000 bars 不是上限。`maxbars=100000`。新 ID 冻了 SILVER/DXY/额外 FX/指数/H1/M15（约 59 个 `MT5_MAX_V4` 集）。未覆盖 `20260825`。CROSS_METAL_V1 hash `ef6f3633…780df8` 与 USD_METAL_V1 hash `a39952f9…474f0b` 四 Xavier **NO_CANDIDATE**，01=04。VIX 1.45y 未冻。不要再调 gold-silver / DXY / EIA z_cut。见 `MT5_MAX_MISSION_V4_REPORT.md`。
-- **Market Universe V5.0 FACT 2026-08-29 IN PROGRESS：** START pointer `d29d3b7388b7d09f4951f8901d7745371be30ab6`。从真实终端重建品种/历史/横截面。不改 V4 合同。不覆盖 `20260825`。
+- **Market Universe V5.1 FACT 2026-08-29 EXTERNAL_DATA_GATE：** 841/841 全是 CFD。期权 0。真期货 0。新冻农业/US2000 `20260829-000001`。BREADTH_V1 **WEAK_EDGE**；SIZE_SPREAD_V1 **NO_CANDIDATE**；四 Xavier 01=04。不要调参。不要再做股票 CFD breadth 克隆。曲线/期权面才是下一信息。不覆盖 `20260825`/`20260828`。
+- **Market Universe V5.0 FACT 2026-08-29：** START pointer `d29d3b7388b7d09f4951f8901d7745371be30ab6`。Top 5（XS/CS/ER/VT/IA）已跑完，全部 NO_CANDIDATE。不改 V4 合同。
 
 ---
 
@@ -425,7 +426,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P51 | Alpha Research Mission V2.0 | DONE（STOP B；IV/COT/EIA/UST10/CARRY_V1A 已跑；Level 0；Candidate=0） |
 | P52 | Data Expansion Mission V3.0 | WAIT_HUMAN 记录保留（工厂+SUPPLY_V1 已跑；曲线/面仍 BLOCKED） |
 | P53 | MT5 Max Mission V4.0 | DONE（新历史已冻；CM+UM NO_CANDIDATE；Level 0；Candidate=0） |
-| P54 | Market Universe V5.0 | IN PROGRESS（指针 d29d3b7；横截面/相关/离散；不改 V4） |
+| P54 | Market Universe V5.0 / V5.1 | DONE（841 CFD；BREADTH WEAK_EDGE；SIZE NO_CANDIDATE；EXTERNAL_DATA_GATE） |
 
 ---
 

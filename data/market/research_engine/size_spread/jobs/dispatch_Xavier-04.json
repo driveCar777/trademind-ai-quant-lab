@@ -1,0 +1,32 @@
+{
+  "discovery_id": "SIZE_SPREAD_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "SIZE_SPREAD_V1",
+      "family_id": "FAM-SZ-SIZE-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-SZ-0001"
+      ],
+      "job_id": "SZ-V1-Xavier-04-HYP-SZ-0001",
+      "node": "Xavier-04",
+      "note": "Worker executes this list only. Not XS rank. Not buy US500.",
+      "parent_dataset_ids": [
+        "tm-market-US2000-D1-20260829-000001",
+        "tm-market-US500-D1-20260828-000001",
+        "tm-market-GOLD-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "CROSS_CHECK",
+      "search_space_hash": "7dce045b1207dedce7dfa2e6c9e453fea5ab1119849332b49dc583ce79aa7603",
+      "seed": 20260829,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-04"
+}

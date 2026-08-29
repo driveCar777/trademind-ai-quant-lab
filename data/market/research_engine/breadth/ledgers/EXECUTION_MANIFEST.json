@@ -1,0 +1,66 @@
+{
+  "contract_hash": "2ee70c767492a23101343885b653910b0b4e757cf7d50d0417a32d03a17ecf0a",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "2ee70c767492a23101343885b653910b0b4e757cf7d50d0417a32d03a17ecf0a",
+      "elapsed_seconds": 16.871389865875244,
+      "end": "2026-08-29T05:02:00Z",
+      "exit_code": 0,
+      "experiment": "BREADTH_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T05:01:43Z",
+      "stderr": "",
+      "stdout": "BR_JOB_DONE BR-V1-Xavier-04-HYP-BR-0001 9.6\nBR_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "2ee70c767492a23101343885b653910b0b4e757cf7d50d0417a32d03a17ecf0a",
+      "elapsed_seconds": 17.251328468322754,
+      "end": "2026-08-29T05:02:01Z",
+      "exit_code": 0,
+      "experiment": "BREADTH_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T05:01:43Z",
+      "stderr": "",
+      "stdout": "BR_JOB_DONE BR-V1-Xavier-02-HYP-BR-0002 10.3\nBR_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "2ee70c767492a23101343885b653910b0b4e757cf7d50d0417a32d03a17ecf0a",
+      "elapsed_seconds": 17.35075569152832,
+      "end": "2026-08-29T05:02:01Z",
+      "exit_code": 0,
+      "experiment": "BREADTH_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T05:01:43Z",
+      "stderr": "",
+      "stdout": "BR_JOB_DONE BR-V1-Xavier-01-HYP-BR-0001 10.4\nBR_NODE_DONE Xavier-01 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "2ee70c767492a23101343885b653910b0b4e757cf7d50d0417a32d03a17ecf0a",
+      "elapsed_seconds": 18.391246557235718,
+      "end": "2026-08-29T05:02:02Z",
+      "exit_code": 0,
+      "experiment": "BREADTH_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T05:01:43Z",
+      "stderr": "",
+      "stdout": "BR_JOB_DONE BR-V1-Xavier-03-HYP-BR-0003 11.2\nBR_NODE_DONE Xavier-03 1\n"
+    }
+  ],
+  "utc": "2026-08-29T05:02:02Z"
+}

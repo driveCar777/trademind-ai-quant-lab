@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-08-29 — Market Universe V5.1 EXTERNAL_DATA_GATE
+
+- 841/841 Stage A 从 checkpoint 续完。全部 CFD。期权 0。真期货 0。
+- 新冻 `20260829-000001`：7 个农业 + EUROBUND + JAPANBOND + US2000。未覆盖 `20260825`/`20260828`。
+- BREADTH_V1 四 Xavier **WEAK_EDGE**。01=04 `253b06ff…23ab0fae`。不要调 lookback/thrust。
+- SIZE_SPREAD_V1 四 Xavier **NO_CANDIDATE**。01=04 `77094eee…acf49410`。
+- Level 仍 0。Candidate=0。花费 $0。Final OOS 未读。未 `order_send`。
+- 下一动作：曲线/期权面采购案，不是再扫 638 个股票 CFD。
+
 ## 2026-08-29 — Market Universe V5.0 START
 
 - START pointer `d29d3b7`。不改 V4 hash。不覆盖 `20260825`。

@@ -1,0 +1,2566 @@
+{
+  "clone_groups": {
+    "GOLD": [
+      "GOLD",
+      "GOLD_FUTURE"
+    ],
+    "ISIN:CA1380351009": [
+      "#CANOPYGROWTH",
+      "#CANOPYWEED.CA"
+    ],
+    "ISIN:CA29250N1050": [
+      "#ENBRIDGE.CA",
+      "#GREATWESTLIFECO.CA"
+    ],
+    "ISIN:DE000PAH0038": [
+      "_PORSCHE.DE",
+      "_PORSCHEAG.DE"
+    ],
+    "ISIN:US01609W1027": [
+      "#ALIBABA",
+      "#ALIBABA\u963f\u91cc\u5df4\u5df4"
+    ],
+    "ISIN:US0567521085": [
+      "#BAIDU",
+      "#BAIDU\u767e\u5ea6"
+    ],
+    "ISIN:US30303M1027": [
+      "#FACEBOOK",
+      "#META"
+    ],
+    "ISIN:US3896371099": [
+      "#GBTC",
+      "#XRP"
+    ],
+    "ISIN:US46438F1012": [
+      "#IBIT",
+      "#ETHA"
+    ],
+    "ISIN:US47215P1066": [
+      "#JD.COM",
+      "#JD.COM\u4eac\u4e1c"
+    ],
+    "ISIN:US64110W1027": [
+      "#NETEASE",
+      "#NETEASE\u7f51\u6613"
+    ],
+    "ISIN:US8969452015": [
+      "#TRIPADVISOR",
+      "#TRIP.COM",
+      "#TRIP.COM\u643a\u7a0b"
+    ],
+    "SILVER": [
+      "SILVER",
+      "SI_FUTURE"
+    ],
+    "WTI": [
+      "CrudeOIL",
+      "WTICrude",
+      "CrudeTEST"
+    ]
+  },
+  "groups": {
+    "AGQ": [
+      "#AGQ"
+    ],
+    "AIRLINES": [
+      "AIRLINES"
+    ],
+    "ALUMINIUM_SPOT": [
+      "ALUMINIUM_SPOT"
+    ],
+    "AMCENT": [
+      "#AMCENT"
+    ],
+    "AUDCAD": [
+      "AUDCAD"
+    ],
+    "AUDCHF": [
+      "AUDCHF"
+    ],
+    "AUDJPY": [
+      "AUDJPY"
+    ],
+    "AUDNZD": [
+      "AUDNZD"
+    ],
+    "AUDUSD": [
+      "AUDUSD"
+    ],
+    "AURORACANNABIS": [
+      "#AURORACANNABIS.CA"
+    ],
+    "AUS_200": [
+      "AUS_200"
+    ],
+    "AVIVA": [
+      "_AVIVA.UK"
+    ],
+    "BANKOFIRELAND": [
+      "_BANKOFIRELAND.UK"
+    ],
+    "BAR": [
+      "#BAR"
+    ],
+    "BATTERY_LITHIUM": [
+      "BATTERY_LITHIUM"
+    ],
+    "BAUSCHHEALTH": [
+      "#BAUSCHHEALTH"
+    ],
+    "BGNUSD": [
+      "BGNUSD"
+    ],
+    "BILIBILI": [
+      "#BILIBILI"
+    ],
+    "BILIBILI\u54d4\u54e9\u54d4\u54e9": [
+      "#BILIBILI\u54d4\u54e9\u54d4\u54e9"
+    ],
+    "BITX": [
+      "#BITX"
+    ],
+    "BRENT": [
+      "BRENT_OIL"
+    ],
+    "CADCHF": [
+      "CADCHF"
+    ],
+    "CADJPY": [
+      "CADJPY"
+    ],
+    "CANADA_60": [
+      "CANADA_60"
+    ],
+    "CANNABIS_IN": [
+      "CANNABIS_IN"
+    ],
+    "CASINO": [
+      "_CASINO.FR"
+    ],
+    "CHFHUF": [
+      "CHFHUF"
+    ],
+    "CHFJPY": [
+      "CHFJPY"
+    ],
+    "CHINALIFE": [
+      "#CHINALIFE"
+    ],
+    "CHINALIFE\u4e2d\u56fd\u4eba\u5bff\u4fdd\u9669": [
+      "#CHINALIFE\u4e2d\u56fd\u4eba\u5bff\u4fdd\u9669"
+    ],
+    "CHINASOUTHERNAIR": [
+      "#CHINASOUTHERNAIR"
+    ],
+    "CHINASOUTHERNAIR\u4e2d\u56fd\u5357\u65b9\u822a\u7a7a": [
+      "#CHINASOUTHERNAIR\u4e2d\u56fd\u5357\u65b9\u822a\u7a7a"
+    ],
+    "CHINA_A50": [
+      "CHINA_A50"
+    ],
+    "CHINA_INTERNET": [
+      "CHINA_INTERNET"
+    ],
+    "CLPNDF": [
+      "CLPNDF"
+    ],
+    "CLPNDF2": [
+      "CLPNDF2"
+    ],
+    "COCOA": [
+      "COCOA"
+    ],
+    "COFFEE_C": [
+      "COFFEE_C"
+    ],
+    "COINBASE": [
+      "#COINBASE"
+    ],
+    "COPPER": [
+      "COPPER"
+    ],
+    "CORONA_IMPACT": [
+      "CORONA_IMPACT"
+    ],
+    "COTTON2": [
+      "COTTON#2"
+    ],
+    "COVID_VACCINE": [
+      "COVID_VACCINE"
+    ],
+    "DCC": [
+      "_DCC.UK"
+    ],
+    "DOLLAR_INDX": [
+      "DOLLAR_INDX"
+    ],
+    "EURAUD": [
+      "EURAUD"
+    ],
+    "EURCAD": [
+      "EURCAD"
+    ],
+    "EURCHF": [
+      "EURCHF"
+    ],
+    "EURDKK": [
+      "EURDKK"
+    ],
+    "EURGBP": [
+      "EURGBP"
+    ],
+    "EURHUF": [
+      "EURHUF"
+    ],
+    "EURILS": [
+      "EURILS"
+    ],
+    "EURJPY": [
+      "EURJPY"
+    ],
+    "EURNOK": [
+      "EURNOK"
+    ],
+    "EURNZD": [
+      "EURNZD"
+    ],
+    "EURO-BUND": [
+      "EURO-BUND"
+    ],
+    "EUROPE_50": [
+      "EUROPE_50"
+    ],
+    "EURPLN": [
+      "EURPLN"
+    ],
+    "EURRUB": [
+      "EURRUB"
+    ],
+    "EURSEK": [
+      "EURSEK"
+    ],
+    "EURTRY": [
+      "EURTRY"
+    ],
+    "EURUSD": [
+      "EURUSD"
+    ],
+    "EURZAR": [
+      "EURZAR"
+    ],
+    "EWK": [
+      "#EWK"
+    ],
+    "EWS": [
+      "#EWS"
+    ],
+    "EWT": [
+      "#EWT"
+    ],
+    "EWY": [
+      "#EWY"
+    ],
+    "FAANG": [
+      "FAANG"
+    ],
+    "FRANCE_40": [
+      "FRANCE_40"
+    ],
+    "GAMING_ESPORTS": [
+      "GAMING_ESPORTS"
+    ],
+    "GASOLINE": [
+      "GASOLINE"
+    ],
+    "GBPAUD": [
+      "GBPAUD"
+    ],
+    "GBPCAD": [
+      "GBPCAD"
+    ],
+    "GBPCHF": [
+      "GBPCHF"
+    ],
+    "GBPHUF": [
+      "GBPHUF"
+    ],
+    "GBPILS": [
+      "GBPILS"
+    ],
+    "GBPJPY": [
+      "GBPJPY"
+    ],
+    "GBPNZD": [
+      "GBPNZD"
+    ],
+    "GBPSEK": [
+      "GBPSEK"
+    ],
+    "GBPSGD": [
+      "GBPSGD"
+    ],
+    "GBPUSD": [
+      "GBPUSD"
+    ],
+    "GDS\u4e07\u56fd\u6570\u636e": [
+      "#GDS\u4e07\u56fd\u6570\u636e"
+    ],
+    "GER40": [
+      "GERMANY_40"
+    ],
+    "GERMANY_TECH30": [
+      "GERMANY_TECH30"
+    ],
+    "GLD": [
+      "#GLD"
+    ],
+    "GLDM": [
+      "#GLDM"
+    ],
+    "GOLD": [
+      "GOLD",
+      "GOLD_FUTURE"
+    ],
+    "GREEN_ENERGY": [
+      "GREEN_ENERGY"
+    ],
+    "HEATING_OIL": [
+      "HEATING_OIL"
+    ],
+    "HK_50": [
+      "HK_50"
+    ],
+    "HUAZHU": [
+      "#HUAZHU"
+    ],
+    "HUAZHU\u534e\u4f4f\u9152\u5e97\u96c6\u56e2": [
+      "#HUAZHU\u534e\u4f4f\u9152\u5e97\u96c6\u56e2"
+    ],
+    "IAU": [
+      "#IAU"
+    ],
+    "IBB": [
+      "#IBB"
+    ],
+    "IDRUSD": [
+      "IDRUSD"
+    ],
+    "IEUR": [
+      "#IEUR"
+    ],
+    "IJR": [
+      "#IJR"
+    ],
+    "INVITAE": [
+      "#INVITAE"
+    ],
+    "IREN": [
+      "#IREN"
+    ],
+    "ISIN:AN8068571086": [
+      "#SCHLUMBERGER"
+    ],
+    "ISIN:BMG491BT1088": [
+      "#INVESCO"
+    ],
+    "ISIN:BMG667211046": [
+      "#NORWEGIANCRUISE"
+    ],
+    "ISIN:CA05534B7604": [
+      "#BCE.CA"
+    ],
+    "ISIN:CA0636711016": [
+      "#BANKOFMONTREAL.CA"
+    ],
+    "ISIN:CA0641491075": [
+      "#BNOVASCOTIA.CA"
+    ],
+    "ISIN:CA0679011084": [
+      "#BARRICKGOLD.CA"
+    ],
+    "ISIN:CA13321L1085": [
+      "#CAMECO"
+    ],
+    "ISIN:CA1360691010": [
+      "#BANKOFCOMMERCE.CA"
+    ],
+    "ISIN:CA1363751027": [
+      "#CANADARAILWAY.CA"
+    ],
+    "ISIN:CA1363851017": [
+      "#NATURALRESOURCES.CA"
+    ],
+    "ISIN:CA13645T1003": [
+      "#PACIFICRAILWAY.CA"
+    ],
+    "ISIN:CA1380351009": [
+      "#CANOPYGROWTH",
+      "#CANOPYWEED.CA"
+    ],
+    "ISIN:CA29250N1050": [
+      "#ENBRIDGE.CA",
+      "#GREATWESTLIFECO.CA"
+    ],
+    "ISIN:CA56501R1064": [
+      "#MANULIFE.CA"
+    ],
+    "ISIN:CA67077M1086": [
+      "#NUTRIEN.CA"
+    ],
+    "ISIN:CA7800871021": [
+      "#RBCANADA.CA"
+    ],
+    "ISIN:CA82509L1076": [
+      "#SHOPIFY.CA"
+    ],
+    "ISIN:CA8672241079": [
+      "#SUNCORENERGY.CA"
+    ],
+    "ISIN:CA87971M1032": [
+      "#TELUS.CA"
+    ],
+    "ISIN:CA8911605092": [
+      "#TDOMINION.CA"
+    ],
+    "ISIN:CA89353D1078": [
+      "#TCENERGYCORP.CA"
+    ],
+    "ISIN:CA94106B1013": [
+      "#WASTECONNECT.CA"
+    ],
+    "ISIN:CH0044328745": [
+      "#CHUBB"
+    ],
+    "ISIN:CH0102993182": [
+      "#TECONNECT"
+    ],
+    "ISIN:CH0114405324": [
+      "#GARMIN"
+    ],
+    "ISIN:DE0005140008": [
+      "_DEUTSCHE_B"
+    ],
+    "ISIN:DE0005190003": [
+      "_BMW.DE"
+    ],
+    "ISIN:DE0005200000": [
+      "_BEIERSDORF.DE"
+    ],
+    "ISIN:DE0005439004": [
+      "_CONTINENTAL.DE"
+    ],
+    "ISIN:DE0005557508": [
+      "_DTE.DE"
+    ],
+    "ISIN:DE0005785802": [
+      "_FRESENIUS.DE"
+    ],
+    "ISIN:DE0005810055": [
+      "_DEUTSCHE_BOERSE.DE"
+    ],
+    "ISIN:DE0006047004": [
+      "_HEIDELBERG.DE"
+    ],
+    "ISIN:DE0006048432": [
+      "_HENKEL.DE"
+    ],
+    "ISIN:DE0006231004": [
+      "_INFINEON.DE"
+    ],
+    "ISIN:DE0006969603": [
+      "_PUMA.DE"
+    ],
+    "ISIN:DE0007030009": [
+      "_RHEINMETALL.DE"
+    ],
+    "ISIN:DE0007037129": [
+      "_RWE.DE"
+    ],
+    "ISIN:DE0007100000": [
+      "_DAI.DE"
+    ],
+    "ISIN:DE0007164600": [
+      "_SAP.DE"
+    ],
+    "ISIN:DE0007236101": [
+      "_SIEMENS"
+    ],
+    "ISIN:DE0007500001": [
+      "_THYSSENKRUPP.DE"
+    ],
+    "ISIN:DE0007664039": [
+      "_VOLKSWAGEN.DE"
+    ],
+    "ISIN:DE0008232125": [
+      "_LUFTHANSA.DE"
+    ],
+    "ISIN:DE0008404005": [
+      "_ALLIANZ"
+    ],
+    "ISIN:DE0008430026": [
+      "_RUECKVERS.DE"
+    ],
+    "ISIN:DE000A1EWWW0": [
+      "_ADIDAS"
+    ],
+    "ISIN:DE000A1ML7J1": [
+      "_VONOVIA.DE"
+    ],
+    "ISIN:DE000BASF111": [
+      "_BAS.DE"
+    ],
+    "ISIN:DE000BAY0017": [
+      "_BAYER"
+    ],
+    "ISIN:DE000CBK1001": [
+      "_COMMERZBANK.DE"
+    ],
+    "ISIN:DE000ENAG999": [
+      "_E.ON"
+    ],
+    "ISIN:DE000PAH0038": [
+      "_PORSCHE.DE",
+      "_PORSCHEAG.DE"
+    ],
+    "ISIN:FR0000031122": [
+      "_AIRFRANCE.FR"
+    ],
+    "ISIN:FR0000045072": [
+      "_ACA.FR"
+    ],
+    "ISIN:FR0000054470": [
+      "_UBISOFT.FR"
+    ],
+    "ISIN:FR0000073272": [
+      "_SAFRAN.FR"
+    ],
+    "ISIN:FR0000120172": [
+      "_CA.FR"
+    ],
+    "ISIN:FR0000120271": [
+      "_TOTAL"
+    ],
+    "ISIN:FR0000120321": [
+      "_LOREAL.FR"
+    ],
+    "ISIN:FR0000120354": [
+      "_VK.FR"
+    ],
+    "ISIN:FR0000120404": [
+      "_AC.FR"
+    ],
+    "ISIN:FR0000120578": [
+      "_SANOFI"
+    ],
+    "ISIN:FR0000120628": [
+      "_AXA.FR"
+    ],
+    "ISIN:FR0000120644": [
+      "_BN.FR"
+    ],
+    "ISIN:FR0000121014": [
+      "_LVMH.FR"
+    ],
+    "ISIN:FR0000121261": [
+      "_MICHELIN.FR"
+    ],
+    "ISIN:FR0000121329": [
+      "_THALES.FR"
+    ],
+    "ISIN:FR0000130809": [
+      "_GLE.FR"
+    ],
+    "ISIN:FR0000131104": [
+      "_BNP.FR"
+    ],
+    "ISIN:FR0000131906": [
+      "_RENAULT.FR"
+    ],
+    "ISIN:FR0000133308": [
+      "_ORANGE.FR"
+    ],
+    "ISIN:FR0010208488": [
+      "_ENGIE.FR"
+    ],
+    "ISIN:FR0014004L86": [
+      "_DASSAULT.FR"
+    ],
+    "ISIN:GB0000566504": [
+      "_BLT.UK"
+    ],
+    "ISIN:GB0002374006": [
+      "_DIAGEO.UK"
+    ],
+    "ISIN:GB0002634946": [
+      "_BAESYSTEMS.UK"
+    ],
+    "ISIN:GB0002875804": [
+      "_BATS.UK"
+    ],
+    "ISIN:GB0005405286": [
+      "_HSBC"
+    ],
+    "ISIN:GB0006731235": [
+      "_ABFOODS.UK"
+    ],
+    "ISIN:GB0007099541": [
+      "_PRUDENTIAL.UK"
+    ],
+    "ISIN:GB0007188757": [
+      "_RIO.UK"
+    ],
+    "ISIN:GB0007980591": [
+      "_BP"
+    ],
+    "ISIN:GB0008706128": [
+      "_LLOYDS.UK"
+    ],
+    "ISIN:GB0008847096": [
+      "_TESCO.UK"
+    ],
+    "ISIN:GB0009252882": [
+      "_GSK.UK"
+    ],
+    "ISIN:GB0009895292": [
+      "_ASTRAZENECA.UK"
+    ],
+    "ISIN:GB0022569080": [
+      "#AMDOCS"
+    ],
+    "ISIN:GB0031348658": [
+      "_BARCLAYS"
+    ],
+    "ISIN:GB00B03MLX29": [
+      "_SHELL"
+    ],
+    "ISIN:GB00B10RZP78": [
+      "_UNILEVER.UK"
+    ],
+    "ISIN:GB00B16GWD56": [
+      "_VODAFONE"
+    ],
+    "ISIN:GB00B1XZS820": [
+      "_AAL.UK"
+    ],
+    "ISIN:GB00B3MBS747": [
+      "_OCADO.UK"
+    ],
+    "ISIN:GB00B5BT0K07": [
+      "#AON"
+    ],
+    "ISIN:GB00B63H8491": [
+      "_ROLLSROYCE.UK"
+    ],
+    "ISIN:GB00B7T77214": [
+      "_RBS.UK"
+    ],
+    "ISIN:GB00B8W67662": [
+      "#LIBERTYGLOBAL"
+    ],
+    "ISIN:GB00BDSFG982": [
+      "#TECHNIPFMC"
+    ],
+    "ISIN:GB00BN7CG237": [
+      "_ASTONMARTIN.UK"
+    ],
+    "ISIN:GB00BWFY5505": [
+      "#NIELSENHOLDINGS"
+    ],
+    "ISIN:IE0001827041": [
+      "_CRH.UK"
+    ],
+    "ISIN:IE00B4BNMY34": [
+      "#ACCENTURE"
+    ],
+    "ISIN:IE00B58JVZ52": [
+      "#SEAGATE"
+    ],
+    "ISIN:IE00B8KQN827": [
+      "#EATON"
+    ],
+    "ISIN:IE00BFRT3W74": [
+      "#ALLEGION"
+    ],
+    "ISIN:IE00BLS09M33": [
+      "#PENTAIR"
+    ],
+    "ISIN:IE00BTN1Y115": [
+      "#MEDTRONIC"
+    ],
+    "ISIN:IE00BYTBXV33": [
+      "_RYANAIR.UK"
+    ],
+    "ISIN:IE00BZ12WP82": [
+      "#LINDE"
+    ],
+    "ISIN:IT0000062072": [
+      "_GENERALI"
+    ],
+    "ISIN:IT0000062957": [
+      "_MEDIOBANCA.IT"
+    ],
+    "ISIN:IT0000064854": [
+      "_UNICREDITO"
+    ],
+    "ISIN:IT0000068525": [
+      "_SPM.IT"
+    ],
+    "ISIN:IT0000072618": [
+      "_INTESA_SAN"
+    ],
+    "ISIN:IT0000336518": [
+      "_JUVENTUS.IT"
+    ],
+    "ISIN:IT0001353140": [
+      "_EXOR.IT"
+    ],
+    "ISIN:IT0003128367": [
+      "_ENEL.IT"
+    ],
+    "ISIN:IT0003132476": [
+      "_ENI"
+    ],
+    "ISIN:IT0003153415": [
+      "_SNAM.IT"
+    ],
+    "ISIN:IT0003497168": [
+      "_TELECOM_IT"
+    ],
+    "ISIN:IT0003621783": [
+      "_LAZIO.IT"
+    ],
+    "ISIN:IT0003796171": [
+      "_POSTEITALIANE.IT"
+    ],
+    "ISIN:IT0003856405": [
+      "_LEONARDO.IT"
+    ],
+    "ISIN:IT0005278236": [
+      "_PIRELLI.IT"
+    ],
+    "ISIN:JE00B4T3BW64": [
+      "_GLENCORE.UK"
+    ],
+    "ISIN:JE00B783TY65": [
+      "#APTIV"
+    ],
+    "ISIN:KYG5784H1065": [
+      "#MANU"
+    ],
+    "ISIN:LR0008862868": [
+      "#ROYALCARIBBEAN"
+    ],
+    "ISIN:LU0156801721": [
+      "_TEN.IT"
+    ],
+    "ISIN:NL0000235190": [
+      "_AIRBUS"
+    ],
+    "ISIN:NL0009538784": [
+      "#NXPSEMI"
+    ],
+    "ISIN:NL0010273215": [
+      "#ASML"
+    ],
+    "ISIN:NL0011509302": [
+      "_FERRARI.IT"
+    ],
+    "ISIN:NL00150001Q9": [
+      "_STELLAN.FR"
+    ],
+    "ISIN:PA1436583006": [
+      "#CARNIVAL"
+    ],
+    "ISIN:US0010551028": [
+      "#AFLAC"
+    ],
+    "ISIN:US00130H1059": [
+      "#AESCORP"
+    ],
+    "ISIN:US00206R1023": [
+      "#AT&T"
+    ],
+    "ISIN:US00217D1000": [
+      "#ASTS"
+    ],
+    "ISIN:US0028241000": [
+      "#ABBOTT"
+    ],
+    "ISIN:US00287Y1091": [
+      "#ABBVIE"
+    ],
+    "ISIN:US0036541003": [
+      "#ABIOMED"
+    ],
+    "ISIN:US00724F1012": [
+      "#ADOBE"
+    ],
+    "ISIN:US00751Y1064": [
+      "#ADVANCEAUTO"
+    ],
+    "ISIN:US0079031078": [
+      "#AMD"
+    ],
+    "ISIN:US0082521081": [
+      "#AMG"
+    ],
+    "ISIN:US0090661010": [
+      "#AIRBNB"
+    ],
+    "ISIN:US0091581068": [
+      "#APD"
+    ],
+    "ISIN:US0116591092": [
+      "#ALASKAAIR"
+    ],
+    "ISIN:US0152711091": [
+      "#ARE"
+    ],
+    "ISIN:US01609W1027": [
+      "#ALIBABA",
+      "#ALIBABA\u963f\u91cc\u5df4\u5df4"
+    ],
+    "ISIN:US0162551016": [
+      "#ALIGNTECH"
+    ],
+    "ISIN:US0188021085": [
+      "#ALLIANT"
+    ],
+    "ISIN:US0200021014": [
+      "#ALLSTATE"
+    ],
+    "ISIN:US02079K3059": [
+      "#GOOGLE"
+    ],
+    "ISIN:US02209S1033": [
+      "#ALTRIA"
+    ],
+    "ISIN:US0231351067": [
+      "#AMAZON"
+    ],
+    "ISIN:US0236081024": [
+      "#AMEREN"
+    ],
+    "ISIN:US02376R1023": [
+      "#AMERICANAIRLINES"
+    ],
+    "ISIN:US0255371017": [
+      "#AEP"
+    ],
+    "ISIN:US0258161092": [
+      "#AMERICAN_E"
+    ],
+    "ISIN:US0268747849": [
+      "#AIG"
+    ],
+    "ISIN:US03027X1000": [
+      "#AMERICANTOWER"
+    ],
+    "ISIN:US0304201033": [
+      "#AWK"
+    ],
+    "ISIN:US03073E1055": [
+      "#ABC"
+    ],
+    "ISIN:US03076C1062": [
+      "#AMP"
+    ],
+    "ISIN:US0311001004": [
+      "#AMETEK"
+    ],
+    "ISIN:US0311621009": [
+      "#AMGEN"
+    ],
+    "ISIN:US0320951017": [
+      "#AMPHENOL"
+    ],
+    "ISIN:US0326541051": [
+      "#ANALOGDEV"
+    ],
+    "ISIN:US03662Q1058": [
+      "#ANSS"
+    ],
+    "ISIN:US0374111054": [
+      "#APACHE"
+    ],
+    "ISIN:US03748R1014": [
+      "#AIV"
+    ],
+    "ISIN:US0378331005": [
+      "#APPLE"
+    ],
+    "ISIN:US0382221051": [
+      "#AMAT"
+    ],
+    "ISIN:US0394831020": [
+      "#ADM"
+    ],
+    "ISIN:US03965L1008": [
+      "#ARCONIC"
+    ],
+    "ISIN:US0404131064": [
+      "#ARISTANETWORKS"
+    ],
+    "ISIN:US0420682058": [
+      "#ARM"
+    ],
+    "ISIN:US04621X1081": [
+      "#ASSURANT"
+    ],
+    "ISIN:US0495601058": [
+      "#ATMOSENERGY"
+    ],
+    "ISIN:US0527691069": [
+      "#AUTODESK"
+    ],
+    "ISIN:US0530151036": [
+      "#ADP"
+    ],
+    "ISIN:US0533321024": [
+      "#AUTOZONE"
+    ],
+    "ISIN:US0534841012": [
+      "#AVALONBAYCOMM"
+    ],
+    "ISIN:US0536111091": [
+      "#AVERYDENNISON"
+    ],
+    "ISIN:US0567521085": [
+      "#BAIDU",
+      "#BAIDU\u767e\u5ea6"
+    ],
+    "ISIN:US05722G1004": [
+      "#BAKERHUGHES"
+    ],
+    "ISIN:US0605051046": [
+      "#BOA"
+    ],
+    "ISIN:US0640581007": [
+      "#BNYMELLON"
+    ],
+    "ISIN:US0718131099": [
+      "#BAXTER"
+    ],
+    "ISIN:US0758871091": [
+      "#BECTONDICKINSON"
+    ],
+    "ISIN:US0846707026": [
+      "#BERKSHIRE"
+    ],
+    "ISIN:US0865161014": [
+      "#BESTBUY"
+    ],
+    "ISIN:US08862E1091": [
+      "#BEYONDMEAT"
+    ],
+    "ISIN:US09061G1013": [
+      "#BIOMARIN"
+    ],
+    "ISIN:US09062X1037": [
+      "#BIOGEN"
+    ],
+    "ISIN:US09290D1019": [
+      "#BLACKROCK"
+    ],
+    "ISIN:US0936711052": [
+      "#HRB"
+    ],
+    "ISIN:US0970231058": [
+      "#BOEING"
+    ],
+    "ISIN:US09857L1089": [
+      "#BOOKING.COM"
+    ],
+    "ISIN:US0997241064": [
+      "#BORGWARNER"
+    ],
+    "ISIN:US1011211018": [
+      "#BOSTONPROPERTIES"
+    ],
+    "ISIN:US1011371077": [
+      "#BOSTONSCIENTIFIC"
+    ],
+    "ISIN:US1101221083": [
+      "#BRISTOL-MYERS"
+    ],
+    "ISIN:US11133T1034": [
+      "#BROADRIDGEFINANCIAL"
+    ],
+    "ISIN:US11135F1012": [
+      "#BROADCOM"
+    ],
+    "ISIN:US12468P1049": [
+      "AI_INDX"
+    ],
+    "ISIN:US12503M1080": [
+      "#CBOE"
+    ],
+    "ISIN:US12504L1098": [
+      "#CBRE"
+    ],
+    "ISIN:US1252691001": [
+      "#CFINDUSTRIES"
+    ],
+    "ISIN:US12541W2098": [
+      "#CHROBINSON"
+    ],
+    "ISIN:US1255231003": [
+      "#CIGNA"
+    ],
+    "ISIN:US12572Q1058": [
+      "#CMEGROUP"
+    ],
+    "ISIN:US1258961002": [
+      "#CMSENERGY"
+    ],
+    "ISIN:US1264081035": [
+      "#CSX"
+    ],
+    "ISIN:US1266501006": [
+      "#CVS"
+    ],
+    "ISIN:US1273871087": [
+      "#CADENCEDESIGN"
+    ],
+    "ISIN:US1344291091": [
+      "#CAMPBELLSOUP"
+    ],
+    "ISIN:US14040H1059": [
+      "#CAPITALONEFIN"
+    ],
+    "ISIN:US14149Y1082": [
+      "#CARDINALHEALTH"
+    ],
+    "ISIN:US1431301027": [
+      "#CARMAX"
+    ],
+    "ISIN:US1491231015": [
+      "#CAT"
+    ],
+    "ISIN:US1508701034": [
+      "#CELANESE"
+    ],
+    "ISIN:US15135B1017": [
+      "#CENTENE"
+    ],
+    "ISIN:US15189T1079": [
+      "#CENTERPOINT"
+    ],
+    "ISIN:US16119P1084": [
+      "#CHARTER"
+    ],
+    "ISIN:US1667641005": [
+      "#CHEVRON"
+    ],
+    "ISIN:US1696561059": [
+      "#CHIPOTLE"
+    ],
+    "ISIN:US1713401024": [
+      "#CHD"
+    ],
+    "ISIN:US1720621010": [
+      "#CINF"
+    ],
+    "ISIN:US17275R1023": [
+      "#CISCO"
+    ],
+    "ISIN:US1729081059": [
+      "#CINTAS"
+    ],
+    "ISIN:US1729674242": [
+      "#CITIGROUP"
+    ],
+    "ISIN:US1746101054": [
+      "#CITIZENSFINANCIAL"
+    ],
+    "ISIN:US1773761002": [
+      "#CITRIXSYSTEMS"
+    ],
+    "ISIN:US1890541097": [
+      "#CLOROX"
+    ],
+    "ISIN:US1912161007": [
+      "#COCA-COLA"
+    ],
+    "ISIN:US1941621039": [
+      "#COLGATE"
+    ],
+    "ISIN:US20030N1019": [
+      "#COMCAST"
+    ],
+    "ISIN:US2058871029": [
+      "#CONAGRA"
+    ],
+    "ISIN:US20825C1045": [
+      "#CONOCOPHILLIPS"
+    ],
+    "ISIN:US2091151041": [
+      "#EDISON"
+    ],
+    "ISIN:US2166484020": [
+      "#COOPERINC"
+    ],
+    "ISIN:US2172041061": [
+      "#COPART"
+    ],
+    "ISIN:US2193501051": [
+      "#CORNING"
+    ],
+    "ISIN:US22160K1051": [
+      "#COSTCO"
+    ],
+    "ISIN:US2220702037": [
+      "#COTYINC"
+    ],
+    "ISIN:US22822V1017": [
+      "#CROWNCASTLE"
+    ],
+    "ISIN:US23331A1097": [
+      "#DRHORTON"
+    ],
+    "ISIN:US23355L1061": [
+      "#DXCTECH"
+    ],
+    "ISIN:US2358511028": [
+      "#DANAHER"
+    ],
+    "ISIN:US2371941053": [
+      "#DARDENREST"
+    ],
+    "ISIN:US23918K1088": [
+      "#DAVITA"
+    ],
+    "ISIN:US2441991054": [
+      "#JOHNDEERE"
+    ],
+    "ISIN:US2473617023": [
+      "#DELTAAIR"
+    ],
+    "ISIN:US24906P1093": [
+      "#SIRONA"
+    ],
+    "ISIN:US25179M1036": [
+      "#DEVONENERGY"
+    ],
+    "ISIN:US25278X1090": [
+      "#DIAMONDBACK"
+    ],
+    "ISIN:US2538681030": [
+      "#DLR"
+    ],
+    "ISIN:US25459W8477": [
+      "#TNA"
+    ],
+    "ISIN:US25459W8626": [
+      "#SPXL"
+    ],
+    "ISIN:US25459Y6941": [
+      "#FAS"
+    ],
+    "ISIN:US25460E1661": [
+      "#JNUG"
+    ],
+    "ISIN:US2546871060": [
+      "#DISNEY"
+    ],
+    "ISIN:US25470F1049": [
+      "#DISCOVERY"
+    ],
+    "ISIN:US2566771059": [
+      "#DOLLARGENERAL"
+    ],
+    "ISIN:US2567461080": [
+      "#DOLLARTREE"
+    ],
+    "ISIN:US25746U1097": [
+      "#DOMINION"
+    ],
+    "ISIN:US25754A2015": [
+      "#DOMINOS"
+    ],
+    "ISIN:US2600031080": [
+      "#DOVERCORP"
+    ],
+    "ISIN:US2605571031": [
+      "#DOWINC"
+    ],
+    "ISIN:US2644115055": [
+      "#DUKEREALTY"
+    ],
+    "ISIN:US26441C2044": [
+      "#DUKEENERGY"
+    ],
+    "ISIN:US26875P1012": [
+      "#EOG"
+    ],
+    "ISIN:US2774321002": [
+      "#EASTMANCHEM"
+    ],
+    "ISIN:US2786421030": [
+      "#EBAY"
+    ],
+    "ISIN:US2788651006": [
+      "#ECOLAB"
+    ],
+    "ISIN:US28176E1082": [
+      "#EDWARDSLIFESC"
+    ],
+    "ISIN:US2855121099": [
+      "#EA"
+    ],
+    "ISIN:US2910111044": [
+      "#EMERSONELEC"
+    ],
+    "ISIN:US29364G1031": [
+      "#ENTERGY"
+    ],
+    "ISIN:US2944291051": [
+      "#EQUIFAX"
+    ],
+    "ISIN:US29444U7000": [
+      "#EQUINIX"
+    ],
+    "ISIN:US29476L1070": [
+      "#EQR"
+    ],
+    "ISIN:US2971781057": [
+      "#ESSESPROP"
+    ],
+    "ISIN:US30034W1062": [
+      "#EVERGY"
+    ],
+    "ISIN:US30040W1080": [
+      "#EVERSOURSE"
+    ],
+    "ISIN:US30161N1019": [
+      "#EXELON"
+    ],
+    "ISIN:US30212P3038": [
+      "#EXPEDIA"
+    ],
+    "ISIN:US3021301094": [
+      "#EXPD"
+    ],
+    "ISIN:US30225T1025": [
+      "#EXTRASPACESTORAGE"
+    ],
+    "ISIN:US30231G1022": [
+      "#EXXONMOBIL"
+    ],
+    "ISIN:US3024913036": [
+      "#FMC"
+    ],
+    "ISIN:US30303M1027": [
+      "#FACEBOOK",
+      "#META"
+    ],
+    "ISIN:US3119001044": [
+      "#FASTENAL"
+    ],
+    "ISIN:US3137472060": [
+      "#FRT"
+    ],
+    "ISIN:US31428X1063": [
+      "#FEDEX"
+    ],
+    "ISIN:US3156161024": [
+      "#FFIV"
+    ],
+    "ISIN:US31620M1062": [
+      "#FIDELITY"
+    ],
+    "ISIN:US3167731005": [
+      "#FITB"
+    ],
+    "ISIN:US3377381088": [
+      "#FISERV"
+    ],
+    "ISIN:US3379321074": [
+      "#FIRSTENERGY"
+    ],
+    "ISIN:US3434121022": [
+      "#FLUOR"
+    ],
+    "ISIN:US34354P1057": [
+      "#FLOWSERVE"
+    ],
+    "ISIN:US3453708600": [
+      "#FORD"
+    ],
+    "ISIN:US34959E1091": [
+      "#FORTINET"
+    ],
+    "ISIN:US34959J1088": [
+      "#FORTIVE"
+    ],
+    "ISIN:US35137L1052": [
+      "#FOX"
+    ],
+    "ISIN:US3546131018": [
+      "#FRANKLIN"
+    ],
+    "ISIN:US35671D8570": [
+      "#FREEPORT"
+    ],
+    "ISIN:US36165L1089": [
+      "#GDS"
+    ],
+    "ISIN:US3635761097": [
+      "#AJG"
+    ],
+    "ISIN:US3647601083": [
+      "#THEGAP"
+    ],
+    "ISIN:US3666511072": [
+      "#GARTNER"
+    ],
+    "ISIN:US3695501086": [
+      "#GD"
+    ],
+    "ISIN:US3696041033": [
+      "#GE"
+    ],
+    "ISIN:US3703341046": [
+      "#GENERALMILLS"
+    ],
+    "ISIN:US37045V1008": [
+      "#GM"
+    ],
+    "ISIN:US3723032062": [
+      "#GENMAB"
+    ],
+    "ISIN:US3724601055": [
+      "#GENUINEPARTS"
+    ],
+    "ISIN:US3755581036": [
+      "#GILEAD"
+    ],
+    "ISIN:US37940X1028": [
+      "#GLOBALPAYMENTS"
+    ],
+    "ISIN:US38141G1040": [
+      "#GS"
+    ],
+    "ISIN:US3848021040": [
+      "#WWGRAINGER"
+    ],
+    "ISIN:US3896371099": [
+      "#GBTC",
+      "#XRP"
+    ],
+    "ISIN:US3994731079": [
+      "#GROUPON"
+    ],
+    "ISIN:US40412C1018": [
+      "#HCA"
+    ],
+    "ISIN:US40434L1052": [
+      "#HP"
+    ],
+    "ISIN:US4062161017": [
+      "#HALLIBURTON"
+    ],
+    "ISIN:US4103451021": [
+      "#HANESBRANDS"
+    ],
+    "ISIN:US4128221086": [
+      "#HARLEYDAVIDSON"
+    ],
+    "ISIN:US4138751056": [
+      "#HARRISCORP"
+    ],
+    "ISIN:US4165151048": [
+      "#HIG"
+    ],
+    "ISIN:US4180561072": [
+      "#HASBRO"
+    ],
+    "ISIN:US4234521015": [
+      "#HELMERICHPAYNE"
+    ],
+    "ISIN:US4262811015": [
+      "#JACKHENRY"
+    ],
+    "ISIN:US4278661081": [
+      "#HERSHEY"
+    ],
+    "ISIN:US42824C1099": [
+      "#HEWLETTPACKARD"
+    ],
+    "ISIN:US43300A2033": [
+      "#HILTON"
+    ],
+    "ISIN:US4370761029": [
+      "#HOMEDEPOT"
+    ],
+    "ISIN:US4385161066": [
+      "#HONEYWELL"
+    ],
+    "ISIN:US4404521001": [
+      "#HORMELFOODS"
+    ],
+    "ISIN:US44107P1049": [
+      "#HST"
+    ],
+    "ISIN:US4448591028": [
+      "#HUMANA"
+    ],
+    "ISIN:US4461501045": [
+      "#HBAN"
+    ],
+    "ISIN:US44980X1090": [
+      "#IPGPHOTONICS"
+    ],
+    "ISIN:US45168D1046": [
+      "#IDEXXLAB"
+    ],
+    "ISIN:US4523081093": [
+      "#ITW"
+    ],
+    "ISIN:US4523271090": [
+      "#ILLUMINA"
+    ],
+    "ISIN:US45337C1027": [
+      "#INCYTE"
+    ],
+    "ISIN:US45773H2013": [
+      "#INOVIO"
+    ],
+    "ISIN:US4581401001": [
+      "#INTEL"
+    ],
+    "ISIN:US45866F1049": [
+      "#ICE"
+    ],
+    "ISIN:US4592001014": [
+      "#IBM"
+    ],
+    "ISIN:US4595061015": [
+      "#IFF"
+    ],
+    "ISIN:US4601461035": [
+      "#INTERNATIONALPAPER"
+    ],
+    "ISIN:US4606901001": [
+      "#INTERPUBLICGROUP"
+    ],
+    "ISIN:US46090E1038": [
+      "#QQQ"
+    ],
+    "ISIN:US4612021034": [
+      "#INTUIT"
+    ],
+    "ISIN:US46120E6023": [
+      "#INTUITIVE"
+    ],
+    "ISIN:US46266C1053": [
+      "#IQVIA"
+    ],
+    "ISIN:US46284V1017": [
+      "#IRONMOUNTAIN"
+    ],
+    "ISIN:US4642861037": [
+      "#EWA"
+    ],
+    "ISIN:US4642864007": [
+      "#EWZ"
+    ],
+    "ISIN:US4642865095": [
+      "#EWC"
+    ],
+    "ISIN:US4642866408": [
+      "#ECH"
+    ],
+    "ISIN:US4642868065": [
+      "#EWG"
+    ],
+    "ISIN:US4642868222": [
+      "#EWW"
+    ],
+    "ISIN:US4642868305": [
+      "#EWM"
+    ],
+    "ISIN:US4642868719": [
+      "#EWH"
+    ],
+    "ISIN:US4642871846": [
+      "#FXI"
+    ],
+    "ISIN:US4642872349": [
+      "#EEM"
+    ],
+    "ISIN:US4642874659": [
+      "#EFA"
+    ],
+    "ISIN:US4642877397": [
+      "#IYR"
+    ],
+    "ISIN:US4642887529": [
+      "#ITB"
+    ],
+    "ISIN:US46438F1012": [
+      "#IBIT",
+      "#ETHA"
+    ],
+    "ISIN:US46625H1005": [
+      "#JP_MORGAN"
+    ],
+    "ISIN:US47215P1066": [
+      "#JD.COM",
+      "#JD.COM\u4eac\u4e1c"
+    ],
+    "ISIN:US47233W1099": [
+      "#JEFFERIESFINANCIAL"
+    ],
+    "ISIN:US4781601046": [
+      "#JNJ"
+    ],
+    "ISIN:US48203R1041": [
+      "#JUNIPER"
+    ],
+    "ISIN:US4824801009": [
+      "#KLAC"
+    ],
+    "ISIN:US4932671088": [
+      "#KEYCORP"
+    ],
+    "ISIN:US49338L1035": [
+      "#KEYSIGHTTECH"
+    ],
+    "ISIN:US4943681035": [
+      "#KIMBERLYCLARK"
+    ],
+    "ISIN:US49446R1095": [
+      "#KIMCOREALTY"
+    ],
+    "ISIN:US49456B1017": [
+      "#KINDERMORGAN"
+    ],
+    "ISIN:US5002551043": [
+      "#KOHLS"
+    ],
+    "ISIN:US5007541064": [
+      "#KRAFTHEINZ"
+    ],
+    "ISIN:US5010441013": [
+      "#KROGER"
+    ],
+    "ISIN:US5018892084": [
+      "#LKQCORP"
+    ],
+    "ISIN:US5128071082": [
+      "#LRCX"
+    ],
+    "ISIN:US5132721045": [
+      "#LAMBWESTON"
+    ],
+    "ISIN:US5184391044": [
+      "#ESTEELAUDER"
+    ],
+    "ISIN:US5246601075": [
+      "#LEGGETT"
+    ],
+    "ISIN:US5260571048": [
+      "#LENNAR"
+    ],
+    "ISIN:US52736R1023": [
+      "#LEVI"
+    ],
+    "ISIN:US5312298707": [
+      "#FORMULA1"
+    ],
+    "ISIN:US5324571083": [
+      "#ELILILLY"
+    ],
+    "ISIN:US5341871094": [
+      "#LINCOLN"
+    ],
+    "ISIN:US5398301094": [
+      "#LOCKHEED"
+    ],
+    "ISIN:US5486611073": [
+      "#LOWES"
+    ],
+    "ISIN:US5500211090": [
+      "#LULULEMON"
+    ],
+    "ISIN:US55087P1049": [
+      "#LYFT"
+    ],
+    "ISIN:US55261F1049": [
+      "#MTB"
+    ],
+    "ISIN:US5529531015": [
+      "#MGM"
+    ],
+    "ISIN:US55354G1004": [
+      "#MSCIINC"
+    ],
+    "ISIN:US5543821012": [
+      "#MACERICH"
+    ],
+    "ISIN:US55616P1049": [
+      "#MACYS"
+    ],
+    "ISIN:US56585A1025": [
+      "#MARATHON"
+    ],
+    "ISIN:US57060U1007": [
+      "#GDX"
+    ],
+    "ISIN:US5717481023": [
+      "#MMC"
+    ],
+    "ISIN:US5719032022": [
+      "#MARRIOTT"
+    ],
+    "ISIN:US5732841060": [
+      "#MLM"
+    ],
+    "ISIN:US5745991068": [
+      "#MASCOCORP"
+    ],
+    "ISIN:US57636Q1040": [
+      "#MASTERCARD"
+    ],
+    "ISIN:US5770811025": [
+      "#MATTEL"
+    ],
+    "ISIN:US5797802064": [
+      "#MCCORMICK"
+    ],
+    "ISIN:US5801351017": [
+      "#MCDONALDS"
+    ],
+    "ISIN:US58155Q1031": [
+      "#MCKESSON"
+    ],
+    "ISIN:US58733R1023": [
+      "#MERCADOLIBRE"
+    ],
+    "ISIN:US58933Y1055": [
+      "#MERCK"
+    ],
+    "ISIN:US59156R1086": [
+      "#METLIFE"
+    ],
+    "ISIN:US5926881054": [
+      "#METTLER"
+    ],
+    "ISIN:US5949181045": [
+      "#MICROSOFT"
+    ],
+    "ISIN:US5950171042": [
+      "#MICROCHIP"
+    ],
+    "ISIN:US5951121038": [
+      "#MICRONTECH"
+    ],
+    "ISIN:US59522J1034": [
+      "#MAA"
+    ],
+    "ISIN:US60770K1079": [
+      "#MODERNA"
+    ],
+    "ISIN:US6081901042": [
+      "#MOHAWKIND"
+    ],
+    "ISIN:US60871R2094": [
+      "#MOLSONCOORS"
+    ],
+    "ISIN:US60879B1070": [
+      "#MOMO"
+    ],
+    "ISIN:US6092071058": [
+      "#MONDELEZ"
+    ],
+    "ISIN:US61174X1090": [
+      "#MONSTER"
+    ],
+    "ISIN:US6153691059": [
+      "#MOODYS"
+    ],
+    "ISIN:US6174464486": [
+      "#MORGAN_STA"
+    ],
+    "ISIN:US61945C1036": [
+      "#MOSAIC"
+    ],
+    "ISIN:US6200763075": [
+      "#MOTOROLA"
+    ],
+    "ISIN:US62914V1061": [
+      "#NIO"
+    ],
+    "ISIN:US6293775085": [
+      "#NRGENERGY"
+    ],
+    "ISIN:US6311031081": [
+      "#NASDAQINC"
+    ],
+    "ISIN:US6370711011": [
+      "#NATIONALOILWELL"
+    ],
+    "ISIN:US6402681083": [
+      "#NEKTAR"
+    ],
+    "ISIN:US64110D1046": [
+      "#NETAPP"
+    ],
+    "ISIN:US64110L1061": [
+      "#NETFLIX"
+    ],
+    "ISIN:US64110W1027": [
+      "#NETEASE",
+      "#NETEASE\u7f51\u6613"
+    ],
+    "ISIN:US6512291062": [
+      "#NEWELLBRANDS"
+    ],
+    "ISIN:US6516391066": [
+      "#NEWMONTMINING"
+    ],
+    "ISIN:US65249B1098": [
+      "#NEWSCORP"
+    ],
+    "ISIN:US65339F1012": [
+      "#NEXTENERGY"
+    ],
+    "ISIN:US6541061031": [
+      "#NIKE"
+    ],
+    "ISIN:US65473P1057": [
+      "#NISOURCE"
+    ],
+    "ISIN:US6556641008": [
+      "#NORDSTROM"
+    ],
+    "ISIN:US6558441084": [
+      "#NORFOLKSOUTHERN"
+    ],
+    "ISIN:US6658591044": [
+      "#NORTHERNTRUST"
+    ],
+    "ISIN:US6668071029": [
+      "#NORTHROP"
+    ],
+    "ISIN:US6701002056": [
+      "#NOVONORDISK"
+    ],
+    "ISIN:US6703461052": [
+      "#NUCOR"
+    ],
+    "ISIN:US67066G1040": [
+      "#NVIDIA"
+    ],
+    "ISIN:US67103H1077": [
+      "#OREILLYAUTO"
+    ],
+    "ISIN:US6745991058": [
+      "#OCCIDENTAL"
+    ],
+    "ISIN:US6819191064": [
+      "#OMNICOM"
+    ],
+    "ISIN:US68236H2040": [
+      "#ONDS"
+    ],
+    "ISIN:US6826801036": [
+      "#ONEOK"
+    ],
+    "ISIN:US68389X1054": [
+      "#ORACLE"
+    ],
+    "ISIN:US6934751057": [
+      "#PNC"
+    ],
+    "ISIN:US6935061076": [
+      "#PPGIND"
+    ],
+    "ISIN:US69351T1060": [
+      "#PPL"
+    ],
+    "ISIN:US6936561009": [
+      "#PVH"
+    ],
+    "ISIN:US6937181088": [
+      "#PACCAR"
+    ],
+    "ISIN:US6951561090": [
+      "#PKG"
+    ],
+    "ISIN:US6988131024": [
+      "#PAPAJOHNS"
+    ],
+    "ISIN:US7010941042": [
+      "#PARKERHANNIFIN"
+    ],
+    "ISIN:US7043261079": [
+      "#PAYCHEX"
+    ],
+    "ISIN:US70450Y1038": [
+      "#PAYPAL"
+    ],
+    "ISIN:US70614W1009": [
+      "#PELOTON"
+    ],
+    "ISIN:US7134481081": [
+      "#PEPSICO"
+    ],
+    "ISIN:US7170811035": [
+      "#PFIZER"
+    ],
+    "ISIN:US7181721090": [
+      "#PHILIPMORRIS"
+    ],
+    "ISIN:US7185461040": [
+      "#PHILLIPS66"
+    ],
+    "ISIN:US7234841010": [
+      "#PINNACLEWEST"
+    ],
+    "ISIN:US72352L1061": [
+      "#PINTEREST"
+    ],
+    "ISIN:US74144T1088": [
+      "#TROWEPRICE"
+    ],
+    "ISIN:US74251V1026": [
+      "#PFG"
+    ],
+    "ISIN:US7427181091": [
+      "#PG"
+    ],
+    "ISIN:US7433151039": [
+      "#PROGRESSIVE"
+    ],
+    "ISIN:US74340W1036": [
+      "#PROLOGIS"
+    ],
+    "ISIN:US74347B3832": [
+      "#SDS"
+    ],
+    "ISIN:US74347G4405": [
+      "#BITO"
+    ],
+    "ISIN:US74347R2141": [
+      "#BIB"
+    ],
+    "ISIN:US74347X8314": [
+      "#TQQQ"
+    ],
+    "ISIN:US74348A1604": [
+      "#SQQQ"
+    ],
+    "ISIN:US74349Y7040": [
+      "#BITU"
+    ],
+    "ISIN:US7443201022": [
+      "#PRUDENTIAL"
+    ],
+    "ISIN:US7445731067": [
+      "#PEG"
+    ],
+    "ISIN:US7458671010": [
+      "#PULTEGROUP"
+    ],
+    "ISIN:US74736K1016": [
+      "#QORVO"
+    ],
+    "ISIN:US7475251036": [
+      "#QUALCOMM"
+    ],
+    "ISIN:US74762E1029": [
+      "#QUANTA"
+    ],
+    "ISIN:US74834L1008": [
+      "#QUEST"
+    ],
+    "ISIN:US7512121010": [
+      "#RALPHLAUREN"
+    ],
+    "ISIN:US7547301090": [
+      "#RAYMONDJAMES"
+    ],
+    "ISIN:US75513E1010": [
+      "#RAYTHEON"
+    ],
+    "ISIN:US7561091049": [
+      "#REALTYINC"
+    ],
+    "ISIN:US7588491032": [
+      "#REGENCYCENTERS"
+    ],
+    "ISIN:US75886F1075": [
+      "#REGENERON"
+    ],
+    "ISIN:US7591EP1005": [
+      "#RFCORP"
+    ],
+    "ISIN:US7611521078": [
+      "#RESMED"
+    ],
+    "ISIN:US7703231032": [
+      "#ROBERTHALF"
+    ],
+    "ISIN:US7707001027": [
+      "#ROBINHOOD"
+    ],
+    "ISIN:US7739031091": [
+      "#ROCKWELLAUTO"
+    ],
+    "ISIN:US7757111049": [
+      "#ROLLINS"
+    ],
+    "ISIN:US7766961061": [
+      "#ROPERTECH"
+    ],
+    "ISIN:US7782961038": [
+      "#ROST"
+    ],
+    "ISIN:US78392B2060": [
+      "#SKHY"
+    ],
+    "ISIN:US78409V1044": [
+      "#S&PGLOBAL"
+    ],
+    "ISIN:US78410G1040": [
+      "#SBACOMM"
+    ],
+    "ISIN:US78440X1019": [
+      "#SLGREEN"
+    ],
+    "ISIN:US78462F1030": [
+      "#SPY"
+    ],
+    "ISIN:US78486Q1013": [
+      "#SVBFINANCIAL"
+    ],
+    "ISIN:US79466L3024": [
+      "#SALESFORCE"
+    ],
+    "ISIN:US8064071025": [
+      "#HENRYSCHEIN"
+    ],
+    "ISIN:US8085131055": [
+      "#CHARLESSCHWAB"
+    ],
+    "ISIN:US81369Y1001": [
+      "#XLB"
+    ],
+    "ISIN:US81369Y5069": [
+      "#XLE"
+    ],
+    "ISIN:US81369Y6059": [
+      "#XLF"
+    ],
+    "ISIN:US8168511090": [
+      "#SEMPRA"
+    ],
+    "ISIN:US8190471016": [
+      "#SHAKESHACK"
+    ],
+    "ISIN:US8243481061": [
+      "#SHW"
+    ],
+    "ISIN:US8288061091": [
+      "#SIMONPROPERTY"
+    ],
+    "ISIN:US82968B1035": [
+      "#SIRIUSXM"
+    ],
+    "ISIN:US83088M1027": [
+      "#SKYWORKS"
+    ],
+    "ISIN:US8318652091": [
+      "#SMITHCORP"
+    ],
+    "ISIN:US8326964058": [
+      "#JMSMUCKER"
+    ],
+    "ISIN:US83304A1060": [
+      "#SNAPCHAT"
+    ],
+    "ISIN:US8356993076": [
+      "#SONY"
+    ],
+    "ISIN:US8425871071": [
+      "#SOUTHERN"
+    ],
+    "ISIN:US8447411088": [
+      "#SOUTHWESTAIR"
+    ],
+    "ISIN:US8545021011": [
+      "#STANLEYBLACK"
+    ],
+    "ISIN:US8552441094": [
+      "#STARBUCKS"
+    ],
+    "ISIN:US8574771031": [
+      "#STATESTREET"
+    ],
+    "ISIN:US8636671013": [
+      "#STRYKER"
+    ],
+    "ISIN:US8715031089": [
+      "#NORTONLIFELOCK"
+    ],
+    "ISIN:US8716071076": [
+      "#SYNOPSYS"
+    ],
+    "ISIN:US87165B1035": [
+      "#SYNCHRONY"
+    ],
+    "ISIN:US8718291078": [
+      "#SYSCO"
+    ],
+    "ISIN:US8725401090": [
+      "#TJX"
+    ],
+    "ISIN:US87256C1018": [
+      "#TKO"
+    ],
+    "ISIN:US8725901040": [
+      "#T-MOBILE"
+    ],
+    "ISIN:US8740541094": [
+      "#TAKETWO"
+    ],
+    "ISIN:US8760301072": [
+      "#TAPESTRY"
+    ],
+    "ISIN:US87612E1064": [
+      "#TARGET"
+    ],
+    "ISIN:US8793691069": [
+      "#TELEFLEX"
+    ],
+    "ISIN:US88160R1014": [
+      "#TESLA"
+    ],
+    "ISIN:US8816242098": [
+      "#TEVA"
+    ],
+    "ISIN:US88166A1025": [
+      "CORN"
+    ],
+    "ISIN:US8825081040": [
+      "#TEXASINSTRUMENTS"
+    ],
+    "ISIN:US8832031012": [
+      "#TEXTRON"
+    ],
+    "ISIN:US8835561023": [
+      "#THERMOFISHER"
+    ],
+    "ISIN:US88579Y1010": [
+      "#3M"
+    ],
+    "ISIN:US8923561067": [
+      "#TRACTORSUPPLY"
+    ],
+    "ISIN:US8936411003": [
+      "#TRANSDIGM"
+    ],
+    "ISIN:US89417E1091": [
+      "#TRAVELERS"
+    ],
+    "ISIN:US8969452015": [
+      "#TRIPADVISOR",
+      "#TRIP.COM",
+      "#TRIP.COM\u643a\u7a0b"
+    ],
+    "ISIN:US89832Q1094": [
+      "#TRUSTFINANCIAL"
+    ],
+    "ISIN:US9024941034": [
+      "#TYSONFOODS"
+    ],
+    "ISIN:US9026531049": [
+      "#UDR"
+    ],
+    "ISIN:US9029733048": [
+      "#BANCORP"
+    ],
+    "ISIN:US90353T1007": [
+      "#UBER"
+    ],
+    "ISIN:US90384S3031": [
+      "#ULTABEAUTY"
+    ],
+    "ISIN:US9043111072": [
+      "#UNDERARM"
+    ],
+    "ISIN:US9078181081": [
+      "#UNIONPACIFIC"
+    ],
+    "ISIN:US9100471096": [
+      "#UNITEDCONTINENTAL"
+    ],
+    "ISIN:US9113121068": [
+      "#UNITEDPARCEL"
+    ],
+    "ISIN:US9113631090": [
+      "#UNITEDRENTALS"
+    ],
+    "ISIN:US91324P1021": [
+      "#UNITEDHEALTH"
+    ],
+    "ISIN:US91529Y1064": [
+      "#UNUMGROUP"
+    ],
+    "ISIN:US9182041080": [
+      "#VFC"
+    ],
+    "ISIN:US91913Y1001": [
+      "#VALERO"
+    ],
+    "ISIN:US92276F1003": [
+      "#VENTAS"
+    ],
+    "ISIN:US92343E1029": [
+      "#VERSIGN"
+    ],
+    "ISIN:US92343V1044": [
+      "#VERIZON"
+    ],
+    "ISIN:US92345Y1064": [
+      "#VERISK"
+    ],
+    "ISIN:US92532F1003": [
+      "#VERTEX"
+    ],
+    "ISIN:US92764N1028": [
+      "#VIRBIO"
+    ],
+    "ISIN:US92766K1060": [
+      "#VIRGINGALACTIC"
+    ],
+    "ISIN:US92826C8394": [
+      "#VISA"
+    ],
+    "ISIN:US92864M4006": [
+      "#ETHU"
+    ],
+    "ISIN:US9290421091": [
+      "#VNO"
+    ],
+    "ISIN:US9291601097": [
+      "#VULCANMATERIALS"
+    ],
+    "ISIN:US92939U1060": [
+      "#WECENERGY"
+    ],
+    "ISIN:US9297401088": [
+      "#WABTEC"
+    ],
+    "ISIN:US9311421039": [
+      "#WAL_MART"
+    ],
+    "ISIN:US94106L1098": [
+      "#WASTEMGMT"
+    ],
+    "ISIN:US9418481035": [
+      "#WATERSCORP"
+    ],
+    "ISIN:US9497461015": [
+      "#WELLSFARGO"
+    ],
+    "ISIN:US95040Q1040": [
+      "#WELLTOWER"
+    ],
+    "ISIN:US9581021055": [
+      "#WESTERNDIGITAL"
+    ],
+    "ISIN:US9598021098": [
+      "#WESTERNUNION"
+    ],
+    "ISIN:US9621661043": [
+      "#WEYERHAEUSER"
+    ],
+    "ISIN:US9633201069": [
+      "#WHIRLPOOL"
+    ],
+    "ISIN:US9694571004": [
+      "#WILLIAMS"
+    ],
+    "ISIN:US97717W4226": [
+      "#EPI"
+    ],
+    "ISIN:US98138H1014": [
+      "#WORKDAY"
+    ],
+    "ISIN:US98156Q1085": [
+      "#WWE"
+    ],
+    "ISIN:US9831341071": [
+      "#WYNNRESORTS"
+    ],
+    "ISIN:US98389B1008": [
+      "#XCEL"
+    ],
+    "ISIN:US9841216081": [
+      "#XEROXCORP"
+    ],
+    "ISIN:US98419M1009": [
+      "#XYLEM"
+    ],
+    "ISIN:US9884981013": [
+      "#YUMBRANDS"
+    ],
+    "ISIN:US98956P1021": [
+      "#ZBH"
+    ],
+    "ISIN:US9897011071": [
+      "#ZIONSBANCORP"
+    ],
+    "ISIN:US98978V1035": [
+      "#ZOETIS"
+    ],
+    "ISIN:US98980L1017": [
+      "#ZOOM"
+    ],
+    "ISIN:VGG1890L1076": [
+      "#CAPRIHOLDINGS"
+    ],
+    "ITA": [
+      "#ITA"
+    ],
+    "ITALY_40": [
+      "ITALY_40"
+    ],
+    "IWM": [
+      "#IWM"
+    ],
+    "JAPAN_BOND": [
+      "JAPAN_BOND"
+    ],
+    "JP225": [
+      "JAPAN_225"
+    ],
+    "KESUSD": [
+      "KESUSD"
+    ],
+    "KWDUSD": [
+      "KWDUSD"
+    ],
+    "LEGALANDGENERAL": [
+      "_LEGALANDGENERAL.UK"
+    ],
+    "MOMO\u964c\u964c\u516c\u53f8": [
+      "#MOMO\u964c\u964c\u516c\u53f8"
+    ],
+    "NATGAS": [
+      "NATURAL_GAS"
+    ],
+    "NBIS": [
+      "#NBIS"
+    ],
+    "NED_25": [
+      "NED_25"
+    ],
+    "NEWORIENTAL": [
+      "#NEWORIENTAL"
+    ],
+    "NEWORIENTAL\u65b0\u4e1c\u65b9\u6559\u80b2\u96c6\u56e2": [
+      "#NEWORIENTAL\u65b0\u4e1c\u65b9\u6559\u80b2\u96c6\u56e2"
+    ],
+    "NFT_GIANTS": [
+      "NFT_GIANTS"
+    ],
+    "NICKEL_SPOT": [
+      "NICKEL_SPOT"
+    ],
+    "NIO\u851a\u6765\u6c7d\u8f66": [
+      "#NIO\u851a\u6765\u6c7d\u8f66"
+    ],
+    "NORW": [
+      "#NORW"
+    ],
+    "NUGT": [
+      "#NUGT"
+    ],
+    "NZDCAD": [
+      "NZDCAD"
+    ],
+    "NZDCHF": [
+      "NZDCHF"
+    ],
+    "NZDJPY": [
+      "NZDJPY"
+    ],
+    "NZDUSD": [
+      "NZDUSD"
+    ],
+    "PALLADIUM": [
+      "PALLADIUM"
+    ],
+    "PGAL": [
+      "#PGAL"
+    ],
+    "PINDUODUO": [
+      "#PINDUODUO"
+    ],
+    "PINDUODUO\u62fc\u591a\u591a": [
+      "#PINDUODUO\u62fc\u591a\u591a"
+    ],
+    "PLATINUM": [
+      "PLATINUM"
+    ],
+    "PNCUSD": [
+      "PNCUSD"
+    ],
+    "PSQ": [
+      "#PSQ"
+    ],
+    "QLD": [
+      "#QLD"
+    ],
+    "RACE_INDX": [
+      "RACE_INDX"
+    ],
+    "RACING_INDEX": [
+      "RACING_INDEX"
+    ],
+    "REDDIT": [
+      "#REDDIT"
+    ],
+    "REMOTE_ECONOMY": [
+      "REMOTE_ECONOMY"
+    ],
+    "ROCKETLAB": [
+      "#ROCKETLAB"
+    ],
+    "SANDISK": [
+      "#SANDISK"
+    ],
+    "SARUSD": [
+      "SARUSD"
+    ],
+    "SDOW": [
+      "#SDOW"
+    ],
+    "SGOL": [
+      "#SGOL"
+    ],
+    "SILVER": [
+      "SILVER",
+      "SI_FUTURE"
+    ],
+    "SLV": [
+      "#SLV"
+    ],
+    "SMURFITKAPPA": [
+      "_SMURFITKAPPA.UK"
+    ],
+    "SOYBEAN": [
+      "SOYBEAN"
+    ],
+    "SPACEX": [
+      "#SPACEX"
+    ],
+    "SPAIN35": [
+      "SPAIN35"
+    ],
+    "SSO": [
+      "#SSO"
+    ],
+    "STRATEGIC_METALS": [
+      "STRATEGIC_METALS"
+    ],
+    "SUGAR11": [
+      "SUGAR#11"
+    ],
+    "SWISS_20": [
+      "SWISS_20"
+    ],
+    "TAIWAN_INDX": [
+      "TAIWAN_INDX"
+    ],
+    "TALEDUCATION": [
+      "#TALEDUCATION"
+    ],
+    "TALEDUCATION\u597d\u672a\u6765\u6559\u80b2\u96c6\u56e2": [
+      "#TALEDUCATION\u597d\u672a\u6765\u6559\u80b2\u96c6\u56e2"
+    ],
+    "TECL": [
+      "#TECL"
+    ],
+    "TENCENTMUSIC": [
+      "#TENCENTMUSIC"
+    ],
+    "TENCENTMUSIC\u817e\u8baf\u97f3\u4e50\u5a31\u4e50\u96c6\u56e2": [
+      "#TENCENTMUSIC\u817e\u8baf\u97f3\u4e50\u5a31\u4e50\u96c6\u56e2"
+    ],
+    "THBUSD": [
+      "THBUSD"
+    ],
+    "TWITTER": [
+      "#TWITTER"
+    ],
+    "UCO": [
+      "#UCO"
+    ],
+    "UK100": [
+      "UK_100"
+    ],
+    "US30": [
+      "US_30"
+    ],
+    "US500": [
+      "US_500"
+    ],
+    "USDBGN": [
+      "USDBGN"
+    ],
+    "USDCAD": [
+      "USDCAD"
+    ],
+    "USDCHF": [
+      "USDCHF"
+    ],
+    "USDCLP": [
+      "USDCLP"
+    ],
+    "USDCNY": [
+      "USDCNY"
+    ],
+    "USDDKK": [
+      "USDDKK"
+    ],
+    "USDHKD": [
+      "USDHKD"
+    ],
+    "USDHUF": [
+      "USDHUF"
+    ],
+    "USDIDR": [
+      "USDIDR"
+    ],
+    "USDILS": [
+      "USDILS"
+    ],
+    "USDJPY": [
+      "USDJPY"
+    ],
+    "USDKES": [
+      "USDKES"
+    ],
+    "USDKRW": [
+      "USDKRW"
+    ],
+    "USDKWD": [
+      "USDKWD"
+    ],
+    "USDMXN": [
+      "USDMXN"
+    ],
+    "USDNOK": [
+      "USDNOK"
+    ],
+    "USDPLN": [
+      "USDPLN"
+    ],
+    "USDRUB": [
+      "USDRUB"
+    ],
+    "USDSAR": [
+      "USDSAR"
+    ],
+    "USDSEK": [
+      "USDSEK"
+    ],
+    "USDSGD": [
+      "USDSGD"
+    ],
+    "USDTHB": [
+      "USDTHB"
+    ],
+    "USDTRY": [
+      "USDTRY"
+    ],
+    "USDTUSD": [
+      "USDTUSD"
+    ],
+    "USDTZS": [
+      "USDTZS"
+    ],
+    "USDVND": [
+      "USDVND"
+    ],
+    "USDZAR": [
+      "USDZAR"
+    ],
+    "USO": [
+      "#USO"
+    ],
+    "US_2000": [
+      "US_2000"
+    ],
+    "US_TECH100": [
+      "US_TECH100"
+    ],
+    "UVXY": [
+      "#UVXY"
+    ],
+    "VGT": [
+      "#VGT"
+    ],
+    "VIPSHOP": [
+      "#VIPSHOP"
+    ],
+    "VIPSHOP\u552f\u54c1\u4f1a": [
+      "#VIPSHOP\u552f\u54c1\u4f1a"
+    ],
+    "VIX": [
+      "VIX"
+    ],
+    "VNQ": [
+      "#VNQ"
+    ],
+    "VXXB": [
+      "#VXXB"
+    ],
+    "WEIBO": [
+      "#WEIBO"
+    ],
+    "WEIBO\u5fae\u535a\u516c\u53f8": [
+      "#WEIBO\u5fae\u535a\u516c\u53f8"
+    ],
+    "WHEAT": [
+      "WHEAT"
+    ],
+    "WTI": [
+      "CrudeOIL",
+      "WTICrude",
+      "CrudeTEST"
+    ],
+    "XME": [
+      "#XME"
+    ],
+    "YUMCHINA": [
+      "#YUMCHINA"
+    ],
+    "YUMCHINA\u767e\u80dc\u4e2d\u56fd": [
+      "#YUMCHINA\u767e\u80dc\u4e2d\u56fd"
+    ],
+    "ZTOEXPRESS": [
+      "#ZTOEXPRESS"
+    ],
+    "ZTOEXPRESS\u4e2d\u901a\u5feb\u9012": [
+      "#ZTOEXPRESS\u4e2d\u901a\u5feb\u9012"
+    ]
+  },
+  "map_id": "SYMBOL_EQUIVALENCE_MAP_V1",
+  "n_clone_groups": 14,
+  "n_symbols": 841,
+  "n_underlyings": 825,
+  "named_cfd_clones": {
+    "CrudeTEST": "WTI",
+    "GOLD_FUTURE": "GOLD",
+    "SI_FUTURE": "SILVER"
+  },
+  "note": "Same economic_underlying is not a new information set. GOLD_FUTURE and SI_FUTURE are CFDs.",
+  "source": "V4_SPEC+V5_LIVE"
+}

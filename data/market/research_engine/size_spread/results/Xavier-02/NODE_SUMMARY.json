@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-sz-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28894028,
+    "pid": 10830,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 37.0,
+      "AUX-therm": 37.0,
+      "CPU-therm": 38.5,
+      "GPU-therm": 37.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 38.0,
+      "Tdiode_tegra": 40.25,
+      "thermal-fan-est": 37.4
+    },
+    "ts": "2026-08-29T05:05:03Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "7f95c59a765746713ca9a62df1f7eaf24ee2f837eb39cc84dbed04a40befb351",
+      "elapsed_seconds": 13.511654138565063,
+      "job_id": "SZ-V1-Xavier-02-HYP-SZ-0002"
+    }
+  ],
+  "node": "Xavier-02"
+}

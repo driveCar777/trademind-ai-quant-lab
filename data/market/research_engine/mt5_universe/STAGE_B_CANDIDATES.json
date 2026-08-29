@@ -1,0 +1,28 @@
+{
+  "reason": "New class or regional index not in V4 READY set. Not 638 stock clones.",
+  "symbols": [
+    "COTTON#2",
+    "COCOA",
+    "COFFEE_C",
+    "CORN",
+    "SOYBEAN",
+    "SUGAR#11",
+    "WHEAT",
+    "EURO-BUND",
+    "JAPAN_BOND",
+    "ALUMINIUM_SPOT",
+    "NICKEL_SPOT",
+    "US_2000",
+    "AUS_200",
+    "CHINA_A50",
+    "HK_50",
+    "FRANCE_40",
+    "ITALY_40",
+    "SPAIN35",
+    "SWISS_20",
+    "NED_25",
+    "CANADA_60",
+    "VIX"
+  ],
+  "utc": "2026-08-29T04:51:57Z"
+}

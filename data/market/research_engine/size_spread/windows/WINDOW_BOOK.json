@@ -1,0 +1,28 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "dataset_id": "SIZE_ALIGNED_BOOK",
+  "final_oos": {
+    "ACCESS": "DENIED",
+    "end_date": "2026-08-28",
+    "exists": true,
+    "n": 349,
+    "start_date": "2025-07-18"
+  },
+  "n": 2321,
+  "research": {
+    "bar_index_end": 1623,
+    "bar_index_start": 0,
+    "end_date": "2024-06-06",
+    "n": 1624,
+    "start_date": "2018-12-12"
+  },
+  "split": "70/15/15_on_target_sorted_d1_dates",
+  "validation": {
+    "bar_index_end": 1971,
+    "bar_index_start": 1624,
+    "end_date": "2025-07-17",
+    "n": 348,
+    "start_date": "2024-06-07"
+  },
+  "window_hash": "69dd1f422ebff7afb59b83be75bfea3e60f19a28d9336111c22a75df3be90e8a"
+}

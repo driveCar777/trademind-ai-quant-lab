@@ -3,6 +3,7 @@
 from __future__ import print_function
 
 import os
+import shutil
 import sys
 import time
 from datetime import datetime, timedelta, timezone
@@ -43,6 +44,15 @@ META_FIELDS = (
     "swap_long",
     "swap_short",
     "trade_mode",
+    "volume_min",
+    "volume_step",
+    "volume_max",
+    "starting",
+    "expiration",
+    "trade_calc_mode",
+    "category",
+    "visible",
+    "basis",
 )
 
 
@@ -84,6 +94,37 @@ def pick_meta(spec):
     for key in META_FIELDS:
         out[key] = spec.get(key)
     return out
+
+
+def disk_free_gb(letter):
+    usage = shutil.disk_usage("%s:\\" % letter)
+    return float(usage.free) / (1024.0 * 1024.0 * 1024.0)
+
+
+def assert_disk():
+    c_gb = disk_free_gb("C")
+    d_gb = disk_free_gb("D")
+    if c_gb < 20.0:
+        raise RuntimeError("C_FREE_BELOW_20GB:%.2f" % c_gb)
+    return c_gb, d_gb
+
+
+def instrument_type(spec, equity):
+    path = str(spec.get("path") or "").lower()
+    desc = str(spec.get("description") or "").lower()
+    blob = path + " " + desc
+    exp = spec.get("expiration") or 0
+    try:
+        exp_i = int(exp)
+    except Exception:
+        exp_i = 0
+    if "option" in blob or "call" in blob or "put" in blob:
+        return "OPTION"
+    if exp_i > 0:
+        return "FUTURE"
+    if equity or str(spec.get("name") or "").startswith("#") or str(spec.get("name") or "").startswith("_"):
+        return "CFD"
+    return "CFD"
 
 
 def probe_tf(mt5, symbol, timeframe, steps):
@@ -151,7 +192,8 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     cfg = load_data_sources()
     disk = disk_inventory(cfg["storage_root"])
-    print("V5_UNI_INIT", now(), "OUT", OUT, "TEMP", os.environ.get("TEMP"), flush=True)
+    c_gb, d_gb = assert_disk()
+    print("V5_UNI_INIT", now(), "OUT", OUT, "TEMP", os.environ.get("TEMP"), "C", round(c_gb, 2), "D", round(d_gb, 2), flush=True)
     ckpt = None
     if os.path.isfile(_ckpt_path()):
         ckpt = load_json(_ckpt_path())
@@ -183,28 +225,21 @@ def main():
             klass = CLASS_MAP.get(category, "OTHER")
             equity = is_equity_cfd(spec)
             mt5.symbol_select(name, True)
-            print("UNI_SYM", len(assets) + 1, name, klass, "EQ" if equity else "MKT", flush=True)
+            itype = instrument_type(spec, equity)
+            print("UNI_SYM", len(assets) + 1, name, klass, itype, "STAGE_A_META", flush=True)
+            if len(assets) % 50 == 0:
+                c_gb, d_gb = assert_disk()
+                print("DISK", "C", round(c_gb, 2), "D", round(d_gb, 2), flush=True)
             history = {}
-            if equity:
-                history["D1"] = probe_tf(mt5, name, "D1", (10000,))
-            else:
-                history["D1"] = probe_tf(mt5, name, "D1", (2000, 10000, 20000, 80000))
-                deep = klass in ("METAL", "ENERGY", "FX", "INDEX", "CRYPTO", "RATE")
-                if deep:
-                    for tf in DEEP_TF:
-                        if tf == "D1":
-                            continue
-                        history[tf] = probe_tf(mt5, name, tf, (2000, 10000, 50000, 80000))
-                    if name in CORE_M1:
-                        history["M1"] = probe_tf(mt5, name, "M1", (2000, 10000, 50000, 80000))
-                        history["M5"] = probe_tf(mt5, name, "M5", (2000, 10000, 50000, 80000))
-                        history["MN1"] = probe_tf(mt5, name, "MN1", (2000, 5000))
             row = {
                 "asset": name,
                 "symbol": name,
                 "class": klass,
                 "classify_reason": reason,
                 "equity_cfd": equity,
+                "instrument_type": itype,
+                "broker_instrument": "CFD" if itype == "CFD" else itype,
+                "probe_stage": "A",
                 "meta": pick_meta(spec),
                 "timeframes": history,
                 "history_depth": dict(
@@ -215,7 +250,7 @@ def main():
             }
             assets.append(row)
             done.add(name)
-            if len(assets) % 10 == 0:
+            if len(assets) % 25 == 0:
                 _save_ckpt(assets, ticks)
                 print("UNI_CKPT", len(assets), "/", len(symbols), flush=True)
         if not ticks:

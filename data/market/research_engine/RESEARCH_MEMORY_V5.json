@@ -1,40 +1,23 @@
 {
-  "memory_id": "RESEARCH_MEMORY_V5",
-  "utc": "2026-08-29T03:22:00Z",
-  "level": 0,
   "candidate_count": 0,
-  "top5_status": "ALL_KILLED",
-  "next": "DATA_EXPANSION_GATE after MT5_UNIVERSE_V5 checkpoint completes",
+  "level": 0,
+  "memory_id": "RESEARCH_MEMORY_V5",
+  "next": "EXTERNAL_DATA_GATE",
   "records": [
     {
-      "mechanism": "XS_REV_V1",
-      "contract": "fe2a28755193a42c55469b8fe52390ced673581ef10239ebd5d9fcf145c9ede5",
-      "result": "NO_CANDIDATE 3/3 FALSIFIED Xavier 01=04 9f1b5f4adf55374dfd7b99008b54d165edf2c8dc1e08e271eab0bac01e45ff06",
-      "reopen_condition": "Do not flip to momentum. Do not change lookback/k/hold."
+      "contract": "2ee70c767492a23101343885b653910b0b4e757cf7d50d0417a32d03a17ecf0a",
+      "mechanism": "BREADTH_V1",
+      "reopen_condition": "Do not retune lookback/thrust/hold. Do not flip to buy US500. Do not run stock-CFD clone.",
+      "result": "WEAK_EDGE Xavier 01=04 253b06ffac63bf6ca4985dec4132baf5c60ec16a4243064798484fb323ab0fae FDR 0 book_pass 0001 only p=0.84"
     },
     {
-      "mechanism": "CORR_SHOCK_V1",
-      "contract": "0d729861f138c5e974ec5b99cc308523e97ee4f12c04f17d51678a325ce1647d",
-      "result": "NO_CANDIDATE Xavier 01=04 313dcdd48841d370d30d79c053ab095e74fe503f87c58a72629bf4897ad261b6",
-      "reopen_condition": "Do not search pctl. Do not flip."
-    },
-    {
-      "mechanism": "ENERGY_RV_V1",
-      "contract": "b208c62352e973377968f274b87ebc6a7ce75b1dc70239a350b938436d50d5ef",
-      "result": "NO_CANDIDATE Xavier 01=04 1ecfee057670c528d3eab5fb4c146df3d51761ea52cd253dc9658cf9523ed3df",
-      "reopen_condition": "Do not search crack pctl. Do not reopen EIA/SMA60."
-    },
-    {
-      "mechanism": "VOL_TERM_V1",
-      "contract": "4e5292b4422d214ecb7ee94a2369bb1b9409416f6b52b151b7d4e40a9289923d",
-      "result": "NO_CANDIDATE 3/3 FALSIFIED Xavier 01=04 7b9ec42194c61b8ac1e6896c4c86ed4d4a3e7d2118f56b61208710db9ecbc0eb",
-      "reopen_condition": "Do not search vol-term pctl. Do not reopen ATR level."
-    },
-    {
-      "mechanism": "IDX_ASYNC_V1",
-      "contract": "2e4c5c14fea78e7fc1e2afbdc3ac75f6684ebef42eb152104c182cd590828cb8",
-      "result": "NO_CANDIDATE Xavier 01=04 bb2558ac64f43430ae02a51ff62a79e462e75fa61c84156b2ef00d3cc40074f0",
-      "reopen_condition": "Do not search GER40 pctl. Do not reopen V0.8."
+      "contract": "7dce045b1207dedce7dfa2e6c9e453fea5ab1119849332b49dc583ce79aa7603",
+      "mechanism": "SIZE_SPREAD_V1",
+      "reopen_condition": "Do not search lookback. Do not flip to buy US500.",
+      "result": "NO_CANDIDATE Xavier 01=04 77094eeee747c077c8a3a2f3db9bc935691f45946fac60c9bb2bd354acf49410"
     }
-  ]
+  ],
+  "top5_status": "ALL_KILLED",
+  "utc": "2026-08-29T05:08:17Z",
+  "v51_status": "BREADTH_WEAK_EDGE_AND_SIZE_NO_CANDIDATE"
 }

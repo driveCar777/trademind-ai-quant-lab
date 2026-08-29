@@ -1,6 +1,7 @@
 {
+  "after_top5": "BREADTH_V1 then SIZE_SPREAD_V1 executed. EXTERNAL_DATA_GATE.",
+  "do_not_construct_top6_by_hand": true,
   "priority_id": "ALPHA_PRIORITY_V5",
-  "utc": "2026-08-29T00:52:00Z",
   "scoring_axes": [
     "Information Novelty",
     "Economic Plausibility",
@@ -12,51 +13,104 @@
   ],
   "top5": [
     {
-      "rank": 1,
+      "data_available": true,
+      "legal": true,
       "mechanism": "XS_REV_V1",
-      "scores": {"novelty": 4, "econ": 4, "history": 5, "cross": 5, "cost": 3, "power": 5, "competition": 2},
-      "total": 28,
-      "data_available": true,
-      "legal": true,
-      "status": "KILLED"
+      "rank": 1,
+      "scores": {
+        "competition": 2,
+        "cost": 3,
+        "cross": 5,
+        "econ": 4,
+        "history": 5,
+        "novelty": 4,
+        "power": 5
+      },
+      "status": "KILLED",
+      "total": 28
     },
     {
-      "rank": 2,
+      "data_available": true,
+      "legal": true,
       "mechanism": "CORR_SHOCK_V1",
-      "scores": {"novelty": 5, "econ": 5, "history": 4, "cross": 4, "cost": 3, "power": 3, "competition": 3},
-      "total": 27,
-      "data_available": true,
-      "legal": true,
-      "status": "KILLED"
+      "rank": 2,
+      "scores": {
+        "competition": 3,
+        "cost": 3,
+        "cross": 4,
+        "econ": 5,
+        "history": 4,
+        "novelty": 5,
+        "power": 3
+      },
+      "status": "KILLED",
+      "total": 27
     },
     {
-      "rank": 3,
+      "data_available": true,
+      "legal": true,
       "mechanism": "ENERGY_RV_V1",
-      "scores": {"novelty": 5, "econ": 5, "history": 3, "cross": 4, "cost": 2, "power": 3, "competition": 3},
-      "total": 25,
-      "data_available": true,
-      "legal": true,
-      "status": "KILLED"
+      "rank": 3,
+      "scores": {
+        "competition": 3,
+        "cost": 2,
+        "cross": 4,
+        "econ": 5,
+        "history": 3,
+        "novelty": 5,
+        "power": 3
+      },
+      "status": "KILLED",
+      "total": 25
     },
     {
-      "rank": 4,
+      "data_available": true,
+      "legal": true,
       "mechanism": "VOL_TERM_V1",
-      "scores": {"novelty": 5, "econ": 4, "history": 4, "cross": 2, "cost": 3, "power": 4, "competition": 3},
-      "total": 25,
-      "data_available": true,
-      "legal": true,
-      "status": "KILLED"
+      "rank": 4,
+      "scores": {
+        "competition": 3,
+        "cost": 3,
+        "cross": 2,
+        "econ": 4,
+        "history": 4,
+        "novelty": 5,
+        "power": 4
+      },
+      "status": "KILLED",
+      "total": 25
     },
     {
-      "rank": 5,
-      "mechanism": "IDX_ASYNC_V1",
-      "scores": {"novelty": 4, "econ": 4, "history": 3, "cross": 3, "cost": 3, "power": 3, "competition": 3},
-      "total": 23,
       "data_available": true,
       "legal": true,
-      "status": "KILLED"
+      "mechanism": "IDX_ASYNC_V1",
+      "rank": 5,
+      "scores": {
+        "competition": 3,
+        "cost": 3,
+        "cross": 3,
+        "econ": 4,
+        "history": 3,
+        "novelty": 4,
+        "power": 3
+      },
+      "status": "KILLED",
+      "total": 23
     }
   ],
-  "do_not_construct_top6_by_hand": true,
-  "after_top5": "DATA_EXPANSION_GATE then EXTERNAL_DATA_GATE"
+  "utc": "2026-08-29T05:08:17Z",
+  "v51": [
+    {
+      "mechanism": "BREADTH_V1",
+      "outcome": "WEAK_EDGE",
+      "rank": 1,
+      "status": "KILLED"
+    },
+    {
+      "mechanism": "SIZE_SPREAD_V1",
+      "outcome": "NO_CANDIDATE",
+      "rank": 2,
+      "status": "KILLED"
+    }
+  ]
 }

@@ -1,0 +1,37 @@
+{
+  "discovery_id": "BREADTH_V1",
+  "jobs": [
+    {
+      "FINAL_OOS_ACCESS": "DENIED",
+      "block_length": 5,
+      "bootstrap_iterations": 2000,
+      "discovery_id": "BREADTH_V1",
+      "family_id": "FAM-BR-AG-0001",
+      "fdr_q": 0.05,
+      "hold_bars": 5,
+      "hypothesis_count": 1,
+      "hypothesis_ids": [
+        "HYP-BR-0002"
+      ],
+      "job_id": "BR-V1-Xavier-02-HYP-BR-0002",
+      "node": "Xavier-02",
+      "note": "Worker executes this list only. Not XS rank. Not buy US500.",
+      "parent_dataset_ids": [
+        "tm-market-COTTON-D1-20260829-000001",
+        "tm-market-COCOA-D1-20260829-000001",
+        "tm-market-COFFEE-D1-20260829-000001",
+        "tm-market-CORN-D1-20260829-000001",
+        "tm-market-SOYBEAN-D1-20260829-000001",
+        "tm-market-SUGAR-D1-20260829-000001",
+        "tm-market-WHEAT-D1-20260829-000001",
+        "tm-market-GOLD-D1-20260828-000001"
+      ],
+      "permutation_iterations": 2000,
+      "role": "PRIMARY",
+      "search_space_hash": "2ee70c767492a23101343885b653910b0b4e757cf7d50d0417a32d03a17ecf0a",
+      "seed": 20260829,
+      "timeframe": "D1"
+    }
+  ],
+  "node": "Xavier-02"
+}

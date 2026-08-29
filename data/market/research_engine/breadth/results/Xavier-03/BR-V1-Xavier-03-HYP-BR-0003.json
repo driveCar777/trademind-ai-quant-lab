@@ -1,0 +1,159 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "5f99a5f9ff755445c573af36a2a4b2bdd944916e0275e16e87be42945c2aecb7",
+  "discovery_id": "BREADTH_V1",
+  "elapsed_seconds": 11.177964210510254,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-br-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28720468,
+    "pid": 9181,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 36.0,
+      "AUX-therm": 37.0,
+      "CPU-therm": 39.5,
+      "GPU-therm": 37.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 39.5,
+      "thermal-fan-est": 37.55
+    },
+    "ts": "2026-08-29T05:02:03Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "BREADTH_CONTRACT",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-BR-0003",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 269,
+      "start": "2025-06-23"
+    },
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.010899952265179013,
+        "iterations": 2000,
+        "low": -0.01326505004599663,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": -0.0007018155335958834,
+        "iterations": 2000,
+        "low": -0.0028563284272865317,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.005465586180180226,
+      "cost_paid": 44.390984348226716,
+      "delta": -0.001763466707805919,
+      "effect_size": -0.09030161211247201,
+      "end_equity": 9731.38465465904,
+      "level_leak": false,
+      "max_drawdown": -0.034920806079223814,
+      "max_trade_share": 0.09493356540471692,
+      "mean_baseline": -0.0050940307720967245,
+      "mean_signal": -0.006857497479902643,
+      "n_bars": 1253,
+      "n_eligible": 1247,
+      "n_feature": 1253,
+      "n_signal": 39,
+      "n_skip_overlap": 7,
+      "n_trade": 32,
+      "occupancy": 0.03112529928172386,
+      "raw_p": 0.6056971514242878,
+      "sharpe": -0.5982765528025679,
+      "total_return": -0.02686153453409601,
+      "trade_count": 32,
+      "turnover": 4.427887216773034,
+      "win_count": 10
+    },
+    "side_mode": "AG_SHORT",
+    "target_asset": "BOOK",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.001551195953404057,
+        "iterations": 2000,
+        "low": -0.010501519392859123,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": 0.005296685771909711,
+        "iterations": 2000,
+        "low": -0.011058905798331964,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.007410356576176169,
+      "cost_paid": 12.120741790324875,
+      "delta": -0.0027998886659732006,
+      "effect_size": -0.1494751545698822,
+      "end_equity": 9921.502864159695,
+      "level_leak": false,
+      "max_drawdown": -0.009826558434026997,
+      "max_trade_share": 0.30261809195565703,
+      "mean_baseline": -0.0053581040427608095,
+      "mean_signal": -0.00815799270873401,
+      "n_bars": 268,
+      "n_eligible": 262,
+      "n_feature": 268,
+      "n_signal": 9,
+      "n_skip_overlap": 0,
+      "n_trade": 9,
+      "occupancy": 0.033582089552238806,
+      "raw_p": null,
+      "sharpe": -1.442008475648987,
+      "total_return": -0.007849713584030527,
+      "trade_count": 9,
+      "turnover": 1.208755359329988,
+      "win_count": 2
+    },
+    "window_hash": "6f6a9f6aa852b5e3b2813097bef4a1eb59e95e04b8b37840229b271d789dfc7b"
+  },
+  "job_id": "BR-V1-Xavier-03-HYP-BR-0003",
+  "node": "Xavier-03",
+  "parent_hashes": {
+    "COCOA": "20975d20afd5d285392b02b45d17d8afa0e046ccf3309b4e024039b49ae429b3",
+    "COFFEE": "34aebd01ce1b0472fdc6cc425267fd2ee8f85e1039f10158a0ce802a4c1baa03",
+    "CORN": "dbd618ea1b44a561ad67d6ca519fd42cf70a8aadcdcc86c07efbc593b921b1eb",
+    "COTTON": "365985b43a5b84faf4698b29a8711952aba057163662f6fb75c1ebef69c31b24",
+    "GOLD": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "SOYBEAN": "488cfcda47800ca5e16956ae87c00503c2cc0501c1b6a7fe76b45079903db416",
+    "SUGAR": "4cf92aa1e3ed0d7a44042549f166402704f4668d58c651144df11565de2f3398",
+    "WHEAT": "5a4d5292e9ebcb7db2fceafc987cead5ccad56932edf20b3c39091f3354c45dc"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "2ee70c767492a23101343885b653910b0b4e757cf7d50d0417a32d03a17ecf0a",
+  "window_hashes": {
+    "BOOK": "6f6a9f6aa852b5e3b2813097bef4a1eb59e95e04b8b37840229b271d789dfc7b"
+  }
+}

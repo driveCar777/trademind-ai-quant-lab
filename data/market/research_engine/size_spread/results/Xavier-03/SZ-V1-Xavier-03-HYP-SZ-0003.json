@@ -1,0 +1,154 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "e2c266f736ecb3937bac751234e9343385e53753ddd2fb72c2e0f9256671237b",
+  "discovery_id": "SIZE_SPREAD_V1",
+  "elapsed_seconds": 13.002053022384644,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-sz-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 28722996,
+    "pid": 14403,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 36.5,
+      "AUX-therm": 37.0,
+      "CPU-therm": 40.0,
+      "GPU-therm": 37.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 40.0,
+      "thermal-fan-est": 38.05
+    },
+    "ts": "2026-08-29T05:05:03Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "SIZE_LAG",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-SZ-0003",
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 349,
+      "start": "2025-07-18"
+    },
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.003545988899763587,
+        "iterations": 2000,
+        "low": -0.000905005276495139,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": 0.00311671381896561,
+        "iterations": 2000,
+        "low": -0.000560213017074384,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.002465242933432754,
+      "cost_paid": 163.88472728806968,
+      "delta": 0.0013258982359394818,
+      "effect_size": 0.12120433889386194,
+      "end_equity": 9842.287480766585,
+      "level_leak": false,
+      "max_drawdown": -0.021143484658772648,
+      "max_trade_share": 0.05968419149601536,
+      "mean_baseline": -0.002377696892172677,
+      "mean_signal": -0.0010517986562331954,
+      "n_bars": 1624,
+      "n_eligible": 1618,
+      "n_feature": 1624,
+      "n_signal": 85,
+      "n_skip_overlap": 19,
+      "n_trade": 66,
+      "occupancy": 0.05233990147783251,
+      "raw_p": 0.3238380809595202,
+      "sharpe": -0.41818281756455133,
+      "total_return": -0.0157712519233415,
+      "trade_count": 66,
+      "turnover": 16.372829659128552,
+      "win_count": 34
+    },
+    "side_mode": "SHORT_SMALL_LONG_LARGE",
+    "target_asset": "BOOK",
+    "validation": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": -2.6688667410871766e-05,
+        "iterations": 2000,
+        "low": -0.006259966681792354,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": 0.0006448721095191387,
+        "iterations": 2000,
+        "low": -0.005772275482325208,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.017890230396167883,
+      "cost_paid": 53.07785985534398,
+      "delta": -0.0023751483297077473,
+      "effect_size": -0.23728707828422485,
+      "end_equity": 9754.48819462476,
+      "level_leak": false,
+      "max_drawdown": -0.0260683000532706,
+      "max_trade_share": 0.16445255196779127,
+      "mean_baseline": -0.0020087652128846618,
+      "mean_signal": -0.004383913542592409,
+      "n_bars": 348,
+      "n_eligible": 342,
+      "n_feature": 348,
+      "n_signal": 27,
+      "n_skip_overlap": 6,
+      "n_trade": 20,
+      "occupancy": 0.07758620689655173,
+      "raw_p": null,
+      "sharpe": -2.0676972500744903,
+      "total_return": -0.02455118053752392,
+      "trade_count": 20,
+      "turnover": 5.307236286362943,
+      "win_count": 4
+    },
+    "window_hash": "69dd1f422ebff7afb59b83be75bfea3e60f19a28d9336111c22a75df3be90e8a"
+  },
+  "job_id": "SZ-V1-Xavier-03-HYP-SZ-0003",
+  "node": "Xavier-03",
+  "parent_hashes": {
+    "GOLD": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+    "US2000": "4aff77cca5647cd67115b6804976e041946300bd34e2020128c4a3b95608c176",
+    "US500": "5d829d450904e512021301a8b6538e2b8ff8c69c07013d8edd3ff39c7575e8e4"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "7dce045b1207dedce7dfa2e6c9e453fea5ab1119849332b49dc583ce79aa7603",
+  "window_hashes": {
+    "BOOK": "69dd1f422ebff7afb59b83be75bfea3e60f19a28d9336111c22a75df3be90e8a"
+  }
+}

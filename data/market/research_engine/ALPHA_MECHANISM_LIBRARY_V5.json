@@ -1,225 +1,307 @@
 {
   "library_id": "ALPHA_MECHANISM_LIBRARY_V5",
-  "utc": "2026-08-29T00:52:00Z",
-  "n": 24,
-  "rule": "Novelty vs FAILED_ALPHA_DATABASE_V2. Same mechanism + new threshold/sign/hold is REJECT.",
   "mechanisms": [
     {
-      "mechanism": "XS_REV_V1",
+      "already_tested": true,
+      "asset_class": "FX",
+      "data_required": [
+        "10 FX D1 20260828"
+      ],
       "economic_rationale": "10-FX 20d rank book: laggards vs leaders. Cross-sectional competition, not single-name momentum.",
-      "data_required": ["10 FX D1 20260828"],
-      "asset_class": "FX",
-      "time_horizon": "5 D1 bars",
-      "already_tested": true,
+      "mechanism": "XS_REV_V1",
       "novel": true,
+      "priority": 1,
       "status": "KILLED",
-      "priority": 1
+      "time_horizon": "5 D1 bars"
     },
     {
-      "mechanism": "CORR_SHOCK_V1",
-      "economic_rationale": "GOLD/US500 60d return-corr regime cross changes the gold-equity risk split.",
-      "data_required": ["GOLD D1 20260828", "US500 D1 20260828"],
+      "already_tested": true,
       "asset_class": "METAL+INDEX",
-      "time_horizon": "5 D1 bars",
-      "already_tested": true,
+      "data_required": [
+        "GOLD D1 20260828",
+        "US500 D1 20260828"
+      ],
+      "economic_rationale": "GOLD/US500 60d return-corr regime cross changes the gold-equity risk split.",
+      "mechanism": "CORR_SHOCK_V1",
       "novel": true,
+      "priority": 2,
       "status": "KILLED",
-      "priority": 2
+      "time_horizon": "5 D1 bars"
     },
     {
-      "mechanism": "ENERGY_RV_V1",
-      "economic_rationale": "Refinery complex: products vs crude relative value, not EIA weekly z and not OIL directional.",
-      "data_required": ["OIL D1", "BRENT D1", "GASOLINE D1", "HEATOIL D1"],
+      "already_tested": true,
       "asset_class": "ENERGY",
-      "time_horizon": "5 D1 bars",
-      "already_tested": false,
+      "data_required": [
+        "OIL D1",
+        "BRENT D1",
+        "GASOLINE D1",
+        "HEATOIL D1"
+      ],
+      "economic_rationale": "Refinery complex: products vs crude relative value, not EIA weekly z and not OIL directional.",
+      "mechanism": "ENERGY_RV_V1",
       "novel": true,
-      "status": "QUEUED",
-      "priority": 3
+      "priority": 3,
+      "status": "KILLED",
+      "time_horizon": "5 D1 bars"
     },
     {
-      "mechanism": "VOL_TERM_V1",
-      "economic_rationale": "H1 realized vol vs D1 realized vol as a term-structure proxy. Not ATR high/low level.",
-      "data_required": ["GOLD H1 20260828", "GOLD D1 20260828"],
+      "already_tested": true,
       "asset_class": "METAL",
-      "time_horizon": "5 D1 bars after H1/D1 ratio cross",
-      "already_tested": false,
+      "data_required": [
+        "GOLD H1 20260828",
+        "GOLD D1 20260828"
+      ],
+      "economic_rationale": "H1 realized vol vs D1 realized vol as a term-structure proxy. Not ATR high/low level.",
+      "mechanism": "VOL_TERM_V1",
       "novel": true,
-      "status": "QUEUED",
-      "priority": 4
+      "priority": 4,
+      "status": "KILLED",
+      "time_horizon": "5 D1 bars after H1/D1 ratio cross"
     },
     {
-      "mechanism": "IDX_ASYNC_V1",
-      "economic_rationale": "GER40 closes before US500. European index surprise is information for the US cash session.",
-      "data_required": ["GER40 D1 20260828", "US500 D1 20260828"],
+      "already_tested": true,
       "asset_class": "INDEX",
-      "time_horizon": "1-5 D1 bars",
-      "already_tested": false,
+      "data_required": [
+        "GER40 D1 20260828",
+        "US500 D1 20260828"
+      ],
+      "economic_rationale": "GER40 closes before US500. European index surprise is information for the US cash session.",
+      "mechanism": "IDX_ASYNC_V1",
       "novel": true,
-      "status": "QUEUED",
-      "priority": 5
+      "priority": 5,
+      "status": "KILLED",
+      "time_horizon": "1-5 D1 bars"
     },
     {
-      "mechanism": "FX_CORR_MATRIX_SHOCK",
-      "economic_rationale": "Average pairwise G10 corr shock is a risk-regime, not a pair forecast.",
-      "data_required": ["10 FX D1"],
-      "asset_class": "FX",
-      "time_horizon": "5 D1 bars",
       "already_tested": false,
+      "asset_class": "FX",
+      "data_required": [
+        "10 FX D1"
+      ],
+      "economic_rationale": "Average pairwise G10 corr shock is a risk-regime, not a pair forecast.",
+      "mechanism": "FX_CORR_MATRIX_SHOCK",
+      "note": "Do not reduce to EURUSD\u2192GOLD. That is V0.8.",
       "novel": true,
       "status": "BACKUP",
-      "note": "Do not reduce to EURUSD→GOLD. That is V0.8."
+      "time_horizon": "5 D1 bars"
     },
     {
-      "mechanism": "INDEX_XS_REV",
-      "economic_rationale": "Same 20d rank book on US30/US500/USTECH/GER40/JPN225.",
-      "data_required": ["5 index D1"],
-      "asset_class": "INDEX",
-      "time_horizon": "5 D1 bars",
       "already_tested": false,
+      "asset_class": "INDEX",
+      "data_required": [
+        "5 index D1"
+      ],
+      "economic_rationale": "Same 20d rank book on US30/US500/USTECH/GER40/JPN225.",
+      "mechanism": "INDEX_XS_REV",
       "novel": false,
       "status": "REJECT_NOVELTY",
+      "time_horizon": "5 D1 bars",
       "why": "Same mechanism as XS_REV_V1 on different names."
     },
     {
-      "mechanism": "CS_MOMENTUM_FX",
-      "economic_rationale": "Long 20d FX leaders short laggards.",
-      "data_required": ["10 FX D1"],
-      "asset_class": "FX",
-      "time_horizon": "5 D1 bars",
       "already_tested": false,
+      "asset_class": "FX",
+      "data_required": [
+        "10 FX D1"
+      ],
+      "economic_rationale": "Long 20d FX leaders short laggards.",
+      "mechanism": "CS_MOMENTUM_FX",
       "novel": false,
       "status": "REJECT_NOVELTY",
+      "time_horizon": "5 D1 bars",
       "why": "Sign flip of XS_REV_V1."
     },
     {
-      "mechanism": "GOLD_SILVER_Z",
+      "already_tested": true,
       "economic_rationale": "252d z of log(GOLD/SILVER).",
-      "already_tested": true,
+      "family": "CROSS_METAL_V1",
+      "mechanism": "GOLD_SILVER_Z",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "CROSS_METAL_V1"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "DXY_Z_METAL",
+      "already_tested": true,
       "economic_rationale": "252d DXY z into GOLD/SILVER.",
-      "already_tested": true,
+      "family": "USD_METAL_V1",
+      "mechanism": "DXY_Z_METAL",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "USD_METAL_V1"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
+      "already_tested": true,
+      "economic_rationale": "EURUSD/USDJPY return \u2192 GOLD/OIL next bar.",
+      "family": "CROSS_ASSET_V0.8",
       "mechanism": "FX_PAIR_TO_METAL",
-      "economic_rationale": "EURUSD/USDJPY return → GOLD/OIL next bar.",
-      "already_tested": true,
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "CROSS_ASSET_V0.8"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "ADX_VOL_TRANSITION",
+      "already_tested": true,
       "economic_rationale": "Single-asset ADX/VOL tercile transition.",
-      "already_tested": true,
+      "family": "REGIME_TRANSITION_V0.9",
+      "mechanism": "ADX_VOL_TRANSITION",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "REGIME_TRANSITION_V0.9"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "SMA60_RESIDUAL",
+      "already_tested": true,
       "economic_rationale": "GOLD/OIL SMA60 residual.",
-      "already_tested": true,
+      "family": "CROSS_RESIDUAL_V0.91",
+      "mechanism": "SMA60_RESIDUAL",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "CROSS_RESIDUAL_V0.91"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "CALENDAR_MONTH_END",
+      "already_tested": true,
       "economic_rationale": "Month-end / month-start D1 rebalance.",
-      "already_tested": true,
+      "family": "INSTITUTIONAL_TIME_V1.0",
+      "mechanism": "CALENDAR_MONTH_END",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "INSTITUTIONAL_TIME_V1.0"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "PUBLIC_IV_INDEX",
+      "already_tested": true,
       "economic_rationale": "Public IV / VIX-like index into metals.",
-      "already_tested": true,
+      "family": "IV / VIX short sample",
+      "mechanism": "PUBLIC_IV_INDEX",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "IV / VIX short sample"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "COT_POSITIONING",
+      "already_tested": true,
       "economic_rationale": "CFTC COT z-cross.",
-      "already_tested": true,
+      "family": "POSITIONING",
+      "mechanism": "COT_POSITIONING",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "POSITIONING"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "EIA_INVENTORY",
+      "already_tested": true,
       "economic_rationale": "EIA stocks z-cross.",
-      "already_tested": true,
+      "family": "INVENTORY / SUPPLY",
+      "mechanism": "EIA_INVENTORY",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "INVENTORY / SUPPLY"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "RATES_10Y",
+      "already_tested": true,
       "economic_rationale": "UST10 z into gold.",
-      "already_tested": true,
+      "family": "RATES",
+      "mechanism": "RATES_10Y",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "RATES"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "CARRY_ON_FX",
+      "already_tested": true,
       "economic_rationale": "Overnight EFFR-ESTR / BOJ z.",
-      "already_tested": true,
+      "family": "CARRY_V1A",
+      "mechanism": "CARRY_ON_FX",
       "novel": false,
-      "status": "REJECT_FAILED_ALPHA",
-      "family": "CARRY_V1A"
+      "status": "REJECT_FAILED_ALPHA"
     },
     {
-      "mechanism": "ATR_LEVEL",
-      "economic_rationale": "Trade when ATR is high or low.",
       "already_tested": true,
+      "economic_rationale": "Trade when ATR is high or low.",
+      "mechanism": "ATR_LEVEL",
       "novel": false,
       "status": "REJECT_FAILED_ALPHA",
       "why": "Already tested as vol regime. Not term structure."
     },
     {
-      "mechanism": "M1_MICROSTRUCTURE",
+      "already_tested": false,
+      "data_required": [
+        "CORE_M1 live inventory"
+      ],
       "economic_rationale": "Use M1/M5 if history is long enough and spread exists.",
-      "data_required": ["CORE_M1 live inventory"],
-      "already_tested": false,
+      "mechanism": "M1_MICROSTRUCTURE",
+      "note": "Capability first. Do not research until V5 inventory says years are real.",
       "novel": true,
-      "status": "DATA_GATE",
-      "note": "Capability first. Do not research until V5 inventory says years are real."
+      "status": "DATA_GATE"
     },
     {
-      "mechanism": "TICK_ORDER_FLOW",
+      "already_tested": false,
       "economic_rationale": "Broker ticks as aggressive flow.",
-      "already_tested": false,
+      "mechanism": "TICK_ORDER_FLOW",
+      "note": "V4 HIST_TICKS ~2 days. Not an order book. Do not convert.",
       "novel": true,
-      "status": "DATA_GATE",
-      "note": "V4 HIST_TICKS ~2 days. Not an order book. Do not convert."
+      "status": "DATA_GATE"
     },
     {
-      "mechanism": "FUTURES_CURVE",
+      "already_tested": false,
       "economic_rationale": "Curve slope / deferred vs front. MT5 CFDs have no contract stack.",
-      "already_tested": false,
+      "mechanism": "FUTURES_CURVE",
       "novel": true,
       "status": "EXTERNAL_DATA",
       "vendor_candidate": "Databento"
     },
     {
-      "mechanism": "OPTION_SURFACE",
-      "economic_rationale": "Skew / term IV. Public VIX too short on this broker.",
       "already_tested": false,
+      "economic_rationale": "Skew / term IV. Public VIX too short on this broker.",
+      "mechanism": "OPTION_SURFACE",
       "novel": true,
       "status": "EXTERNAL_DATA",
       "vendor_candidate": "Databento"
+    },
+    {
+      "already_tested": true,
+      "asset_class": "AGRICULTURAL+METAL",
+      "data_required": [
+        "7 ag D1 20260829",
+        "GOLD D1 20260828"
+      ],
+      "economic_rationale": "Ag CFD participation thrust/contract as risk regime for GOLD / short the complex.",
+      "mechanism": "BREADTH_V1",
+      "novel": true,
+      "priority": 6,
+      "status": "KILLED",
+      "time_horizon": "5 D1 bars"
+    },
+    {
+      "already_tested": true,
+      "asset_class": "INDEX+METAL",
+      "data_required": [
+        "US2000 D1 20260829",
+        "US500 D1 20260828",
+        "GOLD D1 20260828"
+      ],
+      "economic_rationale": "US2000 minus US500 20d sign cross as size/risk thermometer into GOLD.",
+      "mechanism": "SIZE_SPREAD_V1",
+      "novel": true,
+      "priority": 7,
+      "status": "KILLED",
+      "time_horizon": "5 D1 bars"
+    },
+    {
+      "already_tested": true,
+      "asset_class": "AGRICULTURAL+METAL",
+      "data_required": [
+        "7 ag D1 20260829",
+        "GOLD D1 20260828"
+      ],
+      "economic_rationale": "Ag CFD participation thrust/contract as risk regime for GOLD / short the complex.",
+      "mechanism": "BREADTH_V1",
+      "novel": true,
+      "priority": 6,
+      "status": "KILLED",
+      "time_horizon": "5 D1 bars"
+    },
+    {
+      "already_tested": true,
+      "asset_class": "INDEX+METAL",
+      "data_required": [
+        "US2000 D1 20260829",
+        "US500 D1 20260828",
+        "GOLD D1 20260828"
+      ],
+      "economic_rationale": "US2000 minus US500 20d sign cross as size/risk thermometer into GOLD.",
+      "mechanism": "SIZE_SPREAD_V1",
+      "novel": true,
+      "priority": 7,
+      "status": "KILLED",
+      "time_horizon": "5 D1 bars"
     }
-  ]
+  ],
+  "n": 28,
+  "rule": "Novelty vs FAILED_ALPHA_DATABASE_V2. Same mechanism + new threshold/sign/hold is REJECT.",
+  "utc": "2026-08-29T05:08:17Z"
 }

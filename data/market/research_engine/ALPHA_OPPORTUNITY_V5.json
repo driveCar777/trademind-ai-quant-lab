@@ -1,0 +1,41 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "candidate_count": 0,
+  "do_not_run": [
+    "RSI MA MACD Donchian simple momentum reversal breakout",
+    "USD to GOLD",
+    "stock-CFD breadth clone of BREADTH_V1",
+    "index-breadth clone of BREADTH_V1",
+    "GER40 pctl clone of IDX_ASYNC_V1"
+  ],
+  "instrument_type": {
+    "CFD": 841
+  },
+  "level": 0,
+  "missing_objects": [
+    "futures_curve",
+    "option_surface",
+    "macro_consensus"
+  ],
+  "mt5_symbols": 841,
+  "new_information": [
+    "7 agricultural CFDs 7.7y D1",
+    "EURO-BUND and JAPAN_BOND CFD 7.7y D1",
+    "US_2000 D1 17.12y",
+    "638 equity CFDs / 67 ETF CFDs = same OHLC class, not a new object"
+  ],
+  "next": "EXTERNAL_DATA_GATE",
+  "opportunity_id": "ALPHA_OPPORTUNITY_V5",
+  "tested_v5_plus": [
+    "XS_REV_V1 KILLED",
+    "CORR_SHOCK_V1 KILLED",
+    "ENERGY_RV_V1 KILLED",
+    "VOL_TERM_V1 KILLED",
+    "IDX_ASYNC_V1 KILLED",
+    "BREADTH_V1 WEAK_EDGE KILLED",
+    "SIZE_SPREAD_V1 NO_CANDIDATE KILLED"
+  ],
+  "true_futures": 0,
+  "true_options": 0,
+  "utc": "2026-08-29T05:08:17Z"
+}

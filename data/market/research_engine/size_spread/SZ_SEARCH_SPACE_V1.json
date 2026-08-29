@@ -1,0 +1,104 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "basket": [
+    "US2000",
+    "US500",
+    "GOLD"
+  ],
+  "close_fill": "FORBIDDEN",
+  "cost": {
+    "commission_bp_per_side": 5.0,
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "discovery_id": "SIZE_SPREAD_V1",
+  "executed": false,
+  "family_id": "FAM-SZ-SIZE-0001",
+  "fill": "NEXT_BAR_OPEN",
+  "gates": {
+    "insufficient_occupancy": "FAIL_NOT_WIDEN",
+    "occupancy_max": 0.4,
+    "program_candidate": "FDR_AND_TWO_HYPS_AFTER_COST",
+    "research_n_trade_min": 8,
+    "validation_n_trade_min": 4
+  },
+  "hold_bars": 5,
+  "horizon": "SIGNAL_PLUS_HOLD_OWN_DATES",
+  "hypotheses": [
+    {
+      "event": "SIZE_LAG",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-SZ-0001",
+      "mechanism": "Small-cap 20d return crosses below large-cap: risk-off, long GOLD.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "GOLD_LONG",
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "SIZE_LEAD",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-SZ-0002",
+      "mechanism": "Small-cap 20d return crosses above large-cap: risk-on, short GOLD.",
+      "predicted_sign": -1,
+      "side": -1,
+      "side_mode": "GOLD_SHORT",
+      "target": "GOLD",
+      "target_asset": "GOLD"
+    },
+    {
+      "event": "SIZE_LAG",
+      "hold_bars": 5,
+      "hypothesis_id": "HYP-SZ-0003",
+      "mechanism": "Same lag: short US2000, long US500. Size book, not buy US500 alone.",
+      "predicted_sign": 1,
+      "side": 1,
+      "side_mode": "SHORT_SMALL_LONG_LARGE",
+      "target": "BOOK",
+      "target_asset": "BOOK"
+    }
+  ],
+  "hypothesis_count": 3,
+  "hypothesis_ids": [
+    "HYP-SZ-0001",
+    "HYP-SZ-0002",
+    "HYP-SZ-0003"
+  ],
+  "knowledge_time_rule": "aligned_d1_closes_then_NEXT_BAR_OPEN",
+  "not_ag_breadth": true,
+  "not_buy_us500_on_lead": true,
+  "not_hold_search": true,
+  "not_idx_async_single": true,
+  "not_pctl_search": true,
+  "not_single_asset_momentum": true,
+  "not_xs_rev_rank": true,
+  "parent_datasets": [
+    "tm-market-US2000-D1-20260829-000001",
+    "tm-market-US500-D1-20260828-000001",
+    "tm-market-GOLD-D1-20260828-000001"
+  ],
+  "risk": {
+    "leverage_cap": 1.0,
+    "risk_frac": 0.005,
+    "stop_atr_mult": 1.5
+  },
+  "search_space_hash": "7dce045b1207dedce7dfa2e6c9e453fea5ab1119849332b49dc583ce79aa7603",
+  "seed": 20260829,
+  "size_params": {
+    "lookback": 20,
+    "signal": "US2000_minus_US500_20d_sign_cross"
+  },
+  "stats": {
+    "block_length": 5,
+    "bootstrap": 2000,
+    "fdr_q": 0.05,
+    "m": 3,
+    "permutation": 2000
+  },
+  "timeframe": "D1",
+  "windows": {
+    "FINAL_OOS_ACCESS": "DENIED",
+    "split": "70/15/15_on_aligned_book_dates"
+  }
+}
