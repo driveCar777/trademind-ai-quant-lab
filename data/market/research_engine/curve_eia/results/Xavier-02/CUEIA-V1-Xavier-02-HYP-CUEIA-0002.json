@@ -1,0 +1,145 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "35270fb6b332ea0c49e0ce7eb85cd9c8bd445a3dc805c51c3c156095e6d7bd7c",
+  "discovery_id": "CURVE_EIA_REPRICE_V1",
+  "elapsed_seconds": 8.802349328994751,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-cueia-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 21792904,
+    "pid": 27963,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 37.0,
+      "AUX-therm": 37.0,
+      "CPU-therm": 39.5,
+      "GPU-therm": 37.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 40.0,
+      "thermal-fan-est": 37.6
+    },
+    "ts": "2026-08-29T21:11:04Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "INV_DRAW_FLATTEN",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-CUEIA-0002",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": 1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.017548259544798613,
+        "iterations": 2000,
+        "low": -0.022690069516517662,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260905
+      },
+      "bootstrap_ci": {
+        "high": 0.013360032205383208,
+        "iterations": 2000,
+        "low": -0.014951271415673848,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260905
+      },
+      "cagr": 0.0054715770545208375,
+      "cost_paid": 101.50147802780403,
+      "delta": -0.0011544933902893138,
+      "effect_size": -0.01425163651563591,
+      "end_equity": 10639.556921433037,
+      "level_leak": false,
+      "max_drawdown": -0.13557897074390884,
+      "max_trade_share": 0.11134160367411314,
+      "mean_baseline": 0.004172054585957133,
+      "mean_signal": 0.0030175611956678194,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 148,
+      "n_skip_overlap": 2,
+      "n_trade": 52,
+      "occupancy": 0.051675977653631286,
+      "raw_p": 0.9140429785107447,
+      "sharpe": 0.12670763370845303,
+      "total_return": 0.06395569214330377,
+      "trade_count": 52,
+      "turnover": 25.338316586977978,
+      "win_count": 26
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.02668200421598379,
+        "iterations": 2000,
+        "low": -0.010857159317644102,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260905
+      },
+      "cagr": 0.04945278411452958,
+      "cost_paid": 56.679928659640716,
+      "delta": 0.008354945903594896,
+      "effect_size": 0.14843603790713078,
+      "end_equity": 11245.870960099193,
+      "level_leak": false,
+      "max_drawdown": -0.09056233392396276,
+      "max_trade_share": 0.09867917530649932,
+      "mean_baseline": 0.000949048638212608,
+      "mean_signal": 0.009303994541807505,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 29,
+      "n_skip_overlap": 1,
+      "n_trade": 27,
+      "occupancy": 0.04723127035830619,
+      "raw_p": null,
+      "sharpe": 0.631530471216894,
+      "total_return": 0.12458709600991935,
+      "trade_count": 27,
+      "turnover": 14.104854620472237,
+      "win_count": 19
+    },
+    "window_hash": "6d32b2260d2cceccb49cb0d7e7ecce81e379b6dd0d298aa692543a15dbfe0a77"
+  },
+  "job_id": "CUEIA-V1-Xavier-02-HYP-CUEIA-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+  "window_hashes": {
+    "BOOK": "6d32b2260d2cceccb49cb0d7e7ecce81e379b6dd0d298aa692543a15dbfe0a77"
+  }
+}

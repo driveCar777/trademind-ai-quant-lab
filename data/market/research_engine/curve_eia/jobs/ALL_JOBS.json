@@ -1,0 +1,120 @@
+{
+  "created_at_utc": "2026-08-29T21:10:15Z",
+  "discovery_id": "CURVE_EIA_REPRICE_V1",
+  "job_count": 4,
+  "nodes": {
+    "Xavier-01": [
+      {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "block_length": 5,
+        "bootstrap_iterations": 2000,
+        "discovery_id": "CURVE_EIA_REPRICE_V1",
+        "family_code": "FAM-CUEIA-0001",
+        "family_id": "CURVE_EIA_REPRICE_V1",
+        "fdr_q": 0.05,
+        "hold_bars": 5,
+        "hypothesis_count": 1,
+        "hypothesis_ids": [
+          "HYP-CUEIA-0001"
+        ],
+        "job_id": "CUEIA-V1-Xavier-01-HYP-CUEIA-0001",
+        "node": "Xavier-01",
+        "note": "Worker executes this list only. Do not retune inventory wow or steepening. Do not ship the API key.",
+        "parent_dataset_ids": [
+          "tm-fut-GLBX-CURVE-D1-20260829-000001",
+          "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001"
+        ],
+        "permutation_iterations": 2000,
+        "role": "PRIMARY",
+        "search_space_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+        "seed": 20260905,
+        "timeframe": "D1"
+      }
+    ],
+    "Xavier-02": [
+      {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "block_length": 5,
+        "bootstrap_iterations": 2000,
+        "discovery_id": "CURVE_EIA_REPRICE_V1",
+        "family_code": "FAM-CUEIA-0001",
+        "family_id": "CURVE_EIA_REPRICE_V1",
+        "fdr_q": 0.05,
+        "hold_bars": 5,
+        "hypothesis_count": 1,
+        "hypothesis_ids": [
+          "HYP-CUEIA-0002"
+        ],
+        "job_id": "CUEIA-V1-Xavier-02-HYP-CUEIA-0002",
+        "node": "Xavier-02",
+        "note": "Worker executes this list only. Do not retune inventory wow or steepening. Do not ship the API key.",
+        "parent_dataset_ids": [
+          "tm-fut-GLBX-CURVE-D1-20260829-000001",
+          "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001"
+        ],
+        "permutation_iterations": 2000,
+        "role": "PRIMARY",
+        "search_space_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+        "seed": 20260905,
+        "timeframe": "D1"
+      }
+    ],
+    "Xavier-03": [
+      {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "block_length": 5,
+        "bootstrap_iterations": 2000,
+        "discovery_id": "CURVE_EIA_REPRICE_V1",
+        "family_code": "FAM-CUEIA-0001",
+        "family_id": "CURVE_EIA_REPRICE_V1",
+        "fdr_q": 0.05,
+        "hold_bars": 5,
+        "hypothesis_count": 1,
+        "hypothesis_ids": [
+          "HYP-CUEIA-0003"
+        ],
+        "job_id": "CUEIA-V1-Xavier-03-HYP-CUEIA-0003",
+        "node": "Xavier-03",
+        "note": "Worker executes this list only. Do not retune inventory wow or steepening. Do not ship the API key.",
+        "parent_dataset_ids": [
+          "tm-fut-GLBX-CURVE-D1-20260829-000001",
+          "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001"
+        ],
+        "permutation_iterations": 2000,
+        "role": "PRIMARY",
+        "search_space_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+        "seed": 20260905,
+        "timeframe": "D1"
+      }
+    ],
+    "Xavier-04": [
+      {
+        "FINAL_OOS_ACCESS": "DENIED",
+        "block_length": 5,
+        "bootstrap_iterations": 2000,
+        "discovery_id": "CURVE_EIA_REPRICE_V1",
+        "family_code": "FAM-CUEIA-0001",
+        "family_id": "CURVE_EIA_REPRICE_V1",
+        "fdr_q": 0.05,
+        "hold_bars": 5,
+        "hypothesis_count": 1,
+        "hypothesis_ids": [
+          "HYP-CUEIA-0001"
+        ],
+        "job_id": "CUEIA-V1-Xavier-04-HYP-CUEIA-0001",
+        "node": "Xavier-04",
+        "note": "Worker executes this list only. Do not retune inventory wow or steepening. Do not ship the API key.",
+        "parent_dataset_ids": [
+          "tm-fut-GLBX-CURVE-D1-20260829-000001",
+          "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001"
+        ],
+        "permutation_iterations": 2000,
+        "role": "CROSS_CHECK",
+        "search_space_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+        "seed": 20260905,
+        "timeframe": "D1"
+      }
+    ]
+  },
+  "search_space_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6"
+}

@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-cueia-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 23146856,
+    "pid": 8153,
+    "python_version": "3.6.8",
+    "temps_c": {
+      "AO-therm": 35.5,
+      "AUX-therm": 36.0,
+      "CPU-therm": 38.0,
+      "GPU-therm": 37.0,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 39.0,
+      "thermal-fan-est": 36.9
+    },
+    "ts": "2026-08-29T21:11:04Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "cdb710f4b34d4ee63ac5c66a3cb8e3cc415f2734ace2e55a5a6f69c15ba0583b",
+      "elapsed_seconds": 25.7678484916687,
+      "job_id": "CUEIA-V1-Xavier-03-HYP-CUEIA-0003"
+    }
+  ],
+  "node": "Xavier-03"
+}

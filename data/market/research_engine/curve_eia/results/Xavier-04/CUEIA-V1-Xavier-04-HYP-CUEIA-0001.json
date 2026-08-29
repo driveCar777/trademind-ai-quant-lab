@@ -1,0 +1,145 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "741dd8406e2a75ceac7313123db4e1bdf8369e102adf293b271628af5469fe38",
+  "discovery_id": "CURVE_EIA_REPRICE_V1",
+  "elapsed_seconds": 9.374155759811401,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-cueia-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 7521228,
+    "pid": 30177,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 35.5,
+      "AUX-therm": 36.0,
+      "CPU-therm": 38.5,
+      "GPU-therm": 36.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 37.0,
+      "Tdiode_tegra": 41.25,
+      "thermal-fan-est": 37.05
+    },
+    "ts": "2026-08-29T21:11:05Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "INV_BUILD_STEEPEN",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-CUEIA-0001",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.026722801891825188,
+        "iterations": 2000,
+        "low": -0.03279073387420316,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260905
+      },
+      "bootstrap_ci": {
+        "high": 0.013552096799633342,
+        "iterations": 2000,
+        "low": -0.0225592112890569,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260905
+      },
+      "cagr": -0.02487775644258039,
+      "cost_paid": 94.22795214857972,
+      "delta": -0.004793032066302555,
+      "effect_size": -0.058693925237355934,
+      "end_equity": 7511.017987945465,
+      "level_leak": false,
+      "max_drawdown": -0.2740894972547053,
+      "max_trade_share": 0.10004353701903358,
+      "mean_baseline": -0.004972054585957132,
+      "mean_signal": -0.009765086652259686,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 155,
+      "n_skip_overlap": 1,
+      "n_trade": 52,
+      "occupancy": 0.05412011173184358,
+      "raw_p": 0.6511744127936032,
+      "sharpe": -0.29507798821188236,
+      "total_return": -0.24889820120545347,
+      "trade_count": 52,
+      "turnover": 23.43725033414962,
+      "win_count": 17
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.01707489614254806,
+        "iterations": 2000,
+        "low": -0.015875168702792392,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260905
+      },
+      "cagr": -0.010750071565423847,
+      "cost_paid": 44.820510327991194,
+      "delta": 0.0001742296186759203,
+      "effect_size": 0.003091298915302373,
+      "end_equity": 9740.510653215164,
+      "level_leak": false,
+      "max_drawdown": -0.13789484433196528,
+      "max_trade_share": 0.11916165068975063,
+      "mean_baseline": -0.0017490486382126065,
+      "mean_signal": -0.0015748190195366862,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 26,
+      "n_skip_overlap": 2,
+      "n_trade": 24,
+      "occupancy": 0.04234527687296417,
+      "raw_p": null,
+      "sharpe": -0.10006452033007786,
+      "total_return": -0.02594893467848358,
+      "trade_count": 24,
+      "turnover": 11.194394140174957,
+      "win_count": 12
+    },
+    "window_hash": "6d32b2260d2cceccb49cb0d7e7ecce81e379b6dd0d298aa692543a15dbfe0a77"
+  },
+  "job_id": "CUEIA-V1-Xavier-04-HYP-CUEIA-0001",
+  "node": "Xavier-04",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e"
+  },
+  "role": "CROSS_CHECK",
+  "search_space_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+  "window_hashes": {
+    "BOOK": "6d32b2260d2cceccb49cb0d7e7ecce81e379b6dd0d298aa692543a15dbfe0a77"
+  }
+}

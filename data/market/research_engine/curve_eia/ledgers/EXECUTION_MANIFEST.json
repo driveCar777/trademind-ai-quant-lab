@@ -1,0 +1,66 @@
+{
+  "contract_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+      "elapsed_seconds": 29.231476545333862,
+      "end": "2026-08-29T21:11:04Z",
+      "exit_code": 0,
+      "experiment": "CURVE_EIA_REPRICE_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T21:10:35Z",
+      "stderr": "",
+      "stdout": "CUEIA_JOB_DONE CUEIA-V1-Xavier-02-HYP-CUEIA-0002 8.8\nCUEIA_NODE_DONE Xavier-02 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+      "elapsed_seconds": 29.84628415107727,
+      "end": "2026-08-29T21:11:04Z",
+      "exit_code": 0,
+      "experiment": "CURVE_EIA_REPRICE_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T21:10:35Z",
+      "stderr": "",
+      "stdout": "CUEIA_JOB_DONE CUEIA-V1-Xavier-03-HYP-CUEIA-0003 9.1\nCUEIA_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+      "elapsed_seconds": 30.548062801361084,
+      "end": "2026-08-29T21:11:05Z",
+      "exit_code": 0,
+      "experiment": "CURVE_EIA_REPRICE_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T21:10:35Z",
+      "stderr": "",
+      "stdout": "CUEIA_JOB_DONE CUEIA-V1-Xavier-04-HYP-CUEIA-0001 9.4\nCUEIA_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+      "elapsed_seconds": 30.604526042938232,
+      "end": "2026-08-29T21:11:05Z",
+      "exit_code": 0,
+      "experiment": "CURVE_EIA_REPRICE_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T21:10:35Z",
+      "stderr": "",
+      "stdout": "CUEIA_JOB_DONE CUEIA-V1-Xavier-01-HYP-CUEIA-0001 9.5\nCUEIA_NODE_DONE Xavier-01 1\n"
+    }
+  ],
+  "utc": "2026-08-29T21:11:05Z"
+}

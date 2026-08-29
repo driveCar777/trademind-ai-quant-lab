@@ -1,7 +1,7 @@
 {
   "FINAL_OOS_TOUCHED": false,
   "database_id": "FAILED_ALPHA_DATABASE_V2",
-  "n": 34,
+  "n": 35,
   "records": [
     {
       "family": "HYP-0001",
@@ -406,6 +406,19 @@
       "what_was_tested": "HYP-OICOT-0001/0002/0003 local 2000 + four Xavier",
       "why": "Daily OI versus weekly positioning is not a two-hyp FDR edge. Do not retune. Do not reopen COT extremes. Next is EIA wow x CL curve, still $0.",
       "xavier_01_04_hash": "29ee472b9f6e484902c82cb53505f791e92a48b297ac138f6dcd2f1feba5c7bb"
+    },
+    {
+      "cross_check_match": true,
+      "family": "CURVE_EIA_REPRICE_V1",
+      "forbidden_reopen_pattern": "retune wow or steepening hold; inventory z-score; INVENTORY_V1 z-cross",
+      "mechanism": "EIA crude stocks wow sign plus CL curve steepening: build+steepen / draw+flatten / draw+steepen",
+      "search_space_hash": "61c3b93dfa80e5d0c4964723daeb518078e5a0deefbf6adbf215feff0ea176f6",
+      "status": "KILLED",
+      "tag": "RESEARCH-2026-0029",
+      "what_failed": "WEAK_EDGE; only 0002 book-pass; FDR 0/3; p=0.91",
+      "what_was_tested": "HYP-CUEIA-0001/0002/0003 local 2000 + four Xavier",
+      "why": "Inventory wow x CL curve is not a two-hyp FDR edge. Do not retune wow. Do not reopen inventory z. Next is UST10 change x GC curve, still $0.",
+      "xavier_01_04_hash": "741dd8406e2a75ceac7313123db4e1bdf8369e102adf293b271628af5469fe38"
     }
   ]
 }
