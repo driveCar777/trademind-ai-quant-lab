@@ -5,5 +5,10 @@
   "credit_floor_usd": 60.0,
   "credits_remaining_usd_estimate": 93.18,
   "pack_e_historical_usd": 31.816129,
-  "this_mission_usd": 0
+  "this_mission_usd": 0,
+  "options_quoted": true,
+  "options_downloaded": false,
+  "options_auto_purchase_allowed": false,
+  "options_parents": ["OG.OPT", "LO.OPT"],
+  "stop": "HUMAN_REQUIRED"
 }

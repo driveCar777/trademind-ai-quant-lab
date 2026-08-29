@@ -13,12 +13,15 @@
     "BREADTH_V1",
     "SIZE_SPREAD_V1",
     "FUT_CFD_LEAD_V1",
-    "CURVE_OI_JOINT_V1"
+    "CURVE_OI_JOINT_V1",
+    "OI_COT_BUILD_V1",
+    "CURVE_EIA_REPRICE_V1",
+    "CURVE_REALYIELD_V1"
   ],
   "max_hypotheses": 3,
   "max_mechanisms": 20,
   "n": 5,
-  "selected": "OI_COT_BUILD_V1",
+  "selected": null,
   "top5": [
     {
       "cost": 0,
@@ -55,6 +58,7 @@
       "cost": 0,
       "data": "OI-flow + CFTC GOLD/OIL 000002",
       "economic_rationale": "Exchange OI is daily; CFTC is a delayed census. Disagreement is a speed gap, not an extreme z.",
+      "executed": "WEAK_EDGE",
       "id": "OI_COT_BUILD_V1",
       "mechanism": "Daily official open interest flow versus weekly positioning change (build or unwind). Not a COT extreme.",
       "novelty_guard": {
@@ -63,12 +67,13 @@
         "why": "exchange structure: open interest flow,weekly positioning"
       },
       "rank": 3,
-      "selected": true
+      "selected": false
     },
     {
       "cost": 0,
       "data": "curve CL + EIA WCESTUS1",
       "economic_rationale": "A physical stock change should reprice deferred vs front if storage tightness changed.",
+      "executed": "WEAK_EDGE",
       "id": "CURVE_EIA_REPRICE_V1",
       "mechanism": "EIA crude stocks week-over-week sign plus CL curve steepening. Inventory change curve repricing, not inventory z-score.",
       "novelty_guard": {
@@ -83,6 +88,7 @@
       "cost": 0,
       "data": "curve GC + UST DGS10",
       "economic_rationale": "A higher nominal long rate tightens the gold financing/storage trade-off on the curve, not a metal momentum bet.",
+      "executed": "WEAK_EDGE",
       "id": "CURVE_REALYIELD_V1",
       "mechanism": "UST10 yield change as a real-yield proxy plus GC curve slope change. Not a standardized yield threshold.",
       "novelty_guard": {

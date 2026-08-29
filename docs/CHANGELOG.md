@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-08-30 — V8 Information Fusion STOP C
+
+- Existing fusion TOP5 executed one family at a time. Four Xavier each. Candidate=0. FDR 0/15.
+- FUT_CFD_LEAD and CURVE_OI_JOINT NO_CANDIDATE. OI_COT / EIA / REALYIELD WEAK_EDGE (one book hyp, no FDR).
+- Options quoted, not downloaded. Parents `OG.OPT`/`LO.OPT`. Useful MVD ≈ $32–$54 > $30 auto cap. Credits still ≈ $93.
+- Do not retune. Do not $199/mo. Do not tick.
+
 ## 2026-08-30 — V7 Information Fusion STOP B+C
 
 - No new purchase. Credits still ≈ $93. Pack E 60-file hash preserve PASS.

@@ -1,0 +1,612 @@
+{
+  "GVZ_OVX_NOTE": "Public IV index != GC/CL option surface.",
+  "KEY_PRESENT": true,
+  "NEW_MECHANISM": true,
+  "STOP": "HUMAN_REQUIRED",
+  "auto_purchase_allowed": false,
+  "auto_purchase_max_usd": 30.0,
+  "catalog_id": "OPTIONS_QUOTE_V8",
+  "cheapest": {
+    "billable_size": 53874296,
+    "cost_usd": 9.5331261307,
+    "dataset": "GLBX.MDP3",
+    "end": "2026-08-29",
+    "ok": true,
+    "schema": "ohlcv-1d",
+    "start": "2023-08-30",
+    "stype_in": "parent",
+    "symbols": [
+      "OG.OPT"
+    ],
+    "window": "MVD_3Y"
+  },
+  "coverage": {
+    "error": "HTTP 405 metadata.get_dataset_range b'{\"detail\":\"Method Not Allowed\"}'"
+  },
+  "credit_floor_usd": 60.0,
+  "credit_remaining_usd_estimate": 93.18,
+  "dataset": "GLBX.MDP3",
+  "do_not": [
+    "timeseries.get_range",
+    "batch.submit_job",
+    "ohlcv-1s/1m/1h",
+    "mbo/mbp/tbbo/trades",
+    "$199/month Standard",
+    "print API key",
+    "ship key to Xavier"
+  ],
+  "downloaded": false,
+  "mvd_definition_plus_statistics": {
+    "definition": {
+      "billable_size": 14862378440,
+      "cost_usd": 23.530836541206,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "definition",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    "statistics": {
+      "billable_size": 33011007840,
+      "cost_usd": 30.743896812201,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "statistics",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    "symbols": [
+      "LO.OPT"
+    ],
+    "total_usd": 54.274733353407
+  },
+  "n_ok": 18,
+  "quotes": [
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "definition",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "definition",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "CL.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 14451560240,
+      "cost_usd": 22.880409292877,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "definition",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 14862378440,
+      "cost_usd": 23.530836541206,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "definition",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "definition",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT",
+        "CL.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 29313938680,
+      "cost_usd": 46.411245834082,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "definition",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT",
+        "LO.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "statistics",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "statistics",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "CL.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 75986228320,
+      "cost_usd": 70.767689794302,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "statistics",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 33011007840,
+      "cost_usd": 30.743896812201,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "statistics",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "statistics",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT",
+        "CL.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 108997236160,
+      "cost_usd": 101.511586606503,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "statistics",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT",
+        "LO.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "ohlcv-1d",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "ohlcv-1d",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "CL.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 53874296,
+      "cost_usd": 9.5331261307,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "ohlcv-1d",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 60431504,
+      "cost_usd": 10.693432539701,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "ohlcv-1d",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "ohlcv-1d",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT",
+        "CL.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": 114305800,
+      "cost_usd": 20.226558670402,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "ohlcv-1d",
+      "start": "2023-08-30",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT",
+        "LO.OPT"
+      ],
+      "window": "MVD_3Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "definition",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "definition",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "CL.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 27939823600,
+      "cost_usd": 44.235680364072,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "definition",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 39629794880,
+      "cost_usd": 62.743808418512,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "definition",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "definition",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT",
+        "CL.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 67569618480,
+      "cost_usd": 106.979488782585,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "definition",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT",
+        "LO.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "statistics",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "statistics",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "CL.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 117366537680,
+      "cost_usd": 109.306106045842,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "statistics",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 77892452960,
+      "cost_usd": 72.542999833822,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "statistics",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "statistics",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT",
+        "CL.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 195258990640,
+      "cost_usd": 181.849105879664,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "statistics",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT",
+        "LO.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "ohlcv-1d",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "ohlcv-1d",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "CL.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 113188040,
+      "cost_usd": 20.028769597411,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "ohlcv-1d",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 157267936,
+      "cost_usd": 27.828764021397,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "ohlcv-1d",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": null,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "error": "DatabentoHttpError",
+      "error_detail": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"None of the symbols could be resolved\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "ok": false,
+      "schema": "ohlcv-1d",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "GC.OPT",
+        "CL.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    },
+    {
+      "billable_size": 270455976,
+      "cost_usd": 47.857533618808,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "ok": true,
+      "schema": "ohlcv-1d",
+      "start": "2018-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT",
+        "LO.OPT"
+      ],
+      "window": "RESEARCH_8Y"
+    }
+  ],
+  "this_mission_usd": 0,
+  "utc": "2026-08-29T21:21:25Z"
+}

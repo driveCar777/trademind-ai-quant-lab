@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V8 Information Fusion。先榨干已有融合机制（最多 TOP5），失败后才报价期权。
-> **最后更新:** 2026-08-30（V8 START；TOP1=FUT_CFD_LEAD；不要重开已杀家族）
-> **阶段终点:** TOP5 全失败才 Options quote。AUTO_PURCHASE_MAX $30，credits 地板 $60。禁止 $199/月。禁止 RSI。
+> **当前活跃模块:** V8 **STOP C**。已有融合 TOP5 用尽。期权已报价。未下载。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0 新购买；OG.OPT/LO.OPT；AUTO_PURCHASE_MAX $30 不够 MVD）
+> **阶段终点:** HUMAN 决定是否买期权 MVD。禁止 $199/月。禁止 tick。禁止调参救已杀家族。禁止 RSI。
 
 ---
 
