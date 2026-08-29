@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V7 **STOP B+C**。现有 GC/CL 结构信息已用尽。OI/Volume NO_CANDIDATE。DTE WEAK_EDGE。Level 仍是 0。Candidate=0。
-> **最后更新:** 2026-08-30（三家族四 Xavier；$0 新购买；不要调 OI/volume/dte/斜率）
-> **阶段终点:** 先报价期权期货。禁止 $199/月。禁止 tick。禁止调参救已杀家族。禁止 RSI。禁止覆盖 `20260825`/`20260828`。
+> **当前活跃模块:** V8 Information Fusion。先榨干已有融合机制（最多 TOP5），失败后才报价期权。
+> **最后更新:** 2026-08-30（V8 START；TOP1=FUT_CFD_LEAD；不要重开已杀家族）
+> **阶段终点:** TOP5 全失败才 Options quote。AUTO_PURCHASE_MAX $30，credits 地板 $60。禁止 $199/月。禁止 RSI。
 
 ---
 
