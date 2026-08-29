@@ -1,0 +1,14 @@
+{
+  "tested_at_utc": "2026-08-29T16:03:35Z",
+  "information_set": "GLBX.MDP3_GC_CL_DAILY_CURVE_SETTLEMENT",
+  "family_id": "TERM_STRUCTURE_V1",
+  "search_space_hash": "5ce2c888aa5530113d769dda8af3602fc45dd96b2db273a73e764f3bf15bb4d0",
+  "parent_dataset_id": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+  "outcome": "NO_CANDIDATE",
+  "level": 0,
+  "candidate": 0,
+  "hypotheses_falsified": ["HYP-TSFUT-0001", "HYP-TSFUT-0002", "HYP-TSFUT-0003"],
+  "do_not_retune": ["slope", "hold", "occupancy_cut"],
+  "next_information": ["options_on_futures", "dated_macro_surprise"],
+  "FINAL_OOS_TOUCHED": false
+}

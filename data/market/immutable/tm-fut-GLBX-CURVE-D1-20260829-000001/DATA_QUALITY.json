@@ -1,0 +1,31 @@
+{
+  "gate": "READY_FOR_RESEARCH",
+  "lookahead_ok": true,
+  "n_curve_rows": 8184,
+  "note": "Front/second from listed outrights. Official settlement. Not Ava GOLD/OIL.",
+  "roots": {
+    "CL": {
+      "first_session": "2010-06-04",
+      "last_session": "2026-08-28",
+      "n_cleared_volume": 251630,
+      "n_expiries": 208,
+      "n_ohlcv_sessions": 109175,
+      "n_open_interest": 251630,
+      "n_outright_symbols": 214,
+      "n_sessions": 5062,
+      "n_settlement": 410459
+    },
+    "GC": {
+      "first_session": "2010-06-04",
+      "last_session": "2026-08-28",
+      "n_cleared_volume": 85268,
+      "n_expiries": 120,
+      "n_ohlcv_sessions": 52865,
+      "n_open_interest": 85268,
+      "n_outright_symbols": 120,
+      "n_sessions": 5062,
+      "n_settlement": 92307
+    }
+  },
+  "validation_status": "PASS"
+}

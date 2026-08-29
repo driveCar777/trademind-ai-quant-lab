@@ -1,0 +1,655 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "KEY_PRESENT": true,
+  "files": [
+    {
+      "bytes": 9979,
+      "filename": "manifest.json",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\manifest.json",
+      "schema": "ohlcv-1d",
+      "sha256": "639f0ddf9ef4bc6b6aeb6a03ee0dd8fb505354cc3d691649a3c74e226a9b0dcd",
+      "vendor_hash": "sha256:639f0ddf9ef4bc6b6aeb6a03ee0dd8fb505354cc3d691649a3c74e226a9b0dcd"
+    },
+    {
+      "bytes": 614371,
+      "filename": "condition.json",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\condition.json",
+      "schema": "ohlcv-1d",
+      "sha256": "8354e88b5923de2b7f9c4cd99cca59205dd6763f145adfb5397ba91aa385420e",
+      "vendor_hash": "sha256:8354e88b5923de2b7f9c4cd99cca59205dd6763f145adfb5397ba91aa385420e"
+    },
+    {
+      "bytes": 709,
+      "filename": "metadata.json",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\metadata.json",
+      "schema": "ohlcv-1d",
+      "sha256": "9765ccc051a4217f418ca63264b46f3d9f7b700b24492cbbc315b3dd0e340f19",
+      "vendor_hash": "sha256:9765ccc051a4217f418ca63264b46f3d9f7b700b24492cbbc315b3dd0e340f19"
+    },
+    {
+      "bytes": 181243,
+      "filename": "glbx-mdp3-20100606-20101231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20100606-20101231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "0f5bc837e20e64b8ca43a0ff9a24df9ab41eb128686cd30553fecfe7c70063ac",
+      "vendor_hash": "sha256:0f5bc837e20e64b8ca43a0ff9a24df9ab41eb128686cd30553fecfe7c70063ac"
+    },
+    {
+      "bytes": 353923,
+      "filename": "glbx-mdp3-20110101-20111231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20110101-20111231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "26c2f1956f7f11226d952c0efe383d703b36492eca1ec2ca72db511ad7e72924",
+      "vendor_hash": "sha256:26c2f1956f7f11226d952c0efe383d703b36492eca1ec2ca72db511ad7e72924"
+    },
+    {
+      "bytes": 456883,
+      "filename": "glbx-mdp3-20120101-20121231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20120101-20121231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "aa15b9722c63365c87dbdfe379bb394075a0ebcd1f7b5f46ffdeca4790c395d6",
+      "vendor_hash": "sha256:aa15b9722c63365c87dbdfe379bb394075a0ebcd1f7b5f46ffdeca4790c395d6"
+    },
+    {
+      "bytes": 944462,
+      "filename": "glbx-mdp3-20130101-20131231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20130101-20131231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "c16ca24f663e49b93fb7eb96692073e84f2991daa326715341d8123efd0e7647",
+      "vendor_hash": "sha256:c16ca24f663e49b93fb7eb96692073e84f2991daa326715341d8123efd0e7647"
+    },
+    {
+      "bytes": 931862,
+      "filename": "glbx-mdp3-20140101-20141231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20140101-20141231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "ff198ff1f4845167a8252e97bf279f70d9aac106625cb120b0e00c24e364752d",
+      "vendor_hash": "sha256:ff198ff1f4845167a8252e97bf279f70d9aac106625cb120b0e00c24e364752d"
+    },
+    {
+      "bytes": 1054503,
+      "filename": "glbx-mdp3-20150101-20151231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20150101-20151231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "8c6c0377214dbfa5539b1f720f822323e7341ab4212a012598c63f617b3106a3",
+      "vendor_hash": "sha256:8c6c0377214dbfa5539b1f720f822323e7341ab4212a012598c63f617b3106a3"
+    },
+    {
+      "bytes": 1033099,
+      "filename": "glbx-mdp3-20160101-20161231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20160101-20161231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "a65a604452eb546a2aefa1fa86d730048b2a1ad0abc8bb015ddd0f74d8e9e57a",
+      "vendor_hash": "sha256:a65a604452eb546a2aefa1fa86d730048b2a1ad0abc8bb015ddd0f74d8e9e57a"
+    },
+    {
+      "bytes": 996808,
+      "filename": "glbx-mdp3-20170101-20171231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20170101-20171231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "002d005f570f37db19189fb25b005bb0fd844aa6f7e1ee9ca76cd23e4873f4ce",
+      "vendor_hash": "sha256:002d005f570f37db19189fb25b005bb0fd844aa6f7e1ee9ca76cd23e4873f4ce"
+    },
+    {
+      "bytes": 1079384,
+      "filename": "glbx-mdp3-20180101-20181231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20180101-20181231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "a8f51a3565519002754232e8eabd14a7144e80a29767f08367cb2e894fd1e8e6",
+      "vendor_hash": "sha256:a8f51a3565519002754232e8eabd14a7144e80a29767f08367cb2e894fd1e8e6"
+    },
+    {
+      "bytes": 1086035,
+      "filename": "glbx-mdp3-20190101-20191231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20190101-20191231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "913614718f2176f3213ba874cba41c555312731de7c1520d48995a8ee7c9da03",
+      "vendor_hash": "sha256:913614718f2176f3213ba874cba41c555312731de7c1520d48995a8ee7c9da03"
+    },
+    {
+      "bytes": 1158618,
+      "filename": "glbx-mdp3-20200101-20201231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20200101-20201231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "406b858c6c75991d56794254543af19977843fe60a10261ca1275e7a904c9117",
+      "vendor_hash": "sha256:406b858c6c75991d56794254543af19977843fe60a10261ca1275e7a904c9117"
+    },
+    {
+      "bytes": 1139821,
+      "filename": "glbx-mdp3-20210101-20211231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20210101-20211231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "90dcc9e2d52e127c32a2a1d8928c08cbed791e3d3352dff58cb8914bd0495eb1",
+      "vendor_hash": "sha256:90dcc9e2d52e127c32a2a1d8928c08cbed791e3d3352dff58cb8914bd0495eb1"
+    },
+    {
+      "bytes": 1134300,
+      "filename": "glbx-mdp3-20220101-20221231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20220101-20221231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "fea1b5577241c0efa82e69e155b118fbdb07d1375c04347f12019ed38da01555",
+      "vendor_hash": "sha256:fea1b5577241c0efa82e69e155b118fbdb07d1375c04347f12019ed38da01555"
+    },
+    {
+      "bytes": 1098421,
+      "filename": "glbx-mdp3-20230101-20231231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20230101-20231231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "5b76cb0da35214334786a5ec358d5fb6a8838e216c3780e11a4302308ca6739b",
+      "vendor_hash": "sha256:5b76cb0da35214334786a5ec358d5fb6a8838e216c3780e11a4302308ca6739b"
+    },
+    {
+      "bytes": 1157628,
+      "filename": "glbx-mdp3-20240101-20241231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20240101-20241231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "f4a7e8b2fdf9fb60eac2406f4104473cbe66ce7a3b0d30b0aea24dea162f7b8b",
+      "vendor_hash": "sha256:f4a7e8b2fdf9fb60eac2406f4104473cbe66ce7a3b0d30b0aea24dea162f7b8b"
+    },
+    {
+      "bytes": 1376212,
+      "filename": "glbx-mdp3-20250101-20251231.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20250101-20251231.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "d9312bed0daf33f098f00e0e5d51cda228c53f55c368e066b2412806cd0ebd63",
+      "vendor_hash": "sha256:d9312bed0daf33f098f00e0e5d51cda228c53f55c368e066b2412806cd0ebd63"
+    },
+    {
+      "bytes": 1072026,
+      "filename": "glbx-mdp3-20260101-20260828.ohlcv-1d.csv.zst",
+      "job_id": "GLBX-20260829-TFDARUT9MQ",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-TFDARUT9MQ\\glbx-mdp3-20260101-20260828.ohlcv-1d.csv.zst",
+      "schema": "ohlcv-1d",
+      "sha256": "8aa526158d1b63392c3fc2509f6e27f1f9f31ec07fb9671b48ccc4e215c6fc80",
+      "vendor_hash": "sha256:8aa526158d1b63392c3fc2509f6e27f1f9f31ec07fb9671b48ccc4e215c6fc80"
+    },
+    {
+      "bytes": 10113,
+      "filename": "manifest.json",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\manifest.json",
+      "schema": "statistics",
+      "sha256": "750a9d1838bcd5a957743cb3865163f09042656ac1729c052ca30a2acf888d39",
+      "vendor_hash": "sha256:750a9d1838bcd5a957743cb3865163f09042656ac1729c052ca30a2acf888d39"
+    },
+    {
+      "bytes": 614371,
+      "filename": "condition.json",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\condition.json",
+      "schema": "statistics",
+      "sha256": "8354e88b5923de2b7f9c4cd99cca59205dd6763f145adfb5397ba91aa385420e",
+      "vendor_hash": "sha256:8354e88b5923de2b7f9c4cd99cca59205dd6763f145adfb5397ba91aa385420e"
+    },
+    {
+      "bytes": 711,
+      "filename": "metadata.json",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\metadata.json",
+      "schema": "statistics",
+      "sha256": "8bf6dd856d2b1d1c9fd54a3b5633ce0f54b6b8df6b6d90578e9f06cc2127cef8",
+      "vendor_hash": "sha256:8bf6dd856d2b1d1c9fd54a3b5633ce0f54b6b8df6b6d90578e9f06cc2127cef8"
+    },
+    {
+      "bytes": 8963240,
+      "filename": "glbx-mdp3-20100606-20101231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20100606-20101231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "c432207da44d5dff56046710a99497397c2a5c2789e548fadec0e35ee5766e49",
+      "vendor_hash": "sha256:c432207da44d5dff56046710a99497397c2a5c2789e548fadec0e35ee5766e49"
+    },
+    {
+      "bytes": 20589220,
+      "filename": "glbx-mdp3-20110101-20111231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20110101-20111231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "bd0be2a948cc38e136c130b58bbea81a10d46f7ddab0feee4cd903fa78e9fae8",
+      "vendor_hash": "sha256:bd0be2a948cc38e136c130b58bbea81a10d46f7ddab0feee4cd903fa78e9fae8"
+    },
+    {
+      "bytes": 26122079,
+      "filename": "glbx-mdp3-20120101-20121231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20120101-20121231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "b055622cab5a9a6e4f24c30749013bd8f545f7aab5ba63d6d84e1fe5f7e8a34d",
+      "vendor_hash": "sha256:b055622cab5a9a6e4f24c30749013bd8f545f7aab5ba63d6d84e1fe5f7e8a34d"
+    },
+    {
+      "bytes": 68393724,
+      "filename": "glbx-mdp3-20130101-20131231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20130101-20131231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "be1b544a3faa0efd9bd0fbbb9ef0e3c93275c98699643913ce148801a0f1180d",
+      "vendor_hash": "sha256:be1b544a3faa0efd9bd0fbbb9ef0e3c93275c98699643913ce148801a0f1180d"
+    },
+    {
+      "bytes": 69255056,
+      "filename": "glbx-mdp3-20140101-20141231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20140101-20141231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "ba705c5f5b509e51a6c67fa05851f83492e8cc84e0b67231f552d45278afb169",
+      "vendor_hash": "sha256:ba705c5f5b509e51a6c67fa05851f83492e8cc84e0b67231f552d45278afb169"
+    },
+    {
+      "bytes": 78590967,
+      "filename": "glbx-mdp3-20150101-20151231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20150101-20151231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "702fb0eb159c7b8735bb82754dcb22cec6e5d606908818906238fe1f98ef8ed8",
+      "vendor_hash": "sha256:702fb0eb159c7b8735bb82754dcb22cec6e5d606908818906238fe1f98ef8ed8"
+    },
+    {
+      "bytes": 92752409,
+      "filename": "glbx-mdp3-20160101-20161231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20160101-20161231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "58bd403f25bae3174dff045c96aa8fefaf77830406a53a41032bf7eb1043e94b",
+      "vendor_hash": "sha256:58bd403f25bae3174dff045c96aa8fefaf77830406a53a41032bf7eb1043e94b"
+    },
+    {
+      "bytes": 113204466,
+      "filename": "glbx-mdp3-20170101-20171231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20170101-20171231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "814cdb6eec3736794f8f6b261cf9c9dfe295c3d64d75189594b6942dd27e0c79",
+      "vendor_hash": "sha256:814cdb6eec3736794f8f6b261cf9c9dfe295c3d64d75189594b6942dd27e0c79"
+    },
+    {
+      "bytes": 159220076,
+      "filename": "glbx-mdp3-20180101-20181231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20180101-20181231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "adcb8027d583cba53e1bc08b0557f6cf9524c7fa1ee9f9d8d39bf451233aaa72",
+      "vendor_hash": "sha256:adcb8027d583cba53e1bc08b0557f6cf9524c7fa1ee9f9d8d39bf451233aaa72"
+    },
+    {
+      "bytes": 156210787,
+      "filename": "glbx-mdp3-20190101-20191231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20190101-20191231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "e1358b6fcf2dac40440711453bc361406d8d48953fb3bd743c45bdb309658771",
+      "vendor_hash": "sha256:e1358b6fcf2dac40440711453bc361406d8d48953fb3bd743c45bdb309658771"
+    },
+    {
+      "bytes": 177240996,
+      "filename": "glbx-mdp3-20200101-20201231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20200101-20201231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "7ca66a9acf87eb9f1631c8bc0506eddbc45e7ba6b5342ffc70e01a80fabdc3a2",
+      "vendor_hash": "sha256:7ca66a9acf87eb9f1631c8bc0506eddbc45e7ba6b5342ffc70e01a80fabdc3a2"
+    },
+    {
+      "bytes": 173585012,
+      "filename": "glbx-mdp3-20210101-20211231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20210101-20211231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "4251a19ed331316c45d86973285431d26c1dd8f9d7b8a05066d3d2d6794239e7",
+      "vendor_hash": "sha256:4251a19ed331316c45d86973285431d26c1dd8f9d7b8a05066d3d2d6794239e7"
+    },
+    {
+      "bytes": 231851566,
+      "filename": "glbx-mdp3-20220101-20221231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20220101-20221231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "32427db3dab3ca0dc494a74e70e55d3767a9d2fdb58c80f120e5bdc5b3011233",
+      "vendor_hash": "sha256:32427db3dab3ca0dc494a74e70e55d3767a9d2fdb58c80f120e5bdc5b3011233"
+    },
+    {
+      "bytes": 179368233,
+      "filename": "glbx-mdp3-20230101-20231231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20230101-20231231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "c4c7ee1a363a27e12a6eba752f75c2014ec716db75687266ea0669217d8b1741",
+      "vendor_hash": "sha256:c4c7ee1a363a27e12a6eba752f75c2014ec716db75687266ea0669217d8b1741"
+    },
+    {
+      "bytes": 178024153,
+      "filename": "glbx-mdp3-20240101-20241231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20240101-20241231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "4a9c39aefaf43f64a3179d69afdbfe204e7fb458fe2ca71b6390a9604fb1d3bb",
+      "vendor_hash": "sha256:4a9c39aefaf43f64a3179d69afdbfe204e7fb458fe2ca71b6390a9604fb1d3bb"
+    },
+    {
+      "bytes": 208346852,
+      "filename": "glbx-mdp3-20250101-20251231.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20250101-20251231.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "c30ed432319cfd376955209b36b7eeb9c6097a3f26c557b6fb262e52126b3bed",
+      "vendor_hash": "sha256:c30ed432319cfd376955209b36b7eeb9c6097a3f26c557b6fb262e52126b3bed"
+    },
+    {
+      "bytes": 209370793,
+      "filename": "glbx-mdp3-20260101-20260828.statistics.csv.zst",
+      "job_id": "GLBX-20260829-BWK4P7EGU4",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-BWK4P7EGU4\\glbx-mdp3-20260101-20260828.statistics.csv.zst",
+      "schema": "statistics",
+      "sha256": "7a5a64accecb43c6d990d4f68a54023632ed7ddae55f8bbe1fbf3565b52fafa9",
+      "vendor_hash": "sha256:7a5a64accecb43c6d990d4f68a54023632ed7ddae55f8bbe1fbf3565b52fafa9"
+    },
+    {
+      "bytes": 10088,
+      "filename": "manifest.json",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\manifest.json",
+      "schema": "definition",
+      "sha256": "3b99d2593347d0c1e61acc5730abab97a07b268f9905a54c2d6765a7006ccf77",
+      "vendor_hash": "sha256:3b99d2593347d0c1e61acc5730abab97a07b268f9905a54c2d6765a7006ccf77"
+    },
+    {
+      "bytes": 614371,
+      "filename": "condition.json",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\condition.json",
+      "schema": "definition",
+      "sha256": "8354e88b5923de2b7f9c4cd99cca59205dd6763f145adfb5397ba91aa385420e",
+      "vendor_hash": "sha256:8354e88b5923de2b7f9c4cd99cca59205dd6763f145adfb5397ba91aa385420e"
+    },
+    {
+      "bytes": 711,
+      "filename": "metadata.json",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\metadata.json",
+      "schema": "definition",
+      "sha256": "90001f7e50188d2db7147f335714fd4b4a4200349311810c135faf47fc24d31c",
+      "vendor_hash": "sha256:90001f7e50188d2db7147f335714fd4b4a4200349311810c135faf47fc24d31c"
+    },
+    {
+      "bytes": 273719,
+      "filename": "glbx-mdp3-20100606-20101231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20100606-20101231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "d1c28c6c684d52ce06c417f3b126ef759ecf81e2de8bfe23a0259f65eb114004",
+      "vendor_hash": "sha256:d1c28c6c684d52ce06c417f3b126ef759ecf81e2de8bfe23a0259f65eb114004"
+    },
+    {
+      "bytes": 629645,
+      "filename": "glbx-mdp3-20110101-20111231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20110101-20111231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "5802e8a6d11698daf656ae2d0703ed40f2cde64557fb83a848ee5821f4478cdf",
+      "vendor_hash": "sha256:5802e8a6d11698daf656ae2d0703ed40f2cde64557fb83a848ee5821f4478cdf"
+    },
+    {
+      "bytes": 2380856,
+      "filename": "glbx-mdp3-20120101-20121231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20120101-20121231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "a2d780bb169f5e48b874b518227b8e174d3906cb823e0083623a16e354f32334",
+      "vendor_hash": "sha256:a2d780bb169f5e48b874b518227b8e174d3906cb823e0083623a16e354f32334"
+    },
+    {
+      "bytes": 7598509,
+      "filename": "glbx-mdp3-20130101-20131231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20130101-20131231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "0dd7f678db1391aa3d8ed28a345ff1d9a9b1c911695f4644e8636f9b0c5354cd",
+      "vendor_hash": "sha256:0dd7f678db1391aa3d8ed28a345ff1d9a9b1c911695f4644e8636f9b0c5354cd"
+    },
+    {
+      "bytes": 7737521,
+      "filename": "glbx-mdp3-20140101-20141231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20140101-20141231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "e98175511740c43ee2b7e15f1c7472c2f70fd2959417b3b628d6bef9f9852445",
+      "vendor_hash": "sha256:e98175511740c43ee2b7e15f1c7472c2f70fd2959417b3b628d6bef9f9852445"
+    },
+    {
+      "bytes": 6883542,
+      "filename": "glbx-mdp3-20150101-20151231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20150101-20151231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "4285349c17a68f65b2352c482f1a1652041e4e94f5601bed4454deb099550a38",
+      "vendor_hash": "sha256:4285349c17a68f65b2352c482f1a1652041e4e94f5601bed4454deb099550a38"
+    },
+    {
+      "bytes": 7016349,
+      "filename": "glbx-mdp3-20160101-20161231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20160101-20161231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "cb67bfc680e1b419059fe55e8dc13a03d803e37ed719d28eea9117c84fc56d4e",
+      "vendor_hash": "sha256:cb67bfc680e1b419059fe55e8dc13a03d803e37ed719d28eea9117c84fc56d4e"
+    },
+    {
+      "bytes": 8007313,
+      "filename": "glbx-mdp3-20170101-20171231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20170101-20171231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "5609af9238044cfa286680190999316254f479b1ce89f116d2a9d09ef963658c",
+      "vendor_hash": "sha256:5609af9238044cfa286680190999316254f479b1ce89f116d2a9d09ef963658c"
+    },
+    {
+      "bytes": 9777943,
+      "filename": "glbx-mdp3-20180101-20181231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20180101-20181231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "f6135b23d71a4d8fadb081d46a5ef9ff619a28dafaff012ce83471f3e9573e91",
+      "vendor_hash": "sha256:f6135b23d71a4d8fadb081d46a5ef9ff619a28dafaff012ce83471f3e9573e91"
+    },
+    {
+      "bytes": 8775858,
+      "filename": "glbx-mdp3-20190101-20191231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20190101-20191231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "4c1a64ac8f9917a30de6ce4132a72ac193e77ebc7c23c4b697344a35c083d8eb",
+      "vendor_hash": "sha256:4c1a64ac8f9917a30de6ce4132a72ac193e77ebc7c23c4b697344a35c083d8eb"
+    },
+    {
+      "bytes": 6857861,
+      "filename": "glbx-mdp3-20200101-20201231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20200101-20201231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "a358bc6681d8908181ae9e3482fc80b0ff56f275876c4879f15b181e30ae2945",
+      "vendor_hash": "sha256:a358bc6681d8908181ae9e3482fc80b0ff56f275876c4879f15b181e30ae2945"
+    },
+    {
+      "bytes": 6906457,
+      "filename": "glbx-mdp3-20210101-20211231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20210101-20211231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "970a8f54b607f957259e7eb353c71933d38d54054f8776594c258e12c1a16e10",
+      "vendor_hash": "sha256:970a8f54b607f957259e7eb353c71933d38d54054f8776594c258e12c1a16e10"
+    },
+    {
+      "bytes": 6823319,
+      "filename": "glbx-mdp3-20220101-20221231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20220101-20221231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "001a51e1de18fb52e19593a1bcb5b2d702b4363eb6b0f9b9561284de851d2d64",
+      "vendor_hash": "sha256:001a51e1de18fb52e19593a1bcb5b2d702b4363eb6b0f9b9561284de851d2d64"
+    },
+    {
+      "bytes": 7411890,
+      "filename": "glbx-mdp3-20230101-20231231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20230101-20231231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "08f583b13bdef902c1f4d09028f286ea8902d2bdda1bbd819064cfc4e605087a",
+      "vendor_hash": "sha256:08f583b13bdef902c1f4d09028f286ea8902d2bdda1bbd819064cfc4e605087a"
+    },
+    {
+      "bytes": 11101857,
+      "filename": "glbx-mdp3-20240101-20241231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20240101-20241231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "c563aa3bc8f3ffde7be66cf988184b0cf3bc1d3f20f2e7aa300c5f5235936ab5",
+      "vendor_hash": "sha256:c563aa3bc8f3ffde7be66cf988184b0cf3bc1d3f20f2e7aa300c5f5235936ab5"
+    },
+    {
+      "bytes": 30348087,
+      "filename": "glbx-mdp3-20250101-20251231.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20250101-20251231.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "37b2850af4b5f33055125c72768872b20f03344d3951dfb4ca24b943a09a3e88",
+      "vendor_hash": "sha256:37b2850af4b5f33055125c72768872b20f03344d3951dfb4ca24b943a09a3e88"
+    },
+    {
+      "bytes": 21462843,
+      "filename": "glbx-mdp3-20260101-20260828.definition.csv.zst",
+      "job_id": "GLBX-20260829-5GS5SFP8GN",
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\raw\\databento\\pack_e\\GLBX-20260829-5GS5SFP8GN\\glbx-mdp3-20260101-20260828.definition.csv.zst",
+      "schema": "definition",
+      "sha256": "79a50e34a4e7b30d0648639b96c98e5bd6898b9428ce5927a94557a5adda30de",
+      "vendor_hash": "sha256:79a50e34a4e7b30d0648639b96c98e5bd6898b9428ce5927a94557a5adda30de"
+    }
+  ],
+  "finished_at_utc": "2026-08-29T15:46:24Z",
+  "jobs": {
+    "definition": {
+      "actual_size": 9559024800,
+      "bill_id": null,
+      "billed_size": 9559024800,
+      "compression": "zstd",
+      "cost_usd": 15.13431049883366,
+      "dataset": "GLBX.MDP3",
+      "delivery": "download",
+      "encoding": "csv",
+      "end": "2026-08-29T00:00:00.000000000Z",
+      "id": "GLBX-20260829-5GS5SFP8GN",
+      "limit": null,
+      "map_symbols": true,
+      "package_size": 150618739,
+      "packaging": null,
+      "pretty_px": true,
+      "pretty_ts": true,
+      "progress": 100,
+      "record_count": 18382740,
+      "schema": "definition",
+      "split_duration": "year",
+      "split_size": null,
+      "split_symbols": false,
+      "start": "2010-06-06T00:00:00.000000000Z",
+      "state": "done",
+      "stype_in": "parent",
+      "stype_out": "instrument_id",
+      "symbols": "GC.FUT,CL.FUT",
+      "ts_expiration": "2026-09-28T15:50:00.000000000Z",
+      "ts_process_done": "2026-08-29T15:43:36.722286000Z",
+      "ts_process_start": "2026-08-29T14:12:57.234002000Z",
+      "ts_queued": "2026-08-29T14:12:39.552816000Z",
+      "ts_received": "2026-08-29T14:12:29.177779000Z",
+      "user_id": "K73YCJ9Y"
+    },
+    "ohlcv-1d": {
+      "actual_size": 51772728,
+      "bill_id": null,
+      "billed_size": 51772728,
+      "compression": "zstd",
+      "cost_usd": 9.16125096380711,
+      "dataset": "GLBX.MDP3",
+      "delivery": "download",
+      "encoding": "csv",
+      "end": "2026-08-29T00:00:00.000000000Z",
+      "id": "GLBX-20260829-TFDARUT9MQ",
+      "limit": null,
+      "map_symbols": true,
+      "package_size": 16880287,
+      "packaging": null,
+      "pretty_px": true,
+      "pretty_ts": true,
+      "progress": 100,
+      "record_count": 924513,
+      "schema": "ohlcv-1d",
+      "split_duration": "year",
+      "split_size": null,
+      "split_symbols": false,
+      "start": "2010-06-06T00:00:00.000000000Z",
+      "state": "done",
+      "stype_in": "parent",
+      "stype_out": "instrument_id",
+      "symbols": "GC.FUT,CL.FUT",
+      "ts_expiration": "2026-09-28T14:20:00.000000000Z",
+      "ts_process_done": "2026-08-29T14:13:42.671770000Z",
+      "ts_process_start": "2026-08-29T14:12:44.315367000Z",
+      "ts_queued": "2026-08-29T14:12:31.019495000Z",
+      "ts_received": "2026-08-29T14:12:25.601841000Z",
+      "user_id": "K73YCJ9Y"
+    },
+    "statistics": {
+      "actual_size": 8075148240,
+      "bill_id": null,
+      "billed_size": 8075148240,
+      "compression": "zstd",
+      "cost_usd": 7.52056784927845,
+      "dataset": "GLBX.MDP3",
+      "delivery": "download",
+      "encoding": "csv",
+      "end": "2026-08-29T00:00:00.000000000Z",
+      "id": "GLBX-20260829-BWK4P7EGU4",
+      "limit": null,
+      "map_symbols": true,
+      "package_size": 2151714824,
+      "packaging": null,
+      "pretty_px": true,
+      "pretty_ts": true,
+      "progress": 100,
+      "record_count": 100939353,
+      "schema": "statistics",
+      "split_duration": "year",
+      "split_size": null,
+      "split_symbols": false,
+      "start": "2010-06-06T00:00:00.000000000Z",
+      "state": "done",
+      "stype_in": "parent",
+      "stype_out": "instrument_id",
+      "symbols": "GC.FUT,CL.FUT",
+      "ts_expiration": "2026-09-28T15:20:00.000000000Z",
+      "ts_process_done": "2026-08-29T15:11:41.511870000Z",
+      "ts_process_start": "2026-08-29T14:12:55.196686000Z",
+      "ts_queued": "2026-08-29T14:12:40.610149000Z",
+      "ts_received": "2026-08-29T14:12:31.073460000Z",
+      "user_id": "K73YCJ9Y"
+    }
+  },
+  "started_at_utc": "2026-08-29T14:12:22Z"
+}

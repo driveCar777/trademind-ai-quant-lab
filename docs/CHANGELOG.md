@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-29 — V6.1 TERM_STRUCTURE_V1 NO_CANDIDATE
+
+- Pack E billed **$31.816129**. Slim curve `tm-fut-GLBX-CURVE-D1-20260829-000001` (8184 rows) frozen. Raw stays gitignored.
+- Four Xavier executed. Cross-check match. All 3 hyps FALSIFIED (LEVEL_LEAK). Level=0 Candidate=0. Do not retune slope/hold.
+- Next information = options-on-futures or dated macro. Quote first. No $199/mo. No tick.
+
 ## 2026-08-29 — V6.1 Pack E quote $31.82 GATE A PASS
 
 - Key loaded from local ignored env. Not printed. Not committed.

@@ -1,0 +1,62 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "billed_usd": 31.81612931191922,
+  "dataset": "GLBX.MDP3",
+  "end": "2026-08-29",
+  "gate": "READY_FOR_RESEARCH",
+  "jobs": {
+    "definition": {
+      "cost_usd": 15.13431049883366,
+      "id": "GLBX-20260829-5GS5SFP8GN",
+      "state": "done"
+    },
+    "ohlcv-1d": {
+      "cost_usd": 9.16125096380711,
+      "id": "GLBX-20260829-TFDARUT9MQ",
+      "state": "done"
+    },
+    "statistics": {
+      "cost_usd": 7.52056784927845,
+      "id": "GLBX-20260829-BWK4P7EGU4",
+      "state": "done"
+    }
+  },
+  "not_ava_cfd": true,
+  "not_continuous_only": true,
+  "outright_filter": "instrument_class=F and GC|CL month-year",
+  "pack": "E",
+  "parents": [
+    "GC.FUT",
+    "CL.FUT"
+  ],
+  "roots": {
+    "CL": {
+      "first_session": "2010-06-04",
+      "last_session": "2026-08-28",
+      "n_cleared_volume": 251630,
+      "n_expiries": 208,
+      "n_ohlcv_sessions": 109175,
+      "n_open_interest": 251630,
+      "n_outright_symbols": 214,
+      "n_sessions": 5062,
+      "n_settlement": 410459
+    },
+    "GC": {
+      "first_session": "2010-06-04",
+      "last_session": "2026-08-28",
+      "n_cleared_volume": 85268,
+      "n_expiries": 120,
+      "n_ohlcv_sessions": 52865,
+      "n_open_interest": 85268,
+      "n_outright_symbols": 120,
+      "n_sessions": 5062,
+      "n_settlement": 92307
+    }
+  },
+  "schemas": [
+    "ohlcv-1d",
+    "definition",
+    "statistics"
+  ],
+  "start": "2010-06-06"
+}

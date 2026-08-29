@@ -1,0 +1,147 @@
+{
+  "FINAL_OOS": {
+    "FINAL_OOS_LOCKED": false,
+    "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+    "access": "DENIED"
+  },
+  "FINAL_OOS_TOUCHED": false,
+  "content_hash": "cf1f7e873eca579761e585fb79e0b1f791bc33ec3ea5c73b151d2f8b97aa04f7",
+  "discovery_id": "TERM_STRUCTURE_V1",
+  "elapsed_seconds": 22.293221950531006,
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-tsfut-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 21841308,
+    "pid": 2930,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 35.0,
+      "AUX-therm": 35.0,
+      "CPU-therm": 36.5,
+      "GPU-therm": 35.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 35.0,
+      "Tdiode_tegra": 38.0,
+      "thermal-fan-est": 35.6
+    },
+    "ts": "2026-08-29T16:03:31Z"
+  },
+  "hypothesis": {
+    "FINAL_OOS": {
+      "FINAL_OOS_LOCKED": false,
+      "FINAL_OOS_STATE": "CANDIDATE_LOCKED_ACCESS_DENIED",
+      "access": "DENIED"
+    },
+    "FINAL_OOS_TOUCHED": false,
+    "event": "STEEPENING",
+    "hold_bars": 5,
+    "hypothesis_id": "HYP-TSFUT-0002",
+    "one_way_bp": 2.0,
+    "oos_exists": {
+      "end": "2026-08-28",
+      "exists": true,
+      "n": 614,
+      "start": "2024-03-20"
+    },
+    "predicted_sign": -1,
+    "research": {
+      "block_bootstrap_ci": {
+        "block_length": 5,
+        "high": 0.007324625884635583,
+        "iterations": 2000,
+        "low": -0.006027315054602708,
+        "method": "moving_block_bootstrap_delta_conservative",
+        "seed": 20260829
+      },
+      "bootstrap_ci": {
+        "high": 0.004119399950146435,
+        "iterations": 2000,
+        "low": -0.0036430265617390066,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.024231773387608846,
+      "cost_paid": 795.2133583125931,
+      "delta": 0.0002283172266455243,
+      "effect_size": 0.006593165751352331,
+      "end_equity": 7567.742747434782,
+      "fail_reason": "LEVEL_LEAK",
+      "level_leak": true,
+      "max_drawdown": -0.4177299503702913,
+      "max_trade_share": 0.04859150404168623,
+      "mean_baseline": -0.0011204706019872326,
+      "mean_signal": -0.0008921533753417083,
+      "n_bars": 2864,
+      "n_eligible": 2858,
+      "n_feature": 2864,
+      "n_signal": 1950,
+      "n_skip_overlap": 1136,
+      "n_trade": 437,
+      "occupancy": 0.6808659217877095,
+      "raw_p": 0.8905547226386806,
+      "sharpe": -0.14167695329204646,
+      "total_return": -0.24322572525652175,
+      "trade_count": 437,
+      "turnover": 198.72148738343577,
+      "win_count": 200
+    },
+    "target_asset": "FRONT",
+    "validation": {
+      "block_bootstrap_ci": null,
+      "bootstrap_ci": {
+        "high": 0.007737211934271054,
+        "iterations": 2000,
+        "low": -0.010283532370337176,
+        "method": "iid_bootstrap_delta",
+        "seed": 20260829
+      },
+      "cagr": -0.09000641354662009,
+      "cost_paid": 187.17594931976166,
+      "delta": -0.0015275686697105214,
+      "effect_size": -0.04123147348991215,
+      "end_equity": 7949.853322129348,
+      "fail_reason": "LEVEL_LEAK",
+      "level_leak": true,
+      "max_drawdown": -0.22462029205532763,
+      "max_trade_share": 0.030691038835512933,
+      "mean_baseline": -0.002295957316150688,
+      "mean_signal": -0.0038235259858612094,
+      "n_bars": 614,
+      "n_eligible": 608,
+      "n_feature": 614,
+      "n_signal": 388,
+      "n_skip_overlap": 277,
+      "n_trade": 106,
+      "occupancy": 0.6319218241042345,
+      "raw_p": null,
+      "sharpe": -0.5419013899947084,
+      "total_return": -0.20501466778706512,
+      "trade_count": 106,
+      "turnover": 46.700838793512865,
+      "win_count": 50
+    },
+    "window_hash": "8785fade53a4024e3c01bb8ab05de46d2088290dd1f4c6f87ff6c68641702195"
+  },
+  "job_id": "TSFUT-V1-Xavier-02-HYP-TSFUT-0002",
+  "node": "Xavier-02",
+  "parent_hashes": {
+    "tm-fut-GLBX-CURVE-D1-20260829-000001": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e"
+  },
+  "role": "PRIMARY",
+  "search_space_hash": "5ce2c888aa5530113d769dda8af3602fc45dd96b2db273a73e764f3bf15bb4d0",
+  "window_hashes": {
+    "BOOK": "8785fade53a4024e3c01bb8ab05de46d2088290dd1f4c6f87ff6c68641702195"
+  }
+}

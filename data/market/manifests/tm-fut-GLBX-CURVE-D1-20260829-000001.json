@@ -1,0 +1,18 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "broker_cfd": false,
+  "continuous_only": false,
+  "dataset": "GLBX.MDP3",
+  "dataset_id": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+  "parents": [
+    "GC.FUT",
+    "CL.FUT"
+  ],
+  "raw_outright_rows": 502766,
+  "retrieved_at_utc": "2026-08-29T16:02:12Z",
+  "row_count": 8184,
+  "schema": "curve_panel_d1",
+  "sha256": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e",
+  "source": "databento",
+  "timeframe": "D1"
+}

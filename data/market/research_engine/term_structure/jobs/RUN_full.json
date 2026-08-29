@@ -1,0 +1,65 @@
+{
+  "records": [
+    {
+      "attempts": 1,
+      "contract_hash": "5ce2c888aa5530113d769dda8af3602fc45dd96b2db273a73e764f3bf15bb4d0",
+      "elapsed_seconds": 23.63870882987976,
+      "end": "2026-08-29T16:03:29Z",
+      "exit_code": 0,
+      "experiment": "TERM_STRUCTURE_V1",
+      "host": "192.168.1.202",
+      "job_count": 1,
+      "node": "Xavier-03",
+      "ok": true,
+      "start": "2026-08-29T16:03:05Z",
+      "stderr": "",
+      "stdout": "TSFUT_JOB_DONE TSFUT-V1-Xavier-03-HYP-TSFUT-0003 19.7\nTSFUT_NODE_DONE Xavier-03 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "5ce2c888aa5530113d769dda8af3602fc45dd96b2db273a73e764f3bf15bb4d0",
+      "elapsed_seconds": 24.580021858215332,
+      "end": "2026-08-29T16:03:30Z",
+      "exit_code": 0,
+      "experiment": "TERM_STRUCTURE_V1",
+      "host": "192.168.1.203",
+      "job_count": 1,
+      "node": "Xavier-04",
+      "ok": true,
+      "start": "2026-08-29T16:03:05Z",
+      "stderr": "",
+      "stdout": "TSFUT_JOB_DONE TSFUT-V1-Xavier-04-HYP-TSFUT-0001 20.5\nTSFUT_NODE_DONE Xavier-04 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "5ce2c888aa5530113d769dda8af3602fc45dd96b2db273a73e764f3bf15bb4d0",
+      "elapsed_seconds": 24.844042778015137,
+      "end": "2026-08-29T16:03:30Z",
+      "exit_code": 0,
+      "experiment": "TERM_STRUCTURE_V1",
+      "host": "192.168.1.200",
+      "job_count": 1,
+      "node": "Xavier-01",
+      "ok": true,
+      "start": "2026-08-29T16:03:05Z",
+      "stderr": "",
+      "stdout": "TSFUT_JOB_DONE TSFUT-V1-Xavier-01-HYP-TSFUT-0001 20.9\nTSFUT_NODE_DONE Xavier-01 1\n"
+    },
+    {
+      "attempts": 1,
+      "contract_hash": "5ce2c888aa5530113d769dda8af3602fc45dd96b2db273a73e764f3bf15bb4d0",
+      "elapsed_seconds": 26.36200213432312,
+      "end": "2026-08-29T16:03:32Z",
+      "exit_code": 0,
+      "experiment": "TERM_STRUCTURE_V1",
+      "host": "192.168.1.201",
+      "job_count": 1,
+      "node": "Xavier-02",
+      "ok": true,
+      "start": "2026-08-29T16:03:05Z",
+      "stderr": "",
+      "stdout": "TSFUT_JOB_DONE TSFUT-V1-Xavier-02-HYP-TSFUT-0002 22.3\nTSFUT_NODE_DONE Xavier-02 1\n"
+    }
+  ],
+  "utc": "2026-08-29T16:03:32Z"
+}

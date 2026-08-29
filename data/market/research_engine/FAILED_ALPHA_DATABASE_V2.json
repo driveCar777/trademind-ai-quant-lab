@@ -1,7 +1,7 @@
 {
   "FINAL_OOS_TOUCHED": false,
   "database_id": "FAILED_ALPHA_DATABASE_V2",
-  "n": 27,
+  "n": 28,
   "records": [
     {
       "family": "HYP-0001",
@@ -315,6 +315,19 @@
       "what_was_tested": "HYP-SZ-0001/0002/0003 local 2000 + four Xavier",
       "why": "New 17y US2000 series. Size thermometer did not produce a costed two-hyp FDR edge. Do not search lookback. Do not buy US500.",
       "xavier_01_04_hash": "77094eeee747c077c8a3a2f3db9bc935691f45946fac60c9bb2bd354acf49410"
+    },
+    {
+      "cross_check_match": true,
+      "family": "TERM_STRUCTURE_V1",
+      "forbidden_reopen_pattern": "retune slope hold occupancy; Ava GOLD/OIL as future or spot; vendor continuous",
+      "mechanism": "exchange front-second settlement slope / steepening / roll yield",
+      "search_space_hash": "5ce2c888aa5530113d769dda8af3602fc45dd96b2db273a73e764f3bf15bb4d0",
+      "status": "KILLED",
+      "tag": "RESEARCH-2026-0022",
+      "what_failed": "NO_CANDIDATE; 3/3 FALSIFIED; LEVEL_LEAK occupancy 0.55/0.68/0.55; FDR 0/3",
+      "what_was_tested": "HYP-TSFUT-0001/0002/0003 local 2000 + four Xavier",
+      "why": "Official GC/CL curve is a level regime, not a rare event. Do not retune slope. Next unused field is OI/volume, not another slope cut.",
+      "xavier_01_04_hash": "f815bdf1364157d81967eb77f2add275dedde059919b1e8de25daf7e56620a2f"
     }
   ]
 }

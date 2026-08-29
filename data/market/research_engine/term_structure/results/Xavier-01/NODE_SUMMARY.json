@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cpu": 8,
+    "cpu_freq_khz": [
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600,
+      2265600
+    ],
+    "cwd": "/tmp/tm-tsfut-v1",
+    "hostname": "xavier",
+    "ip": "127.0.1.1",
+    "mem_available_kb": 22929028,
+    "pid": 22831,
+    "python_version": "3.6.9",
+    "temps_c": {
+      "AO-therm": 32.0,
+      "AUX-therm": 31.5,
+      "CPU-therm": 34.5,
+      "GPU-therm": 33.5,
+      "PMIC-Die": 100.0,
+      "Tboard_tegra": 32.0,
+      "Tdiode_tegra": 36.5,
+      "thermal-fan-est": 33.0
+    },
+    "ts": "2026-08-29T16:03:30Z"
+  },
+  "jobs": [
+    {
+      "content_hash": "f815bdf1364157d81967eb77f2add275dedde059919b1e8de25daf7e56620a2f",
+      "elapsed_seconds": 21.907164573669434,
+      "job_id": "TSFUT-V1-Xavier-01-HYP-TSFUT-0001"
+    }
+  ],
+  "node": "Xavier-01"
+}

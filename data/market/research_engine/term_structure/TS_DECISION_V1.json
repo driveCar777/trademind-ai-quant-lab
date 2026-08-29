@@ -1,0 +1,11 @@
+{
+  "candidate_count": 0,
+  "discovery_id": "TERM_STRUCTURE_V1",
+  "hold_change_forbidden": true,
+  "next_action": "KILL_FAMILY_THEN_NEXT_INFORMATION",
+  "note": "Do not retune slope/hold. Do not use Ava CFD as spot. Do not read Final OOS.",
+  "optimize_forbidden": true,
+  "outcome": "NO_CANDIDATE",
+  "slope_change_forbidden": true,
+  "strategy_layer_allowed": false
+}

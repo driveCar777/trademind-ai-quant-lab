@@ -1,0 +1,25 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "KEY_PRESENT": true,
+  "billed_usd": 31.81612931191922,
+  "jobs": {
+    "definition": {
+      "cost_usd": 15.13431049883366,
+      "id": "GLBX-20260829-5GS5SFP8GN",
+      "state": "done"
+    },
+    "ohlcv-1d": {
+      "cost_usd": 9.16125096380711,
+      "id": "GLBX-20260829-TFDARUT9MQ",
+      "state": "done"
+    },
+    "statistics": {
+      "cost_usd": 7.52056784927845,
+      "id": "GLBX-20260829-BWK4P7EGU4",
+      "state": "done"
+    }
+  },
+  "open_standard": false,
+  "pack": "E",
+  "quoted_usd": 31.815091
+}

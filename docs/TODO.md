@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V6.1 **CREDENTIAL_REQUIRED**。`KEY_PRESENT=false`。Level 仍是 0。Candidate=0。
-> **最后更新:** 2026-08-29（repo `.env` 是 Xavier worker 文件，没有 Databento 变量；未报价、未下载）
-> **阶段终点:** key 进 `.env` 后 acquire pack E，或 Level 1。禁止 $199/月。禁止 tick。禁止调参救 BREADTH/SIZE。禁止 RSI。禁止覆盖 `20260825`/`20260828`。
+> **当前活跃模块:** V6.1 **NO_CANDIDATE**。Pack E 已拉（$31.82）。TERM_STRUCTURE 三条 FALSIFIED。Level 仍是 0。Candidate=0。
+> **最后更新:** 2026-08-29（四 Xavier 已跑；LEVEL_LEAK；不要调斜率/持有天数）
+> **阶段终点:** 下一条信息=期权或带日期宏观，先报价。禁止 $199/月。禁止 tick。禁止调参救 BREADTH/SIZE/TERM_STRUCTURE。禁止 RSI。禁止覆盖 `20260825`/`20260828`。
 
 ---
 

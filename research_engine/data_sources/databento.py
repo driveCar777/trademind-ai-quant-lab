@@ -6,6 +6,7 @@ import csv
 import io
 import json
 import os
+import time
 
 try:
     from urllib.error import HTTPError, URLError
@@ -39,15 +40,43 @@ HIST_ROOT = "https://hist.databento.com/v0"
 STAT_SETTLEMENT = 3
 STAT_CLEARED_VOLUME = 6
 STAT_OPEN_INTEREST = 9
+CLASH_PROXY = "http://127.0.0.1:7890"
 
 
-def _proxy_opener():
-    url = (
+def _port_open(host, port, timeout=0.4):
+    try:
+        import socket
+
+        sock = socket.create_connection((host, port), timeout)
+        sock.close()
+        return True
+    except Exception:
+        return False
+
+
+def live_https_proxy():
+    """Optional HTTP proxy from env only.
+
+    Clash TUN already intercepts app-direct sockets. Forcing 127.0.0.1:7890
+    on top is a double hop and Clash often RSTs it. A dead HTTPS_PROXY is
+    worse than no proxy: skip it when 7890 is not listening.
+    """
+    forced = (
         os.environ.get("TRADEMIND_HTTPS_PROXY")
         or os.environ.get("HTTPS_PROXY")
         or os.environ.get("https_proxy")
         or ""
-    )
+    ).strip()
+    if not forced:
+        return ""
+    if "127.0.0.1:7890" in forced or "localhost:7890" in forced:
+        if not _port_open("127.0.0.1", 7890):
+            return ""
+    return forced
+
+
+def _proxy_opener():
+    url = live_https_proxy()
     if url:
         return build_opener(ProxyHandler({"http": url, "https": url}))
     return build_opener()
@@ -68,13 +97,18 @@ class HistoricalClient(object):
         self.timeout = timeout
         self.opener = _proxy_opener()
 
-    def _post(self, method, fields, accept="application/json"):
+    def _request(self, method, fields, accept="application/json", http="POST"):
         url = "%s/%s" % (HIST_ROOT, method)
-        body = urlencode(fields, doseq=True).encode("utf-8")
-        req = Request(url, data=body)
+        if http == "GET":
+            if fields:
+                url = url + "?" + urlencode(fields, doseq=True)
+            req = Request(url, method="GET")
+        else:
+            body = urlencode(fields, doseq=True).encode("utf-8")
+            req = Request(url, data=body)
+            req.add_header("Content-Type", "application/x-www-form-urlencoded")
         req.add_header("Authorization", _basic_auth(self.api_key))
         req.add_header("Accept", accept)
-        req.add_header("Content-Type", "application/x-www-form-urlencoded")
         last = None
         for attempt in range(4):
             try:
@@ -91,9 +125,24 @@ class HistoricalClient(object):
             except URLError as exc:
                 last = exc
                 if attempt < 3:
+                    time.sleep(2 * (attempt + 1))
+                    self.opener = _proxy_opener()
                     continue
                 raise DatabentoHttpError("URL %s %s" % (method, exc.reason))
-        raise DatabentoHttpError("URL %s %s" % (method, last.reason if last else "unknown"))
+            except Exception as exc:
+                last = exc
+                if attempt < 3:
+                    time.sleep(2 * (attempt + 1))
+                    self.opener = _proxy_opener()
+                    continue
+                raise DatabentoHttpError("URL %s %s" % (method, exc))
+        raise DatabentoHttpError("URL %s %s" % (method, last if last else "unknown"))
+
+    def _post(self, method, fields, accept="application/json"):
+        return self._request(method, fields, accept=accept, http="POST")
+
+    def _get(self, method, fields, accept="application/json"):
+        return self._request(method, fields, accept=accept, http="GET")
 
     def get_cost(self, dataset, schema, symbols, start, end, stype_in="parent"):
         raw = self._post(
@@ -143,7 +192,7 @@ class HistoricalClient(object):
                 "schema": schema,
                 "symbols": ",".join(symbols) if isinstance(symbols, (list, tuple)) else symbols,
                 "stype_in": stype_in,
-                "stype_out": "raw_symbol",
+                "stype_out": "instrument_id",
                 "start": start,
                 "end": end,
                 "encoding": "csv",
@@ -160,7 +209,7 @@ class HistoricalClient(object):
                 "schema": schema,
                 "symbols": ",".join(symbols) if isinstance(symbols, (list, tuple)) else symbols,
                 "stype_in": stype_in,
-                "stype_out": "raw_symbol",
+                "stype_out": "instrument_id",
                 "start": start,
                 "end": end,
                 "encoding": "csv",
@@ -175,11 +224,11 @@ class HistoricalClient(object):
         return json.loads(raw.decode("utf-8"))
 
     def list_jobs(self, states="queued,processing,done"):
-        raw = self._post("batch.list_jobs", {"states": states})
+        raw = self._get("batch.list_jobs", {"states": states})
         return json.loads(raw.decode("utf-8"))
 
     def list_files(self, job_id):
-        raw = self._post("batch.list_files", {"job_id": job_id})
+        raw = self._get("batch.list_files", {"job_id": job_id})
         return json.loads(raw.decode("utf-8"))
 
 
