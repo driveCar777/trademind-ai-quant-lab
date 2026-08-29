@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-29 — V6.1 START blocked: KEY_PRESENT=false
+
+- Repo `.env` exists but is the 2026-07-13 Xavier worker file. No `TRADEMIND_DATABENTO_API_KEY`. Process env empty. Cost probe not run. $0 spent.
+- Loader also reads `.env.local` and official `DATABENTO_API_KEY` alias. Never print the value.
+- Stop C. Next: append the key locally, then acquire Pack E.
+
 ## 2026-08-29 — V6 External Exchange CREDENTIAL_REQUIRED
 
 - 活页核实 `GLBX.MDP3`：2010-06-06 起；daily/definition/statistics 同日；MBO 2017-05-21。历史按量，不必 $199/月。Credits $125。

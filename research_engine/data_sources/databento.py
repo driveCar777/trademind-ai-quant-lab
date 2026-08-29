@@ -111,6 +111,24 @@ class HistoricalClient(object):
         raw = self._post("metadata.get_dataset_range", {"dataset": dataset})
         return json.loads(raw.decode("utf-8"))
 
+    def get_billable_size(self, dataset, schema, symbols, start, end, stype_in="parent"):
+        raw = self._post(
+            "metadata.get_billable_size",
+            {
+                "dataset": dataset,
+                "schema": schema,
+                "symbols": ",".join(symbols) if isinstance(symbols, (list, tuple)) else symbols,
+                "stype_in": stype_in,
+                "start": start,
+                "end": end,
+            },
+        )
+        text = raw.decode("utf-8").strip()
+        try:
+            return int(json.loads(text))
+        except (TypeError, ValueError):
+            return int(float(text))
+
     def get_range_csv(self, dataset, schema, symbols, start, end, stype_in="parent"):
         raw = self._post(
             "timeseries.get_range",

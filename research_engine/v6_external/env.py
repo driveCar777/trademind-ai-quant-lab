@@ -27,18 +27,32 @@ def _parse_dotenv(path):
     return out
 
 
+def _dotenv_paths():
+    root = repo_root()
+    return (
+        os.path.join(root, ".env"),
+        os.path.join(root, ".env.local"),
+    )
+
+
 def load_dotenv_if_present():
-    path = os.path.join(repo_root(), ".env")
-    parsed = _parse_dotenv(path)
-    for key, value in parsed.items():
-        if key.startswith("TRADEMIND_") and value and key not in os.environ:
-            os.environ[key] = value
-    return bool(parsed)
+    loaded = False
+    for path in _dotenv_paths():
+        parsed = _parse_dotenv(path)
+        if parsed:
+            loaded = True
+        for key, value in parsed.items():
+            if not value:
+                continue
+            if key.startswith("TRADEMIND_") or key == "DATABENTO_API_KEY":
+                if key not in os.environ:
+                    os.environ[key] = value
+    return loaded
 
 
 def databento_api_key():
     load_dotenv_if_present()
-    value = os.environ.get(ENV_DATABENTO) or ""
+    value = os.environ.get(ENV_DATABENTO) or os.environ.get("DATABENTO_API_KEY") or ""
     return value.strip()
 
 
