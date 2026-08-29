@@ -774,6 +774,23 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 ---
 
+## V6 External Exchange — 2026-08-29 CREDENTIAL_REQUIRED
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_v6_external.py tests/research_engine/test_data_expansion_v3.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| V6 catalog / pack E / novelty / knowledge-time / curve | 见本次 pytest |
+| 无 key | CREDENTIAL_REQUIRED |
+| 无字节不得 READY | ✅ |
+| 禁止首拉 MBO/trades | ✅ |
+| Ava CFD ≠ future | ✅ |
+| 花费 | $0 |
+| Final OOS | ✅ 未访问 |
+| 四 Xavier | 未跑（无期货字节） |
+
+不是交易许可。不是年化 10%。下一步 = key 进 `.env` 后 acquire，不是再写 ROI。
+
 ## MT5 Max Mission V4.0 — 2026-08-29 COMPLETE_NO_CANDIDATE
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine --import-mode=importlib`

@@ -3,7 +3,8 @@ from __future__ import print_function
 
 import os
 
-from research_engine.data_sources import ENV_DATABENTO, ENV_ORATS, ENV_TE
+from research_engine.data_sources import ENV_ORATS, ENV_TE
+from research_engine.data_sources.databento import DatabentoAdapter
 from research_engine.data_sources.pipeline import AcquisitionBlocked
 
 
@@ -31,11 +32,7 @@ class BlockedAdapter(object):
         raise AcquisitionBlocked(self.source)
 
 
-DATABENTO = BlockedAdapter(
-    "databento",
-    ENV_DATABENTO,
-    "Need TRADEMIND_DATABENTO_API_KEY. Do not scrape. Sign up at databento.com.",
-)
+DATABENTO = DatabentoAdapter()
 ORATS = BlockedAdapter(
     "orats",
     ENV_ORATS,

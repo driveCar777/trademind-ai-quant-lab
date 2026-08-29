@@ -1,0 +1,20 @@
+{
+  "FINAL_OOS_TOUCHED": false,
+  "candidate": 0,
+  "checked_at_utc": "2026-08-29T08:30:00Z",
+  "credit_usd": 125,
+  "do_not": [
+    "open CME Standard $199/month",
+    "buy more Ava OHLC",
+    "download MBO/trades/BBO first",
+    "paste the API key into chat"
+  ],
+  "do_not_open_standard_usd": 199,
+  "level": 0,
+  "mission": "V6_EXTERNAL_EXCHANGE_V1",
+  "next_action": "Create a Databento account, keep the $125 new-user credits, put TRADEMIND_DATABENTO_API_KEY in .env, then say: key is in .env, continue V6 acquire.",
+  "quote": {},
+  "recommended_pack": "E",
+  "spent_usd": 0,
+  "stop": "CREDENTIAL_REQUIRED"
+}

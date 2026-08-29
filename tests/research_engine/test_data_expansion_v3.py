@@ -51,13 +51,16 @@ class TestDataExpansionV3(unittest.TestCase):
         )
 
     def test_databento_blocked_without_key(self):
-        old = os.environ.pop("TRADEMIND_DATABENTO_API_KEY", None)
+        old = os.environ.get("TRADEMIND_DATABENTO_API_KEY")
+        os.environ["TRADEMIND_DATABENTO_API_KEY"] = ""
         try:
             self.assertEqual(DATABENTO.status(), "CREDENTIAL_REQUIRED")
             with self.assertRaises(AcquisitionBlocked):
                 DATABENTO.fetch({})
         finally:
-            if old is not None:
+            if old is None:
+                os.environ.pop("TRADEMIND_DATABENTO_API_KEY", None)
+            else:
                 os.environ["TRADEMIND_DATABENTO_API_KEY"] = old
 
     def test_top5_and_zero_spend(self):

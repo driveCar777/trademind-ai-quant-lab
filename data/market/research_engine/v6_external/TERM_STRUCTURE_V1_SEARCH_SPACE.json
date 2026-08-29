@@ -1,0 +1,8 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "family_code": "FAM-TSFUT-0001",
+  "family_id": "TERM_STRUCTURE_V1",
+  "parents": "UNASSIGNED_UNTIL_ACQUIRE",
+  "search_space_hash": "5ce2c888aa5530113d769dda8af3602fc45dd96b2db273a73e764f3bf15bb4d0",
+  "note": "Hash is search-space only. Recalculate with sealed_contract() if hypotheses change. Parents filled after acquire."
+}

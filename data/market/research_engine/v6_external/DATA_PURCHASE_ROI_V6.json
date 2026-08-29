@@ -1,0 +1,83 @@
+{
+  "roi_id": "DATA_PURCHASE_ROI_V6",
+  "checked_at_utc": "2026-08-29T08:30:00Z",
+  "FINAL_OOS_TOUCHED": false,
+  "rule": "Do not buy because data is fancy. Buy if it opens a new mechanism at the lowest cash.",
+  "exact_cost_status": "REQUIRES_TRADEMIND_DATABENTO_API_KEY via metadata.get_cost",
+  "sources": [
+    {
+      "id": "DB-GLBX-L0-GC-CL",
+      "vendor": "Databento",
+      "dataset": "GLBX.MDP3",
+      "what": "GC.FUT+CL.FUT parent ohlcv-1d + definition + statistics 2010-06-06→now",
+      "cost": "usage-based; quote after key; cap $125 credits",
+      "history": "dataset schemas from 2010-06-06 (16+ years claimed)",
+      "new_information": true,
+      "new_mechanism_count": 3,
+      "mechanisms": ["term_structure", "oi_price", "roll_basis"],
+      "researchable_hypotheses": 3,
+      "expected_research_value": "HIGH — first exchange contract panel. Only path that can answer whether Level 0 is missing information vs missing alpha.",
+      "buy": "YES_IF_GET_COST_LE_125"
+    },
+    {
+      "id": "DB-GLBX-MBO",
+      "vendor": "Databento",
+      "what": "MBO / trades / BBO",
+      "cost": "much larger GB; MBO only from 2017-05-21",
+      "history": "MBO 2017+; trades 2010+",
+      "new_information": true,
+      "new_mechanism_count": 0,
+      "researchable_hypotheses": 0,
+      "expected_research_value": "LOW now. Microstructure is not the blocked object. Do not buy first.",
+      "buy": false
+    },
+    {
+      "id": "DB-STANDARD-199",
+      "vendor": "Databento",
+      "what": "CME Standard subscription",
+      "cost": 199,
+      "history": "16+ years L0 included; L1 1y; L2/L3 1 month then usage",
+      "new_information": false,
+      "new_mechanism_count": 0,
+      "researchable_hypotheses": 0,
+      "expected_research_value": "NONE versus pay-as-you-go historical for a one-time curve study.",
+      "buy": false
+    },
+    {
+      "id": "ORATS-GLD-USO",
+      "vendor": "ORATS",
+      "what": "ETF near-EOD surface",
+      "cost": 599,
+      "history": "2007+",
+      "new_information": true,
+      "new_mechanism_count": 1,
+      "researchable_hypotheses": 3,
+      "expected_research_value": "HIGH later. ETF proxy ≠ XAU/WTI listed. Buy only after curve family finishes.",
+      "buy": false
+    },
+    {
+      "id": "FIRSTRATE-GC-CL",
+      "vendor": "FirstRate Data",
+      "what": "individual GC/CL contracts",
+      "cost": "about 99.95 each if 2024 list still current",
+      "history": "2008+",
+      "new_information": true,
+      "new_mechanism_count": 2,
+      "researchable_hypotheses": 3,
+      "expected_research_value": "MEDIUM. Weaker OI/settlement/API than Databento. Backup only.",
+      "buy": false
+    },
+    {
+      "id": "CME-DATAMINE",
+      "vendor": "CME DataMine",
+      "what": "official EOD",
+      "cost": "105 to 2100 per month; login quote",
+      "history": "exchange archive",
+      "new_information": true,
+      "new_mechanism_count": 3,
+      "researchable_hypotheses": 3,
+      "expected_research_value": "HIGH but worse cash/friction than $125 credits.",
+      "buy": false
+    }
+  ]
+}

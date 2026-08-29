@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-29 (Market Universe V5.1 EXTERNAL_DATA_GATE：841 已盘完；BREADTH WEAK_EDGE；SIZE NO_CANDIDATE；Level=0；Candidate=0)  
+> **更新时间:** 2026-08-29 (V6 STOP C / CREDENTIAL_REQUIRED：Databento pack E 已就绪；无 key；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -427,6 +427,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P52 | Data Expansion Mission V3.0 | WAIT_HUMAN 记录保留（工厂+SUPPLY_V1 已跑；曲线/面仍 BLOCKED） |
 | P53 | MT5 Max Mission V4.0 | DONE（新历史已冻；CM+UM NO_CANDIDATE；Level 0；Candidate=0） |
 | P54 | Market Universe V5.0 / V5.1 | DONE（841 CFD；BREADTH WEAK_EDGE；SIZE NO_CANDIDATE；EXTERNAL_DATA_GATE） |
+| P55 | V6 External Exchange Data | IN PROGRESS（catalog/ROI/adapter/pack E 已落地；停在 CREDENTIAL_REQUIRED） |
 
 ---
 

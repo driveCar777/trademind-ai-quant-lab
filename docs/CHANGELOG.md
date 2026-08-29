@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-08-29 — V6 External Exchange CREDENTIAL_REQUIRED
+
+- 活页核实 `GLBX.MDP3`：2010-06-06 起；daily/definition/statistics 同日；MBO 2017-05-21。历史按量，不必 $199/月。Credits $125。
+- 推荐最小包 **E**：GC+CL parent daily + definitions + statistics。精确价要 key。
+- 落地：HTTP adapter、knowledge-time、novelty、TERM_STRUCTURE_V1 搜索空间、acquire 脚本。无字节，无 READY，无 Xavier。
+- 停在 **CREDENTIAL_REQUIRED**。下一步：key 进 `.env` 后 acquire，不是再写文档。
+- Level 仍 0。Candidate=0。花费 $0。Final OOS 未读。未 `order_send`。
+
 ## 2026-08-29 — Market Universe V5.1 EXTERNAL_DATA_GATE
 
 - 841/841 Stage A 从 checkpoint 续完。全部 CFD。期权 0。真期货 0。

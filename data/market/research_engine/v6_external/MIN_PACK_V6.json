@@ -1,0 +1,71 @@
+{
+  "pack_id": "MIN_PACK_V6",
+  "checked_at_utc": "2026-08-29T08:30:00Z",
+  "recommended": "E",
+  "credit_usd": 125,
+  "exact_cost": "REQUIRES_KEY",
+  "rule": "Lowest cash that opens term structure + OI + roll. No ticks.",
+  "packs": [
+    {
+      "id": "A",
+      "name": "GC futures daily",
+      "schemas": ["ohlcv-1d"],
+      "symbols": ["GC.FUT"],
+      "opens": ["GC electronic curve shape if many expiries present"],
+      "missing": ["official settlement", "OI", "expiry map", "CL"],
+      "new_mechanism_count": 1,
+      "alpha_space": "narrow",
+      "choose": false
+    },
+    {
+      "id": "B",
+      "name": "CL futures daily",
+      "schemas": ["ohlcv-1d"],
+      "symbols": ["CL.FUT"],
+      "opens": ["CL electronic curve shape"],
+      "missing": ["official settlement", "OI", "expiry map", "GC"],
+      "new_mechanism_count": 1,
+      "alpha_space": "narrow",
+      "choose": false
+    },
+    {
+      "id": "C",
+      "name": "GC + CL daily",
+      "schemas": ["ohlcv-1d"],
+      "symbols": ["GC.FUT", "CL.FUT"],
+      "opens": ["two-commodity electronic curve"],
+      "missing": ["official settlement", "OI", "reliable expiry"],
+      "new_mechanism_count": 1,
+      "alpha_space": "medium",
+      "choose": false,
+      "why_not": "Without definitions, instrument_id/expiry join is fragile. Without statistics, close ≠ settlement and OI is absent."
+    },
+    {
+      "id": "D",
+      "name": "GC/CL + open interest",
+      "schemas": ["ohlcv-1d", "statistics"],
+      "symbols": ["GC.FUT", "CL.FUT"],
+      "opens": ["settlement", "OI", "cleared volume", "curve + OI shock"],
+      "missing": ["expiry / instrument_class from definitions"],
+      "new_mechanism_count": 2,
+      "alpha_space": "large",
+      "choose": false,
+      "why_not": "Still weaker than E. Definitions are L0 and usually cheap. Skip only if get_cost of definition blows the cap."
+    },
+    {
+      "id": "E",
+      "name": "GC/CL + OI + contract definitions",
+      "schemas": ["ohlcv-1d", "definition", "statistics"],
+      "symbols": ["GC.FUT", "CL.FUT"],
+      "opens": ["term structure", "OI+price", "roll/basis front vs second"],
+      "missing": ["options IV", "macro consensus"],
+      "new_mechanism_count": 3,
+      "researchable_hypotheses": 3,
+      "alpha_space": "largest at this cash",
+      "choose": true,
+      "why": "Minimum set that is actually a futures curve. Official settlement + expiry + OI. Still L0. Still credits-only."
+    }
+  ],
+  "fallback_if_e_over_credits": ["D", "C"],
+  "never": ["mbo", "trades", "bbo", "Standard $199"]
+}

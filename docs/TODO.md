@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** Market Universe V5.1 **EXTERNAL_DATA_GATE**。Level 仍是 0。Candidate=0。
-> **最后更新:** 2026-08-29（841 盘完；BREADTH+SIZE 已跑；不改 V4）
-> **阶段终点:** 人类采购曲线/期权面，或 Level 1。禁止调参救 BREADTH/SIZE/Top5。禁止 RSI。禁止覆盖 `20260825`/`20260828`。
+> **当前活跃模块:** V6 External Exchange **CREDENTIAL_REQUIRED**。Level 仍是 0。Candidate=0。
+> **最后更新:** 2026-08-29（Databento catalog + pack E + adapter 已落地；无 key）
+> **阶段终点:** key 进 `.env` 后 acquire pack E，或 Level 1。禁止 $199/月。禁止 tick。禁止调参救 BREADTH/SIZE。禁止 RSI。禁止覆盖 `20260825`/`20260828`。
 
 ---
 
@@ -48,7 +48,21 @@
 | MISSION V3.0 | Data factory + EIA supply + vendor/purchase pack | ⏸ WAIT_HUMAN 记录 | 2026-08-28 |
 | MISSION V4.0 | MT5 max history + CROSS_METAL + USD_METAL | ✅ NO_CANDIDATE | 2026-08-29 |
 | MISSION V5.0 | Market universe + cross-section / corr / dispersion | ✅ Top5 NO_CANDIDATE | 2026-08-29 |
-| MISSION V5.1 | 841 inventory + BREADTH + SIZE | ⏸ EXTERNAL_DATA_GATE | 2026-08-29 |
+| MISSION V5.1 | 841 inventory + BREADTH + SIZE | ✅ EXTERNAL_DATA_GATE | 2026-08-29 |
+| MISSION V6.0 | Databento catalog + pack E + TERM_STRUCTURE ready | ⏸ CREDENTIAL_REQUIRED | 2026-08-29 |
+
+## V6 External Exchange — CREDENTIAL_REQUIRED 2026-08-29
+
+不是再写一份采购排序然后停。Catalog / ROI / pack E / HTTP adapter / knowledge-time / novelty / TERM_STRUCTURE_V1 已在仓库。
+
+- 活页：`GLBX.MDP3` 自 **2010-06-06**；`ohlcv-1d`/`definition`/`statistics` 同日起；MBO 自 2017-05-21。
+- 计费：历史按量，**不必** $199 Standard。Credits **$125** / 6 个月。
+- 推荐包 **E**：`GC.FUT`+`CL.FUT` daily + definitions + statistics。
+- 精确美元：`metadata.get_cost`。无 key = 不能拉。
+- 人类：注册拿 credits，key 写入 `.env` 的 `TRADEMIND_DATABENTO_API_KEY`，然后说 **key is in .env, continue V6 acquire.**
+- 报告：`V6_MISSION_REPORT.md`。决策：`HUMAN_PURCHASE_DECISION.md`。
+
+key 进 `.env` 之后从 **ACQUIRE** 继续，不要再写一份 ROI。
 
 ## MT5 Max Mission V4.0 — COMPLETE_NO_CANDIDATE 2026-08-29
 

@@ -1,0 +1,70 @@
+{
+  "requirements_id": "DATA_REQUIREMENTS_V6",
+  "checked_at_utc": "2026-08-29T08:30:00Z",
+  "FINAL_OOS_TOUCHED": false,
+  "rule": "Buy the field that opens a new mechanism. Not the fanciest schema.",
+  "directions": [
+    {
+      "id": "FUTURES_CURVE",
+      "priority": 1,
+      "purpose": ["carry", "roll", "basis", "curve_shape"],
+      "required_fields": [
+        "contract",
+        "expiry",
+        "settlement",
+        "volume",
+        "open_interest",
+        "timestamp",
+        "knowledge_time"
+      ],
+      "databento_map": {
+        "contract": "definition.raw_symbol / ohlcv.symbol",
+        "expiry": "definition.expiration",
+        "settlement": "statistics.stat_type=3",
+        "volume": "statistics.stat_type=6 cleared_volume; ohlcv-1d.volume is electronic only",
+        "open_interest": "statistics.stat_type=9",
+        "timestamp": "ts_ref trading session date for statistics; ts_event for ohlcv",
+        "knowledge_time": "settlement T 21:00Z; OI/cleared volume T+1 21:00Z"
+      },
+      "minimum_schemas": ["ohlcv-1d", "definition", "statistics"],
+      "stype_in": "parent",
+      "symbols": ["GC.FUT", "CL.FUT"],
+      "forbidden_proxy": ["Ava GOLD", "Ava OIL", "Yahoo continuous", "adjusted continuous as PRODUCTION"]
+    },
+    {
+      "id": "OPTIONS_SURFACE",
+      "priority": 2,
+      "purpose": ["iv_term", "skew", "risk_reversal", "vrp"],
+      "required_fields": [
+        "expiry",
+        "strike",
+        "call_put",
+        "iv",
+        "delta",
+        "settlement",
+        "bid_ask_if_available"
+      ],
+      "databento_map": {
+        "parent": "GC.OPT / CL.OPT",
+        "definition": "strike, expiration, instrument_class C/P",
+        "iv_delta": "NOT in L0 statistics. Need options trades/BBO or a computed surface. Do not buy until futures curve family finishes.",
+        "bid_ask": "mbp-1 or tbbo — second pass only"
+      },
+      "buy_now": false,
+      "why_wait": "Curve pack E must execute first. Options surface is the next NEW INFORMATION if curve fails."
+    },
+    {
+      "id": "MACRO_SURPRISE",
+      "priority": 3,
+      "required_fields": ["event_time", "publication_time", "knowledge_time", "actual", "consensus"],
+      "buy_now": false,
+      "vendor": "Trading Economics or equivalent. Consensus must be real. First-print vintages required."
+    }
+  ],
+  "knowledge_time_rules": {
+    "futures_settlement": "Cannot use session T settlement to predict session T return.",
+    "futures_oi": "OI/cleared volume knowledge is next UTC date 21:00Z.",
+    "options": "No future settlement or late IV mark on the same session.",
+    "macro": "knowledge_time >= publication_time. Surprise without consensus is invalid."
+  }
+}

@@ -8,7 +8,7 @@
       "vendor": "Databento",
       "dataset": "CME Globex MDP 3.0 — futures + options-on-futures (GC/CL and all CME/CBOT/NYMEX/COMEX)",
       "asset_coverage": "650k+ symbols; GC gold COMEX; CL WTI NYMEX; options on futures",
-      "historical_depth": "16+ years (vendor page 2026-08-28)",
+      "historical_depth": "16+ years; live Availability details 2026-08-29: ohlcv-1d/definition/statistics from 2010-06-06; MBO from 2017-05-21",
       "granularity": "L0 OHLC through L3; daily OHLCV + definitions + statistics sufficient for curve",
       "timestamp_precision": "exchange nanosecond / session; better than broker CFD",
       "revision_policy": "market data, not macro vintages; definitions can change — pin schema",

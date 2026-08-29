@@ -199,9 +199,10 @@ POST /task → requests.post() → indicator-worker → RSI → 保存结果 →
 **Alpha Research Mission V2.0** ✅ STOP B。IV/COT/EIA/UST10/CARRY_V1A **NO_CANDIDATE**。Level=0 Candidate=0。  
 **Data Expansion Mission V3.0** ✅ WAIT_HUMAN 记录保留（SUPPLY_V1 NO_CANDIDATE）。  
 **MT5 Max Mission V4.0** ✅ COMPLETE_NO_CANDIDATE。不要再调 gold-silver / DXY / EIA z_cut。  
-**Market Universe V5.1** ⏸ EXTERNAL_DATA_GATE。841 全是 CFD。BREADTH WEAK_EDGE。SIZE NO_CANDIDATE。不要改 V4 hash。不要覆盖 `20260825`/`20260828`。不要调 BREADTH/SIZE。  
+**Market Universe V5.1** ✅ EXTERNAL_DATA_GATE。841 全是 CFD。BREADTH WEAK_EDGE。SIZE NO_CANDIDATE。不要改 V4 hash。不要覆盖 `20260825`/`20260828`。不要调 BREADTH/SIZE。  
+**V6 External Exchange** ⏸ STOP C / CREDENTIAL_REQUIRED。Databento `GLBX.MDP3` 2010-06-06；pack E；不要 $199/月。无 key 不得假装有期货。不要下 tick。  
 V11：MT5 日线样本内外回测 + 风控证伪。`survived` 不是年化保证。 
-FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要回头调 XA / RT / XR / IT / TS / MS / RI / AMS / IV / POS / INV / RATES / CARRY / SUP / CM / UM。不要无 Candidate 写策略。
+FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要回头调 XA / RT / XR / IT / TS / MS / RI / AMS / IV / POS / INV / RATES / CARRY / SUP / CM / UM / BREADTH / SIZE。不要无 Candidate 写策略。
 
 ---
 

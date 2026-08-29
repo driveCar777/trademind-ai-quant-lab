@@ -1,0 +1,98 @@
+{
+  "catalog_id": "DATABENTO_CATALOG_V6",
+  "checked_at_utc": "2026-08-29T08:30:00Z",
+  "method": "Live browser on databento.com/pricing and databento.com/datasets/GLBX.MDP3. JS pricing page + dataset Availability details. Docs/blog for 2010 backfill and StatType.",
+  "FINAL_OOS_TOUCHED": false,
+  "vendor": "Databento",
+  "pages": [
+    "https://databento.com/pricing",
+    "https://databento.com/datasets/GLBX.MDP3",
+    "https://databento.com/docs/venues-and-datasets/glbx-mdp3",
+    "https://databento.com/docs/schemas-and-data-formats",
+    "https://databento.com/blog/CME-history-extended-to-2010",
+    "https://databento.com/docs/api-reference-historical/metadata/metadata-get-cost"
+  ],
+  "pricing": {
+    "model": "usage-based historical $/GB uncompressed binary; subscription optional",
+    "historical_requires_monthly_subscription": false,
+    "new_user_credits_usd": 125,
+    "credits_expire": "6 months after signup; one set per team",
+    "credits_apply_to": "historical data from any dataset; also first month of a plan if used that way",
+    "standard_usd_per_month": 199,
+    "standard_note": "CME Standard. Live included. Do not open for V6 first pass.",
+    "plus_usd_per_month": 1750,
+    "unlimited_usd_per_month": 4500,
+    "usage_usd_per_gb": "NOT_A_SINGLE_PUBLIC_NUMBER. Use metadata.get_cost after API key.",
+    "metering": "outbound uncompressed binary GB. Metadata/symbology/account are free. Definition cost accurate on 24h multiples.",
+    "live_usage_based": "deprecated for most datasets; live needs license. V6 is historical only."
+  },
+  "license": {
+    "historical": "Click-wrap Databento + exchange terms at signup. Internal research typical. No raw redistribution.",
+    "live": "self-service questionnaire + pass-through exchange license. Not needed for V6.",
+    "commercial_use_on_usage_based_historical": "personal and commercial listed on pricing comparison; redistribution is Plus+",
+    "do_not_commit_raw": true
+  },
+  "api": {
+    "historical_http": "https://hist.databento.com/v0/METHOD",
+    "auth": "HTTP Basic, API key as username, empty password",
+    "python_client": "databento.Historical; optional. TradeMind uses stdlib HTTP.",
+    "cost_method": "metadata.get_cost",
+    "range_method": "timeseries.get_range",
+    "symbology_parent": "stype_in=parent symbols like GC.FUT",
+    "encodings": ["DBN", "CSV", "JSON"]
+  },
+  "dataset": {
+    "dataset_id": "GLBX.MDP3",
+    "name": "CME Globex MDP 3.0",
+    "venues": ["CME", "CBOT", "NYMEX", "COMEX"],
+    "asset_class": "Futures & Options",
+    "symbols_claimed": "650000+",
+    "available_from_utc": "2010-06-06",
+    "history_page_claim": "16+ years",
+    "covers_futures": true,
+    "covers_options_on_futures": true,
+    "true_exchange_futures": true,
+    "origin": "Aurora DC3 FPGA capture after 2017-05-21; FIX flat files / CME DataMine before that. No capture timestamps pre-2017-05-21. Millisecond timestamps before 2015-11-20.",
+    "release": {
+      "live": "real-time (license)",
+      "historical": "delayed 20 minutes or 8 hours depending on access listed on dataset page"
+    }
+  },
+  "schemas": [
+    {"schema": "ohlcv-1d", "level": "L0", "first_date": "2010-06-06", "daily": true, "oi": false, "volume": true, "settlement": false, "definition": false, "first_pass": true, "note": "UTC date electronic session OHLC. Not official settlement."},
+    {"schema": "definition", "level": "L0", "first_date": "2010-06-06", "daily": true, "oi": false, "volume": false, "settlement": false, "definition": true, "first_pass": true, "note": "expiry, instrument_class, increment, underlying"},
+    {"schema": "statistics", "level": "L0", "first_date": "2010-06-06", "daily": true, "oi": true, "volume": true, "settlement": true, "definition": false, "first_pass": true, "note": "settlement=3 cleared_volume=6 open_interest=9. OI usually next UTC date."},
+    {"schema": "status", "level": "L0", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "ohlcv-1s", "level": "L0", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "ohlcv-1m", "level": "L0", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "ohlcv-1h", "level": "L0", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "trades", "level": "L1", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "tbbo", "level": "L1", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "bbo-1s", "level": "L1", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "bbo-1m", "level": "L1", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "mbp-1", "level": "L1", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "mbp-10", "level": "L2", "first_date": "2010-06-06", "first_pass": false},
+    {"schema": "mbo", "level": "L3", "first_date": "2017-05-21", "first_pass": false, "note": "Not in first purchase. Highest granularity only after MDP 3.0."}
+  ],
+  "roots": [
+    {"root": "GC", "parent": "GC.FUT", "venue": "COMEX", "product": "Gold futures", "options_parent": "GC.OPT", "first_pass": true},
+    {"root": "CL", "parent": "CL.FUT", "venue": "NYMEX", "product": "WTI crude futures", "options_parent": "CL.OPT", "first_pass": true},
+    {"root": "SI", "parent": "SI.FUT", "venue": "COMEX", "product": "Silver futures", "first_pass": false},
+    {"root": "NG", "parent": "NG.FUT", "venue": "NYMEX", "product": "Henry Hub natural gas", "first_pass": false},
+    {"root": "6E", "parent": "6E.FUT", "venue": "CME", "product": "EUR/USD futures", "first_pass": false},
+    {"root": "ZN", "parent": "ZN.FUT", "venue": "CBOT", "product": "10-year T-Note futures", "first_pass": false}
+  ],
+  "symbol_first_last": {
+    "note": "Per-root first/last requires metadata.get_dataset_range or a parent pull after API key. Venue dataset start is 2010-06-06 for ohlcv-1d/definition/statistics.",
+    "dataset_first_date": "2010-06-06",
+    "dataset_last_date": "REQUIRES_KEY live end",
+    "gc_first_date": "REQUIRES_KEY",
+    "cl_first_date": "REQUIRES_KEY"
+  },
+  "do_not": [
+    "treat Ava GOLD/OIL as GC/CL",
+    "use continuous-only series as the PRODUCTION curve",
+    "download mbo/trades/bbo in phase 1",
+    "open $199 Standard to start research"
+  ]
+}
