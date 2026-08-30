@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V8.4 Full-year occupancy **PURCHASE = NO**。METADATA ONLY。未下载。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；LO sufficiency A；OG B；251 日 census）
-> **阶段终点:** 不要自动买。若 HUMAN 以后买一包：LO 1Y MVD-A $11.99。禁止 download / family / $199。
+> **当前活跃模块:** V9 Existing Data Master Backtest。**PURCHASE = NO**。不新假设。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；$93 = reserve）
+> **阶段终点:** 统一回测现有机制。STOP A Candidate / STOP B 无 Positive Reproducible / STOP C 人工。不要买数据。
 
 ---
 
@@ -55,6 +55,14 @@
 | MISSION V8.2 | Options catalog / MVD / quote-only DD | ✅ QUOTE ONLY | 2026-08-30 |
 | MISSION V8.3 | Options historical feasibility (metadata occupancy) | ✅ PURCHASE=NO | 2026-08-30 |
 | MISSION V8.4 | Full-year options occupancy census | ✅ PURCHASE=NO | 2026-08-30 |
+| MISSION V9.0 | Existing data master backtest | 🔄 IN PROGRESS | 2026-08-30 |
+
+## V9 Master Backtest — IN PROGRESS 2026-08-30
+
+- 不买数据。不新假设。不读 Final OOS。
+- 合同：`MASTER_BACKTEST_CONTRACT_V9`。NEXT_BAR_OPEN。EXECUTION_APPROXIMATION。
+- 阶段：START → DATA_CENSUS → BACKTEST_ENGINE → REPLAY → ATTRIBUTION → MASTER_EQUITY → AUDIT → DECISION
+- 文档入口：`docs/research_engine/V9_START.md`
 
 ## V8.4 Full-Year Occupancy — PURCHASE = NO 2026-08-30
 

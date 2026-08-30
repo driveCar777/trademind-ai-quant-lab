@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V9 Master Backtest START
+
+- Existing-data profitability audit. No purchase. No new hypotheses. Final OOS denied.
+- $93 Databento remainder is UNUSED_RESEARCH_RESERVE.
+- Entry: `docs/research_engine/V9_START.md`.
+
 ## 2026-08-30 — V8.4 full-year options occupancy census (PURCHASE = NO)
 
 - Metadata `get_record_count` on 251 Pack E sessions. No download. $0.
