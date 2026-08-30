@@ -2,8 +2,8 @@
 
 ```
 dataset_id = tm-ashare-EQUITY-D1-20260830-000002
-content_hash = 85ac360c1bbd91e576e44330bde02118151597015a898c975ad21a2413963cdf
-FULL_PANEL_FROZEN = False
+content_hash = dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80
+FULL_PANEL_FROZEN = True
 ```
 
 Does not overwrite `tm-ashare-EQUITY-D1-20260830-000001`.

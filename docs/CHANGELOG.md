@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V12.2 panel FROZEN PRICE_ALPHA_READY
+
+- 5549/5549 raw. 18,418,047 rows. dataset_id `tm-ashare-EQUITY-D1-20260830-000002`.
+- Financial / industry / event stay BLOCKED. Do not auto-start Alpha.
+- Entry: `docs/research_engine/V12_2_FINAL.md`.
+
 ## 2026-08-30 — V12.2 panel completion START
 
 - Single downloader to 5549/5549, then auto compile / freeze / ready gate.

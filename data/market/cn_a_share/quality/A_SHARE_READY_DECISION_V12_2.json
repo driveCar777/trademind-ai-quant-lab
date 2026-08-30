@@ -1,37 +1,37 @@
 {
   "ALPHA_RESEARCH": false,
-  "A_SHARE_DATA_STATUS": "CONDITIONAL",
+  "A_SHARE_DATA_STATUS": "READY_FOR_PRICE_ALPHA",
   "BACKTEST": false,
   "CANDIDATE": 0,
   "EVENT_ALPHA_READY": false,
   "EVENT_ALPHA_STATUS": "BLOCKED",
   "FINANCIAL_ALPHA_READY": false,
   "FINANCIAL_ALPHA_STATUS": "BLOCKED",
-  "FULL_PANEL_FROZEN": false,
+  "FULL_PANEL_FROZEN": true,
   "INDUSTRY_ALPHA_READY": false,
   "INDUSTRY_ALPHA_STATUS": "BLOCKED",
   "LEVEL": 0,
   "NEW_PURCHASE": false,
-  "NEXT_PRIMARY_ACTION": "COMPLETE_DAILY_PANEL_FREEZE",
-  "PRICE_ALPHA_READY": false,
-  "PRICE_ALPHA_STATUS": "PRICE_ALPHA_CONDITIONAL",
-  "READY_GATE_COMPLETE": false,
+  "NEXT_PRIMARY_ACTION": "CHINA_A_SHARE_ALPHA_DISCOVERY",
+  "PRICE_ALPHA_READY": true,
+  "PRICE_ALPHA_STATUS": "PRICE_ALPHA_READY",
+  "READY_GATE_COMPLETE": true,
   "asof_20150430": "INVALID",
   "gates": {
     "adjustment": true,
     "determinism": true,
     "pit": true,
-    "price_integrity": false,
+    "price_integrity": true,
     "resume": true,
     "survivorship": true
   },
   "invalid_universe_asof": "2015-04-30",
   "panel": {
-    "complete": false,
-    "n_done": 95,
+    "complete": true,
+    "n_done": 5549,
     "n_empty": 0,
     "n_equity": 5549,
     "n_failed": 0,
-    "n_with_bars": 95
+    "n_with_bars": 5549
   }
 }

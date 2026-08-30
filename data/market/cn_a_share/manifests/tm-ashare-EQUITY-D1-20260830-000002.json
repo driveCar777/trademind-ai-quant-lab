@@ -16,10 +16,13 @@
     "isST"
   ],
   "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
-  "disk_c_gb": 13.023731231689453,
-  "disk_d_gb": 125.50830841064453,
+  "disk_c_gb": 12.965377807617188,
+  "disk_d_gb": 123.71735382080078,
   "hashes": {
-    "content_hash": "85ac360c1bbd91e576e44330bde02118151597015a898c975ad21a2413963cdf"
+    "compiled_hash": "2a8fea1480c2437dba209b05a7823167ed145631bc9058501029c843e04bfbad",
+    "content_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+    "manifest_hash": "bb98d37e411342f46d757577671ebae7972b8322f01aca17b827f439d73af4d4",
+    "raw_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80"
   },
   "history_end": "2026-08-28",
   "history_start": "1990-12-19",
@@ -28,20 +31,533 @@
   "parent_dataset_id": "tm-ashare-EQUITY-D1-20260830-000001",
   "pit": {
     "delist_kept_before": true,
+    "delist_mutation_stable": true,
     "future_ipo_unchanged": true,
     "n_listed_2015_04_30": 2695,
     "n_listed_2016_12_30": 3037,
     "price_mutation_stable": true
   },
   "quality": {
-    "complete": false,
-    "n_done_checkpoint": 95,
+    "calendar": {
+      "max_rows_per_day": 5211,
+      "mean_rows_per_day": 2113.6156759238006,
+      "median_rows_per_day": 1602,
+      "min_rows_per_day": 8,
+      "n_days_with_prices": 8714
+    },
+    "complete": true,
+    "empty_symbols": [],
+    "longest": [
+      {
+        "n": 8714,
+        "symbol": "sh.600654"
+      },
+      {
+        "n": 8714,
+        "symbol": "sh.600653"
+      },
+      {
+        "n": 8714,
+        "symbol": "sh.600651"
+      },
+      {
+        "n": 8714,
+        "symbol": "sh.600602"
+      },
+      {
+        "n": 8714,
+        "symbol": "sh.600601"
+      },
+      {
+        "n": 8686,
+        "symbol": "sz.000002"
+      },
+      {
+        "n": 8663,
+        "symbol": "sz.000004"
+      },
+      {
+        "n": 8642,
+        "symbol": "sz.000001"
+      },
+      {
+        "n": 8584,
+        "symbol": "sz.000009"
+      },
+      {
+        "n": 8443,
+        "symbol": "sh.600603"
+      },
+      {
+        "n": 8412,
+        "symbol": "sz.000012"
+      },
+      {
+        "n": 8392,
+        "symbol": "sz.000016"
+      },
+      {
+        "n": 8392,
+        "symbol": "sh.600606"
+      },
+      {
+        "n": 8392,
+        "symbol": "sh.600605"
+      },
+      {
+        "n": 8392,
+        "symbol": "sh.600604"
+      },
+      {
+        "n": 8391,
+        "symbol": "sz.000011"
+      },
+      {
+        "n": 8390,
+        "symbol": "sz.000017"
+      },
+      {
+        "n": 8381,
+        "symbol": "sz.000007"
+      },
+      {
+        "n": 8371,
+        "symbol": "sz.000006"
+      },
+      {
+        "n": 8370,
+        "symbol": "sz.000020"
+      }
+    ],
+    "longest_suspension": [
+      {
+        "streak": 1680,
+        "symbol": "sz.000805"
+      },
+      {
+        "streak": 1651,
+        "symbol": "sz.000622"
+      },
+      {
+        "streak": 1628,
+        "symbol": "sz.000693"
+      },
+      {
+        "streak": 1594,
+        "symbol": "sz.000156"
+      },
+      {
+        "streak": 1461,
+        "symbol": "sz.000672"
+      },
+      {
+        "streak": 1458,
+        "symbol": "sz.000688"
+      },
+      {
+        "streak": 1422,
+        "symbol": "sz.000403"
+      },
+      {
+        "streak": 1413,
+        "symbol": "sz.000757"
+      },
+      {
+        "streak": 1410,
+        "symbol": "sz.000787"
+      },
+      {
+        "streak": 1409,
+        "symbol": "sz.000670"
+      },
+      {
+        "streak": 1409,
+        "symbol": "sz.000038"
+      },
+      {
+        "streak": 1302,
+        "symbol": "sh.600705"
+      },
+      {
+        "streak": 1293,
+        "symbol": "sz.000620"
+      },
+      {
+        "streak": 1287,
+        "symbol": "sz.000863"
+      },
+      {
+        "streak": 1247,
+        "symbol": "sz.000638"
+      },
+      {
+        "streak": 1168,
+        "symbol": "sz.000498"
+      },
+      {
+        "streak": 1110,
+        "symbol": "sh.600145"
+      },
+      {
+        "streak": 1010,
+        "symbol": "sz.000557"
+      },
+      {
+        "streak": 1006,
+        "symbol": "sz.000029"
+      },
+      {
+        "streak": 958,
+        "symbol": "sz.000681"
+      }
+    ],
+    "lowest_coverage": [
+      {
+        "coverage": 0.3179650238473768,
+        "expected": 6290,
+        "n": 2000,
+        "symbol": "sh.600293"
+      },
+      {
+        "coverage": 0.9989806320081549,
+        "expected": 981,
+        "n": 980,
+        "symbol": "sh.688287"
+      },
+      {
+        "coverage": 0.9992337164750957,
+        "expected": 1305,
+        "n": 1304,
+        "symbol": "sh.605081"
+      },
+      {
+        "coverage": 0.9994946942900454,
+        "expected": 1979,
+        "n": 1978,
+        "symbol": "sz.300630"
+      },
+      {
+        "coverage": 0.9994969818913481,
+        "expected": 1988,
+        "n": 1987,
+        "symbol": "sh.603056"
+      },
+      {
+        "coverage": 0.9995271867612293,
+        "expected": 2115,
+        "n": 2114,
+        "symbol": "sh.603388"
+      },
+      {
+        "coverage": 0.9995337995337995,
+        "expected": 2145,
+        "n": 2144,
+        "symbol": "sz.002898"
+      },
+      {
+        "coverage": 0.9995843724023276,
+        "expected": 2406,
+        "n": 2405,
+        "symbol": "sz.002808"
+      },
+      {
+        "coverage": 0.9995993589743589,
+        "expected": 2496,
+        "n": 2495,
+        "symbol": "sz.002750"
+      },
+      {
+        "coverage": 0.9996480112636396,
+        "expected": 2841,
+        "n": 2840,
+        "symbol": "sz.300391"
+      },
+      {
+        "coverage": 0.9996569468267581,
+        "expected": 2915,
+        "n": 2914,
+        "symbol": "sz.300379"
+      },
+      {
+        "coverage": 0.9996801023672425,
+        "expected": 3126,
+        "n": 3125,
+        "symbol": "sh.603003"
+      },
+      {
+        "coverage": 0.9996961409905804,
+        "expected": 3291,
+        "n": 3290,
+        "symbol": "sh.601028"
+      },
+      {
+        "coverage": 0.9996998799519808,
+        "expected": 3332,
+        "n": 3331,
+        "symbol": "sz.300344"
+      },
+      {
+        "coverage": 0.9997011356843993,
+        "expected": 3346,
+        "n": 3345,
+        "symbol": "sz.300280"
+      },
+      {
+        "coverage": 0.9997109826589595,
+        "expected": 3460,
+        "n": 3459,
+        "symbol": "sz.300208"
+      },
+      {
+        "coverage": 0.9997208263539922,
+        "expected": 3582,
+        "n": 3581,
+        "symbol": "sz.300108"
+      },
+      {
+        "coverage": 0.9997338301836571,
+        "expected": 3757,
+        "n": 3756,
+        "symbol": "sz.002336"
+      },
+      {
+        "coverage": 0.9997382884061764,
+        "expected": 3821,
+        "n": 3820,
+        "symbol": "sh.601989"
+      },
+      {
+        "coverage": 0.9997426659804426,
+        "expected": 3886,
+        "n": 3885,
+        "symbol": "sz.302132"
+      }
+    ],
+    "most_missing": [
+      {
+        "expected": 6290,
+        "missing": 4290,
+        "n": 2000,
+        "symbol": "sh.600293"
+      },
+      {
+        "expected": 3886,
+        "missing": 1,
+        "n": 3885,
+        "symbol": "sz.302132"
+      },
+      {
+        "expected": 1979,
+        "missing": 1,
+        "n": 1978,
+        "symbol": "sz.300630"
+      },
+      {
+        "expected": 2841,
+        "missing": 1,
+        "n": 2840,
+        "symbol": "sz.300391"
+      },
+      {
+        "expected": 2915,
+        "missing": 1,
+        "n": 2914,
+        "symbol": "sz.300379"
+      },
+      {
+        "expected": 3332,
+        "missing": 1,
+        "n": 3331,
+        "symbol": "sz.300344"
+      },
+      {
+        "expected": 3346,
+        "missing": 1,
+        "n": 3345,
+        "symbol": "sz.300280"
+      },
+      {
+        "expected": 3460,
+        "missing": 1,
+        "n": 3459,
+        "symbol": "sz.300208"
+      },
+      {
+        "expected": 3582,
+        "missing": 1,
+        "n": 3581,
+        "symbol": "sz.300108"
+      },
+      {
+        "expected": 4015,
+        "missing": 1,
+        "n": 4014,
+        "symbol": "sz.300029"
+      },
+      {
+        "expected": 2145,
+        "missing": 1,
+        "n": 2144,
+        "symbol": "sz.002898"
+      },
+      {
+        "expected": 2406,
+        "missing": 1,
+        "n": 2405,
+        "symbol": "sz.002808"
+      },
+      {
+        "expected": 2496,
+        "missing": 1,
+        "n": 2495,
+        "symbol": "sz.002750"
+      },
+      {
+        "expected": 3757,
+        "missing": 1,
+        "n": 3756,
+        "symbol": "sz.002336"
+      },
+      {
+        "expected": 4345,
+        "missing": 1,
+        "n": 4344,
+        "symbol": "sz.002231"
+      },
+      {
+        "expected": 7752,
+        "missing": 1,
+        "n": 7751,
+        "symbol": "sz.001914"
+      },
+      {
+        "expected": 8110,
+        "missing": 1,
+        "n": 8109,
+        "symbol": "sz.001872"
+      },
+      {
+        "expected": 6650,
+        "missing": 1,
+        "n": 6649,
+        "symbol": "sz.000851"
+      },
+      {
+        "expected": 7153,
+        "missing": 1,
+        "n": 7152,
+        "symbol": "sz.000638"
+      },
+      {
+        "expected": 7005,
+        "missing": 1,
+        "n": 7004,
+        "symbol": "sz.000627"
+      }
+    ],
+    "n_bars_after_delist": 0,
+    "n_bars_before_listing": 0,
+    "n_done_checkpoint": 5549,
+    "n_duplicate_dates": 0,
+    "n_empty": 0,
     "n_empty_checkpoint": 0,
     "n_failed": 0,
-    "n_symbols_on_disk": 95
+    "n_future_dates": 0,
+    "n_high_lt_low": 0,
+    "n_negative_amount": 0,
+    "n_negative_or_zero_price": 0,
+    "n_negative_volume": 0,
+    "n_ohlc_inconsistent": 1,
+    "n_rows": 18418047,
+    "n_suspended": 586691,
+    "n_symbols": 5549,
+    "n_symbols_on_disk": 5549,
+    "n_zero_volume_not_suspended": 7927,
+    "shortest": [
+      {
+        "n": 4,
+        "symbol": "sh.688835"
+      },
+      {
+        "n": 7,
+        "symbol": "sz.301655"
+      },
+      {
+        "n": 8,
+        "symbol": "sh.688836"
+      },
+      {
+        "n": 9,
+        "symbol": "sh.688826"
+      },
+      {
+        "n": 14,
+        "symbol": "sh.688828"
+      },
+      {
+        "n": 14,
+        "symbol": "sz.301717"
+      },
+      {
+        "n": 16,
+        "symbol": "sz.301707"
+      },
+      {
+        "n": 17,
+        "symbol": "sh.603468"
+      },
+      {
+        "n": 19,
+        "symbol": "sz.001232"
+      },
+      {
+        "n": 22,
+        "symbol": "sz.301677"
+      },
+      {
+        "n": 25,
+        "symbol": "sh.688825"
+      },
+      {
+        "n": 29,
+        "symbol": "sh.688806"
+      },
+      {
+        "n": 36,
+        "symbol": "sz.301583"
+      },
+      {
+        "n": 42,
+        "symbol": "sz.001248"
+      },
+      {
+        "n": 46,
+        "symbol": "sz.001399"
+      },
+      {
+        "n": 48,
+        "symbol": "sh.688797"
+      },
+      {
+        "n": 58,
+        "symbol": "sz.301669"
+      },
+      {
+        "n": 67,
+        "symbol": "sh.688635"
+      },
+      {
+        "n": 70,
+        "symbol": "sh.603435"
+      },
+      {
+        "n": 70,
+        "symbol": "sz.001237"
+      }
+    ]
   },
-  "rows": 0,
+  "rows": 18418047,
   "source": "BAOSTOCK",
   "symbols_master": 5549,
-  "symbols_on_disk": 95
+  "symbols_on_disk": 5549
 }

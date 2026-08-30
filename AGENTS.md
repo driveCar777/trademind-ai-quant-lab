@@ -204,7 +204,7 @@ POST /task → requests.post() → indicator-worker → RSI → 保存结果 →
 **V7 Information Fusion** ✅ STOP B+C。OI/Volume NO_CANDIDATE。DTE WEAK_EDGE。不要调 OI/volume/dte/斜率。  
 **V8 Information Fusion** ✅ STOP C。TOP5 全失败。期权已报价（OG.OPT/LO.OPT）。未下载。Level=0 Candidate=0。不要调 gap/steepening/OI/wow/yield。不要 $199/月。不要 tick。  
 V11：MT5 日线样本内外回测 + 风控证伪。`survived` 不是年化保证。
-**V12.2 panel completion IN PROGRESS。** 无采购。无 Alpha。无回测。单 downloader 收到 5549。`2015-04-30` 保持 INVALID。不要重开 MT5 已杀死家族。Final OOS DENIED。
+**V12.2 panel completion FROZEN。** `PRICE_ALPHA_READY`。财务/行业/事件仍 BLOCKED。无采购。不要自动进入 Alpha。`2015-04-30` 保持 INVALID。不要重开 MT5 已杀死家族。Final OOS DENIED。
 FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要回头调 XA / RT / XR / IT / TS / MS / RI / AMS / IV / POS / INV / RATES / CARRY / SUP / CM / UM / BREADTH / SIZE。不要无 Candidate 写策略。
 
 ---

@@ -1,6 +1,9 @@
 {
-  "content_hash": "85ac360c1bbd91e576e44330bde02118151597015a898c975ad21a2413963cdf",
+  "compiled_hash": "2a8fea1480c2437dba209b05a7823167ed145631bc9058501029c843e04bfbad",
+  "content_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
   "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
-  "n_files": 95,
-  "n_rows": 0
+  "manifest_hash": "bb98d37e411342f46d757577671ebae7972b8322f01aca17b827f439d73af4d4",
+  "n_files": 5549,
+  "n_rows": 18418047,
+  "raw_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80"
 }

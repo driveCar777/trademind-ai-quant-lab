@@ -809,6 +809,21 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V12.2 Panel Completion — 2026-08-30 FROZEN
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_v12_2.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| 全日线盘 | ✅ **5549 / 5549** raw；18,418,047 行 |
+| PRICE_ALPHA | ✅ READY |
+| FINANCIAL / INDUSTRY / EVENT | BLOCKED |
+| 2015-04-30 | INVALID（PIT listing-window=2695） |
+| empty DATA_GAP | 0（`sz.000033` / `sz.000038` 现有 K 线） |
+| 花费 | $0 |
+
+不是交易许可。不要自动开始 A 股 Alpha。
+
 ## V12.2 Panel Completion — 2026-08-30 IN PROGRESS
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_v12_2.py --import-mode=importlib`

@@ -1,14 +1,20 @@
 # A-share panel quality V12.2
 
-- files: **95**
-- rows: **0**
-- empty: **0** None
-- duplicate dates: None
-- non-positive price: None
-- OHLC bad: None
-- before IPO: None
-- after delist: None
-- suspended bars: None
-- adjustment sample raw≠qfq: 16 / 30
+- files: **5549**
+- rows: **18418047**
+- empty: **0** []
+- duplicate dates: 0
+- non-positive price: 0
+- OHLC bad: 1
+- before IPO: 0
+- after delist: 0
+- suspended bars: 586691
+- future dates: 0
+- calendar: {'n_days_with_prices': 8714, 'mean_rows_per_day': 2113.6156759238006, 'median_rows_per_day': 1602, 'min_rows_per_day': 8, 'max_rows_per_day': 5211}
+- longest history: [{'symbol': 'sh.600654', 'n': 8714}, {'symbol': 'sh.600653', 'n': 8714}, {'symbol': 'sh.600651', 'n': 8714}, {'symbol': 'sh.600602', 'n': 8714}, {'symbol': 'sh.600601', 'n': 8714}, {'symbol': 'sz.000002', 'n': 8686}, {'symbol': 'sz.000004', 'n': 8663}, {'symbol': 'sz.000001', 'n': 8642}, {'symbol': 'sz.000009', 'n': 8584}, {'symbol': 'sh.600603', 'n': 8443}, {'symbol': 'sz.000012', 'n': 8412}, {'symbol': 'sz.000016', 'n': 8392}, {'symbol': 'sh.600606', 'n': 8392}, {'symbol': 'sh.600605', 'n': 8392}, {'symbol': 'sh.600604', 'n': 8392}, {'symbol': 'sz.000011', 'n': 8391}, {'symbol': 'sz.000017', 'n': 8390}, {'symbol': 'sz.000007', 'n': 8381}, {'symbol': 'sz.000006', 'n': 8371}, {'symbol': 'sz.000020', 'n': 8370}]
+- shortest history: [{'symbol': 'sh.688835', 'n': 4}, {'symbol': 'sz.301655', 'n': 7}, {'symbol': 'sh.688836', 'n': 8}, {'symbol': 'sh.688826', 'n': 9}, {'symbol': 'sh.688828', 'n': 14}, {'symbol': 'sz.301717', 'n': 14}, {'symbol': 'sz.301707', 'n': 16}, {'symbol': 'sh.603468', 'n': 17}, {'symbol': 'sz.001232', 'n': 19}, {'symbol': 'sz.301677', 'n': 22}, {'symbol': 'sh.688825', 'n': 25}, {'symbol': 'sh.688806', 'n': 29}, {'symbol': 'sz.301583', 'n': 36}, {'symbol': 'sz.001248', 'n': 42}, {'symbol': 'sz.001399', 'n': 46}, {'symbol': 'sh.688797', 'n': 48}, {'symbol': 'sz.301669', 'n': 58}, {'symbol': 'sh.688635', 'n': 67}, {'symbol': 'sh.603435', 'n': 70}, {'symbol': 'sz.001237', 'n': 70}]
+- longest suspension: [{'symbol': 'sz.000805', 'streak': 1680}, {'symbol': 'sz.000622', 'streak': 1651}, {'symbol': 'sz.000693', 'streak': 1628}, {'symbol': 'sz.000156', 'streak': 1594}, {'symbol': 'sz.000672', 'streak': 1461}, {'symbol': 'sz.000688', 'streak': 1458}, {'symbol': 'sz.000403', 'streak': 1422}, {'symbol': 'sz.000757', 'streak': 1413}, {'symbol': 'sz.000787', 'streak': 1410}, {'symbol': 'sz.000670', 'streak': 1409}, {'symbol': 'sz.000038', 'streak': 1409}, {'symbol': 'sh.600705', 'streak': 1302}, {'symbol': 'sz.000620', 'streak': 1293}, {'symbol': 'sz.000863', 'streak': 1287}, {'symbol': 'sz.000638', 'streak': 1247}, {'symbol': 'sz.000498', 'streak': 1168}, {'symbol': 'sh.600145', 'streak': 1110}, {'symbol': 'sz.000557', 'streak': 1010}, {'symbol': 'sz.000029', 'streak': 1006}, {'symbol': 'sz.000681', 'streak': 958}]
+- most missing: [{'symbol': 'sh.600293', 'missing': 4290, 'n': 2000, 'expected': 6290}, {'symbol': 'sz.302132', 'missing': 1, 'n': 3885, 'expected': 3886}, {'symbol': 'sz.300630', 'missing': 1, 'n': 1978, 'expected': 1979}, {'symbol': 'sz.300391', 'missing': 1, 'n': 2840, 'expected': 2841}, {'symbol': 'sz.300379', 'missing': 1, 'n': 2914, 'expected': 2915}, {'symbol': 'sz.300344', 'missing': 1, 'n': 3331, 'expected': 3332}, {'symbol': 'sz.300280', 'missing': 1, 'n': 3345, 'expected': 3346}, {'symbol': 'sz.300208', 'missing': 1, 'n': 3459, 'expected': 3460}, {'symbol': 'sz.300108', 'missing': 1, 'n': 3581, 'expected': 3582}, {'symbol': 'sz.300029', 'missing': 1, 'n': 4014, 'expected': 4015}, {'symbol': 'sz.002898', 'missing': 1, 'n': 2144, 'expected': 2145}, {'symbol': 'sz.002808', 'missing': 1, 'n': 2405, 'expected': 2406}, {'symbol': 'sz.002750', 'missing': 1, 'n': 2495, 'expected': 2496}, {'symbol': 'sz.002336', 'missing': 1, 'n': 3756, 'expected': 3757}, {'symbol': 'sz.002231', 'missing': 1, 'n': 4344, 'expected': 4345}, {'symbol': 'sz.001914', 'missing': 1, 'n': 7751, 'expected': 7752}, {'symbol': 'sz.001872', 'missing': 1, 'n': 8109, 'expected': 8110}, {'symbol': 'sz.000851', 'missing': 1, 'n': 6649, 'expected': 6650}, {'symbol': 'sz.000638', 'missing': 1, 'n': 7152, 'expected': 7153}, {'symbol': 'sz.000627', 'missing': 1, 'n': 7004, 'expected': 7005}]
+- adjustment sample raw≠qfq: 1 / 30
 
 Suspension = NO_TRADE. No forward fill.
