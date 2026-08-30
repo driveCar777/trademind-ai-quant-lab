@@ -1,0 +1,74 @@
+{
+  "asof": "2024-01-01",
+  "future_mutation": {
+    "financial": true,
+    "price": true,
+    "universe_delist_after": true,
+    "universe_delist_before": true,
+    "universe_ipo": true
+  },
+  "knowledge_time": {
+    "2023_annual_hidden": true,
+    "asof": "2024-01-01",
+    "ok": true,
+    "visible_n": 1,
+    "visible_periods": [
+      "2022-12-31"
+    ]
+  },
+  "status": "CONDITIONAL",
+  "tests": {
+    "asof_membership_ok": true,
+    "delist_dropped_after": true,
+    "delist_kept_before": true,
+    "future_financial_mutation_ok": true,
+    "future_ipo_example": "sh.600930",
+    "future_ipo_excluded": true,
+    "future_price_mutation_ok": true,
+    "knowledge_2024_01_01": {
+      "2023_annual_hidden": true,
+      "asof": "2024-01-01",
+      "ok": true,
+      "visible_n": 1,
+      "visible_periods": [
+        "2022-12-31"
+      ]
+    },
+    "live_asof": {
+      "2016-12-30": {
+        "error": "0",
+        "has_000001": true,
+        "has_000003": false,
+        "has_600005": true,
+        "n_all": 3611,
+        "n_equity_guess": 3037
+      },
+      "2017-03-01": {
+        "error": "0",
+        "has_000001": true,
+        "has_000003": false,
+        "has_600005": false,
+        "n_all": 3697,
+        "n_equity_guess": 3123
+      },
+      "2026-08-28": {
+        "error": "0",
+        "has_000001": true,
+        "has_000003": false,
+        "has_600005": false,
+        "n_all": 7366,
+        "n_equity_guess": 5212
+      },
+      "hs300_pit": {
+        "error_old": "0",
+        "n_2018": 300,
+        "n_now": 300,
+        "now_update": "2026-08-24",
+        "old_update": "2018-06-25",
+        "symmetric_diff": 258
+      }
+    },
+    "n_future_ipo_2024plus": 216,
+    "n_listed_on_2024_01_01": 5097
+  }
+}
