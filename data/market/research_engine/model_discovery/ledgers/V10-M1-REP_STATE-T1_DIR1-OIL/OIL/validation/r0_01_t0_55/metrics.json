@@ -1,0 +1,75 @@
+{
+  "average_holding": 0.967741935483871,
+  "bars_per_year": 252,
+  "cagr": -0.008890794262324642,
+  "calmar": -0.0777753966492008,
+  "commission": 330.3030825464399,
+  "cost_contribution": 1096.876644103368,
+  "end_equity": 9186.264679203825,
+  "gross_return": 0.02831413233071922,
+  "max_dd_bars": 715,
+  "max_drawdown": -0.11431371160247243,
+  "max_trade_share": 0.04610890846735123,
+  "n_bars": 2396,
+  "net_return": -0.0813735320796175,
+  "profit_factor": 0.7281882336155601,
+  "role": "validation",
+  "sharpe": -0.49321317418531896,
+  "slippage": 648.1931802664361,
+  "sortino": -0.24853406024790095,
+  "spread_cost": 118.38038129049202,
+  "start_equity": 10000.0,
+  "timeframe": "D1",
+  "total_return": -0.0813735320796175,
+  "trade_count": 124,
+  "turnover": 33.06468221357768,
+  "win_count": 51,
+  "win_rate": 0.4112903225806452,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": 0.0,
+      "year": "2018"
+    },
+    {
+      "n_bars": 309,
+      "return": 0.0,
+      "year": "2019"
+    },
+    {
+      "n_bars": 312,
+      "return": 0.0,
+      "year": "2020"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0,
+      "year": "2021"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0,
+      "year": "2022"
+    },
+    {
+      "n_bars": 309,
+      "return": 0.0,
+      "year": "2023"
+    },
+    {
+      "n_bars": 314,
+      "return": -0.0647048514501063,
+      "year": "2024"
+    },
+    {
+      "n_bars": 313,
+      "return": -0.01672216838571916,
+      "year": "2025"
+    },
+    {
+      "n_bars": 206,
+      "return": 0.0,
+      "year": "2026"
+    }
+  ]
+}
