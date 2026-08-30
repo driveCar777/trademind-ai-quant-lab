@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-08-30 — V8.2 Options Data Due Diligence (QUOTE ONLY)
+
+- Catalog / schema / symbology / `get_cost` only. No download. No purchase. $0 new credits.
+- `GC.OPT`/`CL.OPT` unresolved. Live parents: `OG.OPT`, `LO.OPT`, plus weekly/special roots. GLBX has no venue IV (`stat_type` 14/15 absent).
+- CASE A invoices exist (1Y OG+LO MVD-A $26.99; 1Y LO MVD-B $24.09; 2Y single MVD-A ~$23–25). Occupancy of ATM/OTM/front/second still UNKNOWN. MVD-C vetoed.
+- Artifacts: `docs/research_engine/OPTIONS_*_V8_2.md` and `data/market/research_engine/options/OPTION_*_V8_2.json`.
+
 ## 2026-08-30 — V8 Information Fusion STOP C
 
 - Existing fusion TOP5 executed one family at a time. Four Xavier each. Candidate=0. FDR 0/15.

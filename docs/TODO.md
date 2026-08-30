@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V8 **STOP C**。已有融合 TOP5 用尽。期权已报价。未下载。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0 新购买；OG.OPT/LO.OPT；AUTO_PURCHASE_MAX $30 不够 MVD）
-> **阶段终点:** HUMAN 决定是否买期权 MVD。禁止 $199/月。禁止 tick。禁止调参救已杀家族。禁止 RSI。
+> **当前活跃模块:** V8.2 Options Due Diligence **STOP HUMAN_PURCHASE_REQUIRED**。QUOTE ONLY。未下载。未购买。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0 新购买；CASE A 发票存在但 occupancy 未证；不要自动买）
+> **阶段终点:** HUMAN 从 `OPTION_QUOTE_V8_2.json` 挑一行 MVD-A/B。禁止 $199/月。禁止 bbo-1s/MBO/MBP。禁止调参救已杀家族。
 
 ---
 
@@ -51,6 +51,16 @@
 | MISSION V5.1 | 841 inventory + BREADTH + SIZE | ✅ EXTERNAL_DATA_GATE | 2026-08-29 |
 | MISSION V6.0 | Databento catalog + pack E + TERM_STRUCTURE ready | ✅ NO_CANDIDATE | 2026-08-29 |
 | MISSION V7.0 | Information fusion / max existing data | ✅ STOP B+C | 2026-08-30 |
+| MISSION V8.0 | Existing fusion TOP5 + options quote | ✅ STOP C | 2026-08-30 |
+| MISSION V8.2 | Options catalog / MVD / quote-only DD | ✅ QUOTE ONLY | 2026-08-30 |
+
+## V8.2 Options Due Diligence — QUOTE ONLY 2026-08-30
+
+- 报告：`docs/research_engine/OPTIONS_DATA_DUE_DILIGENCE_V8_2.md`
+- MVD：`docs/research_engine/OPTIONS_MVD_V8_2.md`
+- 决策：`docs/research_engine/OPTIONS_PURCHASE_DECISION_V8_2.md`（**不买**；CASE A 发票存在）
+- 机器：`data/market/research_engine/options/OPTION_*_V8_2.json`
+- 禁止：download / purchase / `$199` / `bbo-1s` / 再买 Pack E / 打开正式 options family
 
 ## V6 External Exchange — CREDENTIAL_REQUIRED 2026-08-29
 

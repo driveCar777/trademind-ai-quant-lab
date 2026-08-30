@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-30 (V8 STOP C：已有融合 TOP5 用尽；期权 OG.OPT/LO.OPT 已报价未买；Level=0；Candidate=0；$0 新购买)  
+> **更新时间:** 2026-08-30 (V8.2 Options DD：QUOTE ONLY；OG.OPT/LO.OPT 已核；IV=DERIVED；未下载；Level=0；Candidate=0；$0 新购买)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -343,7 +343,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **MT5 Max Mission V4.0 FACT 2026-08-29 COMPLETE_NO_CANDIDATE：** 2000 bars 不是上限。`maxbars=100000`。新 ID 冻了 SILVER/DXY/额外 FX/指数/H1/M15（约 59 个 `MT5_MAX_V4` 集）。未覆盖 `20260825`。CROSS_METAL_V1 hash `ef6f3633…780df8` 与 USD_METAL_V1 hash `a39952f9…474f0b` 四 Xavier **NO_CANDIDATE**，01=04。VIX 1.45y 未冻。不要再调 gold-silver / DXY / EIA z_cut。见 `MT5_MAX_MISSION_V4_REPORT.md`。
 - **Market Universe V5.1 FACT 2026-08-29 EXTERNAL_DATA_GATE：** 841/841 全是 CFD。期权 0。真期货 0。新冻农业/US2000 `20260829-000001`。BREADTH_V1 **WEAK_EDGE**；SIZE_SPREAD_V1 **NO_CANDIDATE**；四 Xavier 01=04。不要调参。不要再做股票 CFD breadth 克隆。曲线/期权面才是下一信息。不覆盖 `20260825`/`20260828`。
 - **Market Universe V5.0 FACT 2026-08-29：** START pointer `d29d3b7388b7d09f4951f8901d7745371be30ab6`。Top 5（XS/CS/ER/VT/IA）已跑完，全部 NO_CANDIDATE。不改 V4 合同。
-- **V8 Information Fusion FACT 2026-08-30 STOP C：** 已有 110 集融合 TOP5 已跑（FUT_CFD_LEAD / CURVE_OI_JOINT / OI_COT_BUILD / CURVE_EIA_REPRICE / CURVE_REALYIELD）。四 Xavier，01=04。Candidate=0。FDR 0/15。期权 `OG.OPT`/`LO.OPT` 已 `get_cost`，未下载。有用 MVD ≈ $32–$54 > $30。Credits 仍 ≈ $93。不要调 gap/steepening/OI/wow/yield。见 `V8_DECISION.md`。
+- **V8 Information Fusion FACT 2026-08-30 STOP C：** 已有 110 集融合 TOP5 已跑（FUT_CFD_LEAD / CURVE_OI_JOINT / OI_COT_BUILD / CURVE_EIA_REPRICE / CURVE_REALYIELD）。四 Xavier，01=04。Candidate=0。FDR 0/15。不要调 gap/steepening/OI/wow/yield。见 `V8_DECISION.md`。
+- **V8.2 Options Due Diligence FACT 2026-08-30 QUOTE ONLY：** `GC.OPT`/`CL.OPT` 不存在。真实父符号是 `OG.OPT`（COMEX 黄金期货期权）和 `LO.OPT`（NYMEX 原油期货期权）。周度根（OG1–4、LO1–4、G*M/T/W/R、ML/NL/WL/XL、MCO）另算，不是完整链。`definition` 有 strike/expiry/C/P/underlying。`ohlcv-1d` 有电子价+量，无官方结算、无 OI、无买卖价。`statistics` 有结算/OI/成交量；GLBX **没有** `stat_type` 14/15（venue IV/delta）。IV 若算只能 **DERIVED Black-76**。1Y OG+LO MVD-A **$26.99** 是 CASE A 发票，不证明 occupancy。3Y 单品种 MVD-A 仍 $32–$34。MVD-C/`bbo-1s` OG 1Y ≈ $62,745。未下载。Credits 仍 ≈ $93。见 `OPTIONS_PURCHASE_DECISION_V8_2.md`。
 
 ---
 
@@ -431,6 +432,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P55 | V6 External Exchange Data | DONE NO_CANDIDATE（Pack E 已拉；TERM_STRUCTURE 三条 FALSIFIED；不要调斜率） |
 | P56 | V7 Information Fusion | DONE STOP B+C（OI/Volume NO_CANDIDATE；DTE WEAK_EDGE；不要调；下一美元先报价期权） |
 | P57 | V8 Information Fusion | DONE STOP C（TOP5 用尽；OG.OPT/LO.OPT 已报价；未下载；Level 0；Candidate=0） |
+| P58 | V8.2 Options Data Due Diligence | DONE QUOTE ONLY（catalog/MVD/quote；CASE A 存在但不买；Level 0；Candidate=0） |
 
 ---
 

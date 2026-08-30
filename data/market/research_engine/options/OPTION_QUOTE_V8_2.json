@@ -1,0 +1,2594 @@
+{
+  "catalog_id": "OPTION_QUOTE_V8_2",
+  "generated_at_utc": "2026-08-30T03:17:37Z",
+  "mode": "QUOTE_ONLY",
+  "downloaded": false,
+  "purchased": false,
+  "auto_purchase_allowed": false,
+  "auto_purchase_max_usd": 30.0,
+  "credit_floor_usd": 60.0,
+  "credit_remaining_usd_estimate": 93.18,
+  "dataset": "GLBX.MDP3",
+  "end_used": "2026-08-29",
+  "end_note": "today 2026-08-30 is live-cut; get_cost requires end before ~2026-08-29T18:59Z",
+  "windows": {
+    "1Y": [
+      "2025-08-29",
+      "2026-08-29"
+    ],
+    "2Y": [
+      "2024-08-29",
+      "2026-08-29"
+    ],
+    "3Y": [
+      "2023-08-30",
+      "2026-08-29"
+    ]
+  },
+  "quotes": [
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 14.994811,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 11.629622075707,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.365188837051,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-B",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 55.789747,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 11.629622075707,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.365188837051,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 40.794936344028,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-C",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 62759.69475,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 11.629622075707,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.365188837051,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 62744.69993904233,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A-STAT",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 52.424558,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 11.629622075707,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 40.794936344028,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "PRICE-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 3.365189,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.365188837051,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "DEF-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 11.629622,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 11.629622075707,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "STAT-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 40.794936,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 40.794936344028,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 11.991718,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.19608065486,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.795637711883,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-B",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 24.088709,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.19608065486,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.795637711883,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 12.096990644932,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-C",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 35213.574696,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.19608065486,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.795637711883,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 35201.582977473736,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A-STAT",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 20.293071,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.19608065486,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 12.096990644932,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "PRICE-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 3.795638,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.795637711883,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "DEF-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 8.196081,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.19608065486,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "STAT-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 12.096991,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 12.096990644932,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 26.986529,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 19.825702730566,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.160826548934,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-B",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 79.878456,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 19.825702730566,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.160826548934,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 52.891926988959,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-C",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 97973.269446,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 19.825702730566,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.160826548934,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 97946.28291651607,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A-STAT",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 72.71763,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 19.825702730566,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 52.891926988959,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "PRICE-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 7.160827,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.160826548934,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "DEF-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 19.825703,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 19.825702730566,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "STAT-ONLY",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 52.891927,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 52.891926988959,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+weeklies",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,OG1.OPT,OG2.OPT,OG3.OPT,OG4.OPT,OG5.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 16.933721,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 12.438211403787,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 4.495509788394,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO+weeklies",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT,LO1.OPT,LO2.OPT,LO3.OPT,LO4.OPT,LO5.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 13.398051,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.768171939999,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 4.629879519343,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 24.886548,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 18.292403243482,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 6.594144999981,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-B",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 83.612058,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 18.292403243482,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 6.594144999981,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 58.72550971806,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-C",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 101492.584576,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 18.292403243482,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 6.594144999981,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 101467.6980279386,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A-STAT",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 77.017913,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 18.292403243482,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 58.72550971806,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "PRICE-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 6.594145,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 6.594144999981,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "DEF-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 18.292403,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 18.292403243482,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "STAT-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 58.72551,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 58.72550971806,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 23.126337,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 15.95639353618,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.169943079352,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-B",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 43.605794,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 15.95639353618,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.169943079352,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 20.479457452893,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-C",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 55641.887951,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 15.95639353618,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.169943079352,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 55618.76161471009,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A-STAT",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 36.435851,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 15.95639353618,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 20.479457452893,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "PRICE-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 7.169943,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.169943079352,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "DEF-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 15.956394,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 15.95639353618,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "STAT-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 20.479457,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 20.479457452893,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 48.012885,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 34.248796779662,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 13.764088079333,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-B",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 127.217852,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 34.248796779662,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 13.764088079333,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 79.204967170954,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-C",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 157134.472528,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 34.248796779662,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 13.764088079333,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 157086.4596426487,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A-STAT",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 113.453764,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 34.248796779662,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 79.204967170954,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "PRICE-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 13.764088,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 13.764088079333,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "DEF-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 34.248797,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 34.248796779662,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "STAT-ONLY",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 79.204967,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 79.204967170954,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 32.413535,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 22.880409292877,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 9.5331261307,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-B",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 103.181225,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 22.880409292877,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 9.5331261307,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 70.767689794302,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-C",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 129746.787819,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 22.880409292877,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 9.5331261307,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 129714.37428340316,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A-STAT",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 93.648099,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 22.880409292877,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 70.767689794302,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "PRICE-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 9.533126,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 9.5331261307,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "DEF-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 22.880409,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 22.880409292877,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "STAT-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 70.76769,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 70.767689794302,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 34.224269,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 23.530836541206,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 10.693432539701,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-B",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 64.968166,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 23.530836541206,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 10.693432539701,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 30.743896812201,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-C",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 81359.323558,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 23.530836541206,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 10.693432539701,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 81325.09928941727,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A-STAT",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 54.274733,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 23.530836541206,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 30.743896812201,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "PRICE-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 10.693433,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 10.693432539701,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "DEF-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 23.530837,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 23.530836541206,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "STAT-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 30.743897,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 30.743896812201,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 66.637805,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 46.411245834082,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 20.226558670402,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-B",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 168.149391,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 46.411245834082,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 20.226558670402,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 101.511586606503,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-C",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "bbo-1s"
+      ],
+      "ok": true,
+      "total_usd": 211106.111377,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 46.411245834082,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 20.226558670402,
+          "error": null
+        },
+        {
+          "schema": "bbo-1s",
+          "ok": true,
+          "cost_usd": 211039.47357282043,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A-STAT",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 147.922832,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 46.411245834082,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 101.511586606503,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "PRICE-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 20.226559,
+      "parts": [
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 20.226558670402,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "DEF-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition"
+      ],
+      "ok": true,
+      "total_usd": 46.411246,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 46.411245834082,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "STAT-ONLY",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 101.511587,
+      "parts": [
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 101.511586606503,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "availability_quotes": [
+    {
+      "horizon": "1Y",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbol_set": "OG",
+      "symbols": "OG.OPT",
+      "mvd": "AVAIL-bbo-1s",
+      "schemas": [
+        "bbo-1s"
+      ],
+      "parts": [
+        {
+          "schema": "bbo-1s",
+          "symbols": "OG.OPT",
+          "start": "2025-08-29",
+          "end": "2026-08-29",
+          "ok": true,
+          "cost_usd": 62744.69993904233
+        }
+      ],
+      "total_usd": 62744.69993904233,
+      "ok": true
+    },
+    {
+      "horizon": "1Y",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbol_set": "OG",
+      "symbols": "OG.OPT",
+      "mvd": "AVAIL-bbo-1m",
+      "schemas": [
+        "bbo-1m"
+      ],
+      "parts": [
+        {
+          "schema": "bbo-1m",
+          "symbols": "OG.OPT",
+          "start": "2025-08-29",
+          "end": "2026-08-29",
+          "ok": true,
+          "cost_usd": 3494.116797745228
+        }
+      ],
+      "total_usd": 3494.116797745228,
+      "ok": true
+    },
+    {
+      "horizon": "1Y",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbol_set": "OG",
+      "symbols": "OG.OPT",
+      "mvd": "AVAIL-trades",
+      "schemas": [
+        "trades"
+      ],
+      "parts": [
+        {
+          "schema": "trades",
+          "symbols": "OG.OPT",
+          "start": "2025-08-29",
+          "end": "2026-08-29",
+          "ok": true,
+          "cost_usd": 1.789738476276
+        }
+      ],
+      "total_usd": 1.789738476276,
+      "ok": true
+    },
+    {
+      "horizon": "1Y",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbol_set": "OG",
+      "symbols": "OG.OPT",
+      "mvd": "AVAIL-tbbo",
+      "schemas": [
+        "tbbo"
+      ],
+      "parts": [
+        {
+          "schema": "tbbo",
+          "symbols": "OG.OPT",
+          "start": "2025-08-29",
+          "end": "2026-08-29",
+          "ok": true,
+          "cost_usd": 2.982897460461
+        }
+      ],
+      "total_usd": 2.982897460461,
+      "ok": true
+    },
+    {
+      "horizon": "1Y",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbol_set": "OG",
+      "symbols": "OG.OPT",
+      "mvd": "AVAIL-mbp-1",
+      "schemas": [
+        "mbp-1"
+      ],
+      "parts": [
+        {
+          "schema": "mbp-1",
+          "symbols": "OG.OPT",
+          "start": "2025-08-29",
+          "end": "2026-08-29",
+          "ok": true,
+          "cost_usd": 15241.793171480298
+        }
+      ],
+      "total_usd": 15241.793171480298,
+      "ok": true
+    },
+    {
+      "horizon": "1Y",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbol_set": "OG",
+      "symbols": "OG.OPT",
+      "mvd": "AVAIL-mbo",
+      "schemas": [
+        "mbo"
+      ],
+      "parts": [
+        {
+          "schema": "mbo",
+          "symbols": "OG.OPT",
+          "start": "2025-08-29",
+          "end": "2026-08-29",
+          "ok": true,
+          "cost_usd": 30597.630409298836
+        }
+      ],
+      "total_usd": 30597.630409298836,
+      "ok": true
+    }
+  ],
+  "extra_quotes": [
+    {
+      "id": "LO_1Y_TRADES",
+      "symbols": "LO.OPT",
+      "schema": "trades",
+      "ok": true,
+      "cost_usd": 3.99785810709
+    },
+    {
+      "id": "OGLO_1Y_TRADES",
+      "symbols": "OG.OPT,LO.OPT",
+      "schema": "trades",
+      "ok": true,
+      "cost_usd": 5.787596583366
+    },
+    {
+      "id": "LO_1Y_TBBO",
+      "symbols": "LO.OPT",
+      "schema": "tbbo",
+      "ok": true,
+      "cost_usd": 6.66309684515
+    }
+  ],
+  "case_a_mvd_ab": [
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 14.994811,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 11.629622075707,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.365188837051,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 11.991718,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.19608065486,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.795637711883,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-B",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 24.088709,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.19608065486,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.795637711883,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 12.096990644932,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 26.986529,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 19.825702730566,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.160826548934,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+weeklies",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,OG1.OPT,OG2.OPT,OG3.OPT,OG4.OPT,OG5.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 16.933721,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 12.438211403787,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 4.495509788394,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "1Y",
+      "symbol_set": "LO+weeklies",
+      "mvd": "MVD-A",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT,LO1.OPT,LO2.OPT,LO3.OPT,LO4.OPT,LO5.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 13.398051,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 8.768171939999,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 4.629879519343,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 24.886548,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 18.292403243482,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 6.594144999981,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 23.126337,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 15.95639353618,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.169943079352,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "case_b_mvd_ab": [
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-B",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 55.789747,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 11.629622075707,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 3.365188837051,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 40.794936344028,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-B",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 43.605794,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 15.95639353618,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.169943079352,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 20.479457452893,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 48.012885,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 34.248796779662,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 13.764088079333,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-A",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 32.413535,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 22.880409292877,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 9.5331261307,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-A",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 34.224269,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 23.530836541206,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 10.693432539701,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "case_c_mvd_ab": [
+    {
+      "horizon": "1Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-B",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 79.878456,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 19.825702730566,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 7.160826548934,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 52.891926988959,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-B",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 83.612058,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 18.292403243482,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 6.594144999981,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 58.72550971806,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "2Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-B",
+      "start": "2024-08-29",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 127.217852,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 34.248796779662,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 13.764088079333,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 79.204967170954,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG",
+      "mvd": "MVD-B",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 103.181225,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 22.880409292877,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 9.5331261307,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 70.767689794302,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "LO",
+      "mvd": "MVD-B",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 64.968166,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 23.530836541206,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 10.693432539701,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 30.743896812201,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-A",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d"
+      ],
+      "ok": true,
+      "total_usd": 66.637805,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 46.411245834082,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 20.226558670402,
+          "error": null
+        }
+      ]
+    },
+    {
+      "horizon": "3Y",
+      "symbol_set": "OG+LO",
+      "mvd": "MVD-B",
+      "start": "2023-08-30",
+      "end": "2026-08-29",
+      "symbols": "OG.OPT,LO.OPT",
+      "schemas": [
+        "definition",
+        "ohlcv-1d",
+        "statistics"
+      ],
+      "ok": true,
+      "total_usd": 168.149391,
+      "parts": [
+        {
+          "schema": "definition",
+          "ok": true,
+          "cost_usd": 46.411245834082,
+          "error": null
+        },
+        {
+          "schema": "ohlcv-1d",
+          "ok": true,
+          "cost_usd": 20.226558670402,
+          "error": null
+        },
+        {
+          "schema": "statistics",
+          "ok": true,
+          "cost_usd": 101.511586606503,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "v8_revalidated": {
+    "OG_3Y_MVD-A": 32.413535,
+    "LO_3Y_MVD-A": 34.224269,
+    "OG+LO_3Y_MVD-A": 66.637805,
+    "LO_3Y_DEF+STAT": 54.274733,
+    "OG_3Y_PRICE_ONLY": 9.533126
+  },
+  "do_not": [
+    "timeseries.get_range",
+    "batch.submit_job",
+    "mbo/mbp/bbo-1s",
+    "$199/month Standard",
+    "rebuy GC.FUT/CL.FUT",
+    "print API key"
+  ]
+}

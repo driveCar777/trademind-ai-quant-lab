@@ -1,0 +1,1174 @@
+{
+  "catalog_id": "OPTION_COVERAGE_MATRIX_V8_2",
+  "generated_at_utc": "2026-08-30T03:17:37Z",
+  "downloaded": false,
+  "purchased": false,
+  "dataset": "GLBX.MDP3",
+  "dataset_range": {
+    "start": "2010-06-06T00:00:00.000000000Z",
+    "end": "2026-08-29T19:08:46.477387000Z",
+    "schema": {
+      "mbo": {
+        "start": "2017-05-21T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "mbp-1": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "mbp-10": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "tbbo": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "trades": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "bbo-1s": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "bbo-1m": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "ohlcv-1s": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "ohlcv-1m": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "ohlcv-1h": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "ohlcv-1d": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "definition": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "statistics": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      },
+      "status": {
+        "start": "2010-06-06T00:00:00.000000000Z",
+        "end": "2026-08-29T19:08:46.477387000Z"
+      }
+    }
+  },
+  "schemas_available": [
+    "mbo",
+    "mbp-1",
+    "mbp-10",
+    "tbbo",
+    "trades",
+    "bbo-1s",
+    "bbo-1m",
+    "ohlcv-1s",
+    "ohlcv-1m",
+    "ohlcv-1h",
+    "ohlcv-1d",
+    "definition",
+    "statistics",
+    "status"
+  ],
+  "schema_fields": {
+    "definition": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "ts_recv",
+      "min_price_increment",
+      "display_factor",
+      "expiration",
+      "activation",
+      "high_limit_price",
+      "low_limit_price",
+      "max_price_variation",
+      "unit_of_measure_qty",
+      "min_price_increment_amount",
+      "price_ratio",
+      "strike_price",
+      "raw_instrument_id",
+      "leg_price",
+      "leg_delta",
+      "inst_attrib_value",
+      "underlying_id",
+      "market_depth_implied",
+      "market_depth",
+      "market_segment_id",
+      "max_trade_vol",
+      "min_lot_size",
+      "min_lot_size_block",
+      "min_lot_size_round_lot",
+      "min_trade_vol",
+      "contract_multiplier",
+      "decay_quantity",
+      "original_contract_size",
+      "leg_instrument_id",
+      "leg_ratio_price_numerator",
+      "leg_ratio_price_denominator",
+      "leg_ratio_qty_numerator",
+      "leg_ratio_qty_denominator",
+      "leg_underlying_id",
+      "appl_id",
+      "maturity_year",
+      "decay_start_date",
+      "channel_id",
+      "leg_count",
+      "leg_index",
+      "currency",
+      "settl_currency",
+      "secsubtype",
+      "raw_symbol",
+      "group",
+      "exchange",
+      "asset",
+      "cfi",
+      "security_type",
+      "unit_of_measure",
+      "underlying",
+      "strike_price_currency",
+      "leg_raw_symbol",
+      "instrument_class",
+      "match_algorithm",
+      "main_fraction",
+      "price_display_format",
+      "sub_fraction",
+      "underlying_product",
+      "security_update_action",
+      "maturity_month",
+      "maturity_day",
+      "maturity_week",
+      "user_defined_instrument",
+      "contract_multiplier_unit",
+      "flow_schedule_type",
+      "tick_rule",
+      "leg_instrument_class",
+      "leg_side",
+      "_reserved"
+    ],
+    "ohlcv-1d": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ],
+    "statistics": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "ts_recv",
+      "ts_ref",
+      "price",
+      "quantity",
+      "sequence",
+      "ts_in_delta",
+      "stat_type",
+      "channel_id",
+      "update_action",
+      "stat_flags",
+      "_reserved"
+    ],
+    "trades": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "price",
+      "size",
+      "action",
+      "side",
+      "flags",
+      "depth",
+      "ts_recv",
+      "ts_in_delta",
+      "sequence"
+    ],
+    "tbbo": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "price",
+      "size",
+      "action",
+      "side",
+      "flags",
+      "depth",
+      "ts_recv",
+      "ts_in_delta",
+      "sequence",
+      "bid_px_00",
+      "ask_px_00",
+      "bid_sz_00",
+      "ask_sz_00",
+      "bid_ct_00",
+      "ask_ct_00"
+    ],
+    "bbo-1s": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "price",
+      "size",
+      "_reserved1",
+      "side",
+      "flags",
+      "_reserved2",
+      "ts_recv",
+      "_reserved3",
+      "sequence",
+      "bid_px_00",
+      "ask_px_00",
+      "bid_sz_00",
+      "ask_sz_00",
+      "bid_ct_00",
+      "ask_ct_00"
+    ],
+    "bbo-1m": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "price",
+      "size",
+      "_reserved1",
+      "side",
+      "flags",
+      "_reserved2",
+      "ts_recv",
+      "_reserved3",
+      "sequence",
+      "bid_px_00",
+      "ask_px_00",
+      "bid_sz_00",
+      "ask_sz_00",
+      "bid_ct_00",
+      "ask_ct_00"
+    ],
+    "mbp-1": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "price",
+      "size",
+      "action",
+      "side",
+      "flags",
+      "depth",
+      "ts_recv",
+      "ts_in_delta",
+      "sequence",
+      "bid_px_00",
+      "ask_px_00",
+      "bid_sz_00",
+      "ask_sz_00",
+      "bid_ct_00",
+      "ask_ct_00"
+    ],
+    "mbp-10": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "price",
+      "size",
+      "action",
+      "side",
+      "flags",
+      "depth",
+      "ts_recv",
+      "ts_in_delta",
+      "sequence",
+      "bid_px_00",
+      "ask_px_00",
+      "bid_sz_00",
+      "ask_sz_00",
+      "bid_ct_00",
+      "ask_ct_00",
+      "bid_px_01",
+      "ask_px_01",
+      "bid_sz_01",
+      "ask_sz_01",
+      "bid_ct_01",
+      "ask_ct_01",
+      "bid_px_02",
+      "ask_px_02",
+      "bid_sz_02",
+      "ask_sz_02",
+      "bid_ct_02",
+      "ask_ct_02",
+      "bid_px_03",
+      "ask_px_03",
+      "bid_sz_03",
+      "ask_sz_03",
+      "bid_ct_03",
+      "ask_ct_03",
+      "bid_px_04",
+      "ask_px_04",
+      "bid_sz_04",
+      "ask_sz_04",
+      "bid_ct_04",
+      "ask_ct_04",
+      "bid_px_05",
+      "ask_px_05",
+      "bid_sz_05",
+      "ask_sz_05",
+      "bid_ct_05",
+      "ask_ct_05",
+      "bid_px_06",
+      "ask_px_06",
+      "bid_sz_06",
+      "ask_sz_06",
+      "bid_ct_06",
+      "ask_ct_06",
+      "bid_px_07",
+      "ask_px_07",
+      "bid_sz_07",
+      "ask_sz_07",
+      "bid_ct_07",
+      "ask_ct_07",
+      "bid_px_08",
+      "ask_px_08",
+      "bid_sz_08",
+      "ask_sz_08",
+      "bid_ct_08",
+      "ask_ct_08",
+      "bid_px_09",
+      "ask_px_09",
+      "bid_sz_09",
+      "ask_sz_09",
+      "bid_ct_09",
+      "ask_ct_09"
+    ],
+    "mbo": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "order_id",
+      "price",
+      "size",
+      "flags",
+      "channel_id",
+      "action",
+      "side",
+      "ts_recv",
+      "ts_in_delta",
+      "sequence"
+    ],
+    "status": [
+      "length",
+      "rtype",
+      "publisher_id",
+      "instrument_id",
+      "ts_event",
+      "ts_recv",
+      "action",
+      "reason",
+      "trading_event",
+      "is_trading",
+      "is_quoting",
+      "is_short_sell_restricted",
+      "_reserved"
+    ]
+  },
+  "unit_prices_usd_per_gb": [
+    {
+      "mode": "historical",
+      "unit_prices": {
+        "mbo": 1.8,
+        "mbp-1": 1.8,
+        "mbp-10": 0.5,
+        "tbbo": 28.0,
+        "trades": 28.0,
+        "bbo-1s": 18.0,
+        "bbo-1m": 18.0,
+        "ohlcv-1s": 70.0,
+        "ohlcv-1m": 70.0,
+        "ohlcv-1h": 190.0,
+        "ohlcv-1d": 190.0,
+        "definition": 1.7,
+        "statistics": 1.0,
+        "status": 4.0
+      }
+    },
+    {
+      "mode": "historical-streaming",
+      "unit_prices": {
+        "mbo": 1.8,
+        "mbp-1": 1.8,
+        "mbp-10": 0.5,
+        "tbbo": 28.0,
+        "trades": 28.0,
+        "bbo-1s": 18.0,
+        "bbo-1m": 18.0,
+        "ohlcv-1s": 70.0,
+        "ohlcv-1m": 70.0,
+        "ohlcv-1h": 190.0,
+        "ohlcv-1d": 190.0,
+        "definition": 1.7,
+        "statistics": 1.0,
+        "status": 4.0
+      }
+    },
+    {
+      "mode": "live",
+      "unit_prices": {
+        "mbo": 2.16,
+        "mbp-1": 2.16,
+        "mbp-10": 0.6,
+        "tbbo": 33.6,
+        "trades": 33.6,
+        "bbo-1s": 21.6,
+        "bbo-1m": 21.6,
+        "ohlcv-1s": 84.0,
+        "ohlcv-1m": 84.0,
+        "ohlcv-1h": 228.0,
+        "ohlcv-1d": 228.0,
+        "definition": 2.04,
+        "statistics": 1.2,
+        "status": 4.0
+      }
+    }
+  ],
+  "official_docs": {
+    "definition_has": [
+      "raw_symbol",
+      "instrument_id",
+      "instrument_class",
+      "strike_price",
+      "expiration",
+      "activation",
+      "underlying",
+      "underlying_id",
+      "security_type",
+      "asset",
+      "ts_event"
+    ],
+    "instrument_class": {
+      "C": "call",
+      "P": "put",
+      "T": "option_spread",
+      "F": "future"
+    },
+    "security_type_oof": "option on future",
+    "ohlcv_1d": {
+      "fields": [
+        "ts_event",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "is_official_settlement": false,
+      "has_oi": false,
+      "has_bid_ask": false,
+      "empty_if_no_trade": true
+    },
+    "statistics_glbx": {
+      "has_settlement_stat_type_3": true,
+      "has_cleared_volume_stat_type_6": true,
+      "has_open_interest_stat_type_9": true,
+      "has_session_high_bid_stat_type_8": true,
+      "has_session_low_offer_stat_type_7": true,
+      "has_implied_vol_stat_type_14": false,
+      "has_delta_stat_type_15": false,
+      "source": "Databento types-of-statistics-by-dataset GLBX.MDP3"
+    }
+  },
+  "roots": [
+    {
+      "symbol": "GC.OPT",
+      "underlying": "GC",
+      "exists": false,
+      "note": "HTTP 422 could not resolve. Not a Databento parent."
+    },
+    {
+      "symbol": "CL.OPT",
+      "underlying": "CL",
+      "exists": false,
+      "note": "HTTP 422 could not resolve. Not a Databento parent."
+    },
+    {
+      "symbol": "OG.OPT",
+      "underlying": "GC futures (COMEX gold options)",
+      "product": "OG",
+      "exists": true,
+      "expiry_range": "multiple monthly expiries via parent expansion; exact min/max UNKNOWN until definition bytes",
+      "strike_range": "parent expands all listed strikes; exact min/max UNKNOWN until definition bytes",
+      "call_put": "YES in definition.instrument_class C/P; raw sample OGZ6 C5250 / OGZ6 P5250 resolved",
+      "history": "definition/ohlcv-1d/statistics from 2010-06-06 on dataset; product listing may be shorter",
+      "schema": [
+        "definition",
+        "ohlcv-1d",
+        "statistics",
+        "trades",
+        "tbbo",
+        "bbo-1s",
+        "mbp-1",
+        "mbo"
+      ],
+      "volume_availability": "ohlcv-1d.volume (electronic trades only); statistics stat_type=6 cleared volume",
+      "oi_availability": "statistics stat_type=9 only; not in ohlcv-1d",
+      "settlement_availability": "statistics stat_type=3 only; ohlcv close is NOT official settlement",
+      "quote_availability": "bbo-1s/bbo-1m/tbbo/mbp available; first-phase forbidden by cost",
+      "weekly": false,
+      "includes_user_defined_spreads": true
+    },
+    {
+      "symbol": "LO.OPT",
+      "underlying": "CL futures (NYMEX WTI options)",
+      "product": "LO",
+      "exists": true,
+      "expiry_range": "multiple monthly expiries via parent expansion; exact min/max UNKNOWN until definition bytes",
+      "strike_range": "parent expands all listed strikes; exact min/max UNKNOWN until definition bytes",
+      "call_put": "YES in definition.instrument_class C/P; raw sample LOU6 P7000 / LOU6 C8000 resolved",
+      "history": "definition/ohlcv-1d/statistics from 2010-06-06 on dataset; product listing may be shorter",
+      "schema": [
+        "definition",
+        "ohlcv-1d",
+        "statistics",
+        "trades",
+        "tbbo",
+        "bbo-1s",
+        "mbp-1",
+        "mbo"
+      ],
+      "volume_availability": "ohlcv-1d.volume; statistics stat_type=6",
+      "oi_availability": "statistics stat_type=9 only",
+      "settlement_availability": "statistics stat_type=3 only",
+      "quote_availability": "bbo-1s/tbbo/mbp available; first-phase forbidden by cost",
+      "weekly": false,
+      "includes_user_defined_spreads": true
+    }
+  ],
+  "weekly_and_special_roots_10d_20260819_20260829": [
+    {
+      "symbol": "GC.OPT",
+      "resolved": false,
+      "mapping_count_complete": 0,
+      "partial_n": 0,
+      "not_found_n": null,
+      "error": "HTTP 422 symbology.resolve b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"Could not resolve smart symbols: GC.OPT\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "sample_ids": []
+    },
+    {
+      "symbol": "CL.OPT",
+      "resolved": false,
+      "mapping_count_complete": 0,
+      "partial_n": 0,
+      "not_found_n": null,
+      "error": "HTTP 422 symbology.resolve b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"Could not resolve smart symbols: CL.OPT\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "sample_ids": []
+    },
+    {
+      "symbol": "OG.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 9246,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "2596950",
+        "2525374",
+        "42436054",
+        "42717196",
+        "42621461",
+        "42474158",
+        "2542696",
+        "2624357"
+      ]
+    },
+    {
+      "symbol": "LO.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 3937,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "2575783",
+        "2587581",
+        "42094998",
+        "2508648",
+        "42287619",
+        "722421",
+        "42580667",
+        "42544459"
+      ]
+    },
+    {
+      "symbol": "OG1.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 352,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "2612198",
+        "2641915",
+        "2634858",
+        "2640490",
+        "2616735",
+        "42373889",
+        "2549977",
+        "2637692"
+      ]
+    },
+    {
+      "symbol": "OG2.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 134,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42929487",
+        "42445582",
+        "42644883",
+        "42539680",
+        "2600588",
+        "42675465",
+        "2568637",
+        "2522177"
+      ]
+    },
+    {
+      "symbol": "OG3.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 728,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42678961",
+        "42679271",
+        "2624232",
+        "2534647",
+        "42782322",
+        "2579318",
+        "2631936",
+        "2582623"
+      ]
+    },
+    {
+      "symbol": "OG4.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 1548,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "2573284",
+        "2575447",
+        "2556161",
+        "2506833",
+        "2613108",
+        "2629938",
+        "2625486",
+        "2614002"
+      ]
+    },
+    {
+      "symbol": "OG5.OPT",
+      "resolved": false,
+      "mapping_count_complete": 0,
+      "partial_n": 0,
+      "not_found_n": null,
+      "error": "HTTP 422 symbology.resolve b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"Could not resolve smart symbols: OG5.OPT\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "sample_ids": []
+    },
+    {
+      "symbol": "G1M.OPT",
+      "resolved": false,
+      "mapping_count_complete": 0,
+      "partial_n": 0,
+      "not_found_n": null,
+      "error": "HTTP 422 symbology.resolve b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"Could not resolve smart symbols: G1M.OPT\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "sample_ids": []
+    },
+    {
+      "symbol": "G2M.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 85,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42425709",
+        "2643081",
+        "2564478",
+        "2531177",
+        "2566836",
+        "2547374",
+        "42666316",
+        "42138001"
+      ]
+    },
+    {
+      "symbol": "G3M.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 60,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42339737",
+        "2522920",
+        "42786081",
+        "42172956",
+        "42653285",
+        "2504155",
+        "42090831",
+        "42473226"
+      ]
+    },
+    {
+      "symbol": "G1T.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 476,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "2600095",
+        "2584727",
+        "42400961",
+        "42622877",
+        "2626109",
+        "42464489",
+        "42521549",
+        "42396270"
+      ]
+    },
+    {
+      "symbol": "G1W.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 459,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42582087",
+        "42221289",
+        "2538385",
+        "42127861",
+        "42123982",
+        "2546334",
+        "42802491",
+        "42129134"
+      ]
+    },
+    {
+      "symbol": "G2W.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 72,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42361048",
+        "42104134",
+        "42423671",
+        "42234250",
+        "2585936",
+        "2598276",
+        "42360551",
+        "42112498"
+      ]
+    },
+    {
+      "symbol": "G1R.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 520,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "2555294",
+        "42168297",
+        "42403008",
+        "2639908",
+        "42786152",
+        "42723926",
+        "42660750",
+        "42610456"
+      ]
+    },
+    {
+      "symbol": "LO1.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 244,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "2634159",
+        "42642326",
+        "42421037",
+        "42370331",
+        "2629675",
+        "2506038",
+        "2639132",
+        "2558877"
+      ]
+    },
+    {
+      "symbol": "LO2.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 64,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42667722",
+        "42245046",
+        "42596339",
+        "42596473",
+        "42503193",
+        "42444286",
+        "42596315",
+        "42444084"
+      ]
+    },
+    {
+      "symbol": "LO3.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 487,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42765878",
+        "2618911",
+        "42048485",
+        "2595367",
+        "42434877",
+        "2580007",
+        "42042606",
+        "42048764"
+      ]
+    },
+    {
+      "symbol": "LO4.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 660,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "2619581",
+        "42650962",
+        "2617458",
+        "42502401",
+        "2609909",
+        "2592163",
+        "2538654",
+        "42082018"
+      ]
+    },
+    {
+      "symbol": "LO5.OPT",
+      "resolved": false,
+      "mapping_count_complete": 0,
+      "partial_n": 0,
+      "not_found_n": null,
+      "error": "HTTP 422 symbology.resolve b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"Could not resolve smart symbols: LO5.OPT\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "sample_ids": []
+    },
+    {
+      "symbol": "ML1.OPT",
+      "resolved": false,
+      "mapping_count_complete": 0,
+      "partial_n": 0,
+      "not_found_n": null,
+      "error": "HTTP 422 symbology.resolve b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"Could not resolve smart symbols: ML1.OPT\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "sample_ids": []
+    },
+    {
+      "symbol": "ML2.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 31,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42265629",
+        "42188076",
+        "42278406",
+        "42796521",
+        "42102478",
+        "42265809",
+        "42102413",
+        "42681616"
+      ]
+    },
+    {
+      "symbol": "NL1.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 114,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42789508",
+        "42330063",
+        "42678986",
+        "42192171",
+        "2544672",
+        "2607021",
+        "42736413",
+        "42244322"
+      ]
+    },
+    {
+      "symbol": "WL1.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 114,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42629840",
+        "42528152",
+        "42527363",
+        "42392434",
+        "2600403",
+        "42826249",
+        "2640284",
+        "42393388"
+      ]
+    },
+    {
+      "symbol": "XL1.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 63,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42387920",
+        "42798623",
+        "42135003",
+        "42486084",
+        "42329229",
+        "42585463",
+        "42358503",
+        "42445645"
+      ]
+    },
+    {
+      "symbol": "MCO.OPT",
+      "resolved": true,
+      "mapping_count_complete": 12,
+      "partial_n": 716,
+      "not_found_n": 0,
+      "error": null,
+      "sample_ids": [
+        "42454588",
+        "42914702",
+        "42599950",
+        "42853771",
+        "42766646",
+        "2595978",
+        "42928400",
+        "2502459"
+      ]
+    },
+    {
+      "symbol": "OGW.OPT",
+      "resolved": false,
+      "mapping_count_complete": 0,
+      "partial_n": 0,
+      "not_found_n": null,
+      "error": "HTTP 422 symbology.resolve b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"Could not resolve smart symbols: OGW.OPT\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "sample_ids": []
+    },
+    {
+      "symbol": "LOW.OPT",
+      "resolved": false,
+      "mapping_count_complete": 0,
+      "partial_n": 0,
+      "not_found_n": null,
+      "error": "HTTP 422 symbology.resolve b'{\"detail\":{\"case\":\"symbology_invalid_request\",\"message\":\"Could not resolve smart symbols: LOW.OPT\",\"status_code\":422,\"docs\":\"https://databento.com/docs/api-reference-historical/basics/symbology\",\"payload\":null}}'",
+      "sample_ids": []
+    }
+  ],
+  "raw_symbol_samples": {
+    "OGZ6 C5250": {
+      "symbol": "OGZ6 C5250",
+      "ok": true,
+      "error": null,
+      "mapping_count": 1,
+      "sample_raw": [
+        "42746150"
+      ],
+      "sample_ids": [
+        "42746150"
+      ],
+      "sample_call_put": [],
+      "sample_underlyings": [],
+      "not_found": [],
+      "partial": []
+    },
+    "OGZ6 P5250": {
+      "symbol": "OGZ6 P5250",
+      "ok": true,
+      "error": null,
+      "mapping_count": 1,
+      "sample_raw": [
+        "42746152"
+      ],
+      "sample_ids": [
+        "42746152"
+      ],
+      "sample_call_put": [],
+      "sample_underlyings": [],
+      "not_found": [],
+      "partial": []
+    },
+    "LOU6 P7000": {
+      "symbol": "LOU6 P7000",
+      "ok": true,
+      "error": null,
+      "mapping_count": 1,
+      "sample_raw": [
+        "379064"
+      ],
+      "sample_ids": [
+        "379064"
+      ],
+      "sample_call_put": [],
+      "sample_underlyings": [],
+      "not_found": [],
+      "partial": []
+    },
+    "LOU6 C8000": {
+      "symbol": "LOU6 C8000",
+      "ok": true,
+      "error": null,
+      "mapping_count": 1,
+      "sample_raw": [
+        "4122172"
+      ],
+      "sample_ids": [
+        "4122172"
+      ],
+      "sample_call_put": [],
+      "sample_underlyings": [],
+      "not_found": [],
+      "partial": []
+    },
+    "GCZ6": {
+      "symbol": "GCZ6",
+      "ok": true,
+      "error": null,
+      "mapping_count": 1,
+      "sample_raw": [
+        "41271"
+      ],
+      "sample_ids": [
+        "41271"
+      ],
+      "sample_call_put": [],
+      "sample_underlyings": [],
+      "not_found": [],
+      "partial": []
+    },
+    "CLZ6": {
+      "symbol": "CLZ6",
+      "ok": true,
+      "error": null,
+      "mapping_count": 1,
+      "sample_raw": [
+        "447685"
+      ],
+      "sample_ids": [
+        "447685"
+      ],
+      "sample_call_put": [],
+      "sample_underlyings": [],
+      "not_found": [],
+      "partial": []
+    }
+  },
+  "cme_root_fragmentation": {
+    "gold_monthly": "OG.OPT",
+    "gold_friday_weeklies": [
+      "OG1.OPT",
+      "OG2.OPT",
+      "OG3.OPT",
+      "OG4.OPT",
+      "OG5.OPT"
+    ],
+    "gold_weekday_weeklies": [
+      "G{1-5}{M,T,W,R}.OPT"
+    ],
+    "crude_monthly": "LO.OPT",
+    "crude_friday_weeklies": [
+      "LO1.OPT",
+      "LO2.OPT",
+      "LO3.OPT",
+      "LO4.OPT",
+      "LO5.OPT"
+    ],
+    "crude_weekday_weeklies": [
+      "ML1-5",
+      "NL1-5",
+      "WL1-5",
+      "XL1-5"
+    ],
+    "micro_crude": "MCO.OPT",
+    "og_opt_is_complete_chain": false,
+    "lo_opt_is_complete_chain": false
+  },
+  "field_audit": {
+    "symbol_raw_symbol": "YES definition.raw_symbol",
+    "underlying_futures": "YES definition.underlying / underlying_id; samples OGZ6->GC, LOU6->CL",
+    "strike_price": "YES definition.strike_price (1e-9)",
+    "expiration": "YES definition.expiration",
+    "call_put": "YES definition.instrument_class C/P",
+    "option_instrument_class": "YES; security_type OOF = option on future",
+    "listing_date": "YES definition.activation (listing/activation time)",
+    "daily_option_price": "CONDITIONAL ohlcv-1d if a trade occurred; official settle only in statistics",
+    "daily_volume": "YES ohlcv-1d.volume and/or statistics cleared volume",
+    "open_interest": "YES statistics stat_type=9; NO in ohlcv-1d",
+    "settlement": "YES statistics stat_type=3; NO in ohlcv-1d",
+    "bid_ask": "YES in bbo-1s/tbbo/mbp; session high bid / low offer in statistics 7/8; NOT in ohlcv-1d",
+    "trade_availability": "YES trades schema; ohlcv built from electronic trades",
+    "timestamp": "YES ts_event / ts_recv",
+    "knowledge_time": "research rule: settlement T 21:00Z; OI T+1 21:00Z; ohlcv close != official settle"
+  }
+}
