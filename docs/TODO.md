@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V9 Existing Data Master Backtest。**PURCHASE = NO**。不新假设。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；$93 = reserve）
-> **阶段终点:** 统一回测现有机制。STOP A Candidate / STOP B 无 Positive Reproducible / STOP C 人工。不要买数据。
+> **当前活跃模块:** V9 Master Backtest **STOP B**。不要买数据。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；无 Positive Reproducible）
+> **阶段终点:** 现有机制已重播。下一方向 = model / information representation review。禁止自动买 Options / Pack。
 
 ---
 
@@ -55,14 +55,15 @@
 | MISSION V8.2 | Options catalog / MVD / quote-only DD | ✅ QUOTE ONLY | 2026-08-30 |
 | MISSION V8.3 | Options historical feasibility (metadata occupancy) | ✅ PURCHASE=NO | 2026-08-30 |
 | MISSION V8.4 | Full-year options occupancy census | ✅ PURCHASE=NO | 2026-08-30 |
-| MISSION V9.0 | Existing data master backtest | 🔄 IN PROGRESS | 2026-08-30 |
+| MISSION V9.0 | Existing data master backtest | ✅ STOP B | 2026-08-30 |
 
-## V9 Master Backtest — IN PROGRESS 2026-08-30
+## V9 Master Backtest — STOP B 2026-08-30
 
-- 不买数据。不新假设。不读 Final OOS。
-- 合同：`MASTER_BACKTEST_CONTRACT_V9`。NEXT_BAR_OPEN。EXECUTION_APPROXIMATION。
-- 阶段：START → DATA_CENSUS → BACKTEST_ENGINE → REPLAY → ATTRIBUTION → MASTER_EQUITY → AUDIT → DECISION
-- 文档入口：`docs/research_engine/V9_START.md`
+- 103 strategy books replayed. 0 Positive Reproducible. Candidate=0.
+- HYP-0001 / FD / V0.5 = PREDICTIVE/FACTOR only. No fake CAGR.
+- Databento incremental research value: 0 Candidates. Do not spend $93.
+- 报告：`V9_DECISION.md` / `V9_MASTER_BACKTEST_REPORT.md` / `V9_PROFITABILITY_AUDIT.md`
+- 机器：`data/market/research_engine/master_backtest/`
 
 ## V8.4 Full-Year Occupancy — PURCHASE = NO 2026-08-30
 

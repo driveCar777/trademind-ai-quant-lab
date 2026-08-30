@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-30（V9 Master Backtest IN PROGRESS；PURCHASE=NO；$0；Level 0；Candidate=0）  
+**最后更新：** 2026-08-30（V9 Master Backtest STOP B；无 Positive Reproducible；PURCHASE=NO；Level 0；Candidate=0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + **V9 Master Backtest** |
-| 状态 | Level 0。Candidate=0。V9 统一回测现有机制。不买数据。 |
-| 当前 Phase | V9 START → census → engine → replay。PURCHASE=NO。$93 = reserve。 |
+| 版本 | **V11.7** + … + **V9 Master Backtest STOP B** |
+| 状态 | Level 0。Candidate=0。现有机制已重播。无 Positive Reproducible。不买数据。 |
+| 当前 Phase | STOP B。下一方向 = model / information representation review。$93 = reserve。 |
 
 ---
 

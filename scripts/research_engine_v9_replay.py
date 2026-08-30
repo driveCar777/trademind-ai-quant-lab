@@ -13,7 +13,7 @@ from research_engine.v9_master.run import run_replay
 
 
 def main(argv=None):
-    payload = run_replay(include_v06_sensitivity=True, family_iters=1)
+    payload = run_replay(include_v06_sensitivity=True, family_iters=1, resume=True)
     print("V9_REPLAY", payload.get("n_rows"), "STOP_A", payload.get("STOP_A"), "%.1f" % payload.get("elapsed_seconds"))
     return 0
 

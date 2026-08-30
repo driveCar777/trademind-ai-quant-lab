@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-30 (V9 Master Backtest IN PROGRESS：现有数据统一回测；PURCHASE=NO；$0；Level=0；Candidate=0)  
+> **更新时间:** 2026-08-30 (V9 Master Backtest STOP B：现有机制已重播；无 Positive Reproducible；PURCHASE=NO；$0；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -347,7 +347,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **V8.2 Options Due Diligence FACT 2026-08-30 QUOTE ONLY：** `GC.OPT`/`CL.OPT` 不存在。真实父符号是 `OG.OPT` / `LO.OPT`。GLBX 无 venue IV。见 `OPTIONS_PURCHASE_DECISION_V8_2.md`。
 - **V8.3 Options Feasibility FACT 2026-08-30：** 8 日样本。见 `OPTIONS_MVD_DECISION_V8_3.md`。
 - **V8.4 Full-Year Occupancy FACT 2026-08-30 PURCHASE=NO：** 251 个 Pack E 交易日。只 `get_record_count`。门槛事先锁死 A= ATM≥90/skew≥75/term≥75。**LO = A**（ATM/skew 100%，term 98.0%，ATM 连续 251 日）。**OG = B**（ATM 98.4%，skew 80.1%，term 74.9%；期货近月=期权近月 **0%**）。父级月度 ohlcv 全年都有量，不是单月堆出来的。MVD-B 对 coverage 不必需。本任务不买。若以后买一包：**LO 1Y MVD-A $11.99**。Credits ≈ $93。见 `OPTIONS_PURCHASE_DECISION_V8_4.md`。
-- **V9 Master Backtest IN PROGRESS 2026-08-30：** 现有数据 / 现有机制统一 MT5 成本后回测。不买数据。不新假设。HYP-0001 = PREDICTIVE_ONLY。$93 = UNUSED_RESEARCH_RESERVE。见 `V9_START.md`。
+- **V9 Master Backtest FACT 2026-08-30 STOP B：** 现有锁定机制已统一 NEXT_BAR_OPEN 重播。Level=0。Candidate=0。无 Positive Reproducible Strategy。HYP-0001 = PREDICTIVE_ONLY。Databento $31.82 未产生 Candidate。不买数据。$93 = UNUSED_RESEARCH_RESERVE。下一方向 = model / information representation review。见 `V9_DECISION.md`。
 
 ---
 
@@ -438,7 +438,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P58 | V8.2 Options Data Due Diligence | DONE QUOTE ONLY（catalog/MVD/quote；CASE A 发票存在但不买；Level 0；Candidate=0） |
 | P59 | V8.3 Options Historical Feasibility | DONE PURCHASE=NO（8日 record_count 样本；CASE B；未下载；Level 0；Candidate=0） |
 | P60 | V8.4 Full-Year Options Occupancy Census | DONE PURCHASE=NO（251日；LO A / OG B；未下载；Level 0；Candidate=0） |
-| P61 | V9 Existing Data Master Backtest | IN PROGRESS（统一回测；PURCHASE=NO；$0；Level 0；Candidate=0） |
+| P61 | V9 Existing Data Master Backtest | DONE STOP B（已重播；无 Positive Reproducible；PURCHASE=NO；Level 0；Candidate=0） |
 
 ---
 

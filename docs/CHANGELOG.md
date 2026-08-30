@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-08-30 — V9 Master Backtest STOP B
+
+- Replayed locked mechanisms into one MT5 NEXT_BAR_OPEN ledger. No purchase. No new hypotheses.
+- 103 strategy books. 0 Positive Reproducible. Level 1 Candidate = 0.
+- Databento $31.82 added 0 Candidates. $93 remains UNUSED_RESEARCH_RESERVE.
+- Next = model / information representation review. Do not buy options.
+
 ## 2026-08-30 — V9 Master Backtest START
 
 - Existing-data profitability audit. No purchase. No new hypotheses. Final OOS denied.
