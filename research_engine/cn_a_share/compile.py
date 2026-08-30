@@ -212,6 +212,19 @@ def compile_v12(art):
     status = verdict["A_SHARE_DATA_STATUS"]
     nxt = verdict["NEXT_PRIMARY_ACTION"]
     d = verdict.get("delist_census") or {}
+    empty_rows = [r for r in ((art.get("delist_census") or {}).get("rows") or []) if int(r.get("n_bars") or 0) == 0]
+    empties = ", ".join("%s (%s→%s)" % (r.get("code"), r.get("ipo"), r.get("out")) for r in empty_rows) or "none"
+    dump_json(
+        os.path.join(QUALITY, "DELIST_CENSUS_V12.json"),
+        {
+            "n": d.get("n"),
+            "n_empty": d.get("n_empty"),
+            "n_with_bars": d.get("n_with_bars"),
+            "empty_rate": d.get("empty_rate"),
+            "empty": empty_rows,
+            "note": "Full per-name rows stay in FACTORY_RUN / tmp. Two empties are residual vendor holes, not a listed-only universe.",
+        },
+    )
     uni_n = int((art.get("universe_history") or {}).get("n_asof") or 0)
     cal = art.get("calendar") or {}
     pit = art.get("pit") or {}
@@ -322,6 +335,8 @@ def compile_v12(art):
             "",
             "A 12-name sample all had bars. That is not a substitute for the 337 census.",
             "",
+            "Empty names (no vendor bars from ipoDate to outDate): %s" % empties,
+            "",
             "If empty rate is high: `SURVIVORSHIP_BIAS_RISK` and `A_SHARE_UNIVERSE_NOT_READY`.",
             "Vendor table is not an exchange official delist tape. Residual risk remains.",
         ],
@@ -364,6 +379,12 @@ def compile_v12(art):
             "- `tradestatus=0` = suspension. Do not treat as zero return.",
             "- `isST` is daily metadata. Not an alpha.",
             "- Universe history cannot count ST from `query_all_stock` (field absent).",
+            "",
+            "## Universe anomalies",
+            "",
+            "- Concurrent BaoStock sessions can return empty `query_all_stock`. Factory now rejects n_all=0.",
+            "- 2015-04-30 still has `n_all=2000` from a dying first session (neighbors 2015-03-31=3217, 2015-05-29=3291). Do not use that month as a size fact.",
+            "- 202 as-of dates otherwise repaired; zeros=0 after re-fetch.",
         ],
     )
     questions = [
