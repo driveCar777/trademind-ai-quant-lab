@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V12.1 full daily panel START
+
+- Freeze the full PIT equity daily panel. No purchase. No alpha. Single BaoStock session.
+- `2015-04-30` stays INVALID. dataset_id = `tm-ashare-EQUITY-D1-20260830-000001`.
+- Entry: `docs/research_engine/V12_1_START.md`.
+
 ## 2026-08-30 — V12 A-share PIT foundation CONDITIONAL
 
 - Free BaoStock PIT layer. No purchase. No alpha. No backtest.

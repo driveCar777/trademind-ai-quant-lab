@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V12 A-share PIT Foundation **CONDITIONAL**。不要买数据。不要跑 Alpha。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；`NEXT=FREEZE_FULL_EQUITY_DAILY_PANEL`）
-> **阶段终点:** 已给出 `A_SHARE_DATA_STATUS=CONDITIONAL`。不是 RESEARCH_READY。禁止因子/回测。
+> **当前活跃模块:** V12.1 Full Equity Daily Panel **IN PROGRESS**。不要买数据。不要跑 Alpha。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；全日线盘冻结）
+> **阶段终点:** PRICE_ALPHA_READY / CONDITIONAL / BLOCKED。财务/行业仍 BLOCKED。禁止因子/回测。
 
 ---
 
@@ -59,6 +59,7 @@
 | MISSION V10.0 | Model discovery / information representation | ✅ STOP B | 2026-08-30 |
 | MISSION V11.0 | Alpha capital allocation / next-market decision | ✅ DONE | 2026-08-30 |
 | MISSION V12.0 | China A-share PIT research foundation | ⏸ CONDITIONAL | 2026-08-30 |
+| MISSION V12.1 | Full A-share equity daily panel freeze | 🔄 IN PROGRESS | 2026-08-30 |
 
 ## V12 A-share PIT Foundation — CONDITIONAL 2026-08-30
 
