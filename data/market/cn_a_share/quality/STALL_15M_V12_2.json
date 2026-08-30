@@ -1,0 +1,10 @@
+{
+  "flag": "STALL_15M",
+  "pid": 8692,
+  "last_raw": "sh.600107",
+  "last_write_local": "2026-08-30T19:47:21",
+  "n_raw": 95,
+  "action": "kill_stalled_then_single_resume",
+  "note": "No new raw.csv for >15 minutes after MULTIPLE_DOWNLOADER cleanup. Rebuilt one BaoStock session. Did not start a second full downloader.",
+  "ts": "2026-08-30T12:12:00Z"
+}

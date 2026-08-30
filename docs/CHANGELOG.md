@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V12.2 panel completion START
+
+- Single downloader to 5549/5549, then auto compile / freeze / ready gate.
+- New dataset_id `tm-ashare-EQUITY-D1-20260830-000002`. Do not overwrite 000001.
+- Entry: `docs/research_engine/V12_2_START.md`.
+
 ## 2026-08-30 — V12.1 full daily panel START
 
 - Freeze the full PIT equity daily panel. No purchase. No alpha. Single BaoStock session.

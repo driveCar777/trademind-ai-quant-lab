@@ -1,0 +1,9 @@
+{
+  "flag": "MULTIPLE_DOWNLOADER",
+  "pids": [8076, 8692],
+  "kept": 8692,
+  "stopped": [8076],
+  "also_stopped_hung_query_all_stock": [33564, 31084, 33460],
+  "note": "Orphan acquire 8076 (dead terminal 587228) plus three hung 2015-04-30 query_all_stock sessions. Kept live acquire 8692. Did not touch Xavier 8002-8005.",
+  "ts": "2026-08-30T12:08:00Z"
+}

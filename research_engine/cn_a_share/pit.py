@@ -62,3 +62,17 @@ def universe_keeps_pre_delist(basics, asof, symbol):
             continue
         return listed_on(basic, asof)
     return False
+
+
+def future_delist_mutation_stable(equities, asof="2015-06-01"):
+    """Changing a 2026 outDate must not change 2015 membership."""
+    before = sorted(e.get("symbol") for e in equities if listed_on(e, asof))
+    mutated = []
+    for row in equities:
+        copy = dict(row)
+        od = copy.get("delisting_date") or ""
+        if not od or od >= "2026-01-01":
+            copy["delisting_date"] = "2026-12-31"
+        mutated.append(copy)
+    after = sorted(e.get("symbol") for e in mutated if listed_on(e, asof))
+    return before == after

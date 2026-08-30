@@ -1,0 +1,47 @@
+{
+  "ALPHA_RESEARCH": false,
+  "NEW_PURCHASE": false,
+  "asof_20150430": "INVALID",
+  "columns": [
+    "trade_date",
+    "symbol",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "amount",
+    "turnover",
+    "tradestatus",
+    "isST"
+  ],
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "disk_c_gb": 13.023731231689453,
+  "disk_d_gb": 125.50830841064453,
+  "hashes": {
+    "content_hash": "85ac360c1bbd91e576e44330bde02118151597015a898c975ad21a2413963cdf"
+  },
+  "history_end": "2026-08-28",
+  "history_start": "1990-12-19",
+  "id": "A_SHARE_PANEL_COMPLETION_V12_2",
+  "license": "BAOSTOCK_FREE_NO_KEY",
+  "parent_dataset_id": "tm-ashare-EQUITY-D1-20260830-000001",
+  "pit": {
+    "delist_kept_before": true,
+    "future_ipo_unchanged": true,
+    "n_listed_2015_04_30": 2695,
+    "n_listed_2016_12_30": 3037,
+    "price_mutation_stable": true
+  },
+  "quality": {
+    "complete": false,
+    "n_done_checkpoint": 95,
+    "n_empty_checkpoint": 0,
+    "n_failed": 0,
+    "n_symbols_on_disk": 95
+  },
+  "rows": 0,
+  "source": "BAOSTOCK",
+  "symbols_master": 5549,
+  "symbols_on_disk": 95
+}

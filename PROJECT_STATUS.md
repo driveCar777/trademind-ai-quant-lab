@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-30（V12 A-share PIT CONDITIONAL；无采购；无 Alpha；Level 0；Candidate=0）  
+**最后更新：** 2026-08-30（V12.2 panel completion IN PROGRESS；无采购；无 Alpha；Level 0；Candidate=0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + **V12 A-share PIT CONDITIONAL** |
-| 状态 | Level 0。Candidate=0。A 股地基 CONDITIONAL，不是 RESEARCH_READY。不买数据。不跑 Alpha。 |
-| 当前 Phase | NEXT = FREEZE_FULL_EQUITY_DAILY_PANEL。$93 = UNUSED_RESEARCH_RESERVE。 |
+| 版本 | **V11.7** + … + **V12.2 panel completion IN PROGRESS** |
+| 状态 | Level 0。Candidate=0。全日线盘未冻。不买数据。不跑 Alpha。 |
+| 当前 Phase | 单 downloader 收到 5549 后自动 freeze。$93 = UNUSED_RESEARCH_RESERVE。 |
 
 ---
 

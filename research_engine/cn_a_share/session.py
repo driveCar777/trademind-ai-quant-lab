@@ -6,30 +6,37 @@ import time
 
 TRANSIENT = "TRANSIENT"
 PERMANENT = "PERMANENT"
+SOURCE_ERROR = "SOURCE_ERROR"
 SOURCE_LIMIT = "SOURCE_LIMIT"
 DATA_ERROR = "DATA_ERROR"
+EMPTY_HISTORY = "EMPTY_HISTORY"
+DATA_GAP = "DATA_GAP"
 
 
 def classify_error(exc, n_rows=None, elapsed=None):
     text = str(exc or "")
     low = text.lower()
+    if "payment" in low or "credential" in low or "license" in low or "blocked" in low:
+        return PERMANENT
+    if "permission" in low or "auth" in low:
+        return PERMANENT
     if elapsed is not None and elapsed > 60:
         return SOURCE_LIMIT
     if n_rows == 0 and "empty" in low:
-        return DATA_ERROR
-    if "login" in low or "timeout" in low or "reset" in low or "10054" in low:
+        return EMPTY_HISTORY
+    if "login" in low or "session" in low:
+        return SOURCE_ERROR
+    if "timeout" in low or "reset" in low or "10054" in low:
         return TRANSIENT
     if "network" in low or "socket" in low:
         return TRANSIENT
-    if "permission" in low or "auth" in low:
-        return PERMANENT
     return TRANSIENT
 
 
 class BaoSession(object):
     """One login at a time. Caller must not construct a second live session."""
 
-    def __init__(self, sleep_s=0.05, max_retries=3):
+    def __init__(self, sleep_s=0.05, max_retries=5):
         self.sleep_s = float(sleep_s)
         self.max_retries = int(max_retries)
         self.bs = None
@@ -109,9 +116,9 @@ class BaoSession(object):
                 self.n_queries += 1
                 if str(err) != "0":
                     kind = classify_error(msg, len(rows), elapsed)
-                    if kind == TRANSIENT and attempt + 1 < self.max_retries:
+                    if kind in (TRANSIENT, SOURCE_ERROR, SOURCE_LIMIT) and attempt + 1 < self.max_retries:
                         self.reset()
-                        time.sleep(0.4 * (attempt + 1))
+                        time.sleep(0.5 * (2 ** attempt))
                         last = RuntimeError("BAOSTOCK:%s:%s" % (err, msg))
                         continue
                     raise RuntimeError("BAOSTOCK:%s:%s:%s" % (kind, err, msg))
@@ -127,7 +134,7 @@ class BaoSession(object):
                     raise
                 if attempt + 1 < self.max_retries:
                     self.reset()
-                    time.sleep(0.4 * (attempt + 1))
+                    time.sleep(0.5 * (2 ** attempt))
                     continue
                 raise
         raise last

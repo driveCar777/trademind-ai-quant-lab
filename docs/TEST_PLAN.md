@@ -809,6 +809,21 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V12.2 Panel Completion — 2026-08-30 IN PROGRESS
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_v12_2.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| no-purchase / new dataset / 2015-04-30 / disk / price gate / delist mutation / error class | 待跑 |
+| 全日线盘 | 单 session raw-first，supervisor 收到 5549 后自动 compile |
+| 2015-04-30 | INVALID（PIT listing-window=2695） |
+| PRICE_ALPHA | CONDITIONAL 直至 5549 + PIT + survivorship + integrity |
+| FINANCIAL / INDUSTRY / EVENT | BLOCKED |
+| 花费 | $0 |
+
+不是交易许可。不要开始 A 股 Alpha。
+
 ## V12.1 Full Daily Panel — 2026-08-30 IN PROGRESS
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_v12_1.py --import-mode=importlib`
