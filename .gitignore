@@ -58,6 +58,10 @@ data/market/raw/
 data/market/validated/
 data/mine/
 
+# A-share large raw / normalized bars (catalogs and small reference stay)
+data/market/cn_a_share/raw/
+data/market/cn_a_share/normalized/
+
 # HuggingFace / model caches
 **/.cache/
 
