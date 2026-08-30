@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V11 Capital Allocation **DONE**。不要买数据。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；NEXT=CHINA_A_SHARE_RESEARCH_UNIVERSE）
-> **阶段终点:** MT5 alpha 搜索冻结。下一宇宙 = A股数据层（免费 BaoStock）。禁止自动买 Options / Databento / Tushare。禁止重开已杀死 MT5 家族。
+> **当前活跃模块:** V12 A-share PIT Foundation **IN PROGRESS**。不要买数据。不要跑 Alpha。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；A股 point-in-time 地基）
+> **阶段终点:** A_SHARE_DATA_STATUS = READY / CONDITIONAL / BLOCKED。退市历史缺失则不得 RESEARCH_READY。禁止因子/回测。
 
 ---
 
@@ -58,6 +58,7 @@
 | MISSION V9.0 | Existing data master backtest | ✅ STOP B | 2026-08-30 |
 | MISSION V10.0 | Model discovery / information representation | ✅ STOP B | 2026-08-30 |
 | MISSION V11.0 | Alpha capital allocation / next-market decision | ✅ DONE | 2026-08-30 |
+| MISSION V12.0 | China A-share PIT research foundation | 🔄 IN PROGRESS | 2026-08-30 |
 
 ## V11 Capital Allocation — 2026-08-30
 

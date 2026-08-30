@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-30 (V11 Capital Allocation：NEXT=CHINA_A_SHARE_RESEARCH_UNIVERSE；PURCHASE=NO；Level=0；Candidate=0)  
+> **更新时间:** 2026-08-30 (V12 A-share PIT foundation START：无采购；无 Alpha；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -351,6 +351,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **V10 Model Discovery FACT 2026-08-30 START：** 不是采购任务。不是重开 RSI/MA/OI/DTE。假设：已有 information set 可能含简单规则未捕获的非线性 / 交互结构。MODEL ≠ ALPHA。NEW_DATA_PURCHASE=FALSE。Final OOS DENIED。见 `V10_START.md`。
 - **V10 Model Discovery FACT 2026-08-30 STOP B：** 62 个锁定实验。21 个 validation 相对 M0 有预测优势。FDR 0/62。Level=0。Candidate=0。`MODEL_REPRESENTATION_EXHAUSTED`。不买 Options。不花 $93。不要改 target 后重跑。见 `V10_DECISION.md`。
 - **V11 Capital Allocation FACT 2026-08-30：** 不是新实验、不是采购。MT5 alpha 边际价值低。`NEXT_PRIMARY_RESEARCH_PATH = CHINA_A_SHARE_RESEARCH_UNIVERSE`。先做免费 BaoStock 数据层。不买 Options / Databento / Tushare。$93 = reserve。见 `V11_DECISION.md`。
+- **V12 A-share PIT FACT 2026-08-30 START：** 不是因子、不是回测、不是采购。目标 = point-in-time A 股研究宇宙。见 `V12_START.md`。
 
 ---
 
@@ -444,6 +445,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P61 | V9 Existing Data Master Backtest | DONE STOP B（已重播；无 Positive Reproducible；PURCHASE=NO；Level 0；Candidate=0） |
 | P62 | V10 Model Discovery | DONE STOP B（`MODEL_REPRESENTATION_EXHAUSTED`；FDR 0/62；PURCHASE=NO；Level 0；Candidate=0） |
 | P63 | V11 Alpha Capital Allocation | DONE（NEXT=A股研究宇宙；PURCHASE=NO；未跑新实验） |
+| P64 | V12 A-share PIT foundation | IN PROGRESS（无采购；无 Alpha） |
 
 ---
 

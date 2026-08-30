@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-08-30 — V12 A-share PIT foundation START
+
+- Point-in-time A-share data layer. No purchase. No alpha. No backtest.
+- Entry: `docs/research_engine/V12_START.md`.
+
 ## 2026-08-30 — V11 Alpha Capital Allocation
 
 - Review only. No experiment. No purchase. Spend $0.
