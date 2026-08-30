@@ -1,0 +1,247 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "NEW_DATA_DOWNLOAD": false,
+  "NEW_DATA_PURCHASE": false,
+  "ablation_slice": {
+    "model_id": "M1",
+    "note": "Pre-registered diagnostic slice. Not chosen after PnL.",
+    "rep_id": "REP_Z60",
+    "target_id": "T1_DIR1"
+  },
+  "ablations": [
+    "ALL",
+    "ALL_MINUS_FUT",
+    "ALL_MINUS_OI",
+    "ALL_MINUS_PUBLIC",
+    "ALL_MINUS_XASSET",
+    "MT5_ONLY"
+  ],
+  "assets": [
+    "GOLD",
+    "OIL"
+  ],
+  "contract_hash": "8e361351298aabfa4d63bf0ade2e00ea033961430dd925b40a1e11dddbfe8229",
+  "contract_id": "MODEL_CONTRACT_V10",
+  "databento_historical_spend_usd": 31.816129,
+  "discovery_id": "MODEL_DISCOVERY_V10",
+  "execution": {
+    "close_fill": "FORBIDDEN",
+    "cost": "MASTER_BACKTEST_CONTRACT_V9",
+    "fill": "NEXT_BAR_OPEN",
+    "venue": "MT5"
+  },
+  "feature_groups": [
+    {
+      "group_id": "G_PRICE",
+      "name": "Price / return"
+    },
+    {
+      "group_id": "G_VOL",
+      "name": "Volatility / friction"
+    },
+    {
+      "group_id": "G_FUT",
+      "name": "Futures structure"
+    },
+    {
+      "group_id": "G_OI",
+      "name": "Open interest flow"
+    },
+    {
+      "group_id": "G_XASSET",
+      "name": "Cross asset"
+    },
+    {
+      "group_id": "G_PUBLIC",
+      "name": "Public macro / positioning / IV index"
+    }
+  ],
+  "forbidden": {
+    "a_share": true,
+    "automl": true,
+    "hyperparameter_search": true,
+    "live_internet_feature": true,
+    "llm_news": true,
+    "new_purchase": true,
+    "options": true,
+    "target_farm": true
+  },
+  "gates": {
+    "candidate": "research+validation costed positive, FDR q=0.05, >=2 assets, no Final OOS",
+    "economic": "costed validation net>0 and not one-symbol",
+    "fdr_q": 0.05,
+    "predictive": "validation logloss/Brier better than M0 and AUC>0.5"
+  },
+  "hold_bars": {
+    "T1_DIR1": 1,
+    "T2_DIR5": 5
+  },
+  "hypothesis": "Existing information may contain nonlinear/interaction structure not captured by simple rules. MODEL is not assumed to be alpha.",
+  "interactions": [
+    {
+      "a": "ret20",
+      "b": "rv20",
+      "id": "I01",
+      "why": "momentum conditioned on realized vol"
+    },
+    {
+      "a": "ret20",
+      "b": "other_ret20",
+      "id": "I02",
+      "why": "GOLD/OIL joint risk"
+    },
+    {
+      "a": "ret20",
+      "b": "usdjpy_ret20",
+      "id": "I03",
+      "why": "dollar proxy times metal/oil"
+    },
+    {
+      "a": "curve_slope",
+      "b": "oi_change",
+      "id": "I04",
+      "why": "curve x OI interaction, not a reopened OI rule"
+    },
+    {
+      "a": "curve_slope",
+      "b": "eia_wow",
+      "id": "I05",
+      "why": "inventory surprise times curve"
+    },
+    {
+      "a": "oi_change",
+      "b": "cot_z",
+      "id": "I06",
+      "why": "daily OI times weekly positioning"
+    },
+    {
+      "a": "rv20",
+      "b": "iv_z",
+      "id": "I07",
+      "why": "RV vs public IV index"
+    },
+    {
+      "a": "month_end",
+      "b": "ret20",
+      "id": "I08",
+      "why": "calendar times momentum"
+    },
+    {
+      "a": "curve_slope",
+      "b": "ret20",
+      "id": "I09",
+      "why": "structure times price"
+    },
+    {
+      "a": "ust10_chg5",
+      "b": "ret20",
+      "id": "I10",
+      "why": "rates change times target return"
+    }
+  ],
+  "limits": {
+    "max_feature_groups": 6,
+    "max_interactions": 10,
+    "max_models": 4,
+    "max_states": 5,
+    "max_targets": 2
+  },
+  "lookback_note": "20/60/120 are computed together as features, not three search axes.",
+  "lookback_search": false,
+  "lookbacks": [
+    20,
+    60,
+    120
+  ],
+  "model_count": 4,
+  "models": [
+    {
+      "family": "NAIVE",
+      "model_id": "M0",
+      "spec": "train_majority_and_base_rate"
+    },
+    {
+      "family": "LOGISTIC",
+      "model_id": "M1",
+      "spec": "LogisticRegression C=1.0 max_iter=200"
+    },
+    {
+      "family": "TREE",
+      "model_id": "M2",
+      "spec": "DecisionTreeClassifier max_depth=3 min_samples_leaf=20"
+    },
+    {
+      "family": "FOREST",
+      "model_id": "M3",
+      "spec": "RandomForestClassifier n_estimators=20 max_depth=3 min_samples_leaf=20"
+    }
+  ],
+  "note": "Do not retune depth/threshold/lookback/hold after seeing results.",
+  "primary_threshold": 0.55,
+  "representations": [
+    {
+      "name": "raw features",
+      "rep_id": "REP_RAW"
+    },
+    {
+      "name": "causal z-score lookback 60",
+      "rep_id": "REP_Z60"
+    },
+    {
+      "name": "10 pre-registered interactions on z60",
+      "rep_id": "REP_INTERACT"
+    },
+    {
+      "name": "5 locked state dummies plus z60",
+      "rep_id": "REP_STATE"
+    }
+  ],
+  "risk_frac": [
+    0.005,
+    0.01
+  ],
+  "seed": 20260830,
+  "split": {
+    "embargo_bars": 1,
+    "method": "TIME_ORDER_70_15_15",
+    "purge_bars": 5,
+    "random_split": false,
+    "test": "validation",
+    "train": "research",
+    "unused_tail": "not used for fit, selection, or threshold choice"
+  },
+  "states": [
+    "TREND_LOWVOL",
+    "TREND_HIGHVOL",
+    "RANGE_LOWVOL",
+    "RANGE_HIGHVOL",
+    "WIDE_FRICTION"
+  ],
+  "target_count": 2,
+  "targets": [
+    {
+      "definition": "sign(open[t+2] / open[t+1] - 1). NEXT_BAR_OPEN 1-bar hold.",
+      "horizon_bars": 1,
+      "kind": "direction",
+      "label": "1 if open[t+2] > open[t+1] else 0",
+      "name": "next_open_direction_h1",
+      "target_id": "T1_DIR1"
+    },
+    {
+      "definition": "sign(open[t+6] / open[t+1] - 1). NEXT_BAR_OPEN 5-bar hold.",
+      "horizon_bars": 5,
+      "kind": "direction",
+      "label": "1 if open[t+6] > open[t+1] else 0",
+      "name": "next_open_direction_h5",
+      "target_id": "T2_DIR5"
+    }
+  ],
+  "thresholds": [
+    0.55,
+    0.6,
+    0.65
+  ],
+  "unused_research_reserve_note": "remaining Databento credits are UNUSED_RESEARCH_RESERVE",
+  "version": "10.0",
+  "xavier": "NOT_REQUIRED_IF_LOCAL_RUNTIME_SMALL"
+}
