@@ -1,0 +1,25 @@
+{
+  "empty": [
+    {
+      "code": "sz.000033",
+      "first": null,
+      "ipo": "1994-01-03",
+      "last": null,
+      "n_bars": 0,
+      "out": "2017-07-07"
+    },
+    {
+      "code": "sz.000038",
+      "first": null,
+      "ipo": "1994-08-08",
+      "last": null,
+      "n_bars": 0,
+      "out": "2023-07-12"
+    }
+  ],
+  "empty_rate": 0.005934718100890208,
+  "n": 337,
+  "n_empty": 2,
+  "n_with_bars": 335,
+  "note": "Full per-name rows stay in FACTORY_RUN / tmp. Two empties are residual vendor holes, not a listed-only universe."
+}

@@ -1,0 +1,17 @@
+{
+  "symbol": "sh.600519",
+  "operate_date": "2023-06-30",
+  "event": "10派259.11元",
+  "cash_ps_before_tax": 25.911,
+  "convention": {
+    "raw": "adjustflag=3 RAW_UNADJUSTED immutable",
+    "qfq": "adjustflag=2 FORWARD_QFQ vendor",
+    "hfq": "adjustflag=1 BACKWARD_HFQ vendor"
+  },
+  "around_ex": {
+    "2023-06-29": {"raw_close": 1713.71, "qfq_close": 1516.26147493},
+    "2023-06-30": {"raw_close": 1691.0, "qfq_close": 1519.136906, "raw_preclose": 1687.8}
+  },
+  "raw_ne_qfq": true,
+  "raw_gap_note": "raw 1713.71 to 1691.00 includes the cash dividend and the session move. Do not treat the gap as a return."
+}
