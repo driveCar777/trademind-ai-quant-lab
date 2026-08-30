@@ -1,0 +1,13 @@
+"""China A-share point-in-time data layer. No alpha. No purchase."""
+
+V12_ID = "A_SHARE_PIT_FOUNDATION_V12"
+V12_VERSION = "12.0"
+NEW_PURCHASE = False
+NEW_SUBSCRIPTION = False
+ALPHA_RESEARCH = False
+BACKTEST = False
+FINAL_OOS_ACCESS = "DENIED"
+TZ_MARKET = "Asia/Shanghai"
+TZ_STORE = "UTC"
+CANONICAL_SOURCE = "BAOSTOCK"
+SECONDARY_SOURCE = "AKSHARE_CLASS_HTTP"
