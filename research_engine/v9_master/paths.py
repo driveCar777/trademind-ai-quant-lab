@@ -20,14 +20,27 @@ def ensure_dir(path):
     return path
 
 
+def _safe_part(text):
+    out = []
+    for ch in str(text):
+        if ch.isalnum() or ch in "-_.":
+            out.append(ch)
+        else:
+            out.append("_")
+    name = "".join(out).strip("_")
+    if not name:
+        name = "unknown"
+    return name[:80]
+
+
 def ledger_dir(strategy_id, dataset_id, role, scenario="base"):
     safe = (
-        str(strategy_id).replace("/", "_").replace("\\", "_")
+        _safe_part(strategy_id)
         + "__"
-        + str(dataset_id).replace("/", "_")
+        + _safe_part(dataset_id)
         + "__"
-        + str(role)
+        + _safe_part(role)
         + "__"
-        + str(scenario)
+        + _safe_part(scenario)
     )
     return ensure_dir(os.path.join(LEDGERS, safe))

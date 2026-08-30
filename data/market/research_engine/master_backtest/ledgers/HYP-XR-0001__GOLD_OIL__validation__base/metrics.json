@@ -1,0 +1,42 @@
+{
+  "average_holding": 5.0,
+  "bars_per_year": 252,
+  "cagr": -0.19698102797819494,
+  "calmar": -0.7871452757857673,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 7708.261023248408,
+  "family": "CROSS_RESIDUAL_V0.91",
+  "gross_return": -0.22917389767515928,
+  "information_set": "IS-A",
+  "max_dd_bars": 285,
+  "max_drawdown": -0.25024736098626615,
+  "max_trade_share": 0.11963197852989513,
+  "n_bars": 300,
+  "net_return": -0.22917389767515928,
+  "profit_factor": 0.372967109104589,
+  "sharpe": -1.7791113146984818,
+  "slippage": 0.0,
+  "sortino": -0.7985927933164053,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-XR-0001",
+  "timeframe": "D1",
+  "total_return": -0.22917389767515928,
+  "trade_count": 29,
+  "turnover": 0.0,
+  "win_count": 11,
+  "win_rate": 0.3793103448275862,
+  "yearly": [
+    {
+      "n_bars": 239,
+      "return": -0.18887108648798356,
+      "year": "2020"
+    },
+    {
+      "n_bars": 61,
+      "return": -0.05328947620917468,
+      "year": "2021"
+    }
+  ]
+}

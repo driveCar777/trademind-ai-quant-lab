@@ -1,0 +1,46 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.0102192672855268,
+  "calmar": -0.9272717061134426,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9891.757467436388,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "BREADTH_V1",
+  "frozen_total_return": -0.010824253256361271,
+  "gross_return": -0.010824253256361271,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 257,
+  "max_drawdown": -0.011020790581823894,
+  "max_trade_share": 0.293748258645485,
+  "n_bars": 268,
+  "net_return": -0.010824253256361271,
+  "profit_factor": 0.521921811745982,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -0.7246526118530566,
+  "slippage": 0.0,
+  "sortino": -0.37280468978679643,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-BR-0002",
+  "timeframe": "D1",
+  "total_return": -0.010824253256361271,
+  "trade_count": 8,
+  "turnover": 1.74873102126972,
+  "win_count": 2,
+  "win_rate": 0.25,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": -0.0026420466231046325,
+      "year": "2018"
+    },
+    {
+      "n_bars": 255,
+      "return": -0.008203881671122182,
+      "year": "2019"
+    }
+  ]
+}

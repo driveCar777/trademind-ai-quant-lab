@@ -1,0 +1,71 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.002465242933432754,
+  "calmar": -0.11659586738981077,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9842.287480766585,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "SIZE_SPREAD_V1",
+  "frozen_total_return": -0.0157712519233415,
+  "gross_return": -0.0157712519233415,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 1587,
+  "max_drawdown": -0.021143484658772648,
+  "max_trade_share": 0.05968419149601536,
+  "n_bars": 1624,
+  "net_return": -0.0157712519233415,
+  "profit_factor": 0.6989658649806357,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -0.41818281756455133,
+  "slippage": 0.0,
+  "sortino": -0.114889661855399,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-SZ-0003",
+  "timeframe": "D1",
+  "total_return": -0.0157712519233415,
+  "trade_count": 66,
+  "turnover": 16.372829659128552,
+  "win_count": 34,
+  "win_rate": 0.5151515151515151,
+  "yearly": [
+    {
+      "n_bars": 146,
+      "return": -0.00626230012301443,
+      "year": "2009"
+    },
+    {
+      "n_bars": 284,
+      "return": -0.014101622100881395,
+      "year": "2010"
+    },
+    {
+      "n_bars": 260,
+      "return": 0.003154276318460658,
+      "year": "2011"
+    },
+    {
+      "n_bars": 259,
+      "return": 0.0029997801635870402,
+      "year": "2012"
+    },
+    {
+      "n_bars": 258,
+      "return": -0.0006348991967151107,
+      "year": "2013"
+    },
+    {
+      "n_bars": 258,
+      "return": 0.0016733741391319334,
+      "year": "2014"
+    },
+    {
+      "n_bars": 159,
+      "return": -0.002591070086495284,
+      "year": "2015"
+    }
+  ]
+}

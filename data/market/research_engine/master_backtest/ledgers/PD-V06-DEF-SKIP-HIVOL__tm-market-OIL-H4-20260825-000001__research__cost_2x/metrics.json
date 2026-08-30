@@ -1,0 +1,48 @@
+{
+  "average_holding": null,
+  "bars_per_year": 1512,
+  "cagr": 0.0,
+  "calmar": null,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "cost_mult": 2.0,
+  "end_equity": 10000.0,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "PROFIT_DISCOVERY_V0.6",
+  "gross_return": 0.0,
+  "information_set": "IS-A",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 0,
+  "max_drawdown": 0.0,
+  "max_trade_share": null,
+  "n_bars": 2000,
+  "net_return": 0.0,
+  "profit_factor": null,
+  "replay_kind": "STRATEGY_REPLAY",
+  "scenario": "cost_2x",
+  "sharpe": null,
+  "slippage": 0.0,
+  "slippage_bp": 10.0,
+  "sortino": null,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "PD-V06-DEF-SKIP-HIVOL",
+  "timeframe": "H4",
+  "total_return": 0.0,
+  "trade_count": 0,
+  "turnover": 0.0,
+  "win_count": 0,
+  "win_rate": null,
+  "yearly": [
+    {
+      "n_bars": 963,
+      "return": 0.0,
+      "year": "2025"
+    },
+    {
+      "n_bars": 1037,
+      "return": 0.0,
+      "year": "2026"
+    }
+  ]
+}

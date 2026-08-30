@@ -1,0 +1,51 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.03672118247994094,
+  "calmar": -0.6093909887376565,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9497.882139040172,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "SIZE_SPREAD_V1",
+  "frozen_total_return": -0.05021178609598287,
+  "gross_return": -0.05021178609598287,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 320,
+  "max_drawdown": -0.06025882095173129,
+  "max_trade_share": 0.07057794562309012,
+  "n_bars": 348,
+  "net_return": -0.05021178609598287,
+  "profit_factor": 0.1996204188142192,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -2.33241689814383,
+  "slippage": 0.0,
+  "sortino": -2.0066048402909398,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-SZ-0002",
+  "timeframe": "D1",
+  "total_return": -0.05021178609598287,
+  "trade_count": 19,
+  "turnover": 5.270017592695984,
+  "win_count": 5,
+  "win_rate": 0.2631578947368421,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": 0.0,
+      "year": "2018"
+    },
+    {
+      "n_bars": 310,
+      "return": -0.05673407829970023,
+      "year": "2019"
+    },
+    {
+      "n_bars": 25,
+      "return": 0.006914584799120549,
+      "year": "2020"
+    }
+  ]
+}

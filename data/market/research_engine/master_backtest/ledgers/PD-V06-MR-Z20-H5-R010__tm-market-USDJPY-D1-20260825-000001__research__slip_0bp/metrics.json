@@ -1,0 +1,73 @@
+{
+  "average_holding": 3.782608695652174,
+  "bars_per_year": 252,
+  "cagr": -0.003962380566545964,
+  "calmar": -0.12780470083579226,
+  "commission": 226.74882956131066,
+  "cost_contribution": 904.4123281273278,
+  "cost_mult": 1.0,
+  "end_equity": 9689.96597616257,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "PROFIT_DISCOVERY_V0.6",
+  "gross_return": 0.05943783042898976,
+  "information_set": "IS-A",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 1857,
+  "max_drawdown": -0.031003402383743012,
+  "max_trade_share": 0.10390117501315231,
+  "n_bars": 2000,
+  "net_return": -0.031003402383742995,
+  "profit_factor": 0.6957194029686754,
+  "replay_kind": "STRATEGY_REPLAY",
+  "scenario": "slip_0bp",
+  "sharpe": -0.3658690768217154,
+  "slippage": 453.5954222751494,
+  "slippage_bp": 0.0,
+  "sortino": -0.13366621155457592,
+  "spread_cost": 224.06807629086777,
+  "start_equity": 10000.0,
+  "strategy_id": "PD-V06-MR-Z20-H5-R010",
+  "timeframe": "D1",
+  "total_return": -0.031003402383742995,
+  "trade_count": 23,
+  "turnover": 22.673740658658264,
+  "win_count": 12,
+  "win_rate": 0.5217391304347826,
+  "yearly": [
+    {
+      "n_bars": 235,
+      "return": -0.004384381318233488,
+      "year": "2020"
+    },
+    {
+      "n_bars": 312,
+      "return": -0.01926219525677264,
+      "year": "2021"
+    },
+    {
+      "n_bars": 312,
+      "return": 0.008510755150034077,
+      "year": "2022"
+    },
+    {
+      "n_bars": 311,
+      "return": 0.0,
+      "year": "2023"
+    },
+    {
+      "n_bars": 314,
+      "return": -0.01559934941696739,
+      "year": "2024"
+    },
+    {
+      "n_bars": 313,
+      "return": 0.0,
+      "year": "2025"
+    },
+    {
+      "n_bars": 203,
+      "return": 0.0,
+      "year": "2026"
+    }
+  ]
+}

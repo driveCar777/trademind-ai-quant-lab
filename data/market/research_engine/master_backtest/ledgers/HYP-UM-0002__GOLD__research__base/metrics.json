@@ -1,0 +1,71 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": 0.0022369055424047435,
+  "calmar": 0.43501485491925135,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 10149.895490119658,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "USD_METAL_V1",
+  "frozen_total_return": 0.014989549011965808,
+  "gross_return": 0.014989549011965808,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 1057,
+  "max_drawdown": -0.005142135991700707,
+  "max_trade_share": 0.7486979745256763,
+  "n_bars": 1679,
+  "net_return": 0.014989549011965808,
+  "profit_factor": 2.979275527574979,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": 0.2510618073020779,
+  "slippage": 0.0,
+  "sortino": 0.07362445005082005,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-UM-0002",
+  "timeframe": "D1",
+  "total_return": 0.014989549011965808,
+  "trade_count": 3,
+  "turnover": 0.774668120921637,
+  "win_count": 1,
+  "win_rate": 0.3333333333333333,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": 0.0,
+      "year": "2018"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0,
+      "year": "2019"
+    },
+    {
+      "n_bars": 312,
+      "return": 0.014989549011965808,
+      "year": "2020"
+    },
+    {
+      "n_bars": 311,
+      "return": 0.0,
+      "year": "2021"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0,
+      "year": "2022"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0,
+      "year": "2023"
+    },
+    {
+      "n_bars": 113,
+      "return": 0.0,
+      "year": "2024"
+    }
+  ]
+}

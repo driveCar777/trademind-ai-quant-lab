@@ -364,9 +364,32 @@ def compile_all():
     }
     stop_a = bool(replay.get("STOP_A"))
     pos_repro = 0
+    by_sid = {}
     for row in raw_rows:
-        if row.get("economic_status") == "POSITIVE_REPRODUCIBLE" and row.get("role") == "research":
+        if row.get("role") != "research" or row.get("scenario") not in (None, "base"):
+            continue
+        if row.get("economic_status") != "POSITIVE_REPRODUCIBLE":
+            continue
+        key = (row.get("family"), row.get("strategy_id"))
+        bucket = by_sid.get(key)
+        if bucket is None:
+            bucket = []
+            by_sid[key] = bucket
+        bucket.append(row.get("target") or row.get("dataset_id"))
+    program_repro_ids = []
+    for key, targets in by_sid.items():
+        uniq = set([t for t in targets if t])
+        gold_oil = ("GOLD" in uniq and "OIL" in uniq)
+        two_ds = len(uniq) >= 2
+        if gold_oil or (key[0] == "PROFIT_DISCOVERY_V0.6" and two_ds):
+            program_repro_ids.append(key)
             pos_repro += 1
+        else:
+            for row in raw_rows:
+                if row.get("family") == key[0] and row.get("strategy_id") == key[1]:
+                    if row.get("economic_status") == "POSITIVE_REPRODUCIBLE":
+                        row["economic_status"] = "POSITIVE_BUT_WEAK"
+                        row["economic_note"] = "Single-target leftover. Not program-reproducible."
     stop_b = (not stop_a) and pos_repro == 0
     info_value = {
         "index_id": "INFORMATION_VALUE_V9",
@@ -519,6 +542,7 @@ def write_reports(raw_rows, c, layers, inc, master_metrics, info_value, xs, stop
                 "## Databento $31.82",
                 "",
                 "This is incremental **research value**, not a dollar P&L claim.",
+                "Best-of-layer comparisons can pick LEVEL_LEAK / FALSIFIED leftovers. Databento added 0 Candidates and 0 Positive Reproducible Strategies.",
                 "",
                 "```",
                 json.dumps(info_value.get("databento"), indent=2, sort_keys=True),
@@ -644,8 +668,10 @@ def write_reports(raw_rows, c, layers, inc, master_metrics, info_value, xs, stop
             ]
         ),
     )
-    stop = "STOP A — Level 1 Candidate. Freeze new research." if stop_a else (
-        "STOP B — all legal strategy mechanisms replayed; no Positive Reproducible Strategy. Do not buy data. Next = model / information representation review."
+    stop = (
+        "STOP A: Level 1 Candidate. Freeze new research."
+        if stop_a
+        else "STOP B: all legal strategy mechanisms replayed; no Positive Reproducible Strategy. Do not buy data. Next = model / information representation review."
     )
     _write(
         os.path.join(DOCS, "V9_DECISION.md"),
@@ -655,7 +681,9 @@ def write_reports(raw_rows, c, layers, inc, master_metrics, info_value, xs, stop
                 "",
                 stop,
                 "",
-                "## A–J",
+                "Reporting 'best' rows use a pre-fixed sort (net return, then max DD, then Sharpe). They include historically FALSIFIED / LEVEL_LEAK leftovers. They are not Candidates and not a reason to retune.",
+                "",
+                "## A-J",
                 "",
                 "### A. MT5-only",
                 "",

@@ -1,0 +1,51 @@
+{
+  "average_holding": null,
+  "bars_per_year": 6048,
+  "cagr": -0.4092491592794997,
+  "calmar": -0.9052299161479225,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 5516.4309702059045,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "MICROSTRUCTURE_SURPRISE_V1",
+  "frozen_total_return": -0.44835690297940956,
+  "gross_return": -0.44835690297940956,
+  "information_set": "IS-A",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 6654,
+  "max_drawdown": -0.45209416080834075,
+  "max_trade_share": 0.013922985505001817,
+  "n_bars": 6836,
+  "net_return": -0.44835690297940956,
+  "profit_factor": 0.14654998825279417,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -9.322491156663075,
+  "slippage": 0.0,
+  "sortino": -3.8784907967838835,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-MS-0001",
+  "timeframe": "H1",
+  "total_return": -0.44835690297940956,
+  "trade_count": 231,
+  "turnover": 157.5853383161194,
+  "win_count": 40,
+  "win_rate": 0.17316017316017315,
+  "yearly": [
+    {
+      "n_bars": 275,
+      "return": -0.021546382871775127,
+      "year": "2018"
+    },
+    {
+      "n_bars": 5853,
+      "return": -0.4083731698918148,
+      "year": "2019"
+    },
+    {
+      "n_bars": 708,
+      "return": -0.0470500666089142,
+      "year": "2020"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.0036095896676586747,
+  "calmar": -0.7024885661239293,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9948.617104366907,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "CROSS_METAL_V1",
+  "frozen_total_return": -0.005138289563309306,
+  "gross_return": -0.005138289563309306,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 81,
+  "max_drawdown": -0.005138289563309263,
+  "max_trade_share": 1.0,
+  "n_bars": 360,
+  "net_return": -0.005138289563309306,
+  "profit_factor": 0.0,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -0.8378244808575575,
+  "slippage": 0.0,
+  "sortino": null,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-CM-0001",
+  "timeframe": "D1",
+  "total_return": -0.005138289563309306,
+  "trade_count": 1,
+  "turnover": 0.14078956330919465,
+  "win_count": 0,
+  "win_rate": 0.0,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": 0.0,
+      "year": "2018"
+    },
+    {
+      "n_bars": 310,
+      "return": -0.005138289563309306,
+      "year": "2019"
+    },
+    {
+      "n_bars": 37,
+      "return": 0.0,
+      "year": "2020"
+    }
+  ]
+}

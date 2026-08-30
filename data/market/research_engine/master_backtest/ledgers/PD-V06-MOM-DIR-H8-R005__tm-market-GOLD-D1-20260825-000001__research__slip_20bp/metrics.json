@@ -1,0 +1,73 @@
+{
+  "average_holding": 5.3375,
+  "bars_per_year": 252,
+  "cagr": -0.011345610513764481,
+  "calmar": -0.10865880311420596,
+  "commission": 247.95345684024846,
+  "cost_contribution": 784.5488492863346,
+  "cost_mult": 1.0,
+  "end_equity": 9134.615909154292,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "PROFIT_DISCOVERY_V0.6",
+  "gross_return": -0.008083524155937272,
+  "information_set": "IS-A",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 1846,
+  "max_drawdown": -0.10441501460162105,
+  "max_trade_share": 0.05055608567565273,
+  "n_bars": 2000,
+  "net_return": -0.08653840908457078,
+  "profit_factor": 0.653571792346728,
+  "replay_kind": "STRATEGY_REPLAY",
+  "scenario": "slip_20bp",
+  "sharpe": -0.5747234166256912,
+  "slippage": 495.90279988432087,
+  "slippage_bp": 20.0,
+  "sortino": -0.43208215512663445,
+  "spread_cost": 40.692592561765245,
+  "start_equity": 10000.0,
+  "strategy_id": "PD-V06-MOM-DIR-H8-R005",
+  "timeframe": "D1",
+  "total_return": -0.08653840908457078,
+  "trade_count": 80,
+  "turnover": 24.753181176881178,
+  "win_count": 28,
+  "win_rate": 0.35,
+  "yearly": [
+    {
+      "n_bars": 239,
+      "return": -0.011917102499349075,
+      "year": "2020"
+    },
+    {
+      "n_bars": 311,
+      "return": -0.04592927814772452,
+      "year": "2021"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0012015814848151951,
+      "year": "2022"
+    },
+    {
+      "n_bars": 310,
+      "return": -0.031043734624981667,
+      "year": "2023"
+    },
+    {
+      "n_bars": 314,
+      "return": -0.004176268822238427,
+      "year": "2024"
+    },
+    {
+      "n_bars": 313,
+      "return": 0.0,
+      "year": "2025"
+    },
+    {
+      "n_bars": 203,
+      "return": 0.0,
+      "year": "2026"
+    }
+  ]
+}

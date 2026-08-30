@@ -1,0 +1,71 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.004222275031763645,
+  "calmar": -0.1500245952553982,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9722.186878690502,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "POSITIONING_V1",
+  "frozen_total_return": -0.02778131213094981,
+  "gross_return": -0.02778131213094981,
+  "information_set": "IS-B",
+  "live_external_dependency": "YES",
+  "max_dd_bars": 937,
+  "max_drawdown": -0.02814388550474505,
+  "max_trade_share": 0.1510129392944525,
+  "n_bars": 1679,
+  "net_return": -0.02778131213094981,
+  "profit_factor": 0.11879115392425872,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -0.8495155030109363,
+  "slippage": 0.0,
+  "sortino": -0.19073473348769737,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-POS-0003",
+  "timeframe": "D1",
+  "total_return": -0.02778131213094981,
+  "trade_count": 10,
+  "turnover": 2.905185752358003,
+  "win_count": 3,
+  "win_rate": 0.3,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": 0.0,
+      "year": "2018"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0,
+      "year": "2019"
+    },
+    {
+      "n_bars": 312,
+      "return": 0.0,
+      "year": "2020"
+    },
+    {
+      "n_bars": 311,
+      "return": -0.023013003605270366,
+      "year": "2021"
+    },
+    {
+      "n_bars": 310,
+      "return": -0.004880626398586108,
+      "year": "2022"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0,
+      "year": "2023"
+    },
+    {
+      "n_bars": 113,
+      "return": 0.0,
+      "year": "2024"
+    }
+  ]
+}

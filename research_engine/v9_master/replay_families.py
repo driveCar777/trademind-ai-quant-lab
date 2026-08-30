@@ -24,18 +24,32 @@ def _hyps(space_mod, space):
     return list(hmap.values())
 
 
+def _pack_rows(packed):
+    out = {}
+    if not isinstance(packed, dict):
+        return out
+    for key, row in packed.items():
+        if str(key).startswith("_"):
+            continue
+        if isinstance(row, dict) and (row.get("bars") or row.get("window") or row.get("dataset_id")):
+            out[key] = row
+    return out
+
+
 def _target_of(spec, packed):
+    rows = _pack_rows(packed)
     target = spec.get("target") or spec.get("target_asset")
-    if target and packed and target in packed:
+    if target and target in rows:
         return target
-    keys = [k for k in (packed or {}) if not str(k).startswith("_")]
+    keys = list(rows.keys())
     return keys[0] if keys else target
 
 
 def _bars_of(packed, target):
-    if not packed:
+    rows = _pack_rows(packed)
+    row = rows.get(target) or {}
+    if not isinstance(row, dict):
         return []
-    row = packed.get(target) or {}
     return row.get("bars") or []
 
 
@@ -65,7 +79,11 @@ def replay_generic(mech, iters_boot=1, iters_perm=1):
         prepare = _import(module_name + ".prepare")
         runner = _import(module_name + ".hypothesis_runner")
         space_mod = _import(module_name + ".space")
-        packed, _space = prepare.prepare_pack(IMMUTABLE, out_dir, space=space)
+        prepared = prepare.prepare_pack(IMMUTABLE, out_dir, space=space)
+        if isinstance(prepared, tuple):
+            packed = prepared[0]
+        else:
+            packed = prepared
         specs = _hyps(space_mod, space)
     except Exception as exc:
         rows.append(
@@ -174,5 +192,17 @@ def replay_all_families(iters_boot=1, iters_perm=1):
     for mech in strategy_families():
         if mech.get("module") in ("profit", "cross_asset", "cross_residual"):
             continue
-        all_rows.extend(replay_generic(mech, iters_boot=iters_boot, iters_perm=iters_perm))
+        try:
+            all_rows.extend(replay_generic(mech, iters_boot=iters_boot, iters_perm=iters_perm))
+        except Exception as exc:
+            all_rows.append(
+                {
+                    "strategy_id": mech["family"],
+                    "family": mech["family"],
+                    "information_set": mech["information_set"],
+                    "replay_kind": "STRATEGY_REPLAY",
+                    "status": "NON_TRADEABLE",
+                    "error": "%s: %s" % (type(exc).__name__, exc),
+                }
+            )
     return all_rows

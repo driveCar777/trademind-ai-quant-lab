@@ -1,0 +1,71 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.007261884386686179,
+  "calmar": -0.12012556820705826,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9512.508612996739,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "CARRY_V1A",
+  "frozen_total_return": -0.048749138700326156,
+  "gross_return": -0.048749138700326156,
+  "information_set": "IS-B",
+  "live_external_dependency": "YES",
+  "max_dd_bars": 1661,
+  "max_drawdown": -0.06045244567891659,
+  "max_trade_share": 0.10018113923448911,
+  "n_bars": 1729,
+  "net_return": -0.048749138700326156,
+  "profit_factor": 0.4076979105994318,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -0.7094343114560098,
+  "slippage": 0.0,
+  "sortino": -0.24367100001593994,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-CARRYA-0002",
+  "timeframe": "D1",
+  "total_return": -0.048749138700326156,
+  "trade_count": 28,
+  "turnover": 14.165017571166414,
+  "win_count": 9,
+  "win_rate": 0.32142857142857145,
+  "yearly": [
+    {
+      "n_bars": 77,
+      "return": -0.0056226434907251654,
+      "year": "2018"
+    },
+    {
+      "n_bars": 313,
+      "return": -0.01683989382327744,
+      "year": "2019"
+    },
+    {
+      "n_bars": 313,
+      "return": -0.00623852562275895,
+      "year": "2020"
+    },
+    {
+      "n_bars": 312,
+      "return": -0.01529101984329706,
+      "year": "2021"
+    },
+    {
+      "n_bars": 312,
+      "return": -0.006131105888288579,
+      "year": "2022"
+    },
+    {
+      "n_bars": 311,
+      "return": -0.011847123365378742,
+      "year": "2023"
+    },
+    {
+      "n_bars": 91,
+      "return": 0.0031215582674763986,
+      "year": "2024"
+    }
+  ]
+}

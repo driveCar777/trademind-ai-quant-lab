@@ -1,0 +1,98 @@
+{
+  "DATACOST": 0.0,
+  "FINAL_OOS_ACCESS": "DENIED",
+  "NEW_DATA_PURCHASE": false,
+  "candidate_gate": "UNCHANGED_LEVEL_1",
+  "contract_hash": "38a68051438f9df654e95646c5392c07a0f1d5f8dc714125546d454607a918b2",
+  "contract_id": "MASTER_BACKTEST_CONTRACT_V9",
+  "databento_historical_spend_usd": 31.816129,
+  "discovery_id": "MASTER_BACKTEST_V9",
+  "economic_status": [
+    "LOSS",
+    "BREAK_EVEN",
+    "POSITIVE_BUT_WEAK",
+    "POSITIVE_REPRODUCIBLE"
+  ],
+  "execution": {
+    "bid_ask": "NOT_IN_BARS",
+    "close_fill": "FORBIDDEN",
+    "commission_bp_per_side": 5.0,
+    "execution_model": "OHLC_PLUS_SPREAD_POINTS",
+    "fill": "NEXT_BAR_OPEN",
+    "forbidden": "CLOSE[t] -> OPEN[t]",
+    "slippage_bp_per_side": 10.0,
+    "spread": "BROKER_POINTS_RULE"
+  },
+  "information_sets": {
+    "IS-A": "MT5_ONLY",
+    "IS-B": "MT5_PLUS_FREE_PUBLIC",
+    "IS-C": "MT5_PLUS_PUBLIC_PLUS_FUTURES",
+    "IS-D": "ALL_OWNED"
+  },
+  "note": "Replay existing mechanisms into one MT5 costed ledger. Not a new alpha search.",
+  "position_sizing": {
+    "leverage_cap": 1.0,
+    "risk_frac": [
+      0.005,
+      0.01
+    ],
+    "start_equity": 10000.0,
+    "stop": "FAMILY_CONTRACT_OR_ATR14_1.5"
+  },
+  "replay_rules": {
+    "combinatorial_search": false,
+    "factor_discovery": "FACTOR_PERFORMANCE_ONLY",
+    "hyp_0001": "PREDICTIVE_ONLY",
+    "modify_history": false,
+    "new_hypotheses": false,
+    "v05": "PREDICTIVE_ONLY"
+  },
+  "reporting_sort": [
+    "net_return",
+    "max_dd",
+    "sharpe"
+  ],
+  "seed": 20260830,
+  "sensitivity_pre_fixed": {
+    "cost_multipliers": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "factorial": false,
+    "note": "Not a search. Not chosen after PnL.",
+    "primary_scenario": {
+      "cost_mult": 1.0,
+      "slippage_bp": 10.0
+    },
+    "risk_frac": [
+      0.005,
+      0.01
+    ],
+    "slippage_bp": [
+      0.0,
+      10.0,
+      20.0
+    ]
+  },
+  "trading_venue": "MT5",
+  "universe": {
+    "a_share": "NOT_IN_SCOPE",
+    "in_scope": [
+      "GOLD",
+      "EURUSD",
+      "USDJPY",
+      "OIL"
+    ],
+    "mt5_symbols": {
+      "EURUSD": "EURUSD",
+      "GOLD": "GOLD",
+      "OIL": "CrudeOIL",
+      "USDJPY": "USDJPY"
+    },
+    "options": "OUT_OF_SCOPE_BYTES_0",
+    "source": "qualified_mt5_20260825_matrix"
+  },
+  "unused_research_reserve_note": "remaining Databento credits are UNUSED_RESEARCH_RESERVE, not budget",
+  "version": "9.0"
+}

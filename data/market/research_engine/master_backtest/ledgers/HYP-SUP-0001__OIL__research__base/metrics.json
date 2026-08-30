@@ -1,0 +1,71 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.0014831917626654256,
+  "calmar": -0.09102402765280942,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9901.768405376242,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "SUPPLY_V1",
+  "frozen_total_return": -0.009823159462375775,
+  "gross_return": -0.009823159462375775,
+  "information_set": "IS-B",
+  "live_external_dependency": "YES",
+  "max_dd_bars": 1271,
+  "max_drawdown": -0.016294508174508882,
+  "max_trade_share": 0.3272844469517281,
+  "n_bars": 1677,
+  "net_return": -0.009823159462375775,
+  "profit_factor": 0.4865123832334574,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -0.2915287486198758,
+  "slippage": 0.0,
+  "sortino": -0.048649945879290064,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-SUP-0001",
+  "timeframe": "D1",
+  "total_return": -0.009823159462375775,
+  "trade_count": 7,
+  "turnover": 0.7237721313453831,
+  "win_count": 1,
+  "win_rate": 0.14285714285714285,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": 0.0,
+      "year": "2018"
+    },
+    {
+      "n_bars": 309,
+      "return": 0.0,
+      "year": "2019"
+    },
+    {
+      "n_bars": 312,
+      "return": -0.011227960220143496,
+      "year": "2020"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.004288721458673317,
+      "year": "2021"
+    },
+    {
+      "n_bars": 310,
+      "return": 0.0,
+      "year": "2022"
+    },
+    {
+      "n_bars": 309,
+      "return": -0.00038042774336288776,
+      "year": "2023"
+    },
+    {
+      "n_bars": 114,
+      "return": -0.002476235436408958,
+      "year": "2024"
+    }
+  ]
+}

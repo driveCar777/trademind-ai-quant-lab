@@ -1,0 +1,46 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.017890230396167883,
+  "calmar": -0.6862829704894136,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9754.48819462476,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "SIZE_SPREAD_V1",
+  "frozen_total_return": -0.02455118053752392,
+  "gross_return": -0.02455118053752392,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 279,
+  "max_drawdown": -0.0260683000532706,
+  "max_trade_share": 0.16445255196779127,
+  "n_bars": 348,
+  "net_return": -0.02455118053752392,
+  "profit_factor": 0.14841103131685116,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -2.0676972500744903,
+  "slippage": 0.0,
+  "sortino": -0.63647946061769,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-SZ-0003",
+  "timeframe": "D1",
+  "total_return": -0.02455118053752392,
+  "trade_count": 20,
+  "turnover": 5.307236286362943,
+  "win_count": 4,
+  "win_rate": 0.2,
+  "yearly": [
+    {
+      "n_bars": 146,
+      "return": -0.004352571515549464,
+      "year": "2009"
+    },
+    {
+      "n_bars": 202,
+      "return": -0.020286909245294082,
+      "year": "2010"
+    }
+  ]
+}

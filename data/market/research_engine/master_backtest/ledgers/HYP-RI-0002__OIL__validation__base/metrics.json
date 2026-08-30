@@ -1,0 +1,51 @@
+{
+  "average_holding": null,
+  "bars_per_year": 6048,
+  "cagr": -0.15923908042632318,
+  "calmar": -0.8480993656830739,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 8221.624969598139,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "REGIME_INTERACTION_V1",
+  "frozen_total_return": -0.17783750304018608,
+  "gross_return": -0.17783750304018608,
+  "information_set": "IS-A",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 6687,
+  "max_drawdown": -0.18775993341071454,
+  "max_trade_share": 0.05389496471248267,
+  "n_bars": 6829,
+  "net_return": -0.17783750304018608,
+  "profit_factor": 0.19502841080160094,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -4.365803851121773,
+  "slippage": 0.0,
+  "sortino": -1.694835180813107,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-RI-0002",
+  "timeframe": "H1",
+  "total_return": -0.17783750304018608,
+  "trade_count": 61,
+  "turnover": 45.74746715838523,
+  "win_count": 12,
+  "win_rate": 0.19672131147540983,
+  "yearly": [
+    {
+      "n_bars": 276,
+      "return": -0.015640363916476274,
+      "year": "2018"
+    },
+    {
+      "n_bars": 5843,
+      "return": -0.1748543552426136,
+      "year": "2019"
+    },
+    {
+      "n_bars": 710,
+      "return": 0.01221613015496037,
+      "year": "2020"
+    }
+  ]
+}

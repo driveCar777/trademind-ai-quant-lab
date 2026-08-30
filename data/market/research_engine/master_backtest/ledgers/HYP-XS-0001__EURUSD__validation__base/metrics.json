@@ -1,0 +1,66 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.08133088671828603,
+  "calmar": -0.2108120074899424,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 6142.018299305544,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "XS_REV_V1",
+  "frozen_total_return": -0.3857981700694456,
+  "gross_return": -0.3857981700694456,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 1448,
+  "max_drawdown": -0.3857981700694456,
+  "max_trade_share": 0.010195323053023406,
+  "n_bars": 1449,
+  "net_return": -0.3857981700694456,
+  "profit_factor": 0.18628774186350633,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -4.1922402526982,
+  "slippage": 0.0,
+  "sortino": -3.489649043436918,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-XS-0001",
+  "timeframe": "D1",
+  "total_return": -0.3857981700694456,
+  "trade_count": 289,
+  "turnover": 127.87507824059134,
+  "win_count": 67,
+  "win_rate": 0.23183391003460208,
+  "yearly": [
+    {
+      "n_bars": 245,
+      "return": -0.08127069110912322,
+      "year": "1971"
+    },
+    {
+      "n_bars": 251,
+      "return": -0.07080604224317999,
+      "year": "1972"
+    },
+    {
+      "n_bars": 250,
+      "return": -0.08321520147778327,
+      "year": "1973"
+    },
+    {
+      "n_bars": 251,
+      "return": -0.0639253774744859,
+      "year": "1974"
+    },
+    {
+      "n_bars": 252,
+      "return": -0.0981348609645949,
+      "year": "1975"
+    },
+    {
+      "n_bars": 200,
+      "return": -0.06691655086704285,
+      "year": "1976"
+    }
+  ]
+}

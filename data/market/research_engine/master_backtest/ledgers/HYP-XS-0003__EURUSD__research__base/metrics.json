@@ -1,0 +1,171 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.030724771189395095,
+  "calmar": -0.05416354520591637,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 4328.43488873168,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "XS_REV_V1",
+  "frozen_total_return": -0.567156511126832,
+  "gross_return": -0.567156511126832,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 6489,
+  "max_drawdown": -0.5672592344645672,
+  "max_trade_share": 0.00601265394681436,
+  "n_bars": 6763,
+  "net_return": -0.567156511126832,
+  "profit_factor": 0.26595374148803275,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -2.205680137398682,
+  "slippage": 0.0,
+  "sortino": -1.3508218152144256,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-XS-0003",
+  "timeframe": "D1",
+  "total_return": -0.567156511126832,
+  "trade_count": 630,
+  "turnover": 152.65253186313035,
+  "win_count": 170,
+  "win_rate": 0.2698412698412698,
+  "yearly": [
+    {
+      "n_bars": 245,
+      "return": 0.0,
+      "year": "1971"
+    },
+    {
+      "n_bars": 251,
+      "return": -0.04407618967476179,
+      "year": "1972"
+    },
+    {
+      "n_bars": 250,
+      "return": -0.04213667273286614,
+      "year": "1973"
+    },
+    {
+      "n_bars": 251,
+      "return": -0.07096335361318074,
+      "year": "1974"
+    },
+    {
+      "n_bars": 252,
+      "return": -0.038273659181369823,
+      "year": "1975"
+    },
+    {
+      "n_bars": 253,
+      "return": -0.019276688889698246,
+      "year": "1976"
+    },
+    {
+      "n_bars": 250,
+      "return": -0.04134372145744103,
+      "year": "1977"
+    },
+    {
+      "n_bars": 258,
+      "return": -0.011783654170861024,
+      "year": "1978"
+    },
+    {
+      "n_bars": 258,
+      "return": -0.039194009328446966,
+      "year": "1979"
+    },
+    {
+      "n_bars": 253,
+      "return": -0.0526677078578196,
+      "year": "1980"
+    },
+    {
+      "n_bars": 256,
+      "return": -0.03305830758566286,
+      "year": "1981"
+    },
+    {
+      "n_bars": 257,
+      "return": -0.034952569271755496,
+      "year": "1982"
+    },
+    {
+      "n_bars": 254,
+      "return": -0.03451691221605879,
+      "year": "1983"
+    },
+    {
+      "n_bars": 258,
+      "return": -0.02702648195412749,
+      "year": "1984"
+    },
+    {
+      "n_bars": 258,
+      "return": -0.08321793061494664,
+      "year": "1985"
+    },
+    {
+      "n_bars": 254,
+      "return": -0.02694950595286061,
+      "year": "1986"
+    },
+    {
+      "n_bars": 255,
+      "return": -0.022772755380840448,
+      "year": "1987"
+    },
+    {
+      "n_bars": 255,
+      "return": -0.001493960754040069,
+      "year": "1988"
+    },
+    {
+      "n_bars": 257,
+      "return": -0.0036693796045014215,
+      "year": "1989"
+    },
+    {
+      "n_bars": 257,
+      "return": -0.008141301083397168,
+      "year": "1990"
+    },
+    {
+      "n_bars": 257,
+      "return": -0.03310900827090624,
+      "year": "1991"
+    },
+    {
+      "n_bars": 261,
+      "return": -0.015651222360157258,
+      "year": "1992"
+    },
+    {
+      "n_bars": 260,
+      "return": -0.026346582550185182,
+      "year": "1993"
+    },
+    {
+      "n_bars": 260,
+      "return": -0.054238163812179274,
+      "year": "1994"
+    },
+    {
+      "n_bars": 260,
+      "return": -0.028019908986922637,
+      "year": "1995"
+    },
+    {
+      "n_bars": 261,
+      "return": -0.011601538127654076,
+      "year": "1996"
+    },
+    {
+      "n_bars": 122,
+      "return": -0.012270113139733252,
+      "year": "1997"
+    }
+  ]
+}

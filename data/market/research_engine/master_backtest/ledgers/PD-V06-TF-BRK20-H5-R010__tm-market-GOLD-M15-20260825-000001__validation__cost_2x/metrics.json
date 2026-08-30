@@ -1,0 +1,43 @@
+{
+  "average_holding": 4.4,
+  "bars_per_year": 24192,
+  "cagr": -0.07432592295591978,
+  "calmar": -6.379303422526323,
+  "commission": 49.68693925489171,
+  "cost_contribution": 153.98960533843578,
+  "cost_mult": 2.0,
+  "end_equity": 9936.385035473417,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "PROFIT_DISCOVERY_V0.6",
+  "gross_return": 0.00903746408118522,
+  "information_set": "IS-A",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 575,
+  "max_drawdown": -0.011651103268338556,
+  "max_trade_share": 0.44027514591918987,
+  "n_bars": 2000,
+  "net_return": -0.006361496452658266,
+  "profit_factor": 0.8217287047407075,
+  "replay_kind": "STRATEGY_REPLAY",
+  "scenario": "cost_2x",
+  "sharpe": -2.811456964625348,
+  "slippage": 99.37639168467865,
+  "slippage_bp": 10.0,
+  "sortino": -0.5510497474860019,
+  "spread_cost": 4.926274398865415,
+  "start_equity": 10000.0,
+  "strategy_id": "PD-V06-TF-BRK20-H5-R010",
+  "timeframe": "M15",
+  "total_return": -0.006361496452658266,
+  "trade_count": 5,
+  "turnover": 4.966118693818549,
+  "win_count": 2,
+  "win_rate": 0.4,
+  "yearly": [
+    {
+      "n_bars": 2000,
+      "return": -0.006361496452658266,
+      "year": "2026"
+    }
+  ]
+}

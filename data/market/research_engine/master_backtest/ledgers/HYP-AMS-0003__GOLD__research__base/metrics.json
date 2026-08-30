@@ -1,0 +1,71 @@
+{
+  "average_holding": null,
+  "bars_per_year": 6048,
+  "cagr": -0.05924773909264369,
+  "calmar": -0.2151247644767205,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 7245.889415067547,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "ALT_MARKET_STRUCTURE_V1",
+  "frozen_total_return": -0.2754110584932453,
+  "gross_return": -0.2754110584932453,
+  "information_set": "IS-A",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 31845,
+  "max_drawdown": -0.2754110584932453,
+  "max_trade_share": 0.02575843025358382,
+  "n_bars": 31902,
+  "net_return": -0.2754110584932453,
+  "profit_factor": 0.11952525597971561,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -3.30661262651158,
+  "slippage": 0.0,
+  "sortino": -0.48544571379614915,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-AMS-0003",
+  "timeframe": "H1",
+  "total_return": -0.2754110584932453,
+  "trade_count": 127,
+  "turnover": 103.02367331569125,
+  "win_count": 20,
+  "win_rate": 0.15748031496062992,
+  "yearly": [
+    {
+      "n_bars": 275,
+      "return": -0.007219423916589807,
+      "year": "2018"
+    },
+    {
+      "n_bars": 5853,
+      "return": -0.04342570187146888,
+      "year": "2019"
+    },
+    {
+      "n_bars": 5918,
+      "return": -0.04912349771142943,
+      "year": "2020"
+    },
+    {
+      "n_bars": 5934,
+      "return": -0.03792805382153419,
+      "year": "2021"
+    },
+    {
+      "n_bars": 5914,
+      "return": -0.08401894353999573,
+      "year": "2022"
+    },
+    {
+      "n_bars": 5932,
+      "return": -0.06715284256803455,
+      "year": "2023"
+    },
+    {
+      "n_bars": 2076,
+      "return": -0.025318395745795086,
+      "year": "2024"
+    }
+  ]
+}

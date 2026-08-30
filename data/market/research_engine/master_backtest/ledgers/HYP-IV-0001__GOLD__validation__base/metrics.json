@@ -1,0 +1,51 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.010297830806261343,
+  "calmar": -0.703490914918649,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9853.618140790742,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "IMPLIED_VOL_V1",
+  "frozen_total_return": -0.014638185920925806,
+  "gross_return": -0.014638185920925806,
+  "information_set": "IS-B",
+  "live_external_dependency": "YES",
+  "max_dd_bars": 305,
+  "max_drawdown": -0.014638185920925752,
+  "max_trade_share": 0.2070387253388227,
+  "n_bars": 360,
+  "net_return": -0.014638185920925806,
+  "profit_factor": 0.4424402494999295,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -0.8328471858450891,
+  "slippage": 0.0,
+  "sortino": -11.87990824776134,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-IV-0001",
+  "timeframe": "D1",
+  "total_return": -0.014638185920925806,
+  "trade_count": 7,
+  "turnover": 2.0803956176979117,
+  "win_count": 2,
+  "win_rate": 0.2857142857142857,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": 0.0,
+      "year": "2018"
+    },
+    {
+      "n_bars": 310,
+      "return": -0.014638185920925806,
+      "year": "2019"
+    },
+    {
+      "n_bars": 37,
+      "return": 0.0,
+      "year": "2020"
+    }
+  ]
+}

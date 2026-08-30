@@ -1,0 +1,51 @@
+{
+  "average_holding": null,
+  "bars_per_year": 252,
+  "cagr": -0.015991070289263498,
+  "calmar": -0.6866972445698358,
+  "commission": 0.0,
+  "cost_contribution": 0.0,
+  "end_equity": 9773.591680158292,
+  "execution_model": "EXECUTION_APPROXIMATION",
+  "family": "ENERGY_RV_V1",
+  "frozen_total_return": -0.022640831984170884,
+  "gross_return": -0.022640831984170884,
+  "information_set": "IS-B",
+  "live_external_dependency": "NO",
+  "max_dd_bars": 291,
+  "max_drawdown": -0.023286929452120783,
+  "max_trade_share": 0.17371690059608574,
+  "n_bars": 359,
+  "net_return": -0.022640831984170884,
+  "profit_factor": 0.12567100054425043,
+  "replay_kind": "STRATEGY_REPLAY",
+  "sharpe": -2.1144077091799365,
+  "slippage": 0.0,
+  "sortino": -0.6997136110396693,
+  "spread_cost": 0.0,
+  "start_equity": 10000.0,
+  "strategy_id": "HYP-ER-0003",
+  "timeframe": "D1",
+  "total_return": -0.022640831984170884,
+  "trade_count": 16,
+  "turnover": 1.8223532018352988,
+  "win_count": 2,
+  "win_rate": 0.125,
+  "yearly": [
+    {
+      "n_bars": 13,
+      "return": 0.0,
+      "year": "2018"
+    },
+    {
+      "n_bars": 309,
+      "return": -0.02328692945212074,
+      "year": "2019"
+    },
+    {
+      "n_bars": 37,
+      "return": 0.000661501814025689,
+      "year": "2020"
+    }
+  ]
+}
