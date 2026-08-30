@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V12 A-share PIT Foundation **IN PROGRESS**。不要买数据。不要跑 Alpha。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；A股 point-in-time 地基）
-> **阶段终点:** A_SHARE_DATA_STATUS = READY / CONDITIONAL / BLOCKED。退市历史缺失则不得 RESEARCH_READY。禁止因子/回测。
+> **当前活跃模块:** V12 A-share PIT Foundation **CONDITIONAL**。不要买数据。不要跑 Alpha。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；`NEXT=FREEZE_FULL_EQUITY_DAILY_PANEL`）
+> **阶段终点:** 已给出 `A_SHARE_DATA_STATUS=CONDITIONAL`。不是 RESEARCH_READY。禁止因子/回测。
 
 ---
 
@@ -58,7 +58,15 @@
 | MISSION V9.0 | Existing data master backtest | ✅ STOP B | 2026-08-30 |
 | MISSION V10.0 | Model discovery / information representation | ✅ STOP B | 2026-08-30 |
 | MISSION V11.0 | Alpha capital allocation / next-market decision | ✅ DONE | 2026-08-30 |
-| MISSION V12.0 | China A-share PIT research foundation | 🔄 IN PROGRESS | 2026-08-30 |
+| MISSION V12.0 | China A-share PIT research foundation | ⏸ CONDITIONAL | 2026-08-30 |
+
+## V12 A-share PIT Foundation — CONDITIONAL 2026-08-30
+
+- Not alpha. Not a backtest. Not a purchase. Spend = $0.
+- `A_SHARE_DATA_STATUS = CONDITIONAL`. `NEXT_PRIMARY_ACTION = FREEZE_FULL_EQUITY_DAILY_PANEL`.
+- BaoStock canonical. 337 delisted equities: 335 have bars. Industry is not PIT. Full daily panel not frozen.
+- Reports: `A_SHARE_READY_DECISION_V12.md` / `A_SHARE_DATA_FOUNDATION_V12.md` / `A_SHARE_SOURCE_AUDIT_V12.md`
+- Machine: `data/market/cn_a_share/`
 
 ## V11 Capital Allocation — 2026-08-30
 

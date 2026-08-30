@@ -1,8 +1,8 @@
 # A-share source audit V12
 
-**Date:** 2026-08-30  
-**Purchase:** NO  
-**Key:** none  
+**Date:** 2026-08-30
+**Purchase:** NO
+**Key:** none
 
 Live calls were made. Documentation was not trusted alone.
 

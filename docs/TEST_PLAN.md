@@ -809,6 +809,22 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V12 A-share PIT Foundation — 2026-08-30 CONDITIONAL
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| schema / calendar / PIT / mutation / listing / CA / determinism / gate 单元 | ✅ **14 PASS** |
+| 状态 | `A_SHARE_DATA_STATUS=CONDITIONAL` |
+| 下一动作 | `FREEZE_FULL_EQUITY_DAILY_PANEL` |
+| 退市普查 | 337 名；335 有 K 线；空 2 |
+| 采购 / Alpha / 回测 | 无 |
+| 花费 | $0 |
+| Final OOS | ✅ 未访问 |
+
+不是交易许可。不是年化 10%。不要开始 A 股 Alpha。
+
 ## V11 Alpha Capital Allocation — 2026-08-30
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_v11_alloc.py --import-mode=importlib`

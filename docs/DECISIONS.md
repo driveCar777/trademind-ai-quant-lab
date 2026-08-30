@@ -613,5 +613,19 @@
 
 **状态：** 2026-08-27。合同已写。实验未跑。
 
+---
+
+## Decision 049 — V12 A 股只做免费 PIT 地基，BaoStock 为 canonical
+
+**决定：**
+- 中国 A 股下一刀是 **point-in-time 数据层**，不是因子、不是回测、不是采购。
+- Canonical = BaoStock（无 key）。AkShare-class HTTP 只做 cross-check，不能当店。
+- 退市历史必须普查。337 只有 2 只无 K 线 → 不标 RESEARCH_READY，也不假装宇宙完整。
+- 行业分类今日快照不得回填十年。财务没有 `announcement_date`/`pubDate` 不得 RESEARCH_READY。
+- 全日线盘未冻之前：`A_SHARE_DATA_STATUS=CONDITIONAL`。禁止 A 股 Alpha。
+- 不买 Tushare Pro / Wind / Choice / CSMAR。
+
+**状态：** 2026-08-30。CONDITIONAL。`NEXT=FREEZE_FULL_EQUITY_DAILY_PANEL`。
+
 
 

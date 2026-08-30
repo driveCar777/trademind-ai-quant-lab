@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V12 A-share PIT foundation CONDITIONAL
+
+- Free BaoStock PIT layer. No purchase. No alpha. No backtest.
+- `A_SHARE_DATA_STATUS=CONDITIONAL`. Next = freeze the full equity daily panel. Do not start A-share alpha.
+- Entry: `docs/research_engine/A_SHARE_READY_DECISION_V12.md`.
+
 ## 2026-08-30 — V12 A-share PIT foundation START
 
 - Point-in-time A-share data layer. No purchase. No alpha. No backtest.
