@@ -1,0 +1,1843 @@
+{
+  "NEW_DATA_DOWNLOAD": false,
+  "NEW_DATA_PURCHASE": false,
+  "ablation_groups": {
+    "ALL": [
+      "G_PRICE",
+      "G_VOL",
+      "G_FUT",
+      "G_OI",
+      "G_XASSET",
+      "G_PUBLIC"
+    ],
+    "ALL_MINUS_FUT": [
+      "G_PRICE",
+      "G_VOL",
+      "G_OI",
+      "G_XASSET",
+      "G_PUBLIC"
+    ],
+    "ALL_MINUS_OI": [
+      "G_PRICE",
+      "G_VOL",
+      "G_FUT",
+      "G_XASSET",
+      "G_PUBLIC"
+    ],
+    "ALL_MINUS_PUBLIC": [
+      "G_PRICE",
+      "G_VOL",
+      "G_FUT",
+      "G_OI",
+      "G_XASSET"
+    ],
+    "ALL_MINUS_XASSET": [
+      "G_PRICE",
+      "G_VOL",
+      "G_FUT",
+      "G_OI",
+      "G_PUBLIC"
+    ],
+    "MT5_ONLY": [
+      "G_PRICE",
+      "G_VOL",
+      "G_XASSET"
+    ]
+  },
+  "features": [
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "1-bar close return",
+      "feature_id": "ret1",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_PRICE",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "5-bar close return",
+      "feature_id": "ret5",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_PRICE",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "20-bar close return",
+      "feature_id": "ret20",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_PRICE",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "60-bar close return",
+      "feature_id": "ret60",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_PRICE",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "120-bar close return",
+      "feature_id": "ret120",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_PRICE",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "close location in 20-bar high-low",
+      "feature_id": "range20",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_PRICE",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "calendar month-end dummy",
+      "feature_id": "month_end",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_PRICE",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "20-bar return stdev",
+      "feature_id": "rv20",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_VOL",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "60-bar return stdev",
+      "feature_id": "rv60",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_VOL",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "ATR14 / close",
+      "feature_id": "atr14_pct",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_VOL",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "broker spread vs close",
+      "feature_id": "spread_pct",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_VOL",
+      "inferred": false,
+      "kind": "OBSERVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "OBSERVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-{ASSET}-D1-20260828-000001",
+      "economic_meaning": "tick_volume z vs 20",
+      "feature_id": "tickvol_z20",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_VOL",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 1,
+      "dataset": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+      "economic_meaning": "front-second settlement slope after knowledge_time",
+      "feature_id": "curve_slope",
+      "first_available": null,
+      "group": "G_FUT",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 1,
+      "last_available": null,
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "PACK_E",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 1,
+      "dataset": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+      "economic_meaning": "official roll yield",
+      "feature_id": "roll_yield",
+      "first_available": null,
+      "group": "G_FUT",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 1,
+      "last_available": null,
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "PACK_E",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 1,
+      "dataset": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+      "economic_meaning": "1-day slope change",
+      "feature_id": "steepening",
+      "first_available": null,
+      "group": "G_FUT",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 1,
+      "last_available": null,
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "PACK_E",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 1,
+      "dataset": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+      "economic_meaning": "backwardation flag",
+      "feature_id": "backwardation",
+      "first_available": null,
+      "group": "G_FUT",
+      "inferred": false,
+      "kind": "OBSERVED",
+      "lag": 1,
+      "last_available": null,
+      "provenance": "OBSERVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "PACK_E",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 1,
+      "dataset": "tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+      "economic_meaning": "days to front expiry",
+      "feature_id": "dte",
+      "first_available": null,
+      "group": "G_FUT",
+      "inferred": false,
+      "kind": "OBSERVED",
+      "lag": 1,
+      "last_available": null,
+      "provenance": "OBSERVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "PACK_E",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 2,
+      "dataset": "tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+      "economic_meaning": "front OI change after OI knowledge_time",
+      "feature_id": "oi_change",
+      "first_available": null,
+      "group": "G_OI",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 2,
+      "last_available": null,
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "PACK_E",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 2,
+      "dataset": "tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+      "economic_meaning": "OI-flow new longs flag",
+      "feature_id": "new_longs",
+      "first_available": null,
+      "group": "G_OI",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 2,
+      "last_available": null,
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "PACK_E",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 2,
+      "dataset": "tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+      "economic_meaning": "OI-flow new shorts flag",
+      "feature_id": "new_shorts",
+      "first_available": null,
+      "group": "G_OI",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 2,
+      "last_available": null,
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "PACK_E",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-GOLD-D1-20260828-000001|tm-market-OIL-D1-20260828-000001",
+      "economic_meaning": "other of GOLD/OIL 20-bar return",
+      "feature_id": "other_ret20",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_XASSET",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-EURUSD-D1-20260828-000001",
+      "economic_meaning": "EURUSD 20-bar return",
+      "feature_id": "eurusd_ret20",
+      "first_available": "1971-01-03T00:00:00Z",
+      "group": "G_XASSET",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-USDJPY-D1-20260828-000001",
+      "economic_meaning": "USDJPY 20-bar return as dollar proxy",
+      "feature_id": "usdjpy_ret20",
+      "first_available": "1971-01-03T00:00:00Z",
+      "group": "G_XASSET",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 0,
+      "dataset": "tm-market-GOLD-D1-20260828-000001|tm-market-OIL-D1-20260828-000001",
+      "economic_meaning": "log GOLD/OIL residual z60",
+      "feature_id": "go_ratio_z60",
+      "first_available": "2018-12-12T00:00:00Z",
+      "group": "G_XASSET",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 0,
+      "last_available": "2026-08-28T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "MT5",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 5,
+      "dataset": "tm-alt-CFTC-{ASSET}-COT-W1-20260828-000002",
+      "economic_meaning": "weekly COT close as stored series",
+      "feature_id": "cot_z",
+      "first_available": "2018-01-05T00:00:00Z",
+      "group": "G_PUBLIC",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 5,
+      "last_available": "2026-08-21T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "CFTC",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "W1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 5,
+      "dataset": "tm-alt-CFTC-{ASSET}-COT-W1-20260828-000002",
+      "economic_meaning": "COT week change",
+      "feature_id": "cot_wow",
+      "first_available": "2018-01-05T00:00:00Z",
+      "group": "G_PUBLIC",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 5,
+      "last_available": "2026-08-21T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "CFTC",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "W1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 5,
+      "dataset": "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001",
+      "economic_meaning": "US crude stocks wow",
+      "feature_id": "eia_wow",
+      "first_available": "1982-08-20T00:00:00Z",
+      "group": "G_PUBLIC",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 5,
+      "last_available": "2026-08-21T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "EIA",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "W1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 1,
+      "dataset": "tm-alt-UST-DGS10-D1-20260828-000001",
+      "economic_meaning": "5-session UST10 change",
+      "feature_id": "ust10_chg5",
+      "first_available": "2018-01-02T00:00:00Z",
+      "group": "G_PUBLIC",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 1,
+      "last_available": "2026-08-27T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "UST",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    },
+    {
+      "allowed_as_model_input": true,
+      "already_tested_as_simple_rule": true,
+      "causal_lag": 1,
+      "dataset": "tm-alt-CBOE-GVZ-D1-20260828-000001|tm-alt-CBOE-OVX-D1-20260828-000001",
+      "economic_meaning": "GVZ (GOLD) or OVX (OIL) z20",
+      "feature_id": "iv_z",
+      "first_available": "2009-09-18T00:00:00Z",
+      "group": "G_PUBLIC",
+      "inferred": false,
+      "kind": "DERIVED",
+      "lag": 1,
+      "last_available": "2026-08-27T00:00:00Z",
+      "provenance": "DERIVED",
+      "simple_rule_status": "SIMPLE_RULE_KILLED",
+      "source": "CBOE",
+      "tested_simple": "SIMPLE_RULE_KILLED",
+      "timeframe": "D1"
+    }
+  ],
+  "group_features": {
+    "G_FUT": [
+      "curve_slope",
+      "roll_yield",
+      "steepening",
+      "backwardation",
+      "dte"
+    ],
+    "G_OI": [
+      "oi_change",
+      "new_longs",
+      "new_shorts"
+    ],
+    "G_PRICE": [
+      "ret1",
+      "ret5",
+      "ret20",
+      "ret60",
+      "ret120",
+      "range20",
+      "month_end"
+    ],
+    "G_PUBLIC": [
+      "cot_z",
+      "cot_wow",
+      "eia_wow",
+      "ust10_chg5",
+      "iv_z"
+    ],
+    "G_VOL": [
+      "rv20",
+      "rv60",
+      "atr14_pct",
+      "spread_pct",
+      "tickvol_z20"
+    ],
+    "G_XASSET": [
+      "other_ret20",
+      "eurusd_ret20",
+      "usdjpy_ret20",
+      "go_ratio_z60"
+    ]
+  },
+  "index_id": "MODEL_FEATURE_UNIVERSE_V10",
+  "inferred_allowed": false,
+  "n_model_features": 29,
+  "n_owned_immutable_datasets": 110,
+  "note": "SIMPLE_RULE_KILLED does not ban the feature as a model input. It bans reopening the old single-rule hypothesis. Model interaction is a new experiment_id.",
+  "owned_immutable_datasets": [
+    {
+      "dataset_id": "tm-alt-BOJ-CALL-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1927
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-BOJ-CALL-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-CBOE-GVZ-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 4259
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-CBOE-GVZ-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-CBOE-OVX-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 4259
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-CBOE-OVX-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-CFTC-GOLD-COT-W1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 451
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-CFTC-GOLD-COT-W1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-CFTC-GOLD-COT-W1-20260828-000002",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 451
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-CFTC-GOLD-COT-W1-20260828-000002"
+    },
+    {
+      "dataset_id": "tm-alt-CFTC-OIL-COT-W1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 451
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-CFTC-OIL-COT-W1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-CFTC-OIL-COT-W1-20260828-000002",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 451
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-CFTC-OIL-COT-W1-20260828-000002"
+    },
+    {
+      "dataset_id": "tm-alt-ECB-ESTR-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1769
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-ECB-ESTR-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-EIA-USCRUDE-PROD-W1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2274
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-EIA-USCRUDE-PROD-W1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2291
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-EIA-USREFIN-UTIL-W1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1869
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-EIA-USREFIN-UTIL-W1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-NYFED-EFFR-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2174
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-NYFED-EFFR-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-alt-UST-DGS10-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2164
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-alt-UST-DGS10-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 8184
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-fut-GLBX-CURVE-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 8184
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-fut-GLBX-OIFLOW-D1-20260830-000001"
+    },
+    {
+      "dataset_id": "tm-fut-GLBX-VOLFLOW-D1-20260830-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 8184
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-fut-GLBX-VOLFLOW-D1-20260830-000001"
+    },
+    {
+      "dataset_id": "tm-market-AUDUSD-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 10110
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-AUDUSD-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-AUDUSD-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-AUDUSD-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-BRENT-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2087
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-BRENT-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-BRENT-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 43126
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-BRENT-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-BRENT-H4-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 11975
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-BRENT-H4-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-BRENT-M15-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-BRENT-M15-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-COCOA-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1958
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-COCOA-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-COFFEE-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1959
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-COFFEE-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-COPPER-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2394
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-COPPER-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-COPPER-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45449
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-COPPER-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-COPPER-M15-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-COPPER-M15-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-CORN-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1928
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-CORN-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-COTTON-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1930
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-COTTON-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-DXY-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1999
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-DXY-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-DXY-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 41468
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-DXY-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURGBP-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 10098
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURGBP-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURGBP-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURGBP-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURJPY-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 9950
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURJPY-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURJPY-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURJPY-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-EUROBUND-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1974
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EUROBUND-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURUSD-D1-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 15793
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURUSD-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURUSD-H1-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 50508
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURUSD-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-H4-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURUSD-H4-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-H4-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 50000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURUSD-H4-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURUSD-M15-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-EURUSD-M15-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-EURUSD-M15-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GASOLINE-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2394
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GASOLINE-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GASOLINE-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45467
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GASOLINE-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GBPJPY-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 10102
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GBPJPY-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GBPJPY-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GBPJPY-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GBPUSD-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 10098
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GBPUSD-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GBPUSD-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GBPUSD-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GBPUSD-M15-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GBPUSD-M15-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GER40-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1975
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GER40-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GER40-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 37978
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GER40-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-D1-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2399
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-H1-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45575
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-H4-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-H4-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 12348
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-H4-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-M15-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-M15-20260825-000002",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-M15-20260825-000002"
+    },
+    {
+      "dataset_id": "tm-market-GOLD-M15-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-GOLD-M15-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-HEATOIL-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2396
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-HEATOIL-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-HEATOIL-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45480
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-HEATOIL-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-JAPANBOND-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2387
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-JAPANBOND-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-JPN225-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2398
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-JPN225-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-JPN225-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 43623
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-JPN225-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-NATGAS-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2327
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-NATGAS-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-NATGAS-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 43943
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-NATGAS-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-NATGAS-H4-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 12013
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-NATGAS-H4-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-NZDUSD-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 9902
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-NZDUSD-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-NZDUSD-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-NZDUSD-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-OIL-D1-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-OIL-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2396
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-OIL-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-OIL-H1-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-OIL-H1-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-OIL-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45529
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-OIL-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-OIL-H4-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-OIL-H4-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-OIL-H4-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 12332
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-OIL-H4-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-OIL-M15-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-OIL-M15-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-OIL-M15-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-OIL-M15-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-PALLADIUM-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2397
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-PALLADIUM-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-PALLADIUM-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45550
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-PALLADIUM-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-PLATINUM-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2380
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-PLATINUM-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-PLATINUM-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45254
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-PLATINUM-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-SILVER-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2397
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-SILVER-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-SILVER-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45495
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-SILVER-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-SILVER-H4-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 12329
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-SILVER-H4-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-SILVER-M15-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-SILVER-M15-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-SOYBEAN-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1892
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-SOYBEAN-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-SUGAR-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1938
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-SUGAR-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-US2000-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 4799
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-US2000-D1-20260829-000001"
+    },
+    {
+      "dataset_id": "tm-market-US30-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2389
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-US30-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-US30-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45417
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-US30-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-US500-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 4850
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-US500-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-US500-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 39746
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-US500-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDCAD-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 10103
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDCAD-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDCAD-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDCAD-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDCHF-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 15751
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDCHF-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDCHF-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDCHF-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDJPY-D1-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 15798
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDJPY-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDJPY-H1-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 50542
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDJPY-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDJPY-H4-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-H4-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 50000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDJPY-H4-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDJPY-M15-20260825-000001"
+    },
+    {
+      "dataset_id": "tm-market-USDJPY-M15-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 80000
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USDJPY-M15-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USTECH100-D1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 2398
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USTECH100-D1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-USTECH100-H1-20260828-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 45491
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-USTECH100-H1-20260828-000001"
+    },
+    {
+      "dataset_id": "tm-market-WHEAT-D1-20260829-000001",
+      "history": {
+        "first_available": null,
+        "last_available": null,
+        "row_count": 1928
+      },
+      "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\immutable\\tm-market-WHEAT-D1-20260829-000001"
+    }
+  ],
+  "research_docs": [
+    "ALPHA_ASSET_INVENTORY_V1.md",
+    "ALPHA_COVERAGE_MAP_V1.md",
+    "ALPHA_COVERAGE_MATRIX_V2.md",
+    "ALPHA_DISCOVERY_V0.7_PLAN.md",
+    "ALPHA_MECHANISM_LIBRARY_V5.md",
+    "ALPHA_MISSION_V1.1_REPORT.md",
+    "ALPHA_OPERATING_SYSTEM_V0.7.1.md",
+    "ALPHA_OPPORTUNITY_V5.md",
+    "ALPHA_PRIORITY_RANKING_V1.md",
+    "ALPHA_PRIORITY_V5.md",
+    "ALPHA_PROGRAM_V1.md",
+    "ALPHA_RECOVERY_REPORT.md",
+    "ALPHA_RESEARCH_MISSION_V2_REPORT.md",
+    "ALPHA_RESEARCH_PRIORITY_V2.md",
+    "ALPHA_UNIVERSE_GRAPH_V1.md",
+    "ALPHA_UNLOCK_MAP_EIA_SUPPLY.md",
+    "BREADTH_V1_CONTRACT.md",
+    "BREADTH_V1_REPORT.md",
+    "CANDIDATE_ACCEPTANCE_GATE_V1.md",
+    "CANDIDATE_MECHANISM_LIBRARY_V1.md",
+    "CANDIDATE_MECHANISM_LIBRARY_V2.md",
+    "CARRY_V1_CONTRACT.md",
+    "CONTRACT_BATCH_TOP3_V1.md",
+    "CORR_SHOCK_V1_CONTRACT.md",
+    "CORR_SHOCK_V1_REPORT.md",
+    "CROSS_ASSET_ALPHA_V0.8_CONTRACT.md",
+    "CROSS_ASSET_ALPHA_V0.8_REPORT.md",
+    "CROSS_ASSET_DATA_AUDIT.md",
+    "CROSS_METAL_V1_CONTRACT.md",
+    "CROSS_RESIDUAL_V0.91_CONTRACT.md",
+    "CROSS_RESIDUAL_V0.91_REPORT.md",
+    "DATA_ACQUISITION_PLAN.md",
+    "DATA_ACQUISITION_REPORT.md",
+    "DATA_CAPABILITY_MATRIX_V1.md",
+    "DATA_CAPABILITY_REAL.md",
+    "DATA_COST_REPORT.md",
+    "DATA_EXPANSION_MISSION_V3_REPORT.md",
+    "DATA_EXPANSION_REPORT_V1.md",
+    "DATA_GAP_ANALYSIS.md",
+    "DATA_PURCHASE_CASE.md",
+    "DATA_PURCHASE_PRIORITY_V1.md",
+    "DATA_PURCHASE_ROI_V6.md",
+    "DATA_REQUIREMENTS_NEXT_V1.md",
+    "DATA_RESEARCH_ROI.md",
+    "DATA_RESEARCH_ROI_MATRIX.md",
+    "DISTANCE_TO_10.md",
+    "ENERGY_RV_V1_CONTRACT.md",
+    "ENERGY_RV_V1_REPORT.md",
+    "ENGINE_V1_REQUIREMENTS.md",
+    "EXISTING_DATA_PROFITABILITY_AUDIT.md",
+    "EXPERIMENT_GAP_AUDIT_V1.md",
+    "FACTOR_DISCOVERY_V0.1_ARCHITECTURE.md",
+    "FACTOR_DISCOVERY_V0.1_PLAN.md",
+    "FACTOR_DISCOVERY_V0.1_REPORT.md",
+    "FAILED_ALPHA_DATABASE_V1.md",
+    "FAILURE_KNOWLEDGE_BASE_V1.md",
+    "FUTURES_ALPHA_REPORT.md",
+    "FUTURES_ALPHA_UNLOCK_MAP.md",
+    "FUTURES_DATASET_QUALIFICATION.md",
+    "HUMAN_DATA_PURCHASE_ACTION_PACK.md",
+    "HUMAN_PURCHASE_CASE_V7.md",
+    "HUMAN_PURCHASE_CASE_V8.md",
+    "HUMAN_PURCHASE_DECISION.md",
+    "HUMAN_PURCHASE_DECISION_V6.1.md",
+    "HUMAN_REQUIRED_ACTIONS.md",
+    "HYP-0001_CONTRACT_MISMATCH_ROOT_CAUSE.md",
+    "HYP-0001_EXECUTION_RESTORATION.md",
+    "IDX_ASYNC_V1_CONTRACT.md",
+    "IDX_ASYNC_V1_REPORT.md",
+    "IMPLIED_VOL_V1_CONTRACT.md",
+    "INFORMATION_VALUE_COMPARISON_V9.md",
+    "INSTITUTIONAL_TIME_V1.0_CONTRACT.md",
+    "INSTITUTIONAL_TIME_V1.0_EXECUTION.md",
+    "INVENTORY_V1_CONTRACT.md",
+    "IV_QUALITY_LIMITATIONS_V8_3.md",
+    "MICROSTRUCTURE_SURPRISE_V1_CONTRACT.md",
+    "MT5_HISTORY_CAPABILITY_V5.md",
+    "MT5_MAX_MISSION_V4_REPORT.md",
+    "MT5_UNIVERSE_V5_FINAL.md",
+    "NEXT_ALPHA_DECISION.md",
+    "OPTIONS_DATA_DUE_DILIGENCE_V8_2.md",
+    "OPTIONS_DATA_VALUE_CASE.md",
+    "OPTIONS_FEASIBILITY_V8_3.md",
+    "OPTIONS_FULL_YEAR_OCCUPANCY_V8_4.md",
+    "OPTIONS_IV_MODEL_LIMITATIONS_V8_3.md",
+    "OPTIONS_MVD_DECISION_V8_3.md",
+    "OPTIONS_MVD_PURCHASE_RANKING_V8_3.md",
+    "OPTIONS_MVD_V8_2.md",
+    "OPTIONS_PURCHASE_DECISION_V8_2.md",
+    "OPTIONS_PURCHASE_DECISION_V8_4.md",
+    "OPTIONS_RESEARCH_SUFFICIENCY_V8_4.md",
+    "POSITIONING_V1_CONTRACT.md",
+    "PROFITABILITY_ALIGNMENT_AUDIT.md",
+    "PROFIT_DISCOVERY_V0.6_PLAN.md",
+    "PROFIT_DISCOVERY_V0.6_REPORT.md",
+    "RATES_V1_CONTRACT.md",
+    "REGIME_INTERACTION_V1_CONTRACT.md",
+    "REGIME_TRANSITION_EXECUTION_PLAN.md",
+    "REGIME_TRANSITION_V0.9_CONTRACT.md",
+    "REGIME_TRANSITION_V0.9_DATA_REQUIREMENTS.md",
+    "REGIME_TRANSITION_V0.9_MECHANISM_DESIGN.md",
+    "REGIME_TRANSITION_V0.9_REPORT.md",
+    "REGIME_TRANSITION_V0.9_TEST_FRAMEWORK.md",
+    "RESEARCH_BACKLOG_V1.md",
+    "RESEARCH_CONTRACT_TEMPLATE_V1.md",
+    "RESEARCH_ENGINE_MISSING_COMPONENTS_V1.md",
+    "RESEARCH_ENGINE_V0.5_ARCHITECTURE.md",
+    "RESEARCH_ENGINE_V0.5_AUDIT.md",
+    "RESEARCH_ENGINE_V0.5_PLAN.md",
+    "RESEARCH_ENGINE_V0.5_REPORT.md",
+    "RESEARCH_OPPORTUNITY_RANKING_V1.md",
+    "SIZE_SPREAD_V1_CONTRACT.md",
+    "SIZE_SPREAD_V1_REPORT.md",
+    "STATUS_UPDATE.md",
+    "STRATEGY_LAYER_BLOCKED.md",
+    "SUPPLY_V1_CONTRACT.md",
+    "TIME_STRUCTURE_V1_CONTRACT.md",
+    "TIME_STRUCTURE_V1_EXECUTION.md",
+    "TRADEMIND_ALPHA_ROADMAP_12M.md",
+    "TRADEMIND_ALPHA_STRATEGY_ROADMAP_V2.md",
+    "USD_METAL_V1_CONTRACT.md",
+    "V0.8_EXECUTION_FREEZE.md",
+    "V0.9_EXECUTION_FREEZE.md",
+    "V10_START.md",
+    "V5_1_MISSION_REPORT.md",
+    "V5_NEXT_DECISION.md",
+    "V6.1_DECISION.md",
+    "V6.1_EXTERNAL_DATA_MISSION_REPORT.md",
+    "V6_MISSION_REPORT.md",
+    "V7_ALPHA_OPPORTUNITY_REPORT.md",
+    "V7_DATA_ASSET_REPORT.md",
+    "V7_DECISION.md",
+    "V7_DERIVED_FEATURE_CATALOG.md",
+    "V7_INFORMATION_FUSION_REPORT.md",
+    "V8_DECISION.md",
+    "V8_INFORMATION_FUSION_REPORT.md",
+    "V8_START.md",
+    "V9_DATA_COST_ANALYSIS.md",
+    "V9_DECISION.md",
+    "V9_INFORMATION_VALUE_REPORT.md",
+    "V9_MASTER_BACKTEST_REPORT.md",
+    "V9_PROFITABILITY_AUDIT.md",
+    "V9_START.md",
+    "VOL_TERM_V1_CONTRACT.md",
+    "VOL_TERM_V1_REPORT.md",
+    "XS_REV_V1_CONTRACT.md",
+    "XS_REV_V1_REPORT.md"
+  ],
+  "research_engine_packages": [
+    "alpha_program",
+    "alt_market_structure",
+    "breadth",
+    "carry",
+    "corr_shock",
+    "cross_asset",
+    "cross_metal",
+    "cross_residual",
+    "curve_eia",
+    "curve_oi",
+    "curve_rate",
+    "data_expansion",
+    "data_sources",
+    "discovery",
+    "energy_rv",
+    "factors",
+    "forensics",
+    "fut_cfd",
+    "futures_dte",
+    "futures_oi",
+    "futures_vol",
+    "idx_async",
+    "implied_vol",
+    "information_layer",
+    "information_map",
+    "institutional_time",
+    "inventory",
+    "microstructure_surprise",
+    "mission",
+    "mt5_history",
+    "mt5_universe",
+    "oi_cot",
+    "opportunity",
+    "positioning",
+    "profit",
+    "rates",
+    "regime",
+    "regime_interaction",
+    "regime_transition",
+    "size_spread",
+    "strategy",
+    "supply",
+    "term_structure",
+    "time_structure",
+    "usd_metal",
+    "v10_model",
+    "v6_external",
+    "v8_fusion",
+    "v9_master",
+    "vol_term",
+    "xs_rev"
+  ],
+  "v9_owned_count": 110
+}
