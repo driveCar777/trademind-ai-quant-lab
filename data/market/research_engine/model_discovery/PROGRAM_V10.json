@@ -1,0 +1,22 @@
+{
+  "CANDIDATE": 0,
+  "FINAL_OOS_ACCESS": "DENIED",
+  "LEVEL": 0,
+  "LIVE": 0,
+  "NEW_DATA_PURCHASE": false,
+  "PAPER": 0,
+  "PORTFOLIO": 0,
+  "STRATEGY": 0,
+  "candidates": [],
+  "databento_incremental_research_value": 0,
+  "decision": "NO_CANDIDATE",
+  "discovery_id": "MODEL_DISCOVERY_V10",
+  "n_experiments": 62,
+  "n_fdr": 62,
+  "n_fdr_discoveries": 0,
+  "n_predictive_advantage": 21,
+  "n_traded": 21,
+  "stop": "STOP_B_MODEL_REPRESENTATION_EXHAUSTED",
+  "unused_research_reserve_note": "remaining credits UNUSED_RESEARCH_RESERVE",
+  "xavier": "NOT_USED_LOCAL_SKLEARN"
+}

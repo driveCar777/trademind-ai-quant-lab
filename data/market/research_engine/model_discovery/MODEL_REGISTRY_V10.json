@@ -1,0 +1,1121 @@
+{
+  "models": [
+    {
+      "asset": "GOLD",
+      "family": "NAIVE",
+      "features": "ALL",
+      "model_id": "V10-M0-REP_RAW-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5,
+        "val_logloss": 0.6852304854797087
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_RAW-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5093759898637947,
+        "val_logloss": 0.6897920133394784
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.4687361419068736,
+        "val_logloss": 0.6979363768083181
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_INTERACT-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.4737408932530884,
+        "val_logloss": 0.7037136522359492
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_STATE-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.46607538802660753,
+        "val_logloss": 0.6979932098171953
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_RAW-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5344472600570161,
+        "val_logloss": 0.7259356483048751
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_Z60-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.48964206525182136,
+        "val_logloss": 0.7219689609500018
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_INTERACT-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5193538169147925,
+        "val_logloss": 0.6909641078803791
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_STATE-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.48964206525182136,
+        "val_logloss": 0.7219689609500018
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_RAW-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5623218245169465,
+        "val_logloss": 0.6854639444907803
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_Z60-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5253563509661071,
+        "val_logloss": 0.6856288868033557
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_INTERACT-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5414634146341464,
+        "val_logloss": 0.6849718563530359
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_STATE-T1_DIR1-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5097560975609756,
+        "val_logloss": 0.6874442113183223
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "NAIVE",
+      "features": "ALL",
+      "model_id": "V10-M0-REP_RAW-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5,
+        "val_logloss": 0.6763564889388678
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_RAW-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.557012432012432,
+        "val_logloss": 0.6743739118015021
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_Z60-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5301087801087802,
+        "val_logloss": 0.6842166947263779
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_INTERACT-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5039497539497539,
+        "val_logloss": 0.6912794441648592
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_STATE-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5162846412846412,
+        "val_logloss": 0.6880865886663147
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_RAW-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.48075304325304324,
+        "val_logloss": 0.7444809561874051
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_Z60-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5495823620823621,
+        "val_logloss": 0.7238352475179652
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_INTERACT-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.49558080808080807,
+        "val_logloss": 0.754639248028735
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_STATE-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5495823620823621,
+        "val_logloss": 0.7238352475179652
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_RAW-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5007770007770008,
+        "val_logloss": 0.7006325656841618
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_Z60-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5237470862470862,
+        "val_logloss": 0.6779095785185961
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_INTERACT-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5287490287490287,
+        "val_logloss": 0.675169140848056
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_STATE-T2_DIR5-GOLD",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.497021497021497,
+        "val_logloss": 0.6824065295230968
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "NAIVE",
+      "features": "ALL",
+      "model_id": "V10-M0-REP_RAW-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5,
+        "val_logloss": 0.6936256749342815
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_RAW-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.49598951343591025,
+        "val_logloss": 0.6994455161100126
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5646827502262726,
+        "val_logloss": 0.6836681513003051
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_INTERACT-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5632782996785368,
+        "val_logloss": 0.6851715035850363
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_STATE-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.569801192222465,
+        "val_logloss": 0.6821561047925166
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_RAW-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5559907618363971,
+        "val_logloss": 0.6931549521292486
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_Z60-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5266689554008926,
+        "val_logloss": 0.6985010743679789
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_INTERACT-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.540292125713929,
+        "val_logloss": 0.6957030452126013
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_STATE-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5266689554008926,
+        "val_logloss": 0.6985010743679789
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_RAW-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5227833088854905,
+        "val_logloss": 0.6932708839020724
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_Z60-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5556006366842483,
+        "val_logloss": 0.690321564241173
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_INTERACT-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5222215286663962,
+        "val_logloss": 0.6936384487233398
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_STATE-T1_DIR1-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5749976592490871,
+        "val_logloss": 0.686655177915363
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "NAIVE",
+      "features": "ALL",
+      "model_id": "V10-M0-REP_RAW-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5,
+        "val_logloss": 0.7001639063914731
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_RAW-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5356117353308365,
+        "val_logloss": 0.6986201467661962
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_Z60-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5243133583021223,
+        "val_logloss": 0.7056328382640341
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_INTERACT-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.562047440699126,
+        "val_logloss": 0.6974097337808314
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL",
+      "model_id": "V10-M1-REP_STATE-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5415730337078651,
+        "val_logloss": 0.7020758972880535
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_RAW-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5211610486891386,
+        "val_logloss": 0.7984386464433065
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_Z60-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5289794007490637,
+        "val_logloss": 0.7252855348184053
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_INTERACT-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5289794007490637,
+        "val_logloss": 0.7252855348184053
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "TREE",
+      "features": "ALL",
+      "model_id": "V10-M2-REP_STATE-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.5289794007490637,
+        "val_logloss": 0.7252855348184053
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_RAW-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_RAW",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5133739076154806,
+        "val_logloss": 0.6972584813755308
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_Z60-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.531101747815231,
+        "val_logloss": 0.6943332466278727
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_INTERACT-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_INTERACT",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5261235955056179,
+        "val_logloss": 0.6957680931163369
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "OIL",
+      "family": "FOREST",
+      "features": "ALL",
+      "model_id": "V10-M3-REP_STATE-T2_DIR5-OIL",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_STATE",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5205992509363296,
+        "val_logloss": 0.6957533545941282
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T2_DIR5"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL_MINUS_FUT",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-ALL_MINUS_FUT",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.47203040861577444,
+        "val_logloss": 0.6980686698829932
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL_MINUS_OI",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-ALL_MINUS_OI",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.4727272727272727,
+        "val_logloss": 0.6972788145988721
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL_MINUS_PUBLIC",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-ALL_MINUS_PUBLIC",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.4661070636680393,
+        "val_logloss": 0.6971153280079477
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "ALL_MINUS_XASSET",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-ALL_MINUS_XASSET",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.4958821666138739,
+        "val_logloss": 0.6913450557526314
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "GOLD",
+      "family": "LOGISTIC",
+      "features": "MT5_ONLY",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-MT5_ONLY",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "MODEL_ONLY",
+        "predictive_advantage": false,
+        "val_auc": 0.4660437123851758,
+        "val_logloss": 0.6965901463032389
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "NO_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL_MINUS_FUT",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-OIL-ALL_MINUS_FUT",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5720795231110141,
+        "val_logloss": 0.6843307073916408
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL_MINUS_OI",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-OIL-ALL_MINUS_OI",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5944883118504416,
+        "val_logloss": 0.6778146621449016
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL_MINUS_PUBLIC",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-OIL-ALL_MINUS_PUBLIC",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5495771043350707,
+        "val_logloss": 0.6866840640733222
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "ALL_MINUS_XASSET",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-OIL-ALL_MINUS_XASSET",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5629974095689897,
+        "val_logloss": 0.6824594803852354
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    },
+    {
+      "asset": "OIL",
+      "family": "LOGISTIC",
+      "features": "MT5_ONLY",
+      "model_id": "V10-M1-REP_Z60-T1_DIR1-OIL-MT5_ONLY",
+      "reopen_condition": "NEW_EXPERIMENT_ONLY",
+      "representation": "REP_Z60",
+      "result": {
+        "conversion": "STRATEGY_REPLAY",
+        "predictive_advantage": true,
+        "val_auc": 0.5765425548515964,
+        "val_logloss": 0.6831231630584924
+      },
+      "seed": 20260830,
+      "split": "TIME_ORDER_70_15_15",
+      "status": "PREDICTIVE_ADVANTAGE",
+      "target": "T1_DIR1"
+    }
+  ],
+  "n": 62
+}
