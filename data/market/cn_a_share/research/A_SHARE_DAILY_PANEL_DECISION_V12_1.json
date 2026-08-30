@@ -1,0 +1,35 @@
+{
+  "ALPHA_RESEARCH": false,
+  "A_SHARE_DATA_STATUS": "CONDITIONAL",
+  "BACKTEST": false,
+  "CANDIDATE": 0,
+  "EVENT_ALPHA_READY": false,
+  "EVENT_ALPHA_STATUS": "BLOCKED",
+  "FINANCIAL_ALPHA_READY": false,
+  "FINANCIAL_ALPHA_STATUS": "BLOCKED",
+  "INDUSTRY_ALPHA_READY": false,
+  "INDUSTRY_ALPHA_STATUS": "BLOCKED",
+  "LEVEL": 0,
+  "NEW_PURCHASE": false,
+  "NEXT_PRIMARY_ACTION": "COMPLETE_DAILY_PANEL_FREEZE",
+  "PRICE_ALPHA_READY": false,
+  "PRICE_ALPHA_STATUS": "PRICE_ALPHA_CONDITIONAL",
+  "asof_20150430": "INVALID",
+  "gates": {
+    "adjustment": true,
+    "determinism": true,
+    "pit": true,
+    "price_integrity": true,
+    "resume": true,
+    "survivorship": true
+  },
+  "invalid_universe_asof": "2015-04-30",
+  "panel": {
+    "complete": false,
+    "n_done": 20,
+    "n_empty": 0,
+    "n_equity": 5549,
+    "n_failed": 0,
+    "n_with_bars": 20
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "ALPHA_RESEARCH": false,
+  "A_SHARE_DAILY_PANEL_CONTENT_HASH": "125a73a3555c1f4bcb79a7aaa3a00a06ea84fbfd0038cdd1df599d35c1c8594b",
+  "NEW_PURCHASE": false,
+  "alias": "tm-ashare-20260830-000001",
+  "columns": [
+    "trade_date",
+    "symbol",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "amount",
+    "turnover",
+    "tradestatus",
+    "isST"
+  ],
+  "coverage": {
+    "n_days": 8714,
+    "n_done": 20,
+    "n_empty": 0,
+    "n_failed": 0
+  },
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000001",
+  "hashes": {
+    "checkpoint": "180fa229e19da21684b5dc45bec3f288fbd19cbf72804a6b1722654a2f9cbacd",
+    "content_hash": "125a73a3555c1f4bcb79a7aaa3a00a06ea84fbfd0038cdd1df599d35c1c8594b"
+  },
+  "history_end": "2026-08-28",
+  "history_start": "1990-12-19",
+  "id": "A_SHARE_DAILY_PANEL_FREEZE_V12_1",
+  "limitations": [
+    "INDUSTRY_NOT_POINT_IN_TIME",
+    "FINANCIAL_DATASET_NOT_RESEARCH_READY",
+    "VENDOR_DELIST_TABLE_NOT_EXCHANGE_OFFICIAL",
+    "ASOF_2015_04_30_VENDOR_SNAPSHOT_INVALID",
+    "HFQ_NOT_IN_FULL_PANEL"
+  ],
+  "n_equity_master": 5549,
+  "retrieved_at": "2026-08-30T11:24:39Z",
+  "rows": 128817,
+  "source": "BAOSTOCK",
+  "symbols": 20
+}

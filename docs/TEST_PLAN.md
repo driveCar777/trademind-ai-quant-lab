@@ -809,6 +809,21 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V12.1 Full Daily Panel — 2026-08-30 IN PROGRESS
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_v12_1.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| PIT / resume / 2015-04-30 / domain gate 单元 | ✅ **9 PASS** |
+| 全日线盘 | 下载中（raw-only，单 session，checkpoint） |
+| 2015-04-30 | INVALID（PIT listing-window=2695，未插值） |
+| PRICE_ALPHA | CONDITIONAL 直至 n_done=5549 |
+| FINANCIAL / INDUSTRY | BLOCKED |
+| 花费 | $0 |
+
+不是交易许可。不要开始 A 股 Alpha。
+
 ## V12 A-share PIT Foundation — 2026-08-30 CONDITIONAL
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share.py --import-mode=importlib`
