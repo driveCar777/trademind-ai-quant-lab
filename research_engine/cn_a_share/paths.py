@@ -16,7 +16,9 @@ QUALITY = os.path.join(BASE, "quality")
 RESEARCH = os.path.join(BASE, "research")
 TMP = os.path.join(ROOT, ".tmp", "cn_a_share")
 DOCS = os.path.join(ROOT, "docs", "research_engine")
-SUBDIRS = (RAW, NORMALIZED, REFERENCE, CORP, FINANCIAL, ANNOUNCE, MANIFESTS, QUALITY, RESEARCH)
+PANEL_RAW = os.path.join(RAW, "daily_panel_v12_1")
+PANEL_NORM = os.path.join(NORMALIZED, "tm-ashare-EQUITY-D1-20260830-000001")
+SUBDIRS = (RAW, NORMALIZED, REFERENCE, CORP, FINANCIAL, ANNOUNCE, MANIFESTS, QUALITY, RESEARCH, PANEL_RAW)
 
 
 def ensure_tree():

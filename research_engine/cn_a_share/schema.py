@@ -1,7 +1,7 @@
 """A-share schemas. No alpha fields."""
 from __future__ import print_function
 
-SCHEMA_VERSION = "12.0"
+SCHEMA_VERSION = "12.1"
 
 TYPE_MAP = {
     "1": "EQUITY",
@@ -81,6 +81,11 @@ ADJUST_CONVENTIONS = {
 
 def dataset_id(kind, ymd, seq=1):
     return "tm-cn-a-%s-%s-%06d" % (kind, ymd, int(seq))
+
+
+def ashare_dataset_id(ymd, seq=1, kind="EQUITY-D1"):
+    """TradeMind convention: tm-ashare-{kind}-{YYYYMMDD}-{seq}."""
+    return "tm-ashare-%s-%s-%06d" % (kind, ymd, int(seq))
 
 
 def quality_label(ok, limitations):
