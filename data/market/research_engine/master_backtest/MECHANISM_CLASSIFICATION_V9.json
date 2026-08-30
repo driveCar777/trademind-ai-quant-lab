@@ -1,0 +1,348 @@
+{
+  "mechanisms": [
+    {
+      "class": "Directional",
+      "family": "HYP-0001",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": null,
+      "note": "Frozen 14:11 predictive contract. Not a book. Do not invent CAGR.",
+      "replay_kind": "PREDICTIVE_ONLY",
+      "space_file": null
+    },
+    {
+      "class": "Momentum",
+      "family": "FACTOR_DISCOVERY_V0.1",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "discovery",
+      "note": "Factor zoo. Not a strategy.",
+      "replay_kind": "FACTOR_ONLY",
+      "space_file": "factor_discovery/FACTOR_SEARCH_SPACE_V0.1.json"
+    },
+    {
+      "class": "Directional",
+      "family": "STRATEGY_DISCOVERY_V0.5",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "strategy",
+      "note": "NEXT_CLOSED_BAR close-to-close screen. Not a trade book.",
+      "replay_kind": "PREDICTIVE_ONLY",
+      "space_file": "strategy_discovery/STRATEGY_SEARCH_SPACE_V0.5.json"
+    },
+    {
+      "class": "Momentum",
+      "family": "PROFIT_DISCOVERY_V0.6",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "profit",
+      "note": "Canonical NEXT_BAR_OPEN path book.",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "profit_discovery/PROFIT_SEARCH_SPACE_V0.6.json"
+    },
+    {
+      "class": "Cross Asset",
+      "family": "CROSS_ASSET_V0.8",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "cross_asset",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "cross_asset/CROSS_ASSET_SEARCH_SPACE_V0.8.json",
+      "special": "cross_asset"
+    },
+    {
+      "class": "Regime Transition",
+      "family": "REGIME_TRANSITION_V0.9",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "regime_transition",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "regime_transition/REGIME_TRANSITION_SEARCH_SPACE_V0.9.json"
+    },
+    {
+      "class": "Mean Reversion",
+      "family": "CROSS_RESIDUAL_V0.91",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "cross_residual",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "cross_residual/CROSS_RESIDUAL_SEARCH_SPACE_V0.91.json",
+      "special": "residual"
+    },
+    {
+      "class": "Calendar",
+      "family": "INSTITUTIONAL_TIME_V1.0",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "institutional_time",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "institutional_time/IT_SEARCH_SPACE_V1.0.json"
+    },
+    {
+      "class": "Calendar",
+      "family": "TIME_STRUCTURE_V1",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "time_structure",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "time_structure/TS_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Breakout",
+      "family": "MICROSTRUCTURE_SURPRISE_V1",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "microstructure_surprise",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "microstructure_surprise/MS_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Regime",
+      "family": "REGIME_INTERACTION_V1",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "regime_interaction",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "regime_interaction/RI_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Calendar",
+      "family": "ALT_MARKET_STRUCTURE_V1",
+      "information_set": "IS-A",
+      "live_external": "NO",
+      "module": "alt_market_structure",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "alt_market_structure/AMS_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Regime",
+      "family": "IMPLIED_VOL_V1",
+      "information_set": "IS-B",
+      "live_external": "YES",
+      "module": "implied_vol",
+      "public_source": "CBOE_GVZ_OVX",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "implied_vol/IV_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "COT",
+      "family": "POSITIONING_V1",
+      "information_set": "IS-B",
+      "live_external": "YES",
+      "module": "positioning",
+      "public_source": "CFTC_COT",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "positioning/POS_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "EIA",
+      "family": "INVENTORY_V1",
+      "information_set": "IS-B",
+      "live_external": "YES",
+      "module": "inventory",
+      "public_source": "EIA_STOCKS",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "inventory/INV_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Rates",
+      "family": "RATES_V1",
+      "information_set": "IS-B",
+      "live_external": "YES",
+      "module": "rates",
+      "public_source": "UST10",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "rates/RATES_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Rates",
+      "family": "CARRY_V1A",
+      "information_set": "IS-B",
+      "live_external": "YES",
+      "module": "carry",
+      "public_source": "EFFR_ESTR_BOJ",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "carry_v1a/CARRY_SEARCH_SPACE_V1A.json"
+    },
+    {
+      "class": "EIA",
+      "family": "SUPPLY_V1",
+      "information_set": "IS-B",
+      "live_external": "YES",
+      "module": "supply",
+      "public_source": "EIA_SUPPLY",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "supply/SUP_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Cross Asset",
+      "family": "CROSS_METAL_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "cross_metal",
+      "note": "Extra owned MT5 SILVER CFD used as information. Not Databento.",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "cross_metal/CM_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Cross Asset",
+      "family": "USD_METAL_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "usd_metal",
+      "note": "Owned MT5 DXY CFD. Not Databento.",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "usd_metal/UM_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Cross Section",
+      "family": "XS_REV_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "xs_rev",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "xs_rev/XS_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Cross Asset",
+      "family": "CORR_SHOCK_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "corr_shock",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "corr_shock/CS_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Cross Asset",
+      "family": "ENERGY_RV_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "energy_rv",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "energy_rv/ER_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Regime",
+      "family": "VOL_TERM_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "vol_term",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "vol_term/VT_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Cross Asset",
+      "family": "IDX_ASYNC_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "idx_async",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "idx_async/IA_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Breadth",
+      "family": "BREADTH_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "breadth",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "breadth/BR_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Cross Section",
+      "family": "SIZE_SPREAD_V1",
+      "information_set": "IS-B",
+      "live_external": "NO",
+      "module": "size_spread",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "size_spread/SZ_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Futures",
+      "family": "TERM_STRUCTURE_V1",
+      "futures_source": "PACK_E_CURVE",
+      "information_set": "IS-C",
+      "live_external": "YES",
+      "module": "term_structure",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "term_structure/TS_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "OI",
+      "family": "FUTURES_OI_FLOW_V1",
+      "futures_source": "PACK_E_OI",
+      "information_set": "IS-C",
+      "live_external": "YES",
+      "module": "futures_oi",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "futures_oi/OI_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Futures",
+      "family": "VOLUME_PRICE_FLOW_V1",
+      "futures_source": "PACK_E_VOLUME",
+      "information_set": "IS-C",
+      "live_external": "YES",
+      "module": "futures_vol",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "futures_vol/VOL_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "DTE",
+      "family": "DTE_ROLL_WINDOW_V1",
+      "futures_source": "PACK_E_DTE",
+      "information_set": "IS-C",
+      "live_external": "YES",
+      "module": "futures_dte",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "futures_dte/DTE_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Futures",
+      "family": "FUT_CFD_LEAD_V1",
+      "futures_source": "PACK_E_SETTLEMENT",
+      "information_set": "IS-D",
+      "live_external": "YES",
+      "module": "fut_cfd",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "fut_cfd/FUTCFD_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Futures",
+      "family": "CURVE_OI_JOINT_V1",
+      "information_set": "IS-D",
+      "live_external": "YES",
+      "module": "curve_oi",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "curve_oi/CUROI_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "COT",
+      "family": "OI_COT_BUILD_V1",
+      "information_set": "IS-D",
+      "live_external": "YES",
+      "module": "oi_cot",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "oi_cot/OICOT_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "EIA",
+      "family": "CURVE_EIA_REPRICE_V1",
+      "information_set": "IS-D",
+      "live_external": "YES",
+      "module": "curve_eia",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "curve_eia/CUEIA_SEARCH_SPACE_V1.json"
+    },
+    {
+      "class": "Rates",
+      "family": "CURVE_REALYIELD_V1",
+      "information_set": "IS-D",
+      "live_external": "YES",
+      "module": "curve_rate",
+      "replay_kind": "STRATEGY_REPLAY",
+      "space_file": "curve_rate/CURATE_SEARCH_SPACE_V1.json"
+    }
+  ],
+  "n": 36
+}

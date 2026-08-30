@@ -1,0 +1,3202 @@
+{
+  "DATACOST": 0.0,
+  "NEW_DATA_PURCHASE": false,
+  "counts": {
+    "DERIVED": 2,
+    "FREE": 107,
+    "FUTURES": 3,
+    "MT5": 94,
+    "PAID": 1,
+    "PUBLIC": 13
+  },
+  "datasets": [
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-BOJ-CALL-D1-20260828-000001",
+      "fields": [],
+      "hash": "fe8db9db8040ad39adcdd0c7e6e961d346bfdb19e6ad9a5647cdd8e587d3047a",
+      "history": {
+        "end": "2026-08-26T00:00:00Z",
+        "row_count": 1927,
+        "start": "2018-10-01T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-BOJ-CALL-D1-20260828-000001",
+      "qualification": "PASS",
+      "source": "stat-search.boj.or.jp",
+      "symbol": "BOJ_CALL",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-CBOE-GVZ-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "7e77dab46fddb7898f73807e95faf6980e9de926fa77e21b257151d8d6918e3d",
+      "history": {
+        "end": "2026-08-27T00:00:00Z",
+        "row_count": 4259,
+        "start": "2009-09-18T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-CBOE-GVZ-D1-20260828-000001",
+      "qualification": "PASS",
+      "source": "cboe_cdn",
+      "symbol": "GVZ",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-CBOE-OVX-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "f09417d3b8a8387c7f622edef2c3d1049b2cb0f110f326d64e6079aada9ba9c3",
+      "history": {
+        "end": "2026-08-27T00:00:00Z",
+        "row_count": 4259,
+        "start": "2009-09-18T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-CBOE-OVX-D1-20260828-000001",
+      "qualification": "PASS",
+      "source": "cboe_cdn",
+      "symbol": "OVX",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-CFTC-GOLD-COT-W1-20260828-000001",
+      "fields": [],
+      "hash": "1800023668c5203d1b59650fcaebe847da9a8dee8a6d68504ec324c16e4d1a30",
+      "history": {
+        "end": "2026-08-18T00:00:00Z",
+        "row_count": 451,
+        "start": "2018-01-02T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-CFTC-GOLD-COT-W1-20260828-000001",
+      "qualification": "PASS",
+      "source": "cftc.gov",
+      "symbol": "GOLD",
+      "timeframe": "W1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-CFTC-GOLD-COT-W1-20260828-000002",
+      "fields": [],
+      "hash": "f8d95e0313ace8c81441b5f98a64404870db7fb7b6d4a1c8caf6834e8269d85a",
+      "history": {
+        "end": "2026-08-21T00:00:00Z",
+        "row_count": 451,
+        "start": "2018-01-05T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-CFTC-GOLD-COT-W1-20260828-000002",
+      "qualification": "PASS",
+      "source": "cftc.gov",
+      "symbol": "GOLD",
+      "timeframe": "W1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-CFTC-OIL-COT-W1-20260828-000001",
+      "fields": [],
+      "hash": "c73f1b2a86e8109c04bf43316ce19cb5624bca1f7ba5a2c29be75f32a864cdd8",
+      "history": {
+        "end": "2026-08-18T00:00:00Z",
+        "row_count": 451,
+        "start": "2018-01-02T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-CFTC-OIL-COT-W1-20260828-000001",
+      "qualification": "PASS",
+      "source": "cftc.gov",
+      "symbol": "OIL",
+      "timeframe": "W1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-CFTC-OIL-COT-W1-20260828-000002",
+      "fields": [],
+      "hash": "d36158264be2db7ecde4542f63e94f861e0033b60784f998e10826a7149c5724",
+      "history": {
+        "end": "2026-08-21T00:00:00Z",
+        "row_count": 451,
+        "start": "2018-01-05T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-CFTC-OIL-COT-W1-20260828-000002",
+      "qualification": "PASS",
+      "source": "cftc.gov",
+      "symbol": "OIL",
+      "timeframe": "W1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-ECB-ESTR-D1-20260828-000001",
+      "fields": [],
+      "hash": "69f3daed016795685ad6508ec4cc705058f99696feabbf54c5bcd59000283e5d",
+      "history": {
+        "end": "2026-08-27T00:00:00Z",
+        "row_count": 1769,
+        "start": "2019-10-01T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-ECB-ESTR-D1-20260828-000001",
+      "qualification": "PASS",
+      "source": "data-api.ecb.europa.eu",
+      "symbol": "ESTR",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-EIA-USCRUDE-PROD-W1-20260828-000001",
+      "fields": [],
+      "hash": "38578e542f77f891d0e5895a3d86ada33df42e4eb5295b2052b3f98ec8b88978",
+      "history": {
+        "end": "2026-08-21T00:00:00Z",
+        "row_count": 2274,
+        "start": "1983-01-07T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-EIA-USCRUDE-PROD-W1-20260828-000001",
+      "qualification": "PASS",
+      "source": "eia.gov",
+      "symbol": "USCRUDE_PROD",
+      "timeframe": "W1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001",
+      "fields": [],
+      "hash": "479a3549770c99db892917942e7b825f4a34d7f885f1f04cd4056810a17fec57",
+      "history": {
+        "end": "2026-08-21T00:00:00Z",
+        "row_count": 2291,
+        "start": "1982-08-20T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-EIA-USCRUDE-STXSPR-W1-20260828-000001",
+      "qualification": "PASS",
+      "source": "eia.gov",
+      "symbol": "USCRUDE_STXSPR",
+      "timeframe": "W1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-EIA-USREFIN-UTIL-W1-20260828-000001",
+      "fields": [],
+      "hash": "00fd05b519abae4f77a116ff7b43c70eb5633ae4d7537969986638d0f292a807",
+      "history": {
+        "end": "2026-08-21T00:00:00Z",
+        "row_count": 1869,
+        "start": "1990-11-02T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-EIA-USREFIN-UTIL-W1-20260828-000001",
+      "qualification": "PASS",
+      "source": "eia.gov",
+      "symbol": "USREFIN_UTIL",
+      "timeframe": "W1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-NYFED-EFFR-D1-20260828-000001",
+      "fields": [],
+      "hash": "9dd78d49c2f78f0f727f73c6ba11e3147f79b0d0cb2135a30682679cd495698b",
+      "history": {
+        "end": "2026-08-27T00:00:00Z",
+        "row_count": 2174,
+        "start": "2018-01-02T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-NYFED-EFFR-D1-20260828-000001",
+      "qualification": "PASS",
+      "source": "markets.newyorkfed.org",
+      "symbol": "EFFR",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-alt-UST-DGS10-D1-20260828-000001",
+      "fields": [],
+      "hash": "a2598c564929c29409209ba2e26cd15a0690e76b78a66d82a37fa8fb4f4a593f",
+      "history": {
+        "end": "2026-08-27T00:00:00Z",
+        "row_count": 2164,
+        "start": "2018-01-02T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "PUBLIC",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-alt-UST-DGS10-D1-20260828-000001",
+      "qualification": "PASS",
+      "source": "home.treasury.gov",
+      "symbol": "DGS10",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "PAID",
+      "dataset_id": "tm-fut-GLBX-CURVE-D1-20260829-000001",
+      "fields": [
+        "curve_panel_d1"
+      ],
+      "hash": "f9eecdc2be28d98dca045d8e115868c73334efd067fb7769daceec2bf898702e",
+      "history": {
+        "end": null,
+        "row_count": 8184,
+        "start": null
+      },
+      "in_qualified_core": false,
+      "information_layer": "FUTURES",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-fut-GLBX-CURVE-D1-20260829-000001",
+      "qualification": null,
+      "source": "databento",
+      "symbol": "GC.FUT,CL.FUT",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "DERIVED",
+      "dataset_id": "tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+      "fields": [
+        "oi_flow_d1"
+      ],
+      "hash": "c0e59d2b1d998c873705348c98ee8bf218f05058416c14831cce97b63fc7a8e1",
+      "history": {
+        "end": null,
+        "row_count": 8184,
+        "start": null
+      },
+      "in_qualified_core": false,
+      "information_layer": "FUTURES",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-fut-GLBX-OIFLOW-D1-20260830-000001",
+      "qualification": null,
+      "source": "derived",
+      "symbol": null,
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "DERIVED",
+      "dataset_id": "tm-fut-GLBX-VOLFLOW-D1-20260830-000001",
+      "fields": [
+        "volume_flow_d1"
+      ],
+      "hash": "0d9454f2c5782a73a364e131866578241c21476b1f0c551b3ff3f99ec713e416",
+      "history": {
+        "end": null,
+        "row_count": 8184,
+        "start": null
+      },
+      "in_qualified_core": false,
+      "information_layer": "FUTURES",
+      "mt5_symbol": null,
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-fut-GLBX-VOLFLOW-D1-20260830-000001",
+      "qualification": null,
+      "source": "derived",
+      "symbol": null,
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-AUDUSD-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "e1760e5e46094e43ecb8300ce0beb1f2753f66518f1c7fee722c369ec4c4d7b1",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 10110,
+        "start": "1993-04-26T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "AUDUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-AUDUSD-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "AUDUSD",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-AUDUSD-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "8178290f7b14eb28c56801d2d93b42f56d33b5ae6079b6f8039181111ae83489",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 80000,
+        "start": "2013-11-03T23:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "AUDUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-AUDUSD-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "AUDUSD",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-BRENT-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "dc1ca9f1598469a034cb72f0f4e6b4306e931843a14a28f49913ccf8b89c373a",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2087,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "BRENT_OIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-BRENT-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "BRENT",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-BRENT-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "53ac97d15906c22b06f3a51de91bababdecf7a2115ac3ac5f05fcb4431f29fff",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 43126,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "BRENT_OIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-BRENT-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "BRENT",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-BRENT-H4-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "97e1e06b60d4cf653ca97261dd558c06d2e8c39e1c620076a408dfae5a400580",
+      "history": {
+        "end": "2026-08-28T16:00:00Z",
+        "row_count": 11975,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "BRENT_OIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-BRENT-H4-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "BRENT",
+      "timeframe": "H4",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-BRENT-M15-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "4465afcbbf1548fbbf20f694f05d413af516b9839aa754cbb79c1fb63fc4781a",
+      "history": {
+        "end": "2026-08-28T17:15:00Z",
+        "row_count": 80000,
+        "start": "2023-01-26T17:45:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "BRENT_OIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-BRENT-M15-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "BRENT",
+      "timeframe": "M15",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-COCOA-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "20975d20afd5d285392b02b45d17d8afa0e046ccf3309b4e024039b49ae429b3",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1958,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "COCOA",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-COCOA-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "COCOA",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-COFFEE-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "34aebd01ce1b0472fdc6cc425267fd2ee8f85e1039f10158a0ce802a4c1baa03",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1959,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "COFFEE_C",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-COFFEE-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "COFFEE",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-COPPER-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "a85b588136377b794a588b8a76dad6697d1bb80b75c37af8fe5fa68c0fda3749",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2394,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "COPPER",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-COPPER-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "COPPER",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-COPPER-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "f89a14a093b11986a0ff6fcb79e8bb0590860a9db966d7e030f07fbb22b53132",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 45449,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "COPPER",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-COPPER-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "COPPER",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-COPPER-M15-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "d910e8fcaa8d5f4786ad5bce7b3f18b201eb22688489df570fb53eeedba26330",
+      "history": {
+        "end": "2026-08-28T17:15:00Z",
+        "row_count": 80000,
+        "start": "2023-04-10T10:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "COPPER",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-COPPER-M15-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "COPPER",
+      "timeframe": "M15",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-CORN-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "dbd618ea1b44a561ad67d6ca519fd42cf70a8aadcdcc86c07efbc593b921b1eb",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1928,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "CORN",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-CORN-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "CORN",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-COTTON-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "365985b43a5b84faf4698b29a8711952aba057163662f6fb75c1ebef69c31b24",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1930,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "COTTON#2",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-COTTON-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "COTTON",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-DXY-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "1e7a1cd8850c10933c1b876550b87da0251baffd2d149a4d520ca300bc6b8f11",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1999,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "DOLLAR_INDX",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-DXY-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "DXY",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-DXY-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "1cfa8733ac78c208941e8fc48878528b4c016a2c66181aefe2811af7daafc03e",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 41468,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "DOLLAR_INDX",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-DXY-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "DXY",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURGBP-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "4d9e875200695a90832aa4c8c8f9e53b06f2c7ef7a4b10c3210e525faefcd359",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 10098,
+        "start": "1993-05-02T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURGBP",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURGBP-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EURGBP",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURGBP-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "b5438e6bf54c6a68373be692634451c4d7a8cea8805b5250452164dcbf1969ec",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 80000,
+        "start": "2013-10-15T09:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURGBP",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURGBP-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EURGBP",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURJPY-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "bdb05695938500b7a3d00ff3728f48867b2a96183e56073baa917b7c0293a9bc",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 9950,
+        "start": "1993-04-26T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURJPY-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EURJPY",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURJPY-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "8343e6f966270694918c79573c0ee3dcbcbaaa480ddff813c67841434a3d9272",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 80000,
+        "start": "2013-10-14T16:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURJPY-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EURJPY",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EUROBUND-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "e2ea58d80368e98fab11215b613a39a3974352ce96610bb754285aa1635e8dc2",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1974,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURO-BUND",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EUROBUND-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EUROBUND",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURUSD-D1-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "5c46942d797330185ce919e79cd1b94ac6ca11f25f4442c3a05963c174786ed3",
+      "history": {
+        "end": "2026-08-25T00:00:00Z",
+        "row_count": 2000,
+        "start": "2020-04-01T00:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURUSD-D1-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "EURUSD",
+      "timeframe": "D1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURUSD-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "4b1c1ae8b3d633bf4b133840ccdf39232a69277501c462ceb8413dd2eebd6ffb",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 15793,
+        "start": "1971-01-03T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURUSD-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EURUSD",
+      "timeframe": "D1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURUSD-H1-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "cea73749b6b1c6511ca7ae222d976879c85d25bb4818976299b225827d5ea567",
+      "history": {
+        "end": "2026-08-25T12:00:00Z",
+        "row_count": 2000,
+        "start": "2026-04-30T05:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURUSD-H1-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "EURUSD",
+      "timeframe": "H1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURUSD-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "60d93e280c01b2fb2fe522a43cc6b7f09a56c43094536fd53e0a88372cbf501d",
+      "history": {
+        "end": "2026-08-28T05:00:00Z",
+        "row_count": 50508,
+        "start": "2018-07-22T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURUSD-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EURUSD",
+      "timeframe": "H1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURUSD-H4-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "97e565003169ece3db4c0a838fd438772270c776cc3a3e82d78c29476c75b9e7",
+      "history": {
+        "end": "2026-08-25T12:00:00Z",
+        "row_count": 2000,
+        "start": "2025-05-29T12:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURUSD-H4-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "EURUSD",
+      "timeframe": "H4",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURUSD-H4-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "3894c3c51db4372a8c1c8ea63097d7c5bd9cc8dc6e5ad36fb404a573505d21a2",
+      "history": {
+        "end": "2026-08-28T16:00:00Z",
+        "row_count": 50000,
+        "start": "1979-11-01T20:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURUSD-H4-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EURUSD",
+      "timeframe": "H4",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURUSD-M15-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "ed0a779dd43de803aaeb2d987e38092edcf9387359596d19a4cda476ee25d772",
+      "history": {
+        "end": "2026-08-25T12:45:00Z",
+        "row_count": 2000,
+        "start": "2026-07-27T17:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURUSD-M15-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "EURUSD",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-EURUSD-M15-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "0e5c6279192401ac37ebe2977e5e7484136cc5e91e674f8f697c77a23bdad5d2",
+      "history": {
+        "end": "2026-08-28T17:15:00Z",
+        "row_count": 80000,
+        "start": "2023-06-09T13:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "EURUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-EURUSD-M15-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "EURUSD",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GASOLINE-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "fdd80507f533eaf94e334e7d489d0536a5fdcfdd5b6766b68858c22e2c9715c3",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2394,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GASOLINE",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GASOLINE-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GASOLINE",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GASOLINE-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "dda4634a2324b99a4ada8a9913c2f69dc7ac23dc9bc4483dfe17063845eaa02e",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 45467,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GASOLINE",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GASOLINE-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GASOLINE",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GBPJPY-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "71d0564d22ef7b253613dcf51a0ed0f098cb3ec934fb4f76c451435d4171dcba",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 10102,
+        "start": "1993-04-18T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GBPJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GBPJPY-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GBPJPY",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GBPJPY-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "9af2b94314bb732bad32c8b2003b834cfe45a8740e3fec37a18f75016e0826b5",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 80000,
+        "start": "2013-10-11T21:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GBPJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GBPJPY-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GBPJPY",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GBPUSD-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "029ebc6a051d0d483826f8bcf671695f07074cc3ff67c6848016dc025c21cf63",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 10098,
+        "start": "1993-05-11T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GBPUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GBPUSD-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GBPUSD",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GBPUSD-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "db301b20210a0607754abb99551cda8f396321fb64cafbb1548de1d26d7231a0",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 80000,
+        "start": "2013-11-03T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GBPUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GBPUSD-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GBPUSD",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GBPUSD-M15-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "441dac224b718bb13edeaec4e49e057d88946cc777ee4f1b3461030d954f08d1",
+      "history": {
+        "end": "2026-08-28T17:15:00Z",
+        "row_count": 80000,
+        "start": "2023-06-12T22:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GBPUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GBPUSD-M15-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GBPUSD",
+      "timeframe": "M15",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GER40-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "fb934f31d8001bf34f915611cbea485fb2ffe8496654982c766146b2384daed6",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1975,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GERMANY_40",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GER40-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GER40",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GER40-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "df4af34ae13551b3b76f21a12e4d310c2168e32da9b2bcdc632cb804023f2f1e",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 37978,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GERMANY_40",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GER40-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GER40",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-D1-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "49291ffd05b83fc26fd4765773bad4dcf091735ad288baa5963bbe2e57cee899",
+      "history": {
+        "end": "2026-08-25T00:00:00Z",
+        "row_count": 2000,
+        "start": "2020-03-26T00:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-D1-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "D1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "d4d44e6d1d21126418d8f22732c7749286c352e76b72b15ce546d2f9b3d3ffe6",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2399,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "D1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-H1-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "07339c1831fdfa5db38c8e849cbb4dd1ce2f021c8304c4599b72c05588ba8166",
+      "history": {
+        "end": "2026-08-25T12:00:00Z",
+        "row_count": 2000,
+        "start": "2026-04-24T14:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-H1-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "H1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "d59c01d6a213066b409c6c8abeb85d1f4420bb5436541cf88af9112595e84496",
+      "history": {
+        "end": "2026-08-28T05:00:00Z",
+        "row_count": 45575,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "H1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-H4-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "30dca0dd3ce587e772a5c0a3908e937aed762c205d2c42844836657d2bfc9572",
+      "history": {
+        "end": "2026-08-25T12:00:00Z",
+        "row_count": 2000,
+        "start": "2025-05-28T12:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-H4-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "H4",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-H4-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "a3e473a82090bcd4314e42c6d8e3be6e54fff1034d04a2ee086d9006e94c9da2",
+      "history": {
+        "end": "2026-08-28T16:00:00Z",
+        "row_count": 12348,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-H4-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "H4",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-M15-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "f14f9bddb9adfcd6825874397f9a2b8cc1a9b3218778d9df047036dc13c62717",
+      "history": {
+        "end": "2026-08-25T12:45:00Z",
+        "row_count": 2000,
+        "start": "2026-07-24T19:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-M15-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-M15-20260825-000002",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "5181f5b27c7f17a02964a3301b95f609a4e6bdc4b93964b9063262a8b99f8950",
+      "history": {
+        "end": "2026-08-25T12:45:00Z",
+        "row_count": 2000,
+        "start": "2026-07-24T19:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-M15-20260825-000002",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-GOLD-M15-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "a282ffca8dd76a8636e7b262abb51465a17fcdd3385cc362ce3f4b3b329ec564",
+      "history": {
+        "end": "2026-08-28T17:15:00Z",
+        "row_count": 80000,
+        "start": "2023-04-13T01:15:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "GOLD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-GOLD-M15-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "GOLD",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-HEATOIL-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "0adbb689b1981388277e056112ebe12f393047f6921cd48a89ba65ab92929b18",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2396,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "HEATING_OIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-HEATOIL-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "HEATOIL",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-HEATOIL-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "10791d07c4a6de66020ffe2aaa5085f7909c3baa32858094a7474a10af6daf4c",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 45480,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "HEATING_OIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-HEATOIL-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "HEATOIL",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-JAPANBOND-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "b744e3983754d8585f502b8b2477ca8ff623da9852efe934d99e2976ee885c41",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2387,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "JAPAN_BOND",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-JAPANBOND-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "JAPANBOND",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-JPN225-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "deb064f3ec6767b07b4a57067af75853febd12f4ec87f9ba3d18a79a1060c673",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2398,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "JAPAN_225",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-JPN225-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "JPN225",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-JPN225-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "134c4584c70e71f6e276cac85f8cb57be9158488e1b056bb642eb298f98e10ae",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 43623,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "JAPAN_225",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-JPN225-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "JPN225",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-NATGAS-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "047461aa84bda5be8db9ba7c0cdbf46858ba4b4f6125a5f47a8282e4f58a1952",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2327,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "NATURAL_GAS",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-NATGAS-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "NATGAS",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-NATGAS-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "f88c81619c64cdc8851cd633a16befb5de3f800aff47782b7cb27a65cb7aaff3",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 43943,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "NATURAL_GAS",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-NATGAS-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "NATGAS",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-NATGAS-H4-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "2e67938f83927a6a43084ad7b5b2b2e51ce2ae4548d9ba1b7ffbc8f2c45889ef",
+      "history": {
+        "end": "2026-08-28T16:00:00Z",
+        "row_count": 12013,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "NATURAL_GAS",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-NATGAS-H4-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "NATGAS",
+      "timeframe": "H4",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-NZDUSD-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "d4563c2caf970433c758a7ed293347d873374abc8169a40a236ee4c2c4c46775",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 9902,
+        "start": "1994-01-31T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "NZDUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-NZDUSD-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "NZDUSD",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-NZDUSD-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "45e3595c842074fd78537617682dc71fa8891b564f01bb84e629d0f8def00761",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 80000,
+        "start": "2013-10-15T11:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "NZDUSD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-NZDUSD-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "NZDUSD",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-OIL-D1-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "a22e4213fbbf28e24e892fcce400522885e8208ba9f94bbf41ceed3177808d72",
+      "history": {
+        "end": "2026-08-25T00:00:00Z",
+        "row_count": 2000,
+        "start": "2020-03-24T00:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "CrudeOIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-OIL-D1-20260825-000001",
+      "qualification": "DATA_REVIEW_REQUIRED",
+      "source": "mt5",
+      "symbol": "OIL",
+      "timeframe": "D1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-OIL-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "78b7389a14ac815d007a69b2c83c97f542405fa2093f39ce1cefe0ccfa39ecca",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2396,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "CrudeOIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-OIL-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "OIL",
+      "timeframe": "D1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-OIL-H1-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "e6fcb4fad172e7bdf3226f4be1a5af0561db074b0939bf40e3e1f46c607ee71a",
+      "history": {
+        "end": "2026-08-25T13:00:00Z",
+        "row_count": 2000,
+        "start": "2026-04-24T10:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "CrudeOIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-OIL-H1-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "OIL",
+      "timeframe": "H1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-OIL-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "dbdb5a29b7b36fd9db8fe631e41e818716ba08c9d5d207009e833f8ba51944c8",
+      "history": {
+        "end": "2026-08-28T05:00:00Z",
+        "row_count": 45529,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "CrudeOIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-OIL-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "OIL",
+      "timeframe": "H1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-OIL-H4-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "afe2bfe11722f017ac7da93c74605ebb3d4d9248cd38d4ef53342bd0caf9308f",
+      "history": {
+        "end": "2026-08-25T12:00:00Z",
+        "row_count": 2000,
+        "start": "2025-05-27T20:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "CrudeOIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-OIL-H4-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "OIL",
+      "timeframe": "H4",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-OIL-H4-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "73766a3b076e7eaf6ef0baa7dc141c51afc4212f6d04797384b691a9e7777342",
+      "history": {
+        "end": "2026-08-28T16:00:00Z",
+        "row_count": 12332,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "CrudeOIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-OIL-H4-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "OIL",
+      "timeframe": "H4",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-OIL-M15-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "4dec29a0c249785916c6a81dbaafe3d40cde2f70244736cfa60953210ed5811e",
+      "history": {
+        "end": "2026-08-25T13:00:00Z",
+        "row_count": 2000,
+        "start": "2026-07-24T19:15:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "CrudeOIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-OIL-M15-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "OIL",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-OIL-M15-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "3fba1e6577aeb95a37b469a35e959f02f62f7284773ba257c5f5dbe74cfa9180",
+      "history": {
+        "end": "2026-08-28T17:15:00Z",
+        "row_count": 80000,
+        "start": "2023-04-13T22:30:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "CrudeOIL",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-OIL-M15-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "OIL",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-PALLADIUM-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "6139167a1ed107653fd64d5e2e94de12af7c610b6dd7e91079c0a359e4aaf32f",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2397,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "PALLADIUM",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-PALLADIUM-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "PALLADIUM",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-PALLADIUM-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "a01647a2b43995cac0fd38d1122db104080c64aea9f2661b83bdd21e3bd1ecb3",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 45550,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "PALLADIUM",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-PALLADIUM-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "PALLADIUM",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-PLATINUM-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "d9931e2a798b0e79fe55188e6076f1a0b3bce100aac0f93b6d5653527dcfec33",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2380,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "PLATINUM",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-PLATINUM-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "PLATINUM",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-PLATINUM-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "fb4ebd56ec9065fffb0641fd9f8bc50ed05f20b219903d1ce19d1ba5b5a2dfdd",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 45254,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "PLATINUM",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-PLATINUM-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "PLATINUM",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-SILVER-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "181859ba5b0a6a7ed263317eb69f54c2601b6bbf8dd23fe053f895132d60ef90",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2397,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "SILVER",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-SILVER-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "SILVER",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-SILVER-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "86ee39239b7901460fd0c334562bea11dfb9d47adb1e82f06780a681891531b1",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 45495,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "SILVER",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-SILVER-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "SILVER",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-SILVER-H4-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "87a04426adc810497d9ec48dac20453db5818aad148a8ad610693bc1880ac787",
+      "history": {
+        "end": "2026-08-28T16:00:00Z",
+        "row_count": 12329,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "SILVER",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-SILVER-H4-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "SILVER",
+      "timeframe": "H4",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-SILVER-M15-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "f949c5572b2dc4ce58511b7fda350d3fa42fd1405c5063870363e53ecf9a2f32",
+      "history": {
+        "end": "2026-08-28T17:15:00Z",
+        "row_count": 80000,
+        "start": "2023-04-11T12:30:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "SILVER",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-SILVER-M15-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "SILVER",
+      "timeframe": "M15",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-SOYBEAN-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "488cfcda47800ca5e16956ae87c00503c2cc0501c1b6a7fe76b45079903db416",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1892,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "SOYBEAN",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-SOYBEAN-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "SOYBEAN",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-SUGAR-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "4cf92aa1e3ed0d7a44042549f166402704f4668d58c651144df11565de2f3398",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1938,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "SUGAR#11",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-SUGAR-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "SUGAR",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-US2000-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "4aff77cca5647cd67115b6804976e041946300bd34e2020128c4a3b95608c176",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 4799,
+        "start": "2009-07-13T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "US_2000",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-US2000-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "US2000",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-US30-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "642c4f692194e1f2d72b6cd5c4c7c97fd1fa9ece3bf32b246518ab953c9cbd86",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2389,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "US_30",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-US30-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "US30",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-US30-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "975a4384e3ad3306d6a31dd377f7320866ea7ab069c2695e05e3018e05fee373",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 45417,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "US_30",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-US30-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "US30",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-US500-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "5d829d450904e512021301a8b6538e2b8ff8c69c07013d8edd3ff39c7575e8e4",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 4850,
+        "start": "2011-01-17T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "US_500",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-US500-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "US500",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-US500-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "ab40b9a5856fed1a1520e7961b50a17f6ae7d225e71da389e540a6cf06744b1f",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 39746,
+        "start": "2011-01-17T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "US_500",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-US500-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "US500",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDCAD-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "6c42e2606f85966e252672e1fe780e3aaf63ab66714c4bafa09b9a1088868ad4",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 10103,
+        "start": "1993-04-27T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDCAD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDCAD-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USDCAD",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDCAD-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "de55abfad2ce19b30e8515201bdc9523b7818559cc7d1fe8a780d8942cf49521",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 80000,
+        "start": "2013-11-04T04:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDCAD",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDCAD-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USDCAD",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDCHF-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "785f9f2c86ffc896c0b58fb894d3c472df19ce581f600da3bc11713e88191926",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 15751,
+        "start": "1971-01-03T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDCHF",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDCHF-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USDCHF",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDCHF-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "c275e4de96573b3324a9b78358ffdd22c2c15561e36b9f17a1f803ac2ef8c1d2",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 80000,
+        "start": "2013-10-31T06:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDCHF",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDCHF-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USDCHF",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDJPY-D1-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "c00389ce1cbeeed3e1ceb9a09e549fa8335556cf2fd8c644db8f8a44f7ce3ad7",
+      "history": {
+        "end": "2026-08-25T00:00:00Z",
+        "row_count": 2000,
+        "start": "2020-04-01T00:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDJPY-D1-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "USDJPY",
+      "timeframe": "D1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDJPY-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "235371baea924149bcdd8ffa164dc4599047d6549251f505666ed338ddbb1a0b",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 15798,
+        "start": "1971-01-03T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDJPY-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USDJPY",
+      "timeframe": "D1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDJPY-H1-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "9f977e764835be6af3f968bcf6ad3ab0192f0cc563b3cdc6209087714aeb2cd5",
+      "history": {
+        "end": "2026-08-25T13:00:00Z",
+        "row_count": 2000,
+        "start": "2026-04-30T06:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDJPY-H1-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "USDJPY",
+      "timeframe": "H1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDJPY-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "fe423a950d300d93161d277b209747f4a5fc59b4bac7e0db01a8e7f388322f1a",
+      "history": {
+        "end": "2026-08-28T05:00:00Z",
+        "row_count": 50542,
+        "start": "2018-07-22T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDJPY-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USDJPY",
+      "timeframe": "H1",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDJPY-H4-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "5765d363efca784d8f36224d9392202ad9ccf75d8a19e1b23dd61fad85d4b8f9",
+      "history": {
+        "end": "2026-08-25T12:00:00Z",
+        "row_count": 2000,
+        "start": "2025-05-29T16:00:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDJPY-H4-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "USDJPY",
+      "timeframe": "H4",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDJPY-H4-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "777dd9cfcfb0ad9146743981d9505f54e248b8df5af177cd6c9a98e72ab35f23",
+      "history": {
+        "end": "2026-08-28T16:00:00Z",
+        "row_count": 50000,
+        "start": "1980-02-04T20:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDJPY-H4-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USDJPY",
+      "timeframe": "H4",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDJPY-M15-20260825-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "b3fd2f75e728f94fb3c6a66ffc6de7bca60e381d62253d46bcb405d435319387",
+      "history": {
+        "end": "2026-08-25T06:30:00Z",
+        "row_count": 2000,
+        "start": "2026-07-27T10:45:00Z"
+      },
+      "in_qualified_core": true,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDJPY-M15-20260825-000001",
+      "qualification": "QUALIFIED_WITH_WARNINGS",
+      "source": "mt5",
+      "symbol": "USDJPY",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USDJPY-M15-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "29797adbb536fabf477ae1c5b29aa44a5b39953ec5ba380fb592bbc4d4bc58a3",
+      "history": {
+        "end": "2026-08-28T17:15:00Z",
+        "row_count": 80000,
+        "start": "2023-06-12T22:45:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "USDJPY",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USDJPY-M15-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USDJPY",
+      "timeframe": "M15",
+      "v9_execution_universe": true
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USTECH100-D1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "4a261dd8d98fc25534a3e2bc1dd2fe1b62e658f6a0d917b4fef4d54146d66a65",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 2398,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "US_TECH100",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USTECH100-D1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USTECH100",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-USTECH100-H1-20260828-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "fad6d753c23e98540f9bde2664703a4b959504d6d73e4da5428793327d72fe87",
+      "history": {
+        "end": "2026-08-28T17:00:00Z",
+        "row_count": 45491,
+        "start": "2018-12-12T08:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "US_TECH100",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-USTECH100-H1-20260828-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "USTECH100",
+      "timeframe": "H1",
+      "v9_execution_universe": false
+    },
+    {
+      "cost_class": "FREE",
+      "dataset_id": "tm-market-WHEAT-D1-20260829-000001",
+      "fields": [
+        "timestamp_utc",
+        "timestamp_unix",
+        "open",
+        "high",
+        "low",
+        "close",
+        "tick_volume",
+        "real_volume",
+        "spread"
+      ],
+      "hash": "5a4d5292e9ebcb7db2fceafc987cead5ccad56932edf20b3c39091f3354c45dc",
+      "history": {
+        "end": "2026-08-28T00:00:00Z",
+        "row_count": 1928,
+        "start": "2018-12-12T00:00:00Z"
+      },
+      "in_qualified_core": false,
+      "information_layer": "MT5",
+      "mt5_symbol": "WHEAT",
+      "path": "D:/AGXXAIVER-4-WINDOWS-1-STOCK/data/market/immutable/tm-market-WHEAT-D1-20260829-000001",
+      "qualification": "WARN",
+      "source": "mt5",
+      "symbol": "WHEAT",
+      "timeframe": "D1",
+      "v9_execution_universe": false
+    }
+  ],
+  "execution_universe_logical": [
+    "GOLD",
+    "EURUSD",
+    "USDJPY",
+    "OIL"
+  ],
+  "execution_universe_mt5": {
+    "EURUSD": "EURUSD",
+    "GOLD": "GOLD",
+    "OIL": "CrudeOIL",
+    "USDJPY": "USDJPY"
+  },
+  "index_id": "DATA_ASSET_MASTER_INDEX_V9",
+  "n_datasets": 110,
+  "notes": [
+    "Canonical research core is the 16 tm-market-*-20260825-000001 datasets.",
+    "Ava GOLD/OIL are CFDs. Not GC/CL futures.",
+    "Pack E slim curve/OI/volume are DERIVED from already-paid Databento history.",
+    "Options bytes = 0. Options are not in this index as a tradable dataset.",
+    "Final OOS is DENIED and is not read."
+  ],
+  "qualified_core_n": 16
+}
