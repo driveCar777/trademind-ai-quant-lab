@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V10 Model Discovery STOP B
+
+- Locked 4 families × representations × 2 targets × GOLD/OIL. 62 experiments. FDR 0/62.
+- 21 cells beat naive M0 on validation metrics. No Level 1 Candidate. `MODEL_REPRESENTATION_EXHAUSTED`.
+- Do not buy options. Do not spend $93. Do not retune depth/threshold/target.
+
 ## 2026-08-30 — V10 Model Discovery START
 
 - Controlled nonlinear / interaction representation of the current information set.

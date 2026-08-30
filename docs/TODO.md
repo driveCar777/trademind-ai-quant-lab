@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V10 Model Discovery **IN PROGRESS**。不要买数据。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；受控非线性模型）
-> **阶段终点:** LEVEL1 Candidate 或 MODEL_REPRESENTATION_EXHAUSTED。禁止自动买 Options / Pack。禁止改 target 后重跑。
+> **当前活跃模块:** V10 Model Discovery **STOP B**。不要买数据。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；MODEL_REPRESENTATION_EXHAUSTED）
+> **阶段终点:** 锁定模型族已跑完。下一方向由人类决定（Options / Macro Surprise / News / 新交易宇宙）。禁止自动买。禁止改 target 后重跑。
 
 ---
 
@@ -56,7 +56,14 @@
 | MISSION V8.3 | Options historical feasibility (metadata occupancy) | ✅ PURCHASE=NO | 2026-08-30 |
 | MISSION V8.4 | Full-year options occupancy census | ✅ PURCHASE=NO | 2026-08-30 |
 | MISSION V9.0 | Existing data master backtest | ✅ STOP B | 2026-08-30 |
-| MISSION V10.0 | Model discovery / information representation | 🔄 IN PROGRESS | 2026-08-30 |
+| MISSION V10.0 | Model discovery / information representation | ✅ STOP B | 2026-08-30 |
+
+## V10 Model Discovery — STOP B 2026-08-30
+
+- 62 locked experiments. 21 validation advantages vs M0. FDR 0/62. Candidate=0.
+- `MODEL_REPRESENTATION_EXHAUSTED`. Do not buy options. Do not spend $93. Do not retune.
+- Reports: `V10_DECISION.md` / `V10_MODEL_DISCOVERY_REPORT.md` / `V10_INFORMATION_REPRESENTATION_REPORT.md` / `V10_MODEL_PROFITABILITY_REPORT.md` / `V10_MODEL_ABLATION_REPORT.md`
+- Machine: `data/market/research_engine/model_discovery/`
 
 ## V10 Model Discovery — START 2026-08-30
 
