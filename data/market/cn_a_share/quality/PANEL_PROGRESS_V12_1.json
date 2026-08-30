@@ -1,0 +1,7 @@
+{
+  "n_done": 20,
+  "n_empty": 0,
+  "n_failed": 0,
+  "note": "Live acquire running raw-only. Full freeze hash changes until n_done=5549.",
+  "updated": "2026-08-30T11:33:04Z"
+}
