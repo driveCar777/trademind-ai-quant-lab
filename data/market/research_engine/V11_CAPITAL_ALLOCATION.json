@@ -1,0 +1,137 @@
+{
+  "FINAL_OOS_ACCESS": "DENIED",
+  "NEW_DOWNLOAD": false,
+  "NEW_PURCHASE": false,
+  "NEXT_PRIMARY_RESEARCH_PATH": "CHINA_A_SHARE_RESEARCH_UNIVERSE",
+  "databento_historical_spend_usd": 31.816129,
+  "databento_remaining_usd": 93.0,
+  "databento_status": "UNUSED_RESEARCH_RESERVE",
+  "discovery_id": "ALPHA_CAPITAL_ALLOCATION_V11",
+  "index_id": "V11_CAPITAL_ALLOCATION",
+  "next_first_action": "A_SHARE_DATA_LAYER_FREE_BAOSTOCK",
+  "next_forbidden": [
+    "options purchase",
+    "Databento historical purchase",
+    "Tushare paid points",
+    "ORATS",
+    "Wind/Choice/CSMAR subscription",
+    "reopen killed MT5 families",
+    "new MT5 model on owned set"
+  ],
+  "options_min_mvd_usd": {
+    "LO_1Y_MVD_A": 11.99,
+    "OG_1Y_MVD_A": 14.99
+  },
+  "routes": [
+    {
+      "candidate_probability": "LOW",
+      "candidate_probability_basis": "Surface IV/skew/term is untested versus killed GVZ/OVX index. V9/V10 already showed GC/CL structure added 0 Candidates on Ava CFDs. OG option-front never equals futures-front. One-year LO sample. Scale is 1-2 names. EXTERNAL_LIVE_DATA=YES.",
+      "cash_usd_this_decision": 11.99,
+      "eligible_as_next": false,
+      "name": "MT5 + Options surface (LO/OG)",
+      "overall_0_100": 42,
+      "research_time": "small",
+      "route_id": "A_MT5_OPTIONS",
+      "scores": {
+        "cost": 70,
+        "data_availability": 80,
+        "expected_research_value": 45,
+        "information_novelty": 70,
+        "live_dependency": 20,
+        "mechanism_plausibility": 55,
+        "potential_strategy_scale": 25,
+        "sample_size": 40
+      },
+      "why": "Last cheap untested MT5 information class. Not the next dollar: it is still a purchase on an exhausted 4-name CFD book."
+    },
+    {
+      "candidate_probability": "LOW",
+      "candidate_probability_basis": "actual != surprise. Owned EIA/COT/UST10 were actual-only and already NO_CANDIDATE. Consensus requires a vendor. Same 4-asset universe.",
+      "cash_usd_this_decision": null,
+      "eligible_as_next": false,
+      "name": "MT5 + structured macro surprise",
+      "overall_0_100": 35,
+      "research_time": "medium",
+      "route_id": "B_MT5_MACRO_SURPRISE",
+      "scores": {
+        "cost": 25,
+        "data_availability": 20,
+        "expected_research_value": 40,
+        "information_novelty": 65,
+        "live_dependency": 20,
+        "mechanism_plausibility": 60,
+        "potential_strategy_scale": 25,
+        "sample_size": 50
+      },
+      "why": "Economically real hole. Cannot research now. Do not buy a vendor in this review."
+    },
+    {
+      "candidate_probability": "LOW",
+      "candidate_probability_basis": "FOMC/CPI/NFP/OPEC need release timestamp + consensus + surprise. None owned. Event count per year is small. Same 4 CFDs.",
+      "cash_usd_this_decision": null,
+      "eligible_as_next": false,
+      "name": "MT5 + structured event data",
+      "overall_0_100": 22,
+      "research_time": "large",
+      "route_id": "C_MT5_STRUCTURED_EVENTS",
+      "scores": {
+        "cost": 20,
+        "data_availability": 10,
+        "expected_research_value": 30,
+        "information_novelty": 60,
+        "live_dependency": 15,
+        "mechanism_plausibility": 50,
+        "potential_strategy_scale": 20,
+        "sample_size": 30
+      },
+      "why": "Data requirement only. Not a research start."
+    },
+    {
+      "candidate_probability": "MEDIUM",
+      "candidate_probability_basis": "Not a claim that A-share has alpha. Basis: MT5 failed because the information set and 4-name universe were exhausted. A-share supplies the missing ingredients (cross-section, industry, statements, announcements) at $0 via BaoStock. Many independent names make the Level 1 >=2-evidence gate feasible. Factor Worker 50-name table is DEMO, not a universe.",
+      "cash_usd_this_decision": 0.0,
+      "eligible_as_next": true,
+      "name": "Freeze MT5 alpha search; open China A-share research universe",
+      "overall_0_100": 72,
+      "research_time": "large",
+      "route_id": "D_CHINA_A_SHARE",
+      "scores": {
+        "cost": 90,
+        "data_availability": 75,
+        "expected_research_value": 75,
+        "information_novelty": 90,
+        "live_dependency": 50,
+        "mechanism_plausibility": 70,
+        "potential_strategy_scale": 80,
+        "sample_size": 85
+      },
+      "why": "Highest information increment per dollar. First work is a free data layer, not a new indicator and not a purchase."
+    },
+    {
+      "candidate_probability": "LOW",
+      "candidate_probability_basis": "V9 unified replay and V10 FDR 0/62 already spent this option. $93 is a reserve, not a budget.",
+      "cash_usd_this_decision": 0.0,
+      "eligible_as_next": false,
+      "name": "More MT5 CFD / more Databento / more ML on owned set",
+      "overall_0_100": 15,
+      "research_time": "medium",
+      "route_id": "E_OTHER_MORE_MT5",
+      "scores": {
+        "cost": 40,
+        "data_availability": 90,
+        "expected_research_value": 10,
+        "information_novelty": 10,
+        "live_dependency": 40,
+        "mechanism_plausibility": 15,
+        "potential_strategy_scale": 20,
+        "sample_size": 60
+      },
+      "why": "Forbidden by evidence. Do not spend the Databento remainder on this result."
+    }
+  ],
+  "score_note": "0-100 is strategic ranking only. Not a candidate probability and not a CAGR forecast.",
+  "spend_this_mission_usd": 0.0,
+  "top1": "D_CHINA_A_SHARE",
+  "top2": "A_MT5_OPTIONS",
+  "top3": "B_MT5_MACRO_SURPRISE"
+}
