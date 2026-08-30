@@ -1,0 +1,1622 @@
+{
+  "dataset_id": "tm-cn-a-UNIVERSE-HIST-20260830-000001",
+  "n_asof": 202,
+  "rows": [
+    {
+      "asof_date": "2010-01-29",
+      "n_active_equity": 1735,
+      "n_all": 2014,
+      "n_st": null,
+      "n_suspended": 70,
+      "symbol_list_hash": "b7977ad2c5a5accc8cb37e6d8d42860003ec3c8dc0d783fe3076ac7a3bb5252f"
+    },
+    {
+      "asof_date": "2010-02-26",
+      "n_active_equity": 1757,
+      "n_all": 2044,
+      "n_st": null,
+      "n_suspended": 95,
+      "symbol_list_hash": "d155a9d9815194c7a23bbe15d080d2e84c1445921fb48af89692e0dffcb38233"
+    },
+    {
+      "asof_date": "2010-03-31",
+      "n_active_equity": 1787,
+      "n_all": 2081,
+      "n_st": null,
+      "n_suspended": 94,
+      "symbol_list_hash": "a8ccfc0e1de531f85228dca0a0d0f9fb3bd8bf3625434a50b1486b8ed5dea238"
+    },
+    {
+      "asof_date": "2010-04-30",
+      "n_active_equity": 1817,
+      "n_all": 2119,
+      "n_st": null,
+      "n_suspended": 91,
+      "symbol_list_hash": "48f5ba6a8686a6a1e246491762e5225ac12da5494fd198f8918f44c80d7716c9"
+    },
+    {
+      "asof_date": "2010-05-31",
+      "n_active_equity": 1843,
+      "n_all": 2153,
+      "n_st": null,
+      "n_suspended": 102,
+      "symbol_list_hash": "a4fe7c1891146189a1194f6a850618811947563e0ab42551c2640cee0635bf14"
+    },
+    {
+      "asof_date": "2010-06-30",
+      "n_active_equity": 1871,
+      "n_all": 2184,
+      "n_st": null,
+      "n_suspended": 102,
+      "symbol_list_hash": "723f113a7ce17c8aa7365e94e99fcbd0c3744cbc2c3c5bf85e44e19c3c1aabe1"
+    },
+    {
+      "asof_date": "2010-07-30",
+      "n_active_equity": 1896,
+      "n_all": 2221,
+      "n_st": null,
+      "n_suspended": 85,
+      "symbol_list_hash": "f777b35c639d9c57616f7fe70e8df0d43bf4f6dd5abe236446a3c4bdf8bcd445"
+    },
+    {
+      "asof_date": "2010-08-31",
+      "n_active_equity": 1928,
+      "n_all": 2264,
+      "n_st": null,
+      "n_suspended": 86,
+      "symbol_list_hash": "badda2db3c0464017df0a791f2ed0ebb7fac26c35d7b110fc0a3e02ef8dac849"
+    },
+    {
+      "asof_date": "2010-09-30",
+      "n_active_equity": 1957,
+      "n_all": 2294,
+      "n_st": null,
+      "n_suspended": 76,
+      "symbol_list_hash": "6bcdc20a1982267707e7cb2a34a90ceb25066f06958ca8a4d5ac1dca76eae8f1"
+    },
+    {
+      "asof_date": "2010-10-29",
+      "n_active_equity": 1978,
+      "n_all": 2317,
+      "n_st": null,
+      "n_suspended": 82,
+      "symbol_list_hash": "42c2add2e1cd7ccf438614a1b5d7301347044ff43dfef3f15d0f526080e3c37f"
+    },
+    {
+      "asof_date": "2010-11-30",
+      "n_active_equity": 2007,
+      "n_all": 2348,
+      "n_st": null,
+      "n_suspended": 90,
+      "symbol_list_hash": "7188fe48a452c74fee75a386aa836e42af0a8fb3c509dc7bfa67d2e4cbae9984"
+    },
+    {
+      "asof_date": "2010-12-31",
+      "n_active_equity": 2044,
+      "n_all": 2387,
+      "n_st": null,
+      "n_suspended": 88,
+      "symbol_list_hash": "7f4c33de1ef18ebec4b46af485738759374e6e56833195c67fa2fe20362ae589"
+    },
+    {
+      "asof_date": "2011-01-31",
+      "n_active_equity": 2075,
+      "n_all": 2351,
+      "n_st": null,
+      "n_suspended": 93,
+      "symbol_list_hash": "46bc992850bc4ecff72be3838d39a9677eaee1cc5490270615132d88c82f97f1"
+    },
+    {
+      "asof_date": "2011-02-28",
+      "n_active_equity": 2102,
+      "n_all": 2380,
+      "n_st": null,
+      "n_suspended": 111,
+      "symbol_list_hash": "30783152faaa913031b6823e1499e5cd5e92cb677de1776e29062eeecab596fc"
+    },
+    {
+      "asof_date": "2011-03-31",
+      "n_active_equity": 2132,
+      "n_all": 2412,
+      "n_st": null,
+      "n_suspended": 111,
+      "symbol_list_hash": "3fb72de8c8bb80370284703ace8bb5b978c9c1e34cdfb72454702a5c384c37f9"
+    },
+    {
+      "asof_date": "2011-04-29",
+      "n_active_equity": 2156,
+      "n_all": 2437,
+      "n_st": null,
+      "n_suspended": 132,
+      "symbol_list_hash": "5a2373697b638f3d538d1ea43f79cb6fbae9109f5e508ac9f79c8b4078968419"
+    },
+    {
+      "asof_date": "2011-05-31",
+      "n_active_equity": 2182,
+      "n_all": 2471,
+      "n_st": null,
+      "n_suspended": 104,
+      "symbol_list_hash": "d617c8a6da936e9e307b4d89d1b81a617a21dfb15f0163d9f6f6afe3303984de"
+    },
+    {
+      "asof_date": "2011-06-30",
+      "n_active_equity": 2210,
+      "n_all": 2524,
+      "n_st": null,
+      "n_suspended": 139,
+      "symbol_list_hash": "1b0cebba2530773a2ac21c7de7a6c9aa771dbf2779d9f139f0bbd6c92dae99cd"
+    },
+    {
+      "asof_date": "2011-07-29",
+      "n_active_equity": 2230,
+      "n_all": 2548,
+      "n_st": null,
+      "n_suspended": 105,
+      "symbol_list_hash": "db81e16b9779013ea9c9aaff32a1cb576a7d7d6eb80a573d95ceb0ed27297fa1"
+    },
+    {
+      "asof_date": "2011-08-31",
+      "n_active_equity": 2254,
+      "n_all": 2646,
+      "n_st": null,
+      "n_suspended": 98,
+      "symbol_list_hash": "e1989acddcb0b02396821ae7a5b60471bc61f5ad307e5356678e6598e930b68f"
+    },
+    {
+      "asof_date": "2011-09-30",
+      "n_active_equity": 2275,
+      "n_all": 2619,
+      "n_st": null,
+      "n_suspended": 99,
+      "symbol_list_hash": "929f3023c48f939d5b0ffd6f44167a2f8e198c7f0dcf8c19bf7da6686b0e8b95"
+    },
+    {
+      "asof_date": "2011-10-31",
+      "n_active_equity": 2285,
+      "n_all": 2642,
+      "n_st": null,
+      "n_suspended": 90,
+      "symbol_list_hash": "33cae171931615f5502c791d7db3bc0f88584987f87416a495529652f879b10f"
+    },
+    {
+      "asof_date": "2011-11-30",
+      "n_active_equity": 2305,
+      "n_all": 2669,
+      "n_st": null,
+      "n_suspended": 105,
+      "symbol_list_hash": "9a6608e120d154bcfd8970241e007c0d6e580d8ebd8847250c21a98043f38182"
+    },
+    {
+      "asof_date": "2011-12-30",
+      "n_active_equity": 2323,
+      "n_all": 2702,
+      "n_st": null,
+      "n_suspended": 111,
+      "symbol_list_hash": "082a20bffe8b216c34b86b3600982e7f937b3dafc90e2f302244b8b46a884c58"
+    },
+    {
+      "asof_date": "2012-01-31",
+      "n_active_equity": 2333,
+      "n_all": 2753,
+      "n_st": null,
+      "n_suspended": 91,
+      "symbol_list_hash": "4ae77fcf415597bc0850b055af2d9bba032c7d7327f689f1ce4adbe9fac47f2a"
+    },
+    {
+      "asof_date": "2012-02-29",
+      "n_active_equity": 2345,
+      "n_all": 2767,
+      "n_st": null,
+      "n_suspended": 98,
+      "symbol_list_hash": "463a33a6fc2d631098706fe76de487f69c765357cb0c4e7ab93f034cff1d867f"
+    },
+    {
+      "asof_date": "2012-03-30",
+      "n_active_equity": 2370,
+      "n_all": 2792,
+      "n_st": null,
+      "n_suspended": 128,
+      "symbol_list_hash": "7206510465c530d9c3f9190b95765cfc6518f6fd9669fd157f616c48bedbd7d9"
+    },
+    {
+      "asof_date": "2012-04-27",
+      "n_active_equity": 2384,
+      "n_all": 2810,
+      "n_st": null,
+      "n_suspended": 168,
+      "symbol_list_hash": "2ba854ef897797c129468439451a1470e28e5dc6d3a0e71f7141fd8558af9699"
+    },
+    {
+      "asof_date": "2012-05-31",
+      "n_active_equity": 2403,
+      "n_all": 2834,
+      "n_st": null,
+      "n_suspended": 98,
+      "symbol_list_hash": "d16b915327bd63e524b9955db0761fe5951b8eb2495f482b8e557bce986a6394"
+    },
+    {
+      "asof_date": "2012-06-29",
+      "n_active_equity": 2425,
+      "n_all": 2857,
+      "n_st": null,
+      "n_suspended": 123,
+      "symbol_list_hash": "616afe87af29279825d505296674c8cf92e91d62d9d38651fb102f7edf055c75"
+    },
+    {
+      "asof_date": "2012-07-31",
+      "n_active_equity": 2443,
+      "n_all": 2883,
+      "n_st": null,
+      "n_suspended": 59,
+      "symbol_list_hash": "0361d4c38eb2932c1474409308fd5363e7d3c8d439a0e8b41cca146b9d1d2672"
+    },
+    {
+      "asof_date": "2012-08-31",
+      "n_active_equity": 2458,
+      "n_all": 2907,
+      "n_st": null,
+      "n_suspended": 73,
+      "symbol_list_hash": "1f86d94afb92cb49da219236549df4ea00c287dfed805b043c9c048833322ef2"
+    },
+    {
+      "asof_date": "2012-09-28",
+      "n_active_equity": 2470,
+      "n_all": 2926,
+      "n_st": null,
+      "n_suspended": 66,
+      "symbol_list_hash": "297dd2ab1e8e1bc560916b402a0077b4d7f788cd545cac99ec5ed0f58307e30b"
+    },
+    {
+      "asof_date": "2012-10-31",
+      "n_active_equity": 2474,
+      "n_all": 2934,
+      "n_st": null,
+      "n_suspended": 57,
+      "symbol_list_hash": "81b5eda1e3566e416da474fb7036983f71f0e13bf4c0fe7cef4b61be3c9587d0"
+    },
+    {
+      "asof_date": "2012-11-30",
+      "n_active_equity": 2475,
+      "n_all": 2945,
+      "n_st": null,
+      "n_suspended": 69,
+      "symbol_list_hash": "4e22044ead670887d0275823afacad015b65f9ad106ed5d49a139123873845f9"
+    },
+    {
+      "asof_date": "2012-12-31",
+      "n_active_equity": 2475,
+      "n_all": 2958,
+      "n_st": null,
+      "n_suspended": 73,
+      "symbol_list_hash": "4e22044ead670887d0275823afacad015b65f9ad106ed5d49a139123873845f9"
+    },
+    {
+      "asof_date": "2013-01-31",
+      "n_active_equity": 2475,
+      "n_all": 2963,
+      "n_st": null,
+      "n_suspended": 72,
+      "symbol_list_hash": "4e22044ead670887d0275823afacad015b65f9ad106ed5d49a139123873845f9"
+    },
+    {
+      "asof_date": "2013-02-28",
+      "n_active_equity": 2474,
+      "n_all": 2969,
+      "n_st": null,
+      "n_suspended": 65,
+      "symbol_list_hash": "e0455accd777c4c45d118efc4fed1f75185d2c47090ea8657b212e1ece8495fa"
+    },
+    {
+      "asof_date": "2013-03-29",
+      "n_active_equity": 2473,
+      "n_all": 2947,
+      "n_st": null,
+      "n_suspended": 82,
+      "symbol_list_hash": "03562e067114df7654be9cb2090f2b7ff7719f0f68ca35aa0445ca0811230e25"
+    },
+    {
+      "asof_date": "2013-04-26",
+      "n_active_equity": 2473,
+      "n_all": 2947,
+      "n_st": null,
+      "n_suspended": 91,
+      "symbol_list_hash": "03562e067114df7654be9cb2090f2b7ff7719f0f68ca35aa0445ca0811230e25"
+    },
+    {
+      "asof_date": "2013-05-31",
+      "n_active_equity": 2472,
+      "n_all": 2943,
+      "n_st": null,
+      "n_suspended": 92,
+      "symbol_list_hash": "d69430890754ab6ea179babf7b345829b4743034175ba909e848595365793cf3"
+    },
+    {
+      "asof_date": "2013-06-28",
+      "n_active_equity": 2472,
+      "n_all": 2952,
+      "n_st": null,
+      "n_suspended": 101,
+      "symbol_list_hash": "d69430890754ab6ea179babf7b345829b4743034175ba909e848595365793cf3"
+    },
+    {
+      "asof_date": "2013-07-31",
+      "n_active_equity": 2471,
+      "n_all": 2949,
+      "n_st": null,
+      "n_suspended": 109,
+      "symbol_list_hash": "de93ad7b8bf1dec7ccf8000add46de45e84de745db79f606cbdb1353fbef331b"
+    },
+    {
+      "asof_date": "2013-08-30",
+      "n_active_equity": 2470,
+      "n_all": 2950,
+      "n_st": null,
+      "n_suspended": 108,
+      "symbol_list_hash": "f0f193c8e0536a1bd4f9a91a8e8c9bee8202d5a8576dc3a16e2a2b3d50be035b"
+    },
+    {
+      "asof_date": "2013-09-30",
+      "n_active_equity": 2470,
+      "n_all": 2950,
+      "n_st": null,
+      "n_suspended": 104,
+      "symbol_list_hash": "4595dd0b5e4c1baf42f7bf7c68866778b590d70a9f1c81ee46651b4ed01001db"
+    },
+    {
+      "asof_date": "2013-10-31",
+      "n_active_equity": 2470,
+      "n_all": 2954,
+      "n_st": null,
+      "n_suspended": 117,
+      "symbol_list_hash": "4595dd0b5e4c1baf42f7bf7c68866778b590d70a9f1c81ee46651b4ed01001db"
+    },
+    {
+      "asof_date": "2013-11-29",
+      "n_active_equity": 2470,
+      "n_all": 2959,
+      "n_st": null,
+      "n_suspended": 130,
+      "symbol_list_hash": "4595dd0b5e4c1baf42f7bf7c68866778b590d70a9f1c81ee46651b4ed01001db"
+    },
+    {
+      "asof_date": "2013-12-31",
+      "n_active_equity": 2471,
+      "n_all": 2970,
+      "n_st": null,
+      "n_suspended": 119,
+      "symbol_list_hash": "e00f2b3e666a952714ca0c6e6e4e10c20a367e1e5dfd9975442220641c9919db"
+    },
+    {
+      "asof_date": "2014-01-30",
+      "n_active_equity": 2514,
+      "n_all": 3013,
+      "n_st": null,
+      "n_suspended": 115,
+      "symbol_list_hash": "30a3fea9b53b75f0aaac7403b3c578696d2148a6a0d8fb7b7881581c3fee659d"
+    },
+    {
+      "asof_date": "2014-02-28",
+      "n_active_equity": 2519,
+      "n_all": 3019,
+      "n_st": null,
+      "n_suspended": 137,
+      "symbol_list_hash": "04ed5dc3eefbd5c1e5bfce43db8eb1011da4e5924b3551488d3fc896edacbcd1"
+    },
+    {
+      "asof_date": "2014-03-31",
+      "n_active_equity": 2519,
+      "n_all": 3020,
+      "n_st": null,
+      "n_suspended": 176,
+      "symbol_list_hash": "04ed5dc3eefbd5c1e5bfce43db8eb1011da4e5924b3551488d3fc896edacbcd1"
+    },
+    {
+      "asof_date": "2014-04-30",
+      "n_active_equity": 2519,
+      "n_all": 3022,
+      "n_st": null,
+      "n_suspended": 201,
+      "symbol_list_hash": "04ed5dc3eefbd5c1e5bfce43db8eb1011da4e5924b3551488d3fc896edacbcd1"
+    },
+    {
+      "asof_date": "2014-05-30",
+      "n_active_equity": 2519,
+      "n_all": 3024,
+      "n_st": null,
+      "n_suspended": 208,
+      "symbol_list_hash": "04ed5dc3eefbd5c1e5bfce43db8eb1011da4e5924b3551488d3fc896edacbcd1"
+    },
+    {
+      "asof_date": "2014-06-30",
+      "n_active_equity": 2522,
+      "n_all": 3030,
+      "n_st": null,
+      "n_suspended": 221,
+      "symbol_list_hash": "e4bd3731a087c0f062c77115f955ac46ad6b0226b5f44dff024b6c9c154ec517"
+    },
+    {
+      "asof_date": "2014-07-31",
+      "n_active_equity": 2531,
+      "n_all": 3041,
+      "n_st": null,
+      "n_suspended": 213,
+      "symbol_list_hash": "cbd00205a964e5fd021a4831b0aaae9a98dbe27855f76637d1fa5b7bd745b6d1"
+    },
+    {
+      "asof_date": "2014-08-29",
+      "n_active_equity": 2540,
+      "n_all": 3053,
+      "n_st": null,
+      "n_suspended": 230,
+      "symbol_list_hash": "8d8f340543d4a5b212673a56a861e8bff0867eb5740bec4061e248a67b7a2110"
+    },
+    {
+      "asof_date": "2014-09-30",
+      "n_active_equity": 2551,
+      "n_all": 3069,
+      "n_st": null,
+      "n_suspended": 218,
+      "symbol_list_hash": "e047c99f71059a17a8c3dce122982273da1175176920a805fa47d6be20fd256f"
+    },
+    {
+      "asof_date": "2014-10-31",
+      "n_active_equity": 2566,
+      "n_all": 3084,
+      "n_st": null,
+      "n_suspended": 238,
+      "symbol_list_hash": "e386c39c64fd95c3f6d281f582fff8d940e40135a1390c501f57f1dd3a51e136"
+    },
+    {
+      "asof_date": "2014-11-28",
+      "n_active_equity": 2574,
+      "n_all": 3095,
+      "n_st": null,
+      "n_suspended": 266,
+      "symbol_list_hash": "987924ea32989566b22bf6e602c45b519198150c11cdd205b8d4ab74e004d6ed"
+    },
+    {
+      "asof_date": "2014-12-31",
+      "n_active_equity": 2595,
+      "n_all": 3128,
+      "n_st": null,
+      "n_suspended": 250,
+      "symbol_list_hash": "75a12a5eb553303114dba6cb80e4a8401c411cc260b2b6128e7931bc2448c251"
+    },
+    {
+      "asof_date": "2015-01-30",
+      "n_active_equity": 2617,
+      "n_all": 3157,
+      "n_st": null,
+      "n_suspended": 262,
+      "symbol_list_hash": "55cedadbbcbb4b8df82c8681f341edda8131770ad42f07100bc96a76e7142e94"
+    },
+    {
+      "asof_date": "2015-02-27",
+      "n_active_equity": 2638,
+      "n_all": 3186,
+      "n_st": null,
+      "n_suspended": 251,
+      "symbol_list_hash": "13cd7284d6d381c9bed534958780fe6a1afd848541696786798356f53d21ab79"
+    },
+    {
+      "asof_date": "2015-03-31",
+      "n_active_equity": 2665,
+      "n_all": 3217,
+      "n_st": null,
+      "n_suspended": 324,
+      "symbol_list_hash": "61f9fc403963f17f923a7f3852f05711f7290de85b41fc96b917932af633aa02"
+    },
+    {
+      "asof_date": "2015-04-30",
+      "n_active_equity": 1774,
+      "n_all": 2000,
+      "n_st": null,
+      "n_suspended": 191,
+      "symbol_list_hash": "4b9eb0942590191a2bea883c79019680d399d4e1223a6ee2b865f9442af81514"
+    },
+    {
+      "asof_date": "2015-05-29",
+      "n_active_equity": 2736,
+      "n_all": 3291,
+      "n_st": null,
+      "n_suspended": 400,
+      "symbol_list_hash": "da66b7e53107c5a7bd3ebde52aa75ef731af174c56d8f282baeb7b74dd2359dd"
+    },
+    {
+      "asof_date": "2015-06-30",
+      "n_active_equity": 2779,
+      "n_all": 3341,
+      "n_st": null,
+      "n_suspended": 442,
+      "symbol_list_hash": "2a6af34c69827d0ba4aff4f0c7b16510d8c4d1d4b0effb893318e80102d17e15"
+    },
+    {
+      "asof_date": "2015-07-31",
+      "n_active_equity": 2783,
+      "n_all": 3345,
+      "n_st": null,
+      "n_suspended": 505,
+      "symbol_list_hash": "f6292f469d1f9dc38bb1104c85260c381b65ae16dcc9f61b2dacf7a7736be5c3"
+    },
+    {
+      "asof_date": "2015-08-31",
+      "n_active_equity": 2783,
+      "n_all": 3355,
+      "n_st": null,
+      "n_suspended": 500,
+      "symbol_list_hash": "f6292f469d1f9dc38bb1104c85260c381b65ae16dcc9f61b2dacf7a7736be5c3"
+    },
+    {
+      "asof_date": "2015-09-30",
+      "n_active_equity": 2783,
+      "n_all": 3355,
+      "n_st": null,
+      "n_suspended": 432,
+      "symbol_list_hash": "f6292f469d1f9dc38bb1104c85260c381b65ae16dcc9f61b2dacf7a7736be5c3"
+    },
+    {
+      "asof_date": "2015-10-30",
+      "n_active_equity": 2783,
+      "n_all": 3357,
+      "n_st": null,
+      "n_suspended": 396,
+      "symbol_list_hash": "f6292f469d1f9dc38bb1104c85260c381b65ae16dcc9f61b2dacf7a7736be5c3"
+    },
+    {
+      "asof_date": "2015-11-30",
+      "n_active_equity": 2783,
+      "n_all": 3357,
+      "n_st": null,
+      "n_suspended": 309,
+      "symbol_list_hash": "9f4509ceb0fcfaadfb12d98bf0f28c373357332a538494e4850d22920c708679"
+    },
+    {
+      "asof_date": "2015-12-31",
+      "n_active_equity": 2811,
+      "n_all": 3385,
+      "n_st": null,
+      "n_suspended": 266,
+      "symbol_list_hash": "0e3aa36fb9e587503ec09c295da13d039d5b0e2f27cf8641c95d026db8afd63c"
+    },
+    {
+      "asof_date": "2016-01-29",
+      "n_active_equity": 2812,
+      "n_all": 3386,
+      "n_st": null,
+      "n_suspended": 254,
+      "symbol_list_hash": "e2ac1c8d41c2b7f2cfb99a6d6295ad12a6a66353663eee2f4a10a4d13d95f4ed"
+    },
+    {
+      "asof_date": "2016-02-29",
+      "n_active_equity": 2819,
+      "n_all": 3393,
+      "n_st": null,
+      "n_suspended": 281,
+      "symbol_list_hash": "88d0519fc2980862425f671fe86e3f348c63ea9a10ea513fa7ba847bcb973390"
+    },
+    {
+      "asof_date": "2016-03-31",
+      "n_active_equity": 2835,
+      "n_all": 3409,
+      "n_st": null,
+      "n_suspended": 299,
+      "symbol_list_hash": "4d1bffaaf47c66e8e684b1c7c68a35ce0cdc9844ab02c0a79ad9a56bc8466f0d"
+    },
+    {
+      "asof_date": "2016-04-29",
+      "n_active_equity": 2846,
+      "n_all": 3420,
+      "n_st": null,
+      "n_suspended": 317,
+      "symbol_list_hash": "7726b480479082678fb6747de5145b38f3b8de3467342fc19f42268d625dd181"
+    },
+    {
+      "asof_date": "2016-05-31",
+      "n_active_equity": 2858,
+      "n_all": 3432,
+      "n_st": null,
+      "n_suspended": 302,
+      "symbol_list_hash": "5d0dbfde403811c5c123e56d1bd8042b422f2e3c5f7628cb6ac482a8152f26a2"
+    },
+    {
+      "asof_date": "2016-06-30",
+      "n_active_equity": 2871,
+      "n_all": 3445,
+      "n_st": null,
+      "n_suspended": 286,
+      "symbol_list_hash": "65320550a301baf8063a85055c24dbe6f0ca4ccee48287b49f64307c1d16753c"
+    },
+    {
+      "asof_date": "2016-07-29",
+      "n_active_equity": 2884,
+      "n_all": 3458,
+      "n_st": null,
+      "n_suspended": 239,
+      "symbol_list_hash": "e8540d7db4aadc17553a73da053fd8483b10427e0b818a4f8488cfa4c340f54f"
+    },
+    {
+      "asof_date": "2016-08-31",
+      "n_active_equity": 2914,
+      "n_all": 3488,
+      "n_st": null,
+      "n_suspended": 228,
+      "symbol_list_hash": "d7c56f71e2df1bbffa3e398fb8da6b73e8b29a9e9dbe9b2250e2a2ef7669baab"
+    },
+    {
+      "asof_date": "2016-09-30",
+      "n_active_equity": 2936,
+      "n_all": 3510,
+      "n_st": null,
+      "n_suspended": 232,
+      "symbol_list_hash": "17ddf625b2aefa4d545feeca423fe5cf1c4a4caab4b39ed00072fb85f48f6023"
+    },
+    {
+      "asof_date": "2016-10-31",
+      "n_active_equity": 2958,
+      "n_all": 3532,
+      "n_st": null,
+      "n_suspended": 206,
+      "symbol_list_hash": "25ea1b52ad4ff47e5777bc1f51a8e2a482d3df93ccca16a147edd34a0e7a6f52"
+    },
+    {
+      "asof_date": "2016-11-30",
+      "n_active_equity": 2992,
+      "n_all": 3566,
+      "n_st": null,
+      "n_suspended": 218,
+      "symbol_list_hash": "a83f3f42db4e6387259002ab60e0d1692a1da7f7ceec3ed477276ab55921c641"
+    },
+    {
+      "asof_date": "2016-12-30",
+      "n_active_equity": 3037,
+      "n_all": 3611,
+      "n_st": null,
+      "n_suspended": 203,
+      "symbol_list_hash": "1dfeb6e590d1c3d243c377da9207028abd061acebfe22fb3f3a1fed94306b264"
+    },
+    {
+      "asof_date": "2017-01-26",
+      "n_active_equity": 3090,
+      "n_all": 3664,
+      "n_st": null,
+      "n_suspended": 197,
+      "symbol_list_hash": "d3745c47734c8fa7b82cb1a8e8b038036d5e60e544a1f10bb4152a2e4df22956"
+    },
+    {
+      "asof_date": "2017-02-28",
+      "n_active_equity": 3122,
+      "n_all": 3696,
+      "n_st": null,
+      "n_suspended": 225,
+      "symbol_list_hash": "61be198b11d198c7548e8258d765305178f44f62fd04e58b3cede013e1beaf5c"
+    },
+    {
+      "asof_date": "2017-03-01",
+      "n_active_equity": 3123,
+      "n_all": 3697,
+      "n_st": null,
+      "n_suspended": 222,
+      "symbol_list_hash": "4c5dfe00887a101735693a2fc588bde06015f1bac3dd5daffed1832bf28b05a5"
+    },
+    {
+      "asof_date": "2017-03-31",
+      "n_active_equity": 3170,
+      "n_all": 3744,
+      "n_st": null,
+      "n_suspended": 224,
+      "symbol_list_hash": "d087cde73f47dbd8b4d83e0a1f8a6b98bce1254abe3e23288772732b9284dbc7"
+    },
+    {
+      "asof_date": "2017-04-28",
+      "n_active_equity": 3208,
+      "n_all": 3782,
+      "n_st": null,
+      "n_suspended": 245,
+      "symbol_list_hash": "a2a3dc565a7049a97be38b7414e3b2e2cd18ab6dc1931a87bf349a482a6fc066"
+    },
+    {
+      "asof_date": "2017-05-31",
+      "n_active_equity": 3246,
+      "n_all": 3819,
+      "n_st": null,
+      "n_suspended": 260,
+      "symbol_list_hash": "d1123cdbfc060292cd93a8182dd6c0002512eeff66234575ddaf2dbf6dc7517c"
+    },
+    {
+      "asof_date": "2017-06-30",
+      "n_active_equity": 3282,
+      "n_all": 3855,
+      "n_st": null,
+      "n_suspended": 260,
+      "symbol_list_hash": "7c9a15073b14af25db3a952591a2c8a1bc3add93f36aeed84792354ee216b8c2"
+    },
+    {
+      "asof_date": "2017-07-31",
+      "n_active_equity": 3311,
+      "n_all": 3883,
+      "n_st": null,
+      "n_suspended": 261,
+      "symbol_list_hash": "9db30e6a75f5b3d5f9ca076e4dc474f47d26358d28c758b25475a3793154505e"
+    },
+    {
+      "asof_date": "2017-08-31",
+      "n_active_equity": 3347,
+      "n_all": 3919,
+      "n_st": null,
+      "n_suspended": 231,
+      "symbol_list_hash": "a28eaed1379f68c35b8ed2abd92ae6edd009a2ad68daf218f79dbe8f7d9375a8"
+    },
+    {
+      "asof_date": "2017-09-29",
+      "n_active_equity": 3384,
+      "n_all": 3956,
+      "n_st": null,
+      "n_suspended": 202,
+      "symbol_list_hash": "c97b6eaca309caae127ddbd5abd13f0559c5ae922b423faa194f8168863d14b7"
+    },
+    {
+      "asof_date": "2017-10-31",
+      "n_active_equity": 3411,
+      "n_all": 3983,
+      "n_st": null,
+      "n_suspended": 196,
+      "symbol_list_hash": "3ae1d5a26d187ee8cdc90e8e22b78f3c118d416b2610c22a026bb57e4c551142"
+    },
+    {
+      "asof_date": "2017-11-30",
+      "n_active_equity": 3447,
+      "n_all": 4019,
+      "n_st": null,
+      "n_suspended": 213,
+      "symbol_list_hash": "825dcedbbaaaf319e096d46501af5529fe9f5d80f6b795e12bfd5fdff7d6c4aa"
+    },
+    {
+      "asof_date": "2017-12-29",
+      "n_active_equity": 3470,
+      "n_all": 4042,
+      "n_st": null,
+      "n_suspended": 219,
+      "symbol_list_hash": "e44909a285663f1996c6f3971df3a8fe24772b6f1690b8e1683be2dc78ad30f7"
+    },
+    {
+      "asof_date": "2018-01-31",
+      "n_active_equity": 3485,
+      "n_all": 4057,
+      "n_st": null,
+      "n_suspended": 222,
+      "symbol_list_hash": "060c586dccd0ab48c3788400d4010cc7f845cdedd2e85c9eaeec999438cace2a"
+    },
+    {
+      "asof_date": "2018-02-28",
+      "n_active_equity": 3497,
+      "n_all": 4066,
+      "n_st": null,
+      "n_suspended": 270,
+      "symbol_list_hash": "5aa715acc2ab4753f2caed2626250adddf079a4d7d83ef5b4e6c192d3aff9640"
+    },
+    {
+      "asof_date": "2018-03-30",
+      "n_active_equity": 3507,
+      "n_all": 4076,
+      "n_st": null,
+      "n_suspended": 258,
+      "symbol_list_hash": "83927eb71a97f374a6ef21b53b756052f33903438890391bbe674d07b284c88d"
+    },
+    {
+      "asof_date": "2018-04-27",
+      "n_active_equity": 3516,
+      "n_all": 4085,
+      "n_st": null,
+      "n_suspended": 244,
+      "symbol_list_hash": "f2aca738ace7851b7753b967356253c4159ecce225f7f90fa21e0928775b2b88"
+    },
+    {
+      "asof_date": "2018-05-31",
+      "n_active_equity": 3524,
+      "n_all": 4093,
+      "n_st": null,
+      "n_suspended": 222,
+      "symbol_list_hash": "0f4ab842c92633a13cead9cebe98253962553c2b0502925a2b7ff9952c8f3ab2"
+    },
+    {
+      "asof_date": "2018-06-29",
+      "n_active_equity": 3533,
+      "n_all": 4102,
+      "n_st": null,
+      "n_suspended": 208,
+      "symbol_list_hash": "f8d0464d914e923dc6e2871c8ef28e05eaeb2b93c20d782eac71dff6ac5df4d7"
+    },
+    {
+      "asof_date": "2018-07-31",
+      "n_active_equity": 3537,
+      "n_all": 4105,
+      "n_st": null,
+      "n_suspended": 141,
+      "symbol_list_hash": "de39fc98da2fe77bc150fb146beb07e36aa4d0e0950f783067c4e94d406b4583"
+    },
+    {
+      "asof_date": "2018-08-31",
+      "n_active_equity": 3543,
+      "n_all": 4111,
+      "n_st": null,
+      "n_suspended": 103,
+      "symbol_list_hash": "b71a9427342d5a21a79749efe26cb6b984ed9d0ac21117266bec18c0233185e1"
+    },
+    {
+      "asof_date": "2018-09-28",
+      "n_active_equity": 3554,
+      "n_all": 4122,
+      "n_st": null,
+      "n_suspended": 84,
+      "symbol_list_hash": "60f6f5b3e90c1c352cd6c6492fc0ea3626a3048fc4ffee20804940280343e11c"
+    },
+    {
+      "asof_date": "2018-10-31",
+      "n_active_equity": 3559,
+      "n_all": 4127,
+      "n_st": null,
+      "n_suspended": 78,
+      "symbol_list_hash": "d5063e23ebe14fdfdf1a80dbffb738dabc7b486593da18c56dfbe253b1fcebdd"
+    },
+    {
+      "asof_date": "2018-11-30",
+      "n_active_equity": 3567,
+      "n_all": 4135,
+      "n_st": null,
+      "n_suspended": 29,
+      "symbol_list_hash": "4eab57bb441c017bab95dbc1c311fa3969057d3d04b08373a48cdaf069c02603"
+    },
+    {
+      "asof_date": "2018-12-28",
+      "n_active_equity": 3571,
+      "n_all": 4138,
+      "n_st": null,
+      "n_suspended": 20,
+      "symbol_list_hash": "f11c7b9c72a98f689b8e8b45570a5fc6ba12bb964155d0ebe64cfdc228f8e0c6"
+    },
+    {
+      "asof_date": "2019-01-31",
+      "n_active_equity": 3585,
+      "n_all": 4130,
+      "n_st": null,
+      "n_suspended": 16,
+      "symbol_list_hash": "f4d4d2c1fd098825ab1bed6c790b649a038820a6572852f9d847afc529a8a2b3"
+    },
+    {
+      "asof_date": "2019-02-28",
+      "n_active_equity": 3591,
+      "n_all": 4136,
+      "n_st": null,
+      "n_suspended": 20,
+      "symbol_list_hash": "a45d93c0766f1ad4b3e82a1c47753524030b8d31d88e0daa5ddeb41c9fdca2c3"
+    },
+    {
+      "asof_date": "2019-03-29",
+      "n_active_equity": 3602,
+      "n_all": 4147,
+      "n_st": null,
+      "n_suspended": 35,
+      "symbol_list_hash": "3359d445c8548291e1379c8bd633f402ce2e06ee84c44a966ab75c82b434f6b9"
+    },
+    {
+      "asof_date": "2019-04-30",
+      "n_active_equity": 3612,
+      "n_all": 4157,
+      "n_st": null,
+      "n_suspended": 58,
+      "symbol_list_hash": "70f943dbca21ab8b0f91a995579d7f7c5798c7b45b08fc604c06ca84fb877791"
+    },
+    {
+      "asof_date": "2019-05-31",
+      "n_active_equity": 3624,
+      "n_all": 4169,
+      "n_st": null,
+      "n_suspended": 23,
+      "symbol_list_hash": "e997f95c7a8d0d2cc3b27f3a7e392a6ab206b4d085841fad35daf7b3aeec7e26"
+    },
+    {
+      "asof_date": "2019-06-28",
+      "n_active_equity": 3633,
+      "n_all": 4178,
+      "n_st": null,
+      "n_suspended": 19,
+      "symbol_list_hash": "393cbbc93c17f07af8705d91f381b8bb6d6e82097e1c66368cda2dc8be695015"
+    },
+    {
+      "asof_date": "2019-07-31",
+      "n_active_equity": 3667,
+      "n_all": 4212,
+      "n_st": null,
+      "n_suspended": 19,
+      "symbol_list_hash": "31c6e232c6cda5970d74817b71c07202be1ceb918779bb2aed75f93846a87bab"
+    },
+    {
+      "asof_date": "2019-08-30",
+      "n_active_equity": 3682,
+      "n_all": 4227,
+      "n_st": null,
+      "n_suspended": 20,
+      "symbol_list_hash": "b98b20032a4ba6b218c74c822097d1817113fd68d752cc7cb7a11919160d87f7"
+    },
+    {
+      "asof_date": "2019-09-30",
+      "n_active_equity": 3693,
+      "n_all": 4238,
+      "n_st": null,
+      "n_suspended": 21,
+      "symbol_list_hash": "798e563f071ec716b950fc63f05336c87362dc77e4cf9b1d13bd3e2a95ab1a3c"
+    },
+    {
+      "asof_date": "2019-10-31",
+      "n_active_equity": 3708,
+      "n_all": 4253,
+      "n_st": null,
+      "n_suspended": 24,
+      "symbol_list_hash": "621e8c6630ace8f500c49783f02719d7c5308a6c7845133820d6d7bc1ae39378"
+    },
+    {
+      "asof_date": "2019-11-29",
+      "n_active_equity": 3737,
+      "n_all": 4282,
+      "n_st": null,
+      "n_suspended": 22,
+      "symbol_list_hash": "37c08483bf2219e818eab7cfb313e4af7f5bb8d232f3b1dfb08015c5d2e4ccfe"
+    },
+    {
+      "asof_date": "2019-12-31",
+      "n_active_equity": 3761,
+      "n_all": 4306,
+      "n_st": null,
+      "n_suspended": 19,
+      "symbol_list_hash": "3da2c47eb5f047bbc5ea2613372fa7f3327d3313ddb0beec5ff046d7042d90c0"
+    },
+    {
+      "asof_date": "2020-01-23",
+      "n_active_equity": 3776,
+      "n_all": 4321,
+      "n_st": null,
+      "n_suspended": 15,
+      "symbol_list_hash": "3f4457370e7b8337916bd82937245952919d6fd69b4672b22b579f912cbed4c3"
+    },
+    {
+      "asof_date": "2020-02-28",
+      "n_active_equity": 3797,
+      "n_all": 4342,
+      "n_st": null,
+      "n_suspended": 13,
+      "symbol_list_hash": "5f760555d025d5253edb7c690d64c986021b2647fd9a7d9bc636eb98a81577f5"
+    },
+    {
+      "asof_date": "2020-03-31",
+      "n_active_equity": 3810,
+      "n_all": 4355,
+      "n_st": null,
+      "n_suspended": 20,
+      "symbol_list_hash": "364c238c9ee68baf84c47f9d7a0f8c39fe42c4884c5dac561046a0a6344072f7"
+    },
+    {
+      "asof_date": "2020-04-30",
+      "n_active_equity": 3834,
+      "n_all": 4379,
+      "n_st": null,
+      "n_suspended": 62,
+      "symbol_list_hash": "be8a1b2cf475f6e792c98a6dfadda3bfd8938aba15cba135697cfa5d5e56e55f"
+    },
+    {
+      "asof_date": "2020-05-29",
+      "n_active_equity": 3852,
+      "n_all": 4397,
+      "n_st": null,
+      "n_suspended": 38,
+      "symbol_list_hash": "ee30ae1ad9fbfee19614748df3b7793a3ae03918428cbae13dfc175107bfcd2f"
+    },
+    {
+      "asof_date": "2020-06-30",
+      "n_active_equity": 3877,
+      "n_all": 4422,
+      "n_st": null,
+      "n_suspended": 41,
+      "symbol_list_hash": "43bdcf0beb665390b8295227d08bbebad13c9754e29aa984b29f3812987b0173"
+    },
+    {
+      "asof_date": "2020-07-31",
+      "n_active_equity": 3923,
+      "n_all": 4468,
+      "n_st": null,
+      "n_suspended": 28,
+      "symbol_list_hash": "4f8b46b04d2a22358b12c5104e0b81313d4c05a98305983781a17398d1d7bb0d"
+    },
+    {
+      "asof_date": "2020-08-31",
+      "n_active_equity": 3976,
+      "n_all": 4521,
+      "n_st": null,
+      "n_suspended": 25,
+      "symbol_list_hash": "a28601c82f460ac65798c0951e0f36d6f53da0ffec3015aaf785ae546cfae6a8"
+    },
+    {
+      "asof_date": "2020-09-30",
+      "n_active_equity": 4042,
+      "n_all": 4587,
+      "n_st": null,
+      "n_suspended": 26,
+      "symbol_list_hash": "493abf32121dead0c1cee214260db7259c55a13230c36d852964bc003b3e7ae0"
+    },
+    {
+      "asof_date": "2020-10-30",
+      "n_active_equity": 4068,
+      "n_all": 4613,
+      "n_st": null,
+      "n_suspended": 23,
+      "symbol_list_hash": "c03b033cc6f7fc12b86b2e6aa991e0bfbab7fae6373763019732a3c856fa929d"
+    },
+    {
+      "asof_date": "2020-11-30",
+      "n_active_equity": 4088,
+      "n_all": 4633,
+      "n_st": null,
+      "n_suspended": 20,
+      "symbol_list_hash": "dcde652db4df5cf4ac4b70584ff3395931705c5edc28b086042f8d776ad28641"
+    },
+    {
+      "asof_date": "2020-12-31",
+      "n_active_equity": 4141,
+      "n_all": 4686,
+      "n_st": null,
+      "n_suspended": 23,
+      "symbol_list_hash": "e07275bbd623403b6b85f3721362d6df9643bf79ac3fb4229676bc5ca35deccc"
+    },
+    {
+      "asof_date": "2021-01-29",
+      "n_active_equity": 4174,
+      "n_all": 4719,
+      "n_st": null,
+      "n_suspended": 23,
+      "symbol_list_hash": "40016dda25eeb5019458c987f6f088280d88cb24d395fc750a487e95c4bf4f89"
+    },
+    {
+      "asof_date": "2021-02-26",
+      "n_active_equity": 4201,
+      "n_all": 4746,
+      "n_st": null,
+      "n_suspended": 23,
+      "symbol_list_hash": "69581a8b90db31939e5a618df9090eebb5234d5ea6928ef1029510f8d2694287"
+    },
+    {
+      "asof_date": "2021-03-31",
+      "n_active_equity": 4235,
+      "n_all": 4780,
+      "n_st": null,
+      "n_suspended": 19,
+      "symbol_list_hash": "40ea7d1d023d4c7068a6e0ae234fb5b5b0fe5a78462f7a26b8df64fd9d14c12b"
+    },
+    {
+      "asof_date": "2021-04-30",
+      "n_active_equity": 4289,
+      "n_all": 4834,
+      "n_st": null,
+      "n_suspended": 49,
+      "symbol_list_hash": "bb80d6130ad353f22c4a63a1e24c71bd1165838fae6cfe2a7794c1309ce9570b"
+    },
+    {
+      "asof_date": "2021-05-31",
+      "n_active_equity": 4327,
+      "n_all": 4872,
+      "n_st": null,
+      "n_suspended": 15,
+      "symbol_list_hash": "28e35e677639f067f9c8ddd85a07e910e3fea82daf3d807574e55f8cab1dd17e"
+    },
+    {
+      "asof_date": "2021-06-30",
+      "n_active_equity": 4374,
+      "n_all": 4919,
+      "n_st": null,
+      "n_suspended": 15,
+      "symbol_list_hash": "149e4772734d980b083b56be7e73d71c0452dc78a920231bacccc6bdc47dd01b"
+    },
+    {
+      "asof_date": "2021-07-30",
+      "n_active_equity": 4417,
+      "n_all": 4962,
+      "n_st": null,
+      "n_suspended": 10,
+      "symbol_list_hash": "73d44dce1d2d1e208d53c23e2e2f399521e14616d78b895899aa3b902e859b9f"
+    },
+    {
+      "asof_date": "2021-08-31",
+      "n_active_equity": 4456,
+      "n_all": 4999,
+      "n_st": null,
+      "n_suspended": 6,
+      "symbol_list_hash": "302747b1f1edd67d43c21ed7d4d2347f047af9a32c4acec9ed109d0fc989e1dc"
+    },
+    {
+      "asof_date": "2021-09-30",
+      "n_active_equity": 4495,
+      "n_all": 5038,
+      "n_st": null,
+      "n_suspended": 14,
+      "symbol_list_hash": "6fc047ea8c65bbd38f99b4065c8ee09e585a340c198d3863bd67380c070506b0"
+    },
+    {
+      "asof_date": "2021-10-29",
+      "n_active_equity": 4526,
+      "n_all": 5069,
+      "n_st": null,
+      "n_suspended": 5,
+      "symbol_list_hash": "d470e7249480d19e83a60baa64b050af9877e2e65979adefffad7a0fd04754f0"
+    },
+    {
+      "asof_date": "2021-11-30",
+      "n_active_equity": 4559,
+      "n_all": 5102,
+      "n_st": null,
+      "n_suspended": 8,
+      "symbol_list_hash": "e8fd621b288d589dff7458b41e01f52f23a4baa67a55d9f9a615430b6edf4949"
+    },
+    {
+      "asof_date": "2021-12-31",
+      "n_active_equity": 4604,
+      "n_all": 5147,
+      "n_st": null,
+      "n_suspended": 12,
+      "symbol_list_hash": "297b0afc93c3f3887abb91c5eeae870df9f81c082a4682f72488460db986fcc0"
+    },
+    {
+      "asof_date": "2022-01-28",
+      "n_active_equity": 4633,
+      "n_all": 5176,
+      "n_st": null,
+      "n_suspended": 8,
+      "symbol_list_hash": "eb144f06f83fa56147444de82bf3a7b1db5b18328233d29e0b8e582bc3d9cc4c"
+    },
+    {
+      "asof_date": "2022-02-28",
+      "n_active_equity": 4648,
+      "n_all": 5191,
+      "n_st": null,
+      "n_suspended": 7,
+      "symbol_list_hash": "6b249b493a6ac904d241dd9d26debc81b923f230268a2246bb1a8d390019858e"
+    },
+    {
+      "asof_date": "2022-03-31",
+      "n_active_equity": 4682,
+      "n_all": 5225,
+      "n_st": null,
+      "n_suspended": 12,
+      "symbol_list_hash": "d6630bc90b05150b84e31d88b5a216344ec59211652606b9984141a0274f7dd7"
+    },
+    {
+      "asof_date": "2022-04-29",
+      "n_active_equity": 4715,
+      "n_all": 5258,
+      "n_st": null,
+      "n_suspended": 35,
+      "symbol_list_hash": "6c64451529f22f4239f03ddad67fdd1767c734d374d96437a3810962559fa5ac"
+    },
+    {
+      "asof_date": "2022-05-31",
+      "n_active_equity": 4725,
+      "n_all": 5268,
+      "n_st": null,
+      "n_suspended": 37,
+      "symbol_list_hash": "a5e5245cd2ddfe24a33c0000e25b1c6e8d3a8ce203b51801f67d1652051f770f"
+    },
+    {
+      "asof_date": "2022-06-30",
+      "n_active_equity": 4724,
+      "n_all": 5267,
+      "n_st": null,
+      "n_suspended": 16,
+      "symbol_list_hash": "d631461329ec17ecd1901386b53ac5bc42ae581f972d89e2d5d9d98f4fbb3442"
+    },
+    {
+      "asof_date": "2022-07-29",
+      "n_active_equity": 4741,
+      "n_all": 5284,
+      "n_st": null,
+      "n_suspended": 7,
+      "symbol_list_hash": "385372951b90ea7eab6d0b3ccad9d4809094e040eac69ec4083c3b4c9c3ad31e"
+    },
+    {
+      "asof_date": "2022-08-31",
+      "n_active_equity": 4788,
+      "n_all": 5330,
+      "n_st": null,
+      "n_suspended": 2,
+      "symbol_list_hash": "0c44ec9765b196fb35a85df979247f18f9206c6b4f59f4e86eb9f822d073f307"
+    },
+    {
+      "asof_date": "2022-09-30",
+      "n_active_equity": 4830,
+      "n_all": 5372,
+      "n_st": null,
+      "n_suspended": 7,
+      "symbol_list_hash": "c304a76c90ba8a12e1009a2779a0b53952b732059890c586b1b29a3726fddf26"
+    },
+    {
+      "asof_date": "2022-10-31",
+      "n_active_equity": 4854,
+      "n_all": 5396,
+      "n_st": null,
+      "n_suspended": 8,
+      "symbol_list_hash": "2a2dad6fb6f0f86c7490bc32b713c3bb5ff9c46f4f47388b5e7bd2142ffd2f45"
+    },
+    {
+      "asof_date": "2022-11-30",
+      "n_active_equity": 4878,
+      "n_all": 5420,
+      "n_st": null,
+      "n_suspended": 1,
+      "symbol_list_hash": "767db8bbadb6fa2d1d3fae2723fee0ef4c92c7d1f5c6fe3038e4527bd3ccb7ab"
+    },
+    {
+      "asof_date": "2022-12-30",
+      "n_active_equity": 4906,
+      "n_all": 5447,
+      "n_st": null,
+      "n_suspended": 7,
+      "symbol_list_hash": "0ebfd23fd381a889ef4ac2e4fac6c8fc4c2224db6c0c14a6719f5473c39ab6d9"
+    },
+    {
+      "asof_date": "2023-01-31",
+      "n_active_equity": 4912,
+      "n_all": 5453,
+      "n_st": null,
+      "n_suspended": 13,
+      "symbol_list_hash": "3b9357c37cd761870f81a5d09eb4fd9c12787491a6590e3047bfa3c4f8c2cd62"
+    },
+    {
+      "asof_date": "2023-02-28",
+      "n_active_equity": 4926,
+      "n_all": 5467,
+      "n_st": null,
+      "n_suspended": 8,
+      "symbol_list_hash": "d226a02011b35d662c284adbc384225255acfccd51485723be74e81e28bcc007"
+    },
+    {
+      "asof_date": "2023-03-31",
+      "n_active_equity": 4948,
+      "n_all": 5491,
+      "n_st": null,
+      "n_suspended": 5,
+      "symbol_list_hash": "4a789b8c5ad88e5dbebbd1c190d1e9854626fdf67020b348bc8a481c5a58e77d"
+    },
+    {
+      "asof_date": "2023-04-28",
+      "n_active_equity": 4974,
+      "n_all": 5517,
+      "n_st": null,
+      "n_suspended": 34,
+      "symbol_list_hash": "9f1daa15dadb29414588d38f5288c7ad78600647ec9760bc91141dd41194f038"
+    },
+    {
+      "asof_date": "2023-05-31",
+      "n_active_equity": 4996,
+      "n_all": 5539,
+      "n_st": null,
+      "n_suspended": 30,
+      "symbol_list_hash": "694be16982490e47ac12ebd383309b5462dad1e87d686595988d1c665c0972d0"
+    },
+    {
+      "asof_date": "2023-06-30",
+      "n_active_equity": 5022,
+      "n_all": 5563,
+      "n_st": null,
+      "n_suspended": 21,
+      "symbol_list_hash": "75295119e97672718de6123b42e761cedc91ca3188a7b5ec6529753627391dd7"
+    },
+    {
+      "asof_date": "2023-07-31",
+      "n_active_equity": 5032,
+      "n_all": 5575,
+      "n_st": null,
+      "n_suspended": 9,
+      "symbol_list_hash": "465dc6eb8abfb823f1bbb334fda4ed6398127fb3fc13904ee2a8d883a3c815ac"
+    },
+    {
+      "asof_date": "2023-08-31",
+      "n_active_equity": 5051,
+      "n_all": 5594,
+      "n_st": null,
+      "n_suspended": 2,
+      "symbol_list_hash": "b19ef3cf31cb6423b575e5189fc5f837a23f04da0f7ea5b06cac6fa3aefbabc1"
+    },
+    {
+      "asof_date": "2023-09-28",
+      "n_active_equity": 5066,
+      "n_all": 5609,
+      "n_st": null,
+      "n_suspended": 6,
+      "symbol_list_hash": "f3d57291e0a177bca76018ae3fd9bb9ce870499fb0a9817c713c7b8ff080c466"
+    },
+    {
+      "asof_date": "2023-10-31",
+      "n_active_equity": 5073,
+      "n_all": 5614,
+      "n_st": null,
+      "n_suspended": 1,
+      "symbol_list_hash": "f49ae15eb2f113641c44db6abd228e8dd5823ac8e91fcf03175bd45f30139947"
+    },
+    {
+      "asof_date": "2023-11-30",
+      "n_active_equity": 5082,
+      "n_all": 5623,
+      "n_st": null,
+      "n_suspended": 1,
+      "symbol_list_hash": "81f95f1659ee322675ef84286ce288288fcc7c66d0851c9b1e47d488781f286e"
+    },
+    {
+      "asof_date": "2023-12-29",
+      "n_active_equity": 5097,
+      "n_all": 5638,
+      "n_st": null,
+      "n_suspended": 7,
+      "symbol_list_hash": "328a0da29ac2b4d688b5b7bf2a45142aefe646068714925c0ac9f95806a76a79"
+    },
+    {
+      "asof_date": "2024-01-02",
+      "n_active_equity": 5097,
+      "n_all": 5638,
+      "n_st": null,
+      "n_suspended": 7,
+      "symbol_list_hash": "328a0da29ac2b4d688b5b7bf2a45142aefe646068714925c0ac9f95806a76a79"
+    },
+    {
+      "asof_date": "2024-01-31",
+      "n_active_equity": 5105,
+      "n_all": 5646,
+      "n_st": null,
+      "n_suspended": 4,
+      "symbol_list_hash": "40c92edeb39405e998f9aa3da63febddd3483b442e817d0cffae9104b6b9d0eb"
+    },
+    {
+      "asof_date": "2024-02-29",
+      "n_active_equity": 5109,
+      "n_all": 5650,
+      "n_st": null,
+      "n_suspended": 6,
+      "symbol_list_hash": "9ed3ea5ee2bf1e50450c0b010dbc4bc19b91c11e6d70fed28281c73b56c44aa1"
+    },
+    {
+      "asof_date": "2024-03-29",
+      "n_active_equity": 5114,
+      "n_all": 5655,
+      "n_st": null,
+      "n_suspended": 5,
+      "symbol_list_hash": "848f8b5c79b8b5893e84a239929a34a029ebfefbb9b3d27d10a49323f0b98fd4"
+    },
+    {
+      "asof_date": "2024-04-30",
+      "n_active_equity": 5114,
+      "n_all": 5654,
+      "n_st": null,
+      "n_suspended": 61,
+      "symbol_list_hash": "27ca3c098bdeff011ced0c57d099e9de8a54cd8cf71c7f81e2b1a39c95eb29a8"
+    },
+    {
+      "asof_date": "2024-05-31",
+      "n_active_equity": 5116,
+      "n_all": 5656,
+      "n_st": null,
+      "n_suspended": 24,
+      "symbol_list_hash": "52ab4d269df3da4735b85a75e6301c584302c6a610b2d9db3104c53fc63ab011"
+    },
+    {
+      "asof_date": "2024-06-28",
+      "n_active_equity": 5117,
+      "n_all": 5657,
+      "n_st": null,
+      "n_suspended": 28,
+      "symbol_list_hash": "6add5ff5f345aaa85a812bb48eb4b7ed4d7e736f2048e98ca164f496172ddf4f"
+    },
+    {
+      "asof_date": "2024-07-31",
+      "n_active_equity": 5108,
+      "n_all": 5648,
+      "n_st": null,
+      "n_suspended": 23,
+      "symbol_list_hash": "f813ad348d97e66f1de6657ee4ae9fd0b117c0ab871bc9f5d64f8906807a9df1"
+    },
+    {
+      "asof_date": "2024-08-30",
+      "n_active_equity": 5100,
+      "n_all": 5640,
+      "n_st": null,
+      "n_suspended": 12,
+      "symbol_list_hash": "01a26de730235a2bb1019f3d4e8a09ad1118adbaa9118ac02162d9be26980e0e"
+    },
+    {
+      "asof_date": "2024-09-30",
+      "n_active_equity": 5102,
+      "n_all": 5642,
+      "n_st": null,
+      "n_suspended": 10,
+      "symbol_list_hash": "e8962f01f3eb9bc87adb053c36ce4c0ba64e613629264251b35b7c49d76547d9"
+    },
+    {
+      "asof_date": "2024-10-31",
+      "n_active_equity": 5108,
+      "n_all": 5648,
+      "n_st": null,
+      "n_suspended": 15,
+      "symbol_list_hash": "c5c037aa3ae45796a1b0195c3e4f4671211158ddf0608d84fa08311d78bdf296"
+    },
+    {
+      "asof_date": "2024-11-29",
+      "n_active_equity": 5114,
+      "n_all": 5654,
+      "n_st": null,
+      "n_suspended": 8,
+      "symbol_list_hash": "a775e7e43406d1a475a7de3162d83835582f644e5511f5f6c6ff632c75624358"
+    },
+    {
+      "asof_date": "2024-12-31",
+      "n_active_equity": 5122,
+      "n_all": 5662,
+      "n_st": null,
+      "n_suspended": 14,
+      "symbol_list_hash": "4e6c0c53b51c53e534467ada4d14551d169d55553cf802912e0493023f9cbd8f"
+    },
+    {
+      "asof_date": "2025-01-27",
+      "n_active_equity": 5133,
+      "n_all": 5673,
+      "n_st": null,
+      "n_suspended": 14,
+      "symbol_list_hash": "36446c9f20478bb75b0871036a0fc450e7d976c36339223690e9a4b65ace3bdc"
+    },
+    {
+      "asof_date": "2025-02-28",
+      "n_active_equity": 5131,
+      "n_all": 5671,
+      "n_st": null,
+      "n_suspended": 12,
+      "symbol_list_hash": "e8ad84d1881e6b4765da3465e43084db1e12897878d2dcce06200a5fccd087bb"
+    },
+    {
+      "asof_date": "2025-03-31",
+      "n_active_equity": 5140,
+      "n_all": 5680,
+      "n_st": null,
+      "n_suspended": 12,
+      "symbol_list_hash": "cce4d6d36f5aae480d83966c9f5b88ef999b434ab2e28801c003913692d548b9"
+    },
+    {
+      "asof_date": "2025-04-30",
+      "n_active_equity": 5150,
+      "n_all": 5690,
+      "n_st": null,
+      "n_suspended": 53,
+      "symbol_list_hash": "55c30d4cef666565e17629866fe53a0b24bbabf08504cf852641f04580402a80"
+    },
+    {
+      "asof_date": "2025-05-30",
+      "n_active_equity": 5147,
+      "n_all": 5657,
+      "n_st": null,
+      "n_suspended": 28,
+      "symbol_list_hash": "e25ece35b09cc9e1b0886f946882f2e4ba758b0e9e2a1690fedf8c0e7b545b9c"
+    },
+    {
+      "asof_date": "2025-06-30",
+      "n_active_equity": 5152,
+      "n_all": 5651,
+      "n_st": null,
+      "n_suspended": 14,
+      "symbol_list_hash": "0fd806b9777ed1ab96026498b5bddd294d8b9d7895b3c80309ec6378163a8545"
+    },
+    {
+      "asof_date": "2025-07-31",
+      "n_active_equity": 5150,
+      "n_all": 5659,
+      "n_st": null,
+      "n_suspended": 10,
+      "symbol_list_hash": "78a660ef2a5ac37b0196bdc0d2d2072fbd994ab7be38c19fb466ec9d54726902"
+    },
+    {
+      "asof_date": "2025-08-29",
+      "n_active_equity": 5153,
+      "n_all": 5662,
+      "n_st": null,
+      "n_suspended": 12,
+      "symbol_list_hash": "f8119e001d62758725b41f69b1640a130ceb4eea01d240a75788d094cffa0da6"
+    },
+    {
+      "asof_date": "2025-09-30",
+      "n_active_equity": 5159,
+      "n_all": 5668,
+      "n_st": null,
+      "n_suspended": 12,
+      "symbol_list_hash": "588172e2936bec1df65ff1de3462bcf4364d63ad11aa6c9b5f60814ffd3cab15"
+    },
+    {
+      "asof_date": "2025-10-31",
+      "n_active_equity": 5164,
+      "n_all": 5673,
+      "n_st": null,
+      "n_suspended": 11,
+      "symbol_list_hash": "88ba9826b85730262fe948eddd2a785307bd36b7d6f34a1f2e8180bdc0c05b03"
+    },
+    {
+      "asof_date": "2025-11-28",
+      "n_active_equity": 5169,
+      "n_all": 5678,
+      "n_st": null,
+      "n_suspended": 20,
+      "symbol_list_hash": "d82f1ccd3dc9dbd2f8ebc3af7b368f8141564122fa8f1ff528b06a84455c85d7"
+    },
+    {
+      "asof_date": "2025-12-31",
+      "n_active_equity": 5182,
+      "n_all": 5689,
+      "n_st": null,
+      "n_suspended": 11,
+      "symbol_list_hash": "59ab80b29f6fb277da313ad59f48017d696f587a12440c4d0d285035a1d90923"
+    },
+    {
+      "asof_date": "2026-01-30",
+      "n_active_equity": 5185,
+      "n_all": 7106,
+      "n_st": null,
+      "n_suspended": 14,
+      "symbol_list_hash": "28498dc4884a7e32bcc18b836c2a0be49cbe2831ca94ce3b646212015f0b04b5"
+    },
+    {
+      "asof_date": "2026-02-27",
+      "n_active_equity": 5190,
+      "n_all": 7136,
+      "n_st": null,
+      "n_suspended": 14,
+      "symbol_list_hash": "2fea123b9e2d8ac53fd859f1a04bf7aaa91c7a1e6b8240e904fc929b823a2b94"
+    },
+    {
+      "asof_date": "2026-03-31",
+      "n_active_equity": 5193,
+      "n_all": 7161,
+      "n_st": null,
+      "n_suspended": 14,
+      "symbol_list_hash": "68bb0d290f734a0fab5ad4aa81731b021605389c3da6633d07fb193647ffd1ef"
+    },
+    {
+      "asof_date": "2026-04-30",
+      "n_active_equity": 5201,
+      "n_all": 7207,
+      "n_st": null,
+      "n_suspended": 50,
+      "symbol_list_hash": "998c04e6a5eb74233e67ca529d194b2cc6ecb08897a98a57f98cc721ed919660"
+    },
+    {
+      "asof_date": "2026-05-29",
+      "n_active_equity": 5208,
+      "n_all": 7253,
+      "n_st": null,
+      "n_suspended": 18,
+      "symbol_list_hash": "c9e2e087de3eb9ba94880e9fe16a372cb538dae3456784c13763da2f6a665037"
+    },
+    {
+      "asof_date": "2026-06-30",
+      "n_active_equity": 5205,
+      "n_all": 7288,
+      "n_st": null,
+      "n_suspended": 19,
+      "symbol_list_hash": "6313e58e031d0dcb36ded7aa12586033bbade4b57031f8dcbe7a7bb1dfa7cb70"
+    },
+    {
+      "asof_date": "2026-07-31",
+      "n_active_equity": 5203,
+      "n_all": 7322,
+      "n_st": null,
+      "n_suspended": 6,
+      "symbol_list_hash": "95ad3ce89294c9e7aaa1f7b5c7b260f0144b714a74c7d272f87fa3bceb04d854"
+    },
+    {
+      "asof_date": "2026-08-28",
+      "n_active_equity": 5212,
+      "n_all": 7366,
+      "n_st": null,
+      "n_suspended": 4,
+      "symbol_list_hash": "3f277c34a0009845d27d336d73bc4cb44a9dd491d50e684f25f313a36f851d1e"
+    }
+  ]
+}

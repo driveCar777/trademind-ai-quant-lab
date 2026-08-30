@@ -166,6 +166,11 @@ def freeze_universe_history(calendar_rows, extra_days=None):
             if day in done:
                 continue
             _f, rows, err, msg = _consume(bs.query_all_stock(day=day))
+            if err != "0" or len(rows) == 0:
+                print("UNIVERSE_RETRY", day, err, len(rows), flush=True)
+                _f, rows, err, msg = _consume(bs.query_all_stock(day=day))
+            if len(rows) == 0:
+                raise RuntimeError("UNIVERSE_EMPTY_ASOF:%s err=%s" % (day, err))
             eq = [r for r in rows if is_equity(r.get("code"))]
             n_susp = sum(1 for r in eq if str(r.get("tradeStatus")) == "0")
             codes = sorted(r.get("code") for r in eq)
@@ -312,7 +317,7 @@ def run_pit_bundle(basics_rows, samples):
     asof = "2024-01-01"
     fin = (samples.get("financials") or {}).get("rows") or []
     visible = visible_financials(fin, asof)
-    future_ipo = [r for r in basics_rows if (r.get("ipoDate") or "") >= "2024-01-02"][:1]
+    future_ipo = [r for r in basics_rows if r.get("type") == "1" and (r.get("ipoDate") or "") >= "2024-01-02"][:1]
     bars = []
     # synthetic extension of sample for mutation (dates only)
     for r in (

@@ -1,0 +1,18 @@
+{
+  "NEW_PURCHASE": false,
+  "coverage": {
+    "n_asof": 202
+  },
+  "dataset_id": "tm-cn-a-UNIVERSE-HIST-20260830-000001",
+  "files": {
+    "csv": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\reference\\A_SHARE_UNIVERSE_HISTORY.csv",
+    "json": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\A_SHARE_UNIVERSE_HISTORY_V12.json"
+  },
+  "hash": "2afe846172e90d048ecfec75f04c73346b72ad00ba74df3f1f41733f8d4c836c",
+  "immutable_raw": true,
+  "kind": "UNIVERSE_HISTORY",
+  "license": "BAOSTOCK_FREE_NO_KEY",
+  "retrieved_at": "2026-08-30T10:00:00Z",
+  "schema_version": "12.0",
+  "source": "BAOSTOCK"
+}

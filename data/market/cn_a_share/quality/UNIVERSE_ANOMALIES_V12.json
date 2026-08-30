@@ -1,0 +1,14 @@
+{
+  "truncated_asof": [
+    {
+      "asof_date": "2015-04-30",
+      "n_all": 2000,
+      "n_active_equity": 1774,
+      "reason": "First-session truncation while a second BaoStock login consumed the delist census. Neighbors: 2015-03-31 n_all=3217, 2015-05-29 n_all=3291.",
+      "use": "DO_NOT_USE_AS_SIZE_FACT"
+    }
+  ],
+  "repaired_empty_asofs": 138,
+  "empty_after_repair": 0,
+  "n_asof": 202
+}
