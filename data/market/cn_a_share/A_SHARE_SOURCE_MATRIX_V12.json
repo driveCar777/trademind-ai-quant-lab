@@ -1,53 +1,54 @@
 {
   "CANONICAL": "BAOSTOCK",
-  "SECONDARY": "AKSHARE_CLASS_HTTP",
+  "NEW_PURCHASE": false,
   "NOT_TRUSTED": [
     "EASTMONEY_UNSIGNED_JSON",
     "SINA_PAGE",
     "TENCENT_PAGE",
     "HTML_SCRAPE_AS_STORE"
   ],
-  "NEW_PURCHASE": false,
+  "SECONDARY": "AKSHARE_CLASS_HTTP",
   "sources": [
     {
-      "source_id": "BAOSTOCK",
-      "role": "CANONICAL",
+      "adjustment": true,
+      "amount": true,
+      "announcement_date": true,
+      "daily": true,
+      "delisted_history": "VENDOR_TABLE_PLUS_BARS",
+      "index": true,
+      "industry": "SNAPSHOT_ONLY",
       "key_required": false,
       "license": "BAOSTOCK_FREE_NO_KEY",
-      "programmatic": true,
-      "login_ok": true,
-      "daily": true,
-      "adjustment": true,
-      "volume": true,
-      "amount": true,
-      "turnover": true,
       "listing": true,
-      "industry": "SNAPSHOT_ONLY",
-      "index": true,
-      "delisted_history": "VENDOR_TABLE_PLUS_BARS",
-      "announcement_date": true,
+      "login_ok": true,
+      "programmatic": true,
+      "quality": "CONDITIONAL",
+      "role": "CANONICAL",
+      "source_id": "BAOSTOCK",
       "stability": "SESSION_API",
-      "quality": "CONDITIONAL"
+      "turnover": true,
+      "volume": true
     },
     {
-      "source_id": "AKSHARE_CLASS_HTTP",
-      "role": "CROSS_CHECK_ONLY",
-      "installed": false,
-      "http_ok": false,
-      "error": "[SSL] record layer failure",
+      "canonical": false,
+      "error": "[SSL] record layer failure (_ssl.c:2658)",
       "fragility": "Unsigned public HTML/JSON endpoint. Breaks without notice. NOT TRUSTED as canonical.",
-      "canonical": false
+      "http_ok": false,
+      "installed": false,
+      "role": "CROSS_CHECK_ONLY",
+      "source_id": "AKSHARE_CLASS_HTTP"
     },
     {
-      "source_id": "TUSHARE_PRO",
-      "role": "NOT_USED",
       "buy": true,
-      "reason": "Paid. NEW_PURCHASE=FALSE."
+      "reason": "Paid. NEW_PURCHASE=FALSE.",
+      "role": "NOT_USED",
+      "source_id": "TUSHARE_PRO"
     }
   ],
   "verdict": {
+    "A_SHARE_DATA_STATUS": "CONDITIONAL",
     "canonical": "BAOSTOCK",
-    "secondary": "AKSHARE_CLASS_HTTP",
-    "not_trusted": "scrape-as-store"
+    "not_trusted": "scrape-as-store",
+    "secondary": "AKSHARE_CLASS_HTTP"
   }
 }

@@ -1,0 +1,89 @@
+{
+  "ALPHA_RESEARCH": false,
+  "A_SHARE_DATA_STATUS": "CONDITIONAL",
+  "A_SHARE_RESEARCH_LABEL": "A_SHARE_RESEARCH_CONDITIONAL",
+  "BACKTEST": false,
+  "CANDIDATE": 0,
+  "LEVEL": 0,
+  "LIVE": 0,
+  "NEW_PURCHASE": false,
+  "NEW_SUBSCRIPTION": false,
+  "NEXT_PRIMARY_ACTION": "FREEZE_FULL_EQUITY_DAILY_PANEL",
+  "PAPER": 0,
+  "PORTFOLIO": 0,
+  "STRATEGY": 0,
+  "blocking": [],
+  "delist_census": {
+    "done": true,
+    "empty_rate": 0.005934718100890208,
+    "n": 337,
+    "n_empty": 2,
+    "n_with_bars": 335
+  },
+  "gates": {
+    "adjustment": {
+      "blocking": false,
+      "label": "PASS",
+      "limitation": null,
+      "note": "Vendor qfq vs raw differ on the 2023-06 sample window",
+      "ok": true
+    },
+    "calendar": {
+      "blocking": false,
+      "label": "PASS",
+      "limitation": null,
+      "note": "BaoStock trade dates. Not UTC+1.",
+      "ok": true
+    },
+    "corporate_action": {
+      "blocking": false,
+      "label": "PASS",
+      "limitation": null,
+      "note": "600519 2023 cash dividend operate 2023-06-30",
+      "ok": true
+    },
+    "listing_delisting": {
+      "blocking": false,
+      "label": "PASS",
+      "limitation": null,
+      "note": "ipoDate present; outDate blank means still listed, not invented.",
+      "ok": true
+    },
+    "point_in_time_universe": {
+      "blocking": false,
+      "label": "PASS",
+      "limitation": null,
+      "note": "query_all_stock(day=t) + listing window. n_asof=202",
+      "ok": true
+    },
+    "price_integrity": {
+      "blocking": false,
+      "label": "CONDITIONAL",
+      "limitation": "FULL_DAILY_PANEL_NOT_FROZEN",
+      "note": "Integrity checked on 600519 2023-06/07 sample, not the full panel",
+      "ok": true
+    },
+    "survivorship_audit": {
+      "blocking": false,
+      "label": "CONDITIONAL",
+      "limitation": "VENDOR_DELIST_TABLE_NOT_EXCHANGE_OFFICIAL",
+      "note": "delisted equities with bars=335 empty=2 rate=0.0059",
+      "ok": true
+    },
+    "timezone": {
+      "blocking": false,
+      "label": "PASS",
+      "limitation": null,
+      "note": "Asia/Shanghai session date; UTC label stored. Not a UTC midnight bar.",
+      "ok": true
+    }
+  },
+  "limitations": [
+    "AKSHARE_CLASS_HTTP_FRAGILE",
+    "FINANCIAL_DATASET_NOT_RESEARCH_READY",
+    "FULL_DAILY_PANEL_NOT_FROZEN",
+    "INDUSTRY_NOT_POINT_IN_TIME",
+    "VENDOR_DELIST_TABLE_NOT_EXCHANGE_OFFICIAL"
+  ],
+  "spend_usd": 0.0
+}

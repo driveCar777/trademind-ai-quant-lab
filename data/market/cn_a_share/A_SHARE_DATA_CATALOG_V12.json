@@ -1,0 +1,178 @@
+{
+  "ALPHA_RESEARCH": false,
+  "BACKTEST": false,
+  "NEW_PURCHASE": false,
+  "canonical_source": "BAOSTOCK",
+  "datasets": {
+    "basics": "tm-cn-a-BASIC-20260830-000001",
+    "calendar": "tm-cn-a-CALENDAR-20260830-000001",
+    "never_overwrite": true,
+    "schema_version": "12.0",
+    "universe_history": "tm-cn-a-UNIVERSE-HIST-20260830-000001"
+  },
+  "dirs": [
+    "raw/",
+    "normalized/",
+    "reference/",
+    "corporate_actions/",
+    "financial/",
+    "announcements/",
+    "manifests/",
+    "quality/",
+    "research/"
+  ],
+  "id": "A_SHARE_PIT_FOUNDATION_V12",
+  "next": "FREEZE_FULL_EQUITY_DAILY_PANEL",
+  "quality": [
+    {
+      "blocking": [],
+      "checks": [
+        {
+          "limitation": null,
+          "name": "ipo_out",
+          "ok": true
+        },
+        {
+          "limitation": "VENDOR_DELIST_TABLE_NOT_EXCHANGE_OFFICIAL",
+          "name": "vendor_not_exchange",
+          "ok": true
+        }
+      ],
+      "dataset": "SECURITY_BASIC",
+      "label": "CONDITIONAL",
+      "limitations": [
+        "VENDOR_DELIST_TABLE_NOT_EXCHANGE_OFFICIAL"
+      ]
+    },
+    {
+      "blocking": [],
+      "checks": [
+        {
+          "blocking": true,
+          "name": "shanghai",
+          "ok": true
+        }
+      ],
+      "dataset": "TRADING_CALENDAR",
+      "label": "PASS",
+      "limitations": []
+    },
+    {
+      "blocking": [],
+      "checks": [
+        {
+          "blocking": false,
+          "limitation": null,
+          "name": "n_asof",
+          "ok": true
+        }
+      ],
+      "dataset": "UNIVERSE_HISTORY",
+      "label": "PASS",
+      "limitations": []
+    },
+    {
+      "blocking": [],
+      "checks": [
+        {
+          "blocking": true,
+          "name": "sample_ok",
+          "ok": true
+        },
+        {
+          "limitation": "FULL_DAILY_PANEL_NOT_FROZEN",
+          "name": "full_panel",
+          "ok": true
+        }
+      ],
+      "dataset": "DAILY_SAMPLE",
+      "label": "CONDITIONAL",
+      "limitations": [
+        "FULL_DAILY_PANEL_NOT_FROZEN"
+      ]
+    },
+    {
+      "blocking": [],
+      "checks": [
+        {
+          "blocking": true,
+          "name": "div_adj",
+          "ok": true
+        }
+      ],
+      "dataset": "CORPORATE_ACTION_SAMPLE",
+      "label": "PASS",
+      "limitations": []
+    },
+    {
+      "blocking": [],
+      "checks": [
+        {
+          "name": "pubDate",
+          "ok": true
+        },
+        {
+          "limitation": "FINANCIAL_DATASET_NOT_RESEARCH_READY",
+          "name": "research_ready",
+          "ok": true
+        }
+      ],
+      "dataset": "FINANCIAL_SAMPLE",
+      "label": "CONDITIONAL",
+      "limitations": [
+        "FINANCIAL_DATASET_NOT_RESEARCH_READY"
+      ]
+    },
+    {
+      "blocking": [],
+      "checks": [
+        {
+          "limitation": "INDUSTRY_NOT_POINT_IN_TIME",
+          "name": "pit",
+          "ok": true
+        }
+      ],
+      "dataset": "INDUSTRY",
+      "label": "CONDITIONAL",
+      "limitations": [
+        "INDUSTRY_NOT_POINT_IN_TIME"
+      ]
+    },
+    {
+      "blocking": [],
+      "checks": [
+        {
+          "blocking": false,
+          "limitation": "VENDOR_DELIST_TABLE_NOT_EXCHANGE_OFFICIAL",
+          "name": "census",
+          "ok": true
+        }
+      ],
+      "dataset": "DELIST_CENSUS",
+      "label": "CONDITIONAL",
+      "limitations": [
+        "VENDOR_DELIST_TABLE_NOT_EXCHANGE_OFFICIAL"
+      ]
+    }
+  ],
+  "schema_version": "12.0",
+  "source_matrix_hash": "efab5b87574a1be827dfa347e018a92844c080dc145f764bd6656e8599c50bbf",
+  "spend_usd": 0.0,
+  "status": "CONDITIONAL",
+  "timezone": {
+    "market": "Asia/Shanghai",
+    "session": {
+      "afternoon": {
+        "close": "15:00",
+        "open": "13:00"
+      },
+      "morning": {
+        "close": "11:30",
+        "open": "09:30"
+      },
+      "note": "Defined only. Intraday research is later.",
+      "timezone": "Asia/Shanghai"
+    },
+    "store": "UTC"
+  }
+}
