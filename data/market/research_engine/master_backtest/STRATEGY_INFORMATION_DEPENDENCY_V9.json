@@ -1,0 +1,256 @@
+{
+  "rows": [
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "HYP-0001",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "FACTOR_DISCOVERY_V0.1",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "STRATEGY_DISCOVERY_V0.5",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "PROFIT_DISCOVERY_V0.6",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "CROSS_ASSET_V0.8",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "REGIME_TRANSITION_V0.9",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "CROSS_RESIDUAL_V0.91",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "INSTITUTIONAL_TIME_V1.0",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "TIME_STRUCTURE_V1",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "MICROSTRUCTURE_SURPRISE_V1",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "REGIME_INTERACTION_V1",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "ALT_MARKET_STRUCTURE_V1",
+      "information_set": "IS-A",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "IMPLIED_VOL_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "CBOE_GVZ_OVX"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "POSITIONING_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "CFTC_COT"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "INVENTORY_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "EIA_STOCKS"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "RATES_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "UST10"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "CARRY_V1A",
+      "information_set": "IS-B",
+      "live_signal_inputs": "EFFR_ESTR_BOJ"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "SUPPLY_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "EIA_SUPPLY"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "CROSS_METAL_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "USD_METAL_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "XS_REV_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "CORR_SHOCK_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "ENERGY_RV_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "VOL_TERM_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "IDX_ASYNC_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "BREADTH_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "NO",
+      "RESEARCH_ONLY_EXTERNAL": false,
+      "family": "SIZE_SPREAD_V1",
+      "information_set": "IS-B",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "TERM_STRUCTURE_V1",
+      "information_set": "IS-C",
+      "live_signal_inputs": "PACK_E_CURVE"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "FUTURES_OI_FLOW_V1",
+      "information_set": "IS-C",
+      "live_signal_inputs": "PACK_E_OI"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "VOLUME_PRICE_FLOW_V1",
+      "information_set": "IS-C",
+      "live_signal_inputs": "PACK_E_VOLUME"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "DTE_ROLL_WINDOW_V1",
+      "information_set": "IS-C",
+      "live_signal_inputs": "PACK_E_DTE"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "FUT_CFD_LEAD_V1",
+      "information_set": "IS-D",
+      "live_signal_inputs": "PACK_E_SETTLEMENT"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "CURVE_OI_JOINT_V1",
+      "information_set": "IS-D",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "OI_COT_BUILD_V1",
+      "information_set": "IS-D",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "CURVE_EIA_REPRICE_V1",
+      "information_set": "IS-D",
+      "live_signal_inputs": "MT5"
+    },
+    {
+      "EXTERNAL_LIVE_DATA": "YES",
+      "RESEARCH_ONLY_EXTERNAL": true,
+      "family": "CURVE_REALYIELD_V1",
+      "information_set": "IS-D",
+      "live_signal_inputs": "MT5"
+    }
+  ]
+}

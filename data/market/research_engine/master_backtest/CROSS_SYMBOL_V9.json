@@ -1,0 +1,139 @@
+{
+  "ALT_MARKET_STRUCTURE_V1": {
+    "GOLD": "negative",
+    "OIL": "negative"
+  },
+  "BREADTH_V1": {
+    "COTTON": "negative",
+    "GOLD": "mixed"
+  },
+  "CARRY_V1A": {
+    "FX": "negative"
+  },
+  "CORR_SHOCK_V1": {
+    "GOLD": "negative"
+  },
+  "CROSS_ASSET_V0.8": {
+    "GOLD": "negative",
+    "OIL": "negative"
+  },
+  "CROSS_METAL_V1": {
+    "GOLD": "negative",
+    "SILVER": "negative"
+  },
+  "CROSS_RESIDUAL_V0.91": {
+    "GOLD_OIL": "negative"
+  },
+  "CURVE_EIA_REPRICE_V1": {
+    "next-session CL front open-to-open after Wednesday knowledge_time": "negative"
+  },
+  "CURVE_OI_JOINT_V1": {
+    "next-session front open-to-open after OI knowledge_time": "negative",
+    "next-session front open-to-open after knowledge_time": "mixed"
+  },
+  "CURVE_REALYIELD_V1": {
+    "next-session GC front open-to-open after T 21:00Z knowledge": "mixed",
+    "next-session_GC_front_open-to-open_after_T_21_00Z_knowledge": "mixed"
+  },
+  "DTE_ROLL_WINDOW_V1": {
+    "next-session front open-to-open after knowledge_time": "positive",
+    "next-session front open-to-open after settlement knowledge_time": "positive"
+  },
+  "ENERGY_RV_V1": {
+    "OIL": "positive"
+  },
+  "FUTURES_OI_FLOW_V1": {
+    "next-session front open-to-open after OI knowledge_time": "positive",
+    "next-session front open-to-open after knowledge_time": "mixed"
+  },
+  "FUT_CFD_LEAD_V1": {
+    "next-session broker CFD open-to-open after knowledge_time": "negative",
+    "next-session broker CFD open-to-open after settlement knowledge_time": "positive"
+  },
+  "IDX_ASYNC_V1": {
+    "GER40": "negative"
+  },
+  "IMPLIED_VOL_V1": {
+    "GOLD": "positive",
+    "OIL": "negative"
+  },
+  "INSTITUTIONAL_TIME_V1.0": {
+    "GOLD": "mixed",
+    "OIL": "positive"
+  },
+  "INVENTORY_V1": {
+    "GOLD": "negative",
+    "OIL": "negative"
+  },
+  "MICROSTRUCTURE_SURPRISE_V1": {
+    "GOLD": "negative",
+    "OIL": "negative"
+  },
+  "OI_COT_BUILD_V1": {
+    "next-session front open-to-open after Friday knowledge_time": "mixed"
+  },
+  "POSITIONING_V1": {
+    "GOLD": "mixed",
+    "OIL": "positive"
+  },
+  "PROFIT_DISCOVERY_V0.6": {
+    "tm-market-EURUSD-D1-20260825-000001": "negative",
+    "tm-market-EURUSD-H1-20260825-000001": "negative",
+    "tm-market-EURUSD-H4-20260825-000001": "negative",
+    "tm-market-EURUSD-M15-20260825-000001": "negative",
+    "tm-market-GOLD-D1-20260825-000001": "negative",
+    "tm-market-GOLD-H1-20260825-000001": "negative",
+    "tm-market-GOLD-H4-20260825-000001": "negative",
+    "tm-market-GOLD-M15-20260825-000001": "negative",
+    "tm-market-OIL-D1-20260825-000001": "negative",
+    "tm-market-OIL-H1-20260825-000001": "negative",
+    "tm-market-OIL-H4-20260825-000001": "negative",
+    "tm-market-OIL-M15-20260825-000001": "negative",
+    "tm-market-USDJPY-D1-20260825-000001": "positive",
+    "tm-market-USDJPY-H1-20260825-000001": "negative",
+    "tm-market-USDJPY-H4-20260825-000001": "negative",
+    "tm-market-USDJPY-M15-20260825-000001": "negative"
+  },
+  "RATES_V1": {
+    "GOLD": "mixed",
+    "OIL": "negative"
+  },
+  "REGIME_INTERACTION_V1": {
+    "GOLD": "negative",
+    "OIL": "negative"
+  },
+  "REGIME_TRANSITION_V0.9": {
+    "GOLD": "negative",
+    "OIL": "negative"
+  },
+  "SIZE_SPREAD_V1": {
+    "GOLD": "mixed",
+    "US2000": "negative"
+  },
+  "SUPPLY_V1": {
+    "GOLD": "positive",
+    "OIL": "mixed"
+  },
+  "TERM_STRUCTURE_V1": {
+    "next-session front contract log return after settlement knowledge_time": "positive",
+    "next-session front log return after knowledge_time": "mixed"
+  },
+  "TIME_STRUCTURE_V1": {
+    "GOLD": "negative",
+    "OIL": "negative"
+  },
+  "USD_METAL_V1": {
+    "GOLD": "mixed",
+    "SILVER": "negative"
+  },
+  "VOLUME_PRICE_FLOW_V1": {
+    "next-session front open-to-open after knowledge_time": "negative",
+    "next-session front open-to-open after volume knowledge_time": "positive"
+  },
+  "VOL_TERM_V1": {
+    "GOLD": "negative"
+  },
+  "XS_REV_V1": {
+    "FX": "negative"
+  }
+}

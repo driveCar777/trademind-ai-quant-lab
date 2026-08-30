@@ -1,0 +1,122 @@
+{
+  "databento": {
+    "added_information": "GC/CL official settlement, OI, volume, DTE/roll, plus V8 fusion with public series",
+    "added_positive_research": 14,
+    "added_strategies": 30,
+    "candidate": 0,
+    "historical_spend_usd": 31.816129,
+    "incremental_vs_mt5": {
+      "incremental_cagr": 0.016377165149387585,
+      "incremental_dd": -0.2956245114435482,
+      "incremental_return": 0.09900146457025039,
+      "incremental_sharpe": -0.1649017408800615
+    },
+    "incremental_vs_public": {
+      "incremental_cagr": 0.024981939591502522,
+      "incremental_dd": -0.15668879849814532,
+      "incremental_return": 0.35288634995740065,
+      "incremental_sharpe": 0.03560975816841905
+    },
+    "new_spend_usd": 0.0,
+    "note": "incremental research value, not dollar P&L value of $31.82"
+  },
+  "incremental": {
+    "B_minus_A": {
+      "incremental_cagr": -0.032781455086627886,
+      "incremental_dd": 0.01617071955621968,
+      "incremental_return": -0.1952855070662205,
+      "incremental_sharpe": -0.08443136373960897
+    },
+    "C_minus_B": {
+      "incremental_cagr": 0.024981939591502522,
+      "incremental_dd": -0.15668879849814532,
+      "incremental_return": 0.35288634995740065,
+      "incremental_sharpe": 0.03560975816841905
+    },
+    "D_minus_A": {
+      "incremental_cagr": 0.016377165149387585,
+      "incremental_dd": -0.2956245114435482,
+      "incremental_return": 0.09900146457025039,
+      "incremental_sharpe": -0.1649017408800615
+    },
+    "D_minus_C": {
+      "incremental_cagr": 0.02417668064451295,
+      "incremental_dd": -0.15510643250162254,
+      "incremental_return": -0.05859937832092976,
+      "incremental_sharpe": -0.11608013530887157
+    }
+  },
+  "index_id": "INFORMATION_VALUE_V9",
+  "layers": {
+    "IS-A": {
+      "best": {
+        "cagr": 0.036344096699761685,
+        "economic_status": "POSITIVE_BUT_WEAK",
+        "family": "INSTITUTIONAL_TIME_V1.0",
+        "max_dd": -0.027257904851903596,
+        "net_return": 0.21919082787661148,
+        "sharpe": 0.5345253707812699,
+        "strategy_id": "HYP-IT-0002",
+        "target": "OIL"
+      },
+      "information_set": "IS-A",
+      "n_positive_research": 6,
+      "n_research_books": 136
+    },
+    "IS-B": {
+      "best": {
+        "cagr": 0.003562641613133799,
+        "economic_status": "POSITIVE_BUT_WEAK",
+        "family": "ENERGY_RV_V1",
+        "max_dd": -0.011087185295683916,
+        "net_return": 0.023905320810390984,
+        "sharpe": 0.45009400704166097,
+        "strategy_id": "HYP-ER-0003",
+        "target": "OIL"
+      },
+      "information_set": "IS-B",
+      "n_positive_research": 12,
+      "n_research_books": 45
+    },
+    "IS-C": {
+      "best": {
+        "cagr": 0.02854458120463632,
+        "economic_status": "POSITIVE_BUT_WEAK",
+        "family": "TERM_STRUCTURE_V1",
+        "max_dd": -0.16777598379382924,
+        "net_return": 0.37679167076779163,
+        "sharpe": 0.48570376521008,
+        "strategy_id": "HYP-TSFUT-0001",
+        "target": "next-session front contract log return after settlement knowledge_time"
+      },
+      "information_set": "IS-C",
+      "n_positive_research": 8,
+      "n_research_books": 12
+    },
+    "IS-D": {
+      "best": {
+        "cagr": 0.05272126184914927,
+        "economic_status": "POSITIVE_BUT_WEAK",
+        "family": "FUT_CFD_LEAD_V1",
+        "max_dd": -0.3228824162954518,
+        "net_return": 0.31819229244686187,
+        "sharpe": 0.36962362990120845,
+        "strategy_id": "HYP-FUTCFD-0001",
+        "target": "next-session broker CFD open-to-open after settlement knowledge_time"
+      },
+      "information_set": "IS-D",
+      "n_positive_research": 6,
+      "n_research_books": 18
+    }
+  },
+  "leave_one_source_out": {
+    "applied": false,
+    "reason": "ALL_OWNED did not produce a positive reproducible strategy. Leave-one-out is attribution of a gain that did not occur."
+  },
+  "public_incremental": {
+    "incremental_cagr": -0.032781455086627886,
+    "incremental_dd": 0.01617071955621968,
+    "incremental_return": -0.1952855070662205,
+    "incremental_sharpe": -0.08443136373960897
+  }
+}
