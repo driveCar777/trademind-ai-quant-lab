@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-30 (V8.3 Options feasibility：PURCHASE=NO；CASE B；8日 occupancy 样本；未下载；Level=0；Candidate=0；$0)  
+> **更新时间:** 2026-08-30 (V8.4 occupancy census：PURCHASE=NO；LO A / OG B；251日；未下载；Level=0；Candidate=0；$0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -345,7 +345,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **Market Universe V5.0 FACT 2026-08-29：** START pointer `d29d3b7388b7d09f4951f8901d7745371be30ab6`。Top 5（XS/CS/ER/VT/IA）已跑完，全部 NO_CANDIDATE。不改 V4 合同。
 - **V8 Information Fusion FACT 2026-08-30 STOP C：** 已有 110 集融合 TOP5 已跑（FUT_CFD_LEAD / CURVE_OI_JOINT / OI_COT_BUILD / CURVE_EIA_REPRICE / CURVE_REALYIELD）。四 Xavier，01=04。Candidate=0。FDR 0/15。不要调 gap/steepening/OI/wow/yield。见 `V8_DECISION.md`。
 - **V8.2 Options Due Diligence FACT 2026-08-30 QUOTE ONLY：** `GC.OPT`/`CL.OPT` 不存在。真实父符号是 `OG.OPT` / `LO.OPT`。GLBX 无 venue IV。见 `OPTIONS_PURCHASE_DECISION_V8_2.md`。
-- **V8.3 Options Feasibility FACT 2026-08-30 PURCHASE=NO：** 免费 `metadata.get_record_count`（不是下载）。预注册 8 日。ATM = min abs(K−F)/F，F 来自已有 Pack E。父级 1Y ohlcv：OG 339,600 条，LO 383,039 条。OG 期货近月 ATM **0/8**（期权先于期货到期）；OG 活期权月（本映射=期货次月）ATM **8/8**，skew 6/8，term **0/8**。LO 近月/次月 ATM/skew/term **8/8**。1Y 全日 census **未跑**。CASE B。不要因为 $14.99 就买。若以后买，只买 **OG 1Y MVD-A $14.99** 做 IV-RV。Credits 仍 ≈ $93。见 `OPTIONS_MVD_DECISION_V8_3.md`。
+- **V8.3 Options Feasibility FACT 2026-08-30：** 8 日样本。见 `OPTIONS_MVD_DECISION_V8_3.md`。
+- **V8.4 Full-Year Occupancy FACT 2026-08-30 PURCHASE=NO：** 251 个 Pack E 交易日。只 `get_record_count`。门槛事先锁死 A= ATM≥90/skew≥75/term≥75。**LO = A**（ATM/skew 100%，term 98.0%，ATM 连续 251 日）。**OG = B**（ATM 98.4%，skew 80.1%，term 74.9%；期货近月=期权近月 **0%**）。父级月度 ohlcv 全年都有量，不是单月堆出来的。MVD-B 对 coverage 不必需。本任务不买。若以后买一包：**LO 1Y MVD-A $11.99**。Credits ≈ $93。见 `OPTIONS_PURCHASE_DECISION_V8_4.md`。
 
 ---
 
@@ -435,6 +436,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P57 | V8 Information Fusion | DONE STOP C（TOP5 用尽；OG.OPT/LO.OPT 已报价；未下载；Level 0；Candidate=0） |
 | P58 | V8.2 Options Data Due Diligence | DONE QUOTE ONLY（catalog/MVD/quote；CASE A 发票存在但不买；Level 0；Candidate=0） |
 | P59 | V8.3 Options Historical Feasibility | DONE PURCHASE=NO（8日 record_count 样本；CASE B；未下载；Level 0；Candidate=0） |
+| P60 | V8.4 Full-Year Options Occupancy Census | DONE PURCHASE=NO（251日；LO A / OG B；未下载；Level 0；Candidate=0） |
 
 ---
 

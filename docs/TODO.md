@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V8.3 Options Feasibility **PURCHASE = NO**。METADATA ONLY。未下载。未购买。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；CASE B；8 日样本不是 1Y census；OG 期货近月 ATM 0/8）
-> **阶段终点:** 不要自动买。若 HUMAN 接受 CASE B，唯一包是 OG 1Y MVD-A $14.99（IV-RV，活期权月）。禁止 $199/月。禁止下载本任务。禁止正式 family。
+> **当前活跃模块:** V8.4 Full-year occupancy **PURCHASE = NO**。METADATA ONLY。未下载。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；LO sufficiency A；OG B；251 日 census）
+> **阶段终点:** 不要自动买。若 HUMAN 以后买一包：LO 1Y MVD-A $11.99。禁止 download / family / $199。
 
 ---
 
@@ -54,6 +54,15 @@
 | MISSION V8.0 | Existing fusion TOP5 + options quote | ✅ STOP C | 2026-08-30 |
 | MISSION V8.2 | Options catalog / MVD / quote-only DD | ✅ QUOTE ONLY | 2026-08-30 |
 | MISSION V8.3 | Options historical feasibility (metadata occupancy) | ✅ PURCHASE=NO | 2026-08-30 |
+| MISSION V8.4 | Full-year options occupancy census | ✅ PURCHASE=NO | 2026-08-30 |
+
+## V8.4 Full-Year Occupancy — PURCHASE = NO 2026-08-30
+
+- 251 Pack E 交易日。`get_record_count` only。
+- LO：ATM/skew 100%，term 98% → sufficiency **A**
+- OG：ATM 98.4%，term 74.9% → **B**；期货近月 ≠ 期权近月 0%
+- 若以后买：LO 1Y MVD-A **$11.99**
+- 文档：`OPTIONS_FULL_YEAR_OCCUPANCY_V8_4.md` / `OPTIONS_RESEARCH_SUFFICIENCY_V8_4.md` / `OPTIONS_PURCHASE_DECISION_V8_4.md`
 
 ## V8.3 Options Feasibility — PURCHASE = NO 2026-08-30
 

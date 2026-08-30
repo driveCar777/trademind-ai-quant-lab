@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-08-30 — V8.4 full-year options occupancy census (PURCHASE = NO)
+
+- Metadata `get_record_count` on 251 Pack E sessions. No download. $0.
+- Locked gates: A = ATM≥90 / skew≥75 / term≥75. LO = A. OG = B (term 74.9%).
+- Gold option-front never equals futures-front (0%). LO ATM/skew streak = 251 days.
+- If a human later buys one pack: LO 1Y MVD-A $11.99. Not dual. Not MVD-B for coverage.
+
 ## 2026-08-30 — V8.3 Options historical feasibility (PURCHASE = NO)
 
 - Metadata only: `get_record_count` / resolve / billable size. No download. $0.

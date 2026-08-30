@@ -1,0 +1,148 @@
+{
+  "catalog_id": "OPTION_RESEARCH_SUFFICIENCY_V8_4",
+  "generated_at_utc": "2026-08-30T06:42:54Z",
+  "not_an_alpha_gate": true,
+  "gates_locked_before_counts": {
+    "A": {
+      "atm": 0.9,
+      "skew": 0.75,
+      "term": 0.75
+    },
+    "B": {
+      "atm": 0.75,
+      "skew": 0.6,
+      "term": 0.6
+    },
+    "C_atm_min": 0.4
+  },
+  "scores": {
+    "GC": "B",
+    "CL": "A"
+  },
+  "detail": {
+    "GC": {
+      "n_sessions": 251,
+      "atm_rate": 0.9840637450199203,
+      "skew_rate": 0.8007968127490039,
+      "term_rate": 0.749003984063745,
+      "fut_front_eq_active_opt_rate": 0.0,
+      "atm_streaks": {
+        "longest_true": 118,
+        "longest_false": 1,
+        "missingness_runs": {
+          "0": 0,
+          "1-2": 4,
+          "3-5": 0,
+          ">5": 0
+        }
+      },
+      "skew_streaks": {
+        "longest_true": 28,
+        "longest_false": 4,
+        "missingness_runs": {
+          "0": 0,
+          "1-2": 36,
+          "3-5": 2,
+          ">5": 0
+        }
+      },
+      "term_streaks": {
+        "longest_true": 22,
+        "longest_false": 4,
+        "missingness_runs": {
+          "0": 0,
+          "1-2": 41,
+          "3-5": 4,
+          ">5": 0
+        }
+      },
+      "score": "B",
+      "active_front_counts": {
+        "OGV5": 19,
+        "OGX5": 23,
+        "OGZ5": 19,
+        "OGF6": 20,
+        "OGG6": 22,
+        "OGH6": 17,
+        "OGJ6": 21,
+        "NONE": 4,
+        "OGK6": 21,
+        "OGM6": 19,
+        "OGN6": 21,
+        "OGQ6": 22,
+        "OGU6": 21,
+        "OGV6": 2
+      }
+    },
+    "CL": {
+      "n_sessions": 251,
+      "atm_rate": 1.0,
+      "skew_rate": 1.0,
+      "term_rate": 0.9800796812749004,
+      "fut_front_eq_active_opt_rate": 0.8565737051792829,
+      "atm_streaks": {
+        "longest_true": 251,
+        "longest_false": 0,
+        "missingness_runs": {
+          "0": 1,
+          "1-2": 0,
+          "3-5": 0,
+          ">5": 0
+        }
+      },
+      "skew_streaks": {
+        "longest_true": 251,
+        "longest_false": 0,
+        "missingness_runs": {
+          "0": 1,
+          "1-2": 0,
+          "3-5": 0,
+          ">5": 0
+        }
+      },
+      "term_streaks": {
+        "longest_true": 139,
+        "longest_false": 2,
+        "missingness_runs": {
+          "0": 0,
+          "1-2": 4,
+          "3-5": 0,
+          ">5": 0
+        }
+      },
+      "score": "A",
+      "active_front_counts": {
+        "LOV5": 13,
+        "LOX5": 21,
+        "LOZ5": 22,
+        "LOF6": 20,
+        "LOG6": 19,
+        "LOH6": 22,
+        "LOJ6": 20,
+        "LOK6": 21,
+        "LOM6": 20,
+        "LON6": 22,
+        "LOQ6": 20,
+        "LOU6": 22,
+        "LOV6": 9
+      }
+    }
+  },
+  "preferred_if_human_later": {
+    "package": "LO_1Y_MVD-A",
+    "cost_usd": 11.991718,
+    "score": "A",
+    "why": "Only metal that meets locked gate A on the 251-day census"
+  },
+  "this_mission_purchase": false,
+  "PURCHASE": "NO",
+  "REASON": "This mission does not spend. Data sufficiency is B/A (OG/LO). If a human later buys, single package is LO_1Y_MVD-A $11.99.",
+  "limitations": [
+    "MVD-A has no bid/ask",
+    "MVD-A has no official option settlement",
+    "MVD-A has no OI",
+    "IV is DERIVED Black-76 not venue IV",
+    "American early exercise",
+    "Parent monthly counts include spreads/UD"
+  ]
+}
