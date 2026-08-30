@@ -1,0 +1,61 @@
+{
+  "catalog_id": "OPTION_MVD_SELECTION_V8_3",
+  "generated_at_utc": "2026-08-30T04:15:06Z",
+  "downloaded": false,
+  "this_mission_purchase": false,
+  "case": "B",
+  "case_meaning": "MVD likely researchable on the 8-date sample; full-year occupancy not censused",
+  "preferred_if_human_later": {
+    "package": "OG_1Y_MVD-A",
+    "symbols": "OG.OPT",
+    "schemas": [
+      "definition",
+      "ohlcv-1d"
+    ],
+    "window": [
+      "2025-08-29",
+      "2026-08-29"
+    ],
+    "cost_usd": 14.994811,
+    "unlocks": [
+      "DERIVED ATM IV on live gold option month",
+      "IV-RV vs owned GC RV",
+      "likely skew on that month"
+    ],
+    "still_impossible": [
+      "venue IV",
+      "bid/ask mid IV",
+      "official option settlement",
+      "proven OG term (front+second under futures mapping is 0/8)",
+      "252-day ATM census"
+    ]
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "package": "OG_1Y_MVD-A",
+      "cost_usd": 14.994811,
+      "why": "Answers IV-RV if live option month is used; cheapest gold surface"
+    },
+    {
+      "rank": 2,
+      "package": "LO_1Y_MVD-A",
+      "cost_usd": 11.991718,
+      "why": "Stronger sample occupancy for IV+skew+term; not preferred because OG IV-RV is the first question"
+    },
+    {
+      "rank": 3,
+      "package": "LO_1Y_MVD-B",
+      "cost_usd": 24.088709,
+      "why": "Adds official settle+OI; not auto-preferred"
+    },
+    {
+      "rank": 4,
+      "package": "OG+LO_1Y_MVD-A",
+      "cost_usd": 26.986529,
+      "why": "Do not auto-buy dual"
+    }
+  ],
+  "PURCHASE": "NO",
+  "REASON": "CASE B: 8-date sample is not a 1Y census; OG futures-front ATM rate 0/8; OG term 0/8; MVD-A has no bid/ask or official settle. This mission does not spend."
+}

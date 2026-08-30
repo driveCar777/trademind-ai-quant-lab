@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V8.3 Options historical feasibility (PURCHASE = NO)
+
+- Metadata only: `get_record_count` / resolve / billable size. No download. $0.
+- 8 pre-registered dates. OG futures-front ATM 0/8; OG live month ATM 8/8; LO ATM/skew/term 8/8. Full 1Y census not run. CASE B.
+- Preferred later package if a human accepts CASE B: OG 1Y MVD-A $14.99 for IV-RV. Do not auto-buy dual or LO B.
+
 ## 2026-08-30 — V8.2 Options Data Due Diligence (QUOTE ONLY)
 
 - Catalog / schema / symbology / `get_cost` only. No download. No purchase. $0 new credits.

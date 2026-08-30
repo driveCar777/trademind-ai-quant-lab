@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-30（V8.2 Options DD QUOTE ONLY；CASE A 发票存在；未下载；Level 0；Candidate=0；$0 新购买）  
+**最后更新：** 2026-08-30（V8.3 Options feasibility PURCHASE=NO；CASE B；未下载；Level 0；Candidate=0；$0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + **V8.2 Options DD** |
-| 状态 | Level 0。Candidate=0。OG.OPT/LO.OPT 真实存在。IV 在 GLBX 上不是 OBSERVED。未下载。不要调参。 |
-| 当前 Phase | HUMAN 决定是否买一行 MVD-A/B。1Y OG+LO MVD-A $26.99 是 CASE A，但不自动买。3Y 单品种 MVD-A 仍是 CASE B（$32–$34）。不要 $199/月。不要 bbo-1s。不要改 V4 hash。 |
+| 版本 | **V11.7** + … + **V8.3 Options feasibility** |
+| 状态 | Level 0。Candidate=0。8 日 occupancy 样本已跑。未下载。不要调参。 |
+| 当前 Phase | PURCHASE=NO。CASE B。若以后买，只买 OG 1Y MVD-A $14.99 做 IV-RV。不要 $199/月。不要改 V4 hash。 |
 
 ---
 

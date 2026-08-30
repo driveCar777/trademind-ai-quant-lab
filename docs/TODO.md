@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V8.2 Options Due Diligence **STOP HUMAN_PURCHASE_REQUIRED**。QUOTE ONLY。未下载。未购买。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0 新购买；CASE A 发票存在但 occupancy 未证；不要自动买）
-> **阶段终点:** HUMAN 从 `OPTION_QUOTE_V8_2.json` 挑一行 MVD-A/B。禁止 $199/月。禁止 bbo-1s/MBO/MBP。禁止调参救已杀家族。
+> **当前活跃模块:** V8.3 Options Feasibility **PURCHASE = NO**。METADATA ONLY。未下载。未购买。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；CASE B；8 日样本不是 1Y census；OG 期货近月 ATM 0/8）
+> **阶段终点:** 不要自动买。若 HUMAN 接受 CASE B，唯一包是 OG 1Y MVD-A $14.99（IV-RV，活期权月）。禁止 $199/月。禁止下载本任务。禁止正式 family。
 
 ---
 
@@ -53,6 +53,15 @@
 | MISSION V7.0 | Information fusion / max existing data | ✅ STOP B+C | 2026-08-30 |
 | MISSION V8.0 | Existing fusion TOP5 + options quote | ✅ STOP C | 2026-08-30 |
 | MISSION V8.2 | Options catalog / MVD / quote-only DD | ✅ QUOTE ONLY | 2026-08-30 |
+| MISSION V8.3 | Options historical feasibility (metadata occupancy) | ✅ PURCHASE=NO | 2026-08-30 |
+
+## V8.3 Options Feasibility — PURCHASE = NO 2026-08-30
+
+- 报告：`docs/research_engine/OPTIONS_FEASIBILITY_V8_3.md`
+- 决策：`docs/research_engine/OPTIONS_MVD_DECISION_V8_3.md`
+- 机器：`data/market/research_engine/options/OPTION_*_V8_3.json`
+- 免费 `get_record_count`：LO 样本 ATM/skew/term 8/8；OG 期货近月 ATM 0/8，活期权月 ATM 8/8
+- 禁止：download / purchase / 正式 family / Xavier
 
 ## V8.2 Options Due Diligence — QUOTE ONLY 2026-08-30
 

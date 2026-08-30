@@ -1,0 +1,647 @@
+{
+  "catalog_id": "OPTION_FEASIBILITY_V8_3",
+  "generated_at_utc": "2026-08-30T04:15:06Z",
+  "mode": "METADATA_ONLY",
+  "downloaded": false,
+  "purchased": false,
+  "atm_definition": {
+    "rule": "argmin abs(K-F)/F using owned front futures settlement",
+    "og_increments_probed": [
+      10,
+      25
+    ],
+    "lo_increment": 0.5,
+    "otm_buckets": [
+      -0.1,
+      -0.05,
+      0.0,
+      0.05,
+      0.1
+    ],
+    "locked_before_counts": true
+  },
+  "snapshot_targets_preregistered": [
+    "2025-08-29",
+    "2025-10-31",
+    "2025-12-31",
+    "2026-02-27",
+    "2026-04-30",
+    "2026-06-30",
+    "2026-08-14",
+    "2026-08-28"
+  ],
+  "full_1y_census": "NOT_RUN",
+  "parent_record_counts": {
+    "OG_1Y_OHLCV": {
+      "symbols": "OG.OPT",
+      "schema": "ohlcv-1d",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "record_count": 339600,
+      "record_count_error": null,
+      "billable_size": 19017600
+    },
+    "LO_1Y_OHLCV": {
+      "symbols": "LO.OPT",
+      "schema": "ohlcv-1d",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "record_count": 383039,
+      "record_count_error": null,
+      "billable_size": 21450184
+    },
+    "OG_1Y_DEF": {
+      "symbols": "OG.OPT",
+      "schema": "definition",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "record_count": 14125805,
+      "record_count_error": null,
+      "billable_size": 7345418600
+    },
+    "LO_1Y_DEF": {
+      "symbols": "LO.OPT",
+      "schema": "definition",
+      "start": "2025-08-29",
+      "end": "2026-08-29",
+      "record_count": 9955288,
+      "record_count_error": null,
+      "billable_size": 5176749760
+    },
+    "OG_1D_OHLCV": {
+      "symbols": "OG.OPT",
+      "schema": "ohlcv-1d",
+      "start": "2026-08-14",
+      "end": "2026-08-15",
+      "record_count": 1020,
+      "record_count_error": null,
+      "billable_size": null
+    },
+    "LO_1D_OHLCV": {
+      "symbols": "LO.OPT",
+      "schema": "ohlcv-1d",
+      "start": "2026-08-14",
+      "end": "2026-08-15",
+      "record_count": 1272,
+      "record_count_error": null,
+      "billable_size": 71232
+    },
+    "OG_1D_DEF": {
+      "symbols": "OG.OPT",
+      "schema": "definition",
+      "start": "2026-08-14",
+      "end": "2026-08-15",
+      "record_count": 44133,
+      "record_count_error": null,
+      "billable_size": 22949160
+    },
+    "LO_1D_DEF": {
+      "symbols": "LO.OPT",
+      "schema": "definition",
+      "start": "2026-08-14",
+      "end": "2026-08-15",
+      "record_count": 34807,
+      "record_count_error": null,
+      "billable_size": 18099640
+    }
+  },
+  "occupancy_sample": {
+    "GC": {
+      "front": {
+        "ATM": {
+          "n_obs": 18,
+          "n_sessions": 8,
+          "listed_sessions": 7,
+          "bar_sessions": 0,
+          "ATM_OBSERVATION_RATE": 0.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": []
+        },
+        "OTM_PUT_5": {
+          "n_obs": 9,
+          "n_sessions": 8,
+          "listed_sessions": 7,
+          "bar_sessions": 0,
+          "ATM_OBSERVATION_RATE": 0.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": []
+        },
+        "OTM_CALL_5": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 7,
+          "bar_sessions": 0,
+          "ATM_OBSERVATION_RATE": 0.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": []
+        },
+        "OTM_PUT_10": {
+          "n_obs": 9,
+          "n_sessions": 8,
+          "listed_sessions": 7,
+          "bar_sessions": 0,
+          "ATM_OBSERVATION_RATE": 0.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": []
+        },
+        "OTM_CALL_10": {
+          "n_obs": 11,
+          "n_sessions": 8,
+          "listed_sessions": 7,
+          "bar_sessions": 0,
+          "ATM_OBSERVATION_RATE": 0.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": []
+        }
+      },
+      "second": {
+        "ATM": {
+          "n_obs": 16,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 8,
+          "ATM_OBSERVATION_RATE": 1.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_PUT_5": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 5,
+          "ATM_OBSERVATION_RATE": 0.625,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-28"
+          ]
+        },
+        "OTM_CALL_5": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 6,
+          "ATM_OBSERVATION_RATE": 0.75,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_PUT_10": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 4,
+          "ATM_OBSERVATION_RATE": 0.5,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14"
+          ]
+        },
+        "OTM_CALL_10": {
+          "n_obs": 9,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 6,
+          "ATM_OBSERVATION_RATE": 0.75,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-08-28"
+          ]
+        }
+      },
+      "term_front_and_second_atm_sessions": 0,
+      "term_rate": 0.0,
+      "skew_sessions": {
+        "front": 0,
+        "second": 6
+      },
+      "skew_rate": {
+        "front": 0.0,
+        "second": 0.75
+      }
+    },
+    "CL": {
+      "front": {
+        "ATM": {
+          "n_obs": 16,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 8,
+          "ATM_OBSERVATION_RATE": 1.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_PUT_5": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 8,
+          "ATM_OBSERVATION_RATE": 1.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_CALL_5": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 8,
+          "ATM_OBSERVATION_RATE": 1.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_PUT_10": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 7,
+          "ATM_OBSERVATION_RATE": 0.875,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_CALL_10": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 8,
+          "ATM_OBSERVATION_RATE": 1.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        }
+      },
+      "second": {
+        "ATM": {
+          "n_obs": 16,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 8,
+          "ATM_OBSERVATION_RATE": 1.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_PUT_5": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 8,
+          "ATM_OBSERVATION_RATE": 1.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_CALL_5": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 7,
+          "ATM_OBSERVATION_RATE": 0.875,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14"
+          ]
+        },
+        "OTM_PUT_10": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 8,
+          "ATM_OBSERVATION_RATE": 1.0,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        },
+        "OTM_CALL_10": {
+          "n_obs": 8,
+          "n_sessions": 8,
+          "listed_sessions": 8,
+          "bar_sessions": 7,
+          "ATM_OBSERVATION_RATE": 0.875,
+          "sessions": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-02-27",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ],
+          "bar_sessions_list": [
+            "2025-08-29",
+            "2025-10-31",
+            "2025-12-31",
+            "2026-04-30",
+            "2026-06-30",
+            "2026-08-14",
+            "2026-08-28"
+          ]
+        }
+      },
+      "term_front_and_second_atm_sessions": 8,
+      "term_rate": 1.0,
+      "skew_sessions": {
+        "front": 8,
+        "second": 8
+      },
+      "skew_rate": {
+        "front": 1.0,
+        "second": 1.0
+      }
+    }
+  },
+  "notes": {
+    "og_futures_front_is_not_live_option": true,
+    "og_live_option_in_this_mapping": "futures second month",
+    "ohlcv_count_gt_0_means_electronic_trade_that_utc_day": true,
+    "definition_available_not_equal_ohlcv_available": true
+  },
+  "iv": {
+    "status": "DERIVED",
+    "exchange_iv": false,
+    "model": "Black-76",
+    "inputs": [
+      "option price from ohlcv-1d if bar exists",
+      "owned GC/CL front_settle",
+      "strike from raw_symbol / definition",
+      "expiry from definition (exact UNKNOWN until bytes)",
+      "UST DGS10 proxy"
+    ]
+  },
+  "research_limitation": [
+    "MVD-A has no bid/ask; IV is last-trade not mid",
+    "ohlcv close is not official settlement",
+    "American early exercise",
+    "8-date sample is not a 252-day census"
+  ]
+}
