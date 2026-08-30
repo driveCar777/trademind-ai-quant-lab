@@ -809,6 +809,22 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V10 Model Discovery — 2026-08-30 STOP B
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_v10_model.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| V10 合同 / inventory / threshold 单元 | ✅ **6 PASS** |
+| 合同 hash | `8e361351298aabfa4d63bf0ade2e00ea033961430dd925b40a1e11dddbfe8229` |
+| 锁定实验 | 62；FDR 0/62 |
+| 程序 | `MODEL_REPRESENTATION_EXHAUSTED`；Candidate=0；Level=0 |
+| Xavier | 未用（本地 sklearn） |
+| 花费 | $0 |
+| Final OOS | ✅ 未访问 |
+
+不是交易许可。不是年化 10%。不要改 target 后重跑。不要买 Options。
+
 ## Data Expansion Mission V3.0 — 2026-08-28 WAIT_HUMAN
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine --import-mode=importlib`
