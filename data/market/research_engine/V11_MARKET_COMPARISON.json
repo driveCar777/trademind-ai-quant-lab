@@ -1,0 +1,137 @@
+{
+  "NEW_DOWNLOAD": false,
+  "NEW_PURCHASE": false,
+  "a_share": {
+    "cross_section": "native; this is the missing research dimension",
+    "expected_alpha_diversity": "HIGH relative to 4 CFDs, UNKNOWN as certified edge",
+    "history": "BaoStock daily from 1990-12-19 claimed; must qualify before use",
+    "information_diversity": "OHLC, adj, volume, turnover, industry, statements, announcements, ETF structure",
+    "liquidity": "auction + continuous; T+1; stamp tax on sells",
+    "on_disk_research_bars": false,
+    "researchability": "no immutable A-share layer yet; Factor Worker 50 names are hardcoded DEMO fundamentals, not bars",
+    "transaction_cost": "commission + stamp + impact; higher than FX, but many names",
+    "universe_size": "5000+ listed names + industries + ETFs + indexes (not yet frozen here)"
+  },
+  "discovery_id": "ALPHA_CAPITAL_ALLOCATION_V11",
+  "existing_ashare_code": {
+    "factor_worker_v1": "50 hardcoded stocks / 15 static factors. Not a data layer. Not a candidate.",
+    "immutable_tm_market": "MT5 only. No tm-ashare-* datasets."
+  },
+  "index_id": "V11_MARKET_COMPARISON",
+  "mt5": {
+    "cross_section": "tiny; V5.1 breadth/size on 841 CFDs WEAK_EDGE / NO_CANDIDATE",
+    "expected_alpha_diversity": "LOW remaining",
+    "history": "GOLD/OIL D1 from 2018-12-12 ~7.7y broker-limited; 20260828 frozen",
+    "information_diversity": "price, public actuals, Pack E futures. Options bytes=0. No consensus. No news.",
+    "liquidity": "CFD broker book; EXECUTION_APPROXIMATION OHLC+spread",
+    "on_disk_research_bars": true,
+    "researchability": "protocol exists; information set exhausted (V9+V10)",
+    "transaction_cost": "V0.6 spread+5bp+10bp; already killed remaining sketches",
+    "universe_size": "4 qualified execution names (GOLD EURUSD USDJPY OIL); 841 CFD inventory, all CFD"
+  },
+  "sources": [
+    {
+      "auth": "login() no registration",
+      "buy": false,
+      "cost_class": "FREE",
+      "fields": [
+        "OHLC",
+        "preclose",
+        "volume",
+        "amount",
+        "turnover",
+        "adjustflag qfq/hfq/none",
+        "peTTM pbMRQ psTTM",
+        "isST",
+        "industry",
+        "index constituents",
+        "quarterly financials",
+        "adjust factor"
+      ],
+      "frequency": "daily update after 17:30 CST",
+      "history_ohlc": "1990-12-19 to present daily/weekly/monthly",
+      "intraday": "5/15/30/60m recent years",
+      "license": "free personal/research API; not an exchange license",
+      "limits": "pandas required; not Xavier 3.6 stdlib; quality must be re-qualified",
+      "programmatic": true,
+      "role": "PRIMARY_CANDIDATE_FOR_FREE_DATA_LAYER",
+      "source_id": "BAOSTOCK"
+    },
+    {
+      "auth": "none",
+      "buy": false,
+      "cost_class": "FREE_SCRAPE",
+      "fields": [
+        "OHLC",
+        "spot",
+        "financial abstracts",
+        "notices",
+        "ETF",
+        "index"
+      ],
+      "frequency": "depends on upstream HTML",
+      "history_ohlc": "East Money / Sina / Tencent wrappers",
+      "license": "academic research disclaimer; upstream ToS",
+      "limits": "anti-bot; interface breakage; not a stable immutable source",
+      "programmatic": true,
+      "role": "SECONDARY_CROSS_CHECK_ONLY",
+      "source_id": "AKSHARE"
+    },
+    {
+      "auth": "token + points",
+      "buy": false,
+      "cost_class": "FREEMIUM",
+      "fields": [
+        "daily",
+        "adj_factor",
+        "income",
+        "balancesheet",
+        "cashflow",
+        "moneyflow"
+      ],
+      "frequency": "API rate by points",
+      "history_ohlc": "daily from 120 points; adj/financials 2000+; announcements separate paid permission",
+      "license": "Tushare Pro community; paid tiers exist (200/500/1000 CNY/year documented)",
+      "limits": "this review does not buy points",
+      "programmatic": true,
+      "role": "NOT_NOW",
+      "source_id": "TUSHARE_PRO"
+    },
+    {
+      "auth": "none for public query pages",
+      "buy": false,
+      "cost_class": "FREE_PUBLIC_FILINGS",
+      "fields": [
+        "announcement list",
+        "PDF filings"
+      ],
+      "frequency": "as filed",
+      "history_ohlc": "announcements not bars",
+      "license": "CSRC designated disclosure site; bulk redistribution may need SZSI license",
+      "limits": "anti-bot; commercial feed is licensed. Research query != licensed tick feed.",
+      "programmatic": true,
+      "role": "ANNOUNCEMENT_LATER",
+      "source_id": "CNINFO_JUCHO"
+    },
+    {
+      "auth": "website",
+      "buy": false,
+      "cost_class": "FREE_STATS",
+      "fields": [
+        "index",
+        "listed company stats"
+      ],
+      "limits": "not a full research bar store",
+      "programmatic": "partial",
+      "role": "REFERENCE",
+      "source_id": "SSE_SZSE_OFFICIAL"
+    },
+    {
+      "buy": false,
+      "cost_class": "PAID",
+      "programmatic": true,
+      "role": "FORBIDDEN_THIS_REVIEW",
+      "source_id": "WIND_CHOICE_CSMAR"
+    }
+  ]
+}
