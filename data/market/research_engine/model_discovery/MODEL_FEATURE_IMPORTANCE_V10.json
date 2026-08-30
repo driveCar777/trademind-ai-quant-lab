@@ -1,0 +1,3157 @@
+{
+  "note": "Interpret only. Do not invent features from importance.",
+  "rows": [
+    {
+      "experiment_id": "V10-M0-REP_RAW-T1_DIR1-GOLD",
+      "kind": null,
+      "top": []
+    },
+    {
+      "experiment_id": "V10-M1-REP_RAW-T1_DIR1-GOLD",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.5165226873054284
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.1869217979362586
+        },
+        {
+          "feature": "range20",
+          "value": 0.17307686156521607
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.1381431717410161
+        },
+        {
+          "feature": "ust10_chg5",
+          "value": 0.10099911768753779
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.09870835860838786
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.08606002623692284
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.08340580297279289
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.06687503554261709
+        },
+        {
+          "feature": "ret20",
+          "value": 0.05147615102398191
+        },
+        {
+          "feature": "ret120",
+          "value": 0.04839605198618426
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.04605152286655002
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-GOLD",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.16918713568197863
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.11780328419795452
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.10059196141784993
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.09156297290961887
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.07685851598065643
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.0743657343954914
+        },
+        {
+          "feature": "steepening",
+          "value": 0.07370098303438351
+        },
+        {
+          "feature": "ret20",
+          "value": 0.054745517829127816
+        },
+        {
+          "feature": "ret60",
+          "value": 0.04884537964969646
+        },
+        {
+          "feature": "ret5",
+          "value": 0.04757595078034239
+        },
+        {
+          "feature": "dte",
+          "value": 0.04700464443003383
+        },
+        {
+          "feature": "range20",
+          "value": 0.04114833974265536
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_INTERACT-T1_DIR1-GOLD",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.19324756150572014
+        },
+        {
+          "feature": "X_I08",
+          "value": 0.1360415131153604
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.11123257988348399
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.09531718048153756
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.0943227701910485
+        },
+        {
+          "feature": "steepening",
+          "value": 0.08123098124929215
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.07763980333745267
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.07717296297311542
+        },
+        {
+          "feature": "X_I09",
+          "value": 0.06630777686881126
+        },
+        {
+          "feature": "X_I04",
+          "value": 0.05402011724452742
+        },
+        {
+          "feature": "X_I01",
+          "value": 0.05393004307903681
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.047851044514195036
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_STATE-T1_DIR1-GOLD",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.1663827775397885
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.11636860827586841
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.10036121573499984
+        },
+        {
+          "feature": "ST_TREND_HIGHVOL",
+          "value": 0.09480948154935807
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.0931960027884468
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.07712985398586192
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.07469306567315746
+        },
+        {
+          "feature": "steepening",
+          "value": 0.07293997846516423
+        },
+        {
+          "feature": "ST_RANGE_HIGHVOL",
+          "value": 0.05758459433516036
+        },
+        {
+          "feature": "ret20",
+          "value": 0.049298816989976735
+        },
+        {
+          "feature": "ret5",
+          "value": 0.04606068226819572
+        },
+        {
+          "feature": "dte",
+          "value": 0.045577752298267674
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_RAW-T1_DIR1-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "other_ret20",
+          "value": 0.24766811241388179
+        },
+        {
+          "feature": "ret120",
+          "value": 0.23755864769851448
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.2227326902695138
+        },
+        {
+          "feature": "ret5",
+          "value": 0.20291372549091757
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.0891268241271725
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "range20",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "rv20",
+          "value": 0.0
+        },
+        {
+          "feature": "rv60",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_Z60-T1_DIR1-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.16841079756127098
+        },
+        {
+          "feature": "ret120",
+          "value": 0.16483372342160726
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.16390550867546747
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.1625212786098632
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.13816755975225778
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.10700957175696509
+        },
+        {
+          "feature": "range20",
+          "value": 0.09515156022256809
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_INTERACT-T1_DIR1-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "ret120",
+          "value": 0.2634685950752496
+        },
+        {
+          "feature": "X_I08",
+          "value": 0.2570756141323964
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.24029796136811335
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.23915782942424055
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "range20",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "rv20",
+          "value": 0.0
+        },
+        {
+          "feature": "rv60",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_STATE-T1_DIR1-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.168410797561271
+        },
+        {
+          "feature": "ret120",
+          "value": 0.1648337234216073
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.1639055086754675
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.16252127860986323
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.1381675597522578
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.10700957175696511
+        },
+        {
+          "feature": "range20",
+          "value": 0.0951515602225681
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_RAW-T1_DIR1-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "ret120",
+          "value": 0.12154359770786775
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.097885508277296
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.07848873361018581
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.0725995854316585
+        },
+        {
+          "feature": "ret5",
+          "value": 0.06767715496388244
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.06210015622341579
+        },
+        {
+          "feature": "rv60",
+          "value": 0.054041750275763516
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.05361370715069585
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.04409636394611942
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.04033538022008413
+        },
+        {
+          "feature": "rv20",
+          "value": 0.04006188435807784
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.03817250859588327
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_Z60-T1_DIR1-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.08077603608141529
+        },
+        {
+          "feature": "ret5",
+          "value": 0.08035838266613739
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.07823092608092658
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.07642453406567518
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.07128658775451918
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.07063611822741683
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.05896731770224438
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.04944588556280603
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.046015321744232146
+        },
+        {
+          "feature": "dte",
+          "value": 0.04569346020939074
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.03425876488240873
+        },
+        {
+          "feature": "ret1",
+          "value": 0.033548194569798545
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_INTERACT-T1_DIR1-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "other_ret20",
+          "value": 0.07859020744832076
+        },
+        {
+          "feature": "ret5",
+          "value": 0.07456738650371482
+        },
+        {
+          "feature": "ret120",
+          "value": 0.07313857627180366
+        },
+        {
+          "feature": "X_I08",
+          "value": 0.059391953235503156
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.05028327707954173
+        },
+        {
+          "feature": "X_I02",
+          "value": 0.03720384021188318
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.036598591179977304
+        },
+        {
+          "feature": "X_I07",
+          "value": 0.03556463583092526
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.03524019147070816
+        },
+        {
+          "feature": "X_I09",
+          "value": 0.03448912262643444
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.033879829968461145
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.03174062597379211
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_STATE-T1_DIR1-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "ret1",
+          "value": 0.08738037310538631
+        },
+        {
+          "feature": "ret5",
+          "value": 0.08397197035865507
+        },
+        {
+          "feature": "rv20",
+          "value": 0.06104302952821792
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.052070247658604275
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.049602398671481994
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.045842497593040196
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.04489427726823133
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.04451829284342192
+        },
+        {
+          "feature": "range20",
+          "value": 0.04355153661499526
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.043515992030155125
+        },
+        {
+          "feature": "ret60",
+          "value": 0.041823792427608884
+        },
+        {
+          "feature": "steepening",
+          "value": 0.04132804972545323
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M0-REP_RAW-T2_DIR5-GOLD",
+      "kind": null,
+      "top": []
+    },
+    {
+      "experiment_id": "V10-M1-REP_RAW-T2_DIR5-GOLD",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.4896853128402274
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.19557432081154588
+        },
+        {
+          "feature": "ret120",
+          "value": 0.06800865007273339
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.05734447392710865
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.054047143556322334
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.04278292817849536
+        },
+        {
+          "feature": "ret20",
+          "value": 0.03586236792377164
+        },
+        {
+          "feature": "range20",
+          "value": 0.029134730902345692
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.027104988842590036
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.023687614700203405
+        },
+        {
+          "feature": "month_end",
+          "value": 0.022184909424345468
+        },
+        {
+          "feature": "ret5",
+          "value": 0.017510491163132396
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T2_DIR5-GOLD",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.17347770011740193
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.12796788306091114
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.12009984905279569
+        },
+        {
+          "feature": "ret20",
+          "value": 0.10919408094731511
+        },
+        {
+          "feature": "steepening",
+          "value": 0.0976383130953646
+        },
+        {
+          "feature": "dte",
+          "value": 0.09619961148615527
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.07291805296750875
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.07200329797603297
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.06925476065855321
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.06872880342044031
+        },
+        {
+          "feature": "ret60",
+          "value": 0.06578723390706004
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.06244628398403233
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_INTERACT-T2_DIR5-GOLD",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.16271418591792525
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.13576264054635115
+        },
+        {
+          "feature": "ret20",
+          "value": 0.12372347568846565
+        },
+        {
+          "feature": "X_I04",
+          "value": 0.1195780032527712
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.11859742226397434
+        },
+        {
+          "feature": "steepening",
+          "value": 0.116189456250715
+        },
+        {
+          "feature": "dte",
+          "value": 0.10404203817145698
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.07643459600152679
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.07571014096011734
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0743904878783001
+        },
+        {
+          "feature": "X_I05",
+          "value": 0.07156749528919595
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.07041381774311731
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_STATE-T2_DIR5-GOLD",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "ST_RANGE_HIGHVOL",
+          "value": 0.23356021275724326
+        },
+        {
+          "feature": "ST_TREND_HIGHVOL",
+          "value": 0.22442871195535874
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.17060298972464893
+        },
+        {
+          "feature": "ST_RANGE_LOWVOL",
+          "value": 0.14507283092170697
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.13480219398041732
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.11864344499416783
+        },
+        {
+          "feature": "ret20",
+          "value": 0.11440408383421885
+        },
+        {
+          "feature": "steepening",
+          "value": 0.09373037531527115
+        },
+        {
+          "feature": "dte",
+          "value": 0.0837330089871808
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.07452050225281931
+        },
+        {
+          "feature": "ret60",
+          "value": 0.073970421178199
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.07367885203824238
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_RAW-T2_DIR5-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "spread_pct",
+          "value": 0.30064330071792755
+        },
+        {
+          "feature": "rv60",
+          "value": 0.24484939987878004
+        },
+        {
+          "feature": "dte",
+          "value": 0.1313771578875643
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.11906304416045886
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.1141046756210992
+        },
+        {
+          "feature": "rv20",
+          "value": 0.08996242173417007
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0
+        },
+        {
+          "feature": "range20",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_Z60-T2_DIR5-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.38613037738387407
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.196114937753574
+        },
+        {
+          "feature": "ret120",
+          "value": 0.12779781316269578
+        },
+        {
+          "feature": "ret5",
+          "value": 0.11582167066002852
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.09555729262597584
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.07857790841385173
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "range20",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "rv20",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_INTERACT-T2_DIR5-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.38006587871745234
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.19303478957530845
+        },
+        {
+          "feature": "ret120",
+          "value": 0.1257906422357467
+        },
+        {
+          "feature": "X_I09",
+          "value": 0.11263898879122283
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.1085266319718978
+        },
+        {
+          "feature": "ret1",
+          "value": 0.07994306870837192
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "range20",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "rv20",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_STATE-T2_DIR5-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.38613037738387407
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.196114937753574
+        },
+        {
+          "feature": "ret120",
+          "value": 0.12779781316269578
+        },
+        {
+          "feature": "ret5",
+          "value": 0.11582167066002852
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.09555729262597584
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.07857790841385173
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "range20",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "rv20",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_RAW-T2_DIR5-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "rv60",
+          "value": 0.18345607556398913
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.17041497650710483
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.11244953261439707
+        },
+        {
+          "feature": "ret20",
+          "value": 0.06001045182291099
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.052805571917667986
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.04614668091388448
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.04010900697533221
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.03188131556292519
+        },
+        {
+          "feature": "ret60",
+          "value": 0.031009022222352925
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.029923244425399557
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.028981402035797795
+        },
+        {
+          "feature": "dte",
+          "value": 0.02850844011217911
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_Z60-T2_DIR5-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "new_shorts",
+          "value": 0.14924262422483586
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.12020867241902207
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.09106055866718361
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.07541535861746966
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.05534121739444888
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.054973077343760855
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.0512491574852371
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.04173127562289965
+        },
+        {
+          "feature": "ust10_chg5",
+          "value": 0.03725261009797208
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.033085220940702924
+        },
+        {
+          "feature": "ret5",
+          "value": 0.03279705743959972
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.032492337797300576
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_INTERACT-T2_DIR5-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "new_longs",
+          "value": 0.0797797687897451
+        },
+        {
+          "feature": "X_I07",
+          "value": 0.07059677307825725
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.06781007974905592
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.06320344305080938
+        },
+        {
+          "feature": "X_I01",
+          "value": 0.06290094576690988
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.05627424599737507
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.05569287782369057
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.048204429754872866
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.0478700215896492
+        },
+        {
+          "feature": "X_I03",
+          "value": 0.04330921040058463
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.03939482304826521
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.03781971135517463
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_STATE-T2_DIR5-GOLD",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "eia_wow",
+          "value": 0.08218423475231552
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.07885422800756121
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.07719373911966589
+        },
+        {
+          "feature": "ust10_chg5",
+          "value": 0.07222270929117941
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.05889529176087012
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.054841178747557916
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.05265412950921851
+        },
+        {
+          "feature": "ret60",
+          "value": 0.049097747903025915
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.04581072739576992
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.045533463923830335
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.04418956030714106
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.030198860050174765
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M0-REP_RAW-T1_DIR1-OIL",
+      "kind": null,
+      "top": []
+    },
+    {
+      "experiment_id": "V10-M1-REP_RAW-T1_DIR1-OIL",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "new_longs",
+          "value": 0.1684878603865872
+        },
+        {
+          "feature": "ret120",
+          "value": 0.11147460459716257
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.07881593074214435
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.045234631835310936
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.0406929700297687
+        },
+        {
+          "feature": "ret20",
+          "value": 0.03819145793318599
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.0341485951394227
+        },
+        {
+          "feature": "ust10_chg5",
+          "value": 0.03296417660673621
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.030447507563671997
+        },
+        {
+          "feature": "range20",
+          "value": 0.028031537678987146
+        },
+        {
+          "feature": "rv60",
+          "value": 0.015315451611121396
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.015106164473369177
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-OIL",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "roll_yield",
+          "value": 0.20530939655071717
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.1498556572747412
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.13782190125737126
+        },
+        {
+          "feature": "range20",
+          "value": 0.13529979874540934
+        },
+        {
+          "feature": "rv20",
+          "value": 0.08855030461744462
+        },
+        {
+          "feature": "steepening",
+          "value": 0.0836642364127103
+        },
+        {
+          "feature": "ret120",
+          "value": 0.08324202910576187
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.08198410890615809
+        },
+        {
+          "feature": "ret60",
+          "value": 0.07809901888462947
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.06080156450088819
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.05007649131672971
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.046836011039508775
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_INTERACT-T1_DIR1-OIL",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "roll_yield",
+          "value": 0.22828275231223016
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.1731051428278167
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.14514823154742806
+        },
+        {
+          "feature": "ret60",
+          "value": 0.10027221090193517
+        },
+        {
+          "feature": "range20",
+          "value": 0.098978560456848
+        },
+        {
+          "feature": "rv20",
+          "value": 0.0919190762956377
+        },
+        {
+          "feature": "steepening",
+          "value": 0.08284009588052184
+        },
+        {
+          "feature": "ret120",
+          "value": 0.07799382503562972
+        },
+        {
+          "feature": "X_I10",
+          "value": 0.06868937383269616
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.06806208904667922
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.05956476836841278
+        },
+        {
+          "feature": "X_I02",
+          "value": 0.058759134829749815
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_STATE-T1_DIR1-OIL",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "ST_TREND_LOWVOL",
+          "value": 0.2108440792765241
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.1957485547422517
+        },
+        {
+          "feature": "range20",
+          "value": 0.14208337224072703
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.14080343148256486
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.1408021373897736
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.09574024416867737
+        },
+        {
+          "feature": "ST_TREND_HIGHVOL",
+          "value": 0.0944093988949896
+        },
+        {
+          "feature": "ret120",
+          "value": 0.09379546550180064
+        },
+        {
+          "feature": "steepening",
+          "value": 0.08672232375236862
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.07615553829560118
+        },
+        {
+          "feature": "ret60",
+          "value": 0.07490122456532705
+        },
+        {
+          "feature": "ST_RANGE_LOWVOL",
+          "value": 0.06161031445822869
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_RAW-T1_DIR1-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "eia_wow",
+          "value": 0.2653661727852135
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.25767593311176096
+        },
+        {
+          "feature": "rv60",
+          "value": 0.25644164845312006
+        },
+        {
+          "feature": "range20",
+          "value": 0.22051624564990538
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "rv20",
+          "value": 0.0
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_Z60-T1_DIR1-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "atr14_pct",
+          "value": 0.2550812839877679
+        },
+        {
+          "feature": "rv20",
+          "value": 0.21972782577660016
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.16062250781181472
+        },
+        {
+          "feature": "range20",
+          "value": 0.14579128727992702
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.1443409178307796
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.0744361773131105
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_INTERACT-T1_DIR1-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "atr14_pct",
+          "value": 0.2479980570380008
+        },
+        {
+          "feature": "rv20",
+          "value": 0.21362631165207038
+        },
+        {
+          "feature": "X_I06",
+          "value": 0.16951138967267984
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.15616226024568444
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.1403327857438244
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.07236919564774004
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0
+        },
+        {
+          "feature": "range20",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_STATE-T1_DIR1-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "atr14_pct",
+          "value": 0.25508128398776797
+        },
+        {
+          "feature": "rv20",
+          "value": 0.2197278257766002
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.16062250781181475
+        },
+        {
+          "feature": "range20",
+          "value": 0.14579128727992705
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.14434091783077962
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.07443617731311052
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_RAW-T1_DIR1-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "ret5",
+          "value": 0.09490938657950314
+        },
+        {
+          "feature": "ust10_chg5",
+          "value": 0.08802158243483058
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.08152261360367646
+        },
+        {
+          "feature": "dte",
+          "value": 0.06982588918802593
+        },
+        {
+          "feature": "ret120",
+          "value": 0.054333798598484404
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.04894321885134068
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.04417483736409704
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.0432200679410868
+        },
+        {
+          "feature": "range20",
+          "value": 0.04216019891452064
+        },
+        {
+          "feature": "rv20",
+          "value": 0.04206208843962325
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.03872948150230886
+        },
+        {
+          "feature": "rv60",
+          "value": 0.03864708944648251
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_Z60-T1_DIR1-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "ust10_chg5",
+          "value": 0.10290382171101117
+        },
+        {
+          "feature": "steepening",
+          "value": 0.06338618516324275
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.055862112261600344
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.05062650377664413
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.04987733982120291
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.04676254350993309
+        },
+        {
+          "feature": "rv60",
+          "value": 0.04301317228930425
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.042207549481714936
+        },
+        {
+          "feature": "ret5",
+          "value": 0.04219590298807753
+        },
+        {
+          "feature": "ret60",
+          "value": 0.04211741070628196
+        },
+        {
+          "feature": "range20",
+          "value": 0.04123173095742544
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.04049675056726176
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_INTERACT-T1_DIR1-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "ret120",
+          "value": 0.08467485667892967
+        },
+        {
+          "feature": "X_I10",
+          "value": 0.06427808899656443
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.060420006102275235
+        },
+        {
+          "feature": "X_I09",
+          "value": 0.05154389453841317
+        },
+        {
+          "feature": "range20",
+          "value": 0.045051568802854366
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.04473076893311834
+        },
+        {
+          "feature": "rv20",
+          "value": 0.04348780242881142
+        },
+        {
+          "feature": "X_I07",
+          "value": 0.042818904557055795
+        },
+        {
+          "feature": "X_I06",
+          "value": 0.040609900431259616
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.03818331814872353
+        },
+        {
+          "feature": "X_I02",
+          "value": 0.03531440502350547
+        },
+        {
+          "feature": "X_I01",
+          "value": 0.03340066427914702
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_STATE-T1_DIR1-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "new_longs",
+          "value": 0.0704855295612282
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.06544013329685464
+        },
+        {
+          "feature": "rv20",
+          "value": 0.06405257723880396
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.0602538727812114
+        },
+        {
+          "feature": "ret5",
+          "value": 0.05784165676819163
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.05713161186334317
+        },
+        {
+          "feature": "ret120",
+          "value": 0.052757515929011935
+        },
+        {
+          "feature": "range20",
+          "value": 0.05064322567058308
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.04403457738318622
+        },
+        {
+          "feature": "ret1",
+          "value": 0.04305599545351087
+        },
+        {
+          "feature": "steepening",
+          "value": 0.042771640788047925
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.037311208739762625
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M0-REP_RAW-T2_DIR5-OIL",
+      "kind": null,
+      "top": []
+    },
+    {
+      "experiment_id": "V10-M1-REP_RAW-T2_DIR5-OIL",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "ret120",
+          "value": 0.4219945171308489
+        },
+        {
+          "feature": "ret20",
+          "value": 0.1574273224507628
+        },
+        {
+          "feature": "ret60",
+          "value": 0.15237648794513853
+        },
+        {
+          "feature": "month_end",
+          "value": 0.14457717101213666
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.11357130733000267
+        },
+        {
+          "feature": "ust10_chg5",
+          "value": 0.07869634423094754
+        },
+        {
+          "feature": "ret5",
+          "value": 0.07071054975389787
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.06659830735798108
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.059632441418486566
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.055361141066768635
+        },
+        {
+          "feature": "rv60",
+          "value": 0.03808436974995679
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.03754816945946346
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T2_DIR5-OIL",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "roll_yield",
+          "value": 0.25357180982359734
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.24942627735862408
+        },
+        {
+          "feature": "rv20",
+          "value": 0.2473562620757771
+        },
+        {
+          "feature": "range20",
+          "value": 0.1872244960871916
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.1431553885199971
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.1422559434922089
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0930104130967299
+        },
+        {
+          "feature": "ret20",
+          "value": 0.09088033271251171
+        },
+        {
+          "feature": "ret120",
+          "value": 0.08735435670118478
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.07944611672403898
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.07481779808100175
+        },
+        {
+          "feature": "rv60",
+          "value": 0.0696112567249056
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_INTERACT-T2_DIR5-OIL",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "roll_yield",
+          "value": 0.27435849941011875
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.2597643118468451
+        },
+        {
+          "feature": "rv20",
+          "value": 0.2580429173474753
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.16803322270392315
+        },
+        {
+          "feature": "range20",
+          "value": 0.16042534578263737
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.1445046847106982
+        },
+        {
+          "feature": "ret60",
+          "value": 0.13944429570666333
+        },
+        {
+          "feature": "X_I02",
+          "value": 0.09713564615533044
+        },
+        {
+          "feature": "ret20",
+          "value": 0.08593450753114447
+        },
+        {
+          "feature": "ret120",
+          "value": 0.08151126929770025
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.07666686933091296
+        },
+        {
+          "feature": "rv60",
+          "value": 0.07550391689518633
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_STATE-T2_DIR5-OIL",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "ST_RANGE_HIGHVOL",
+          "value": 0.24459063371651882
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.23479842059623798
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.23249589133778473
+        },
+        {
+          "feature": "range20",
+          "value": 0.19227030035418727
+        },
+        {
+          "feature": "rv20",
+          "value": 0.18316732216658035
+        },
+        {
+          "feature": "ST_TREND_LOWVOL",
+          "value": 0.17908787524390657
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.1440463409297291
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.13942484328410135
+        },
+        {
+          "feature": "ret120",
+          "value": 0.09965664315059086
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.08772526815033561
+        },
+        {
+          "feature": "ret60",
+          "value": 0.08627841768344587
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0844144378187685
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_RAW-T2_DIR5-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "rv20",
+          "value": 0.32564869130032154
+        },
+        {
+          "feature": "ret120",
+          "value": 0.2586764508899474
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.1861698294735005
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.13165068487940174
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.09785434345682884
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "range20",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "rv60",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_Z60-T2_DIR5-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "rv20",
+          "value": 0.2957349045955358
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.2530192292535732
+        },
+        {
+          "feature": "range20",
+          "value": 0.2061973945139594
+        },
+        {
+          "feature": "rv60",
+          "value": 0.12268712928158705
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.1223613423553444
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_INTERACT-T2_DIR5-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "rv20",
+          "value": 0.29573490459553586
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.25301922925357323
+        },
+        {
+          "feature": "range20",
+          "value": 0.20619739451395944
+        },
+        {
+          "feature": "rv60",
+          "value": 0.12268712928158708
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.12236134235534442
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M2-REP_STATE-T2_DIR5-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "rv20",
+          "value": 0.29573490459553586
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.25301922925357323
+        },
+        {
+          "feature": "range20",
+          "value": 0.20619739451395944
+        },
+        {
+          "feature": "rv60",
+          "value": 0.12268712928158708
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.12236134235534442
+        },
+        {
+          "feature": "ret1",
+          "value": 0.0
+        },
+        {
+          "feature": "ret5",
+          "value": 0.0
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0
+        },
+        {
+          "feature": "ret60",
+          "value": 0.0
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0
+        },
+        {
+          "feature": "month_end",
+          "value": 0.0
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_RAW-T2_DIR5-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "spread_pct",
+          "value": 0.1424379708837932
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.11577854288848217
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.07872478657341969
+        },
+        {
+          "feature": "rv20",
+          "value": 0.06440642438307029
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.06392142053502217
+        },
+        {
+          "feature": "rv60",
+          "value": 0.06147833086505254
+        },
+        {
+          "feature": "ret120",
+          "value": 0.057224572553447275
+        },
+        {
+          "feature": "ret20",
+          "value": 0.05346829950896488
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.05311898573030751
+        },
+        {
+          "feature": "ret5",
+          "value": 0.051062182091982954
+        },
+        {
+          "feature": "ret60",
+          "value": 0.049749813406947105
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.03676756388447018
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_Z60-T2_DIR5-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "rv60",
+          "value": 0.09858427091638641
+        },
+        {
+          "feature": "rv20",
+          "value": 0.08979005066792431
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.0746121236762489
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.06910861149186777
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.06634754505317648
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.058193908177622176
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.053455812287679094
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.052657377297327036
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.049553187367192233
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.04701678059889168
+        },
+        {
+          "feature": "ret5",
+          "value": 0.03877541437335295
+        },
+        {
+          "feature": "ret20",
+          "value": 0.037716111484978714
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_INTERACT-T2_DIR5-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "backwardation",
+          "value": 0.08879734305153761
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.06658707179799815
+        },
+        {
+          "feature": "rv20",
+          "value": 0.06564128333853995
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.06171565711007378
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.060520525586114905
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.04736743686090564
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.04131239224575002
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.040219871414582234
+        },
+        {
+          "feature": "rv60",
+          "value": 0.036887375890408844
+        },
+        {
+          "feature": "X_I03",
+          "value": 0.03594628062403182
+        },
+        {
+          "feature": "roll_yield",
+          "value": 0.03555479626312163
+        },
+        {
+          "feature": "X_I09",
+          "value": 0.035481074607468584
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M3-REP_STATE-T2_DIR5-OIL",
+      "kind": "gini",
+      "top": [
+        {
+          "feature": "atr14_pct",
+          "value": 0.10010602860441757
+        },
+        {
+          "feature": "rv20",
+          "value": 0.09925640920201317
+        },
+        {
+          "feature": "go_ratio_z60",
+          "value": 0.06788144763966063
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.06384289005598456
+        },
+        {
+          "feature": "cot_z",
+          "value": 0.06088993239974585
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.0557011495659395
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.05377931698586854
+        },
+        {
+          "feature": "eia_wow",
+          "value": 0.05267154130839542
+        },
+        {
+          "feature": "ret20",
+          "value": 0.049014450800831444
+        },
+        {
+          "feature": "eurusd_ret20",
+          "value": 0.045278539478259994
+        },
+        {
+          "feature": "range20",
+          "value": 0.04338011699261923
+        },
+        {
+          "feature": "rv60",
+          "value": 0.040975723461498456
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-ALL_MINUS_FUT",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.1208063138356683
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.11521912764335698
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.09236556045394799
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.08190747088896096
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.06738416419249427
+        },
+        {
+          "feature": "ret5",
+          "value": 0.05387613297297833
+        },
+        {
+          "feature": "ret20",
+          "value": 0.046169853015947546
+        },
+        {
+          "feature": "ret60",
+          "value": 0.04585463630801031
+        },
+        {
+          "feature": "range20",
+          "value": 0.0375796240317289
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.03732191230563648
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.03044232487613145
+        },
+        {
+          "feature": "rv60",
+          "value": 0.022374510041316215
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-ALL_MINUS_OI",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.1687777199172883
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.1199658366615841
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.1014070174680895
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.09158306458927384
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.0770134698554913
+        },
+        {
+          "feature": "steepening",
+          "value": 0.07454511020498916
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.07330269026812801
+        },
+        {
+          "feature": "ret20",
+          "value": 0.05426146776504572
+        },
+        {
+          "feature": "ret5",
+          "value": 0.05003307747722691
+        },
+        {
+          "feature": "ret60",
+          "value": 0.048703567772365744
+        },
+        {
+          "feature": "dte",
+          "value": 0.04589748923442806
+        },
+        {
+          "feature": "range20",
+          "value": 0.040660813757317366
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-ALL_MINUS_PUBLIC",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.17013203934254026
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.10215084737676959
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.09671332716663673
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0914699387295184
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.0878117144571413
+        },
+        {
+          "feature": "steepening",
+          "value": 0.07143612137352423
+        },
+        {
+          "feature": "dte",
+          "value": 0.06426769395748683
+        },
+        {
+          "feature": "ret60",
+          "value": 0.05163460291664853
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.03096571349380556
+        },
+        {
+          "feature": "range20",
+          "value": 0.029760655096184356
+        },
+        {
+          "feature": "ret5",
+          "value": 0.027586610529543636
+        },
+        {
+          "feature": "ret1",
+          "value": 0.024199427632293734
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-ALL_MINUS_XASSET",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.1715610729340259
+        },
+        {
+          "feature": "backwardation",
+          "value": 0.09666531083272815
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.07886016134303313
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.0740084799178988
+        },
+        {
+          "feature": "steepening",
+          "value": 0.0700246371703512
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.06441689226331274
+        },
+        {
+          "feature": "ret5",
+          "value": 0.06381897857717923
+        },
+        {
+          "feature": "range20",
+          "value": 0.0627949408185199
+        },
+        {
+          "feature": "ust10_chg5",
+          "value": 0.04939668546839118
+        },
+        {
+          "feature": "dte",
+          "value": 0.04808056819509418
+        },
+        {
+          "feature": "new_shorts",
+          "value": 0.040364684565121295
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.037365812048575565
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-GOLD-MT5_ONLY",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "month_end",
+          "value": 0.11977722808162582
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.10148354168995659
+        },
+        {
+          "feature": "ret20",
+          "value": 0.08419226794012774
+        },
+        {
+          "feature": "tickvol_z20",
+          "value": 0.07878887898242103
+        },
+        {
+          "feature": "ret60",
+          "value": 0.04500290036026521
+        },
+        {
+          "feature": "ret5",
+          "value": 0.030900787754131635
+        },
+        {
+          "feature": "ret120",
+          "value": 0.026637356440029243
+        },
+        {
+          "feature": "range20",
+          "value": 0.024638641908781348
+        },
+        {
+          "feature": "ret1",
+          "value": 0.023076064419536635
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.022352572669306184
+        },
+        {
+          "feature": "rv20",
+          "value": 0.017418274470164176
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.014069053995214858
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-OIL-ALL_MINUS_FUT",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "range20",
+          "value": 0.12672201222517504
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.11915995104374448
+        },
+        {
+          "feature": "rv20",
+          "value": 0.08979426225399079
+        },
+        {
+          "feature": "ret120",
+          "value": 0.08523089210929774
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.07548142594192604
+        },
+        {
+          "feature": "ret60",
+          "value": 0.05965836427755729
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.059047605772637596
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.05340440872002132
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.04057211329016606
+        },
+        {
+          "feature": "ret20",
+          "value": 0.0388647353139648
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.03740905983112925
+        },
+        {
+          "feature": "month_end",
+          "value": 0.03635791303447241
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-OIL-ALL_MINUS_OI",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "roll_yield",
+          "value": 0.23214525085011894
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.1853051090615357
+        },
+        {
+          "feature": "range20",
+          "value": 0.1289931438392448
+        },
+        {
+          "feature": "rv20",
+          "value": 0.08927892983541383
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.07999337729784016
+        },
+        {
+          "feature": "ret120",
+          "value": 0.0790501328806206
+        },
+        {
+          "feature": "ret60",
+          "value": 0.07400894068434127
+        },
+        {
+          "feature": "steepening",
+          "value": 0.07105593819572503
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.04735609574878727
+        },
+        {
+          "feature": "iv_z",
+          "value": 0.047173908971512794
+        },
+        {
+          "feature": "ret1",
+          "value": 0.043395422637176655
+        },
+        {
+          "feature": "rv60",
+          "value": 0.03972566660783568
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-OIL-ALL_MINUS_PUBLIC",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "roll_yield",
+          "value": 0.1626100988983396
+        },
+        {
+          "feature": "range20",
+          "value": 0.13760168473867584
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.13575805535200466
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.10394764056519892
+        },
+        {
+          "feature": "rv20",
+          "value": 0.09637281981775354
+        },
+        {
+          "feature": "steepening",
+          "value": 0.08392766320631657
+        },
+        {
+          "feature": "ret120",
+          "value": 0.07818290020692338
+        },
+        {
+          "feature": "ret60",
+          "value": 0.07580258837524102
+        },
+        {
+          "feature": "ret20",
+          "value": 0.06486619466725528
+        },
+        {
+          "feature": "ret5",
+          "value": 0.061721034749587095
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.057804208180258713
+        },
+        {
+          "feature": "ret1",
+          "value": 0.05572327557391361
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-OIL-ALL_MINUS_XASSET",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "roll_yield",
+          "value": 0.2211641539980486
+        },
+        {
+          "feature": "curve_slope",
+          "value": 0.16339267629046175
+        },
+        {
+          "feature": "oi_change",
+          "value": 0.13636215303905158
+        },
+        {
+          "feature": "range20",
+          "value": 0.11352401312578228
+        },
+        {
+          "feature": "rv20",
+          "value": 0.09382118992255162
+        },
+        {
+          "feature": "ret120",
+          "value": 0.08740448157455692
+        },
+        {
+          "feature": "steepening",
+          "value": 0.08234623770495852
+        },
+        {
+          "feature": "cot_wow",
+          "value": 0.0797306778836573
+        },
+        {
+          "feature": "ret60",
+          "value": 0.07389884727041304
+        },
+        {
+          "feature": "atr14_pct",
+          "value": 0.05999565716326932
+        },
+        {
+          "feature": "new_longs",
+          "value": 0.05104074723294364
+        },
+        {
+          "feature": "month_end",
+          "value": 0.044402654830237316
+        }
+      ]
+    },
+    {
+      "experiment_id": "V10-M1-REP_Z60-T1_DIR1-OIL-MT5_ONLY",
+      "kind": "abs_coef",
+      "top": [
+        {
+          "feature": "range20",
+          "value": 0.12727760676932762
+        },
+        {
+          "feature": "rv20",
+          "value": 0.09762258350389146
+        },
+        {
+          "feature": "ret120",
+          "value": 0.07679157613211973
+        },
+        {
+          "feature": "ret20",
+          "value": 0.07668957984887843
+        },
+        {
+          "feature": "ret5",
+          "value": 0.05434479661173334
+        },
+        {
+          "feature": "ret1",
+          "value": 0.04664932526627966
+        },
+        {
+          "feature": "ret60",
+          "value": 0.043898897261941426
+        },
+        {
+          "feature": "rv60",
+          "value": 0.0415621132376814
+        },
+        {
+          "feature": "usdjpy_ret20",
+          "value": 0.03882241541627761
+        },
+        {
+          "feature": "spread_pct",
+          "value": 0.03361420020901577
+        },
+        {
+          "feature": "other_ret20",
+          "value": 0.028844418570045847
+        },
+        {
+          "feature": "month_end",
+          "value": 0.026882954235796258
+        }
+      ]
+    }
+  ]
+}
