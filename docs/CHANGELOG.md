@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V11 Alpha Capital Allocation
+
+- Review only. No experiment. No purchase. Spend $0.
+- NEXT = CHINA_A_SHARE_RESEARCH_UNIVERSE. Freeze MT5 alpha search. Do not buy options or Databento.
+- Entry: `docs/research_engine/V11_DECISION.md`.
+
 ## 2026-08-30 — V10 Model Discovery STOP B
 
 - Locked 4 families × representations × 2 targets × GOLD/OIL. 62 experiments. FDR 0/62.

@@ -809,6 +809,20 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V11 Alpha Capital Allocation — 2026-08-30
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_v11_alloc.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| V11 coverage / next-path / no-spend 单元 | ✅ **4 PASS** |
+| NEXT | `CHINA_A_SHARE_RESEARCH_UNIVERSE` |
+| 新实验 / 采购 | 无 |
+| 花费 | $0 |
+| Final OOS | ✅ 未访问 |
+
+不是交易许可。不是年化 10%。不要买 Options。下一工作 = A股免费数据层。
+
 ## V10 Model Discovery — 2026-08-30 STOP B
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_v10_model.py --import-mode=importlib`

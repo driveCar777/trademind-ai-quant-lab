@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-30 (V10 Model Discovery STOP B：MODEL_REPRESENTATION_EXHAUSTED；FDR 0/62；PURCHASE=NO；Level=0；Candidate=0)  
+> **更新时间:** 2026-08-30 (V11 Capital Allocation：NEXT=CHINA_A_SHARE_RESEARCH_UNIVERSE；PURCHASE=NO；Level=0；Candidate=0)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -350,6 +350,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **V9 Master Backtest FACT 2026-08-30 STOP B：** 现有锁定机制已统一 NEXT_BAR_OPEN 重播。Level=0。Candidate=0。无 Positive Reproducible Strategy。HYP-0001 = PREDICTIVE_ONLY。Databento $31.82 未产生 Candidate。不买数据。$93 = UNUSED_RESEARCH_RESERVE。下一方向 = model / information representation review。见 `V9_DECISION.md`。
 - **V10 Model Discovery FACT 2026-08-30 START：** 不是采购任务。不是重开 RSI/MA/OI/DTE。假设：已有 information set 可能含简单规则未捕获的非线性 / 交互结构。MODEL ≠ ALPHA。NEW_DATA_PURCHASE=FALSE。Final OOS DENIED。见 `V10_START.md`。
 - **V10 Model Discovery FACT 2026-08-30 STOP B：** 62 个锁定实验。21 个 validation 相对 M0 有预测优势。FDR 0/62。Level=0。Candidate=0。`MODEL_REPRESENTATION_EXHAUSTED`。不买 Options。不花 $93。不要改 target 后重跑。见 `V10_DECISION.md`。
+- **V11 Capital Allocation FACT 2026-08-30：** 不是新实验、不是采购。MT5 alpha 边际价值低。`NEXT_PRIMARY_RESEARCH_PATH = CHINA_A_SHARE_RESEARCH_UNIVERSE`。先做免费 BaoStock 数据层。不买 Options / Databento / Tushare。$93 = reserve。见 `V11_DECISION.md`。
 
 ---
 
@@ -442,6 +443,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P60 | V8.4 Full-Year Options Occupancy Census | DONE PURCHASE=NO（251日；LO A / OG B；未下载；Level 0；Candidate=0） |
 | P61 | V9 Existing Data Master Backtest | DONE STOP B（已重播；无 Positive Reproducible；PURCHASE=NO；Level 0；Candidate=0） |
 | P62 | V10 Model Discovery | DONE STOP B（`MODEL_REPRESENTATION_EXHAUSTED`；FDR 0/62；PURCHASE=NO；Level 0；Candidate=0） |
+| P63 | V11 Alpha Capital Allocation | DONE（NEXT=A股研究宇宙；PURCHASE=NO；未跑新实验） |
 
 ---
 

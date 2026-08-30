@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-30（V10 Model Discovery STOP B；MODEL_REPRESENTATION_EXHAUSTED；PURCHASE=NO；Level 0；Candidate=0）  
+**最后更新：** 2026-08-30（V11 Capital Allocation；NEXT=A股研究宇宙；PURCHASE=NO；Level 0；Candidate=0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + **V10 Model Discovery STOP B** |
-| 状态 | Level 0。Candidate=0。`MODEL_REPRESENTATION_EXHAUSTED`。简单规则与受控模型均为 0。不买数据。 |
-| 当前 Phase | STOP B。下一方向由人类决定。$93 = UNUSED_RESEARCH_RESERVE。 |
+| 版本 | **V11.7** + … + **V11 Capital Allocation** |
+| 状态 | Level 0。Candidate=0。MT5 alpha 搜索冻结。下一宇宙 = 中国 A 股（免费数据层）。不买数据。 |
+| 当前 Phase | NEXT = CHINA_A_SHARE_RESEARCH_UNIVERSE。$93 = UNUSED_RESEARCH_RESERVE。 |
 
 ---
 

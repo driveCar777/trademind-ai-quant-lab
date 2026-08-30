@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V10 Model Discovery **STOP B**。不要买数据。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；MODEL_REPRESENTATION_EXHAUSTED）
-> **阶段终点:** 锁定模型族已跑完。下一方向由人类决定（Options / Macro Surprise / News / 新交易宇宙）。禁止自动买。禁止改 target 后重跑。
+> **当前活跃模块:** V11 Capital Allocation **DONE**。不要买数据。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；NEXT=CHINA_A_SHARE_RESEARCH_UNIVERSE）
+> **阶段终点:** MT5 alpha 搜索冻结。下一宇宙 = A股数据层（免费 BaoStock）。禁止自动买 Options / Databento / Tushare。禁止重开已杀死 MT5 家族。
 
 ---
 
@@ -57,6 +57,15 @@
 | MISSION V8.4 | Full-year options occupancy census | ✅ PURCHASE=NO | 2026-08-30 |
 | MISSION V9.0 | Existing data master backtest | ✅ STOP B | 2026-08-30 |
 | MISSION V10.0 | Model discovery / information representation | ✅ STOP B | 2026-08-30 |
+| MISSION V11.0 | Alpha capital allocation / next-market decision | ✅ DONE | 2026-08-30 |
+
+## V11 Capital Allocation — 2026-08-30
+
+- Not an experiment. Not a purchase. Spend = $0.
+- `NEXT_PRIMARY_RESEARCH_PATH = CHINA_A_SHARE_RESEARCH_UNIVERSE`
+- TOP 2 = LO options $11.99 (human later only). TOP 3 = macro surprise (no vendor now).
+- Reports: `V11_DECISION.md` / `V11_ALPHA_CAPITAL_ALLOCATION.md` / `V11_MT5_ALPHA_EXHAUSTION.md` / `V11_MARKET_UNIVERSE_COMPARISON.md`
+- Machine: `data/market/research_engine/V11_*.json`
 
 ## V10 Model Discovery — STOP B 2026-08-30
 
