@@ -815,7 +815,7 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 | 项 | 结果 |
 |----|------|
-| no-purchase / new dataset / 2015-04-30 / disk / price gate / delist mutation / error class | 待跑 |
+| no-purchase / new dataset / 2015-04-30 / disk / price gate / delist mutation / error class | ✅ **7 PASS** |
 | 全日线盘 | 单 session raw-first，supervisor 收到 5549 后自动 compile |
 | 2015-04-30 | INVALID（PIT listing-window=2695） |
 | PRICE_ALPHA | CONDITIONAL 直至 5549 + PIT + survivorship + integrity |
