@@ -1,0 +1,20 @@
+{
+  "NEW_PURCHASE": false,
+  "coverage": {
+    "n_equity": 5549,
+    "n_equity_delisted": 337,
+    "n_rows": 8928
+  },
+  "dataset_id": "tm-cn-a-BASIC-20260830-000001",
+  "files": {
+    "csv": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\reference\\tm-cn-a-BASIC-20260830-000001.csv",
+    "raw_json": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\raw\\basics\\tm-cn-a-BASIC-20260830-000001.json"
+  },
+  "hash": "bb043de4e0dce7adac3a89c40fe61a37fb01e54902bd5a890f39cb2be92e4292",
+  "immutable_raw": true,
+  "kind": "SECURITY_BASIC",
+  "license": "BAOSTOCK_FREE_NO_KEY",
+  "retrieved_at": "2026-08-30T10:00:00Z",
+  "schema_version": "12.0",
+  "source": "BAOSTOCK"
+}

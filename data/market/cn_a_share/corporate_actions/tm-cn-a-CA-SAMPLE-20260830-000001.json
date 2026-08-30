@@ -1,0 +1,113 @@
+{
+  "adjust_factor": [
+    {
+      "adjustFactor": "6.396403",
+      "backAdjustFactor": "6.396403",
+      "code": "sh.600519",
+      "dividOperateDate": "2018-06-15",
+      "foreAdjustFactor": "0.834032"
+    },
+    {
+      "adjustFactor": "6.491130",
+      "backAdjustFactor": "6.491130",
+      "code": "sh.600519",
+      "dividOperateDate": "2019-06-28",
+      "foreAdjustFactor": "0.846383"
+    },
+    {
+      "adjustFactor": "6.566931",
+      "backAdjustFactor": "6.566931",
+      "code": "sh.600519",
+      "dividOperateDate": "2020-06-24",
+      "foreAdjustFactor": "0.856267"
+    },
+    {
+      "adjustFactor": "6.628762",
+      "backAdjustFactor": "6.628762",
+      "code": "sh.600519",
+      "dividOperateDate": "2021-06-25",
+      "foreAdjustFactor": "0.864329"
+    },
+    {
+      "adjustFactor": "6.700286",
+      "backAdjustFactor": "6.700286",
+      "code": "sh.600519",
+      "dividOperateDate": "2022-06-30",
+      "foreAdjustFactor": "0.873655"
+    },
+    {
+      "adjustFactor": "6.785630",
+      "backAdjustFactor": "6.785630",
+      "code": "sh.600519",
+      "dividOperateDate": "2022-12-27",
+      "foreAdjustFactor": "0.884783"
+    },
+    {
+      "adjustFactor": "0.988591",
+      "backAdjustFactor": "6.889798",
+      "code": "sh.600519",
+      "dividOperateDate": "2023-06-30",
+      "foreAdjustFactor": "0.898366"
+    },
+    {
+      "adjustFactor": "6.889798",
+      "backAdjustFactor": "6.889798",
+      "code": "sh.600519",
+      "dividOperateDate": "2023-07-03",
+      "foreAdjustFactor": "0.898366"
+    },
+    {
+      "adjustFactor": "6.969311",
+      "backAdjustFactor": "6.969311",
+      "code": "sh.600519",
+      "dividOperateDate": "2023-12-20",
+      "foreAdjustFactor": "0.908734"
+    },
+    {
+      "adjustFactor": "7.113689",
+      "backAdjustFactor": "7.113689",
+      "code": "sh.600519",
+      "dividOperateDate": "2024-06-19",
+      "foreAdjustFactor": "0.927559"
+    },
+    {
+      "adjustFactor": "7.224927",
+      "backAdjustFactor": "7.224927",
+      "code": "sh.600519",
+      "dividOperateDate": "2024-12-20",
+      "foreAdjustFactor": "0.942063"
+    },
+    {
+      "adjustFactor": "7.366525",
+      "backAdjustFactor": "7.366525",
+      "code": "sh.600519",
+      "dividOperateDate": "2025-06-26",
+      "foreAdjustFactor": "0.960527"
+    },
+    {
+      "adjustFactor": "7.491968",
+      "backAdjustFactor": "7.491968",
+      "code": "sh.600519",
+      "dividOperateDate": "2025-12-19",
+      "foreAdjustFactor": "0.976883"
+    }
+  ],
+  "dividend_2023": [
+    {
+      "code": "sh.600519",
+      "dividAgmPumDate": "2023-06-14",
+      "dividCashPsAfterTax": "23.3199或25.911",
+      "dividCashPsBeforeTax": "25.911",
+      "dividCashStock": "10派259.11元（含税，扣税后233.199或259.11元）",
+      "dividOperateDate": "2023-06-30",
+      "dividPayDate": "2023-06-30",
+      "dividPlanAnnounceDate": "2023-03-31",
+      "dividPlanDate": "2023-06-26",
+      "dividPreNoticeDate": "",
+      "dividRegistDate": "2023-06-29",
+      "dividReserveToStockPs": "",
+      "dividStockMarketDate": "",
+      "dividStocksPs": "0.000000"
+    }
+  ]
+}
