@@ -57,6 +57,25 @@ def listed_on(basic, asof):
     return True
 
 
+def from_basic_csv_row(row):
+    listing, listing_known = unknown_if_blank(row.get("listing_date"))
+    delist, delist_known = unknown_if_blank(row.get("delisting_date"))
+    inst = row.get("instrument_type") or ""
+    known = str(row.get("listing_date_known")).lower() in ("true", "1", "yes")
+    dknown = str(row.get("delisting_date_known")).lower() in ("true", "1", "yes")
+    return {
+        "symbol": row.get("symbol"),
+        "name": row.get("name"),
+        "listing_date": listing if listing_known or known else listing,
+        "delisting_date": delist if delist_known or dknown else delist,
+        "listing_date_known": listing_known or known,
+        "delisting_date_known": delist_known or dknown,
+        "instrument_type": inst,
+        "type_code": "1" if inst == "EQUITY" else "",
+        "status": row.get("status"),
+    }
+
+
 def asof_from_snapshot(snapshot_rows, asof):
     """query_all_stock(day=asof) is the vendor as-of list. Filter equities."""
     out = []

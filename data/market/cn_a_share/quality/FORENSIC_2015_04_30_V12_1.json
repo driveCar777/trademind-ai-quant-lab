@@ -1,0 +1,68 @@
+{
+  "asof": "2015-04-30",
+  "copied_neighbor": false,
+  "hypotheses": [
+    {
+      "id": "SESSION_TRUNCATION",
+      "likely": true,
+      "note": "First V12 session died while a second login ran the delist census. Neighbors 3217/3291. This as-of stuck at 2000."
+    },
+    {
+      "id": "VENDOR_PAGE_CAP_2000",
+      "likely": true,
+      "note": "Exactly 2000 is suspicious as a page size. Other as-ofs returned 3611 and 7366, so it is not a global cap."
+    },
+    {
+      "id": "REAL_UNIVERSE_SIZE",
+      "likely": false,
+      "note": "Listing-window PIT count is 2695, not 2000."
+    }
+  ],
+  "interpolated": false,
+  "listing_window": {
+    "n_equity_master": 5549,
+    "n_pit_from_listing": 2695
+  },
+  "live_refetch": {
+    "attempted": false,
+    "reason": "Prior live query_all_stock(2015-04-30) hung. Not retried in-process."
+  },
+  "n_all_recorded": 2000,
+  "neighbors": {
+    "2015-03-31": {
+      "n_active_equity": 2665,
+      "n_all": 3217,
+      "symbol_list_hash": "61f9fc403963f17f923a7f3852f05711f7290de85b41fc96b917932af633aa02"
+    },
+    "2015-04-30": {
+      "n_active_equity": 1774,
+      "n_all": 2000,
+      "symbol_list_hash": "4b9eb0942590191a2bea883c79019680d399d4e1223a6ee2b865f9442af81514"
+    },
+    "2015-05-29": {
+      "n_active_equity": 2736,
+      "n_all": 3291,
+      "symbol_list_hash": "da66b7e53107c5a7bd3ebde52aa75ef731af174c56d8f282baeb7b74dd2359dd"
+    }
+  },
+  "repair": "Keep INVALID until a live query returns a count near the listing-window and neighbors.",
+  "status": "INVALID",
+  "truncated_snapshot": {
+    "exactly_2000_vendor_rows": null,
+    "exists": true,
+    "first": [
+      "sh.600000",
+      "sh.600004",
+      "sh.600005"
+    ],
+    "last": [
+      "sz.002271",
+      "sz.002272",
+      "sz.002273"
+    ],
+    "n_declared": 1774,
+    "n_symbols": 1774,
+    "path": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\raw\\universe\\asof_2015-04-30.json"
+  },
+  "use": "DO_NOT_USE_AS_SIZE_FACT"
+}
