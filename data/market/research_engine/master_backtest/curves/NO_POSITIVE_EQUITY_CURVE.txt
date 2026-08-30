@@ -1,0 +1,5 @@
+NO_POSITIVE_EQUITY_CURVE
+
+Layer folders are reporting-sort leftovers only.
+They are POSITIVE_BUT_WEAK or historically FALSIFIED / LEVEL_LEAK.
+They are not Positive Reproducible Strategies and not Level 1 Candidates.
