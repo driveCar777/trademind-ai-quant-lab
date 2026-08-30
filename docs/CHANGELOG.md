@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-30 — V10 Model Discovery START
+
+- Controlled nonlinear / interaction representation of the current information set.
+- No purchase. No new download. Final OOS denied. MODEL is not assumed to be alpha.
+- Entry: `docs/research_engine/V10_START.md`.
+
 ## 2026-08-30 — V9 Master Backtest STOP B
 
 - Replayed locked mechanisms into one MT5 NEXT_BAR_OPEN ledger. No purchase. No new hypotheses.

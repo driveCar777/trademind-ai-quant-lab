@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V9 Master Backtest **STOP B**。不要买数据。
-> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；无 Positive Reproducible）
-> **阶段终点:** 现有机制已重播。下一方向 = model / information representation review。禁止自动买 Options / Pack。
+> **当前活跃模块:** V10 Model Discovery **IN PROGRESS**。不要买数据。
+> **最后更新:** 2026-08-30（Level=0；Candidate=0；$0；受控非线性模型）
+> **阶段终点:** LEVEL1 Candidate 或 MODEL_REPRESENTATION_EXHAUSTED。禁止自动买 Options / Pack。禁止改 target 后重跑。
 
 ---
 
@@ -56,6 +56,14 @@
 | MISSION V8.3 | Options historical feasibility (metadata occupancy) | ✅ PURCHASE=NO | 2026-08-30 |
 | MISSION V8.4 | Full-year options occupancy census | ✅ PURCHASE=NO | 2026-08-30 |
 | MISSION V9.0 | Existing data master backtest | ✅ STOP B | 2026-08-30 |
+| MISSION V10.0 | Model discovery / information representation | 🔄 IN PROGRESS | 2026-08-30 |
+
+## V10 Model Discovery — START 2026-08-30
+
+- Hypothesis: existing information may contain nonlinear / interaction structure missed by simple rules.
+- MODEL ≠ ALPHA. No purchase. No new download. Final OOS DENIED.
+- Phases: START → FEATURE_INVENTORY → MODEL_CONTRACT → BASELINE → MODEL_RUN → ATTRIBUTION → ABLATION → TRADING_REPLAY → AUDIT → DECISION
+- Entry: `docs/research_engine/V10_START.md`
 
 ## V9 Master Backtest — STOP B 2026-08-30
 
