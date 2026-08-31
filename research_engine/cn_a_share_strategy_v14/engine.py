@@ -38,8 +38,7 @@ def daily_return(close):
     return out
 
 
-def vol_score(close, lookback):
-    """Population window std of raw close returns, negated. Local cumsum, not V13 _rolling_sum."""
+def _vol_block(close, lookback):
     ret = daily_return(close)
     valid = np.isfinite(ret)
     x0 = np.where(valid, ret, 0.0)
@@ -55,8 +54,16 @@ def vol_score(close, lookback):
     s[:lookback] = np.nan
     var = s2 / float(lookback) - (s / float(lookback)) ** 2
     good = cnt == lookback
-    vol = np.sqrt(np.maximum(var, 0.0))
-    return np.where(good, -vol, np.nan)
+    return np.where(good, -np.sqrt(np.maximum(var, 0.0)), np.nan)
+
+
+def vol_score(close, lookback, chunk=400):
+    """Population window std of raw close returns, negated. Column chunks keep RAM down."""
+    t, n = close.shape
+    out = np.full((t, n), np.nan, dtype=np.float64)
+    for j in range(0, n, chunk):
+        out[:, j : j + chunk] = _vol_block(close[:, j : j + chunk], lookback)
+    return out
 
 
 def eligible(pack, lookback):
