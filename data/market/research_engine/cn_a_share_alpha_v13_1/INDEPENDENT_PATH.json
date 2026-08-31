@@ -1,0 +1,26 @@
+{
+  "H11": {
+    "path_b_agrees": true,
+    "determinism": true,
+    "match_original": true,
+    "elig_match": true,
+    "score_max_abs_diff": 3.789161909587002e-13,
+    "path_a_research_hash": "9ce5fb07ea98e70e321f5d953f8124151beda598a0f6b019ca019676e8d5b9a0",
+    "path_a_validation_hash": "abeba0393217ee1e968afbb7b53012dd46dba58a516448500b0d0c50f0399d0e",
+    "n_path_a_trades": 172,
+    "n_path_b_trades": 172,
+    "tolerance": 1e-08
+  },
+  "H12": {
+    "path_b_agrees": true,
+    "determinism": true,
+    "match_original": true,
+    "elig_match": true,
+    "score_max_abs_diff": 5.6576271445507587e-14,
+    "path_a_research_hash": "b9da126cd5f9045c7f4ce08e8de191c8eb1f7984dfe23476f48eefbc4b374729",
+    "path_a_validation_hash": "0fca6984c82cd21e82b23643d487fd67186bbc679bfab347e4c1053a26e82818",
+    "n_path_a_trades": 172,
+    "n_path_b_trades": 172,
+    "tolerance": 1e-08
+  }
+}
