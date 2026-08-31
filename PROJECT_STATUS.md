@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-31（V14.1 METHODOLOGY_GAP_CONFIRMED；无采购；不要优化；不要 LV）  
+**最后更新：** 2026-08-31（V16 IN PROGRESS：财务/行业 PIT；无采购）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V14.1 Candidate → Strategy Forensics** |
-| 状态 | `METHODOLOGY_GAP_CONFIRMED`。Candidate 正、资金账户负。会计正确。不是 hidden edge。 |
-| 当前 Phase | 本波 STOP。NEXT = KEEP_CANDIDATE_STRATEGY_WEAK_NO_LONG_VALIDATION。不要 Paper。不要调参。Final OOS DENIED。$93 = UNUSED_RESEARCH_RESERVE。 |
+| 版本 | **V16 Financial / Industry PIT** |
+| 状态 | IN PROGRESS。价格盘仍引用 `tm-ashare-EQUITY-D1-20260830-000002`。不重开 H11/H12。 |
+| 当前 Phase | Source audit → financial factory → PIT → readiness → 最多 6 条财务假设（若 READY）。无采购。Final OOS DENIED。 |
 
 ---
 

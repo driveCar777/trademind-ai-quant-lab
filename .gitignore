@@ -69,6 +69,14 @@ data/market/research_engine/cn_a_share_alpha_v13_1/*_EQUITY.json
 data/market/research_engine/cn_a_share_alpha_v13_1/*_TRADES.json
 data/market/research_engine/cn_a_share_strategy_v14/**/TRADE_LEDGER_FULL.csv
 data/market/research_engine/cn_a_share_strategy_v14_1/**/TRADE_LEDGER_FULL.csv
+data/market/cn_a_share/financial/raw/
+data/market/cn_a_share/financial/normalized/
+data/market/cn_a_share/financial/pit/
+data/market/cn_a_share/industry/raw/
+data/market/cn_a_share/industry/normalized/
+data/market/cn_a_share/industry/pit/
+data/market/research_engine/cn_a_share_information_v16/EQUITY/
+data/market/research_engine/cn_a_share_information_v16/TRADES/
 
 # HuggingFace / model caches
 **/.cache/

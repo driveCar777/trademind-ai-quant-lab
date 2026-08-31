@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V14.1 Candidate→Strategy Forensics **DONE**。不要优化。不要 Long Validation。不要第13个因子。不要 Paper。
-> **最后更新:** 2026-08-31（METHODOLOGY_GAP_CONFIRMED；Level=1；Candidate=2；$0）
-> **阶段终点:** 本波已 STOP。NEXT = KEEP_CANDIDATE_STRATEGY_WEAK_NO_LONG_VALIDATION。Final OOS DENIED。
+> **当前活跃模块:** V16 Financial/Industry PIT **IN PROGRESS**。不要优化 H11/H12。不要采购。不要挖价格因子。
+> **最后更新:** 2026-08-31（V16 已开；V15 NO_NEW_CANDIDATE 仍有效；$0）
+> **阶段终点:** 自动推进到 Candidate / 信息域耗尽 / 付费门。Final OOS DENIED。
 
 ---
 
@@ -65,6 +65,15 @@
 | MISSION V13.1 | H11/H12 candidate reproduction | ✅ SURVIVED×2 | 2026-08-31 |
 | MISSION V14.0 | H11/H12 strategy construction | ✅ WEAK_BUT_RESEARCHABLE | 2026-08-31 |
 | MISSION V14.1 | Candidate→Strategy forensics | ✅ METHODOLOGY_GAP_CONFIRMED | 2026-08-31 |
+| MISSION V15.0 | Second independent A-share CS alpha | ✅ NO_NEW_CANDIDATE | 2026-08-31 |
+
+## V15 A-share Alpha V2 — 2026-08-31 NO_NEW_CANDIDATE
+
+- Same frozen panel `tm-ashare-EQUITY-D1-20260830-000002`. 9 pre-registered hypotheses. Dual books.
+- Result: 0 new Level-1 Candidate. Validation capital negative on all 9. H11/H12 KEEP_LOW_PRIORITY.
+- Review: `PRICE_ONLY_INDEPENDENT_ALPHA_MARGINALLY_EXHAUSTED`. Do not buy data. Do not retune.
+- Reports: `A_SHARE_ALPHA_V2_DECISION.md` / `A_SHARE_PRICE_ALPHA_REVIEW_V2.md`
+- Machine: `data/market/research_engine/cn_a_share_alpha_v2/`
 
 ## V12 A-share PIT Foundation — CONDITIONAL 2026-08-30
 

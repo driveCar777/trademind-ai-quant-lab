@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-31 (V14.1 METHODOLOGY_GAP_CONFIRMED：Candidate 正、资金账户负；不优化；Final OOS DENIED)  
+> **更新时间:** 2026-08-31 (V16 IN PROGRESS：财务/行业 PIT；不采购；不重开 H11/H12)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -363,6 +363,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **V14 Strategy FACT 2026-08-31 START：** 只把 H11/H12 做成 Canonical Strategy。LOW_VOL_CANDIDATE_CLUSTER。不买数据。见 `V14_START.md`。
 - **V14 Strategy FACT 2026-08-31 DECISION：** `STRATEGY_WEAK_BUT_RESEARCHABLE`。20 日资金账户 2010–validation 为负（约 −16% / −11%，MaxDD −66%）。验证期新开 CAGR 约 0.12% / 0.74%。不是 10%。H11/H12 相关 0.994，一个 cluster。不要调参。不要 Paper。见 `A_SHARE_STRATEGY_DECISION_V14.md`。
 - **V14.1 Forensics FACT 2026-08-31 DECISION：** `METHODOLOGY_GAP_CONFIRMED`。Candidate overlapping `mean_net_h` 复现（Path A/B err=0）。独立资金引擎复现 V14 终点（H11 834,202.89 / H12 883,505.87）。会计正确。正的 Candidate 不是资金曲线：重叠均值年化 vs 非重叠复利 + 左尾 AM-GM。20 个 offset grid 全部亏。无 double charge。无 unfilled/limit bug。不要 Long Validation。不要调参。见 `V14_1_DECISION.md`。
+- **V15 Alpha V2 FACT 2026-08-31 DECISION：** `NO_NEW_CANDIDATE`。同一冻结盘 9 条预注册（残差 / 分化状态 / 价量分歧）。双账本。BH-FDR 6/9 相对 EW 发现，**0/9 Level 1**。全部验证资金账户为负。残差与 H11/H12 预测相关 ≈ 0.90–0.94，不是独立 Alpha。H11/H12 KEEP_LOW_PRIORITY。Review：`PRICE_ONLY_INDEPENDENT_ALPHA_MARGINALLY_EXHAUSTED`。不要买 $93。不要第10条。不要翻号。见 `A_SHARE_ALPHA_V2_DECISION.md`。
+- **V16 Information FACT 2026-08-31 START：** 打开财务/行业信息层。无采购。不重开 H11/H12。不挖价格因子。Final OOS DENIED。见 `A_SHARE_INFORMATION_EXPANSION_V16.md`。
 
 ---
 
@@ -463,6 +465,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P68 | V13.1 H11/H12 candidate reproduction | DONE CANDIDATE_SURVIVED×2（弱；Final OOS DENIED） |
 | P69 | V14 H11/H12 strategy construction | DONE WEAK_BUT_RESEARCHABLE（不优化；Final OOS DENIED） |
 | P70 | V14.1 Candidate→Strategy forensics | DONE METHODOLOGY_GAP_CONFIRMED（不优化；不要 LV；Final OOS DENIED） |
+| P71 | V15 second independent A-share CS alpha | DONE NO_NEW_CANDIDATE（9/9 验证资金负；不采购；Final OOS DENIED） |
+| P72 | V16 financial/industry PIT + controlled alpha | IN PROGRESS（无采购；不重开 H11/H12） |
 
 ---
 

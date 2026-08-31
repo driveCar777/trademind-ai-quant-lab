@@ -206,6 +206,8 @@ POST /task → requests.post() → indicator-worker → RSI → 保存结果 →
 V11：MT5 日线样本内外回测 + 风控证伪。`survived` 不是年化保证。
 **V14 STRATEGY_WEAK_BUT_RESEARCHABLE。** 可执行但弱。  
 **V14.1 METHODOLOGY_GAP_CONFIRMED。** Candidate overlapping statistic ≠ 资金账户。不要 Long Validation。不要改 lookback/hold/分位。不要第13个因子。不要组合当两个 alpha。不要为 10% 调参。财务/行业/事件 BLOCKED。无采购。Final OOS DENIED。
+**V15 NO_NEW_CANDIDATE。** 9/9 验证资金账户为负。没有第二个独立 Alpha。不要重开 residual / dispersion / disagreement。不要优化 H11/H12。`PRICE_ONLY_INDEPENDENT_ALPHA_MARGINALLY_EXHAUSTED`。不要买 $93。不要第10条。
+**V16 IN PROGRESS。** 财务/行业 PIT。无采购。不重开 H11/H12。不挖价格因子。行业无 effective date 则 INDUSTRY_PIT_BLOCKED。
 FINAL_OOS 仍未锁。HYP-0001 14:11 未改。不要 order_send。不要回头调 XA / RT / XR / IT / TS / MS / RI / AMS / IV / POS / INV / RATES / CARRY / SUP / CM / UM / BREADTH / SIZE。不要无 Candidate 写策略。
 
 ---

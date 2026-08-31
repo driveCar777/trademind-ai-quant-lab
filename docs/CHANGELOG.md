@@ -4,6 +4,18 @@
 
 ---
 
+## 2026-08-31 — V16 financial/industry information START
+
+- Open blocked Financial / Industry layers on free BaoStock. No purchase. No H11/H12 reopen. No price-only rescue.
+- Entry: `docs/research_engine/A_SHARE_INFORMATION_EXPANSION_V16.md`.
+
+## 2026-08-31 — V15 second independent A-share alpha DECISION
+
+- Nine pre-registered hypotheses on the frozen panel. Dual books. BH-FDR on all nine.
+- `NO_NEW_CANDIDATE`. Validation capital negative 9/9. Residual family tracks LOW_VOL (corr ≈ 0.90–0.94).
+- Review: `PRICE_ONLY_INDEPENDENT_ALPHA_MARGINALLY_EXHAUSTED`. No purchase. No H11/H12 reopen.
+- Entry: `docs/research_engine/A_SHARE_ALPHA_V2_DECISION.md`.
+
 ## 2026-08-31 — V14.1 candidate/strategy forensics DECISION
 
 - Independent reconstruction: Candidate Path A/B match published `mean_net_h` (err=0). Capital Path A/B match V14 settled ends.
