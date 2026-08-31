@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-31 — V14 strategy construction DECISION
+
+- Canonical Strategy-H11 / H12 are executable and reconciled. Full-path capital lost money.
+- `STRATEGY_WEAK_BUT_RESEARCHABLE`. Do not retune toward 10%.
+- Entry: `docs/research_engine/A_SHARE_STRATEGY_DECISION_V14.md`.
+
 ## 2026-08-31 — V14 strategy construction START
 
 - Canonical Strategy-H11 / Strategy-H12 only. No new factor. No retune.

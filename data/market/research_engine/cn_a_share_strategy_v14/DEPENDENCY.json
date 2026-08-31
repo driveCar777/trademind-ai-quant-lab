@@ -1,0 +1,14 @@
+{
+  "EXTERNAL_LIVE_DATA_REQUIRED": false,
+  "execution_input": "RAW_OPEN_T1 plus tradestatus/limit/volume",
+  "external_dependency": "NO",
+  "historical_input": "frozen raw A-share daily panel tm-ashare-EQUITY-D1-20260830-000002",
+  "live_input": "NOT_REQUIRED_FOR_THIS_HISTORICAL_BOOK",
+  "paper_readiness_gap": [
+    "real-time raw price source",
+    "PIT universe refresh",
+    "suspension and limit-lock at order time",
+    "broker order handling",
+    "lot size and min commission"
+  ]
+}

@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-31 (V14 H11/H12 Strategy Construction IN PROGRESS：不优化；不加因子；Final OOS DENIED)  
+> **更新时间:** 2026-08-31 (V14 STRATEGY_WEAK_BUT_RESEARCHABLE：可执行但弱；不优化；Final OOS DENIED)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -361,6 +361,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **V13.1 Reproduction FACT 2026-08-31 START：** 只复现 H11/H12。不改 lookback/hold/分位/符号。不买数据。见 `V13_1_START.md`。
 - **V13.1 Reproduction FACT 2026-08-31 DECISION：** H11 与 H12 均为 `CANDIDATE_SURVIVED`。Path A/B 复现原 overlapping `mean_net_h`。验证期成本后 CAGR 仍约 0.55% / 1.30%。不是 10%。20 日非重叠验证簿更弱（H11 负、H12 近 0）。不要调参。不要组合。见 `A_SHARE_CANDIDATE_DECISION_V13_1.md`。
 - **V14 Strategy FACT 2026-08-31 START：** 只把 H11/H12 做成 Canonical Strategy。LOW_VOL_CANDIDATE_CLUSTER。不买数据。见 `V14_START.md`。
+- **V14 Strategy FACT 2026-08-31 DECISION：** `STRATEGY_WEAK_BUT_RESEARCHABLE`。20 日资金账户 2010–validation 为负（约 −16% / −11%，MaxDD −66%）。验证期新开 CAGR 约 0.12% / 0.74%。不是 10%。H11/H12 相关 0.994，一个 cluster。不要调参。不要 Paper。见 `A_SHARE_STRATEGY_DECISION_V14.md`。
 
 ---
 
@@ -459,7 +460,7 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P66 | V12.2 Panel completion + freeze | DONE FROZEN（PRICE_ALPHA_READY；不要自动开 Alpha） |
 | P67 | V13 A-share CS alpha V1 | DONE LEVEL_1_CANDIDATE=2（不要第13个因子） |
 | P68 | V13.1 H11/H12 candidate reproduction | DONE CANDIDATE_SURVIVED×2（弱；Final OOS DENIED） |
-| P69 | V14 H11/H12 strategy construction | IN PROGRESS（不优化；不加因子；Final OOS DENIED） |
+| P69 | V14 H11/H12 strategy construction | DONE WEAK_BUT_RESEARCHABLE（不优化；Final OOS DENIED） |
 
 ---
 
