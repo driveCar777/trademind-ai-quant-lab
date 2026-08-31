@@ -27,7 +27,7 @@ from research_engine.cn_a_share_alpha.evaluate import (
     ttest_p,
     years_between,
 )
-from research_engine.cn_a_share_alpha.features import eligible_mask, feature_matrix
+from research_engine.cn_a_share_alpha.features import eligible_mask, exec_mask, feature_matrix
 from research_engine.cn_a_share_alpha.pack import load_pack, pack_exists, pack_panel
 from research_engine.cn_a_share_alpha.paths import ALPHA_ROOT, EQUITY_DIR, TRADES_DIR, ensure_alpha_tree
 from research_engine.cn_a_share_alpha.replay import (
@@ -103,6 +103,7 @@ def run_all():
     if not pack_exists():
         pack_panel()
     pack = load_pack()
+    pack["exec_ok"] = exec_mask(pack)
     print("PACK_READY", pack["meta"], flush=True)
     benches = {"B0": {}, "B1": {}, "B2": {}}
     for name, start, end in WINDOWS:

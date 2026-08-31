@@ -5,7 +5,7 @@ import numpy as np
 
 from research_engine.cn_a_share_alpha import HOLD_DAYS, MIN_CROSS_SECTION, QUANTILE, SEED
 from research_engine.cn_a_share_alpha.cost import round_trip_cost
-from research_engine.cn_a_share_alpha.features import eligible_mask, exec_ok, feature_matrix, naive_1d_score
+from research_engine.cn_a_share_alpha.features import eligible_mask, exec_mask, exec_ok, feature_matrix, naive_1d_score
 
 
 def _pick(scores, mask, top=True):
@@ -19,25 +19,24 @@ def _pick(scores, mask, top=True):
     return idx[chosen]
 
 
-def _h_return(pack, js, t_signal):
+def _h_return(pack, js, t_signal, xok=None):
     """Mean open(t+1) -> open(t+1+H) among executable names."""
     t0 = t_signal + 1
     t1 = t_signal + 1 + HOLD_DAYS
     dates = pack["dates"]
     if t1 >= len(dates):
         return None, 0, 0
-    filled = []
-    skipped = 0
-    for j in js:
-        if not exec_ok(pack, t0, j) or not exec_ok(pack, t1, j):
-            skipped += 1
-            continue
-        a = float(pack["open"][t0, j])
-        b = float(pack["open"][t1, j])
-        filled.append(b / a - 1.0)
-    if not filled:
+    js = np.asarray(js)
+    if xok is None:
+        good = np.array([exec_ok(pack, t0, int(j)) and exec_ok(pack, t1, int(j)) for j in js], dtype=bool)
+    else:
+        good = np.array(xok[t0, js]) & np.array(xok[t1, js])
+    skipped = int(js.size - np.sum(good))
+    if not np.any(good):
         return None, 0, skipped
-    return float(np.mean(filled)), len(filled), skipped
+    a = np.array(pack["open"][t0, js[good]], dtype=np.float64)
+    b = np.array(pack["open"][t1, js[good]], dtype=np.float64)
+    return float(np.mean(b / a - 1.0)), int(np.sum(good)), skipped
 
 
 def _adv(pack, js, t_signal):
@@ -56,7 +55,7 @@ def day_book(pack, scores, elig, t, top=True):
     js = _pick(scores[t], elig[t], top=top)
     if js is None:
         return None
-    ret, n_fill, n_skip = _h_return(pack, js, t)
+    ret, n_fill, n_skip = _h_return(pack, js, t, xok=pack.get("exec_ok"))
     if ret is None:
         return None
     entry = pack["dates"][t + 1]
@@ -108,7 +107,7 @@ def ew_market_series(pack, start, end, lookback=20):
         js = np.where(elig[t])[0]
         if js.size < MIN_CROSS_SECTION:
             continue
-        ret, n_fill, n_skip = _h_return(pack, js, t)
+        ret, n_fill, n_skip = _h_return(pack, js, t, xok=pack.get("exec_ok"))
         if ret is None:
             continue
         entry = dates[t + 1]
@@ -133,7 +132,7 @@ def random_quintile_series(pack, start, end, lookback=20, seed=SEED):
             continue
         n = int(max(1, round(idx.size * QUANTILE)))
         js = rng.choice(idx, size=n, replace=False)
-        ret, n_fill, n_skip = _h_return(pack, js, t)
+        ret, n_fill, n_skip = _h_return(pack, js, t, xok=pack.get("exec_ok"))
         if ret is None:
             continue
         entry = dates[t + 1]

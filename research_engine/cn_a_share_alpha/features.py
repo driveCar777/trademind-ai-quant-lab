@@ -86,24 +86,43 @@ def eligible_mask(pack, lookback):
     return elig
 
 
-def exec_ok(pack, t, j):
-    """Execution at open of day t (already the t+1 index)."""
+def exec_mask(pack):
+    """True where open is an executable fill. Built once."""
     dates = pack["dates"]
     symbols = pack["symbols"]
-    if t >= len(dates):
-        return False
-    if int(pack["listed"][t, j]) != 1:
-        return False
-    if int(pack["tradestatus"][t, j]) != 1:
-        return False
-    o = float(pack["open"][t, j])
-    pre = float(pack["preclose"][t, j])
-    v = float(pack["volume"][t, j])
-    if not np.isfinite(o) or o <= 0 or not np.isfinite(pre) or pre <= 0 or not np.isfinite(v) or v <= 0:
-        return False
-    st = int(pack["isST"][t, j]) == 1
-    lim = limit_pct_for(symbols[j], st, dates[t])
-    move = abs(o / pre - 1.0)
-    if move >= lim - 0.002:
-        return False
-    return True
+    listed = np.array(pack["listed"]) == 1
+    status = np.array(pack["tradestatus"]) == 1
+    o = np.array(pack["open"], dtype=np.float64)
+    pre = np.array(pack["preclose"], dtype=np.float64)
+    v = np.array(pack["volume"], dtype=np.float64)
+    st = np.array(pack["isST"]) == 1
+    lim = np.full(o.shape, 0.10, dtype=np.float64)
+    day_arr = np.array(dates)
+    chi_20 = day_arr >= "2020-08-24"
+    for j, symbol in enumerate(symbols):
+        if symbol.startswith("bj."):
+            lim[:, j] = 0.30
+        elif symbol.startswith("sh.688"):
+            lim[:, j] = 0.20
+        elif symbol.startswith("sz.30"):
+            lim[:, j] = np.where(chi_20, 0.20, 0.10)
+    lim = np.where(st, 0.05, lim)
+    move = np.abs(o / pre - 1.0)
+    ok = listed & status & np.isfinite(o) & (o > 0) & np.isfinite(pre) & (pre > 0) & np.isfinite(v) & (v > 0)
+    ok = ok & (move < (lim - 0.002))
+    return ok
+
+
+def exec_ok(pack, t, j, mask=None):
+    if mask is None:
+        o = float(pack["open"][t, j])
+        pre = float(pack["preclose"][t, j])
+        v = float(pack["volume"][t, j])
+        if int(pack["listed"][t, j]) != 1 or int(pack["tradestatus"][t, j]) != 1:
+            return False
+        if not np.isfinite(o) or o <= 0 or not np.isfinite(pre) or pre <= 0 or not np.isfinite(v) or v <= 0:
+            return False
+        st = int(pack["isST"][t, j]) == 1
+        lim = limit_pct_for(pack["symbols"][j], st, pack["dates"][t])
+        return abs(o / pre - 1.0) < lim - 0.002
+    return bool(mask[t, j])
