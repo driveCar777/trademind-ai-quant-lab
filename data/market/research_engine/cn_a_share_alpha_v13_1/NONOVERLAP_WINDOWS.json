@@ -1,0 +1,50 @@
+{
+  "H11_VOL_60": {
+    "research": {
+      "n": 142,
+      "equity": 0.7908300847262808,
+      "total_return": -0.2091699152737192,
+      "maxdd": -0.6912682513720774,
+      "mean_net": 0.001292596018084236
+    },
+    "validation": {
+      "n": 30,
+      "equity": 0.9420153002090638,
+      "total_return": -0.057984699790936234,
+      "maxdd": -0.15746068895222287,
+      "mean_net": -0.0011436302343203275
+    },
+    "research_through_validation": {
+      "n": 172,
+      "equity": 0.744974039677787,
+      "total_return": -0.25502596032221303,
+      "maxdd": -0.6912682513720774,
+      "mean_net": 0.0008676728345253005
+    },
+    "note": "Nonoverlap 20-day book. Official Level 1 gate uses overlapping mean_net_h. Not used to retune."
+  },
+  "H12_VOL_120": {
+    "research": {
+      "n": 142,
+      "equity": 0.7987819194576248,
+      "total_return": -0.20121808054237522,
+      "maxdd": -0.6941606504286437,
+      "mean_net": 0.0013571403628884063
+    },
+    "validation": {
+      "n": 30,
+      "equity": 0.9734601121616747,
+      "total_return": -0.026539887838325282,
+      "maxdd": -0.14592158621695273,
+      "mean_net": -6.924102817710665e-05
+    },
+    "research_through_validation": {
+      "n": 172,
+      "equity": 0.7775823369079369,
+      "total_return": -0.22241766309206312,
+      "maxdd": -0.6941606504286437,
+      "mean_net": 0.0011083529109583749
+    },
+    "note": "Nonoverlap 20-day book. Official Level 1 gate uses overlapping mean_net_h. Not used to retune."
+  }
+}

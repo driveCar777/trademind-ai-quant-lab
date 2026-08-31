@@ -1,0 +1,346 @@
+{
+  "H11_VOL_60": {
+    "regime": {
+      "BEAR_STRESS": {
+        "mean_net": -0.00025231377853053143,
+        "n": 359
+      },
+      "BULL_NORMAL": {
+        "mean_net": 0.027728534993123416,
+        "n": 42
+      },
+      "BULL_STRESS": {
+        "mean_net": -0.004927143431311442,
+        "n": 198
+      },
+      "SIDEWAYS_NORMAL": {
+        "mean_net": 0.022332850809685816,
+        "n": 8
+      }
+    },
+    "years": {
+      "2010": {
+        "cagr_equivalent_diagnostic": -0.07269409263220528,
+        "maxdd_overlapping_diagnostic": -0.9975464070168888,
+        "mean_net": -0.006217924618367022,
+        "n": 242,
+        "sum_net": -1.5047377576448193,
+        "trade_count_overlapping": 242,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.5247933884297521
+      },
+      "2011": {
+        "cagr_equivalent_diagnostic": -0.3159793276374764,
+        "maxdd_overlapping_diagnostic": -0.9999533474769329,
+        "mean_net": -0.030898295090528112,
+        "n": 244,
+        "sum_net": -7.539184002088859,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.35655737704918034
+      },
+      "2012": {
+        "cagr_equivalent_diagnostic": -0.03296917592730342,
+        "maxdd_overlapping_diagnostic": -0.9967279118327831,
+        "mean_net": -0.002766818840221662,
+        "n": 243,
+        "sum_net": -0.6723369781738638,
+        "trade_count_overlapping": 243,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.3868312757201646
+      },
+      "2013": {
+        "cagr_equivalent_diagnostic": 0.026852788546468664,
+        "maxdd_overlapping_diagnostic": -0.9618387843949837,
+        "mean_net": 0.0021923649676499762,
+        "n": 238,
+        "sum_net": 0.5217828623006944,
+        "trade_count_overlapping": 238,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.5546218487394958
+      },
+      "2014": {
+        "cagr_equivalent_diagnostic": 0.5942937132750821,
+        "maxdd_overlapping_diagnostic": -0.48689560041937985,
+        "mean_net": 0.03930061575231316,
+        "n": 245,
+        "sum_net": 9.628650859316725,
+        "trade_count_overlapping": 245,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.7714285714285715
+      },
+      "2015": {
+        "cagr_equivalent_diagnostic": 0.3131673017293557,
+        "maxdd_overlapping_diagnostic": -0.9999959306655335,
+        "mean_net": 0.022771263695265668,
+        "n": 244,
+        "sum_net": 5.556188341644823,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.6598360655737705
+      },
+      "2016": {
+        "cagr_equivalent_diagnostic": 0.04859692571753538,
+        "maxdd_overlapping_diagnostic": -0.8348140877112171,
+        "mean_net": 0.003929436380755439,
+        "n": 244,
+        "sum_net": 0.9587824769043272,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.5573770491803278
+      },
+      "2017": {
+        "cagr_equivalent_diagnostic": -0.10701223693897466,
+        "maxdd_overlapping_diagnostic": -0.9685457068760436,
+        "mean_net": -0.009310305669621547,
+        "n": 244,
+        "sum_net": -2.2717145833876575,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.4672131147540984
+      },
+      "2018": {
+        "cagr_equivalent_diagnostic": -0.30288022765623335,
+        "maxdd_overlapping_diagnostic": -0.9998202545289925,
+        "mean_net": -0.02937784879797787,
+        "n": 243,
+        "sum_net": -7.138817257908622,
+        "trade_count_overlapping": 243,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.2880658436213992
+      },
+      "2019": {
+        "cagr_equivalent_diagnostic": 0.11749457808432062,
+        "maxdd_overlapping_diagnostic": -0.9804820881113413,
+        "mean_net": 0.009223199228461623,
+        "n": 244,
+        "sum_net": 2.2504606117446357,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.5081967213114754
+      },
+      "2020": {
+        "cagr_equivalent_diagnostic": 0.07492066219880478,
+        "maxdd_overlapping_diagnostic": -0.8832203069970098,
+        "mean_net": 0.0059886754096671714,
+        "n": 243,
+        "sum_net": 1.4552481245491227,
+        "trade_count_overlapping": 243,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.5061728395061729
+      },
+      "2021": {
+        "cagr_equivalent_diagnostic": 0.22500878444258765,
+        "maxdd_overlapping_diagnostic": -0.6269848518236777,
+        "mean_net": 0.01691401237206228,
+        "n": 243,
+        "sum_net": 4.110105006411134,
+        "trade_count_overlapping": 243,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.654320987654321
+      },
+      "2022": {
+        "cagr_equivalent_diagnostic": -0.01853245506392398,
+        "maxdd_overlapping_diagnostic": -0.9603265618056899,
+        "mean_net": -0.0015447834935754692,
+        "n": 242,
+        "sum_net": -0.37383760544526357,
+        "trade_count_overlapping": 242,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.4834710743801653
+      },
+      "2023": {
+        "cagr_equivalent_diagnostic": -0.017103492060908443,
+        "maxdd_overlapping_diagnostic": -0.81684235910001,
+        "mean_net": -0.001424723474336506,
+        "n": 242,
+        "sum_net": -0.3447830807894344,
+        "trade_count_overlapping": 242,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.41735537190082644
+      },
+      "2024": {
+        "cagr_equivalent_diagnostic": -0.189716165274465,
+        "maxdd_overlapping_diagnostic": -0.809423400617653,
+        "mean_net": -0.017235742047864277,
+        "n": 37,
+        "sum_net": -0.6377224557709782,
+        "trade_count_overlapping": 37,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.4594594594594595
+      }
+    }
+  },
+  "H12_VOL_120": {
+    "regime": {
+      "BEAR_STRESS": {
+        "mean_net": 0.00015664937490886415,
+        "n": 355
+      },
+      "BULL_NORMAL": {
+        "mean_net": 0.033840522103285364,
+        "n": 40
+      },
+      "BULL_STRESS": {
+        "mean_net": -0.0037063630894535707,
+        "n": 210
+      },
+      "SIDEWAYS_NORMAL": {
+        "mean_net": 0.008394890240598606,
+        "n": 2
+      }
+    },
+    "years": {
+      "2010": {
+        "cagr_equivalent_diagnostic": -0.07184868161515612,
+        "maxdd_overlapping_diagnostic": -0.9977260891001398,
+        "mean_net": -0.0061430785271476135,
+        "n": 242,
+        "sum_net": -1.4866250035697224,
+        "trade_count_overlapping": 242,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.512396694214876
+      },
+      "2011": {
+        "cagr_equivalent_diagnostic": -0.29631578741320264,
+        "maxdd_overlapping_diagnostic": -0.9999242542139136,
+        "mean_net": -0.028625729827192418,
+        "n": 244,
+        "sum_net": -6.98467807783495,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.3442622950819672
+      },
+      "2012": {
+        "cagr_equivalent_diagnostic": -0.044092161424701626,
+        "maxdd_overlapping_diagnostic": -0.9971328560951366,
+        "mean_net": -0.003719822415903159,
+        "n": 243,
+        "sum_net": -0.9039168470644676,
+        "trade_count_overlapping": 243,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.37037037037037035
+      },
+      "2013": {
+        "cagr_equivalent_diagnostic": 0.040938141118781246,
+        "maxdd_overlapping_diagnostic": -0.9592531468941408,
+        "mean_net": 0.003321401630734958,
+        "n": 238,
+        "sum_net": 0.79049358811492,
+        "trade_count_overlapping": 238,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.5672268907563025
+      },
+      "2014": {
+        "cagr_equivalent_diagnostic": 0.6275456412662379,
+        "maxdd_overlapping_diagnostic": -0.49483517998012905,
+        "mean_net": 0.04107515120674937,
+        "n": 245,
+        "sum_net": 10.063412045653596,
+        "trade_count_overlapping": 245,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.7755102040816326
+      },
+      "2015": {
+        "cagr_equivalent_diagnostic": 0.29965826424138364,
+        "maxdd_overlapping_diagnostic": -0.9999957017927684,
+        "mean_net": 0.02189757756390261,
+        "n": 244,
+        "sum_net": 5.343008925592237,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.6639344262295082
+      },
+      "2016": {
+        "cagr_equivalent_diagnostic": 0.053340367304364644,
+        "maxdd_overlapping_diagnostic": -0.8330053468734395,
+        "mean_net": 0.004303980819147632,
+        "n": 244,
+        "sum_net": 1.0501713198720224,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.5655737704918032
+      },
+      "2017": {
+        "cagr_equivalent_diagnostic": -0.09852755485992515,
+        "maxdd_overlapping_diagnostic": -0.9621795532647236,
+        "mean_net": -0.008535742275597294,
+        "n": 244,
+        "sum_net": -2.08272111524574,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.4713114754098361
+      },
+      "2018": {
+        "cagr_equivalent_diagnostic": -0.30820157708859863,
+        "maxdd_overlapping_diagnostic": -0.9998433359265794,
+        "mean_net": -0.02999232427187615,
+        "n": 243,
+        "sum_net": -7.288134798065904,
+        "trade_count_overlapping": 243,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.2880658436213992
+      },
+      "2019": {
+        "cagr_equivalent_diagnostic": 0.13383456371327873,
+        "maxdd_overlapping_diagnostic": -0.9787976603118582,
+        "mean_net": 0.010434669291757678,
+        "n": 244,
+        "sum_net": 2.5460593071888735,
+        "trade_count_overlapping": 244,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.5245901639344263
+      },
+      "2020": {
+        "cagr_equivalent_diagnostic": 0.05333130972029876,
+        "maxdd_overlapping_diagnostic": -0.8670930297704864,
+        "mean_net": 0.004303267103575802,
+        "n": 243,
+        "sum_net": 1.0456939061689199,
+        "trade_count_overlapping": 243,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.49382716049382713
+      },
+      "2021": {
+        "cagr_equivalent_diagnostic": 0.20607097353408577,
+        "maxdd_overlapping_diagnostic": -0.6218927671222938,
+        "mean_net": 0.015605467440060743,
+        "n": 243,
+        "sum_net": 3.7921285879347604,
+        "trade_count_overlapping": 243,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.6172839506172839
+      },
+      "2022": {
+        "cagr_equivalent_diagnostic": -0.01701592231564364,
+        "maxdd_overlapping_diagnostic": -0.9395964812260876,
+        "mean_net": -0.0014173711613546121,
+        "n": 242,
+        "sum_net": -0.3430038210478161,
+        "trade_count_overlapping": 242,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.49173553719008267
+      },
+      "2023": {
+        "cagr_equivalent_diagnostic": -0.0005995283917722416,
+        "maxdd_overlapping_diagnostic": -0.7518796034490887,
+        "mean_net": -4.956143136034009e-05,
+        "n": 242,
+        "sum_net": -0.011993866389202301,
+        "trade_count_overlapping": 242,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.4669421487603306
+      },
+      "2024": {
+        "cagr_equivalent_diagnostic": -0.20564430071863393,
+        "maxdd_overlapping_diagnostic": -0.8155687228028183,
+        "mean_net": -0.018846904961169288,
+        "n": 37,
+        "sum_net": -0.6973354835632637,
+        "trade_count_overlapping": 37,
+        "turnover_daily_equivalent": 0.1,
+        "win_rate": 0.4594594594594595
+      }
+    }
+  }
+}
