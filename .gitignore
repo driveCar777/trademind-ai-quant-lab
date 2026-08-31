@@ -64,6 +64,9 @@ data/market/cn_a_share/normalized/
 data/market/cn_a_share/alpha_cache/
 data/market/research_engine/cn_a_share_alpha_v1/EQUITY/
 data/market/research_engine/cn_a_share_alpha_v1/TRADES/
+data/market/research_engine/cn_a_share_alpha_v13_1/*_STOCK_PNL.json
+data/market/research_engine/cn_a_share_alpha_v13_1/*_EQUITY.json
+data/market/research_engine/cn_a_share_alpha_v13_1/*_TRADES.json
 
 # HuggingFace / model caches
 **/.cache/

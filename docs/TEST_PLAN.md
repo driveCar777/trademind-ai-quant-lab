@@ -809,6 +809,17 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V13.1 H11/H12 Reproduction — 2026-08-31 IN PROGRESS
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_alpha_v13_1.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| 合同 hash 权威 / 无新因子 | 待跑后更新 |
+| Path A vs Path B | 待跑 |
+| Final OOS | DENIED |
+| 花费 | $0 |
+
 ## V13 A-share CS Alpha — 2026-08-31 LEVEL_1_CANDIDATE
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_alpha_v13.py --import-mode=importlib`

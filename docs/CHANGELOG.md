@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-08-31 — V13.1 candidate reproduction START
+
+- Reproduce H11/H12 only. No new factor. No retune.
+- Entry: `docs/research_engine/V13_1_START.md`.
+
 ## 2026-08-31 — V13 A-share CS alpha DECISION
 
 - 12 locked hypotheses. Level 1 = `H11_VOL_60` + `H12_VOL_120`.
