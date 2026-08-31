@@ -1,0 +1,16 @@
+{
+  "capital_mean": 0.0014387186909333664,
+  "double_charge": false,
+  "fees_commission_transfer_stamp": 222850.0909326031,
+  "formula_gap_mean": 0.0003303657799749915,
+  "gross": 403670.271465176,
+  "identity_net_minus_gross_plus_fees_plus_slip": 5.515175871551037e-09,
+  "net": -116494.12861994035,
+  "note": "V13 statistic: net = mean(raw_filled) - (buy+sell). V14 capital: net/alloc = (1+raw)*(1-sell_rate)/(1+buy_rate) - 1, cash on unfilled. These are different formulas, not a double subtraction of the same book.",
+  "slippage": 297314.30915250775,
+  "stamp": 145548.3705529511,
+  "stamp_included_in_fees": 145548.3705529511,
+  "unfilled_charged": false,
+  "unfilled_fees": 0.0,
+  "v13_style_mean": 0.0011083529109583766
+}
