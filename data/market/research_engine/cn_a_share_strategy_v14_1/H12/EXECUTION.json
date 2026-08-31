@@ -1,0 +1,23 @@
+{
+  "all_hold_spacing_20": true,
+  "delist_during_hold_filled": 0,
+  "entry_is_open_t1": true,
+  "exits_after_denied_start": [
+    "2024-03-06"
+  ],
+  "hold_is_20_trading_days": true,
+  "limit_lock_fills": 0,
+  "limit_lock_never_filled": true,
+  "n_sample": 100,
+  "n_trades": 172,
+  "signal_gaps": {
+    "max": 20,
+    "min": 20,
+    "n_not_20": 0
+  },
+  "suspended_fills": 0,
+  "suspended_never_filled": true,
+  "unfilled_fees_are_zero": true,
+  "unfilled_fees_total": 0.0,
+  "weight_sum_is_one": true
+}
