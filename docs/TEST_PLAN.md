@@ -809,14 +809,15 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
-## V13.1 H11/H12 Reproduction — 2026-08-31 IN PROGRESS
+## V13.1 H11/H12 Reproduction — 2026-08-31 CANDIDATE_SURVIVED
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_alpha_v13_1.py --import-mode=importlib`
 
 | 项 | 结果 |
 |----|------|
-| 合同 hash 权威 / 无新因子 | 待跑后更新 |
-| Path A vs Path B | 待跑 |
+| 合同 hash 权威 / 无新因子 | ✅ **4 PASS** |
+| Path A vs original + Path B | ✅ 同 `mean_net_h`；score diff < 1e-12 |
+| H11 / H12 | CANDIDATE_SURVIVED。CAGR ≈ 0.55% / 1.30%。不是 10% |
 | Final OOS | DENIED |
 | 花费 | $0 |
 

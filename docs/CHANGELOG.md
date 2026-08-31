@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-31 — V13.1 candidate reproduction DECISION
+
+- H11 and H12 independently reproduce. Both `CANDIDATE_SURVIVED`.
+- Official overlapping validation CAGR still ≈ 0.55% / 1.30%. Not 10%. Do not retune.
+- Entry: `docs/research_engine/A_SHARE_CANDIDATE_DECISION_V13_1.md`.
+
 ## 2026-08-31 — V13.1 candidate reproduction START
 
 - Reproduce H11/H12 only. No new factor. No retune.

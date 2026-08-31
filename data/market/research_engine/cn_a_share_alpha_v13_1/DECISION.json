@@ -1,0 +1,12 @@
+{
+  "CANDIDATE": 2,
+  "FINAL_OOS": "DENIED",
+  "H11": "CANDIDATE_SURVIVED",
+  "H12": "CANDIDATE_SURVIVED",
+  "LEVEL": 1,
+  "NEW_PURCHASE": false,
+  "NEXT": "STRATEGY_CONSTRUCTION",
+  "STRATEGY": false,
+  "h11_h12_corr_diagnostic_only": 0.9929735157564883,
+  "note": "Weak if survived. Do not retune toward 10%."
+}
