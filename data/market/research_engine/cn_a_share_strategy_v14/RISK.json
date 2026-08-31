@@ -1,0 +1,26 @@
+{
+  "H11": {
+    "beta_vs_ew": {
+      "benchmark": "EW_ELIGIBLE_OPEN_TO_OPEN_PROXY",
+      "beta": 0.7476201832647533,
+      "down_capture": 0.76461596693289,
+      "n": 172,
+      "tracking_error": 0.46942384419376504,
+      "up_capture": 0.759006236776828
+    },
+    "full_maxdd": -0.6646081293623882,
+    "validation_fresh_maxdd": -0.2440943209967521
+  },
+  "H12": {
+    "beta_vs_ew": {
+      "benchmark": "EW_ELIGIBLE_OPEN_TO_OPEN_PROXY",
+      "beta": 0.7419979386931133,
+      "down_capture": 0.7545604138747047,
+      "n": 172,
+      "tracking_error": 0.47701335535281253,
+      "up_capture": 0.7547410437480161
+    },
+    "full_maxdd": -0.6623977846798085,
+    "validation_fresh_maxdd": -0.23684556663250977
+  }
+}
