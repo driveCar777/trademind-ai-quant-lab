@@ -268,6 +268,7 @@ def run_one(pack, xok, hyp):
 
     engine = {
         "id": hid,
+        "end": cap_a["end"],
         "path_a_end": cap_a["end"],
         "path_b_end": cap_b["end"],
         "path_a_b_abs_err": path_ab_cap,
@@ -423,8 +424,15 @@ def decide(syn, reload_rec, results):
                 "(1+period_return). Compounding, the 20-day grid sample, cash residual on unfilled, "
                 "and multiplicative costs are a different economic object and lost money on the full path."
             ),
-            "q03_overlap_core": True,
-            "q04_nonoverlap_core": True,
+            "q03_overlap_core": (
+                "Yes for the published Candidate CAGR. That number is an overlapping mean, "
+                "then (1+mean)^(242/20)-1. It is not a book."
+            ),
+            "q04_nonoverlap_core": (
+                "Partial. All 20 offset grids compound to a loss, so the official grid is not a "
+                "bad draw. The nonoverlap arithmetic mean is still slightly positive. "
+                "The capital killer is compounding a fat left tail (AM-GM), not a negative mean."
+            ),
             "q05_entry_timing_consistent": True,
             "q06_exit_timing_consistent": True,
             "q07_unfilled_error": False,

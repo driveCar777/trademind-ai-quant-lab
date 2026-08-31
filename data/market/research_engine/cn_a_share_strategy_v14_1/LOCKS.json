@@ -1,0 +1,8 @@
+{
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "new_factor": false,
+  "new_purchase": false,
+  "seed": 20260831,
+  "tol": 1e-08
+}

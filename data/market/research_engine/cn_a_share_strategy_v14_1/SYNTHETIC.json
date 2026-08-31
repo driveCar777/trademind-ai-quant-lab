@@ -1,0 +1,31 @@
+{
+  "all_ok": true,
+  "cases": {
+    "all_unfilled": {
+      "end": 1000.0,
+      "ok": true
+    },
+    "large_loss": {
+      "ok": true
+    },
+    "one_filled": {
+      "deployed_frac": 0.25,
+      "end": 1024.0332181451372,
+      "ok": true
+    },
+    "one_of_five_filled": {
+      "ok": true
+    },
+    "stamp_cut_day": {
+      "ok": true
+    },
+    "unfilled_no_cost": {
+      "ok": true
+    },
+    "zero_return_all_filled": {
+      "end": 996.4844296186805,
+      "note": "Zero raw must lose exactly the locked round-trip on deployed capital.",
+      "ok": true
+    }
+  }
+}

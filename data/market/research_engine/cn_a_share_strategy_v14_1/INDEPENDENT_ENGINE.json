@@ -1,0 +1,139 @@
+{
+  "H11": {
+    "benchmark": {
+      "definition": "EW_ELIGIBLE_OPEN_TO_OPEN_SAME_CALENDAR",
+      "end": 0.7369906772720182,
+      "n": 172
+    },
+    "curve_end_matches": true,
+    "denied_not_used_for_signals": [
+      "2024-03-01",
+      "2026-08-28"
+    ],
+    "end": 834202.8900905689,
+    "full_cagr": -0.012072009145266405,
+    "full_total": -0.16579710990943108,
+    "hold_days_locked": true,
+    "id": "H11_VOL_60",
+    "n_empty_all_unfilled": 0,
+    "n_nopick": 0,
+    "n_trades": 172,
+    "official_object": "NON_OVERLAPPING_20_DAY_CAPITAL_ACCOUNT",
+    "path_a_b_abs_err": 4.505272954702377e-08,
+    "path_a_end": 834202.8900905689,
+    "path_b_end": 834202.890090614,
+    "reasons": {
+      "DELISTED": 7,
+      "LIMIT_LOCK": 499,
+      "SUSPENDED": 1277
+    },
+    "recon_abs": 0.0,
+    "recon_ok": true,
+    "research": {
+      "cagr": -0.01433385029057277,
+      "end_equity": 837572.0020580863,
+      "n_trades": 142,
+      "start_equity": 1000000.0,
+      "total": -0.16242799794191365
+    },
+    "same_trade_dates": true,
+    "unfilled_rate": 0.01746994444498878,
+    "validation_fresh": {
+      "cagr": 0.009967196080045815,
+      "end": 1027038.9326963106,
+      "n_trades": 31,
+      "recon_ok": true
+    },
+    "validation_path": {
+      "cagr": -0.00021382044239881548,
+      "end_equity": 843946.1190079125,
+      "n_trades": 30,
+      "start_equity": 844420.5512232615,
+      "total": -0.0005618435205796413
+    }
+  },
+  "H12": {
+    "benchmark": {
+      "definition": "EW_ELIGIBLE_OPEN_TO_OPEN_SAME_CALENDAR",
+      "end": 0.7643535348282197,
+      "n": 172
+    },
+    "curve_end_matches": true,
+    "denied_not_used_for_signals": [
+      "2024-03-01",
+      "2026-08-28"
+    ],
+    "end": 883505.87138006,
+    "full_cagr": -0.008263968840201974,
+    "full_total": -0.11649412861994002,
+    "hold_days_locked": true,
+    "id": "H12_VOL_120",
+    "n_empty_all_unfilled": 0,
+    "n_nopick": 0,
+    "n_trades": 172,
+    "official_object": "NON_OVERLAPPING_20_DAY_CAPITAL_ACCOUNT",
+    "path_a_b_abs_err": 1.126900315284729e-07,
+    "path_a_end": 883505.87138006,
+    "path_b_end": 883505.8713801727,
+    "reasons": {
+      "DELISTED": 11,
+      "LIMIT_LOCK": 511,
+      "SUSPENDED": 1308
+    },
+    "recon_abs": 0.0,
+    "recon_ok": true,
+    "research": {
+      "cagr": -0.012162270970313527,
+      "end_equity": 860510.1020398327,
+      "n_trades": 142,
+      "start_equity": 1000000.0,
+      "total": -0.1394898979601673
+    },
+    "same_trade_dates": true,
+    "unfilled_rate": 0.018312635718645866,
+    "validation_fresh": {
+      "cagr": 0.01685554299020864,
+      "end": 1045991.15064163,
+      "n_trades": 31,
+      "recon_ok": true
+    },
+    "validation_path": {
+      "cagr": 0.011607246430278995,
+      "end_equity": 894601.4350381603,
+      "n_trades": 30,
+      "start_equity": 867876.1166402121,
+      "total": 0.030793932319982842
+    }
+  },
+  "synthetic": {
+    "all_ok": true,
+    "cases": {
+      "all_unfilled": {
+        "end": 1000.0,
+        "ok": true
+      },
+      "large_loss": {
+        "ok": true
+      },
+      "one_filled": {
+        "deployed_frac": 0.25,
+        "end": 1024.0332181451372,
+        "ok": true
+      },
+      "one_of_five_filled": {
+        "ok": true
+      },
+      "stamp_cut_day": {
+        "ok": true
+      },
+      "unfilled_no_cost": {
+        "ok": true
+      },
+      "zero_return_all_filled": {
+        "end": 996.4844296186805,
+        "note": "Zero raw must lose exactly the locked round-trip on deployed capital.",
+        "ok": true
+      }
+    }
+  }
+}
