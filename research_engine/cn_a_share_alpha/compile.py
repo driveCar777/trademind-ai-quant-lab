@@ -25,28 +25,7 @@ def compile_v13():
     pos = [h["id"] for h in hyps if h.get("research_positive") or h.get("validation_positive")]
     neg = [h["id"] for h in hyps if not h.get("research_positive") and not h.get("validation_positive")]
     l1 = [h["id"] for h in hyps if h.get("level1")]
-    _md(
-        "A_SHARE_ALPHA_V1_PLAN.md",
-        [
-            "# A-share cross-sectional alpha V1 plan",
-            "",
-            "Frozen panel only. Four families. Twelve pre-registered hypotheses.",
-            "No financial / industry / event. No ML. No purchase.",
-        ],
-    )
-    _md(
-        "A_SHARE_ALPHA_V1_CONTRACT.md",
-        [
-            "# A-share alpha V1 contract",
-            "",
-            "contract_hash = `%s`" % contract.get("contract_hash"),
-            "",
-            "dataset_id = `%s`" % contract.get("dataset_id"),
-            "",
-            "Research 2010-01-04 → 2021-08-24. Validation 2021-08-25 → 2024-02-29. 2024-03-01+ DENIED.",
-            "Hold = 20. Quintile = 20%. Long-only is the capital book. Long-short is research-only.",
-        ],
-    )
+    # Locked PLAN / CONTRACT markdown is not rewritten here.
     lines = [
         "# A-share alpha V1 report",
         "",

@@ -17,7 +17,7 @@ contract_hash = `b48b2657c4991041fb4e8f9fafa33c53c40be29222a1b39f87d24a82f596f75
 | research | 2010-01-04 → 2021-08-24 |
 | validation | 2021-08-25 → 2024-02-29 |
 | denied | 2024-03-01 → 2026-08-28 |
-| FDR | BH q=0.05 |
+| FDR | BH q=0.05 one-sided |
 | seed | 20260831 |
 | cost | A_SHARE_TRANSACTION_COST_MODEL_V1 |
 
