@@ -1,0 +1,11 @@
+{
+  "close_vs_preclose_gt_12pct": 0,
+  "dividend": "DIVIDEND_EXCLUSION",
+  "n_checked": 100278,
+  "note": "Canonical ranking and PnL use raw prices. Cash dividends are not added back. No frozen QFQ panel exists. Do not freeze a new panel. Do not buy data.",
+  "qfq_frozen_panel": false,
+  "qfq_test": "DATA_GAP",
+  "representation_risk": true,
+  "return_type": "PRICE_RETURN_RAW_OPEN_TO_OPEN",
+  "samples": []
+}
