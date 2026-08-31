@@ -1,0 +1,52 @@
+{
+  "H11": {
+    "pit": {
+      "delist_mutation_stable": true,
+      "future_ipo_fn": true,
+      "future_ipo_leaves_2020": true,
+      "n_listed_2020_06_01": 3853
+    },
+    "execution": {
+      "hold_days_locked": true,
+      "n_filled_names": 100278,
+      "non_exec_mask_fills": 0,
+      "suspended_fills": 0,
+      "unlisted_fills": 0
+    },
+    "ca": {
+      "close_vs_preclose_gt_12pct": 0,
+      "limitation": "Ranking uses raw close. Full qfq panel was not frozen. Possible CA jump days.",
+      "n_checked": 100278
+    },
+    "limit_up": {
+      "clarification_needed": "0.002 buffer is implementation detail vs contract string LIMIT_LOCK",
+      "contract_lists": "LIMIT_LOCK",
+      "implementation": "abs(open/preclose-1) < limit-0.002"
+    }
+  },
+  "H12": {
+    "pit": {
+      "delist_mutation_stable": true,
+      "future_ipo_fn": true,
+      "future_ipo_leaves_2020": true,
+      "n_listed_2020_06_01": 3853
+    },
+    "execution": {
+      "hold_days_locked": true,
+      "n_filled_names": 98101,
+      "non_exec_mask_fills": 0,
+      "suspended_fills": 0,
+      "unlisted_fills": 0
+    },
+    "ca": {
+      "close_vs_preclose_gt_12pct": 1,
+      "limitation": "Ranking uses raw close. Full qfq panel was not frozen. Possible CA jump days.",
+      "n_checked": 98101
+    },
+    "limit_up": {
+      "clarification_needed": "0.002 buffer is implementation detail vs contract string LIMIT_LOCK",
+      "contract_lists": "LIMIT_LOCK",
+      "implementation": "abs(open/preclose-1) < limit-0.002"
+    }
+  }
+}
