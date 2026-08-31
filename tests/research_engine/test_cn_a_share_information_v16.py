@@ -26,7 +26,7 @@ class TestV16(unittest.TestCase):
         self.assertEqual(FINAL_OOS_ACCESS, "DENIED")
         self.assertEqual(len(FIN_HYPOTHESES), 6)
         self.assertEqual(len(FIN_HYPOTHESES), MAX_FIN_HYP)
-        self.assertEqual(len(IND_HYPOTHESES), 0)
+        self.assertEqual(len(IND_HYPOTHESES), 3)
         self.assertEqual(MAX_IND_HYP, 3)
 
     def test_contract_hash_stable(self):

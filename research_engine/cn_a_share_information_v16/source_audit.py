@@ -1,4 +1,4 @@
-"""Live free-source audit. No key. No purchase. One BaoStock session."""
+"""Live free-source audit. No key. No purchase. One BaoStock login. No retry storm."""
 from __future__ import print_function
 
 import inspect
@@ -8,7 +8,6 @@ import traceback
 
 from research_engine.cn_a_share.io_util import dump_json
 from research_engine.cn_a_share.pit import knowledge_ok, visible_financials
-from research_engine.cn_a_share.session import BaoSession
 from research_engine.cn_a_share_information_v16 import (
     CANONICAL_SOURCE,
     NEW_PURCHASE,
@@ -28,44 +27,53 @@ def _sig(fn):
     try:
         return str(inspect.signature(fn))
     except Exception:
-        try:
-            return str(inspect.getargspec(fn))
-        except Exception:
-            return "unknown"
+        return "unknown"
 
 
-def _call(sess, fn, **kwargs):
-    t0 = time.time()
-    rows = sess._retry(lambda: fn(**kwargs))
-    return rows, time.time() - t0
+def _consume(rs, limit=None):
+    rows = []
+    fields = list(getattr(rs, "fields", []) or [])
+    err = getattr(rs, "error_code", None)
+    msg = getattr(rs, "error_msg", None)
+    if str(err) != "0":
+        return fields, rows, str(err), msg
+    n = 0
+    while rs.error_code == "0" and rs.next():
+        row = rs.get_row_data()
+        rows.append(dict(zip(fields, row)) if fields else row)
+        n += 1
+        if limit is not None and n >= limit:
+            break
+    return fields, rows, "0", msg
 
 
-def audit_financial(sess):
-    bs = sess.bs
+def audit_financial(bs):
     out = {"apis": {}, "timing_s": {}, "fields": {}, "pit_sample": {}, "restatement": {}}
     probes = [
-        ("profit_2023q4", bs.query_profit_data, {"code": "sh.600519", "year": 2023, "quarter": 4}),
-        ("profit_2022q4", bs.query_profit_data, {"code": "sh.600519", "year": 2022, "quarter": 4}),
-        ("profit_2023q1", bs.query_profit_data, {"code": "sh.600519", "year": 2023, "quarter": 1}),
-        ("profit_2007q4", bs.query_profit_data, {"code": "sh.600519", "year": 2007, "quarter": 4}),
-        ("growth_2023q4", bs.query_growth_data, {"code": "sh.600519", "year": 2023, "quarter": 4}),
-        ("balance_2023q4", bs.query_balance_data, {"code": "sh.600519", "year": 2023, "quarter": 4}),
-        ("cash_2023q4", bs.query_cash_flow_data, {"code": "sh.600519", "year": 2023, "quarter": 4}),
-        ("dupont_2023q4", bs.query_dupont_data, {"code": "sh.600519", "year": 2023, "quarter": 4}),
-        ("operation_2023q4", bs.query_operation_data, {"code": "sh.600519", "year": 2023, "quarter": 4}),
+        ("profit_2023q4", lambda: bs.query_profit_data(code="sh.600519", year=2023, quarter=4)),
+        ("profit_2022q4", lambda: bs.query_profit_data(code="sh.600519", year=2022, quarter=4)),
+        ("profit_2023q1", lambda: bs.query_profit_data(code="sh.600519", year=2023, quarter=1)),
+        ("profit_2007q4", lambda: bs.query_profit_data(code="sh.600519", year=2007, quarter=4)),
+        ("growth_2023q4", lambda: bs.query_growth_data(code="sh.600519", year=2023, quarter=4)),
+        ("balance_2023q4", lambda: bs.query_balance_data(code="sh.600519", year=2023, quarter=4)),
+        ("cash_2023q4", lambda: bs.query_cash_flow_data(code="sh.600519", year=2023, quarter=4)),
+        ("dupont_2023q4", lambda: bs.query_dupont_data(code="sh.600519", year=2023, quarter=4)),
+        ("operation_2023q4", lambda: bs.query_operation_data(code="sh.600519", year=2023, quarter=4)),
     ]
-    for name, fn, kw in probes:
+    for name, fn in probes:
+        t0 = time.time()
         try:
-            rows, dt = _call(sess, fn, **kw)
-            out["apis"][name] = {"n": len(rows), "sample": rows[:1], "seconds": dt}
+            _f, rows, err, msg = _consume(fn())
+            out["apis"][name] = {"n": len(rows), "sample": rows[:1], "seconds": time.time() - t0, "error": err, "msg": msg}
             if rows:
                 out["fields"][name] = sorted(rows[0].keys())
+            print("V16_AUDIT", name, len(rows), err, flush=True)
         except Exception as exc:
-            out["apis"][name] = {"error": str(exc)}
-    # second fetch of 2023Q4: same numbers? no version history either way
+            out["apis"][name] = {"error": str(exc), "seconds": time.time() - t0}
+            print("V16_AUDIT", name, "EXC", exc, flush=True)
+    first = ((out["apis"].get("profit_2023q4") or {}).get("sample") or [])
     try:
-        again, _dt = _call(sess, bs.query_profit_data, code="sh.600519", year=2023, quarter=4)
-        first = (out["apis"].get("profit_2023q4") or {}).get("sample") or []
+        _f, again, err, msg = _consume(bs.query_profit_data(code="sh.600519", year=2023, quarter=4))
         out["restatement"] = {
             "version_history": False,
             "label": "RESTATEMENT_RISK",
@@ -101,11 +109,11 @@ def audit_financial(sess):
     n = 0
     for year, q in ((2020, 4), (2021, 4), (2022, 4), (2023, 4), (2024, 4)):
         for code in SAMPLES:
-            sess._retry(lambda c=code, y=year, qq=q: bs.query_profit_data(code=c, year=y, quarter=qq))
+            _consume(bs.query_profit_data(code=code, year=year, quarter=q))
             n += 1
     out["timing_s"]["profit_15_calls"] = time.time() - t0
     out["timing_s"]["n"] = n
-    out["timing_s"]["per_call"] = (time.time() - t0) / float(n) if n else None
+    out["timing_s"]["per_call"] = out["timing_s"]["profit_15_calls"] / float(n) if n else None
     out["signatures"] = {
         "query_profit_data": _sig(bs.query_profit_data),
         "query_balance_data": _sig(bs.query_balance_data),
@@ -114,50 +122,69 @@ def audit_financial(sess):
     return out
 
 
-def audit_industry(sess):
-    bs = sess.bs
+def audit_industry(bs):
     out = {"snapshot": {}, "date_attempts": {}, "historical_membership": False}
+    t0 = time.time()
     try:
-        rows, dt = _call(sess, bs.query_stock_industry)
+        _f, rows, err, msg = _consume(bs.query_stock_industry())
         updates = sorted(set((r.get("updateDate") or "") for r in rows))
         out["snapshot"] = {
             "n": len(rows),
-            "seconds": dt,
+            "seconds": time.time() - t0,
             "fields": sorted(rows[0].keys()) if rows else [],
             "update_dates": updates[:8],
             "n_update_dates": len(updates),
             "sample": rows[:3],
+            "error": err,
         }
-        out["current_only"] = len(updates) <= 2
+        out["current_only_without_date"] = len(updates) <= 2
+        print("V16_AUDIT industry_n", len(rows), "update_dates", updates, flush=True)
     except Exception as exc:
         out["snapshot"] = {"error": str(exc)}
         out["current_only"] = True
-    for day in ("2015-06-15", "2020-01-02", "2024-01-02"):
-        attempt = {"day": day}
-        for kwargs in ({"date": day}, {"day": day}, {"updateDate": day}):
-            try:
-                rows = sess._retry(lambda kw=kwargs: bs.query_stock_industry(**kw))
-                attempt[str(kwargs)] = {"n": len(rows), "update_dates": sorted(set(r.get("updateDate") or "" for r in rows))[:4]}
-            except TypeError as exc:
-                attempt[str(kwargs)] = {"type_error": str(exc)}
-            except Exception as exc:
-                attempt[str(kwargs)] = {"error": str(exc)[:200]}
-        out["date_attempts"][day] = attempt
-    # index membership has dates; that is not industry classification
+    sig = _sig(bs.query_stock_industry)
+    out["signature"] = sig
+    params = []
     try:
-        a = sess._retry(lambda: bs.query_hs300_stocks(date="2018-06-01"))
-        b = sess._retry(lambda: bs.query_hs300_stocks(date="2024-06-03"))
-        out["hs300_date_works"] = {"n_2018": len(a), "n_2024": len(b), "sets_differ": set(r.get("code") for r in a) != set(r.get("code") for r in b)}
+        params = list(inspect.signature(bs.query_stock_industry).parameters)
+    except Exception:
+        params = []
+    out["date_param_in_signature"] = any(p.lower() in ("date", "day", "asof") for p in params)
+    for day in ("2015-06-15", "2020-01-02"):
+        if not out["date_param_in_signature"]:
+            out["date_attempts"][day] = {"skipped": "no date parameter in signature"}
+            continue
+        try:
+            _f, rows, err, msg = _consume(bs.query_stock_industry(date=day))
+            out["date_attempts"][day] = {
+                "n": len(rows),
+                "update_dates": sorted(set(r.get("updateDate") or "" for r in rows))[:4],
+                "error": err,
+            }
+        except TypeError as exc:
+            out["date_attempts"][day] = {"type_error": str(exc)}
+        except Exception as exc:
+            out["date_attempts"][day] = {"error": str(exc)[:200]}
+    try:
+        _f, a, err_a, _m = _consume(bs.query_hs300_stocks(date="2018-06-01"))
+        _f, b, err_b, _m = _consume(bs.query_hs300_stocks(date="2024-06-03"))
+        out["hs300_date_works"] = {
+            "n_2018": len(a),
+            "n_2024": len(b),
+            "sets_differ": set(r.get("code") for r in a) != set(r.get("code") for r in b),
+        }
         out["hs300_is_not_industry"] = True
     except Exception as exc:
         out["hs300_date_works"] = {"error": str(exc)}
-    out["pit_available"] = False
-    out["status"] = "CURRENT_ONLY" if out.get("current_only") else "UNKNOWN"
+    ns = [v.get("n") for v in out.get("date_attempts", {}).values() if isinstance(v, dict) and v.get("n")]
+    out["current_only"] = len(set(ns)) <= 1 if ns else True
+    out["historical_membership"] = len(set(ns)) >= 2 if ns else False
+    out["pit_available"] = bool(out["historical_membership"] and out.get("date_param_in_signature"))
+    out["status"] = "MONTHLY_ASOF_AVAILABLE" if out["pit_available"] else "CURRENT_ONLY"
     return out
 
 
 def audit_secondary():
-    """AkShare-class HTTP only. Not canonical storage."""
     import urllib.request
 
     out = {"akshare_installed": False, "canonical": False, "role": "CROSS_CHECK_ONLY"}
@@ -187,6 +214,8 @@ def audit_secondary():
 
 def run_source_audit():
     ensure_v16()
+    import baostock as bs
+
     report = {
         "NEW_PURCHASE": NEW_PURCHASE,
         "canonical": CANONICAL_SOURCE,
@@ -196,15 +225,21 @@ def run_source_audit():
         "industry": None,
         "secondary_probe": None,
     }
-    sess = BaoSession(sleep_s=0.03, max_retries=4)
+    print("V16_AUDIT_LOGIN", flush=True)
+    login = bs.login()
+    report["login"] = {"error_code": getattr(login, "error_code", None), "error_msg": getattr(login, "error_msg", None)}
     try:
-        sess.login()
-        report["financial"] = audit_financial(sess)
-        report["industry"] = audit_industry(sess)
+        if str(report["login"]["error_code"]) != "0":
+            raise RuntimeError("BAOSTOCK_LOGIN")
+        report["financial"] = audit_financial(bs)
+        report["industry"] = audit_industry(bs)
     except Exception:
         report["session_error"] = traceback.format_exc()
     finally:
-        sess.logout()
+        try:
+            bs.logout()
+        except Exception:
+            pass
     report["secondary_probe"] = audit_secondary()
     fin = report.get("financial") or {}
     ind = report.get("industry") or {}
@@ -214,7 +249,7 @@ def run_source_audit():
         "financial_pit_sample_ok": bool((fin.get("pit_sample") or {}).get("ok")),
         "financial_restatement_risk": True,
         "industry_current_only": bool(ind.get("current_only", True)),
-        "industry_pit": False,
+        "industry_pit": bool(ind.get("pit_available")),
         "purchase_required": False,
     }
     dump_json(os.path.join(OUT, "SOURCE_AUDIT.json"), report)

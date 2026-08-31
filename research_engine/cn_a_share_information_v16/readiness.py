@@ -33,6 +33,8 @@ def industry_ready(ind_pit):
         "historical_membership": bool(ind_pit.get("historical_membership")),
         "not_current_only": not bool(ind_pit.get("current_only")),
         "pit_available": bool(ind_pit.get("pit_available")),
+        "pit_test": bool(ind_pit.get("pit_test_ok")),
+        "mutation": bool(ind_pit.get("future_snapshot_mutation_ok")),
     }
     ready = all(checks.values())
     return {

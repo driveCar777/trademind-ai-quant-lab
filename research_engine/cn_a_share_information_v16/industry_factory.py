@@ -1,45 +1,144 @@
-"""Industry snapshot. Do not backfill today's industry into history."""
+"""Monthly BaoStock industry snapshots. date= is knowledge time. Do not use current-only backfill."""
 from __future__ import print_function
 
+import json
 import os
+from datetime import date, datetime, timezone
 
 from research_engine.cn_a_share.io_util import dump_json, write_csv
-from research_engine.cn_a_share.session import BaoSession
-from research_engine.cn_a_share_information_v16.industry_schema import NORMALIZED_COLS, normalize_industry_row
-from research_engine.cn_a_share_information_v16.paths import IND_MAN, IND_QUAL, IND_RAW, IND_REF, OUT, ensure_v16
+from research_engine.cn_a_share_information_v16.industry_schema import NORMALIZED_COLS
+from research_engine.cn_a_share_information_v16.paths import IND_MAN, IND_NORM, IND_QUAL, IND_RAW, IND_REF, OUT, ensure_v16
+from research_protocol.hashing import file_sha256
+
+
+def _utc_now():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _consume(rs):
+    rows = []
+    fields = list(getattr(rs, "fields", []) or [])
+    if str(getattr(rs, "error_code", "1")) != "0":
+        return rows, str(rs.error_code), getattr(rs, "error_msg", None)
+    while rs.error_code == "0" and rs.next():
+        rows.append(dict(zip(fields, rs.get_row_data())))
+    return rows, "0", None
+
+
+def month_grid(start="2009-12-15", end="2024-02-15"):
+    y, m, d = [int(x) for x in start.split("-")]
+    ey, em, ed = [int(x) for x in end.split("-")]
+    out = []
+    cur = date(y, m, d)
+    last = date(ey, em, ed)
+    while cur <= last:
+        out.append(cur.isoformat())
+        if cur.month == 12:
+            cur = date(cur.year + 1, 1, min(d, 28))
+        else:
+            cur = date(cur.year, cur.month + 1, min(d, 28))
+    return out
+
+
+def download_industry_monthly(start="2009-12-15", end="2024-02-15"):
+    """One snapshot per month. Query date is the as-of / effective date."""
+    ensure_v16()
+    import baostock as bs
+
+    days = month_grid(start, end)
+    raw_dir = os.path.join(IND_RAW, "monthly")
+    if not os.path.isdir(raw_dir):
+        os.makedirs(raw_dir)
+    done = set(name[9:19] for name in os.listdir(raw_dir) if name.startswith("asof_") and name.endswith(".json"))
+    todo = [d for d in days if d not in done]
+    print("V16_IND_DL", "done", len(done), "todo", len(todo), flush=True)
+    if not todo:
+        return {"n_done": len(done), "n_todo": 0}
+    login = bs.login()
+    if str(login.error_code) != "0":
+        raise RuntimeError("BAOSTOCK_LOGIN")
+    try:
+        for i, day in enumerate(todo):
+            rows, err, msg = _consume(bs.query_stock_industry(date=day))
+            payload = {
+                "asof": day,
+                "retrieved_at": _utc_now(),
+                "n": len(rows),
+                "error": err,
+                "msg": msg,
+                "immutable": True,
+                "rows": rows,
+            }
+            dump_json(os.path.join(raw_dir, "asof_%s.json" % day), payload)
+            if i % 5 == 0 or i + 1 == len(todo):
+                print("V16_IND_DL", i + 1, "/", len(todo), day, "n", len(rows), flush=True)
+    finally:
+        bs.logout()
+    return {"n_done": len(os.listdir(raw_dir)), "last": todo[-1] if todo else None}
 
 
 def download_industry_snapshot():
+    """Current snapshot for catalog only. Not a PIT freeze."""
     ensure_v16()
-    sess = BaoSession(sleep_s=0.03, max_retries=4)
+    import baostock as bs
+
+    login = bs.login()
+    if str(login.error_code) != "0":
+        raise RuntimeError("BAOSTOCK_LOGIN")
     try:
-        sess.login()
-        rows = sess._retry(lambda: sess.bs.query_stock_industry())
+        rows, err, msg = _consume(bs.query_stock_industry())
     finally:
-        sess.logout()
-    dump_json(os.path.join(IND_RAW, "industry_snapshot.json"), {"n": len(rows), "rows": rows, "immutable": True})
-    norms = [normalize_industry_row(r) for r in rows]
-    norms = [n for n in norms if n]
-    write_csv(os.path.join(IND_REF, "INDUSTRY_SNAPSHOT.csv"), NORMALIZED_COLS, norms)
+        bs.logout()
+    dump_json(os.path.join(IND_RAW, "industry_snapshot.json"), {"n": len(rows), "rows": rows, "immutable": True, "current_only": True})
+    return rows
+
+
+def normalize_industry():
+    ensure_v16()
+    raw_dir = os.path.join(IND_RAW, "monthly")
+    rows = []
+    asofs = []
+    for name in sorted(os.listdir(raw_dir)):
+        if not name.startswith("asof_") or not name.endswith(".json"):
+            continue
+        handle = open(os.path.join(raw_dir, name), "r", encoding="utf-8")
+        try:
+            payload = json.load(handle)
+        finally:
+            handle.close()
+        asof = payload.get("asof")
+        asofs.append(asof)
+        for raw in payload.get("rows") or []:
+            rows.append(
+                {
+                    "symbol": raw.get("code"),
+                    "name": raw.get("code_name"),
+                    "industry": raw.get("industry"),
+                    "industry_classification": raw.get("industryClassification"),
+                    "source_update_date": raw.get("updateDate"),
+                    "effective_date": asof,
+                    "pit_available": True,
+                    "source": "BAOSTOCK_query_stock_industry_date",
+                }
+            )
+    csv_path = os.path.join(IND_NORM, "INDUSTRY_MONTHLY.csv")
+    write_csv(csv_path, NORMALIZED_COLS, rows)
     catalog = {
-        "n": len(norms),
-        "n_update_dates": len(set(n.get("source_update_date") for n in norms if n.get("source_update_date"))),
-        "update_dates": sorted(set(n.get("source_update_date") for n in norms if n.get("source_update_date"))),
-        "effective_date_present": any(n.get("effective_date") for n in norms),
-        "pit_available": False,
-        "label": "CURRENT_ONLY",
-        "backfill_forbidden": True,
+        "n_rows": len(rows),
+        "n_asof": len(asofs),
+        "asof_min": asofs[0] if asofs else None,
+        "asof_max": asofs[-1] if asofs else None,
+        "n_symbols": len(set(r["symbol"] for r in rows)),
+        "effective_date_present": True,
+        "pit_available": True,
+        "label": "MONTHLY_ASOF",
+        "csv_sha256": file_sha256(csv_path),
+        "grid": "15th_of_month",
+        "knowledge_time": "effective_date = query date",
     }
     dump_json(os.path.join(IND_REF, "INDUSTRY_CATALOG.json"), catalog)
-    dump_json(os.path.join(IND_MAN, "INDUSTRY_SNAPSHOT.json"), catalog)
+    dump_json(os.path.join(IND_MAN, "INDUSTRY_NORMALIZE.json"), catalog)
     dump_json(os.path.join(IND_QUAL, "INDUSTRY_CATALOG.json"), catalog)
     dump_json(os.path.join(OUT, "INDUSTRY_CATALOG.json"), catalog)
-    print("V16_IND_SNAP", catalog, flush=True)
-    return norms, catalog
-
-
-def load_industry_snapshot():
-    from research_engine.cn_a_share.io_util import load_json
-
-    raw = load_json(os.path.join(IND_RAW, "industry_snapshot.json"))
-    return [normalize_industry_row(r) for r in raw.get("rows") or []]
+    print("V16_IND_NORM", catalog["n_rows"], catalog["n_asof"], flush=True)
+    return rows, catalog

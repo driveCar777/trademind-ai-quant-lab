@@ -75,7 +75,32 @@ FIN_HYPOTHESES = (
     },
 )
 
-IND_HYPOTHESES = ()
+IND_HYPOTHESES = (
+    {
+        "id": "I1_IND_RS_20",
+        "family": "INDUSTRY_RELATIVE_STRENGTH",
+        "mechanism": "PIT industry 20-day EW close return. Long names in strong industries.",
+        "signal": "INDUSTRY_RS_20",
+        "lookback": 20,
+        "hold_days": HOLD_DAYS,
+    },
+    {
+        "id": "I2_IND_RS_60",
+        "family": "INDUSTRY_RELATIVE_STRENGTH",
+        "mechanism": "PIT industry 60-day EW close return. Long names in strong industries.",
+        "signal": "INDUSTRY_RS_60",
+        "lookback": 60,
+        "hold_days": HOLD_DAYS,
+    },
+    {
+        "id": "I3_IND_BREADTH_20",
+        "family": "INDUSTRY_BREADTH",
+        "mechanism": "PIT industry 20-day breadth (pct members with positive close return). Long high breadth.",
+        "signal": "INDUSTRY_BREADTH_20",
+        "lookback": 20,
+        "hold_days": HOLD_DAYS,
+    },
+)
 
 
 def build_financial_contract():
@@ -123,15 +148,25 @@ def build_financial_contract():
     return payload
 
 
-def build_industry_contract(blocked=True):
+def build_industry_contract(blocked=False):
+    if (not blocked) and len(IND_HYPOTHESES) > MAX_IND_HYP:
+        raise RuntimeError("TOO_MANY_IND_HYP")
     payload = {
         "id": V16_ID + "_INDUSTRY_ALPHA",
         "blocked": blocked,
-        "reason": "INDUSTRY_PIT_BLOCKED_CURRENT_ONLY",
+        "reason": "INDUSTRY_PIT_BLOCKED" if blocked else "MONTHLY_ASOF_PIT",
         "max_hypotheses": MAX_IND_HYP,
-        "hypotheses": [dict(h) for h in IND_HYPOTHESES],
+        "price_dataset_id": PRICE_DATASET_ID,
+        "price_dataset_hash": PRICE_DATASET_HASH,
+        "knowledge_time": "effective_date <= signal_date",
+        "quantile": QUANTILE,
+        "hold_days": HOLD_DAYS,
+        "predictive_metric_name": "MEAN_FORWARD_RETURN",
+        "predictive_is_not_cagr": True,
+        "hypotheses": [] if blocked else [dict(h) for h in IND_HYPOTHESES],
         "new_purchase": NEW_PURCHASE,
         "final_oos": FINAL_OOS_ACCESS,
+        "not": "INDUSTRY_X_MOMENTUM_X_LOWVOL",
     }
     payload["contract_hash"] = canonical_hash(payload)
     return payload

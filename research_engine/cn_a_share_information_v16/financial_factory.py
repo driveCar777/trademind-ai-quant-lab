@@ -7,7 +7,6 @@ import os
 from datetime import datetime, timezone
 
 from research_engine.cn_a_share.io_util import dump_json, write_csv
-from research_engine.cn_a_share.session import BaoSession
 from research_engine.cn_a_share.universe_daily import load_equities
 from research_engine.cn_a_share_information_v16 import FIN_YEAR0, FIN_YEAR1
 from research_engine.cn_a_share_information_v16.financial_schema import NORMALIZED_COLS, normalize_profit_row
@@ -72,9 +71,21 @@ def _mark_done(symbol):
         handle.close()
 
 
-def download_profit_annual(max_symbols=None, sleep_s=0.02):
+def _consume(rs):
+    rows = []
+    fields = list(getattr(rs, "fields", []) or [])
+    if str(getattr(rs, "error_code", "1")) != "0":
+        return rows
+    while rs.error_code == "0" and rs.next():
+        rows.append(dict(zip(fields, rs.get_row_data())))
+    return rows
+
+
+def download_profit_annual(max_symbols=None, sleep_s=0.0):
     """Annual Q4 only. Quarterly API is audited; not swept for this freeze."""
     ensure_v16()
+    import baostock as bs
+
     equities = load_equities(BASIC_CSV)
     jobs = symbol_jobs(equities)
     if max_symbols:
@@ -84,17 +95,18 @@ def download_profit_annual(max_symbols=None, sleep_s=0.02):
     print("V16_FIN_DL", "done", len(done), "todo", len(todo), flush=True)
     if not todo:
         return {"n_done": len(done), "n_todo": 0}
-    sess = BaoSession(sleep_s=sleep_s, max_retries=5)
+    login = bs.login()
+    if str(login.error_code) != "0":
+        raise RuntimeError("BAOSTOCK_LOGIN")
     n_ok = 0
     n_empty = 0
     try:
-        sess.login()
         for i, job in enumerate(todo):
             symbol = job["symbol"]
             recs = []
             for year in range(job["year0"], job["year1"] + 1):
-                rows = sess._retry(lambda y=year: sess.bs.query_profit_data(code=symbol, year=y, quarter=4))
-                raw = rows[0] if rows else None
+                raw_rows = _consume(bs.query_profit_data(code=symbol, year=year, quarter=4))
+                raw = raw_rows[0] if raw_rows else None
                 recs.append({"year": year, "quarter": 4, "empty": raw is None, "raw": raw})
                 if raw is None:
                     n_empty += 1
@@ -113,8 +125,8 @@ def download_profit_annual(max_symbols=None, sleep_s=0.02):
             if i % 25 == 0 or i + 1 == len(todo):
                 print("V16_FIN_DL", i + 1, "/", len(todo), symbol, "ok_rows", n_ok, flush=True)
     finally:
-        sess.logout()
-    return {"n_done": len(_done_set()), "n_ok_rows": n_ok, "n_empty": n_empty, "n_todo_left": len(todo) - len([1 for j in todo if j["symbol"] in _done_set()])}
+        bs.logout()
+    return {"n_done": len(_done_set()), "n_ok_rows": n_ok, "n_empty": n_empty}
 
 
 def normalize_financials():

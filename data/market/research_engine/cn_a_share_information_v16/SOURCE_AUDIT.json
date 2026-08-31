@@ -1,0 +1,442 @@
+{
+  "NEW_PURCHASE": false,
+  "canonical": "BAOSTOCK",
+  "financial": {
+    "apis": {
+      "balance_2023q4": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "YOYLiability": "-0.010483",
+            "assetToEquity": "1.219279",
+            "cashRatio": "1.426576",
+            "code": "sh.600519",
+            "currentRatio": "4.623892",
+            "liabilityToAsset": "0.179843",
+            "pubDate": "2024-04-03",
+            "quickRatio": "3.670351",
+            "statDate": "2023-12-31"
+          }
+        ],
+        "seconds": 0.23853135108947754
+      },
+      "cash_2023q4": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "CAToAsset": "0.825716",
+            "CFOToGr": "0.442303",
+            "CFOToNP": "0.859030",
+            "CFOToOR": "0.450888",
+            "NCAToAsset": "0.174284",
+            "code": "sh.600519",
+            "ebitToInterest": "",
+            "pubDate": "2024-04-03",
+            "statDate": "2023-12-31",
+            "tangibleAssetToAsset": "0.741007"
+          }
+        ],
+        "seconds": 0.23198294639587402
+      },
+      "dupont_2023q4": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "code": "sh.600519",
+            "dupontAssetStoEquity": "1.275644",
+            "dupontAssetTurn": "0.571317",
+            "dupontEbittogr": "0.675695",
+            "dupontIntburden": "1.018968",
+            "dupontNitogr": "0.514886",
+            "dupontPnitoni": "0.964043",
+            "dupontROE": "0.361755",
+            "dupontTaxBurden": "0.747825",
+            "pubDate": "2024-04-03",
+            "statDate": "2023-12-31"
+          }
+        ],
+        "seconds": 0.23225879669189453
+      },
+      "growth_2023q4": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "YOYAsset": "0.071508",
+            "YOYEPSBasic": "0.191468",
+            "YOYEquity": "0.092103",
+            "YOYNI": "0.185778",
+            "YOYPNI": "0.191599",
+            "code": "sh.600519",
+            "pubDate": "2024-04-03",
+            "statDate": "2023-12-31"
+          }
+        ],
+        "seconds": 0.23181915283203125
+      },
+      "operation_2023q4": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "AssetTurnRatio": "0.571317",
+            "CATurnRatio": "0.681602",
+            "INVTurnDays": "1293.103448",
+            "INVTurnRatio": "0.278380",
+            "NRTurnDays": "0.244598",
+            "NRTurnRatio": "1471.805290",
+            "code": "sh.600519",
+            "pubDate": "2024-04-03",
+            "statDate": "2023-12-31"
+          }
+        ],
+        "seconds": 0.22917628288269043
+      },
+      "profit_2007q4": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "MBRevenue": "7237302489.180000",
+            "code": "sh.600519",
+            "epsTTM": "2.999398",
+            "gpMargin": "0.879565",
+            "liqaShare": "407930966.00",
+            "netProfit": "2966052508.950000",
+            "npMargin": "0.409821",
+            "pubDate": "2008-03-13",
+            "roeAvg": "0.395989",
+            "statDate": "2007-12-31",
+            "totalShare": "943800000.00"
+          }
+        ],
+        "seconds": 0.24185919761657715
+      },
+      "profit_2022q4": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "MBRevenue": "123772332348.710000",
+            "code": "sh.600519",
+            "epsTTM": "49.925612",
+            "gpMargin": "0.918667",
+            "liqaShare": "1256197800.00",
+            "netProfit": "65375136766.750000",
+            "npMargin": "0.526795",
+            "pubDate": "2023-03-31",
+            "roeAvg": "0.324077",
+            "statDate": "2022-12-31",
+            "totalShare": "1256197800.00"
+          }
+        ],
+        "seconds": 0.4043898582458496
+      },
+      "profit_2023q1": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "MBRevenue": "",
+            "code": "sh.600519",
+            "epsTTM": "52.751532",
+            "gpMargin": "0.925956",
+            "liqaShare": "1256197800.00",
+            "netProfit": "21524725630.160000",
+            "npMargin": "0.555393",
+            "pubDate": "2023-04-26",
+            "roeAvg": "0.100028",
+            "statDate": "2023-03-31",
+            "totalShare": "1256197800.00"
+          }
+        ],
+        "seconds": 0.23401165008544922
+      },
+      "profit_2023q4": {
+        "error": "0",
+        "msg": "success",
+        "n": 1,
+        "sample": [
+          {
+            "MBRevenue": "147218996281.040000",
+            "code": "sh.600519",
+            "epsTTM": "59.492280",
+            "gpMargin": "0.919649",
+            "liqaShare": "1256197800.00",
+            "netProfit": "77521476277.800000",
+            "npMargin": "0.524880",
+            "pubDate": "2024-04-03",
+            "roeAvg": "0.361755",
+            "statDate": "2023-12-31",
+            "totalShare": "1256197800.00"
+          }
+        ],
+        "seconds": 0.539588451385498
+      }
+    },
+    "fields": {
+      "balance_2023q4": [
+        "YOYLiability",
+        "assetToEquity",
+        "cashRatio",
+        "code",
+        "currentRatio",
+        "liabilityToAsset",
+        "pubDate",
+        "quickRatio",
+        "statDate"
+      ],
+      "cash_2023q4": [
+        "CAToAsset",
+        "CFOToGr",
+        "CFOToNP",
+        "CFOToOR",
+        "NCAToAsset",
+        "code",
+        "ebitToInterest",
+        "pubDate",
+        "statDate",
+        "tangibleAssetToAsset"
+      ],
+      "dupont_2023q4": [
+        "code",
+        "dupontAssetStoEquity",
+        "dupontAssetTurn",
+        "dupontEbittogr",
+        "dupontIntburden",
+        "dupontNitogr",
+        "dupontPnitoni",
+        "dupontROE",
+        "dupontTaxBurden",
+        "pubDate",
+        "statDate"
+      ],
+      "growth_2023q4": [
+        "YOYAsset",
+        "YOYEPSBasic",
+        "YOYEquity",
+        "YOYNI",
+        "YOYPNI",
+        "code",
+        "pubDate",
+        "statDate"
+      ],
+      "operation_2023q4": [
+        "AssetTurnRatio",
+        "CATurnRatio",
+        "INVTurnDays",
+        "INVTurnRatio",
+        "NRTurnDays",
+        "NRTurnRatio",
+        "code",
+        "pubDate",
+        "statDate"
+      ],
+      "profit_2007q4": [
+        "MBRevenue",
+        "code",
+        "epsTTM",
+        "gpMargin",
+        "liqaShare",
+        "netProfit",
+        "npMargin",
+        "pubDate",
+        "roeAvg",
+        "statDate",
+        "totalShare"
+      ],
+      "profit_2022q4": [
+        "MBRevenue",
+        "code",
+        "epsTTM",
+        "gpMargin",
+        "liqaShare",
+        "netProfit",
+        "npMargin",
+        "pubDate",
+        "roeAvg",
+        "statDate",
+        "totalShare"
+      ],
+      "profit_2023q1": [
+        "MBRevenue",
+        "code",
+        "epsTTM",
+        "gpMargin",
+        "liqaShare",
+        "netProfit",
+        "npMargin",
+        "pubDate",
+        "roeAvg",
+        "statDate",
+        "totalShare"
+      ],
+      "profit_2023q4": [
+        "MBRevenue",
+        "code",
+        "epsTTM",
+        "gpMargin",
+        "liqaShare",
+        "netProfit",
+        "npMargin",
+        "pubDate",
+        "roeAvg",
+        "statDate",
+        "totalShare"
+      ]
+    },
+    "pit_sample": {
+      "2022_annual_expected_visible": true,
+      "2023_annual_hidden": true,
+      "asof": "2024-01-01",
+      "hidden_period": "2023-12-31",
+      "ok": true,
+      "rows": [
+        {
+          "announcement_date": "2023-03-31",
+          "net_profit": "65375136766.750000",
+          "report_period": "2022-12-31",
+          "symbol": "sh.600519"
+        },
+        {
+          "announcement_date": "2024-04-03",
+          "net_profit": "77521476277.800000",
+          "report_period": "2023-12-31",
+          "symbol": "sh.600519"
+        }
+      ],
+      "visible_periods": [
+        "2022-12-31"
+      ]
+    },
+    "restatement": {
+      "label": "RESTATEMENT_RISK",
+      "note": "BaoStock returns one current row per code/year/quarter. No revision table.",
+      "repeat_equal": true,
+      "version_history": false
+    },
+    "signatures": {
+      "query_balance_data": "(code, year=None, quarter=None)",
+      "query_profit_data": "(code, year=None, quarter=None)",
+      "query_stock_industry": "(code='', date='')"
+    },
+    "timing_s": {
+      "n": 15,
+      "per_call": 0.3197125275929769,
+      "profit_15_calls": 4.795687913894653
+    }
+  },
+  "forbidden": [
+    "TUSHARE",
+    "WIND",
+    "CHOICE",
+    "CSMAR",
+    "DATABENTO",
+    "OPTIONS",
+    "MT5"
+  ],
+  "industry": {
+    "current_only": false,
+    "current_only_without_date": true,
+    "date_attempts": {
+      "2015-06-15": {
+        "error": "0",
+        "n": 2842,
+        "update_dates": [
+          "2015-06-15"
+        ]
+      },
+      "2020-01-02": {
+        "error": "0",
+        "n": 3869,
+        "update_dates": [
+          "2019-12-30"
+        ]
+      }
+    },
+    "date_param_in_signature": true,
+    "historical_membership": true,
+    "hs300_date_works": {
+      "n_2018": 300,
+      "n_2024": 300,
+      "sets_differ": true
+    },
+    "hs300_is_not_industry": true,
+    "pit_available": true,
+    "signature": "(code='', date='')",
+    "snapshot": {
+      "error": "0",
+      "fields": [
+        "code",
+        "code_name",
+        "industry",
+        "industryClassification",
+        "updateDate"
+      ],
+      "n": 5546,
+      "n_update_dates": 1,
+      "sample": [
+        {
+          "code": "sh.600000",
+          "code_name": "浦发银行",
+          "industry": "J66货币金融服务",
+          "industryClassification": "证监会行业分类",
+          "updateDate": "2026-08-31"
+        },
+        {
+          "code": "sh.600001",
+          "code_name": "邯郸钢铁",
+          "industry": "",
+          "industryClassification": "证监会行业分类",
+          "updateDate": "2026-08-31"
+        },
+        {
+          "code": "sh.600002",
+          "code_name": "齐鲁石化",
+          "industry": "",
+          "industryClassification": "证监会行业分类",
+          "updateDate": "2026-08-31"
+        }
+      ],
+      "seconds": 33.242000341415405,
+      "update_dates": [
+        "2026-08-31"
+      ]
+    },
+    "status": "MONTHLY_ASOF_AVAILABLE"
+  },
+  "login": {
+    "error_code": "0",
+    "error_msg": "success"
+  },
+  "secondary": "AKSHARE_CLASS_HTTP",
+  "secondary_probe": {
+    "akshare_installed": false,
+    "akshare_note": "Not installed. Not installing.",
+    "canonical": false,
+    "em_bytes": 122,
+    "em_http_ok": true,
+    "not_used_as_store": true,
+    "role": "CROSS_CHECK_ONLY"
+  },
+  "verdict": {
+    "financial_api_live": true,
+    "financial_has_pubDate": true,
+    "financial_pit_sample_ok": true,
+    "financial_restatement_risk": true,
+    "industry_current_only": false,
+    "industry_pit": true,
+    "purchase_required": false
+  }
+}
