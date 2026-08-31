@@ -61,6 +61,9 @@ data/mine/
 # A-share large raw / normalized bars (catalogs and small reference stay)
 data/market/cn_a_share/raw/
 data/market/cn_a_share/normalized/
+data/market/cn_a_share/alpha_cache/
+data/market/research_engine/cn_a_share_alpha_v1/EQUITY/
+data/market/research_engine/cn_a_share_alpha_v1/TRADES/
 
 # HuggingFace / model caches
 **/.cache/

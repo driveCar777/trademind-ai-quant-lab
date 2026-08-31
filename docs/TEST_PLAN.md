@@ -809,6 +809,17 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V13 A-share CS Alpha — 2026-08-31 IN PROGRESS
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_alpha_v13.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| 12 假设 / 无采购 / 无 live / stamp PIT / 70-15-15 | ✅ **6 PASS** |
+| 数据 | 仅 `tm-ashare-EQUITY-D1-20260830-000002` |
+| Final OOS | DENIED |
+| 花费 | $0 |
+
 ## V12.2 Panel Completion — 2026-08-30 FROZEN
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_v12_2.py --import-mode=importlib`

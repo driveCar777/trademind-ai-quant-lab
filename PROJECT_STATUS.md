@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-30（V12.2 FULL_PANEL_FROZEN；PRICE_ALPHA_READY；无采购；不要自动开 Alpha；Level 0；Candidate=0）  
+**最后更新：** 2026-08-31（V13 CS alpha IN PROGRESS；冻结面板；无采购；Level 0；Candidate=0）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V11.7** + … + **V12.2 FULL_PANEL_FROZEN** |
-| 状态 | Level 0。Candidate=0。PRICE_ALPHA_READY。财务/行业/事件 BLOCKED。不买数据。不要自动开 Alpha。 |
-| 当前 Phase | NEXT 纸面 = CHINA_A_SHARE_ALPHA_DISCOVERY。本任务已 STOP。$93 = UNUSED_RESEARCH_RESERVE。 |
+| 版本 | **V13 A-share CS alpha IN PROGRESS** |
+| 状态 | Level 0。Candidate=0。冻结日线盘上的 12 个预注册假设。不买数据。 |
+| 当前 Phase | 跑完 12 假设 → FDR → 决策。Final OOS DENIED。$93 = UNUSED_RESEARCH_RESERVE。 |
 
 ---
 

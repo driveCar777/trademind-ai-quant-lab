@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-08-31 — V13 A-share CS alpha START
+
+- Frozen panel only. 12 pre-registered hypotheses. No purchase. No live API.
+- Entry: `docs/research_engine/V13_START.md`.
+
 ## 2026-08-30 — V12.2 panel FROZEN PRICE_ALPHA_READY
 
 - 5549/5549 raw. 18,418,047 rows. dataset_id `tm-ashare-EQUITY-D1-20260830-000002`.
