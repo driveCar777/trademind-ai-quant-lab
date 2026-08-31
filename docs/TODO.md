@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V14 H11/H12 Strategy Construction **DONE**。不要优化。不要第13个因子。不要 Paper。
-> **最后更新:** 2026-08-31（WEAK_BUT_RESEARCHABLE；Level=1；Candidate=2；$0）
-> **阶段终点:** 本波已 STOP。NEXT = LOW_PRIORITY。Final OOS DENIED。
+> **当前活跃模块:** V14.1 Candidate→Strategy Forensics **DONE**。不要优化。不要 Long Validation。不要第13个因子。不要 Paper。
+> **最后更新:** 2026-08-31（METHODOLOGY_GAP_CONFIRMED；Level=1；Candidate=2；$0）
+> **阶段终点:** 本波已 STOP。NEXT = KEEP_CANDIDATE_STRATEGY_WEAK_NO_LONG_VALIDATION。Final OOS DENIED。
 
 ---
 
@@ -64,6 +64,7 @@
 | MISSION V13.0 | A-share cross-sectional price alpha V1 | ✅ LEVEL_1_CANDIDATE=2 | 2026-08-31 |
 | MISSION V13.1 | H11/H12 candidate reproduction | ✅ SURVIVED×2 | 2026-08-31 |
 | MISSION V14.0 | H11/H12 strategy construction | ✅ WEAK_BUT_RESEARCHABLE | 2026-08-31 |
+| MISSION V14.1 | Candidate→Strategy forensics | ✅ METHODOLOGY_GAP_CONFIRMED | 2026-08-31 |
 
 ## V12 A-share PIT Foundation — CONDITIONAL 2026-08-30
 

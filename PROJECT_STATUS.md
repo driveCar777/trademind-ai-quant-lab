@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-31（V14 STRATEGY_WEAK_BUT_RESEARCHABLE；无采购；不要优化）  
+**最后更新：** 2026-08-31（V14.1 METHODOLOGY_GAP_CONFIRMED；无采购；不要优化；不要 LV）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V14 H11/H12 Strategy Construction** |
-| 状态 | `STRATEGY_WEAK_BUT_RESEARCHABLE`。可执行。2010–validation 资金账户为负。验证期 CAGR ≈ 0.12% / 0.74%。不要调参。 |
-| 当前 Phase | 本波 STOP。NEXT = LOW_PRIORITY。不要 Paper。Final OOS DENIED。$93 = UNUSED_RESEARCH_RESERVE。 |
+| 版本 | **V14.1 Candidate → Strategy Forensics** |
+| 状态 | `METHODOLOGY_GAP_CONFIRMED`。Candidate 正、资金账户负。会计正确。不是 hidden edge。 |
+| 当前 Phase | 本波 STOP。NEXT = KEEP_CANDIDATE_STRATEGY_WEAK_NO_LONG_VALIDATION。不要 Paper。不要调参。Final OOS DENIED。$93 = UNUSED_RESEARCH_RESERVE。 |
 
 ---
 

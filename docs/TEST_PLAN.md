@@ -809,6 +809,21 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V14.1 Candidate→Strategy Forensics — 2026-08-31 METHODOLOGY_GAP_CONFIRMED
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_strategy_v14_1.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| 合同 / 无新因子 / 独立引擎 / 合成账户 | ✅ **6 PASS** |
+| Candidate Path A vs published | ✅ abs err 0 |
+| Candidate Path A vs Path B | ✅ abs err 0 |
+| Capital Path A vs Path B | ✅ end abs err < 1e-7 |
+| 会计 | start+net=end；unfilled 费用 0；无 double charge |
+| 决策 | `METHODOLOGY_GAP_CONFIRMED`。不要 LV。不要调参 |
+| Final OOS | DENIED |
+| 花费 | $0 |
+
 ## V14 H11/H12 Strategy — 2026-08-31 WEAK_BUT_RESEARCHABLE
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_strategy_v14.py --import-mode=importlib`

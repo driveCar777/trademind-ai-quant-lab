@@ -4,6 +4,17 @@
 
 ---
 
+## 2026-08-31 — V14.1 candidate/strategy forensics DECISION
+
+- Independent reconstruction: Candidate Path A/B match published `mean_net_h` (err=0). Capital Path A/B match V14 settled ends.
+- `METHODOLOGY_GAP_CONFIRMED`. Overlapping mean CAGR is not a book. All 20 offset grids compound to a loss. No accounting bug. No Long Validation. No retune.
+- Entry: `docs/research_engine/V14_1_DECISION.md`.
+
+## 2026-08-31 — V14.1 candidate/strategy forensics START
+
+- Audit only. Explain Candidate+ vs Strategy−. No new factor. No retune.
+- Entry: `docs/research_engine/V14_1_START.md`.
+
 ## 2026-08-31 — V14 strategy construction DECISION
 
 - Canonical Strategy-H11 / H12 are executable and reconciled. Full-path capital lost money.
