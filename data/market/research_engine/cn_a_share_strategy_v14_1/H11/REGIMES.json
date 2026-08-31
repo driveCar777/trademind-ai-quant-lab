@@ -1,0 +1,52 @@
+{
+  "2010-2014": {
+    "denied_overlap": false,
+    "end": "2014-12-31",
+    "end_equity": 882750.3348964489,
+    "n_trades": 61,
+    "note": "diagnostic only; do not drop any window",
+    "start": "2010-01-04",
+    "start_equity": 1000000.0,
+    "total": -0.11724966510355117
+  },
+  "2015-2019": {
+    "denied_overlap": false,
+    "end": "2019-12-31",
+    "end_equity": 744071.4715496952,
+    "n_trades": 61,
+    "note": "diagnostic only; do not drop any window",
+    "start": "2015-01-05",
+    "start_equity": 900761.7127808741,
+    "total": -0.17395304330535688
+  },
+  "2020-2021": {
+    "denied_overlap": false,
+    "end": "2021-12-31",
+    "end_equity": 937960.0008239632,
+    "n_trades": 24,
+    "note": "diagnostic only; do not drop any window",
+    "start": "2020-01-02",
+    "start_equity": 752926.4080926618,
+    "total": 0.2457525605988966
+  },
+  "2022-2023": {
+    "denied_overlap": false,
+    "end": "2023-12-29",
+    "end_equity": 896322.1154078066,
+    "n_trades": 25,
+    "note": "diagnostic only; do not drop any window",
+    "start": "2022-01-04",
+    "start_equity": 958409.0291246134,
+    "total": -0.06478122787878515
+  },
+  "2024-2026": {
+    "denied_overlap": true,
+    "end": "2024-03-06",
+    "end_equity": 834202.8900905689,
+    "n_trades": 1,
+    "note": "diagnostic only; do not drop any window",
+    "start": "2024-01-02",
+    "start_equity": 895628.9213242463,
+    "total": -0.06858424261563034
+  }
+}

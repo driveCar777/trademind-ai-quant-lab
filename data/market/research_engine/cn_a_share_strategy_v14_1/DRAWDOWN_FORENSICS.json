@@ -1,0 +1,44 @@
+{
+  "H11": {
+    "how_66pct": "Peak around mid-2015, trough around late-2018, no recovery on the official path. The drawdown is a multi-year capital path, not a single overlapping-mean statistic.",
+    "max_loss_cluster": {
+      "end": "2015-08-26",
+      "loss": -0.27384041276335536,
+      "start": "2015-08-20"
+    },
+    "maxdd": -0.6646081293623745,
+    "peak_date": "2015-06-12",
+    "peak_equity": 1835282.219885802,
+    "recovery_date": null,
+    "trough_date": "2018-10-18",
+    "trough_equity": 615538.736875473,
+    "worst_day": "2015-08-24",
+    "worst_day_ret": -0.08786154997696072,
+    "worst_trade": {
+      "net_yuan": -422656.8823175505,
+      "ret": -0.23652181651268234,
+      "signal_date": "2015-06-15"
+    }
+  },
+  "H12": {
+    "how_66pct": "Peak around mid-2015, trough around late-2018, no recovery on the official path. The drawdown is a multi-year capital path, not a single overlapping-mean statistic.",
+    "max_loss_cluster": {
+      "end": "2015-08-26",
+      "loss": -0.2749490896417447,
+      "start": "2015-08-20"
+    },
+    "maxdd": -0.6623977846798166,
+    "peak_date": "2015-06-12",
+    "peak_equity": 1908131.4713375173,
+    "recovery_date": null,
+    "trough_date": "2018-10-18",
+    "trough_equity": 644189.4118457069,
+    "worst_day": "2015-08-24",
+    "worst_day_ret": -0.08840097170539263,
+    "worst_trade": {
+      "net_yuan": -439565.76059594913,
+      "ret": -0.2367774516170844,
+      "signal_date": "2015-06-15"
+    }
+  }
+}
