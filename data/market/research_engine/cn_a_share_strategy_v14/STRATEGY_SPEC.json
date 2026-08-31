@@ -1,0 +1,108 @@
+{
+  "cagr_target_not_a_gate": 0.1,
+  "canonical_per_candidate": 1,
+  "cash_buffer": "NONE_EXCEPT_UNFILLED",
+  "cluster": "LOW_VOL_CANDIDATE_CLUSTER",
+  "corporate_action": "RAW_CLOSE_CANONICAL. qfq is diagnostic only and not available as a frozen panel.",
+  "cost": {
+    "commission": 0.00025,
+    "execution_approximation": "No bid/ask. Slippage is the locked 10bp contract approximation.",
+    "id": "A_SHARE_STRATEGY_COST_MODEL_V1",
+    "not": "MT5_5BP_10BP",
+    "note": "Rates locked. Do not search a cheaper model.",
+    "parent": "A_SHARE_TRANSACTION_COST_MODEL_V1",
+    "slippage": 0.001,
+    "stamp_before_20230828": 0.001,
+    "stamp_from_20230828": 0.0005,
+    "stamp_side": "SELL_ONLY",
+    "transfer": 1e-05,
+    "unknown": [
+      "minimum_commission_5cny_per_side",
+      "lot_size_100_roundlot",
+      "sz_transfer_fee_applicability",
+      "bid_ask_spread_observed",
+      "stamp_duty_on_non_equity"
+    ]
+  },
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "delist_contract_gap": "Contract has no mid-hold delist price. Canonical never invents one. A name is UNFILLED if entry or exit is unexecutable.",
+  "delist_during_hold": "NO_FILL_IF_EXIT_UNEXECUTABLE",
+  "denied": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "dividend": "DIVIDEND_EXCLUSION",
+  "exclude_st": true,
+  "execution": "RAW_OPEN_T1",
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "id": "A_SHARE_STRATEGY_CONSTRUCTION_V14",
+  "initial_capital": 1000000.0,
+  "initial_capital_note": "Diagnostic. Not a recommendation to invest 1e6 CNY.",
+  "level2_gate": [
+    "candidate_survived",
+    "executable",
+    "cost_model_complete",
+    "pit_clean",
+    "no_hidden_optimization",
+    "economics_disclosed",
+    "stress_available"
+  ],
+  "leverage": 1.0,
+  "long_only": true,
+  "lookbacks_locked": [
+    60,
+    120
+  ],
+  "min_cross_section": 100,
+  "min_history": "lookback + 20",
+  "new_purchase": false,
+  "no_drawdown_control": true,
+  "no_h11_h12_blend": true,
+  "no_vol_targeting": true,
+  "parent_contract_hash": "b48b2657c4991041fb4e8f9fafa33c53c40be29222a1b39f87d24a82f596f75e",
+  "portfolio_formation": "LOW_REALIZED_VOL_TOP_QUANTILE",
+  "quantile": 0.2,
+  "ranking_representation": "RAW_CLOSE_TO_CLOSE",
+  "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "return_representation": "RAW_OPEN_TO_OPEN",
+  "seed": 20260831,
+  "short": false,
+  "signal": "RAW_CLOSE_T",
+  "spec_hash": "e92da3325d937ce20628052073f83a9cfc076cc162014789e68e426c2d7ef9c2",
+  "statistic_to_strategy": "Candidate Level 1 used DAILY_OVERLAPPING_H_DAY mean_net_h. Canonical strategy uses NON_OVERLAPPING_EVERY_HOLD capital.",
+  "strategies": [
+    {
+      "candidate": "H11_VOL_60",
+      "family": "CROSS_SECTIONAL_VOLATILITY",
+      "id": "Strategy-H11",
+      "lookback": 60,
+      "sign": "LOW_REALIZED_VOL"
+    },
+    {
+      "candidate": "H12_VOL_120",
+      "family": "CROSS_SECTIONAL_VOLATILITY",
+      "id": "Strategy-H12",
+      "lookback": 120,
+      "sign": "LOW_REALIZED_VOL"
+    }
+  ],
+  "unexecutable": [
+    "LIMIT_LOCK",
+    "SUSPENDED",
+    "DELISTED",
+    "ZERO_VOLUME",
+    "MISSING_OPEN"
+  ],
+  "unfilled": "WEIGHT_STAYS_CASH",
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ],
+  "weight": "EQUAL_1_OVER_N_SELECTED"
+}
