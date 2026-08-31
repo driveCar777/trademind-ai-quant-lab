@@ -1,0 +1,20 @@
+{
+  "all_ok": true,
+  "candidate_statistic_is": "DAILY_OVERLAPPING_H_DAY: each date t, equal-weight mean of filled open(t+1)->open(t+1+20) minus one round-trip cost. Reported CAGR is (1+mean_net_h)^(242/20)-1. That is not a compounded capital path.",
+  "canonical_strategy_is": "NON_OVERLAPPING_EVERY_HOLD capital account. One book, rebalance every 20 trading days, compound (1+period_return). This is the official strategy object.",
+  "contract_hash": "b48b2657c4991041fb4e8f9fafa33c53c40be29222a1b39f87d24a82f596f75e",
+  "dataset_hash": true,
+  "dataset_id": true,
+  "denied": true,
+  "execution_price": "RAW_OPEN_T1",
+  "hash_match": true,
+  "hold_days": true,
+  "quantile": true,
+  "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+  "research": true,
+  "return_representation": "RAW_CLOSE_TO_CLOSE",
+  "seed": true,
+  "signal_price": "RAW_CLOSE_T",
+  "stats_formation": "DAILY_OVERLAPPING_H_DAY",
+  "validation": true
+}
