@@ -10,6 +10,7 @@ from research_engine.cn_a_share.universe import listed_on
 from research_engine.cn_a_share.universe_daily import load_equities
 from research_engine.cn_a_share.paths import REFERENCE
 from research_engine.cn_a_share_alpha.evaluate import block_bootstrap, iid_bootstrap, ttest_p
+from research_engine.cn_a_share_alpha.cost import round_trip_cost
 from research_engine.cn_a_share_alpha_v13_1 import SEED
 from research_engine.cn_a_share_alpha_v13_1.path_b import market_ew_60, regime_label
 import os
@@ -126,14 +127,15 @@ def liquidity_diag(trades):
     ratios = []
     advs = []
     for tr in trades:
-        fills = [n["amount"] for n in tr.get("names") or [] if n.get("amount")]
-        if not fills:
-            continue
-        med = float(np.median(fills))
+        med = tr.get("adv")
+        if med is None:
+            fills = [n["amount"] for n in tr.get("names") or [] if n.get("amount")]
+            if not fills:
+                continue
+            med = float(np.median(fills))
         advs.append(med)
-        # equal-weight 1/n of a unit book vs one-day amount
-        n = max(1, len(fills))
-        ratios.append((1.0 / n) / med if med > 0 else None)
+        n = max(1, int(tr.get("n_fill") or tr.get("n_sel") or 1))
+        ratios.append((1.0 / n) / med if med and med > 0 else None)
     ratios = [x for x in ratios if x is not None]
     return {
         "median_adv_amount": float(np.median(advs)) if advs else None,
@@ -226,13 +228,14 @@ def execution_audit(pack, trades, xok):
     n_susp_fill = 0
     n_limit_fill = 0
     n_unlisted_fill = 0
-    sample = []
+    pairs = []
     for tr in trades:
         t0 = date_ix.get(tr["entry"])
-        for nm in tr.get("names") or []:
-            n_names += 1
-            j = sym_ix.get(nm["symbol"])
-            if t0 is None or j is None:
+        t1 = date_ix.get(tr["exit"])
+        js = tr.get("filled_js") or []
+        n_names += len(js)
+        for j in js:
+            if t0 is None:
                 continue
             if int(pack["tradestatus"][t0, j]) == 0:
                 n_susp_fill += 1
@@ -240,18 +243,29 @@ def execution_audit(pack, trades, xok):
                 n_limit_fill += 1
             if int(pack["listed"][t0, j]) != 1:
                 n_unlisted_fill += 1
-            if len(sample) < 120:
-                sample.append(
-                    {
-                        "signal_date": tr["signal_date"],
-                        "entry": tr["entry"],
-                        "exit": tr["exit"],
-                        "symbol": nm["symbol"],
-                        "gross": nm["gross"],
-                        "net": nm["net"],
-                        "hold_days": tr["hold_days"],
-                    }
-                )
+            pairs.append((tr, j, t0, t1))
+    rng = np.random.RandomState(SEED)
+    sample = []
+    if pairs:
+        take = min(120, len(pairs))
+        pick = rng.choice(len(pairs), size=take, replace=False)
+        for i in pick:
+            tr, j, t0, t1 = pairs[int(i)]
+            a = float(pack["open"][t0, j])
+            b = float(pack["open"][t1, j])
+            gross = (b / a - 1.0) if (np.isfinite(a) and np.isfinite(b) and a > 0) else None
+            cost = round_trip_cost(tr["entry"], tr["exit"])
+            sample.append(
+                {
+                    "signal_date": tr["signal_date"],
+                    "entry": tr["entry"],
+                    "exit": tr["exit"],
+                    "symbol": symbols[j],
+                    "gross": gross,
+                    "net": None if gross is None else gross - cost,
+                    "hold_days": tr["hold_days"],
+                }
+            )
     return {
         "n_filled_names": n_names,
         "suspended_fills": n_susp_fill,
@@ -273,10 +287,8 @@ def ca_audit(pack, trades):
         t = date_ix.get(tr["signal_date"])
         if t is None:
             continue
-        for nm in tr.get("names") or []:
-            j = sym_ix.get(nm["symbol"])
-            if j is None:
-                continue
+        js = tr.get("filled_js") or [sym_ix[n["symbol"]] for n in tr.get("names") or [] if n.get("symbol") in sym_ix]
+        for j in js:
             n += 1
             c = float(pack["close"][t, j])
             p = float(pack["preclose"][t, j])

@@ -150,14 +150,22 @@ def nonoverlap_detail(pack, scores, elig, xok, start, end):
         amts = np.array(pack["amount"][t0, filled], dtype=np.float64)
         name_pnls = []
         for k, j in enumerate(filled):
-            sym = symbols[int(j)]
+            j = int(j)
+            sym = symbols[j]
             g = float(rets[k])
             n = g - rt
             rec = stock.setdefault(sym, {"trades": 0, "gross": 0.0, "net": 0.0})
             rec["trades"] += 1
             rec["gross"] += g
             rec["net"] += n
-            name_pnls.append({"symbol": sym, "gross": g, "net": n, "amount": float(amts[k]) if np.isfinite(amts[k]) else None})
+            amt = float(amts[k]) if np.isfinite(amts[k]) else None
+            if amt:
+                rec.setdefault("amount_sum", 0.0)
+                rec["amount_sum"] += amt
+            if len(name_pnls) < 8 and sum(len(tr.get("names") or []) for tr in trades) < 120:
+                name_pnls.append({"symbol": sym, "gross": g, "net": n, "amount": amt})
+        amts_ok = amts[np.isfinite(amts) & (amts > 0)]
+        adv = float(np.median(amts_ok)) if amts_ok.size else None
         trades.append(
             {
                 "signal_date": dates[t],
@@ -171,7 +179,9 @@ def nonoverlap_detail(pack, scores, elig, xok, start, end):
                 "cost": rt,
                 "net": net,
                 "hold_days": HOLD_DAYS,
+                "adv": adv,
                 "names": name_pnls,
+                "filled_js": [int(j) for j in filled],
             }
         )
         t += HOLD_DAYS

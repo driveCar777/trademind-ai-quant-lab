@@ -10,7 +10,8 @@ from research_engine.cn_a_share_alpha.evaluate import excess_series, ic_series, 
 from research_engine.cn_a_share_alpha.features import eligible_mask, exec_mask, feature_matrix
 from research_engine.cn_a_share_alpha.pack import load_pack, pack_exists, pack_panel
 from research_engine.cn_a_share_alpha.paths import ALPHA_ROOT
-from research_engine.cn_a_share_alpha.replay import ew_market_series, nonoverlap_equity, overlapping_series, random_quintile_series
+from research_engine.cn_a_share_alpha.replay import day_book, ew_market_series, overlapping_series, random_quintile_series
+from research_engine.cn_a_share_alpha import HOLD_DAYS as V13_HOLD
 from research_engine.cn_a_share_alpha_v13_1 import (
     CANDIDATES,
     DENIED,
@@ -58,6 +59,24 @@ def _hash_nets(rows):
     return canonical_hash([round(r["net"], 12) for r in rows])
 
 
+def _path_a_trade_count(pack, scores, elig, start, end):
+    dates = pack["dates"]
+    i0 = dates.index(start)
+    i1 = dates.index(end)
+    n = 0
+    t = i0
+    while t <= i1:
+        if t + 1 + V13_HOLD >= len(dates):
+            break
+        rec = day_book(pack, scores, elig, t, top=True)
+        if rec is None:
+            t += 1
+            continue
+        n += 1
+        t += V13_HOLD
+    return n
+
+
 def _orig_slice(results, hid, window):
     for h in results.get("hypotheses") or []:
         if h.get("id") == hid:
@@ -99,7 +118,7 @@ def reproduce_one(pack, spec, orig, xok):
     b1b_val = random_quintile_b(pack, elig_b, xok, VALIDATION[0], VALIDATION[1])
     print("NONOVERLAP", hid, flush=True)
     curve, trades, stock = nonoverlap_detail(pack, scores_b, elig_b, xok, RESEARCH[0], VALIDATION[1])
-    _c_a, trades_a = nonoverlap_equity(pack, family, lb, RESEARCH[0], VALIDATION[1], top=True)
+    trades_a_n = _path_a_trade_count(pack, scores_a, elig_a, RESEARCH[0], VALIDATION[1])
 
     print("STRESS", hid, flush=True)
     stress = {}
@@ -188,7 +207,7 @@ def reproduce_one(pack, spec, orig, xok):
         "path_b_validation_mean_net": _mean_net(val_b),
         "original_validation_mean_net": match_orig_val,
         "original_research_mean_net": match_orig_res,
-        "n_path_a_trades_rs_to_val": len(trades_a),
+        "n_path_a_trades_rs_to_val": trades_a_n,
         "n_path_b_trades_rs_to_val": len(trades),
         "benchmarks": {
             "B0_val_mean_net": _mean_net(b0_val),
@@ -238,7 +257,7 @@ def reproduce_one(pack, spec, orig, xok):
         for s, v in sorted(stock.items())
     ]
     dump_json(os.path.join(OUT, hid + "_STOCK_PNL.json"), stock_rows)
-    slim_trades = [{k: tr[k] for k in tr if k != "names"} for tr in trades]
+    slim_trades = [{k: tr[k] for k in tr if k not in ("names", "filled_js")} for tr in trades]
     dump_json(os.path.join(OUT, hid + "_TRADES.json"), slim_trades)
     write_csv(
         os.path.join(OUT, hid + "_TRADE_AUDIT.csv"),
