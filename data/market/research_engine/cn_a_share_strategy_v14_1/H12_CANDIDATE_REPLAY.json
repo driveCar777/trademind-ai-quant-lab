@@ -1,0 +1,98 @@
+{
+  "candidate_statistic_is": "DAILY_OVERLAPPING_H_DAY equal-weight mean of filled open(t+1)->open(t+1+20) minus one round-trip. CAGR=(1+mean_net_h)^(242/20)-1. Not a capital account.",
+  "grids_both": {
+    "max_grid_end": 0.9299038698051597,
+    "mean_grid_end": 0.8018552257807494,
+    "min_grid_end": 0.7507307575001534,
+    "n_negative_grids": 20,
+    "offset0_end": 0.7775823369079369
+  },
+  "id": "H12_VOL_120",
+  "lookback": 120,
+  "path_a": {
+    "both": {
+      "cagr_from_h": 0.017141447225140993,
+      "definition": "Each date t: equal-weight mean of filled open(t+1)->open(t+1+20) minus one round-trip cost. Reported CAGR is (1+mean_net_h)^(242/20)-1. The years argument is unused. This is not a compounded capital path.",
+      "mean_cost": 0.00349934845840605,
+      "mean_net": 0.0014056307934102,
+      "mean_raw": 0.004904979251816248,
+      "n": 3438
+    },
+    "research": {
+      "cagr_from_h": 0.018034080410283204,
+      "definition": "Each date t: equal-weight mean of filled open(t+1)->open(t+1+20) minus one round-trip cost. Reported CAGR is (1+mean_net_h)^(242/20)-1. The years argument is unused. This is not a compounded capital path.",
+      "mean_cost": 0.0035199999999999997,
+      "mean_net": 0.0014782316226860678,
+      "mean_raw": 0.004998231622686067,
+      "n": 2831
+    },
+    "validation": {
+      "cagr_from_h": 0.012987752154031584,
+      "definition": "Each date t: equal-weight mean of filled open(t+1)->open(t+1+20) minus one round-trip cost. Reported CAGR is (1+mean_net_h)^(242/20)-1. The years argument is unused. This is not a compounded capital path.",
+      "mean_cost": 0.003403031301482702,
+      "mean_net": 0.0010670262667545445,
+      "mean_raw": 0.004470057568237247,
+      "n": 607
+    },
+    "vs_published": {
+      "research": {
+        "abs_err": 0.0,
+        "got": 0.0014782316226860678,
+        "ok": true,
+        "published": 0.0014782316226860678
+      },
+      "validation": {
+        "abs_err": 0.0,
+        "got": 0.0010670262667545445,
+        "ok": true,
+        "published": 0.0010670262667545445
+      }
+    }
+  },
+  "path_a_b_agree": true,
+  "path_a_b_val_abs_err": 0.0,
+  "path_b": {
+    "both": {
+      "cagr_from_h": 0.017141447225140993,
+      "definition": "Each date t: equal-weight mean of filled open(t+1)->open(t+1+20) minus one round-trip cost. Reported CAGR is (1+mean_net_h)^(242/20)-1. The years argument is unused. This is not a compounded capital path.",
+      "mean_cost": 0.00349934845840605,
+      "mean_net": 0.0014056307934102,
+      "mean_raw": 0.004904979251816248,
+      "n": 3438
+    },
+    "research": {
+      "cagr_from_h": 0.018034080410283204,
+      "definition": "Each date t: equal-weight mean of filled open(t+1)->open(t+1+20) minus one round-trip cost. Reported CAGR is (1+mean_net_h)^(242/20)-1. The years argument is unused. This is not a compounded capital path.",
+      "mean_cost": 0.0035199999999999997,
+      "mean_net": 0.0014782316226860678,
+      "mean_raw": 0.004998231622686067,
+      "n": 2831
+    },
+    "validation": {
+      "cagr_from_h": 0.012987752154031584,
+      "definition": "Each date t: equal-weight mean of filled open(t+1)->open(t+1+20) minus one round-trip cost. Reported CAGR is (1+mean_net_h)^(242/20)-1. The years argument is unused. This is not a compounded capital path.",
+      "mean_cost": 0.003403031301482702,
+      "mean_net": 0.0010670262667545445,
+      "mean_raw": 0.004470057568237247,
+      "n": 607
+    }
+  },
+  "published_agree": true,
+  "series_abc": {
+    "A_n": 3438,
+    "A_overlapping_mean_net": 0.0014056307934102,
+    "B_nonoverlap_capital_compound": -0.11649412861993957,
+    "B_nonoverlap_capital_mean": 0.0014387186909333664,
+    "B_nonoverlap_v13_compound": -0.22241766309206312,
+    "B_nonoverlap_v13_mean": 0.0011083529109583766,
+    "C_offset_grids": {
+      "max_end": 0.9299038698051597,
+      "mean_end": 0.8018552257807494,
+      "min_end": 0.7507307575001534,
+      "n_negative": 20,
+      "offset0_end": 0.7775823369079369
+    },
+    "not_a_selector": true,
+    "note": "B/C are diagnostics. Official strategy remains the single non-overlapping capital account."
+  }
+}
