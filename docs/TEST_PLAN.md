@@ -809,6 +809,17 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## V13 A-share CS Alpha — 2026-08-31 LEVEL_1_CANDIDATE
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_alpha_v13.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| 12 假设已跑 | ✅ 动量失败；H11/H12 过成本后双窗 + FDR |
+| Candidate | 2。验证 CAGR ≈ 0.55% / 1.30%。不是 10% |
+| Final OOS | DENIED |
+| 花费 | $0 |
+
 ## V13 A-share CS Alpha — 2026-08-31 IN PROGRESS
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_alpha_v13.py --import-mode=importlib`

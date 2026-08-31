@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-08-31 — V13 A-share CS alpha DECISION
+
+- 12 locked hypotheses. Level 1 = `H11_VOL_60` + `H12_VOL_120`.
+- Validation cost-adjusted CAGR ≈ 0.55% / 1.30%. Not a 10% claim. Do not retune.
+- Entry: `docs/research_engine/V13_DECISION.md`.
+
 ## 2026-08-31 — V13 A-share CS alpha START
 
 - Frozen panel only. 12 pre-registered hypotheses. No purchase. No live API.

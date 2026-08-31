@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V13 A-share CS Alpha **IN PROGRESS**。只用冻结面板。不要买数据。
-> **最后更新:** 2026-08-31（Level=0；Candidate=0；$0）
-> **阶段终点:** Level 1 Candidate 或 `A_SHARE_PRICE_ALPHA_EXHAUSTED_V1`。Final OOS DENIED。
+> **当前活跃模块:** V13 A-share CS Alpha **LEVEL_1_CANDIDATE**。不要买数据。不要优化。
+> **最后更新:** 2026-08-31（Level=1；Candidate=2；$0；H11/H12）
+> **阶段终点:** 本波已 STOP。下一纸面 = Candidate Reproduction。Final OOS DENIED。
 
 ---
 
@@ -61,7 +61,7 @@
 | MISSION V12.0 | China A-share PIT research foundation | ⏸ CONDITIONAL | 2026-08-30 |
 | MISSION V12.1 | Full A-share equity daily panel freeze | 🔄 IN PROGRESS | 2026-08-30 |
 | MISSION V12.2 | Panel completion + auto freeze / ready gate | ✅ FROZEN PRICE_ALPHA_READY | 2026-08-30 |
-| MISSION V13.0 | A-share cross-sectional price alpha V1 | 🔄 IN PROGRESS | 2026-08-31 |
+| MISSION V13.0 | A-share cross-sectional price alpha V1 | ✅ LEVEL_1_CANDIDATE=2 | 2026-08-31 |
 
 ## V12 A-share PIT Foundation — CONDITIONAL 2026-08-30
 

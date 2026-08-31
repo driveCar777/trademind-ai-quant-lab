@@ -24,6 +24,8 @@ from research_engine.cn_a_share_alpha.evaluate import (
     fdr_from_pvals,
     ic_series,
     iid_bootstrap,
+    is_level1,
+    onesided_p,
     ttest_p,
     years_between,
 )
@@ -114,14 +116,20 @@ def run_all():
     results = []
     for hyp in HYPOTHESES:
         results.append(_summarize_hyp(pack, hyp, benches))
-    pvals = [r["windows"]["validation"]["excess_p"] for r in results]
+    pvals = [
+        onesided_p(r["windows"]["validation"].get("excess_t"), r["windows"]["validation"].get("excess_p"))
+        for r in results
+    ]
     fdr = fdr_from_pvals(pvals)
     for i, r in enumerate(results):
         r["fdr_q"] = 0.05
+        r["onesided_p"] = pvals[i]
         r["fdr_adj_p"] = fdr["adjusted_p"][i] if i < len(fdr.get("adjusted_p") or []) else None
         r["fdr_discovery"] = i in (fdr.get("discoveries") or [])
         res = r["windows"]["research"]
         val = r["windows"]["validation"]
+        r_net = (res.get("metrics") or {}).get("mean_net_h")
+        v_net = (val.get("metrics") or {}).get("mean_net_h")
         ev_res = int(bool(res.get("excess_vs_b0_mean") and res["excess_vs_b0_mean"] > 0)) + int(
             bool(res.get("rank_ic") and res["rank_ic"] > 0)
         )
@@ -130,15 +138,9 @@ def run_all():
         )
         r["evidence_research"] = ev_res
         r["evidence_validation"] = ev_val
-        r["research_positive"] = ev_res >= 2 and (res.get("excess_vs_b0_mean") or 0) > 0
-        r["validation_positive"] = ev_val >= 2 and (val.get("excess_vs_b0_mean") or 0) > 0
-        r["level1"] = bool(
-            r["research_positive"]
-            and r["validation_positive"]
-            and r["fdr_discovery"]
-            and ev_res >= 2
-            and ev_val >= 2
-        )
+        r["research_positive"] = bool(r_net and r_net > 0 and ev_res >= 2)
+        r["validation_positive"] = bool(v_net and v_net > 0 and ev_val >= 2)
+        r["level1"] = is_level1(res, val, r["fdr_discovery"])
     n_l1 = sum(1 for r in results if r.get("level1"))
     decision = "LEVEL_1_CANDIDATE" if n_l1 else "A_SHARE_PRICE_ALPHA_EXHAUSTED_V1"
     payload = {

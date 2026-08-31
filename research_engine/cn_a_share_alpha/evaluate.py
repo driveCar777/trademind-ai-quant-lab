@@ -170,8 +170,37 @@ def block_bootstrap(xs, block=HOLD_DAYS, n=1000, seed=SEED):
     return {"mean": float(np.mean(xs)), "boot_mean": float(np.mean(draws)), "p_pos": float(np.mean(np.array(draws) > 0)), "n": n, "block": block}
 
 
+def onesided_p(tstat, twosided_p):
+    if tstat is None or twosided_p is None:
+        return 1.0
+    if tstat <= 0:
+        return 1.0
+    return min(1.0, 0.5 * float(twosided_p))
+
+
 def fdr_from_pvals(pvals):
     return benjamini_hochberg(pvals, q=FDR_Q)
+
+
+def is_level1(res, val, fdr_hit):
+    """Cost-adjusted absolute profit on both windows, plus excess, IC, FDR."""
+    r_net = (res.get("metrics") or {}).get("mean_net_h")
+    v_net = (val.get("metrics") or {}).get("mean_net_h")
+    r_ex = res.get("excess_vs_b0_mean")
+    v_ex = val.get("excess_vs_b0_mean")
+    r_ic = res.get("rank_ic")
+    v_ic = val.get("rank_ic")
+    if None in (r_net, v_net, r_ex, v_ex, r_ic, v_ic):
+        return False
+    if r_net <= 0 or v_net <= 0:
+        return False
+    if r_ex <= 0 or v_ex <= 0:
+        return False
+    if r_ic <= 0 or v_ic <= 0:
+        return False
+    if not fdr_hit:
+        return False
+    return True
 
 
 def years_between(a, b):

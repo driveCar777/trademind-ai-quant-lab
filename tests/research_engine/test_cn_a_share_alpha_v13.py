@@ -16,6 +16,7 @@ from research_engine.cn_a_share_alpha import (
 )
 from research_engine.cn_a_share_alpha.contract import HYPOTHESES, build_contract
 from research_engine.cn_a_share_alpha.cost import stamp_duty_sell
+from research_engine.cn_a_share_alpha.evaluate import is_level1, onesided_p
 from research_engine.cn_a_share.universe import listed_on
 
 
@@ -55,6 +56,16 @@ class TestV13(unittest.TestCase):
         nxt = {"symbol": "sh.999998", "instrument_type": "EQUITY", "listing_date": "2026-06-01", "delisting_date": ""}
         self.assertTrue(listed_on(old, "2015-06-01"))
         self.assertFalse(listed_on(nxt, "2015-06-01"))
+
+    def test_level1_needs_cost_adj_profit(self):
+        res = {"metrics": {"mean_net_h": 0.01}, "excess_vs_b0_mean": 0.01, "rank_ic": 0.05}
+        val_loss = {"metrics": {"mean_net_h": -0.002}, "excess_vs_b0_mean": 0.005, "rank_ic": 0.08}
+        val_ok = {"metrics": {"mean_net_h": 0.001}, "excess_vs_b0_mean": 0.008, "rank_ic": 0.11}
+        self.assertFalse(is_level1(res, val_loss, True))
+        self.assertTrue(is_level1(res, val_ok, True))
+        self.assertFalse(is_level1(res, val_ok, False))
+        self.assertEqual(onesided_p(-2.0, 0.01), 1.0)
+        self.assertLess(onesided_p(2.0, 0.01), 0.01)
 
 
 if __name__ == "__main__":

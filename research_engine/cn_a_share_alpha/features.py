@@ -31,8 +31,8 @@ def daily_return(close):
 
 
 def feature_matrix(pack, family, lookback):
-    close = np.array(pack["close"], dtype=np.float64, copy=False)
-    turn = np.array(pack["turn"], dtype=np.float64, copy=False)
+    close = np.array(pack["close"], dtype=np.float64)
+    turn = np.array(pack["turn"], dtype=np.float64)
     ret = daily_return(close)
     if family in ("CROSS_SECTIONAL_MOMENTUM", "CROSS_SECTIONAL_REVERSAL"):
         s, cnt = _rolling_sum(ret, lookback)
@@ -58,7 +58,7 @@ def feature_matrix(pack, family, lookback):
 
 
 def naive_1d_score(pack):
-    close = np.array(pack["close"], dtype=np.float64, copy=False)
+    close = np.array(pack["close"], dtype=np.float64)
     return daily_return(close)
 
 
