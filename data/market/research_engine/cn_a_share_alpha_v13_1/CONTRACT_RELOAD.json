@@ -1,0 +1,200 @@
+{
+  "checks": {
+    "all_ok": true,
+    "candidates": {
+      "H11_VOL_60": {
+        "family": true,
+        "lookback": true,
+        "sign": true
+      },
+      "H12_VOL_120": {
+        "family": true,
+        "lookback": true,
+        "sign": true
+      }
+    },
+    "cost_id": true,
+    "dataset_hash": true,
+    "dataset_id": true,
+    "denied": true,
+    "execution_price": true,
+    "expected_hash": "b48b2657c4991041fb4e8f9fafa33c53c40be29222a1b39f87d24a82f596f75e",
+    "final_oos": true,
+    "hash_match": true,
+    "hold_days": true,
+    "live_api": true,
+    "live_hash": "b48b2657c4991041fb4e8f9fafa33c53c40be29222a1b39f87d24a82f596f75e",
+    "quantile": true,
+    "research": true,
+    "seed": true,
+    "signal_price": true,
+    "stored_hash": "b48b2657c4991041fb4e8f9fafa33c53c40be29222a1b39f87d24a82f596f75e",
+    "validation": true
+  },
+  "contract": {
+    "benchmarks": [
+      "B0_EW_MARKET",
+      "B1_RANDOM_QUINTILE",
+      "B2_NAIVE_1D_RETURN"
+    ],
+    "bootstrap": {
+      "block": 1000,
+      "block_len": 20,
+      "iid": 1000,
+      "seed": 20260831
+    },
+    "contract_hash": "b48b2657c4991041fb4e8f9fafa33c53c40be29222a1b39f87d24a82f596f75e",
+    "cost_model": {
+      "commission": 0.00025,
+      "id": "A_SHARE_TRANSACTION_COST_MODEL_V1",
+      "not": "MT5_5BP_10BP",
+      "slippage": 0.001,
+      "stamp_before_20230828": 0.001,
+      "stamp_from_20230828": 0.0005,
+      "stamp_side": "SELL_ONLY",
+      "transfer": 1e-05
+    },
+    "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+    "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+    "denied_window": [
+      "2024-03-01",
+      "2026-08-28"
+    ],
+    "do_not_flip_sign": true,
+    "event": "BLOCKED",
+    "exclude_st": true,
+    "execution_price": "RAW_OPEN_T1",
+    "factor_combination": false,
+    "fdr_q": 0.05,
+    "final_oos": "DENIED",
+    "financial": "BLOCKED",
+    "hold_days": 20,
+    "hypotheses": [
+      {
+        "family": "CROSS_SECTIONAL_MOMENTUM",
+        "id": "H01_MOM_20",
+        "lookback": 20,
+        "sign": "HIGH_PAST_RETURN"
+      },
+      {
+        "family": "CROSS_SECTIONAL_MOMENTUM",
+        "id": "H02_MOM_60",
+        "lookback": 60,
+        "sign": "HIGH_PAST_RETURN"
+      },
+      {
+        "family": "CROSS_SECTIONAL_MOMENTUM",
+        "id": "H03_MOM_120",
+        "lookback": 120,
+        "sign": "HIGH_PAST_RETURN"
+      },
+      {
+        "family": "CROSS_SECTIONAL_REVERSAL",
+        "id": "H04_REV_20",
+        "lookback": 20,
+        "sign": "LOW_PAST_RETURN"
+      },
+      {
+        "family": "CROSS_SECTIONAL_REVERSAL",
+        "id": "H05_REV_60",
+        "lookback": 60,
+        "sign": "LOW_PAST_RETURN"
+      },
+      {
+        "family": "CROSS_SECTIONAL_REVERSAL",
+        "id": "H06_REV_120",
+        "lookback": 120,
+        "sign": "LOW_PAST_RETURN"
+      },
+      {
+        "family": "CROSS_SECTIONAL_ACTIVITY",
+        "id": "H07_ACT_20",
+        "lookback": 20,
+        "sign": "LOW_TURNOVER"
+      },
+      {
+        "family": "CROSS_SECTIONAL_ACTIVITY",
+        "id": "H08_ACT_60",
+        "lookback": 60,
+        "sign": "LOW_TURNOVER"
+      },
+      {
+        "family": "CROSS_SECTIONAL_ACTIVITY",
+        "id": "H09_ACT_120",
+        "lookback": 120,
+        "sign": "LOW_TURNOVER"
+      },
+      {
+        "family": "CROSS_SECTIONAL_VOLATILITY",
+        "id": "H10_VOL_20",
+        "lookback": 20,
+        "sign": "LOW_REALIZED_VOL"
+      },
+      {
+        "family": "CROSS_SECTIONAL_VOLATILITY",
+        "id": "H11_VOL_60",
+        "lookback": 60,
+        "sign": "LOW_REALIZED_VOL"
+      },
+      {
+        "family": "CROSS_SECTIONAL_VOLATILITY",
+        "id": "H12_VOL_120",
+        "lookback": 120,
+        "sign": "LOW_REALIZED_VOL"
+      }
+    ],
+    "id": "A_SHARE_CROSS_SECTIONAL_ALPHA_V1",
+    "industry": "BLOCKED",
+    "level1": [
+      "research_cost_adj_lo_excess_vs_b0 > 0",
+      "validation_cost_adj_lo_excess_vs_b0 > 0",
+      "BH_FDR_q_0.05",
+      ">=2 evidence (excess and rank_ic) on research AND validation"
+    ],
+    "live_api": false,
+    "long_only": "CAPITAL_DEFAULT",
+    "long_short": "RESEARCH_BOOK_NO_LOCATE",
+    "lookbacks": [
+      20,
+      60,
+      120
+    ],
+    "market_neutral": false,
+    "min_cross_section": 100,
+    "min_history": "lookback + 20",
+    "ml": false,
+    "new_purchase": false,
+    "no_forward_fill": true,
+    "permutation": {
+      "n": 100,
+      "seed": 20260831
+    },
+    "portfolio": "QUINTILE_TOP_BOTTOM",
+    "quantile": 0.2,
+    "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+    "regime": "EW_MARKET_60D_SIGN_AND_20PCT_DRAWDOWN",
+    "research": [
+      "2010-01-04",
+      "2021-08-24"
+    ],
+    "return_limitation": "Full qfq panel was not frozen. Ranking uses raw close returns. CA days can jump.",
+    "return_representation": "RAW_CLOSE_TO_CLOSE",
+    "sector_neutral": false,
+    "seed": 20260831,
+    "signal_price": "RAW_CLOSE_T",
+    "split": "70/15/15_TIME",
+    "stats_formation": "DAILY_OVERLAPPING_H_DAY",
+    "t_plus_1": true,
+    "unexecutable": [
+      "LIMIT_LOCK",
+      "SUSPENDED",
+      "DELISTED",
+      "ZERO_VOLUME",
+      "MISSING_OPEN"
+    ],
+    "validation": [
+      "2021-08-25",
+      "2024-02-29"
+    ]
+  }
+}
