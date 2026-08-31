@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-08-31（V13.1 H11/H12 SURVIVED×2；弱；无采购；不要优化；不进 Strategy）  
+**最后更新：** 2026-08-31（V14 Strategy Construction IN PROGRESS；无采购；不要优化）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,9 +18,9 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V13.1 H11/H12 Candidate Reproduction** |
-| 状态 | Level 1。Candidate=2。H11/H12 `CANDIDATE_SURVIVED`。验证期成本后 CAGR ≈ 0.55% / 1.30%。不买数据。不要调参。 |
-| 当前 Phase | 本波 STOP。纸面 NEXT = STRATEGY_CONSTRUCTION。Final OOS DENIED。$93 = UNUSED_RESEARCH_RESERVE。 |
+| 版本 | **V14 H11/H12 Strategy Construction** |
+| 状态 | Level 1。Candidate=2。正在把 H11/H12 做成 Canonical Strategy。不买数据。不要调参。 |
+| 当前 Phase | IN PROGRESS。不要 Paper。Final OOS DENIED。$93 = UNUSED_RESEARCH_RESERVE。 |
 
 ---
 

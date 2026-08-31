@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V13.1 H11/H12 Reproduction **DONE**。不要优化。不要第13个因子。不要本波进 Strategy。
-> **最后更新:** 2026-08-31（Level=1；Candidate=2；$0；SURVIVED×2）
-> **阶段终点:** 本波已 STOP。纸面下一阶段 = STRATEGY_CONSTRUCTION。Final OOS DENIED。
+> **当前活跃模块:** V14 H11/H12 Strategy Construction **IN PROGRESS**。不要优化。不要第13个因子。不要 Paper。
+> **最后更新:** 2026-08-31（Level=1；Candidate=2；$0）
+> **阶段终点:** READY / WEAK / REJECTED。Final OOS DENIED。
 
 ---
 
@@ -63,6 +63,7 @@
 | MISSION V12.2 | Panel completion + auto freeze / ready gate | ✅ FROZEN PRICE_ALPHA_READY | 2026-08-30 |
 | MISSION V13.0 | A-share cross-sectional price alpha V1 | ✅ LEVEL_1_CANDIDATE=2 | 2026-08-31 |
 | MISSION V13.1 | H11/H12 candidate reproduction | ✅ SURVIVED×2 | 2026-08-31 |
+| MISSION V14.0 | H11/H12 strategy construction | 🔄 IN PROGRESS | 2026-08-31 |
 
 ## V12 A-share PIT Foundation — CONDITIONAL 2026-08-30
 

@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-08-31 — V14 strategy construction START
+
+- Canonical Strategy-H11 / Strategy-H12 only. No new factor. No retune.
+- Entry: `docs/research_engine/V14_START.md`.
+
 ## 2026-08-31 — V13.1 candidate reproduction DECISION
 
 - H11 and H12 independently reproduce. Both `CANDIDATE_SURVIVED`.

@@ -1,7 +1,7 @@
 # TradeMind AI Quant Lab — AI Agent Context Document
 
 > **版本:** V1.0  
-> **更新时间:** 2026-08-31 (V13.1 H11/H12 CANDIDATE_SURVIVED×2：弱；不优化；不进 Strategy；Final OOS DENIED)  
+> **更新时间:** 2026-08-31 (V14 H11/H12 Strategy Construction IN PROGRESS：不优化；不加因子；Final OOS DENIED)  
 > **用途:** AI Agent 最高优先级上下文文件。  
 > **读取顺序:** TRADEMIND_CONTEXT.md → AGENTS.md → TODO.md → PROJECT_VISION.md → 代码
 
@@ -359,7 +359,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 - **V13 CS Alpha FACT 2026-08-31 START：** 只用 `tm-ashare-EQUITY-D1-20260830-000002`。4 族 12 假设。hold=20。无财务/行业/事件。无 ML。无采购。Final OOS DENIED。见 `V13_START.md`。
 - **V13 CS Alpha FACT 2026-08-31 DECISION：** Level 1 = 2（`H11_VOL_60` / `H12_VOL_120`）。验证期成本后 CAGR ≈ 0.55% / 1.30%。不是 10%。动量失败。不要翻号。下一动作 = Candidate Reproduction。见 `V13_DECISION.md`。
 - **V13.1 Reproduction FACT 2026-08-31 START：** 只复现 H11/H12。不改 lookback/hold/分位/符号。不买数据。见 `V13_1_START.md`。
-- **V13.1 Reproduction FACT 2026-08-31 DECISION：** H11 与 H12 均为 `CANDIDATE_SURVIVED`。Path A/B 复现原 overlapping `mean_net_h`。验证期成本后 CAGR 仍约 0.55% / 1.30%。不是 10%。20 日非重叠验证簿更弱（H11 负、H12 近 0）。不要调参。不要组合。本波不进 Strategy。见 `A_SHARE_CANDIDATE_DECISION_V13_1.md`。
+- **V13.1 Reproduction FACT 2026-08-31 DECISION：** H11 与 H12 均为 `CANDIDATE_SURVIVED`。Path A/B 复现原 overlapping `mean_net_h`。验证期成本后 CAGR 仍约 0.55% / 1.30%。不是 10%。20 日非重叠验证簿更弱（H11 负、H12 近 0）。不要调参。不要组合。见 `A_SHARE_CANDIDATE_DECISION_V13_1.md`。
+- **V14 Strategy FACT 2026-08-31 START：** 只把 H11/H12 做成 Canonical Strategy。LOW_VOL_CANDIDATE_CLUSTER。不买数据。见 `V14_START.md`。
 
 ---
 
@@ -457,7 +458,8 @@ Worker 对外端口 (FACT, Master `data/workers.json`):
 | P65 | V12.1 Full equity daily panel | IN PROGRESS（无采购；无 Alpha） |
 | P66 | V12.2 Panel completion + freeze | DONE FROZEN（PRICE_ALPHA_READY；不要自动开 Alpha） |
 | P67 | V13 A-share CS alpha V1 | DONE LEVEL_1_CANDIDATE=2（不要第13个因子） |
-| P68 | V13.1 H11/H12 candidate reproduction | DONE CANDIDATE_SURVIVED×2（弱；不进 Strategy；Final OOS DENIED） |
+| P68 | V13.1 H11/H12 candidate reproduction | DONE CANDIDATE_SURVIVED×2（弱；Final OOS DENIED） |
+| P69 | V14 H11/H12 strategy construction | IN PROGRESS（不优化；不加因子；Final OOS DENIED） |
 
 ---
 

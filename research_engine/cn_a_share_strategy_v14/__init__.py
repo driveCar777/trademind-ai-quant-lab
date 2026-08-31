@@ -1,0 +1,43 @@
+"""V14 canonical H11/H12 strategy. No new factor. No retune."""
+
+V14_ID = "A_SHARE_STRATEGY_CONSTRUCTION_V14"
+PARENT_CONTRACT_HASH = "b48b2657c4991041fb4e8f9fafa33c53c40be29222a1b39f87d24a82f596f75e"
+DATASET_ID = "tm-ashare-EQUITY-D1-20260830-000002"
+DATASET_HASH = "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80"
+CLUSTER = "LOW_VOL_CANDIDATE_CLUSTER"
+STRATEGIES = (
+    {
+        "id": "Strategy-H11",
+        "candidate": "H11_VOL_60",
+        "family": "CROSS_SECTIONAL_VOLATILITY",
+        "lookback": 60,
+        "sign": "LOW_REALIZED_VOL",
+    },
+    {
+        "id": "Strategy-H12",
+        "candidate": "H12_VOL_120",
+        "family": "CROSS_SECTIONAL_VOLATILITY",
+        "lookback": 120,
+        "sign": "LOW_REALIZED_VOL",
+    },
+)
+HOLD_DAYS = 20
+QUANTILE = 0.20
+SEED = 20260831
+RESEARCH = ("2010-01-04", "2021-08-24")
+VALIDATION = ("2021-08-25", "2024-02-29")
+DENIED = ("2024-03-01", "2026-08-28")
+MIN_HISTORY_PAD = 20
+MIN_CROSS_SECTION = 100
+EXCLUDE_ST = True
+INITIAL_CAPITAL = 1000000.0
+LEVERAGE = 1.0
+LONG_ONLY = True
+NEW_FACTOR = False
+NEW_PURCHASE = False
+FINAL_OOS_ACCESS = "DENIED"
+SIDEWAYS_ABS_60D = 0.05
+STRESS_DD = -0.20
+CAGR_TARGET = 0.10
+TOL_EQUITY = 1e-8
+STAMP_CUT = "2023-08-28"
