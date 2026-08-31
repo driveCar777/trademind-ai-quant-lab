@@ -126,7 +126,7 @@ def reconcile(sim):
         "sum_fees": fees,
         "sum_slippage": slip,
         "sum_stamp": stamp,
-        "denied_not_used_for_signals": list(VALIDATION),
+        "denied_not_used_for_signals": ["2024-03-01", "2026-08-28"],
     }
 
 

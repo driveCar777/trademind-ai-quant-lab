@@ -96,6 +96,7 @@ def run_one(pack, spec, close):
     lb = spec["lookback"]
     print("V14_SCORES", hid, lb, flush=True)
     scores = vol_score(close, lb)
+    print("V14_SCORES_DONE", hid, flush=True)
     elig = eligible(pack, lb)
     print("V14_SIM_FULL", hid, flush=True)
     full1 = simulate(pack, scores, elig, RESEARCH[0], VALIDATION[1])
@@ -181,8 +182,9 @@ def _status(rec, gate):
     if not all(gate[k] for k in gate if k != "cagr_10pct_is_not_a_gate"):
         return "STRATEGY_REJECTED"
     val_ret = rec["metrics"]["validation_fresh"].get("total_return")
+    full_ret = rec["metrics"]["full"]["research_through_validation"].get("total_return")
     stress15 = rec["stress"]["cost_1.5"]["total_return"]
-    if val_ret is not None and val_ret > 0 and stress15 > 0:
+    if val_ret is not None and val_ret > 0 and stress15 > 0 and full_ret is not None and full_ret > 0:
         return "STRATEGY_READY_FOR_LONG_VALIDATION"
     return "STRATEGY_WEAK_BUT_RESEARCHABLE"
 

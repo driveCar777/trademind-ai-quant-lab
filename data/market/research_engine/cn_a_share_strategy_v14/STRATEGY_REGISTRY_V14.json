@@ -1,0 +1,20 @@
+{
+  "cluster": "LOW_VOL_CANDIDATE_CLUSTER",
+  "spec_hash": "e92da3325d937ce20628052073f83a9cfc076cc162014789e68e426c2d7ef9c2",
+  "strategies": [
+    {
+      "candidate": "H11_VOL_60",
+      "family": "CROSS_SECTIONAL_VOLATILITY",
+      "id": "Strategy-H11",
+      "lookback": 60,
+      "sign": "LOW_REALIZED_VOL"
+    },
+    {
+      "candidate": "H12_VOL_120",
+      "family": "CROSS_SECTIONAL_VOLATILITY",
+      "id": "Strategy-H12",
+      "lookback": 120,
+      "sign": "LOW_REALIZED_VOL"
+    }
+  ]
+}
