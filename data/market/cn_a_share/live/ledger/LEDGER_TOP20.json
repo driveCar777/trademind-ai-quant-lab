@@ -2,11 +2,11 @@
   "fills_by_period": {},
   "periods": [],
   "summary": {
-    "boards": "MAIN_CHINEXT",
-    "capital_yuan": 100000.0,
-    "contract": "ML1_TOP20_MANUAL",
+    "boards": "MAIN",
+    "capital_yuan": 10000.0,
+    "contract": "ML1_TOPN_MANUAL (V26.1/V26.2)",
     "money": "NONE (shadow)",
-    "n_names": 20,
+    "n_names": 10,
     "n_periods": 0,
     "orders_sent": false
   }

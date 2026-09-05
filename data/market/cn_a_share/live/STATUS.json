@@ -1,6 +1,6 @@
 {
  "asof_requested": "2026-09-05",
- "started_at": "2026-09-05T14:29:37Z",
+ "started_at": "2026-09-05T14:42:27Z",
  "steps": {
   "fetch": "skipped",
   "features_rebuilt": false
@@ -16,7 +16,7 @@
   "n_live_sessions": 5,
   "n_live_cells": 26071,
   "live_hash": "56290c70aafb822132d262da4b18fd731147372ac383332c28b58f7ab4d7534b",
-  "built_at": "2026-09-05T14:29:40Z"
+  "built_at": "2026-09-05T14:42:30Z"
  },
  "ledger": {
   "state": "RUNNING",
@@ -39,10 +39,10 @@
  },
  "ledger_top20": {
   "n_periods": 0,
-  "contract": "ML1_TOP20_MANUAL",
-  "boards": "MAIN_CHINEXT",
-  "capital_yuan": 100000.0,
-  "n_names": 20,
+  "contract": "ML1_TOPN_MANUAL (V26.1/V26.2)",
+  "boards": "MAIN",
+  "capital_yuan": 10000.0,
+  "n_names": 10,
   "money": "NONE (shadow)",
   "orders_sent": false
  },
@@ -51,8 +51,8 @@
   "n_selected": 999,
   "is_chain_signal_day": false,
   "shortlist_file": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\live\\signals\\SHORTLIST_2026-09-04.csv",
-  "shortlist_n": 20
+  "shortlist_n": 10
  },
- "elapsed_s": 9.7,
+ "elapsed_s": 10.3,
  "orders_sent": false
 }

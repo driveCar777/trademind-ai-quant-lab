@@ -92,7 +92,7 @@
 | ML1 PAPER | 有账户的 Paper：开始日 / 账户 / 行情源需用户；管线已能每天出名单 | ⏸ 待用户 | — |
 | AMENDMENT V2 (MT5) | 用户授权解除 MT5 三条范围限制（ML 禁令 / 股票 CFD 只清点 / 只多头账本）；纪律全保留；不重开已证伪宏观家族 | ✅ 生效 | 2026-09-05 |
 | V30 MT5 US XS PRICE | 492 只美股 CFD D1 冻结（$0，5.9h）→ 7 价格特征 → 1 LightGBM → LS20 闸门 + 实测费率（多头融资 −11.09%/年）。验证毛价差 t 0.18，LS20 −71.5%（t −4.0），LO−EW −1.03%/20d，滚动 2/5 | ✅ **NO_CANDIDATE**；`MT5_STOCK_CFD_COST_CEILING`：不开 V31 on CFD | 2026-09-05 |
-| V26.1 ML1 TOP20 MANUAL | 用户纠正执行假设（普通账户、小资金、无量化、手工下单）→ 合同：前 20 只等权按手 + 最低佣金 ¥5，板块按权限。历史（不读禁用窗）三口径均 VIABLE；V29 每日出 `SHORTLIST_{date}.csv` + `LEDGER_TOP20.json` | ✅ 合同+历史读取+管线接入；⏳ 待用户确认板块权限与金额 | 2026-09-05 |
+| V26.1 ML1 TOP20 MANUAL | 用户纠正执行假设（普通账户、小资金、无量化、手工下单）→ 合同：前 20 只等权按手 + 最低佣金 ¥5，板块按权限。历史（不读禁用窗）三口径均 VIABLE；V29 每日出 `SHORTLIST_{date}.csv` + `LEDGER_TOP20.json` | ✅ 合同+历史读取+管线接入；✅ 用户确认：仅主板、¥10k → V26.2 N=10 历史 VIABLE，管线默认已改 | 2026-09-05 |
 | MASTER PLAN V2 | 用户授权修改规划 → `docs/MASTER_PLAN_V2.md`：平台（Xavier/LLM/预置策略）冻结不投入；市场优先级 A 股 > 中国期货 > 美股；MT5 宏观品种关闭为研究对象、只作执行口；V26 执行坑（999 只需券商量化接口） | ✅ 已写 | 2026-09-05 |
 | V31 CN FUTURES XS | 中国期货截面第二袖：Design 已写（`V31_CN_FUTURES_XS_DESIGN.md`）。数据源实测：交易所官网被本机网络重置（需 Clash DIRECT），新浪可用（连续 2005→，逐合约 2019-05→）。下一步：新浪拉取器 → 冻结 → 合同 → 跑 | 🔜 Design 完成，Implement 待 | 2026-09-05 |
 | US EQUITY (cash account) | 若要美股 alpha：需现金股票账户（无融资费、EDGAR/Form 4/空头利息免费 PIT、无幸存者宇宙）| ⏸ 待用户开户，否则不开 | — |

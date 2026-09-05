@@ -124,7 +124,7 @@ def summarize(book, ewm):
             "mean_cash_idle": float(np.mean([x["cash_idle_frac"] for x in tr])) if tr else None}
 
 
-def main(boards="ALL"):
+def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, suffix=""):
     from research_engine.cn_a_share_alpha.pack import load_pack
     from research_engine.cn_a_share_ml_v25 import RESEARCH, VALIDATION
     from research_engine.cn_a_share_strategy_v14_1.scores import eligible, exec_ok_matrix
@@ -132,9 +132,9 @@ def main(boards="ALL"):
     pack = load_pack()
     scores = np.load(os.path.join(OUT, "SCORES_ML1_LGBM.npy"), mmap_mode="r")
     elig, xok = eligible(pack, 20), exec_ok_matrix(pack)
-    res = {"contract": "V26_1_ML1_TOP20_MANUAL_CONTRACT.md", "n_names": N_NAMES, "min_fee": MIN_FEE, "capital": DEFAULT_CAPITAL, "denied_window_read": False, "boards": boards}
+    res = {"contract": "V26_1_ML1_TOP20_MANUAL_CONTRACT.md" if not suffix else "V26_2 addendum", "n_names": n, "min_fee": MIN_FEE, "capital": capital, "denied_window_read": False, "boards": boards}
     for key, (a, b) in (("research", RESEARCH), ("validation", VALIDATION)):
-        bk = top_n_book(pack, scores, elig, xok, a, b, boards=boards)
+        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards)
         ew = ew_overlapping(pack, elig, xok, a, pack["dates"][pack["dates"].index(b) - HOLD - 1], HOLD)
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
         res[key] = summarize(bk, ewm)
@@ -143,11 +143,17 @@ def main(boards="ALL"):
     v = res["validation"]
     viable = bool(v["total"] > 0 and v["mean_excess_vs_ew"] is not None and v["mean_excess_vs_ew"] > 0)
     res["label"] = "ML1_TOP20_MANUAL_VIABLE_HISTORICAL" if viable else "ML1_TOP20_MANUAL_NOT_VIABLE"
-    dump_json(os.path.join(OUT, "TOP20_MANUAL_READ%s.json" % ("" if boards == "ALL" else "_" + boards)), res)
-    print(TAG, "DONE", boards, res["label"], flush=True)
+    dump_json(os.path.join(OUT, "TOP20_MANUAL_READ%s%s.json" % ("" if boards == "ALL" else "_" + boards, suffix)), res)
+    print(TAG, "DONE", boards, n, capital, res["label"], flush=True)
 
 
 if __name__ == "__main__":
-    import sys
+    import argparse
 
-    main(sys.argv[1] if len(sys.argv) > 1 else "ALL")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("boards", nargs="?", default="ALL")
+    ap.add_argument("--n", type=int, default=N_NAMES)
+    ap.add_argument("--capital", type=float, default=DEFAULT_CAPITAL)
+    ap.add_argument("--suffix", default="")
+    a = ap.parse_args()
+    main(a.boards, a.n, a.capital, a.suffix)
