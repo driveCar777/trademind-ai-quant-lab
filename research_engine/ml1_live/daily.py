@@ -39,8 +39,7 @@ def main(argv=None):
     ap.add_argument("--manual-capital", type=float, default=20_000.0, help="manual shortlist capital (owner's real account size)")
     ap.add_argument("--boards", default="MAIN", choices=("ALL", "MAIN_CHINEXT", "MAIN"), help="boards the owner's account may trade (set by permission, never by result)")
     ap.add_argument("--max-price", type=float, default=100.0, help="owner's price ceiling (signal-day close)")
-    # 2026-09-06 00:25 owner: exposure may be 80%, 100% "when necessary". 80% is the system rule (V26.5); going to 100% is the owner's manual call, not a system rule.
-    ap.add_argument("--exposure", type=float, default=0.80, help="fixed fraction of capital deployable; rest is cash (owner's number, never tuned)")
+    ap.add_argument("--exposure", type=float, default=0.80, help="fixed fraction of capital deployable; rest is cash (owner's number 00:30, V26.5; never tuned)")
     ap.add_argument("--n-names", type=int, default=0, help="legacy V26.1/V26.2 fixed-N mode; 0 = emergent-N mode (V26.4 eq-money by default)")
     ap.add_argument("--one-lot", action="store_true", help="V26.3 one-lot mode (NOT_VIABLE; kept for reference) instead of V26.4 equal-money")
     ap.add_argument("--force-score", action="store_true")

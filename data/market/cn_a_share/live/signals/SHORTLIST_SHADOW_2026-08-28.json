@@ -2,7 +2,7 @@
   "act": "next session open: buy lots=floor(2000/(100*open)) of each; hold 20 sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens",
   "boards": "MAIN",
   "capital_yuan": 20000.0,
-  "contract": "ML1_EQMONEY_70PCT_MAIN",
+  "contract": "ML1_EQMONEY_80PCT_MAIN",
   "execution": "MANUAL by owner in ordinary account; no API, no automation",
   "exposure": 0.8,
   "kind": "SHORTLIST_SHADOW",

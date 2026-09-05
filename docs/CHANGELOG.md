@@ -4,9 +4,12 @@
 
 ---
 
-## 2026-09-06 (00:25) — V26.5: owner allows 80% exposure (100% when necessary); no historical re-read
+## 2026-09-06 (00:32) — Owner allows 80% exposure; V26.5 `ML1_EQMONEY_80PCT_MAIN` single read VIABLE_HISTORICAL; recent-window diagnostic
 
-- `daily.py` default `--exposure 0.80` (N = 8 at ¥20k); 2026-09-04 list 8 names ≈ ¥13,427. Historical basis inherited from the V26.4 70% read; no 80% backtest, since exposure is arithmetic and re-reading would be the banned "试仓位比例". 100% is the owner's manual call, not a system rule; shadow ledger records 80%. `V26_5_ML1_EQMONEY_80PCT_MAIN_NOTE.md`.
+- `V26_5_ML1_EQMONEY_80PCT_MAIN_CONTRACT.md`: identical to V26.4 except exposure 70% → 80%. "100% when necessary" not adopted (no ex-ante trigger; any trigger derived from results is tuning). Compounding reinvestment was already how every book works (N = floor(exposure·equity/2000) grows with equity).
+- Single read: research +144% (CAGR 9.6%, MaxDD −39%, 1750 fills, 20 carried exits, 28 STUCK); validation +12.1% (CAGR 4.7%, MaxDD −10.8%, 248 fills), excess vs EW +1.51%/20d t 2.65, 19/29 → `ML1_EQMONEY_80PCT_MAIN_VIABLE_HISTORICAL`. 80% validation is below 70% (+13.4%) — lot-rounding noise; no exposure will be chosen from this.
+- `recent_diag` (diagnostic, no decision) on the window V28 already consumed (2024-03-01..2026-08-28, REFIT_240 gate scores, benchmark EW of eligible main-board close ≤ ¥100): full +28.6% (28 periods, MaxDD −16.4%) with excess +0.10%/20d t 0.16 (beta); last 12m +9.5% (excess +1.18% t 1.2, 7/11); last 6m −7.7% vs EW −13% (excess +1.15% t 1.4, 4/5). Reported for the final contract only; never used as a gate.
+- `daily.py` default `--exposure 0.80`; 2026-09-04 list 8 names ≈ ¥13,427.
 
 ## 2026-09-06 (00:15) — V26.3 attribution; owner allows equal-money multi-lot; V26.4 `ML1_EQMONEY_70PCT_MAIN` single read VIABLE_HISTORICAL
 

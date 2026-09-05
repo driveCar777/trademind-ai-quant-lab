@@ -98,7 +98,7 @@ def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposu
         rows.append({"rank": len(rows) + 1, "symbol": symbols[j], "score": float(scores_t[j]), "last_close": px, "lots_100_est": lots, "est_yuan": round(lots * LOT * px, 2)})
         if len(rows) >= n:
             break
-    out = {"kind": tag, "contract": "ML1_EQMONEY_70PCT_MAIN", "boards": boards, "max_price": max_price, "exposure": exposure, "unit_yuan": UNIT_YUAN, "signal_date": dates[t],
+    out = {"kind": tag, "contract": "ML1_EQMONEY_%dPCT_MAIN" % round(exposure * 100), "boards": boards, "max_price": max_price, "exposure": exposure, "unit_yuan": UNIT_YUAN, "signal_date": dates[t],
            "act": "next session open: buy lots=floor(2000/(100*open)) of each; hold %d sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens" % HOLD,
            "capital_yuan": capital, "n_target": n, "n_names": len(rows), "skipped_price_too_high_for_2000": skipped, "names": rows,
            "execution": "MANUAL by owner in ordinary account; no API, no automation", "orders_sent": False}
@@ -120,7 +120,7 @@ def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_C
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
     summ = summarize(bk, ewm) if bk["trades"] else {"n_periods": 0}
     if eq_money:
-        contract, gate = "ML1_EQMONEY_%dPCT_MAIN" % round(exposure * 100), "VIABLE_HISTORICAL (V26.4 single read 2026-09-06)"
+        contract, gate = "ML1_EQMONEY_%dPCT_MAIN" % round(exposure * 100), "VIABLE_HISTORICAL (V26.4 70%% / V26.5 80%% single reads 2026-09-06)"
     elif one_lot:
         contract, gate = "ML1_ONELOT_%dPCT_MAIN" % round(exposure * 100), "NOT_VIABLE (V26.3 single read 2026-09-05)"
     else:

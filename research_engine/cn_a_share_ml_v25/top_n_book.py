@@ -294,10 +294,60 @@ def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=
     print(TAG, "DONE", boards, res["label"], flush=True)
 
 
+def recent_diag(name, exposure, boards="MAIN", max_price=100.0, capital=20_000.0):
+    """Diagnostic only, no decision: the owner-constrained shell on the window V28 already consumed (2024-03..2026-08), REFIT_240 gate scores."""
+    from research_engine.cn_a_share_alpha.pack import load_pack
+    from research_engine.cn_a_share_ml_v25 import DENIED
+    from research_engine.cn_a_share_strategy_v14_1.scores import eligible, exec_ok_matrix
+
+    pack = load_pack()
+    dates = pack["dates"]
+    scores = np.load(os.path.join(OUT, "SCORES_FINAL_OOS_GATE_REFIT240.npy"), mmap_mode="r")
+    assert scores.shape[0] == len(dates), "scores/pack misaligned"
+    elig, xok = eligible(pack, 20), exec_ok_matrix(pack)
+    c = np.asarray(pack["close"], dtype=float)
+    elig_shell = elig & board_mask(pack["symbols"], boards)[None, :] & np.isfinite(c) & (c <= max_price)
+    i_start = next(i for i, d in enumerate(dates) if d >= DENIED[0])
+    i_last_sig = len(dates) - 1 - HOLD - 1
+    end_sig = dates[i_last_sig]
+    bk = top_n_book(pack, scores, elig, xok, dates[i_start], end_sig, capital=capital, boards=boards, max_price=max_price, eq_money=True, exposure=exposure)
+    ew = ew_overlapping(pack, elig_shell, xok, dates[i_start], end_sig, HOLD)
+    ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
+    out = {"contract": name, "kind": "DIAGNOSTIC_REPORT_NO_DECISION", "scores": "SCORES_FINAL_OOS_GATE_REFIT240 (V28 gate)", "benchmark": "EW of eligible %s close<=%.0f" % (boards, max_price),
+           "note": "window already consumed by V28; reported on owner request; nothing tuned; not a gate"}
+    tr = bk["trades"]
+
+    def _slice(label, since):
+        sub = [x for x in tr if x["signal_date"] >= since]
+        if not sub:
+            return None
+        eq0 = sub[0]["equity"] - sub[0]["pnl"]
+        b = {"trades": sub, "total": sub[-1]["equity"] / eq0 - 1.0}
+        s = summarize(b, ewm)
+        s["from"] = sub[0]["signal_date"]
+        return s
+
+    out["full_%s.." % DENIED[0]] = _slice("full", DENIED[0])
+    out["last_12m_from_2025-08"] = _slice("12m", "2025-08-01")
+    out["last_6m_from_2026-02"] = _slice("6m", "2026-02-01")
+    out["periods"] = [dict((k, v) for k, v in x.items() if k != "names") for x in tr]
+    dump_json(os.path.join(OUT, "%s_RECENT_DIAG.json" % name), out)
+    for k in ("full_%s.." % DENIED[0], "last_12m_from_2025-08", "last_6m_from_2026-02"):
+        s = out[k]
+        print(TAG, "DIAG", k, s and {kk: (round(s[kk], 4) if isinstance(s[kk], float) else s[kk]) for kk in ("n_periods", "total", "maxdd", "mean_ret", "mean_ew", "mean_excess_vs_ew", "t_excess", "beat_ew_periods")}, flush=True)
+    return out
+
+
 if __name__ == "__main__":
     import sys
 
-    if len(sys.argv) > 1 and sys.argv[1] == "V26_4":
+    if len(sys.argv) > 1 and sys.argv[1] == "V26_5":
+        # V26.5: V26.4 with 80% exposure (owner 00:30). Single read + one recent-window diagnostic (no decision).
+        if os.path.isfile(os.path.join(OUT, "ML1_EQMONEY_80PCT_MAIN_READ.json")):
+            raise SystemExit("V26.5 already read once; refusing (single-read contract)")
+        main("MAIN", capital=20_000.0, max_price=100.0, name="ML1_EQMONEY_80PCT_MAIN", eq_money=True, exposure=0.80, contract="V26_5_ML1_EQMONEY_80PCT_MAIN_CONTRACT.md")
+        recent_diag("ML1_EQMONEY_80PCT_MAIN", 0.80)
+    elif len(sys.argv) > 1 and sys.argv[1] == "V26_4":
         # V26.4: main board, close <= 100, 70% exposure, equal money 2000/name (N = floor(0.7*equity/2000)), realistic carried exit. Single read.
         if os.path.isfile(os.path.join(OUT, "ML1_EQMONEY_70PCT_MAIN_READ.json")):
             raise SystemExit("V26.4 already read once; refusing (single-read contract)")
