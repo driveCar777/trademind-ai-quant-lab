@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-09-05 (afternoon) — Amendment V2 (MT5 scope) + V30 MT5 US share-CFD cross-sectional price model: NO_CANDIDATE, CFD cost ceiling
+
+- Owner asked to start MT5 now and lift the old MT5 limits. `RESEARCH_RULES_AMENDMENT_V2_MT5.md`: lifted (a) the ML ban for cross-sections ≥300 names, (b) "share CFDs = inventory only", (c) long-only-book requirement (LS book allowed as pre-registered gate); kept pre-registration, measured costs, FDR, rolling windows, no order_send, no reopening of the 20+ falsified macro-CFD families. Terminal inventory: no XAUUSD/US500/BTC symbols on this broker; 497 `CFD-Shares\USA`, 67 US ETFs, ~55 FX, ~15 commodities.
+- Dataset `tm-mt5-USSHARES-D1-20260905-000001`: 492 symbols with D1 bars, 2.37M rows (354 names start ≤2008), pulled from the local Ava Trade terminal in 5.9 h (server-side history sync ≈50 s/symbol). Specs: swap_mode 5, swap_long −11.09%/yr (488/492), swap_short −0.91%/yr, quoted spread median 0.15%.
+- Contract `V30_MT5_US_XS_CONTRACT.md` (7 fixed price features → one LightGBM with V25 params → LS20 gate / LO20 diagnostic, measured spread + slippage + calendar-day swap). Pre-run revision after seeing data depth (before any score existed): research 2006-01→2019-12, validation 2020-01→2026-08, REFIT_240, 5 rolling blocks.
+- **Result `MT5_US_XS_PRICE_V30_NO_CANDIDATE`** (`mt5_xs_v30/RESULTS.json`): validation gross L−S spread +0.07%/20d (t 0.18); LS20 −71.5% (t −4.0); LO20 −29.1%, LO−EW −1.03%/20d (t −4.4); rolling 2/5; research LS20 also negative after costs. Gates 0/4. Atlas row 74.
+- Decision `V30_MT5_US_XS_DECISION.md`: price layer dead (consistent with A-share V15) **and** a CFD cost ceiling — LS round trip ≈1.9%/20d (≈25%/yr), LO ≈1.1%/20d, above any plausible gross spread; survivorship makes the result an upper bound. `MT5_STOCK_CFD_COST_CEILING`: V31 EDGAR layer is not opened on the CFD vehicle; US-equity alpha would need a cash equity account (owner's decision). MT5 research object list is exhausted on this terminal. Only live path remains ML1 / V29.
+
 ## 2026-09-05 (morning) — V29 ML1 forward pipeline: Design + Implement + Smoke PASS (Paper preparation)
 
 - Owner: "继续，不用询问". Design first (`docs/research_engine/V29_ML1_LIVE_PIPELINE_DESIGN.md`), then module `research_engine/ml1_live/` (`panel.py` live calendar/basics/incremental bars + merged live pack; `layers.py` margin daily / holders weekly / index monthly into `data/market/cn_a_share/live/`; `score.py` V25 features + REFIT_240 model cache + top-20% list; `ledger.py` shadow ledger continuing the V28 chain with the frozen cost model and V26 pause/retire rules; `daily.py` orchestrator). Env overrides added: `TRADEMIND_MARGIN_CALENDAR`, `TRADEMIND_HOLDERS_RAW`. Frozen datasets untouched; no orders anywhere.

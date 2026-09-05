@@ -127,3 +127,5 @@ data/market/cn_a_share/live/*
 !data/market/cn_a_share/live/ledger/
 !data/market/cn_a_share/live/pack/
 data/market/cn_a_share/live/pack/*.npy
+data/market/cn_a_share/alpha_cache/mt5_xs_v30/
+data/market/research_engine/mt5_xs_v30/*.npy

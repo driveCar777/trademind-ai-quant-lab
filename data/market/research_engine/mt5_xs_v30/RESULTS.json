@@ -1,0 +1,279 @@
+{
+  "contract": "V30_MT5_US_XS_CONTRACT.md",
+  "cost_model": {
+    "half_spread_each_side": "60d median bar spread% / 2",
+    "slippage_each_side": 0.0005,
+    "swap": "specs swap_long/swap_short annual % x calendar days/365"
+  },
+  "dataset": "tm-mt5-USSHARES-D1-20260905-000001",
+  "elapsed_s": 57.3,
+  "features": [
+    "REV_20",
+    "MOM_250_20",
+    "NEG_VOL_60",
+    "NEG_VOL_120",
+    "NEG_LOG_AMT_20",
+    "VOLU_RATIO_20_120",
+    "NEG_MAX_RET_20"
+  ],
+  "gates": {
+    "G1_val_LS20_capital_gt_0": false,
+    "G2_val_spread_t_ge_3": false,
+    "G3_rolling_ge_4_of_5": false,
+    "G4_research_LS20_gt_0": false
+  },
+  "label": "MT5_US_XS_PRICE_V30_NO_CANDIDATE",
+  "median_spread_pct": 0.0,
+  "n_dates": 7380,
+  "n_symbols": 485,
+  "params": {
+    "colsample_bytree": 0.8,
+    "learning_rate": 0.03,
+    "min_child_samples": 1000,
+    "n_estimators": 400,
+    "num_leaves": 31,
+    "num_threads": 16,
+    "objective": "regression",
+    "random_state": 20260904,
+    "reg_lambda": 1.0,
+    "subsample": 0.7,
+    "subsample_freq": 1,
+    "verbosity": -1
+  },
+  "refits": [
+    {
+      "fit_at": "2006-01-03",
+      "rows": 22194,
+      "scored_through": "2006-11-20"
+    },
+    {
+      "fit_at": "2006-11-21",
+      "rows": 34572,
+      "scored_through": "2007-10-11"
+    },
+    {
+      "fit_at": "2007-10-12",
+      "rows": 46974,
+      "scored_through": "2008-08-21"
+    },
+    {
+      "fit_at": "2008-08-22",
+      "rows": 58436,
+      "scored_through": "2009-06-30"
+    },
+    {
+      "fit_at": "2009-07-01",
+      "rows": 69818,
+      "scored_through": "2010-04-26"
+    },
+    {
+      "fit_at": "2010-04-27",
+      "rows": 80830,
+      "scored_through": "2011-02-28"
+    },
+    {
+      "fit_at": "2011-03-01",
+      "rows": 92085,
+      "scored_through": "2012-01-23"
+    },
+    {
+      "fit_at": "2012-01-24",
+      "rows": 107342,
+      "scored_through": "2012-12-14"
+    },
+    {
+      "fit_at": "2012-12-15",
+      "rows": 122170,
+      "scored_through": "2013-11-07"
+    },
+    {
+      "fit_at": "2013-11-08",
+      "rows": 136584,
+      "scored_through": "2014-09-23"
+    },
+    {
+      "fit_at": "2014-09-24",
+      "rows": 150006,
+      "scored_through": "2015-08-10"
+    },
+    {
+      "fit_at": "2015-08-11",
+      "rows": 164016,
+      "scored_through": "2016-06-24"
+    },
+    {
+      "fit_at": "2016-06-27",
+      "rows": 179283,
+      "scored_through": "2017-05-12"
+    },
+    {
+      "fit_at": "2017-05-15",
+      "rows": 195250,
+      "scored_through": "2018-04-02"
+    },
+    {
+      "fit_at": "2018-04-03",
+      "rows": 211869,
+      "scored_through": "2019-02-19"
+    },
+    {
+      "fit_at": "2019-02-20",
+      "rows": 228906,
+      "scored_through": "2020-01-28"
+    },
+    {
+      "fit_at": "2020-01-29",
+      "rows": 244675,
+      "scored_through": "2021-01-08"
+    },
+    {
+      "fit_at": "2021-01-11",
+      "rows": 265214,
+      "scored_through": "2021-12-21"
+    },
+    {
+      "fit_at": "2021-12-22",
+      "rows": 286660,
+      "scored_through": "2022-12-05"
+    },
+    {
+      "fit_at": "2022-12-06",
+      "rows": 308542,
+      "scored_through": "2023-11-16"
+    },
+    {
+      "fit_at": "2023-11-17",
+      "rows": 330463,
+      "scored_through": "2024-10-29"
+    },
+    {
+      "fit_at": "2024-10-30",
+      "rows": 352242,
+      "scored_through": "2025-10-08"
+    },
+    {
+      "fit_at": "2025-10-09",
+      "rows": 374272,
+      "scored_through": "2026-09-04"
+    }
+  ],
+  "research": {
+    "LO20": {
+      "cagr": 0.017056954624726117,
+      "hit": 0.55,
+      "maxdd": -0.5693852727792456,
+      "mean_per_period": 0.00366479763465006,
+      "n_periods": 180,
+      "t": 0.7269534327790592,
+      "total": 0.27330511480873
+    },
+    "LO_minus_EW": {
+      "cagr": 0.017056954624726117,
+      "hit": 0.25,
+      "maxdd": -0.5693852727792456,
+      "mean_per_period": -0.00571297358995889,
+      "n_periods": 180,
+      "t": -2.516589960965657,
+      "total": 0.27330511480873
+    },
+    "LS20": {
+      "cagr": -0.0824144702767633,
+      "hit": 0.32222222222222224,
+      "maxdd": -0.7153422030154195,
+      "mean_per_period": -0.006077632756359565,
+      "n_periods": 180,
+      "t": -2.0792122106492203,
+      "total": -0.7073292142731558
+    }
+  },
+  "rolling": [
+    {
+      "LO20_total": -0.1494571891438502,
+      "LS20_total": -0.2747857898354912,
+      "block": [
+        "2008-01-01",
+        "2010-12-31"
+      ],
+      "n": 40
+    },
+    {
+      "LO20_total": 0.9310171906260569,
+      "LS20_total": 0.187893357822551,
+      "block": [
+        "2011-01-01",
+        "2013-12-31"
+      ],
+      "n": 39
+    },
+    {
+      "LO20_total": 0.2681127289394205,
+      "LS20_total": -0.10670241930981383,
+      "block": [
+        "2014-01-01",
+        "2016-12-31"
+      ],
+      "n": 38
+    },
+    {
+      "LO20_total": 2.374574805144312,
+      "LS20_total": 0.8672016516542056,
+      "block": [
+        "2017-01-01",
+        "2019-12-31"
+      ],
+      "n": 38
+    },
+    {
+      "LO20_total": -0.29107332056436774,
+      "LS20_total": -0.7149416472484269,
+      "block": [
+        "2020-01-02",
+        "2026-08-28"
+      ],
+      "n": 80
+    }
+  ],
+  "rolling_positive": 2,
+  "spread_t_research": {
+    "mean": 0.01310286590117806,
+    "n": 153,
+    "t": 2.762013218564375
+  },
+  "spread_t_validation": {
+    "mean": 0.000698117199935082,
+    "n": 84,
+    "t": 0.17550943707856978
+  },
+  "survivorship": "UPPER_BOUND_SURVIVORSHIP (current listing only)",
+  "swap_long_annual_median": -0.1109,
+  "swap_short_annual_median": -0.0091,
+  "validation": {
+    "LO20": {
+      "cagr": -0.05273888915006797,
+      "hit": 0.525,
+      "maxdd": -0.4278798897739573,
+      "mean_per_period": -0.0017306790207435511,
+      "n_periods": 80,
+      "t": -0.22045327148750982,
+      "total": -0.29107332056436774
+    },
+    "LO_minus_EW": {
+      "cagr": -0.05273888915006797,
+      "hit": 0.2625,
+      "maxdd": -0.4278798897739573,
+      "mean_per_period": -0.010301149441867895,
+      "n_periods": 80,
+      "t": -4.383799076397635,
+      "total": -0.29107332056436774
+    },
+    "LS20": {
+      "cagr": -0.17936115786789342,
+      "hit": 0.2875,
+      "maxdd": -0.7149416472484269,
+      "mean_per_period": -0.01498593679438335,
+      "n_periods": 80,
+      "t": -3.9885255087140816,
+      "total": -0.7149416472484269
+    }
+  }
+}

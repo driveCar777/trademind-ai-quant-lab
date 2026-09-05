@@ -1,0 +1,27 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "broker": "Ava Trade Ltd.",
+  "columns": [
+    "timestamp_utc",
+    "open",
+    "high",
+    "low",
+    "close",
+    "tick_volume",
+    "real_volume",
+    "spread"
+  ],
+  "dataset_id": "tm-mt5-USSHARES-D1-20260905-000001",
+  "n_symbols": 497,
+  "n_symbols_with_bars": 492,
+  "overwrite_frozen": false,
+  "retrieved_at_utc": "2026-09-05T09:33:02Z",
+  "row_count": 2366615,
+  "sha256": "36ea9454c3048b0f92bff94a0b6a92a66fc1700fb8d72ecaf4e99d1a4f84d329",
+  "source": "mt5",
+  "spread_points_note": "spread column per bar is broker-reported points",
+  "swap_mode_5_meaning": "annual interest % of current price (negative = you pay)",
+  "terminal": "Ava Trade MT5 Terminal",
+  "timeframe": "D1",
+  "universe": "CFD-Shares\\USA (current listing only \u2014 survivorship)"
+}

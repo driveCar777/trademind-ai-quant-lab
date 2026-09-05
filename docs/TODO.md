@@ -1,7 +1,7 @@
 # TradeMind TODO — 版本任务清单
 
 > **当前活跃模块:** **V25 多层组合模型 = 第一个通过 Level-1 + 复现 + 独立性的 Candidate**（`A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE`，STOP A）。NEW_INDEPENDENT=**1**。规则修正见 `RESEARCH_RULES_AMENDMENT_V1.md`（A1 构造菜单 / A2 滚动验证 / A3 每层一个模型 / A4 超额序列聚类）。V22–V24 NO_CANDIDATE 已冻。Databento 余额 ≈$46 不花。
-> **最后更新:** 2026-09-05 早（V29 ML1 前向管线 Design+Implement+Smoke 5/5 PASS：每天 `python -m research_engine.ml1_live.daily` 出名单 + 影子账本；Stability 待连续 5 日 + 第一期结算；V28 Final OOS PASS 已锁；V27 季报层冻结）
+> **最后更新:** 2026-09-05 傍晚（V29 ML1 前向管线 Smoke 5/5 PASS，Stability 待周一起连续 5 日；用户授权 MT5 修正 V2 → V30 美股 CFD 截面价格模型 **NO_CANDIDATE** + `MT5_STOCK_CFD_COST_CEILING`，MT5 侧对象清点完毕；V28 Final OOS PASS 已锁）
 > **下一入口:** (1) V29 Phase 4 稳定性：每个交易日跑一次 `daily.py`（约 35 分钟，主要是 5549 只逐只拉日线），第一期 2026-08-28 信号在 ≈2026-09-29 结算 → 通过后 Freeze。(2) 有账户的 Paper 需用户：开始日 / 账户 / 行情源。(3) Portfolio 需第二条正的独立袖子；H11/H12 成本后为负不算 → 目前只有 1 袖。禁用窗已读已锁，ML1 再无禁用窗。**禁止**：为改善 ML1 动特征/参数/hold/成本/对冲；把 HN20-vs-HS300 当策略（它是小盘价差载体，MaxDD −54%）；用验证期或禁用窗选任何东西。
 
 ---
@@ -90,6 +90,9 @@
 | V28 ML1 FINAL OOS | 用户委托自决 → 协议先写 → 融资/成分/户数 raw 延伸到 2026-08（特征到 2024-02 逐位同冻结缓存）→ REFIT_240 闸门 + 2021 冻结诊断 → 2024-03→2026-07 30 期：超额 +1.00%/20d t 9.3，LO20 +71.4%（CAGR 24.3%，MaxDD −21%），19/30 打过 EW | ✅ **FINAL_OOS_PASS**，已锁不再读 | 2026-09-04 |
 | V29 ML1 LIVE PIPELINE | `research_engine/ml1_live/`：live 日历/basics/增量日线 → live pack（冻结块逐位相同）→ 融资日更/户数周更/成分月更 → 14 特征 → REFIT_240 模型缓存 → 前 20% 名单 `SIGNAL_{date}.json` → 影子账本接 V28 链（信号 2026-08-28 起每 21 日）。冒烟 5/5（`ml1_live/SMOKE_V29.json`）：冻结块逐位同、20 只抽查 0 错、特征 14/14 逐位同、2026-07-30 重打分 = V28 分数 Δ0.0 | ✅ Design+Implement+Smoke PASS；⏳ Stability = 连续 5 日 + 第一期结算（≈2026-09-29） | 2026-09-05 |
 | ML1 PAPER | 有账户的 Paper：开始日 / 账户 / 行情源需用户；管线已能每天出名单 | ⏸ 待用户 | — |
+| AMENDMENT V2 (MT5) | 用户授权解除 MT5 三条范围限制（ML 禁令 / 股票 CFD 只清点 / 只多头账本）；纪律全保留；不重开已证伪宏观家族 | ✅ 生效 | 2026-09-05 |
+| V30 MT5 US XS PRICE | 492 只美股 CFD D1 冻结（$0，5.9h）→ 7 价格特征 → 1 LightGBM → LS20 闸门 + 实测费率（多头融资 −11.09%/年）。验证毛价差 t 0.18，LS20 −71.5%（t −4.0），LO−EW −1.03%/20d，滚动 2/5 | ✅ **NO_CANDIDATE**；`MT5_STOCK_CFD_COST_CEILING`：不开 V31 on CFD | 2026-09-05 |
+| US EQUITY (cash account) | 若要美股 alpha：需现金股票账户（无融资费、EDGAR/Form 4/空头利息免费 PIT、无幸存者宇宙）| ⏸ 待用户开户，否则不开 | — |
 
 ## Post-V21 autodrive W1–W6 — 2026-09-04 idle_search_closed
 
