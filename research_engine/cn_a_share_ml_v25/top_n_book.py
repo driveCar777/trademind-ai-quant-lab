@@ -40,10 +40,13 @@ def board_mask(symbols, boards):
     return np.array([s.startswith(pref) for s in symbols], dtype=bool)
 
 
-def top_n_period(pack, scores_t, elig_t, xok, t, equity, n=N_NAMES, boards="ALL"):
+def top_n_period(pack, scores_t, elig_t, xok, t, equity, n=N_NAMES, boards="ALL", max_price=None):
     """One period from signal t. Returns dict with net return on equity and fills, or None if no signal."""
     dates = pack["dates"]
     elig_t = elig_t & board_mask(pack["symbols"], boards)
+    if max_price is not None:
+        c = np.asarray(pack["close"][t], dtype=float)
+        elig_t = elig_t & np.isfinite(c) & (c <= max_price)
     t0, t1 = t + 1, t + 1 + HOLD
     if t1 >= len(dates):
         return None
@@ -90,12 +93,12 @@ def top_n_period(pack, scores_t, elig_t, xok, t, equity, n=N_NAMES, boards="ALL"
             "invested": round(invested, 2), "cash_idle_frac": round(1.0 - invested / equity, 4), "pnl": round(pnl, 2), "ret": pnl / equity, "names": names}
 
 
-def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL"):
+def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None):
     dates = pack["dates"]
     i0, i1 = dates.index(start), dates.index(end)
     equity, trades, t = float(capital), [], i0
     while t <= i1:
-        per = top_n_period(pack, scores[t], elig[t], xok, t, equity, n, boards)
+        per = top_n_period(pack, scores[t], elig[t], xok, t, equity, n, boards, max_price)
         if per is None:
             if t + 1 + HOLD >= len(dates):
                 break
@@ -124,7 +127,7 @@ def summarize(book, ewm):
             "mean_cash_idle": float(np.mean([x["cash_idle_frac"] for x in tr])) if tr else None}
 
 
-def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, suffix=""):
+def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=None):
     from research_engine.cn_a_share_alpha.pack import load_pack
     from research_engine.cn_a_share_ml_v25 import RESEARCH, VALIDATION
     from research_engine.cn_a_share_strategy_v14_1.scores import eligible, exec_ok_matrix
@@ -132,9 +135,10 @@ def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, suffix=""):
     pack = load_pack()
     scores = np.load(os.path.join(OUT, "SCORES_ML1_LGBM.npy"), mmap_mode="r")
     elig, xok = eligible(pack, 20), exec_ok_matrix(pack)
-    res = {"contract": "V26_1_ML1_TOP20_MANUAL_CONTRACT.md" if not suffix else "V26_2 addendum", "n_names": n, "min_fee": MIN_FEE, "capital": capital, "denied_window_read": False, "boards": boards}
+    contract = "V26_2_ML1_TOP10_20K_MAIN_CONTRACT.md" if name else "V26_1_ML1_TOP20_MANUAL_CONTRACT.md"
+    res = {"contract": contract, "n_names": n, "min_fee": MIN_FEE, "capital": capital, "max_price": max_price, "denied_window_read": False, "boards": boards}
     for key, (a, b) in (("research", RESEARCH), ("validation", VALIDATION)):
-        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards)
+        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards, max_price=max_price)
         ew = ew_overlapping(pack, elig, xok, a, pack["dates"][pack["dates"].index(b) - HOLD - 1], HOLD)
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
         res[key] = summarize(bk, ewm)
@@ -142,18 +146,18 @@ def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, suffix=""):
         print(TAG, key, res[key], flush=True)
     v = res["validation"]
     viable = bool(v["total"] > 0 and v["mean_excess_vs_ew"] is not None and v["mean_excess_vs_ew"] > 0)
-    res["label"] = "ML1_TOP20_MANUAL_VIABLE_HISTORICAL" if viable else "ML1_TOP20_MANUAL_NOT_VIABLE"
-    dump_json(os.path.join(OUT, "TOP20_MANUAL_READ%s%s.json" % ("" if boards == "ALL" else "_" + boards, suffix)), res)
-    print(TAG, "DONE", boards, n, capital, res["label"], flush=True)
+    stem = name or "ML1_TOP20_MANUAL"
+    res["label"] = stem + ("_VIABLE_HISTORICAL" if viable else "_NOT_VIABLE")
+    fn = ("%s_READ.json" % name) if name else ("TOP20_MANUAL_READ%s.json" % ("" if boards == "ALL" else "_" + boards))
+    dump_json(os.path.join(OUT, fn), res)
+    print(TAG, "DONE", boards, res["label"], flush=True)
 
 
 if __name__ == "__main__":
-    import argparse
+    import sys
 
-    ap = argparse.ArgumentParser()
-    ap.add_argument("boards", nargs="?", default="ALL")
-    ap.add_argument("--n", type=int, default=N_NAMES)
-    ap.add_argument("--capital", type=float, default=DEFAULT_CAPITAL)
-    ap.add_argument("--suffix", default="")
-    a = ap.parse_args()
-    main(a.boards, a.n, a.capital, a.suffix)
+    if len(sys.argv) > 1 and sys.argv[1] == "V26_2":
+        # V26.2: owner's real constraints — main board, ¥20k, price <= ¥20, N = 20000 / 2000 = 10
+        main("MAIN", n=10, capital=20_000.0, max_price=20.0, name="ML1_TOP10_20K_MAIN")
+    else:
+        main(sys.argv[1] if len(sys.argv) > 1 else "ALL")

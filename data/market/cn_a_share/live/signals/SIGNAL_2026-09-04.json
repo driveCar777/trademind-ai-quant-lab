@@ -21,7 +21,7 @@
   "kind": "SIGNAL",
   "live_pack": {
     "asof": "2026-09-04",
-    "built_at": "2026-09-05T14:42:30Z",
+    "built_at": "2026-09-05T14:47:23Z",
     "frozen_dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
     "frozen_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
     "frozen_end": "2026-08-28",

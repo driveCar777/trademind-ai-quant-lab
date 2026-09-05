@@ -4,11 +4,11 @@
 
 ---
 
-## 2026-09-05 (22:45) — V26.2 `ML1_TOP10_10K_MAIN` (owner facts: main board only, ¥10,000, ~¥10 stocks)
+## 2026-09-05 (22:44) — Owner facts (main board only, ¥20k, price ≤ ¥20) → V26.2 `ML1_TOP10_20K_MAIN`
 
-- N=20 infeasible at ¥10k (¥500/name < one lot). N derived from capital ÷ one lot of a ~¥10 stock = 10; main board only; cost V1 + ¥5 minimum commission (≈1.25%/period, declared ex ante). Addendum `V26_2_ML1_TOP10_10K_MAIN_ADDENDUM.md` frozen before run.
-- Historical read (frozen ML1 scores, denied window not read): research +156% (CAGR 10.2%, MaxDD −43%), validation +34.5% (CAGR 12.5%, MaxDD −15%, excess vs EW +2.67%/20d t 2.4, 21/29). `ML1_TOP10_10K_MAIN_VIABLE_HISTORICAL`. N=5 recorded as diagnostic only.
-- `daily.py` defaults now `--boards MAIN --manual-capital 10000 --n-names 10`; `top_n_book.py` takes `--n/--capital/--suffix`. 2026-09-04 shortlist: 10 main-board names, ¥525–960 each. No orders placed.
+- Contract `V26_2_ML1_TOP10_20K_MAIN_CONTRACT.md` frozen before run (m+1). N = 20000 / 2000 = 10 derived from capital and the ¥20 price ceiling (one lot ≤ ¥2,000), not tuned. Main board only; signal-day close ≤ ¥20; ¥2,000 per name, lot rounding; ¥5 minimum commission (≈0.25%/side; round trip ≈0.75%/period).
+- Historical read on frozen ML1 scores, denied window not read (`ML1_TOP10_20K_MAIN_READ.json`): research +402% (CAGR 18.1%, MaxDD −43%); validation +32.7% (CAGR 11.9%, MaxDD −11%), excess vs EW +2.4%/20d (t 2.4), 20/29; 10/10 fills; ≈22% cash idle. `ML1_TOP10_20K_MAIN_VIABLE_HISTORICAL`.
+- `top_n_book.py` / `shortlist.py` / `daily.py`: `n` and `max_price` parameters; daily defaults now `--boards MAIN --manual-capital 20000 --n-names 10 --max-price 20`. `SHORTLIST_2026-09-04.csv` regenerated (10 names). ML1 list and V26 ledger untouched; nothing places orders.
 
 ## 2026-09-05 (22:20) — Execution assumption corrected by owner; V26.1 ML1_TOP20_MANUAL contract, historical read, pipeline outputs
 

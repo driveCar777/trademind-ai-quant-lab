@@ -1,104 +1,97 @@
 {
   "act": "buy at next session open, hold 20 sessions, sell at open",
-  "alloc_per_name": 1000.0,
+  "alloc_per_name": 2000.0,
   "boards": "MAIN",
-  "capital_yuan": 10000.0,
-  "contract": "ML1_TOPN_MANUAL (V26.1/V26.2)",
+  "capital_yuan": 20000.0,
+  "contract": "ML1_TOP10_MANUAL",
   "execution": "MANUAL by owner in ordinary account; no API, no automation",
   "kind": "SHORTLIST_SHADOW",
+  "max_price": 20.0,
   "n_names": 10,
-  "n_target": 10,
   "names": [
     {
-      "est_yuan": 870.0,
+      "est_yuan": 1914.0,
       "last_close": 1.7400000095367432,
-      "lots_100_est": 5,
+      "lots_100_est": 11,
       "rank": 1,
       "score": 0.0892379954457283,
       "symbol": "sh.600653"
     },
     {
-      "est_yuan": 716.0,
+      "est_yuan": 1790.0,
       "last_close": 3.5799999237060547,
-      "lots_100_est": 2,
+      "lots_100_est": 5,
       "rank": 2,
       "score": 0.08649247884750366,
       "symbol": "sz.000868"
     },
     {
-      "est_yuan": 892.0,
-      "last_close": 2.2300000190734863,
-      "lots_100_est": 4,
+      "est_yuan": 1114.0,
+      "last_close": 11.140000343322754,
+      "lots_100_est": 1,
       "rank": 3,
+      "score": 0.0853583961725235,
+      "symbol": "sh.600697"
+    },
+    {
+      "est_yuan": 1784.0,
+      "last_close": 2.2300000190734863,
+      "lots_100_est": 8,
+      "rank": 4,
       "score": 0.08223000913858414,
       "symbol": "sh.600533"
     },
     {
-      "est_yuan": 750.0,
+      "est_yuan": 1500.0,
       "last_close": 7.5,
-      "lots_100_est": 1,
-      "rank": 4,
+      "lots_100_est": 2,
+      "rank": 5,
       "score": 0.08118359744548798,
       "symbol": "sh.600241"
     },
     {
-      "est_yuan": 693.0,
+      "est_yuan": 1386.0,
       "last_close": 6.929999828338623,
-      "lots_100_est": 1,
-      "rank": 5,
+      "lots_100_est": 2,
+      "rank": 6,
       "score": 0.08107254654169083,
       "symbol": "sz.002799"
     },
     {
-      "est_yuan": 924.0,
-      "last_close": 9.239999771118164,
+      "est_yuan": 1178.0,
+      "last_close": 11.779999732971191,
       "lots_100_est": 1,
-      "rank": 6,
+      "rank": 7,
+      "score": 0.08055711537599564,
+      "symbol": "sz.002858"
+    },
+    {
+      "est_yuan": 1146.0,
+      "last_close": 11.460000038146973,
+      "lots_100_est": 1,
+      "rank": 8,
+      "score": 0.07914499938488007,
+      "symbol": "sh.603208"
+    },
+    {
+      "est_yuan": 1848.0,
+      "last_close": 9.239999771118164,
+      "lots_100_est": 2,
+      "rank": 9,
       "score": 0.07909426093101501,
       "symbol": "sz.000929"
     },
     {
-      "est_yuan": 740.0,
+      "est_yuan": 1850.0,
       "last_close": 3.700000047683716,
-      "lots_100_est": 2,
-      "rank": 7,
+      "lots_100_est": 5,
+      "rank": 10,
       "score": 0.07862827926874161,
       "symbol": "sz.000607"
-    },
-    {
-      "est_yuan": 742.0,
-      "last_close": 7.420000076293945,
-      "lots_100_est": 1,
-      "rank": 8,
-      "score": 0.07844836264848709,
-      "symbol": "sz.002877"
-    },
-    {
-      "est_yuan": 696.0,
-      "last_close": 3.4800000190734863,
-      "lots_100_est": 2,
-      "rank": 9,
-      "score": 0.07824978232383728,
-      "symbol": "sh.600386"
-    },
-    {
-      "est_yuan": 998.0,
-      "last_close": 4.989999771118164,
-      "lots_100_est": 2,
-      "rank": 10,
-      "score": 0.07747495919466019,
-      "symbol": "sh.600858"
     }
   ],
   "note": "lots estimated from close; recompute at open: lots = floor(alloc / (100 * open)); skip if 0",
   "orders_sent": false,
   "signal_date": "2026-08-28",
-  "skipped_price_too_high_for_one_lot": [
-    "sh.600697",
-    "sz.001306",
-    "sz.002858",
-    "sz.002813",
-    "sh.603208",
-    "sz.002205"
-  ]
+  "skipped_price_too_high_for_one_lot": []
 }
