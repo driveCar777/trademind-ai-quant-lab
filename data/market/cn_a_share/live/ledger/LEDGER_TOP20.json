@@ -4,10 +4,12 @@
   "summary": {
     "boards": "MAIN",
     "capital_yuan": 20000.0,
-    "contract": "ML1_TOP10_MANUAL",
-    "max_price": 20.0,
+    "contract": "ML1_ONELOT_70PCT_MAIN",
+    "exposure": 0.7,
+    "historical_gate": "NOT_VIABLE (V26.3 single read 2026-09-05)",
+    "max_price": 100.0,
     "money": "NONE (shadow)",
-    "n_names": 10,
+    "n_names": "EMERGENT",
     "n_periods": 0,
     "orders_sent": false
   }

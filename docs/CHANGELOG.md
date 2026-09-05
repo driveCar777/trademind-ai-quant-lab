@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-09-05 (23:36) — Owner constraints & life-goal statement; V26.2 void; V26.3 `ML1_ONELOT_70PCT_MAIN` single read NOT_VIABLE
+
+- Owner statement (not a research task; no change allowed to raise returns): age 27, goal financial independence by 35 (expectation, not a gate); ¥20k max during validation, later +¥2k–10k/month; one lot = 100 shares so price ≤ ¥100 is acceptable (¥20 was an arithmetic error); never 100% invested, exposure fixed in advance; max 1 lot per name; skip if unaffordable; N emergent, never chosen ex post; MT5 verdict stands, leverage is not an accelerator.
+- V26.2 (≤¥20, N=10) declared void; its files are kept as evidence, unmodified.
+- `V26_3_ML1_ONELOT_70PCT_MAIN_CONTRACT.md` frozen before run, single read enforced in `top_n_book.py V26_3` (refuses if `ML1_ONELOT_70PCT_MAIN_READ.json` exists): main board, close ≤ ¥100, 70% exposure (owner's example number adopted as-is), exactly 1 lot per name in score order while affordable, cost model V1 + ¥5 minimum fee, ¥20k, denied window not read. Research +74.7% (CAGR 5.9%, MaxDD −44%, 17.3 names avg, 32% idle); validation −10.8% (CAGR −4.4%, MaxDD −14%, 8.8 names, 30% idle); excess vs EW +0.46%/20d t 1.2 and +0.65% t 0.87 → `ML1_ONELOT_70PCT_MAIN_NOT_VIABLE`. Cause is the execution shell (weights ∝ price, minimum fee on ¥200 lots, 30% cash), not the ML1 ranking. No exposure/price/lot variants will be tried.
+- `ml1_live/shortlist.py` `write_shortlist_one_lot`; `daily.py` defaults switched to V26.3 (`--exposure 0.70 --max-price 100 --boards MAIN --manual-capital 20000`, `--n-names 0`); `LEDGER_TOP20.json` now carries the V26.3 shadow book with `historical_gate: NOT_VIABLE`. 2026-09-04 one-lot list: 13 names, ¥13,996 (one ¥55 name = 39% of deployed).
+- `docs/OWNER_CONSTRAINTS_AND_GOAL.md`: compounding arithmetic ¥20k + 2k/6k/10k per month × 8 years at evidence-based CAGRs (−4.4% … 13.7%): terminal 17–39万 / 50–106万 / 82–172万 vs principal 21 / 60 / 98万. Gap is principal, not edge; no cell reaches a 4%-rule target of 250万. Recommendation: shortlist and shadow ledger continue, owner stays off live money, all research resource to V31.
+
 ## 2026-09-05 (23:20) — V26.2 recent-window diagnostic; V32 MT5 macro pooled model NO_CANDIDATE
 
 - Owner asked for last 1y/6m/1m of the executable ML1 variant and to start MT5 gold/oil/FX.

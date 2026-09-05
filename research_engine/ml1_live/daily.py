@@ -34,11 +34,13 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--asof", default=datetime.date.today().isoformat())
     ap.add_argument("--capital", type=float, default=DEFAULT_CAPITAL, help="V26 reference book (999 names) — not executable by hand")
-    # V26.2 defaults = owner's real constraints (2026-09-05 22:44): main board only, ¥20k, price <= ¥20, N = 20000/2000 = 10
+    # V26.3 defaults = owner's real constraints (2026-09-05 23:36): main board only, ¥20k, close <= ¥100, 70% exposure fixed, 1 lot per name, N emergent.
+    # (V26.2 ≤¥20 / N=10 is void — owner's arithmetic error; files kept as evidence.) Historical single read: NOT_VIABLE; lists still emitted for the shadow ledger.
     ap.add_argument("--manual-capital", type=float, default=20_000.0, help="manual shortlist capital (owner's real account size)")
     ap.add_argument("--boards", default="MAIN", choices=("ALL", "MAIN_CHINEXT", "MAIN"), help="boards the owner's account may trade (set by permission, never by result)")
-    ap.add_argument("--n-names", type=int, default=10, help="shortlist size = capital / max one-lot cost (arithmetic, not tuned)")
-    ap.add_argument("--max-price", type=float, default=20.0, help="owner's price ceiling (signal-day close)")
+    ap.add_argument("--max-price", type=float, default=100.0, help="owner's price ceiling (signal-day close)")
+    ap.add_argument("--exposure", type=float, default=0.70, help="fixed fraction of capital deployable; rest is cash (owner's number, never tuned)")
+    ap.add_argument("--n-names", type=int, default=0, help="legacy V26.1/V26.2 fixed-N mode; 0 = V26.3 one-lot mode (N emergent)")
     ap.add_argument("--force-score", action="store_true")
     ap.add_argument("--no-holders", action="store_true")
     ap.add_argument("--skip-fetch", action="store_true", help="use data already on disk (no BaoStock/Eastmoney)")
@@ -99,21 +101,28 @@ def main(argv=None):
     ledger = update_ledger(pack, feats, elig, xok, capital=a.capital)
     status["ledger"] = ledger["summary"]
     # V26.1 manual-execution derivatives (owner's real constraint: ordinary account, hand-entered orders)
-    from research_engine.ml1_live.shortlist import MANUAL_CAPITAL, update_top20_ledger, write_shortlist
+    from research_engine.ml1_live.shortlist import update_top20_ledger, write_shortlist, write_shortlist_one_lot
+
+    one_lot = a.n_names <= 0
+
+    def _shortlist(sc_t, el_t, ti, tag):
+        if one_lot:
+            return write_shortlist_one_lot(pack, sc_t, el_t, ti, capital=a.manual_capital, exposure=a.exposure, boards=a.boards, max_price=a.max_price, tag=tag)
+        return write_shortlist(pack, sc_t, el_t, ti, tag=tag, capital=a.manual_capital, boards=a.boards, n=a.n_names, max_price=a.max_price)
 
     S, sig_idx = ledger["_scores_matrix"], ledger["_signal_indices"]
     if sig_idx:
-        manual = dict(capital=a.manual_capital, boards=a.boards, n=a.n_names, max_price=a.max_price)
-        top20 = update_top20_ledger(pack, S, elig, xok, sig_idx[0], **manual)
+        top20 = update_top20_ledger(pack, S, elig, xok, sig_idx[0], capital=a.manual_capital, boards=a.boards, n=max(a.n_names, 1), max_price=a.max_price,
+                                    one_lot=one_lot, exposure=a.exposure)
         status["ledger_top20"] = top20["summary"]
         for si in sig_idx:
-            write_shortlist(pack, S[si], elig[si], si, tag="SHORTLIST_SHADOW", **manual)
+            _shortlist(S[si], elig[si], si, "SHORTLIST_SHADOW")
     # 8 today's list if today is a chain signal day, or forced
     t = len(pack["dates"]) - 1
     is_signal_day = t in chain_signal_indices(pack["dates"], t)
     if is_signal_day or a.force_score:
         sig, sc = score_session(pack, feats, elig, xok, t, a.capital, tag="SIGNAL")
-        sl = write_shortlist(pack, sc, elig[t], t, tag="SHORTLIST", capital=a.manual_capital, boards=a.boards, n=a.n_names, max_price=a.max_price)
+        sl = _shortlist(sc, elig[t], t, "SHORTLIST")
         status["signal"] = {"file": os.path.join(SIGNALS, "SIGNAL_%s.json" % pack["dates"][t]), "n_selected": sig["n_selected"], "is_chain_signal_day": is_signal_day,
                             "shortlist_file": os.path.join(SIGNALS, "SHORTLIST_%s.csv" % pack["dates"][t]), "shortlist_n": sl["n_names"]}
     else:

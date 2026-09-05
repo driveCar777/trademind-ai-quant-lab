@@ -93,12 +93,62 @@ def top_n_period(pack, scores_t, elig_t, xok, t, equity, n=N_NAMES, boards="ALL"
             "invested": round(invested, 2), "cash_idle_frac": round(1.0 - invested / equity, 4), "pnl": round(pnl, 2), "ret": pnl / equity, "names": names}
 
 
-def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None):
+def one_lot_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, boards="MAIN", max_price=100.0):
+    """V26.3: scan by score; buy exactly 1 lot if 100*open <= remaining deployable cash (exposure*equity), else skip. N is emergent."""
+    dates = pack["dates"]
+    elig_t = elig_t & board_mask(pack["symbols"], boards)
+    c = np.asarray(pack["close"][t], dtype=float)
+    elig_t = elig_t & np.isfinite(c) & (c <= max_price)
+    t0, t1 = t + 1, t + 1 + HOLD
+    if t1 >= len(dates):
+        return None
+    idx = np.where(elig_t & np.isfinite(scores_t))[0]
+    if idx.size < 200:
+        return None
+    order = idx[np.lexsort((idx, scores_t[idx]))][::-1]
+    remaining = exposure * equity
+    picks, skipped = [], 0
+    for j in order:
+        j = int(j)
+        o0 = float(pack["open"][t0, j])
+        if not np.isfinite(o0) or o0 <= 0:
+            continue
+        cost = LOT * o0 * (1.0 + SLIPPAGE)
+        if cost > remaining:
+            skipped += 1
+            continue
+        picks.append((j, 1, None))
+        remaining -= cost
+    pnl, invested, n_fill, names = 0.0, 0.0, 0, []
+    for j, lots, pre in picks:
+        reason = "FILL" if bool(xok[t0, j]) else exec_reason(pack, t0, j)
+        if reason == "FILL":
+            reason = "FILL" if bool(xok[t1, j]) else exec_reason(pack, t1, j)
+        if reason != "FILL":
+            names.append({"symbol": pack["symbols"][j], "lots": 1, "status": reason, "net": 0.0})
+            continue
+        o0, o1 = float(pack["open"][t0, j]), float(pack["open"][t1, j])
+        cost_in = LOT * o0 * (1.0 + SLIPPAGE)
+        proceeds = LOT * o1 * (1.0 - SLIPPAGE)
+        fees = _fee(cost_in) + _fee(proceeds) + proceeds * stamp_duty_sell(dates[t1])
+        net = proceeds - cost_in - fees
+        pnl += net
+        invested += cost_in
+        n_fill += 1
+        names.append({"symbol": pack["symbols"][j], "lots": 1, "status": "FILL", "net": round(net, 2), "lot_yuan": round(cost_in, 2)})
+    return {"signal_date": dates[t], "entry": dates[t0], "exit": dates[t1], "n_sel": len(picks), "n_fill": n_fill, "skipped_no_lot": skipped,
+            "invested": round(invested, 2), "cash_idle_frac": round(1.0 - invested / equity, 4), "pnl": round(pnl, 2), "ret": pnl / equity, "names": names}
+
+
+def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None, one_lot=False, exposure=0.70):
     dates = pack["dates"]
     i0, i1 = dates.index(start), dates.index(end)
     equity, trades, t = float(capital), [], i0
     while t <= i1:
-        per = top_n_period(pack, scores[t], elig[t], xok, t, equity, n, boards, max_price)
+        if one_lot:
+            per = one_lot_period(pack, scores[t], elig[t], xok, t, equity, exposure, boards, max_price)
+        else:
+            per = top_n_period(pack, scores[t], elig[t], xok, t, equity, n, boards, max_price)
         if per is None:
             if t + 1 + HOLD >= len(dates):
                 break
@@ -127,7 +177,7 @@ def summarize(book, ewm):
             "mean_cash_idle": float(np.mean([x["cash_idle_frac"] for x in tr])) if tr else None}
 
 
-def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=None):
+def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=None, one_lot=False, exposure=0.70, contract=None):
     from research_engine.cn_a_share_alpha.pack import load_pack
     from research_engine.cn_a_share_ml_v25 import RESEARCH, VALIDATION
     from research_engine.cn_a_share_strategy_v14_1.scores import eligible, exec_ok_matrix
@@ -135,10 +185,11 @@ def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=
     pack = load_pack()
     scores = np.load(os.path.join(OUT, "SCORES_ML1_LGBM.npy"), mmap_mode="r")
     elig, xok = eligible(pack, 20), exec_ok_matrix(pack)
-    contract = "V26_2_ML1_TOP10_20K_MAIN_CONTRACT.md" if name else "V26_1_ML1_TOP20_MANUAL_CONTRACT.md"
-    res = {"contract": contract, "n_names": n, "min_fee": MIN_FEE, "capital": capital, "max_price": max_price, "denied_window_read": False, "boards": boards}
+    contract = contract or ("V26_2_ML1_TOP10_20K_MAIN_CONTRACT.md" if name else "V26_1_ML1_TOP20_MANUAL_CONTRACT.md")
+    res = {"contract": contract, "n_names": ("EMERGENT" if one_lot else n), "one_lot": one_lot, "exposure": (exposure if one_lot else 1.0), "min_fee": MIN_FEE,
+           "capital": capital, "max_price": max_price, "denied_window_read": False, "boards": boards}
     for key, (a, b) in (("research", RESEARCH), ("validation", VALIDATION)):
-        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards, max_price=max_price)
+        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards, max_price=max_price, one_lot=one_lot, exposure=exposure)
         ew = ew_overlapping(pack, elig, xok, a, pack["dates"][pack["dates"].index(b) - HOLD - 1], HOLD)
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
         res[key] = summarize(bk, ewm)
@@ -156,7 +207,12 @@ def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=
 if __name__ == "__main__":
     import sys
 
-    if len(sys.argv) > 1 and sys.argv[1] == "V26_2":
+    if len(sys.argv) > 1 and sys.argv[1] == "V26_3":
+        # V26.3: main board, close <= 100, 70% exposure fixed by owner, exactly 1 lot per name, N emergent. Single read.
+        if os.path.isfile(os.path.join(OUT, "ML1_ONELOT_70PCT_MAIN_READ.json")):
+            raise SystemExit("V26.3 already read once; refusing (single-read contract)")
+        main("MAIN", capital=20_000.0, max_price=100.0, name="ML1_ONELOT_70PCT_MAIN", one_lot=True, exposure=0.70, contract="V26_3_ML1_ONELOT_70PCT_MAIN_CONTRACT.md")
+    elif len(sys.argv) > 1 and sys.argv[1] == "V26_2":
         # V26.2: owner's real constraints — main board, ¥20k, price <= ¥20, N = 20000 / 2000 = 10
         main("MAIN", n=10, capital=20_000.0, max_price=20.0, name="ML1_TOP10_20K_MAIN")
     else:
