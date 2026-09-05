@@ -33,7 +33,9 @@ def _set_env(asof):
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--asof", default=datetime.date.today().isoformat())
-    ap.add_argument("--capital", type=float, default=DEFAULT_CAPITAL)
+    ap.add_argument("--capital", type=float, default=DEFAULT_CAPITAL, help="V26 reference book (999 names) — not executable by hand")
+    ap.add_argument("--manual-capital", type=float, default=100_000.0, help="V26.1 TOP20 manual shortlist capital (owner's real account size)")
+    ap.add_argument("--boards", default="MAIN_CHINEXT", choices=("ALL", "MAIN_CHINEXT", "MAIN"), help="boards the owner's account may trade (set by permission, never by result)")
     ap.add_argument("--force-score", action="store_true")
     ap.add_argument("--no-holders", action="store_true")
     ap.add_argument("--skip-fetch", action="store_true", help="use data already on disk (no BaoStock/Eastmoney)")
@@ -93,12 +95,23 @@ def main(argv=None):
     # 7 shadow ledger (scores the chain signal sessions, settles closed periods)
     ledger = update_ledger(pack, feats, elig, xok, capital=a.capital)
     status["ledger"] = ledger["summary"]
+    # V26.1 manual-execution derivatives (owner's real constraint: ordinary account, hand-entered orders)
+    from research_engine.ml1_live.shortlist import MANUAL_CAPITAL, update_top20_ledger, write_shortlist
+
+    S, sig_idx = ledger["_scores_matrix"], ledger["_signal_indices"]
+    if sig_idx:
+        top20 = update_top20_ledger(pack, S, elig, xok, sig_idx[0], capital=a.manual_capital, boards=a.boards)
+        status["ledger_top20"] = top20["summary"]
+        for si in sig_idx:
+            write_shortlist(pack, S[si], elig[si], si, capital=a.manual_capital, tag="SHORTLIST_SHADOW", boards=a.boards)
     # 8 today's list if today is a chain signal day, or forced
     t = len(pack["dates"]) - 1
     is_signal_day = t in chain_signal_indices(pack["dates"], t)
     if is_signal_day or a.force_score:
-        sig, _ = score_session(pack, feats, elig, xok, t, a.capital, tag="SIGNAL")
-        status["signal"] = {"file": os.path.join(SIGNALS, "SIGNAL_%s.json" % pack["dates"][t]), "n_selected": sig["n_selected"], "is_chain_signal_day": is_signal_day}
+        sig, sc = score_session(pack, feats, elig, xok, t, a.capital, tag="SIGNAL")
+        sl = write_shortlist(pack, sc, elig[t], t, capital=a.manual_capital, tag="SHORTLIST", boards=a.boards)
+        status["signal"] = {"file": os.path.join(SIGNALS, "SIGNAL_%s.json" % pack["dates"][t]), "n_selected": sig["n_selected"], "is_chain_signal_day": is_signal_day,
+                            "shortlist_file": os.path.join(SIGNALS, "SHORTLIST_%s.csv" % pack["dates"][t]), "shortlist_n": sl["n_names"]}
     else:
         status["signal"] = {"is_chain_signal_day": False, "next_signal_date": ledger["summary"].get("next_signal_date")}
     status["elapsed_s"] = round(time.time() - t0, 1)

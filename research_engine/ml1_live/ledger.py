@@ -91,6 +91,7 @@ def update_ledger(pack, feats, elig, xok, capital=DEFAULT_CAPITAL):
                "capital_yuan": capital, "chain_anchor": CHAIN_ANCHOR_SIGNAL, "money": "NONE (shadow)", "orders_sent": False}
     out = {"summary": summary, "periods": periods}
     dump_json(os.path.join(LEDGER_DIR, "LEDGER.json"), out)
+    out["_scores_matrix"], out["_signal_indices"] = S, sig_idx  # in-memory only, for derived books (V26.1 TOP20)
     write_csv(os.path.join(LEDGER_DIR, "LEDGER.csv"), ("status", "signal_date", "entry", "exit", "n_sel", "n_fill", "capital_ret", "ew_ret", "lo_minus_ew", "equity"),
               [dict((k, p.get(k)) for k in ("status", "signal_date", "entry", "exit", "n_sel", "n_fill", "capital_ret", "ew_ret", "lo_minus_ew", "equity")) for p in periods])
     print(TAG, state, "closed", n_closed, "open", summary["n_periods_open"], "next", summary["next_signal_date"], flush=True)

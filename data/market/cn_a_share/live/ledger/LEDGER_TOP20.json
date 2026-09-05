@@ -1,0 +1,13 @@
+{
+  "fills_by_period": {},
+  "periods": [],
+  "summary": {
+    "boards": "MAIN_CHINEXT",
+    "capital_yuan": 100000.0,
+    "contract": "ML1_TOP20_MANUAL",
+    "money": "NONE (shadow)",
+    "n_names": 20,
+    "n_periods": 0,
+    "orders_sent": false
+  }
+}

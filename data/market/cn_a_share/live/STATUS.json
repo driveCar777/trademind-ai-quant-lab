@@ -1,6 +1,6 @@
 {
  "asof_requested": "2026-09-05",
- "started_at": "2026-09-05T02:32:08Z",
+ "started_at": "2026-09-05T14:29:37Z",
  "steps": {
   "fetch": "skipped",
   "features_rebuilt": false
@@ -16,7 +16,7 @@
   "n_live_sessions": 5,
   "n_live_cells": 26071,
   "live_hash": "56290c70aafb822132d262da4b18fd731147372ac383332c28b58f7ab4d7534b",
-  "built_at": "2026-09-05T02:32:11Z"
+  "built_at": "2026-09-05T14:29:40Z"
  },
  "ledger": {
   "state": "RUNNING",
@@ -37,10 +37,22 @@
   "money": "NONE (shadow)",
   "orders_sent": false
  },
- "signal": {
-  "is_chain_signal_day": false,
-  "next_signal_date": "21 sessions after 2026-08-28"
+ "ledger_top20": {
+  "n_periods": 0,
+  "contract": "ML1_TOP20_MANUAL",
+  "boards": "MAIN_CHINEXT",
+  "capital_yuan": 100000.0,
+  "n_names": 20,
+  "money": "NONE (shadow)",
+  "orders_sent": false
  },
- "elapsed_s": 13.8,
+ "signal": {
+  "file": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\live\\signals\\SIGNAL_2026-09-04.json",
+  "n_selected": 999,
+  "is_chain_signal_day": false,
+  "shortlist_file": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\live\\signals\\SHORTLIST_2026-09-04.csv",
+  "shortlist_n": 20
+ },
+ "elapsed_s": 9.7,
  "orders_sent": false
 }

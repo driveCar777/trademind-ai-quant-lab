@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-09-05 (22:20) — Execution assumption corrected by owner; V26.1 ML1_TOP20_MANUAL contract, historical read, pipeline outputs
+
+- Owner: small capital, Ping An ordinary account, no quant permission (not obtainable short-term); never assume QMT/PTrade or automated 999-name execution; no computer-use / unofficial-API order entry; execution = system emits a short list, owner enters orders by hand; MT5 US names are CFDs and there is no US account; futures account not open (research may proceed). Written into `MASTER_PLAN_V2.md`, `AGENTS.md`, `TRADEMIND_CONTEXT.md`.
+- `V26_1_ML1_TOP20_MANUAL_CONTRACT.md` (frozen before run): ML1 scores unchanged; top 20 by score, equal weight, `lots = floor(alloc/(100·open))`, zero-lot names skipped and back-filled, V14.1 non-fill rules, cost model V1 + ¥5 minimum commission per order, capital parameter (default ¥100k), denied window not read, board filter set by owner permission.
+- `cn_a_share_ml_v25/top_n_book.py` — historical read on frozen ML1 scores (research 2012-01→2021-08, validation 2021-08→2024-02), three permission scopes (m+3, none chosen by result): ALL research +298% / validation +17.0% (excess vs EW +2.0%/20d t 3.3, 22/29); MAIN_CHINEXT +385% / +10.5% (t 2.8); MAIN +410% / +34.5% (MaxDD −10%, t 3.1). All `ML1_TOP20_MANUAL_VIABLE_HISTORICAL`. ~10–13% cash idle from lot rounding; ~19.3–20 fills per period.
+- `ml1_live/shortlist.py` + `daily.py --manual-capital --boards`: every run now also writes `SHORTLIST_{date}.csv/json` (20 names, estimated lots) and `LEDGER_TOP20.json` (TOP20 shadow ledger from the 2026-08-28 chain signal, in parallel with the 999-name ledger). ML1 list and V26 ledger untouched. Nothing places orders.
+
 ## 2026-09-05 (night) — MASTER_PLAN_V2 (owner-authorised plan revision) + V31 China futures cross-section Design
 
 - Owner: "you may modify my design and plan; markets = MT5 gold/oil/majors, A-shares, China futures, US equities". `docs/MASTER_PLAN_V2.md`: platform (Xavier cluster, AI Gateway, 7 preset strategies, manual-confirm paper orders) frozen with no further investment; caution moved to statistical gates; market verdicts A-shares (1) > China futures (2) > US equities (3); MT5 macro symbols closed as research objects, kept only as an execution venue for futures-derived views (Ava Trade has `GOLD`/`SILVER`; earlier "no gold symbol" statement corrected). V26 execution gap recorded: 999 equal-weight names every 20 sessions is not manually executable → broker quant API (QMT/PTrade) required; "top-100" only as a new forward-validated contract. `ROADMAP.md` now points to MASTER_PLAN_V2.
