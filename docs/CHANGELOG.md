@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-09-06 (01:05) — Owner execution preference (MT5); MT5 D1 legal-object inventory = 0; A-share V26.5 frozen; next cut V31
+
+- Owner: prefers to execute on MT5; futures account later; do not reopen falsified gold/oil/FX/CFD families; no H1/tick; A-share V26.5 frozen (lists + shadow ledger only, no more shell changes); no parameter/cost/leverage changes for return.
+- `MT5_D1_LEGAL_OBJECT_INVENTORY.md`: every instrument class on the terminal mapped against `FAILURE_ATLAS.json` and V1–V8 / V30 / V32. Immediate legal new objects = 0. ETF CFDs measured today: swap long −11.09%/yr, same ceiling as share CFDs. Only untested layer `CN_INFO_TO_COMMODITY` (A-share panel → COPPER/SILVER/CrudeOIL) is legal but low-power (targets start 2018-12) and is queued after V31.
+- V31 → MT5 execution mapping with measured costs (GOLD swap ≈ 0.13%/yr, SILVER ≈ 1.1%/yr, COPPER/CrudeOIL −4.5%/yr both sides; spreads 0.02–0.14%).
+
 ## 2026-09-06 (00:32) — Owner allows 80% exposure; V26.5 `ML1_EQMONEY_80PCT_MAIN` single read VIABLE_HISTORICAL; recent-window diagnostic
 
 - `V26_5_ML1_EQMONEY_80PCT_MAIN_CONTRACT.md`: identical to V26.4 except exposure 70% → 80%. "100% when necessary" not adopted (no ex-ante trigger; any trigger derived from results is tuning). Compounding reinvestment was already how every book works (N = floor(exposure·equity/2000) grows with equity).
