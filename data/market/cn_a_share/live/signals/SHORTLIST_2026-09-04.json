@@ -4,11 +4,11 @@
   "capital_yuan": 20000.0,
   "contract": "ML1_EQMONEY_70PCT_MAIN",
   "execution": "MANUAL by owner in ordinary account; no API, no automation",
-  "exposure": 0.7,
+  "exposure": 0.8,
   "kind": "SHORTLIST",
   "max_price": 100.0,
-  "n_names": 7,
-  "n_target": 7,
+  "n_names": 8,
+  "n_target": 8,
   "names": [
     {
       "est_yuan": 1892.0,
@@ -65,10 +65,18 @@
       "rank": 7,
       "score": 0.07493849098682404,
       "symbol": "sh.603656"
+    },
+    {
+      "est_yuan": 1800.0,
+      "last_close": 2.25,
+      "lots_100_est": 8,
+      "rank": 8,
+      "score": 0.07463674247264862,
+      "symbol": "sh.600533"
     }
   ],
   "orders_sent": false,
   "signal_date": "2026-09-04",
-  "skipped_price_too_high_for_2000": 0,
+  "skipped_price_too_high_for_2000": 1,
   "unit_yuan": 2000.0
 }

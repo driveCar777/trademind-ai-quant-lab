@@ -4,6 +4,10 @@
 
 ---
 
+## 2026-09-06 (00:25) — V26.5: owner allows 80% exposure (100% when necessary); no historical re-read
+
+- `daily.py` default `--exposure 0.80` (N = 8 at ¥20k); 2026-09-04 list 8 names ≈ ¥13,427. Historical basis inherited from the V26.4 70% read; no 80% backtest, since exposure is arithmetic and re-reading would be the banned "试仓位比例". 100% is the owner's manual call, not a system rule; shadow ledger records 80%. `V26_5_ML1_EQMONEY_80PCT_MAIN_NOTE.md`.
+
 ## 2026-09-06 (00:15) — V26.3 attribution; owner allows equal-money multi-lot; V26.4 `ML1_EQMONEY_70PCT_MAIN` single read VIABLE_HISTORICAL
 
 - Attribution of V26.3 validation (diagnostic on the same fills): equal-weight gross +2.27%/20d → one-lot price-weighted +0.50% → commission −0.67% → slippage+stamp −0.27% → ≈ −0.44% on invested × 70% ≈ −0.3%/period = −10.8%. Cause is the one-lot rule (avg 8.8 names, max single weight 33%), not entry/exit timing or the model.
