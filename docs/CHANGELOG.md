@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-09-06 (00:15) — V26.3 attribution; owner allows equal-money multi-lot; V26.4 `ML1_EQMONEY_70PCT_MAIN` single read VIABLE_HISTORICAL
+
+- Attribution of V26.3 validation (diagnostic on the same fills): equal-weight gross +2.27%/20d → one-lot price-weighted +0.50% → commission −0.67% → slippage+stamp −0.27% → ≈ −0.44% on invested × 70% ≈ −0.3%/period = −10.8%. Cause is the one-lot rule (avg 8.8 names, max single weight 33%), not entry/exit timing or the model.
+- Owner (00:13) allows equal money per name with multiple lots and asks the backtest to respect: data available after close, buy at next open, sell no earlier than the following open, and a limit-down day blocks the sale.
+- `V26_4_ML1_EQMONEY_70PCT_MAIN_CONTRACT.md` frozen before run, single read: main board, close ≤ ¥100, 70% exposure, ¥2,000 per name (smallest unit keeping the ¥5 minimum fee ≤ 0.25%/side; same unit as V26.2), N = floor(0.7·equity/2000) (7 at ¥20k), lots = floor(2000/(100·open)), entry non-fill = cash; **new exit rule**: if the planned exit open is limit-locked/suspended, keep holding and try each next open up to 10 sessions, else mark at that close as STUCK (stricter than the V14.1 convention that drops the trade). Result: research +156% (CAGR 10.2%, MaxDD −33%, 1520 fills, 16 carried exits, 26 STUCK), validation +13.4% (CAGR 5.1%, MaxDD −7.9%, 216 fills, 0 carried), excess vs EW +1.48%/20d t 2.55, 20/29 → `ML1_EQMONEY_70PCT_MAIN_VIABLE_HISTORICAL`. Cash idle ≈ 47–49% (30% rule + lot rounding). V14.1-convention diagnostic: research +142%, validation identical.
+- `ml1_live/shortlist.py` `write_shortlist_eq_money`; `daily.py` default is now V26.4 (`--one-lot` keeps V26.3 for reference). 2026-09-04 list: 7 names ≈ ¥11,627.
+- No parameter of V26.4 will be adjusted; owner-goal arithmetic in `OWNER_CONSTRAINTS_AND_GOAL.md` unchanged.
+
 ## 2026-09-05 (23:36) — Owner constraints & life-goal statement; V26.2 void; V26.3 `ML1_ONELOT_70PCT_MAIN` single read NOT_VIABLE
 
 - Owner statement (not a research task; no change allowed to raise returns): age 27, goal financial independence by 35 (expectation, not a gate); ¥20k max during validation, later +¥2k–10k/month; one lot = 100 shares so price ≤ ¥100 is acceptable (¥20 was an arithmetic error); never 100% invested, exposure fixed in advance; max 1 lot per name; skip if unaffordable; N emergent, never chosen ex post; MT5 verdict stands, leverage is not an accelerator.

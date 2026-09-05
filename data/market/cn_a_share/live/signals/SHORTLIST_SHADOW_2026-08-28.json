@@ -1,36 +1,32 @@
 {
-  "act": "buy 1 lot each at next session open, in rank order, stop when deployable cash is used; hold 20 sessions, sell at open",
+  "act": "next session open: buy lots=floor(2000/(100*open)) of each; hold 20 sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens",
   "boards": "MAIN",
   "capital_yuan": 20000.0,
-  "cash_reserve_yuan": 6012.0,
-  "contract": "ML1_ONELOT_70PCT_MAIN",
-  "deployable_yuan": 14000.0,
+  "contract": "ML1_EQMONEY_70PCT_MAIN",
   "execution": "MANUAL by owner in ordinary account; no API, no automation",
   "exposure": 0.7,
   "kind": "SHORTLIST_SHADOW",
   "max_price": 100.0,
-  "n_names": 11,
+  "n_names": 7,
+  "n_target": 7,
   "names": [
     {
-      "cum_yuan": 174.0,
-      "est_yuan": 174.0,
+      "est_yuan": 1914.0,
       "last_close": 1.7400000095367432,
-      "lots_100_est": 1,
+      "lots_100_est": 11,
       "rank": 1,
       "score": 0.0892379954457283,
       "symbol": "sh.600653"
     },
     {
-      "cum_yuan": 532.0,
-      "est_yuan": 358.0,
+      "est_yuan": 1790.0,
       "last_close": 3.5799999237060547,
-      "lots_100_est": 1,
+      "lots_100_est": 5,
       "rank": 2,
       "score": 0.08649247884750366,
       "symbol": "sz.000868"
     },
     {
-      "cum_yuan": 1646.0,
       "est_yuan": 1114.0,
       "last_close": 11.140000343322754,
       "lots_100_est": 1,
@@ -39,80 +35,40 @@
       "symbol": "sh.600697"
     },
     {
-      "cum_yuan": 6974.0,
-      "est_yuan": 5328.0,
-      "last_close": 53.279998779296875,
-      "lots_100_est": 1,
-      "rank": 4,
-      "score": 0.08336447924375534,
-      "symbol": "sz.001306"
-    },
-    {
-      "cum_yuan": 7197.0,
-      "est_yuan": 223.0,
+      "est_yuan": 1784.0,
       "last_close": 2.2300000190734863,
-      "lots_100_est": 1,
-      "rank": 5,
+      "lots_100_est": 8,
+      "rank": 4,
       "score": 0.08223000913858414,
       "symbol": "sh.600533"
     },
     {
-      "cum_yuan": 7947.0,
-      "est_yuan": 750.0,
+      "est_yuan": 1500.0,
       "last_close": 7.5,
-      "lots_100_est": 1,
-      "rank": 6,
+      "lots_100_est": 2,
+      "rank": 5,
       "score": 0.08118359744548798,
       "symbol": "sh.600241"
     },
     {
-      "cum_yuan": 8640.0,
-      "est_yuan": 693.0,
+      "est_yuan": 1386.0,
       "last_close": 6.929999828338623,
-      "lots_100_est": 1,
-      "rank": 7,
+      "lots_100_est": 2,
+      "rank": 6,
       "score": 0.08107254654169083,
       "symbol": "sz.002799"
     },
     {
-      "cum_yuan": 9818.0,
       "est_yuan": 1178.0,
       "last_close": 11.779999732971191,
       "lots_100_est": 1,
-      "rank": 8,
+      "rank": 7,
       "score": 0.08055711537599564,
       "symbol": "sz.002858"
-    },
-    {
-      "cum_yuan": 11918.0,
-      "est_yuan": 2100.0,
-      "last_close": 21.0,
-      "lots_100_est": 1,
-      "rank": 9,
-      "score": 0.07979220896959305,
-      "symbol": "sz.002813"
-    },
-    {
-      "cum_yuan": 13064.0,
-      "est_yuan": 1146.0,
-      "last_close": 11.460000038146973,
-      "lots_100_est": 1,
-      "rank": 10,
-      "score": 0.07914499938488007,
-      "symbol": "sh.603208"
-    },
-    {
-      "cum_yuan": 13988.0,
-      "est_yuan": 924.0,
-      "last_close": 9.239999771118164,
-      "lots_100_est": 1,
-      "rank": 11,
-      "score": 0.07909426093101501,
-      "symbol": "sz.000929"
     }
   ],
-  "note": "estimated from close; at open re-check 100*open <= remaining deployable cash, skip if not; N is whatever fits, never chosen",
   "orders_sent": false,
   "signal_date": "2026-08-28",
-  "skipped_unaffordable": 2990
+  "skipped_price_too_high_for_2000": 1,
+  "unit_yuan": 2000.0
 }

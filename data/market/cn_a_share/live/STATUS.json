@@ -1,6 +1,6 @@
 {
- "asof_requested": "2026-09-05",
- "started_at": "2026-09-05T15:40:18Z",
+ "asof_requested": "2026-09-06",
+ "started_at": "2026-09-05T16:17:43Z",
  "steps": {
   "fetch": "skipped",
   "features_rebuilt": false
@@ -16,7 +16,7 @@
   "n_live_sessions": 5,
   "n_live_cells": 26071,
   "live_hash": "56290c70aafb822132d262da4b18fd731147372ac383332c28b58f7ab4d7534b",
-  "built_at": "2026-09-05T15:40:21Z"
+  "built_at": "2026-09-05T16:17:47Z"
  },
  "ledger": {
   "state": "RUNNING",
@@ -39,7 +39,7 @@
  },
  "ledger_top20": {
   "n_periods": 0,
-  "contract": "ML1_ONELOT_70PCT_MAIN",
+  "contract": "ML1_EQMONEY_70PCT_MAIN",
   "boards": "MAIN",
   "max_price": 100.0,
   "capital_yuan": 20000.0,
@@ -47,15 +47,15 @@
   "exposure": 0.7,
   "money": "NONE (shadow)",
   "orders_sent": false,
-  "historical_gate": "NOT_VIABLE (V26.3 single read 2026-09-05)"
+  "historical_gate": "VIABLE_HISTORICAL (V26.4 single read 2026-09-06)"
  },
  "signal": {
   "file": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\live\\signals\\SIGNAL_2026-09-04.json",
   "n_selected": 999,
   "is_chain_signal_day": false,
   "shortlist_file": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\live\\signals\\SHORTLIST_2026-09-04.csv",
-  "shortlist_n": 13
+  "shortlist_n": 7
  },
- "elapsed_s": 10.7,
+ "elapsed_s": 16.2,
  "orders_sent": false
 }

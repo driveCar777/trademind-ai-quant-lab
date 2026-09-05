@@ -40,7 +40,8 @@ def main(argv=None):
     ap.add_argument("--boards", default="MAIN", choices=("ALL", "MAIN_CHINEXT", "MAIN"), help="boards the owner's account may trade (set by permission, never by result)")
     ap.add_argument("--max-price", type=float, default=100.0, help="owner's price ceiling (signal-day close)")
     ap.add_argument("--exposure", type=float, default=0.70, help="fixed fraction of capital deployable; rest is cash (owner's number, never tuned)")
-    ap.add_argument("--n-names", type=int, default=0, help="legacy V26.1/V26.2 fixed-N mode; 0 = V26.3 one-lot mode (N emergent)")
+    ap.add_argument("--n-names", type=int, default=0, help="legacy V26.1/V26.2 fixed-N mode; 0 = emergent-N mode (V26.4 eq-money by default)")
+    ap.add_argument("--one-lot", action="store_true", help="V26.3 one-lot mode (NOT_VIABLE; kept for reference) instead of V26.4 equal-money")
     ap.add_argument("--force-score", action="store_true")
     ap.add_argument("--no-holders", action="store_true")
     ap.add_argument("--skip-fetch", action="store_true", help="use data already on disk (no BaoStock/Eastmoney)")
@@ -101,11 +102,14 @@ def main(argv=None):
     ledger = update_ledger(pack, feats, elig, xok, capital=a.capital)
     status["ledger"] = ledger["summary"]
     # V26.1 manual-execution derivatives (owner's real constraint: ordinary account, hand-entered orders)
-    from research_engine.ml1_live.shortlist import update_top20_ledger, write_shortlist, write_shortlist_one_lot
+    from research_engine.ml1_live.shortlist import update_top20_ledger, write_shortlist, write_shortlist_eq_money, write_shortlist_one_lot
 
-    one_lot = a.n_names <= 0
+    one_lot = a.n_names <= 0 and a.one_lot
+    eq_money = a.n_names <= 0 and not a.one_lot
 
     def _shortlist(sc_t, el_t, ti, tag):
+        if eq_money:
+            return write_shortlist_eq_money(pack, sc_t, el_t, ti, capital=a.manual_capital, exposure=a.exposure, boards=a.boards, max_price=a.max_price, tag=tag)
         if one_lot:
             return write_shortlist_one_lot(pack, sc_t, el_t, ti, capital=a.manual_capital, exposure=a.exposure, boards=a.boards, max_price=a.max_price, tag=tag)
         return write_shortlist(pack, sc_t, el_t, ti, tag=tag, capital=a.manual_capital, boards=a.boards, n=a.n_names, max_price=a.max_price)
@@ -113,7 +117,7 @@ def main(argv=None):
     S, sig_idx = ledger["_scores_matrix"], ledger["_signal_indices"]
     if sig_idx:
         top20 = update_top20_ledger(pack, S, elig, xok, sig_idx[0], capital=a.manual_capital, boards=a.boards, n=max(a.n_names, 1), max_price=a.max_price,
-                                    one_lot=one_lot, exposure=a.exposure)
+                                    one_lot=one_lot, exposure=a.exposure, eq_money=eq_money)
         status["ledger_top20"] = top20["summary"]
         for si in sig_idx:
             _shortlist(S[si], elig[si], si, "SHORTLIST_SHADOW")
