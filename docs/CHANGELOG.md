@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-09-05 (night) — MASTER_PLAN_V2 (owner-authorised plan revision) + V31 China futures cross-section Design
+
+- Owner: "you may modify my design and plan; markets = MT5 gold/oil/majors, A-shares, China futures, US equities". `docs/MASTER_PLAN_V2.md`: platform (Xavier cluster, AI Gateway, 7 preset strategies, manual-confirm paper orders) frozen with no further investment; caution moved to statistical gates; market verdicts A-shares (1) > China futures (2) > US equities (3); MT5 macro symbols closed as research objects, kept only as an execution venue for futures-derived views (Ava Trade has `GOLD`/`SILVER`; earlier "no gold symbol" statement corrected). V26 execution gap recorded: 999 equal-weight names every 20 sessions is not manually executable → broker quant API (QMT/PTrade) required; "top-100" only as a new forward-validated contract. `ROADMAP.md` now points to MASTER_PLAN_V2.
+- `V31_CN_FUTURES_XS_DESIGN.md`: data-source probe — exchange sites reset from this machine (Clash exit abroad; owner can add DIRECT rules), Sina futures API works (product continuous series from 2005, per-contract only from ~2019-05, 3–10 s/request), Eastmoney futures SSL fails. Two-stage plan (Sina first; exchange full history as V31.1 reproduction). Draft: ~70 products, 8 fixed features (incl. term slope / basis momentum 2019+), one LightGBM (V25 params), LS tercile gate book, roll-adjusted returns with unit test, independence gate corr vs ML1 < 0.3. No contract, no run yet.
+
 ## 2026-09-05 (afternoon) — Amendment V2 (MT5 scope) + V30 MT5 US share-CFD cross-sectional price model: NO_CANDIDATE, CFD cost ceiling
 
 - Owner asked to start MT5 now and lift the old MT5 limits. `RESEARCH_RULES_AMENDMENT_V2_MT5.md`: lifted (a) the ML ban for cross-sections ≥300 names, (b) "share CFDs = inventory only", (c) long-only-book requirement (LS book allowed as pre-registered gate); kept pre-registration, measured costs, FDR, rolling windows, no order_send, no reopening of the 20+ falsified macro-CFD families. Terminal inventory: no XAUUSD/US500/BTC symbols on this broker; 497 `CFD-Shares\USA`, 67 US ETFs, ~55 FX, ~15 commodities.

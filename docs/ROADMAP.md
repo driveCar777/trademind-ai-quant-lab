@@ -1,5 +1,7 @@
 # TradeMind — 开发路线
 
+> **2026-09-05 起，路线以 `docs/MASTER_PLAN_V2.md` 为准**（用户授权修改规划）。本文其余内容为 V1–V9 平台期历史对照；平台（Xavier / AI Gateway / 预置策略 / MT5 Bridge）已冻结、不再投入。研究状态见 `TODO.md`。
+
 **各阶段目标（一句话 + 完成定义）：** `docs/STAGE_GOALS.md`  
 下列旧勾选条目有过时内容，状态以 `TODO.md` / `STAGE_GOALS.md` 为准。
 
