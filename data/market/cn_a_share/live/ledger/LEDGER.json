@@ -1,0 +1,32 @@
+{
+  "periods": [
+    {
+      "entry": "2026-08-31",
+      "exit_expected": "20 sessions after 2026-08-31",
+      "model_refit_date": "2025-11-06",
+      "n_fill_entry": 996,
+      "n_sel": 999,
+      "signal_date": "2026-08-28",
+      "status": "OPEN"
+    }
+  ],
+  "summary": {
+    "capital_yuan": 5000000.0,
+    "chain_anchor": "2026-07-30",
+    "consecutive_lo_le_ew": 0,
+    "equity": 5000000.0,
+    "money": "NONE (shadow)",
+    "n_lo_beat_ew": 0,
+    "n_periods_closed": 0,
+    "n_periods_open": 1,
+    "next_signal_date": "21 sessions after 2026-08-28",
+    "orders_sent": false,
+    "rolling_12_lo_minus_ew": null,
+    "rules": {
+      "pause": "12-period rolling LO-EW < -8%",
+      "retire": "24 consecutive LO-EW <= 0"
+    },
+    "state": "RUNNING",
+    "total_capital_ret": null
+  }
+}

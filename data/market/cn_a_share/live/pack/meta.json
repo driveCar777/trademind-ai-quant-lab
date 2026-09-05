@@ -1,0 +1,12 @@
+{
+ "frozen_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+ "frozen_dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+ "frozen_end": "2026-08-28",
+ "asof": "2026-09-04",
+ "n_dates": 8719,
+ "n_symbols": 5552,
+ "n_live_sessions": 5,
+ "n_live_cells": 26071,
+ "live_hash": "56290c70aafb822132d262da4b18fd731147372ac383332c28b58f7ab4d7534b",
+ "built_at": "2026-09-05T02:32:11Z"
+}

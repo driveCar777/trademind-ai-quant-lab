@@ -3,6 +3,9 @@ from __future__ import print_function
 
 import json
 import os
+import subprocess
+import sys
+import time
 from datetime import date, datetime, timezone
 
 from research_engine.cn_a_share.io_util import dump_json, write_csv
@@ -54,27 +57,30 @@ def download_industry_monthly(start="2009-12-15", end="2024-02-15"):
     print("V16_IND_DL", "done", len(done), "todo", len(todo), flush=True)
     if not todo:
         return {"n_done": len(done), "n_todo": 0}
-    login = bs.login()
-    if str(login.error_code) != "0":
-        raise RuntimeError("BAOSTOCK_LOGIN")
-    try:
-        for i, day in enumerate(todo):
-            rows, err, msg = _consume(bs.query_stock_industry(date=day))
-            payload = {
-                "asof": day,
-                "retrieved_at": _utc_now(),
-                "n": len(rows),
-                "error": err,
-                "msg": msg,
-                "immutable": True,
-                "rows": rows,
-            }
-            dump_json(os.path.join(raw_dir, "asof_%s.json" % day), payload)
-            if i % 5 == 0 or i + 1 == len(todo):
-                print("V16_IND_DL", i + 1, "/", len(todo), day, "n", len(rows), flush=True)
-    finally:
-        bs.logout()
-    return {"n_done": len(os.listdir(raw_dir)), "last": todo[-1] if todo else None}
+    hung = 0
+    exe = sys.executable
+    for i, day in enumerate(todo):
+        path = os.path.join(raw_dir, "asof_%s.json" % day)
+        t0 = time.time()
+        try:
+            proc = subprocess.run(
+                [exe, "-u", "-m", "research_engine.cn_a_share_information_v16.industry_one", day, path],
+                timeout=75,
+                cwd=os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")),
+            )
+            elapsed = time.time() - t0
+            if proc.returncode != 0:
+                print("V16_IND_FAIL", day, proc.returncode, "s", round(elapsed, 1), flush=True)
+                hung += 1
+            else:
+                print("V16_IND_DL", i + 1, "/", len(todo), day, "s", round(elapsed, 1), flush=True)
+        except subprocess.TimeoutExpired:
+            hung += 1
+            print("V16_IND_TIMEOUT", day, flush=True)
+            if hung >= 8:
+                print("V16_IND_ABORT_HANG", flush=True)
+                break
+    return {"n_done": len([n for n in os.listdir(raw_dir) if n.startswith("asof_")]), "hung": hung}
 
 
 def download_industry_snapshot():

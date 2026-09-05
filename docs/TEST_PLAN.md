@@ -809,6 +809,74 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 不是交易许可。不是年化 10%。不要再调 gold-silver / DXY z_cut。
 
+## Post-V19 / V20 / V21 — 2026-09-02
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_index_v20.py tests/research_engine/test_cn_a_share_div_v21.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| V20 单元 | ✅ 6 PASS |
+| V20 决策 | `A_SHARE_INDEX_MEMBERSHIP_V1_NO_CANDIDATE`。0/4 L1。FDR 0/4。验证资金全负 |
+| V20 PIT | ✅ 171/171。茅台 2010/2024 在 HS300。300750 2010 不在。2018 vs 2024 diff=258 |
+| V21 单元 | ✅ 6 PASS |
+| V21 决策 | `A_SHARE_DIVIDEND_EVENT_V1_NO_CANDIDATE`。0/2 L1。FDR 0/2。验证资金 −41% / −72% |
+| Post-V21 | `A_SHARE_FREE_INFORMATION_MARGINALLY_EXHAUSTED` STOP B |
+| Post-V21 法医 | 只读聚合。VERDICT A。42/42 val capital 负。见 `POST_V21_FORENSICS.json` |
+| Post-V21 自驱 | Q1–Q5。S1。excess 29/42 负。见 `POST_V21_AUTODRIVE/PROGRESS.json` |
+| Post-V21 W1–W6 | 4 份机器 JSON（BEAT_EW_CLUSTER / DISK_WALK / FAILURE_ATLAS / STRATEGY_BIND）。只读。idle_search_closed |
+| V22 FUTURES_XS | 报价 QUOTE.json；购买 $47.10；面板 30/30 品种 sanity（ES +414% / NG −98% / carry 符号）；3 条预注册；FDR 0/3；`FUTURES_XS_V1_NO_CANDIDATE` |
+| V23 MARGIN | 3381/3381 天 0 失败；PIT lag 1；覆盖 89→3197；3 条预注册；FDR 0/3；`A_SHARE_MARGIN_POSITIONING_V1_NO_CANDIDATE` |
+| V24 HOLDERS | 5549/5549 只 0 失败；PIT = notice+1；297,732 报告；3 条预注册；FDR 0/3；`A_SHARE_HOLDER_CONCENTRATION_V1_NO_CANDIDATE` |
+| V25 MULTILAYER | 合同 hash 先写；14 特征全 (8714×5549) 形状校验；索引日线只到 2024-02-29（下载即断言）；20 次 refit 全部训练标签 ≤ refit−21；DENIED_WINDOW_USED 断言未触发；对冲账本丢弃 exit > 验证末的最后一笔（LO 旧账本保留其行为）；ML1 Level-1 PASS（10/10 门 + 滚动 5/5）；FDR 2/2 发现；正式标签 SAME_CLUSTER（原始 MF 相关 0.94；超额相关 0.06） |
+| V25.1 REPRO | 7/7 扰动保持形状；验证超额 [1.35%, 1.48%]；超额 corr vs H11 ≤ 0.074；**placebo 打乱标签 → −0.09%/20d, LO −18%/−20%**（管线无泄漏）；成本 1×/1.5×/2× 验证 +31/+24/+18% |
+| V27 FINDEEP | 256/256 表下载 0 失败；NOTICE_DATE 审计（INCOME/CASHFLOW 2010Q3 → 2011-10 = 次年可比，弃用；CPD/BALANCE Q1–Q3 原始月份）；同期多版本取最早公告；知识时间约束（特征输入公告日 ≤ 事件公告日）；禁用窗后公告丢弃 16,987；晚到旧报告期忽略 64,554；覆盖率 2011 ≈ 全部上市股、2022 ≈ 90%；中位数量级合理（资产增速 ~10%/年）；合同 hash 先写；2 模型 × 20 refit 冻结于 2021-05-25 最后一次；DENIED_WINDOW_USED 断言未触发；FDR 2/2；ML2F 闸门失败项 = validation_capital / validation_mean_forward_net；ML2 Level-1 但 A4 超额 corr vs ML1 0.96 |
+| V28 FINAL OOS | 协议 hash 先写；融资 raw 3988/3988 天、成分 as-of 201、户数截止延伸；延伸特征到 2024-02-29 与冻结缓存逐位相同 **14/14**（脚本断言）；闸门 REFIT_240 15 次 refit 每次训练标签 ≤ refit−21；最后信号 2026-07-30（exit ≤ 面板末）；30 期非重叠；`FINAL_OOS_READ.json` 写入后脚本拒绝二次运行（已验证代码路径） |
+| V29 ML1 LIVE SMOKE | 2026-09-05 `SMOKE_V29.json` 5/5：(1) live pack 前 8714 行 × 5549 列 open/close/volume/tradestatus/isST/listed 与冻结面板逐位相同；(2) 新增 5 个交易日 2026-08-31→09-04，20 只随机股收盘对 BaoStock 0 不一致，93.9% 冻结符号 5 日齐（其余退市/停牌）；(3) 14/14 特征 ≤2026-08-28 与 `v25_features_finaloos` 逐位相同；(4) 2026-07-30 用 live 缓存模型 REFIT_2025-11-06 重打分 = V28 闸门分数 max\|Δ\| 0.0、997/997 同名；(5) 账本第一期 OPEN（信号 08-28、入场 08-31、999/996）、`SIGNAL_2026-09-04.json` 生成、`orders_sent=false`。Stability（待）：连续 5 交易日日更无重复拉取/无重复拟合 + 第一期结算成功 |
+| Final OOS / 采购 / Xavier | **已读一次 PASS，已锁** / $0 / 未用 |
+
+## Post-V16 / V17 / V18 / V19 — 2026-09-02 STOP B
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_macro_v17.py tests/research_engine/test_cn_a_share_altinfo_v18.py tests/research_engine/test_cn_a_share_indmacro_v19.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| V17 | `A_SHARE_MACRO_INFORMATION_V1_NO_CANDIDATE`。0/6 L1。验证资金全负 |
+| V18 | `A_SHARE_ALTINFO_V1_NO_CANDIDATE`。0/6 L1。A2≡A1 秩 |
+| V19 | `A_SHARE_INDUSTRY_MACRO_V1_NO_CANDIDATE`。0/6 L1。IM6 仅 excess FDR |
+| 统一 FDR | m=18 discoveries=1（IM6）Level-1=0 |
+| 总决策 | `A_SHARE_INFORMATION_ALPHA_NO_CANDIDATE` STOP B |
+| Final OOS / 采购 / Xavier | DENIED / $0 / 未用 |
+
+## V16 Financial / Industry — 2026-09-02 STOP B
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_information_v16.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| 合同 / 恰好 6+3 / 无采购 / 无 H11 重开 | ✅ 单元 PASS |
+| Financial PIT | ✅ knowledge-time；2023 annual hidden on 2024-01-01；coverage_ok |
+| Industry PIT | ✅ 171/171 monthly as-of；300750 absent 2010/2015 |
+| 决策 | `A_SHARE_INFORMATION_ALPHA_V1_NO_CANDIDATE`。0/9 Level 1。验证资金全负 |
+| FDR | unified BH q=0.05 m=9 discoveries=0 |
+| H11/H12 | KEEP_LOW_PRIORITY。未重跑 |
+| Xavier | 未使用（本地权威） |
+| Final OOS | DENIED |
+| 花费 | $0 |
+
+## V15 A-share Alpha V2 — 2026-08-31 NO_NEW_CANDIDATE
+
+**命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_alpha_v2.py --import-mode=importlib`
+
+| 项 | 结果 |
+|----|------|
+| 合同 / 恰好 9 条 / 三族 / 无 H11–H13 | ✅ **6 PASS** |
+| rolling sum int32 + chunked corr | ✅ 单元一致 |
+| 决策 | `NO_NEW_CANDIDATE`。0/9 Level 1。验证资金全负 |
+| FDR | 6/9 excess-vs-EW；不是 Candidate |
+| H11/H12 | KEEP_LOW_PRIORITY。未重跑 |
+| Final OOS | DENIED |
+| 花费 | $0 |
+
 ## V14.1 Candidate→Strategy Forensics — 2026-08-31 METHODOLOGY_GAP_CONFIRMED
 
 **命令：** `C:\ProgramData\miniconda3\python.exe -m pytest tests/research_engine/test_cn_a_share_strategy_v14_1.py --import-mode=importlib`

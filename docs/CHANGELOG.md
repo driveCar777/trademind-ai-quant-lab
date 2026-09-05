@@ -1,8 +1,90 @@
-﻿# TradeMind — 修改记录
+# TradeMind — 修改记录
 
 > 研究代码现入 private GitHub。秘密仍禁止入库。冻结研究不可用 Git 回滚。
 
 ---
+
+## 2026-09-05 (morning) — V29 ML1 forward pipeline: Design + Implement + Smoke PASS (Paper preparation)
+
+- Owner: "继续，不用询问". Design first (`docs/research_engine/V29_ML1_LIVE_PIPELINE_DESIGN.md`), then module `research_engine/ml1_live/` (`panel.py` live calendar/basics/incremental bars + merged live pack; `layers.py` margin daily / holders weekly / index monthly into `data/market/cn_a_share/live/`; `score.py` V25 features + REFIT_240 model cache + top-20% list; `ledger.py` shadow ledger continuing the V28 chain with the frozen cost model and V26 pause/retire rules; `daily.py` orchestrator). Env overrides added: `TRADEMIND_MARGIN_CALENDAR`, `TRADEMIND_HOLDERS_RAW`. Frozen datasets untouched; no orders anywhere.
+- First run (asof 2026-09-04): bars 5215 symbols × 5 sessions (0 failures, 29 min — one BaoStock call per symbol), margin 5 days, index 2026-08-15 as-of, holders raw seeded from the 2026-09-04 frozen copy (3 new listings fetched), live pack 8719 × 5552, 14 features rebuilt, REFIT_2025-11-06 model fitted once (2.45M rows, 33 s) and pickled.
+- Smoke 5/5 (`data/market/research_engine/ml1_live/SMOKE_V29.json`): (1) live pack rows ≤ 2026-08-28 bit-identical to frozen pack (open/close/volume/tradestatus/isST/listed); (2) 5 new sessions, 20 random symbols' closes match BaoStock 0 mismatches; (3) 14/14 features bit-identical to `v25_features_finaloos` through 2026-08-28; (4) last V28 session 2026-07-30 rescored with the live model = V28 gate scores, max |Δ| 0.0, 997/997 same names; (5) ledger period 1 OPEN (signal 2026-08-28, entry 2026-08-31, 999 selected / 996 fillable, exit 20 sessions after entry); `SIGNAL_2026-09-04.json` written (999 names, ¥5M targets, no orders).
+- Shadow ledger = the strategy's forward record without money; first settlement due when the 2026-09-29 open is in the pack. Phase 4 stability = 5 consecutive daily runs + first settlement; then Freeze. Paper with an account remains the owner's call. Annual layer next refresh 2027-03.
+
+## 2026-09-04 (late night) — V28 ML1 Final OOS single read: PASS, locked
+
+- Owner delegated the denied-window decision ("按照你的想法来"). Protocol written first (`docs/research_engine/V28_ML1_FINAL_OOS_PROTOCOL.md`, machine `cn_a_share_ml_v25/FINAL_OOS_PROTOCOL.json`, hash `844a4ea070ba…`): gate scores = V26 live policy (expanding walk-forward, REFIT_240, embargo 21, stride 5, through 2026-08-28), diagnostic = official 2021-05-25 frozen model, LO20 legacy book, eligible EW benchmark, gates G1 excess>0 / G2 capital>0 / G3 no 24-period retire trigger, single read.
+- Raw data extended into the denied window with the existing downloaders only: margin detail 2024-03→2026-08 (607 days, 6 SSL retries, complete), HS300/ZZ500 monthly as-of 2024-03→2026-08 (30 months, 201 as-ofs), holders notice cutoff moved to 2026-08-28. Env overrides added (`TRADEMIND_MARGIN_END/NORM`, `TRADEMIND_HOLDERS_NOTICE_CUTOFF/NORM`, `TRADEMIND_V25_FEAT_CACHE`) so extended arrays live in `*_finaloos` directories; frozen V23/V24/V25 artifacts untouched. `final_oos.py` asserts the extended 14 features equal the frozen V25 cache bit-for-bit through 2024-02-29 (14/14 True).
+- **Result `FINAL_OOS_PASS`** (`FINAL_OOS_READ.json`): 30 non-overlapping periods 2024-03-01→2026-07-30; gate scores excess vs EW **+1.00%/20d (t 9.3, n 586)**, LO20 **+71.4%** (CAGR 24.3%, Sharpe 1.00, MaxDD −21.3% 2026-02-27→07-24), 2024 +18.0% / 2025 +58.4% / 2026-to-July −8.2%, 19/30 periods beat EW, longest run behind EW = 3; frozen-2021 diagnostic +0.79% / +63.3% same direction. Eligible EW itself +1.17%/20d (small-cap bull) — more than half of the book is β. ML1 now has three non-overlapping positive books (+276% / +30.9% / +71.4%; ≈13.7% CAGR over 16.6 years) — evidence, not a promise.
+- Lock: `final_oos.py` refuses to run when `FINAL_OOS_READ.json` exists; no parameter/feature/hold/cost/refit change; no variant selection on this window. Next gate = Paper preparation (daily five-source incremental pipeline, scorer that emits the list only, monitoring ledger) — Design first per AGENTS five phases; Paper start / account / feed are the owner's. Decision `V28_ML1_FINAL_OOS_DECISION.md`.
+
+## 2026-09-04 (night) — V27 deep financial layer: independent signal, no positive book; ML1 unchanged
+
+- **V27 `A_SHARE_FINANCIAL_DEEP_MODEL_V27`** (`research_engine/cn_a_share_findeep_v27/`, contract `V27_FINDEEP_CONTRACT.md` written first, $0). Eastmoney datacenter quarterly tables `RPT_LICO_FN_CPD` / `RPT_DMSK_FN_BALANCE` / `RPT_DMSK_FN_INCOME` / `RPT_DMSK_FN_CASHFLOW`, 64 report dates 2008Q1→2023Q4, 256 files, 0 failures, raw in `data/market/cn_a_share/financial_deep/raw/` (ignored). **Audit**: INCOME/CASHFLOW `NOTICE_DATE` is the next-year comparative filing (~12 months late) → rejected for features; CPD + BALANCE (Q1–Q3) carry the original filing date; several versions per period → earliest notice kept; feature inputs restricted to filings public at the event's notice date. PIT arrays `financial_deep/normalized/*.npy` + `FINDEEP_PIT.json` (324,931 events; 16,987 dropped past 2024-02-29; 64,554 stale-late ignored). 10 fixed features (SUE_Q, REV_YOY_Q, NEG_ACCRUALS, CFO_TTM_BP, ROE_TTM, GM_CHG, NEG_ASSET_GROWTH, NEG_LEV_CHG, EP_TTM, BP). Two pre-registered LightGBM models (same params/schedule as V25, gate book LO20 per A1): **ML2F financial-only** — excess vs EW +0.65%/20d research (t 21.5), **+0.52% validation (t 5.6)**, rolling 5/5, FDR discovery, **excess-series corr vs ML1 0.06** (independent) — but LO20 validation capital **−0.3%** (research +96.5%, MaxDD −58%) → fails Level-1; HN20 +12.1% validation was seen, so no post-hoc book switch for this signal. **ML2 full stack (24)** — Level-1, but excess corr vs ML1 **0.96** = SAME_CLUSTER as pre-declared; validation excess 1.42% vs ML1 1.47%, LO20 +28.0% vs +30.9%: quarterly layer adds nothing on top of ML1. Decision `V27_FINDEEP_DECISION.md`: `LEVEL1_SAME_CLUSTER_AS_ML1`, NEW_INDEPENDENT stays 1, ML1 untouched.
+- `cn_a_share_ml_v25/model.py::build_scores` and `run.py::evaluate_signal` gained optional `features`/`tag` and `equity_dir`/`trades_dir`/`tag` parameters (defaults reproduce V25 exactly) so V27 could reuse them; `features.ranked_row` takes an optional `names`.
+- Atlas 73 rows, span V8–V27. `POST_V21_CURRENT_STATE.json` / `POST_V21_AUTODRIVE/PROGRESS.json` updated.
+
+## 2026-09-04 (late) — Rules amendment V1 + V25 multi-layer model: first independent Level-1
+
+- User asked whether the rules were the blocker and authorised changing them. `docs/research_engine/RESEARCH_RULES_AMENDMENT_V1.md`: keep pre-registration / fixed cost model / non-overlapping CAGR / FDR / no Paper without a positive independent book / no evidence rewrite; **change** A1 (pre-registered construction menu LO20 / HN20 hedged), A2 (five rolling validation blocks on top of the fixed split), A3 (one pre-registered model per information layer; V10's "model exhausted" verdict was on 4 MT5 series, not on combining A-share layers), A4 (cluster test on excess-vs-EW series — added after V25 showed the raw-MF test measured the market). Denied window remains locked pending the owner.
+- **V25 `A_SHARE_MULTILAYER_MODEL_V25`** (`research_engine/cn_a_share_ml_v25/`, contract `V25_MULTILAYER_MODEL_CONTRACT.md`, $0): 14 PIT features already on disk (6 price, 3 margin V23, 2 holders V24, 2 annual financials V16, HS300 membership V20) → one LightGBM (fixed params), expanding walk-forward from 2012-01, refit /120 sessions, embargo 21, **frozen 2021-08-24**; baseline ML0 = no-fit rank average; m=2. HS300/CSI500 daily index downloaded free (Eastmoney via local proxy / Sina fallback) bounded to 2024-02-29 for the hedged book. **ML1**: research excess +1.24%/20d (t 28), validation **+1.47%** (t 17), IC 0.12/0.17, rolling 5/5, LO20 research +276% (CAGR 14.5%, MaxDD −46.8%), validation **+30.9%** (CAGR 11.1%, MaxDD −20.9%) in a −30% HS300 window, full 2010→2024-02 CAGR 13.7%; cost stress 2× still +17.8% validation. HN20 vs HS300 +27% / +34% but β 0.92 to (EW−HS300), R² 0.93, MaxDD −54% → size-spread carrier, not the strategy. Formal tag `WEAK_CANDIDATE_SAME_CLUSTER` because raw-MF corr vs H11 0.94 (H11 vs EW itself 0.955); excess-series corr **0.06**. ML0 fails (research HN20 capital < 0). Diagnostics `DIAGNOSTICS_POST.json`: LO20 − eligible EW basket +0.89%/20d, t 5.1, 11 of 13 years positive; selected median amount-rank 0.86 (small/quiet tilt). Decision `V25_MULTILAYER_MODEL_DECISION.md`.
+- **V25.1 reproduction** (`reproduce.py`, contract `V25_1_REPRODUCTION_CONTRACT.md`): seven fixed nuisance variants (seed ×2, stride 3/10, refit 60/240) all keep the Level-1 shape; validation excess 1.35–1.48%; excess-corr vs H11 0.02–0.07; placebo with labels shuffled within session → −0.09%/20d, LO −18%/−20% (no leak). **PASS → `A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE`, NEW_INDEPENDENT_CANDIDATE = 1** (`V25_1_DECISION.json`). V25 formal tag not re-scored.
+- **V26 `V26_ML1_STRATEGY_SPEC.md`**: executable definition of the LO20 book (rebalance /20 sessions, ~600 names EW, fills, no in-period stops, pre-declared pause/retire rules, live refit policy = REFIT_240 variant, monitoring ledger), exposures stated (size/liquidity tilt, β≈1 to EW, 2017/2018/2024-01 on record), capacity ≈¥5M minimum for 100-share lots. Spec only: no Paper, no order_send.
+- Atlas 71 rows (V25 rows appended; ML1 is the first non-failure row). `POST_V21_CURRENT_STATE.json` rewritten. Final OOS: DENIED until the owner unlocks a single pre-declared read.
+
+## 2026-09-04 — User-authorised spend + free behavioral layer (V22 / V23 / V24)
+
+- User authorised the Databento balance (~$93) with "evaluate first, then buy, then continue". Real `metadata.get_cost` menu in `databento_eval_v22/QUOTE.json`; evaluation `DATABENTO_93_PURCHASE_EVALUATION.md`.
+- **V22 FUTURES_XS**: bought GLBX.MDP3 `ohlcv-1d` 30 CME roots all months 2010-06→2026-08 (**$47.10**, `tm-fut-GLBX-XS30-D1-20260904-000001`, batch job). Panel 30 roots / 119,724 root-days (denied window dropped at build). 3 pre-registered (XS carry, XS mom 12-1, TSMOM 12): research gross CAGR ≈ 1%, FDR 0/3 → **FUTURES_XS_V1_NO_CANDIDATE**. Reserve ≈ $46 unspent. Fixed `get_dataset_range` to GET.
+- **V23 MARGIN**: exchange daily margin detail found free & reachable (Eastmoney datacenter mirror; SSE/SZSE official 200). 3381 sessions 2010-03→2024-02 downloaded ($0). 3 pre-registered. M1 research excess t=4.85 / capital +37% but validation capital −19%, FDR 0/3 → **A_SHARE_MARGIN_POSITIONING_V1_NO_CANDIDATE**.
+- **V24 HOLDERS**: shareholder-count reports with `HOLD_NOTICE_DATE` (PIT), 5549 symbols, 297,732 reports ($0). 3 pre-registered → **A_SHARE_HOLDER_CONCENTRATION_V1_NO_CANDIDATE** (research excess ≤ 0).
+- Northbound daily holdings: HKEX now 12-month window only + quarterly disclosure → **DATA_BLOCKED (free)**.
+- New generic engine `research_engine/cn_a_share_freeinfo_engine.py`. Atlas extended to 69 rows (`post_v21_atlas_append.py`). NEW_INDEPENDENT still 0.
+
+## 2026-09-04 — Post-V21 autodrive W1–W6 (idle_search_closed)
+
+- W1 pairwise corr on existing TRADES: 13 beat-EW books NOT one shadow; 5/13 >0.9 vs H11; all val capital negative.
+- W2 os.walk inventory: AVAILABLE=0; balance/valuation ratios not on disk and ratio-class.
+- W3 failure atlas 60 rows V8–V21. W4 strategy bind: zero-cost H11 CAGR +2.9%, Paper=NO, portfolio contract draft inactive.
+- W5 purchase case: only vendor flow/holder/margin data maps to the A-share gap; DO_NOT_BUY. Scripts `research_engine/post_v21_w{1,2,3,4}_*.py`.
+
+## 2026-09-04 — Post-V21 autodrive S1 (Q1–Q5)
+
+- Q1 relative EW NEGATIVE (29/42). Q2 NONE. Q4 one CS sleeve (median corr vs X1 0.54). Q5 KEEP_LOW_PRIORITY.
+- Strategic choice **S1**. Confidence 0.91. NEW_INDEPENDENT still 0. Do not buy.
+- Progress: `POST_V21_AUTODRIVE/PROGRESS.json`.
+
+## 2026-09-04 — Post-V21 capital forensics VERDICT A
+
+- Read-only V13–V21 RESULTS + existing TRADES. 42/42 val capital negative. 38/42 val MEAN_FORWARD negative.
+- Verdict A (0.72): no second Alpha because new families had no val information. Sidecar B: H24/H25/H26/A5 + H11 official book = V14.1 overlap ≠ capital.
+- New class NONE. Purchase default DO_NOT_BUY.
+- Authority: `POST_V21_CAPITAL_CONSTRUCTION_FORENSICS.md` / `POST_V21_PURCHASE_VALUE_CASE.md`.
+
+## 2026-09-04 — Post-V21 STOP B
+
+- V21 dividend announcement windows: 0 Level-1. FDR 0/2. Validation capital −41% / −72%.
+- Global: `A_SHARE_FREE_INFORMATION_MARGINALLY_EXHAUSTED`. No purchase.
+- Authority: `docs/research_engine/POST_V21_DECISION.md`.
+
+## 2026-09-02 — Post-V19 direction + V20 index STOP B
+
+- Direction audit: next unit of resource = HS300/ZZ500 membership/reconstitution, not more A-share CS factors. Options remain PAYMENT_REQUIRED (no buy).
+- V20: monthly as-of PIT OK. 4/4 no Level-1. Family FDR 0/4. Validation capital all negative.
+- V21 started: dividend announcement events (not yield quintile).
+- Authority: `POST_V19_RESEARCH_DIRECTION_AUDIT.md` / `V20_INDEX_DECISION.md`.
+
+## 2026-09-02 — Post-V16 STOP B
+
+- V17 macro, V18 altinfo, V19 industry×macro: 0 Level-1. Unified BH-FDR m=18, 1 excess discovery (IM6), 0 Candidate.
+- `A_SHARE_INFORMATION_ALPHA_NO_CANDIDATE`. Event/News blocked. Options unpaid. No purchase.
+- Authority: `docs/research_engine/POST_V16_DECISION.md`.
+
+## 2026-09-02 — V16 financial/industry information STOP B
+
+- Financial + industry PIT both READY. 6+3 pre-registered dual-book alpha. Unified BH-FDR 0/9.
+- `A_SHARE_INFORMATION_ALPHA_V1_NO_CANDIDATE`. Validation capital negative 9/9. Purchase=NO. Local Windows only.
+- Authority: `docs/research_engine/V16_DECISION.md`.
 
 ## 2026-08-31 — V16 financial/industry information START
 

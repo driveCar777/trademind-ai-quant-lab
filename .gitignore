@@ -75,8 +75,24 @@ data/market/cn_a_share/financial/pit/
 data/market/cn_a_share/industry/raw/
 data/market/cn_a_share/industry/normalized/
 data/market/cn_a_share/industry/pit/
+data/market/cn_a_share/index/raw/
+data/market/cn_a_share/index/normalized/
+data/market/cn_a_share/index/pit/
+data/market/cn_a_share/dividend/raw/
+data/market/cn_a_share/margin/raw/
+data/market/cn_a_share/margin/normalized/
+data/market/cn_a_share/holders/raw/
+data/market/cn_a_share/holders/normalized/
+data/market/immutable/tm-fut-GLBX-XS30-D1-*/raw/
+data/market/research_engine/futures_xs_v22/PANEL.csv
+data/market/cn_a_share/dividend/normalized/
+data/market/cn_a_share/dividend/pit/
 data/market/research_engine/cn_a_share_information_v16/EQUITY/
 data/market/research_engine/cn_a_share_information_v16/TRADES/
+data/market/research_engine/cn_a_share_index_v20/EQUITY/
+data/market/research_engine/cn_a_share_index_v20/TRADES/
+data/market/research_engine/cn_a_share_div_v21/EQUITY/
+data/market/research_engine/cn_a_share_div_v21/TRADES/
 
 # HuggingFace / model caches
 **/.cache/
@@ -96,3 +112,18 @@ _ps_stderr.txt
 _reg_b64.txt
 _deploy_output.txt
 
+
+# V25 model score matrices (8714x5549 float32, ~190MB each); regenerate via research_engine.cn_a_share_ml_v25.run
+data/market/research_engine/cn_a_share_ml_v25/SCORES_*.npy
+data/market/cn_a_share/financial_deep/raw/
+data/market/cn_a_share/financial_deep/normalized/*.npy
+data/market/research_engine/cn_a_share_findeep_v27/SCORES_*.npy
+data/market/cn_a_share/margin/normalized_finaloos/
+data/market/cn_a_share/holders/normalized_finaloos/*.npy
+data/market/cn_a_share/alpha_cache/v25_features_finaloos/
+data/market/cn_a_share/live/*
+!data/market/cn_a_share/live/STATUS.json
+!data/market/cn_a_share/live/signals/
+!data/market/cn_a_share/live/ledger/
+!data/market/cn_a_share/live/pack/
+data/market/cn_a_share/live/pack/*.npy

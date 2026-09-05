@@ -101,17 +101,24 @@ def run_v16(max_symbols=None, skip_download=False):
     else:
         audit = run_source_audit()
     if not skip_download:
-        download_industry_monthly()
-    ind_rows, ind_cat = normalize_industry()
-    _copy_json(os.path.join(IND_REF, "INDUSTRY_CATALOG.json"), "INDUSTRY_CATALOG.json")
-    ind_pit = run_industry_pit(ind_rows, ind_cat)
-    if ind_pit.get("pit_test_ok"):
-        freeze_industry_dataset(ind_cat, ind_pit)
-        dump_json(os.path.join(OUT, "INDUSTRY_ALPHA_CONTRACT.json"), build_industry_contract(False))
-    else:
-        dump_json(os.path.join(OUT, "INDUSTRY_ALPHA_CONTRACT.json"), build_industry_contract(True))
-    if not skip_download:
         download_profit_annual(max_symbols=max_symbols)
+        download_industry_monthly()
+    try:
+        ind_rows, ind_cat = normalize_industry()
+    except Exception as exc:
+        print("V16_IND_NORM_FAIL", exc, flush=True)
+        ind_rows, ind_cat = [], {}
+    _copy_json(os.path.join(IND_REF, "INDUSTRY_CATALOG.json"), "INDUSTRY_CATALOG.json")
+    if ind_rows:
+        ind_pit = run_industry_pit(ind_rows, ind_cat)
+        if ind_pit.get("pit_test_ok"):
+            freeze_industry_dataset(ind_cat, ind_pit)
+            dump_json(os.path.join(OUT, "INDUSTRY_ALPHA_CONTRACT.json"), build_industry_contract(False))
+        else:
+            dump_json(os.path.join(OUT, "INDUSTRY_ALPHA_CONTRACT.json"), build_industry_contract(True))
+    else:
+        ind_pit = {"pit_test_ok": False, "current_only": True, "pit_available": False, "effective_dating": False, "historical_membership": False, "status": "DOWNLOAD_INCOMPLETE"}
+        dump_json(os.path.join(OUT, "INDUSTRY_ALPHA_CONTRACT.json"), build_industry_contract(True))
     fin_rows, fin_cat = normalize_financials()
     _copy_json(os.path.join(FIN_REF, "FINANCIAL_CATALOG.json"), "FINANCIAL_CATALOG.json")
     quality = run_financial_quality(fin_rows)

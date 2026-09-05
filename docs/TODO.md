@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
-> **当前活跃模块:** V16 Financial/Industry PIT **IN PROGRESS**。不要优化 H11/H12。不要采购。不要挖价格因子。
-> **最后更新:** 2026-08-31（V16 已开；V15 NO_NEW_CANDIDATE 仍有效；$0）
-> **阶段终点:** 自动推进到 Candidate / 信息域耗尽 / 付费门。Final OOS DENIED。
+> **当前活跃模块:** **V25 多层组合模型 = 第一个通过 Level-1 + 复现 + 独立性的 Candidate**（`A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE`，STOP A）。NEW_INDEPENDENT=**1**。规则修正见 `RESEARCH_RULES_AMENDMENT_V1.md`（A1 构造菜单 / A2 滚动验证 / A3 每层一个模型 / A4 超额序列聚类）。V22–V24 NO_CANDIDATE 已冻。Databento 余额 ≈$46 不花。
+> **最后更新:** 2026-09-05 早（V29 ML1 前向管线 Design+Implement+Smoke 5/5 PASS：每天 `python -m research_engine.ml1_live.daily` 出名单 + 影子账本；Stability 待连续 5 日 + 第一期结算；V28 Final OOS PASS 已锁；V27 季报层冻结）
+> **下一入口:** (1) V29 Phase 4 稳定性：每个交易日跑一次 `daily.py`（约 35 分钟，主要是 5549 只逐只拉日线），第一期 2026-08-28 信号在 ≈2026-09-29 结算 → 通过后 Freeze。(2) 有账户的 Paper 需用户：开始日 / 账户 / 行情源。(3) Portfolio 需第二条正的独立袖子；H11/H12 成本后为负不算 → 目前只有 1 袖。禁用窗已读已锁，ML1 再无禁用窗。**禁止**：为改善 ML1 动特征/参数/hold/成本/对冲；把 HN20-vs-HS300 当策略（它是小盘价差载体，MaxDD −54%）；用验证期或禁用窗选任何东西。
 
 ---
 
@@ -66,6 +66,84 @@
 | MISSION V14.0 | H11/H12 strategy construction | ✅ WEAK_BUT_RESEARCHABLE | 2026-08-31 |
 | MISSION V14.1 | Candidate→Strategy forensics | ✅ METHODOLOGY_GAP_CONFIRMED | 2026-08-31 |
 | MISSION V15.0 | Second independent A-share CS alpha | ✅ NO_NEW_CANDIDATE | 2026-08-31 |
+| MISSION V16.0 | A-share financial + industry PIT + alpha | ✅ STOP B NO_CANDIDATE | 2026-09-02 |
+| MISSION V17.0 | A-share × frozen macro CS | ✅ STOP B family | 2026-09-02 |
+| MISSION V18.0 | A-share altinfo age/ST/calendar | ✅ STOP B family | 2026-09-02 |
+| MISSION V19.0 | Industry PIT × frozen macro | ✅ STOP B family | 2026-09-02 |
+| MISSION POST_V16 | Global decision after V17–V19 | ✅ STOP B | 2026-09-02 |
+| MISSION POST_V19 | Research-direction audit | ✅ DONE | 2026-09-02 |
+| MISSION V20.0 | HS300/ZZ500 membership + reconstitution | ✅ STOP B family | 2026-09-02 |
+| MISSION V21.0 | Dividend announcement events | ✅ STOP B family | 2026-09-04 |
+| MISSION POST_V21 | Global freeze after V21 | ✅ STOP B | 2026-09-04 |
+| MISSION POST_V21_FORENSICS | Cross-version capital construction | ✅ VERDICT A | 2026-09-04 |
+| MISSION POST_V21_AUTODRIVE | Q1–Q5 stress / inventory / sleeve / strategy | ✅ S1 0.91 | 2026-09-04 |
+| MISSION POST_V21_AUTODRIVE_W | W1 cluster / W2 walk / W3 atlas / W4 bind / W5 purchase / W6 docs | ✅ idle_search_closed | 2026-09-04 |
+| V22 FUTURES_XS | Databento 30 CME roots ohlcv-1d $47.10 → 3 预注册 → FDR 0/3 | ✅ NO_CANDIDATE 冻 | 2026-09-04 |
+| V23 MARGIN | 融资融券每日明细 3381 天 $0 → 3 预注册 → FDR 0/3（M1 研究 t 4.85 / 验证归零） | ✅ NO_CANDIDATE 冻 | 2026-09-04 |
+| V24 HOLDERS | 股东户数 PIT 297,732 报告 $0 → 3 预注册 → FDR 0/3 | ✅ NO_CANDIDATE 冻 | 2026-09-04 |
+| AMENDMENT V1 | 研究规则修正：A1 构造菜单 / A2 五滚动窗 / A3 每层一模型 / A4 超额序列聚类；保留预注册·成本·FDR·非重叠 CAGR·不 Paper | ✅ 生效 | 2026-09-04 |
+| V25 MULTILAYER | 14 个已有 PIT 特征 → 1 个 LightGBM（walk-forward，2021-08 冻结）+ 1 个无拟合基线；m=2。ML1：验证超额 +1.47%/20d t=17.1；LO20 研究 +276% (CAGR 14.5%, MaxDD −47%)，验证 +30.9% (CAGR 11.1%, MaxDD −21%)；滚动 5/5；成本 2× 仍 +18%。正式标签 WEAK_CANDIDATE_SAME_CLUSTER（原始 MF 聚类测的是大盘）；超额序列 corr vs H11 = 0.06 | ✅ **LEVEL-1** 冻 | 2026-09-04 |
+| V25.1 REPRODUCTION | 7 个固定扰动（seed/stride/refit）7/7 形状不变；验证超额最低 +1.35%；placebo 打乱标签 −0.09%/20d | ✅ PASS → **NEW_INDEPENDENT=1** | 2026-09-04 |
+| V26 ML1 STRATEGY SPEC | LO20 账本策略规格：操作规则 / 风险 / 容量（≈¥5M 起）/ 证伪条件；HN20-vs-HS300 不是策略 | ✅ SPEC（无 Paper） | 2026-09-04 |
+| V25 NORTHBOUND | HKEX 历史仅 12 月、改季度 | ⛔ DATA_BLOCKED | 2026-09-04 |
+| V27 FINDEEP | 东财季报 4 表 × 64 期 $0（INCOME/CASHFLOW PIT 不成立弃用；CPD+BALANCE 原始公告日）→ 10 固定特征 → 2 预注册模型，LO20 闸门。ML2F 仅季报：验证超额 +0.52% t 5.6、滚动 5/5、corr vs ML1 0.06，但 LO20 验证 −0.3% 不过；ML2 全栈：Level-1 但 corr vs ML1 0.96 同簇、无增量 | ✅ LEVEL1_SAME_CLUSTER_AS_ML1 冻；ML1 不变 | 2026-09-04 |
+| V28 ML1 FINAL OOS | 用户委托自决 → 协议先写 → 融资/成分/户数 raw 延伸到 2026-08（特征到 2024-02 逐位同冻结缓存）→ REFIT_240 闸门 + 2021 冻结诊断 → 2024-03→2026-07 30 期：超额 +1.00%/20d t 9.3，LO20 +71.4%（CAGR 24.3%，MaxDD −21%），19/30 打过 EW | ✅ **FINAL_OOS_PASS**，已锁不再读 | 2026-09-04 |
+| V29 ML1 LIVE PIPELINE | `research_engine/ml1_live/`：live 日历/basics/增量日线 → live pack（冻结块逐位相同）→ 融资日更/户数周更/成分月更 → 14 特征 → REFIT_240 模型缓存 → 前 20% 名单 `SIGNAL_{date}.json` → 影子账本接 V28 链（信号 2026-08-28 起每 21 日）。冒烟 5/5（`ml1_live/SMOKE_V29.json`）：冻结块逐位同、20 只抽查 0 错、特征 14/14 逐位同、2026-07-30 重打分 = V28 分数 Δ0.0 | ✅ Design+Implement+Smoke PASS；⏳ Stability = 连续 5 日 + 第一期结算（≈2026-09-29） | 2026-09-05 |
+| ML1 PAPER | 有账户的 Paper：开始日 / 账户 / 行情源需用户；管线已能每天出名单 | ⏸ 待用户 | — |
+
+## Post-V21 autodrive W1–W6 — 2026-09-04 idle_search_closed
+
+- W1 `BEAT_EW_CLUSTER.json`: 13 beat-EW books = NOT_ONE_SHADOW. 5/13 corr>0.9 vs H11 (H21/H22/H29/A1/A2). Others 0.46–0.71. All 13 val capital < 0.
+- W2 `DISK_WALK.json`: 11605 + 6974 files. AVAILABLE=0. announcements empty. balance raw empty. No pe/pb on disk. NONE.
+- W3 `FAILURE_ATLAS.json`: 60 rows V8–V21. Lookup before any new family.
+- W4 `STRATEGY_BIND.json`: H11 cost/gross 1.49; zero-cost counterfactual CAGR +2.91% MaxDD −58%; blend −14.08%; Paper=NO; portfolio contract draft (inactive).
+- W5: purchase case thickened. Only vendor flow/holder/margin class maps to the A-share gap. Unquoted. DO_NOT_BUY.
+- W6: this entry. `PROGRESS.json` current_W=W6_done next_W=idle_search_closed.
+
+## Post-V21 autodrive — 2026-09-04 S1
+
+- Q1: val excess_vs_b0 29/42 negative, mean −0.535%. Relative EW = NEGATIVE. X1 also loses to EW.
+- Q2: disk inventory after SOURCE_MATRIX. AVAILABLE=0. NONE. Q3 skipped.
+- Q4: one eligible long-only CS sleeve. Median year-corr vs X1 0.54. H24 offsets missing — do not rerun.
+- Q5: KEEP_LOW_PRIORITY. Illegal: blend, retune, Paper, leverage. Second Strategy needs new object + val capital > 0 + corr≤0.9.
+- **S1** written. Search stopped. Do not buy. Progress: `data/market/research_engine/POST_V21_AUTODRIVE/PROGRESS.json`
+
+## Post-V21 forensics — 2026-09-04 VERDICT A
+
+- Read-only 42 dual-book hyps: val capital 42/42 negative; val MEAN_FORWARD 38/42 negative; B-pattern 4 (H24/H25/H26/A5).
+- H11 official: −15.61% full path, MaxDD −66.46%, AM−GM on TRADES. Unfilled mean 0.53% is not the killer.
+- New information class: **NONE**. Construction contrast on existing trades: done.
+- Next unit = `NO_LEGAL_FREE_OBJECT_LEFT_DO_NOT_BUY`. Case: `POST_V21_PURCHASE_VALUE_CASE.md` (LO $11.99 does not move A-share NEW_INDEPENDENT).
+- Authority: `docs/research_engine/POST_V21_CAPITAL_CONSTRUCTION_FORENSICS.md`
+
+## Post-V21 — 2026-09-04 STOP B
+
+- V21 executed. FDR 0/2. Val capital 2/2 negative (D1 −41.06%, D2 −72.02%). NEW_INDEPENDENT=0.
+- Global: `A_SHARE_FREE_INFORMATION_MARGINALLY_EXHAUSTED`. Authority: `docs/research_engine/POST_V21_DECISION.md`
+- Do not reopen V13–V21. Do not download 5549 again. Do not open forecast/express as another 20-day filing window.
+- Options still PAYMENT_REQUIRED. Default do not buy.
+
+## Post-V19 / V20 — 2026-09-02
+
+- Direction audit: highest executable IV = index membership, not more CS factors. Authority: `POST_V19_RESEARCH_DIRECTION_AUDIT.md`.
+- V20: PIT 171/171. 0/4 Level-1. FDR 0/4. Val capital 4/4 negative. X3 reconstitution worst. Do not add SZ50 / 504d twins / flip sign.
+- V21 started: cash/stock *announce* windows. Not yield. Not purchase.
+- Canvas: `post-v19-research-direction.canvas.tsx`
+
+## Post-V16 — 2026-09-02 STOP B
+
+- V17/V18/V19 executed. Unified FDR m=18, discoveries=1 (IM6, not Candidate). NEW_INDEPENDENT=0.
+- Authority: `docs/research_engine/POST_V16_DECISION.md`
+- Event/News DATA_BLOCKED. Options PAYMENT_REQUIRED. Do not buy. Do not reopen price.
+
+## V16 Financial / Industry — 2026-09-02 STOP B
+
+- Financial PIT READY. 5500 symbols. announcement_rate=1. coverage_2010≈0.936. RESTATEMENT_RISK. Complete PIT not claimed.
+- Industry monthly as-of PIT READY. 171/171 snapshots. Taxonomy change ~2015. 300750 absent 2010/2015.
+- 6 financial + 3 industry pre-registered. Dual books. Unified BH-FDR 0/9. Validation capital negative 9/9.
+- NEW_CANDIDATE=0. Information available, no edge. Purchase=NO. Xavier not used.
+- Reports: `docs/research_engine/V16_DECISION.md` and sibling `V16_*` reports.
+- Machine: `data/market/research_engine/cn_a_share_information_v16/`
 
 ## V15 A-share Alpha V2 — 2026-08-31 NO_NEW_CANDIDATE
 

@@ -1,0 +1,72 @@
+{
+ "1_frozen_block_identical": true,
+ "2_new_sessions": [
+  "2026-08-31",
+  "2026-09-01",
+  "2026-09-02",
+  "2026-09-03",
+  "2026-09-04"
+ ],
+ "2_pct_symbols_with_all_new_closes": 0.939268336637232,
+ "2_spot_check_20_symbols_close_mismatches": 0,
+ "3_features_identical_le_frozen_end": {
+  "HS300_MEMBER.npy": true,
+  "MOM_250_20.npy": true,
+  "NEG_BALANCE_CHG_60.npy": true,
+  "NEG_BALANCE_OVER_CAP.npy": true,
+  "NEG_HOLDERS_PER_SHARE.npy": true,
+  "NEG_LOG_AMT_20.npy": true,
+  "NEG_NET_INFLOW_20_OVER_CAP.npy": true,
+  "NEG_QOQ_CHANGE.npy": true,
+  "NEG_TURN_20.npy": true,
+  "NEG_VOL_120.npy": true,
+  "NEG_VOL_60.npy": true,
+  "REV_20.npy": true,
+  "ROE_ANNUAL.npy": true,
+  "YOY_NET_PROFIT_ANNUAL.npy": true
+ },
+ "4_last_v28_session_vs_live_model": {
+  "session": "2026-07-30",
+  "v28_n": 997,
+  "live_n": 997,
+  "overlap": 997,
+  "identical": true,
+  "score_maxabsdiff": 0.0
+ },
+ "5_ledger": {
+  "summary": {
+   "capital_yuan": 5000000.0,
+   "chain_anchor": "2026-07-30",
+   "consecutive_lo_le_ew": 0,
+   "equity": 5000000.0,
+   "money": "NONE (shadow)",
+   "n_lo_beat_ew": 0,
+   "n_periods_closed": 0,
+   "n_periods_open": 1,
+   "next_signal_date": "21 sessions after 2026-08-28",
+   "orders_sent": false,
+   "rolling_12_lo_minus_ew": null,
+   "rules": {
+    "pause": "12-period rolling LO-EW < -8%",
+    "retire": "24 consecutive LO-EW <= 0"
+   },
+   "state": "RUNNING",
+   "total_capital_ret": null
+  },
+  "periods": [
+   {
+    "entry": "2026-08-31",
+    "exit_expected": "20 sessions after 2026-08-31",
+    "model_refit_date": "2025-11-06",
+    "n_fill_entry": 996,
+    "n_sel": 999,
+    "signal_date": "2026-08-28",
+    "status": "OPEN"
+   }
+  ]
+ },
+ "5_signal_files": [
+  "SHADOW_2026-08-28.json",
+  "SIGNAL_2026-09-04.json"
+ ]
+}
