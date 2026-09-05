@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-09-05 (23:20) — V26.2 recent-window diagnostic; V32 MT5 macro pooled model NO_CANDIDATE
+
+- Owner asked for last 1y/6m/1m of the executable ML1 variant and to start MT5 gold/oil/FX.
+- V26.2 diagnostic on the already-read V28 window (REFIT_240 gate scores; no decision attached, nothing tuned): 2024-03→2026-08 +31.5% (28 periods) but excess vs main-board≤¥20 EW +0.01%/20d t 0.01 (15/28); last 12m +9.1% (excess +1.2% t 0.84); last 6m −12.6% (EW −12.7%); last period +1.0%. The 10-name low-price main-board slice carried beta only in this window while the 999-name ML1 book had +1.00%/20d t 9.3. `ML1_TOP10_20K_MAIN_RECENT_DIAG.json`; ATLAS row 76.
+- V32 `MT5_MACRO_POOLED_V32` (Amendment V2.1: pooled panel ML ≥50 instruments × ≥10y allowed as one model). Dataset `tm-mt5-MACRO-D1-20260905-000001` frozen (69 symbols, 288,708 rows; non-FX only since 2018-12). 10 vol-normalised features → pooled LightGBM → LS tercile vol-parity, hold 5, measured spread + swap. **NO_CANDIDATE**: validation gross spread +0.06%/5d t 1.02 (research t −0.64); LS −60.5% t −8.5; rolling 0/5; all gates FAIL. `V32_MT5_MACRO_POOLED_DECISION.md`; ATLAS row 75. MT5 macro D1 research objects exhausted (V1–V8 rules, V30 share CFDs, V32 pooled ML).
+
 ## 2026-09-05 (22:44) — Owner facts (main board only, ¥20k, price ≤ ¥20) → V26.2 `ML1_TOP10_20K_MAIN`
 
 - Contract `V26_2_ML1_TOP10_20K_MAIN_CONTRACT.md` frozen before run (m+1). N = 20000 / 2000 = 10 derived from capital and the ¥20 price ceiling (one lot ≤ ¥2,000), not tuned. Main board only; signal-day close ≤ ¥20; ¥2,000 per name, lot rounding; ¥5 minimum commission (≈0.25%/side; round trip ≈0.75%/period).

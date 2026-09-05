@@ -1,0 +1,367 @@
+{
+  "contract": "V32_MT5_MACRO_POOLED_CONTRACT.md",
+  "cost_model": {
+    "slippage_each_side": 0.0002,
+    "spread": "60d median bar spread% floored at current quote",
+    "swap": "current swap applied to all history (no swap history available)"
+  },
+  "dataset": "tm-mt5-MACRO-D1-20260905-000001",
+  "elapsed_s": 28.1,
+  "features": [
+    "R1",
+    "R5",
+    "R21",
+    "R63",
+    "R126",
+    "R252",
+    "VOLRATIO_21_252",
+    "RANGEPOS_63",
+    "CS_R21",
+    "CS_R252"
+  ],
+  "gates": {
+    "G1_val_LS_capital_gt_0": false,
+    "G2_val_spread_t_ge_3": false,
+    "G3_rolling_ge_4_of_5": false,
+    "G4_research_LS_gt_0": false
+  },
+  "hold": 5,
+  "label": "MT5_MACRO_POOLED_V32_NO_CANDIDATE",
+  "median_spread_pct": 0.0002736879978328943,
+  "n_dates": 8597,
+  "n_symbols": 65,
+  "params": {
+    "colsample_bytree": 0.8,
+    "learning_rate": 0.03,
+    "min_child_samples": 1000,
+    "n_estimators": 400,
+    "num_leaves": 31,
+    "num_threads": 16,
+    "objective": "regression",
+    "random_state": 20260904,
+    "reg_lambda": 1.0,
+    "subsample": 0.7,
+    "subsample_freq": 1,
+    "verbosity": -1
+  },
+  "refits": [
+    {
+      "fit_at": "2006-01-03",
+      "rows": 8695,
+      "scored_through": "2006-10-19"
+    },
+    {
+      "fit_at": "2006-10-20",
+      "rows": 11522,
+      "scored_through": "2007-07-29"
+    },
+    {
+      "fit_at": "2007-07-30",
+      "rows": 11937,
+      "scored_through": "2008-05-15"
+    },
+    {
+      "fit_at": "2008-05-16",
+      "rows": 13841,
+      "scored_through": "2009-03-03"
+    },
+    {
+      "fit_at": "2009-03-04",
+      "rows": 19552,
+      "scored_through": "2009-12-18"
+    },
+    {
+      "fit_at": "2009-12-20",
+      "rows": 25309,
+      "scored_through": "2010-10-08"
+    },
+    {
+      "fit_at": "2010-10-10",
+      "rows": 31963,
+      "scored_through": "2011-07-27"
+    },
+    {
+      "fit_at": "2011-07-28",
+      "rows": 38734,
+      "scored_through": "2012-05-15"
+    },
+    {
+      "fit_at": "2012-05-16",
+      "rows": 45611,
+      "scored_through": "2013-03-03"
+    },
+    {
+      "fit_at": "2013-03-04",
+      "rows": 52521,
+      "scored_through": "2013-12-19"
+    },
+    {
+      "fit_at": "2013-12-20",
+      "rows": 59654,
+      "scored_through": "2014-10-07"
+    },
+    {
+      "fit_at": "2014-10-08",
+      "rows": 66712,
+      "scored_through": "2015-07-27"
+    },
+    {
+      "fit_at": "2015-07-28",
+      "rows": 73761,
+      "scored_through": "2016-05-16"
+    },
+    {
+      "fit_at": "2016-05-17",
+      "rows": 80994,
+      "scored_through": "2017-03-05"
+    },
+    {
+      "fit_at": "2017-03-06",
+      "rows": 88280,
+      "scored_through": "2017-12-21"
+    },
+    {
+      "fit_at": "2017-12-22",
+      "rows": 95466,
+      "scored_through": "2018-10-11"
+    },
+    {
+      "fit_at": "2018-10-12",
+      "rows": 102555,
+      "scored_through": "2019-07-29"
+    },
+    {
+      "fit_at": "2019-07-30",
+      "rows": 109189,
+      "scored_through": "2020-04-22"
+    },
+    {
+      "fit_at": "2020-04-23",
+      "rows": 114384,
+      "scored_through": "2021-01-24"
+    },
+    {
+      "fit_at": "2021-01-25",
+      "rows": 120715,
+      "scored_through": "2021-11-11"
+    },
+    {
+      "fit_at": "2021-11-12",
+      "rows": 131258,
+      "scored_through": "2022-08-30"
+    },
+    {
+      "fit_at": "2022-08-31",
+      "rows": 142912,
+      "scored_through": "2023-06-18"
+    },
+    {
+      "fit_at": "2023-06-19",
+      "rows": 154727,
+      "scored_through": "2024-04-07"
+    },
+    {
+      "fit_at": "2024-04-08",
+      "rows": 166850,
+      "scored_through": "2025-01-23"
+    },
+    {
+      "fit_at": "2025-01-24",
+      "rows": 178724,
+      "scored_through": "2025-11-11"
+    },
+    {
+      "fit_at": "2025-11-12",
+      "rows": 191311,
+      "scored_through": "2026-08-30"
+    },
+    {
+      "fit_at": "2026-08-31",
+      "rows": 203799,
+      "scored_through": "2026-09-04"
+    }
+  ],
+  "research": {
+    "LO": {
+      "cagr": -0.05350096297251783,
+      "hit": 0.4166666666666667,
+      "maxdd": -0.5350786957086762,
+      "mean_per_period": -0.001068724959384201,
+      "n_periods": 660,
+      "t": -4.164780671162146,
+      "total": -0.5132701011620141
+    },
+    "LO_minus_EW": {
+      "cagr": -0.05350096297251783,
+      "hit": 0.38181818181818183,
+      "maxdd": -0.5350786957086762,
+      "mean_per_period": -0.0009711226528054462,
+      "n_periods": 660,
+      "t": -5.027650713564817,
+      "total": -0.5132701011620141
+    },
+    "LS": {
+      "cagr": -0.09379928165605422,
+      "hit": 0.3575757575757576,
+      "maxdd": -0.7289634028872674,
+      "mean_per_period": -0.0019201439602563749,
+      "n_periods": 660,
+      "t": -6.140349307801851,
+      "total": -0.7246764498350298
+    }
+  },
+  "rolling": [
+    {
+      "LO_total": -0.23721188794665615,
+      "LS_total": -0.24768553298856222,
+      "block": [
+        "2008-01-01",
+        "2010-12-31"
+      ],
+      "n": 150
+    },
+    {
+      "LO_total": -0.10845268074716663,
+      "LS_total": -0.3100224075443062,
+      "block": [
+        "2011-01-01",
+        "2013-12-31"
+      ],
+      "n": 156
+    },
+    {
+      "LO_total": -0.19797256751754522,
+      "LS_total": -0.2854963813637912,
+      "block": [
+        "2014-01-01",
+        "2016-12-31"
+      ],
+      "n": 156
+    },
+    {
+      "LO_total": -0.1334353856024041,
+      "LS_total": -0.24757389873820912,
+      "block": [
+        "2017-01-01",
+        "2019-12-31"
+      ],
+      "n": 157
+    },
+    {
+      "LO_total": -0.34224642041036435,
+      "LS_total": -0.6054949865284492,
+      "block": [
+        "2020-01-02",
+        "2026-08-28"
+      ],
+      "n": 340
+    }
+  ],
+  "rolling_positive": 0,
+  "spread_t_research": {
+    "mean": -0.00021953307680175517,
+    "n": 725,
+    "t": -0.6383067565998989
+  },
+  "spread_t_validation": {
+    "mean": 0.000593598668978342,
+    "n": 380,
+    "t": 1.0207628100420016
+  },
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "USDCHF",
+    "USDJPY",
+    "USDCAD",
+    "AUDUSD",
+    "AUDCAD",
+    "AUDNZD",
+    "AUDCHF",
+    "AUDJPY",
+    "CHFJPY",
+    "EURGBP",
+    "EURAUD",
+    "EURCHF",
+    "EURJPY",
+    "EURNZD",
+    "EURCAD",
+    "GBPCHF",
+    "GBPJPY",
+    "CADCHF",
+    "EURO-BUND",
+    "JAPAN_BOND",
+    "CHINA_A50",
+    "DOLLAR_INDX",
+    "CADJPY",
+    "GBPAUD",
+    "GBPCAD",
+    "GBPNZD",
+    "NZDCAD",
+    "NZDCHF",
+    "NZDJPY",
+    "NZDUSD",
+    "BRENT_OIL",
+    "CrudeOIL",
+    "GASOLINE",
+    "HEATING_OIL",
+    "NATURAL_GAS",
+    "COCOA",
+    "COFFEE_C",
+    "SUGAR#11",
+    "COTTON#2",
+    "CORN",
+    "SOYBEAN",
+    "WHEAT",
+    "COPPER",
+    "GOLD",
+    "PALLADIUM",
+    "PLATINUM",
+    "SILVER",
+    "US_500",
+    "US_2000",
+    "US_30",
+    "US_TECH100",
+    "ITALY_40",
+    "UK_100",
+    "TAIWAN_INDX",
+    "NED_25",
+    "GERMANY_40",
+    "EUROPE_50",
+    "HK_50",
+    "FRANCE_40",
+    "JAPAN_225",
+    "SWISS_20",
+    "AUS_200",
+    "CANADA_60"
+  ],
+  "validation": {
+    "LO": {
+      "cagr": -0.06021058768666199,
+      "hit": 0.4117647058823529,
+      "maxdd": -0.3589085366783211,
+      "mean_per_period": -0.001211394745572111,
+      "n_periods": 340,
+      "t": -3.5353340114377714,
+      "total": -0.34224642041036435
+    },
+    "LO_minus_EW": {
+      "cagr": -0.06021058768666199,
+      "hit": 0.3264705882352941,
+      "maxdd": -0.3589085366783211,
+      "mean_per_period": -0.0019400294472408431,
+      "n_periods": 340,
+      "t": -6.650363787215167,
+      "total": -0.34224642041036435
+    },
+    "LS": {
+      "cagr": -0.12879426130075078,
+      "hit": 0.31470588235294117,
+      "maxdd": -0.6071055611514651,
+      "mean_per_period": -0.0027145226802308205,
+      "n_periods": 340,
+      "t": -8.495149153615673,
+      "total": -0.6054949865284492
+    }
+  }
+}

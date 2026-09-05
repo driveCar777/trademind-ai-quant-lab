@@ -1,0 +1,27 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "broker": "Ava Trade Ltd.",
+  "columns": [
+    "timestamp_utc",
+    "open",
+    "high",
+    "low",
+    "close",
+    "tick_volume",
+    "real_volume",
+    "spread"
+  ],
+  "dataset_id": "tm-mt5-MACRO-D1-20260905-000001",
+  "n_symbols": 69,
+  "n_symbols_with_bars": 69,
+  "overwrite_frozen": false,
+  "retrieved_at_utc": "2026-09-05T15:01:23Z",
+  "row_count": 288708,
+  "sha256": "7289ff019b7bbbcd9a4364598358c2617082dea9ed512ea37e5145660e59db49",
+  "source": "mt5",
+  "spread_points_note": "spread column per bar is broker-reported points",
+  "swap_mode_5_meaning": "annual interest % of current price (negative = you pay)",
+  "terminal": "Ava Trade MT5 Terminal",
+  "timeframe": "D1",
+  "universe": "Forex Majors/Crosses + CFD Metals/Energies/Agri/Bonds + named equity indices (current listing only)"
+}

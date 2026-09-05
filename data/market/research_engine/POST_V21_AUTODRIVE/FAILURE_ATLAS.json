@@ -1,9 +1,9 @@
 {
  "id": "POST_V21_FAILURE_ATLAS",
  "read_only": true,
- "span": "V8-V30",
- "n_rows": 74,
- "n_val_capital_neg": 53,
+ "span": "V8-V32",
+ "n_rows": 76,
+ "n_val_capital_neg": 54,
  "n_beat_ew_overlap": 13,
  "n_level1": 2,
  "new_independent": 0,
@@ -1248,6 +1248,40 @@
    "rolling_positive": "2/5 (LS)",
    "decision": "MT5_US_XS_PRICE_V30_NO_CANDIDATE",
    "why_not_next": "price layer dead + CFD cost ceiling: LS round trip ~1.9%/20d > any plausible gross spread; long financing 11%/yr; survivorship makes this an upper bound"
+  },
+  {
+   "id": "V32_MT5_MACRO_POOLED_ML",
+   "version": "V32",
+   "universe": "MT5 Ava macro 63: 28 FX (2001+), gold/silver/metals, energies, 17 indices, agri, bonds (non-FX only 2018-12+)",
+   "mechanism": "10 vol-normalised TS/CS price features -> pooled LightGBM (vol-scaled 5d fwd), LS tercile vol-parity, hold 5, measured spread+swap (mode1 pts / mode5 -4.5%/yr)",
+   "family": "MT5_MACRO_POOLED_V32",
+   "val_mean_forward": "LS gross spread +0.06%/5d t 1.02 (research -0.02% t -0.64)",
+   "val_mf_sign": "FLAT",
+   "val_capital": "LS -60.5% (t -8.5, hit 31%); LO -34.2%; LO-EW -0.19%/5d t -6.7",
+   "val_capital_sign": "NEG",
+   "beat_ew": false,
+   "corr_h11_month": null,
+   "fdr_discovery": false,
+   "rolling_positive": "0/5",
+   "decision": "MT5_MACRO_POOLED_V32_NO_CANDIDATE",
+   "why_not_next": "no gross predictability in either window (pooled D1 price features on macro CFDs); cost ~0.33%/5d (swap -4.5%/yr both sides on non-FX + spread) exceeds any plausible gross; gold/oil history only 7.7y; do not retune hold/features/tercile or split by group post hoc"
+  },
+  {
+   "id": "V26_2_ML1_TOP10_20K_MAIN_RECENT_DIAG",
+   "version": "V26.2",
+   "universe": "A-share main board, close<=20, ML1 REFIT_240 gate scores, 2024-03..2026-08 (window already read in V28)",
+   "mechanism": "ML1 unchanged; top-10 equal-weight lot-rounded, 20k capital, min fee 5 — owner-constrained derivative, DIAGNOSTIC report on owner request",
+   "family": "ML1_MANUAL_DERIVATIVE",
+   "val_mean_forward": "n/a",
+   "val_mf_sign": "n/a",
+   "val_capital": "2024-03..2026-08 +31.5% (28 periods) but excess vs main-board<=20 EW +0.01%/20d t 0.01 (15/28); last 12m +9.1% (excess +1.2% t 0.84); last 6m -12.6% (EW -12.7%); last period +1.0%",
+   "val_capital_sign": "POS_BETA_ONLY",
+   "beat_ew": false,
+   "corr_h11_month": null,
+   "fdr_discovery": false,
+   "rolling_positive": "n/a",
+   "decision": "REPORTED_NO_DECISION (contract parameters fixed by owner constraints; nothing tuned)",
+   "why_not_next": "in the recent window the 10-name low-price main-board slice carried beta only while the 999-name ML1 book had +1.00%/20d excess t 9.3 — concentration/price-cap lost the alpha; do NOT use this window to pick N/board/price; forward shadow ledger decides"
   }
  ]
 }
