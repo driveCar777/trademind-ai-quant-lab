@@ -1,8 +1,8 @@
 {
  "id": "POST_V21_FAILURE_ATLAS",
  "read_only": true,
- "span": "V8-V36",
- "n_rows": 80,
+ "span": "V8-V37",
+ "n_rows": 81,
  "n_val_capital_neg": 56,
  "n_beat_ew_overlap": 13,
  "n_level1": 2,
@@ -1347,6 +1347,22 @@
    "fdr_discovery": false,
    "rolling_positive": "2/5",
    "decision": "CN_INDUSTRY_TO_FUTURES_V36_NO_CANDIDATE — industry-bucket mapping is opposite-sign noise, not a weak residual. Do not retune map/features/window. Layer closed. Sleeve count still 1 (ML1 V26.8). Do not invent a thin follow-on family."
+  },
+  {
+   "id": "V37_WAREHOUSE_RECEIPT",
+   "version": "V37",
+   "universe": "SHFE/INE 22 products with registered warehouse receipts 2014-05+; same-contract 20d LS; MIN_N=12",
+   "mechanism": "5 warehouse features (chg 20/60, -5d rev, -log level, vol 60) -> LGBM walk-forward frozen 2023-06; not V31 price/OI/term",
+   "family": "CN_FUTURES_WAREHOUSE",
+   "val_mean_forward": "gross L-S +1.42%/20d t 2.41 (28 periods)",
+   "val_mf_sign": "POS_NS",
+   "val_capital": "LS +41.4% CAGR 15.3% t 2.19 MaxDD -4.3%; LO +36.4%; research LS -7.7% t -0.20",
+   "val_capital_sign": "POS_WEAK",
+   "beat_ew": true,
+   "corr_h11_month": null,
+   "fdr_discovery": false,
+   "rolling_positive": "3/5 (2019-20 -4.6%, 2021 -12.4%)",
+   "decision": "CN_FUTURES_WAREHOUSE_V37_NO_CANDIDATE — validation same-sign positive but research negative, t 2.41<3, rolling 3/5, val corr vs ML1 0.41. Do not lower t-gate. Do not add CZCE/DCE after seeing +41%. Layer closed. Sleeve count still 1."
   }
  ]
 }

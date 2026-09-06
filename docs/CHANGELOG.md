@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-09-06 (12:00) — V37 warehouse receipts: NO_CANDIDATE (val +41% does not pass)
+
+- Contract committed before pull/run. SHFE/INE `dailystock.dat` DIRECT, 2,801/3,002 days, 22 products, 5 warehouse features, MIN_N=12, V31 labels/LS. CZCE xls reachable but totals-column drift — excluded before scores. DCE 412 — excluded.
+- `CN_FUTURES_WAREHOUSE_V37_NO_CANDIDATE`: G1 val LS **+41.4%** (t 2.19) pass; G2 t **2.41** fail; G3 rolling **3/5** fail; G4 research LS **−7.7%** fail; G5 val corr vs ML1 **0.41** fail. Do not lower t-gate. Do not add CZCE/DCE after seeing +41%. ATLAS 81. Sleeve still 1.
+
 ## 2026-09-06 (11:40) — V36 industry → futures XS: NO_CANDIDATE
 
 - Contract committed before run (`98abfc34`). Pre-run split because industry as-of ends 2024-02-15: research 2019-07→2022-06 freeze, val 2022-07→2024-02. 5 industry-bucket features (product-specific X) → LightGBM → V31 LS tercile / 3.3 bp. Smoke: 72 mapped, EB unmapped.
