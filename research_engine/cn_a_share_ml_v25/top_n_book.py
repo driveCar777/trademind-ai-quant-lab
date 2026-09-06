@@ -174,7 +174,7 @@ def topup_lots(picks, opens, budget):
     return [(j, lots) for j, lots in picks]
 
 
-def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, hold=HOLD, topup=False):
+def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, hold=HOLD, topup=False, fee_reserve=0.0):
     """V26.4: N = floor(exposure*equity/unit); equal money per name; lots = floor(unit/(100*open)); realistic carried exit.
     topup=True (V26.6): after the first pass, fill the remaining exposure budget with extra lots on the same names."""
     dates = pack["dates"]
@@ -207,7 +207,7 @@ def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=
     if topup and picks:
         opens = dict((j, float(pack["open"][t0, j])) for j, _ in picks)
         used = sum(l * LOT * opens[j] * (1.0 + SLIPPAGE) for j, l in picks)
-        picks = topup_lots(picks, opens, exposure * equity - used)
+        picks = topup_lots(picks, opens, exposure * equity - fee_reserve - used)
     pnl, pnl_v14, invested, n_fill, n_carry, n_stuck, names = 0.0, 0.0, 0.0, 0, 0, 0, []
     for j, lots in picks:
         r0 = "FILL" if bool(xok[t0, j]) else exec_reason(pack, t0, j)
@@ -240,13 +240,23 @@ def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=
             "pnl_v14_convention": round(pnl_v14, 2), "names": names}
 
 
-def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None, one_lot=False, exposure=0.70, eq_money=False, hold=HOLD, topup=False):
+FEE_RESERVE_FULL = 200.0   # V26.7: cash kept back at 100% exposure so buy commissions are payable
+
+
+def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None, one_lot=False, exposure=0.70, eq_money=False, hold=HOLD, topup=False,
+               monthly_contrib=0.0):
+    """monthly_contrib > 0 (V26.7): add that cash on the first signal day of each calendar month, before buying. 'total' stays time-weighted (chain of per-period ret)."""
     dates = pack["dates"]
     i0, i1 = dates.index(start), dates.index(end)
     equity, trades, t = float(capital), [], i0
+    deposits, last_month, twr = 0.0, None, 1.0
+    fee_reserve = FEE_RESERVE_FULL if exposure >= 0.999 else 0.0
     while t <= i1:
+        if monthly_contrib > 0 and dates[t][:7] != last_month and last_month is not None:
+            equity += monthly_contrib
+            deposits += monthly_contrib
         if eq_money:
-            per = eq_money_period(pack, scores[t], elig[t], xok, t, equity, exposure, UNIT_YUAN, boards, max_price, hold, topup)
+            per = eq_money_period(pack, scores[t], elig[t], xok, t, equity, exposure, UNIT_YUAN, boards, max_price, hold, topup, fee_reserve)
         elif one_lot:
             per = one_lot_period(pack, scores[t], elig[t], xok, t, equity, exposure, boards, max_price)
         else:
@@ -256,11 +266,35 @@ def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N
                 break
             t += 1
             continue
+        last_month = dates[t][:7]
+        twr *= 1.0 + per["ret"]
         equity += per["pnl"]
         per["equity"] = round(equity, 2)
+        per["deposits_to_date"] = round(deposits, 2)
         trades.append(per)
         t = t + 1 + hold
-    return {"trades": trades, "total": equity / capital - 1.0, "equity_end": equity}
+    out = {"trades": trades, "total": twr - 1.0, "equity_end": equity}
+    if monthly_contrib > 0:
+        yrs = max(len(trades) * (hold + 1) / 242.0, 1e-9)
+        out.update({"deposits": deposits, "invested_total": capital + deposits, "profit_yuan": equity - capital - deposits, "irr_approx": _irr(capital, monthly_contrib, len(trades), hold, equity)})
+    return out
+
+
+def _irr(capital, contrib, n_periods, hold, end_equity):
+    """Money-weighted annual rate: deposits at period boundaries (monthly ~ every 12 periods of hold+1 sessions)."""
+    per_year = 242.0 / (hold + 1)
+    n_months = int(n_periods / per_year * 12)
+    flows = [capital] + [contrib] * n_months
+    lo, hi = -0.99, 5.0
+    for _ in range(200):
+        r = (lo + hi) / 2
+        m = (1 + r) ** (1 / 12.0)
+        fv = sum(f * m ** (len(flows) - i) for i, f in enumerate(flows))
+        if fv > end_equity:
+            hi = r
+        else:
+            lo = r
+    return (lo + hi) / 2
 
 
 def summarize(book, ewm, hold=HOLD):
@@ -279,7 +313,7 @@ def summarize(book, ewm, hold=HOLD):
             "mean_cash_idle": float(np.mean([x["cash_idle_frac"] for x in tr])) if tr else None}
 
 
-def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=None, one_lot=False, exposure=0.70, contract=None, eq_money=False, topup=False):
+def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=None, one_lot=False, exposure=0.70, contract=None, eq_money=False, topup=False, monthly_contrib=0.0):
     from research_engine.cn_a_share_alpha.pack import load_pack
     from research_engine.cn_a_share_ml_v25 import RESEARCH, VALIDATION
     from research_engine.cn_a_share_strategy_v14_1.scores import eligible, exec_ok_matrix
@@ -288,13 +322,18 @@ def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=
     scores = np.load(os.path.join(OUT, "SCORES_ML1_LGBM.npy"), mmap_mode="r")
     elig, xok = eligible(pack, 20), exec_ok_matrix(pack)
     contract = contract or ("V26_2_ML1_TOP10_20K_MAIN_CONTRACT.md" if name else "V26_1_ML1_TOP20_MANUAL_CONTRACT.md")
-    res = {"contract": contract, "n_names": ("EMERGENT" if (one_lot or eq_money) else n), "one_lot": one_lot, "eq_money": eq_money, "topup": topup, "unit_yuan": (UNIT_YUAN if eq_money else None),
-           "exposure": (exposure if (one_lot or eq_money) else 1.0), "min_fee": MIN_FEE, "capital": capital, "max_price": max_price, "denied_window_read": False, "boards": boards}
+    res = {"contract": contract, "n_names": ("EMERGENT" if (one_lot or eq_money) else n), "one_lot": one_lot, "eq_money": eq_money, "topup": topup, "monthly_contrib": monthly_contrib,
+           "unit_yuan": (UNIT_YUAN if eq_money else None), "exposure": (exposure if (one_lot or eq_money) else 1.0), "min_fee": MIN_FEE, "capital": capital, "max_price": max_price,
+           "denied_window_read": False, "boards": boards}
     for key, (a, b) in (("research", RESEARCH), ("validation", VALIDATION)):
-        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards, max_price=max_price, one_lot=one_lot, exposure=exposure, eq_money=eq_money, topup=topup)
+        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards, max_price=max_price, one_lot=one_lot, exposure=exposure, eq_money=eq_money, topup=topup,
+                        monthly_contrib=monthly_contrib)
         ew = ew_overlapping(pack, elig, xok, a, pack["dates"][pack["dates"].index(b) - HOLD - 1], HOLD)
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
         res[key] = summarize(bk, ewm)
+        for k in ("equity_end", "deposits", "invested_total", "profit_yuan", "irr_approx"):
+            if k in bk:
+                res[key][k] = bk[k]
         if eq_money:
             tr = bk["trades"]
             res[key]["exit_carry_trades"] = int(sum(x["n_exit_carry"] for x in tr))
@@ -362,7 +401,13 @@ def recent_diag(name, exposure, boards="MAIN", max_price=100.0, capital=20_000.0
 if __name__ == "__main__":
     import sys
 
-    if len(sys.argv) > 1 and sys.argv[1] == "V26_6":
+    if len(sys.argv) > 1 and sys.argv[1] == "V26_7":
+        # V26.7: owner 09:14 — 100% exposure (¥200 fee reserve), monthly ¥2,000 contribution on the first signal day of each month. Single read.
+        if os.path.isfile(os.path.join(OUT, "ML1_FULL_TOPUP_CONTRIB2K_MAIN_READ.json")):
+            raise SystemExit("V26.7 already read once; refusing (single-read contract)")
+        main("MAIN", capital=20_000.0, max_price=100.0, name="ML1_FULL_TOPUP_CONTRIB2K_MAIN", eq_money=True, exposure=1.0, topup=True, monthly_contrib=2_000.0,
+             contract="V26_7_ML1_FULL_TOPUP_CONTRIB_CONTRACT.md")
+    elif len(sys.argv) > 1 and sys.argv[1] == "V26_6":
         # V26.6: V26.5 + second-pass top-up of the 80% budget with extra lots on the same names (idle cash 42% -> ~20%). Single read.
         if os.path.isfile(os.path.join(OUT, "ML1_EQMONEY_80PCT_TOPUP_MAIN_READ.json")):
             raise SystemExit("V26.6 already read once; refusing (single-read contract)")
