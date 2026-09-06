@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-09-06 (11:40) — V36 industry → futures XS: NO_CANDIDATE
+
+- Contract committed before run (`98abfc34`). Pre-run split because industry as-of ends 2024-02-15: research 2019-07→2022-06 freeze, val 2022-07→2024-02. 5 industry-bucket features (product-specific X) → LightGBM → V31 LS tercile / 3.3 bp. Smoke: 72 mapped, EB unmapped.
+- `CN_INDUSTRY_TO_FUTURES_V36_NO_CANDIDATE`: 1/5 gates (only G5 independence). Validation LS **−11.6%** t −1.14; gross spread t **−0.89**; research LS **−30.7%**; rolling **2/5**. Opposite-sign noise, not a weak residual. ATLAS 80. Layer closed. Sleeve count still 1 (ML1 V26.8). Do not retune; do not invent a thin follow-on family.
+
 ## 2026-09-06 (10:25) — V35 A-share info → commodities: NO_CANDIDATE; legal new D1 objects = 0
 
 - Contract committed before run. CU/AG/AU/SC same-contract 20d returns + 5 HS300/ZZ500 features (not V31's 8) → pooled LGBM → long-flat basket if pred>0. Index daily files end 2024-02-29 so validation has 8 periods only.

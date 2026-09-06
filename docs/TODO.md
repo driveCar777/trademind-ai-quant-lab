@@ -1,8 +1,8 @@
 # TradeMind TODO — 版本任务清单
 
 > **当前活跃模块:** **V25 多层组合模型 = 第一个通过 Level-1 + 复现 + 独立性的 Candidate**（`A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE`，STOP A）。NEW_INDEPENDENT=**1**。规则修正见 `RESEARCH_RULES_AMENDMENT_V1.md`（A1 构造菜单 / A2 滚动验证 / A3 每层一个模型 / A4 超额序列聚类）。V22–V24 NO_CANDIDATE 已冻。Databento 余额 ≈$46 不花。
-> **最后更新:** 2026-09-05 傍晚（V29 ML1 前向管线 Smoke 5/5 PASS，Stability 待周一起连续 5 日；用户授权 MT5 修正 V2 → V30 美股 CFD 截面价格模型 **NO_CANDIDATE** + `MT5_STOCK_CFD_COST_CEILING`，MT5 侧对象清点完毕；V28 Final OOS PASS 已锁）
-> **下一入口:** (1) V29 Phase 4 稳定性：每个交易日跑一次 `daily.py`（约 35 分钟，主要是 5549 只逐只拉日线），第一期 2026-08-28 信号在 ≈2026-09-29 结算 → 通过后 Freeze。(2) 有账户的 Paper 需用户：开始日 / 账户 / 行情源。(3) Portfolio 需第二条正的独立袖子；H11/H12 成本后为负不算 → 目前只有 1 袖。禁用窗已读已锁，ML1 再无禁用窗。**禁止**：为改善 ML1 动特征/参数/hold/成本/对冲；把 HN20-vs-HS300 当策略（它是小盘价差载体，MaxDD −54%）；用验证期或禁用窗选任何东西。
+> **最后更新:** 2026-09-06 11:40（V36 行业→期货 **NO_CANDIDATE**，ATLAS 80；第二袖仍 0）
+> **下一入口:** (1) 不编薄家族。仓单/会员持仓若免费可达且未测，才是下一合法信息层；否则停搜，只推 V29 影子账本 + 每日 SHORTLIST。(2) V29 Phase 4 稳定性：每个交易日跑 `daily.py`，第一期 2026-08-28 ≈09-29 结算。(3) 有账户的 Paper 需用户：开始日 / 账户 / 行情源。组合仍 1 袖（ML1 V26.8）。**禁止**：改 ML1；改 V26.8 外壳；为翻倍做彩票账本；重开 V22–V36。
 
 ---
 
@@ -102,6 +102,7 @@
 | V31 数据冻结 | 73 连续 + 5,614 逐合约，0 失败，manifest sha256 | ✅ | 2026-09-06 |
 | MT5 D1 合法对象清点 | 用户执行偏好 MT5；对照 ATLAS：可立即做 = 0；`CN_INFO_TO_COMMODITY` 排 V31 后；V31→GOLD/SILVER/COPPER/CrudeOIL 执行映射与实测成本已写 | ✅ | 2026-09-06 |
 | A 股 V26.5 冻结 | 只出 SHORTLIST + LEDGER_TOP20；不再改外壳 | 🔒 | 2026-09-06 |
+| V36 INDUSTRY_TO_FUTURES | A 股行业桶 → 72 期货品种截面只算一次：验证 LS −11.6% t −1.14、毛价差 t −0.89、研究 −30.7%、滚动 2/5 → NO_CANDIDATE；ATLAS 80 | ✅ 层关闭；不调；不编薄家族 | 2026-09-06 |
 | V35 CN_INFO_TO_COMMODITY | A 股指数 → CU/AG/AU/SC 篮子择时只算一次：验证 8 期（指数止于 2024-02-29）永远做多 = EW4，t 1.86；研究 LF +18% < EW4 +36% → NO_CANDIDATE；ATLAS 79 | ✅ 层关闭；合法新 D1 = 0 | 2026-09-06 |
 | V26.5 ML1 EQMONEY 80PCT MAIN | 用户允许 80% → 只算一次：验证 +12.1%（t 2.65）VIABLE；近期窗诊断 +28.6% 但超额 t 0.16 = β，近 6 月 −7.7%。`daily.py` 默认 80%（09-04 名单 8 只） | ✅ 合同+读取+诊断+管线；⏳ 影子账本；用户自决 | 2026-09-06 |
 | V26.4 ML1 EQMONEY 70PCT MAIN | 用户 00:13 允许等金额多手 → V26.3 拆解（一手制是主因）→ V26.4 只算一次：验证 +13.4%、超额 t 2.55 → VIABLE_HISTORICAL；出场遇跌停顺延规则新增；`daily.py` 默认切换（09-04 名单 7 只） | ✅ 合同+单次读取+管线；⏳ 影子账本前向；用户自决是否上 ¥20k | 2026-09-06 |

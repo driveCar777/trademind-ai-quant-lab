@@ -1,9 +1,9 @@
 {
  "id": "POST_V21_FAILURE_ATLAS",
  "read_only": true,
- "span": "V8-V32",
- "n_rows": 79,
- "n_val_capital_neg": 55,
+ "span": "V8-V36",
+ "n_rows": 80,
+ "n_val_capital_neg": 56,
  "n_beat_ew_overlap": 13,
  "n_level1": 2,
  "new_independent": 0,
@@ -1331,6 +1331,22 @@
    "fdr_discovery": false,
    "rolling_positive": "4/5",
    "decision": "CN_INFO_TO_COMMODITY_V35_NO_CANDIDATE — no timing vs dead-hold; research LF +18% < EW4 +36%. Layer closed. Legal new D1 objects now 0. Sleeve count still 1 (ML1 V26.8)."
+  },
+  {
+   "id": "V36_INDUSTRY_TO_FUTURES",
+   "version": "V36",
+   "universe": "CN futures 72 mapped products (EB unmapped); same-contract 20d open-open LS tercile; industry as-of through 2024-02-15",
+   "mechanism": "5 A-share industry-bucket features (product-specific X, not V31 price/OI/term, not V35 identical index X) -> LGBM walk-forward frozen 2022-06-30",
+   "family": "CN_INDUSTRY_TO_FUTURES",
+   "val_mean_forward": "gross L-S -0.46%/20d t -0.89 (20 periods)",
+   "val_mf_sign": "NEG",
+   "val_capital": "LS -11.6% CAGR -6.9% t -1.14 MaxDD -15.7%; LO -1.5%; research LS -30.7% t -1.74",
+   "val_capital_sign": "NEG",
+   "beat_ew": false,
+   "corr_h11_month": null,
+   "fdr_discovery": false,
+   "rolling_positive": "2/5",
+   "decision": "CN_INDUSTRY_TO_FUTURES_V36_NO_CANDIDATE — industry-bucket mapping is opposite-sign noise, not a weak residual. Do not retune map/features/window. Layer closed. Sleeve count still 1 (ML1 V26.8). Do not invent a thin follow-on family."
   }
  ]
 }
