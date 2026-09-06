@@ -4,17 +4,18 @@
   "summary": {
     "boards": "MAIN",
     "capital_yuan": 20000.0,
-    "contract": "ML1_FULL_TOPUP_CONTRIB2K_MAIN",
+    "contract": "ML1_SCALED_UNIT_N10_FULL_CONTRIB2K_MAIN",
     "deposits_to_date": 0.0,
     "equity_end_closed": 20000.0,
     "exposure": 1.0,
-    "historical_gate": "VIABLE_HISTORICAL (V26.7 single read 2026-09-06: validation TWR +27.0%, t 3.58, MaxDD -13.2%)",
+    "historical_gate": "VIABLE_HISTORICAL (V26.8 single read 2026-09-06: validation TWR +39.0%, t 2.86, daily MaxDD -24.4%)",
     "last_closed_signal_month": null,
     "max_price": 100.0,
     "money": "NONE (shadow)",
     "monthly_contrib": 2000.0,
     "n_names": "EMERGENT",
     "n_periods": 0,
+    "n_target": 10,
     "orders_sent": false
   }
 }

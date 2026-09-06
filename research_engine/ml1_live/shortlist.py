@@ -79,20 +79,22 @@ def write_shortlist_one_lot(pack, scores_t, elig_t, t, capital=20_000.0, exposur
     return out
 
 
-def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposure=0.70, boards="MAIN", max_price=100.0, tag="SHORTLIST", topup=False):
+def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposure=0.70, boards="MAIN", max_price=100.0, tag="SHORTLIST", topup=False, n_target=0):
     """V26.4 ML1_EQMONEY_70PCT_MAIN: N = floor(exposure*capital/2000); 2000 yuan per name; lots from close (recheck at open).
-    topup=True (V26.6): second pass fills the exposure budget with extra lots on the same names, in score order, 1 lot per cycle."""
+    topup=True (V26.6): second pass fills the exposure budget with extra lots on the same names, in score order, 1 lot per cycle.
+    n_target>0 (V26.8): unit = max(2000, capital/n_target) so the list is capped at n_target names as the account grows."""
     dates, symbols = pack["dates"], pack["symbols"]
     c = np.asarray(pack["close"][t], dtype=float)
     m = elig_t & board_mask(symbols, boards) & np.isfinite(scores_t) & np.isfinite(c) & (c <= max_price)
     idx = np.where(m)[0]
     order = idx[np.lexsort((idx, scores_t[idx]))][::-1]
-    n = int((exposure * capital) // UNIT_YUAN)
+    unit = max(UNIT_YUAN, capital / n_target) if n_target > 0 else UNIT_YUAN
+    n = int((exposure * capital) // unit)
     rows, skipped = [], 0
     for j in order:
         j = int(j)
         px = float(c[j])
-        lots = int(UNIT_YUAN // (LOT * px)) if px > 0 else 0
+        lots = int(unit // (LOT * px)) if px > 0 else 0
         if lots == 0:
             skipped += 1
             continue
@@ -113,11 +115,16 @@ def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposu
                     added = True
             if not added:
                 break
-    act = ("next session open: buy lots=floor(2000/(100*open)) of each; then fill the remaining %d%% budget with extra lots on the same names in rank order, 1 lot per pass; "
-           "hold %d sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens" % (round(exposure * 100), HOLD)) if topup else \
-          ("next session open: buy lots=floor(2000/(100*open)) of each; hold %d sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens" % HOLD)
-    contract = "ML1_FULL_TOPUP_CONTRIB2K_MAIN" if (topup and exposure >= 0.999) else "ML1_EQMONEY_%dPCT_%sMAIN" % (round(exposure * 100), "TOPUP_" if topup else "")
-    out = {"kind": tag, "contract": contract, "boards": boards, "max_price": max_price, "exposure": exposure, "unit_yuan": UNIT_YUAN, "signal_date": dates[t],
+    act = ("next session open: buy lots=floor(%.0f/(100*open)) of each; then fill the remaining %d%% budget with extra lots on the same names in rank order, 1 lot per pass; "
+           "hold %d sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens" % (unit, round(exposure * 100), HOLD)) if topup else \
+          ("next session open: buy lots=floor(%.0f/(100*open)) of each; hold %d sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens" % (unit, HOLD))
+    if n_target > 0 and topup and exposure >= 0.999:
+        contract = "ML1_SCALED_UNIT_N%d_FULL_CONTRIB2K_MAIN" % n_target
+    elif topup and exposure >= 0.999:
+        contract = "ML1_FULL_TOPUP_CONTRIB2K_MAIN"
+    else:
+        contract = "ML1_EQMONEY_%dPCT_%sMAIN" % (round(exposure * 100), "TOPUP_" if topup else "")
+    out = {"kind": tag, "contract": contract, "boards": boards, "max_price": max_price, "exposure": exposure, "unit_yuan": round(unit, 2), "n_target": n_target, "signal_date": dates[t],
            "topup": topup, "est_invested_yuan": round(sum(r["est_yuan"] for r in rows), 2), "act": act,
            "capital_yuan": capital, "n_target": n, "n_names": len(rows), "skipped_price_too_high_for_2000": skipped, "names": rows,
            "execution": "MANUAL by owner in ordinary account; no API, no automation", "orders_sent": False}
@@ -128,20 +135,22 @@ def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposu
 
 
 def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_CAPITAL, boards="MAIN_CHINEXT", n=N_NAMES, max_price=None, one_lot=False, exposure=0.70, eq_money=False, topup=False,
-                        monthly_contrib=0.0):
+                        monthly_contrib=0.0, n_target=0):
     dates = pack["dates"]
     last = len(dates) - 1
     start = dates[first_signal_index]
     bk = top_n_book(pack, S, elig, xok, start, dates[last], capital=capital, n=n, boards=boards, max_price=max_price, one_lot=one_lot, exposure=exposure, eq_money=eq_money, topup=topup,
-                    monthly_contrib=monthly_contrib)
+                    monthly_contrib=monthly_contrib, n_target=n_target)
     ewm = {}
     ew_end_i = last - HOLD - 1
     if ew_end_i >= first_signal_index:
         ew = ew_overlapping(pack, elig, xok, start, dates[ew_end_i], HOLD)
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
     summ = summarize(bk, ewm) if bk["trades"] else {"n_periods": 0}
-    if eq_money and topup and exposure >= 0.999 and monthly_contrib > 0:
-        contract, gate = "ML1_FULL_TOPUP_CONTRIB%dK_MAIN" % round(monthly_contrib / 1000), "VIABLE_HISTORICAL (V26.7 single read 2026-09-06: validation TWR +27.0%, t 3.58, MaxDD -13.2%)"
+    if eq_money and topup and exposure >= 0.999 and monthly_contrib > 0 and n_target > 0:
+        contract, gate = "ML1_SCALED_UNIT_N%d_FULL_CONTRIB%dK_MAIN" % (n_target, round(monthly_contrib / 1000)), "VIABLE_HISTORICAL (V26.8 single read 2026-09-06: validation TWR +39.0%, t 2.86, daily MaxDD -24.4%)"
+    elif eq_money and topup and exposure >= 0.999 and monthly_contrib > 0:
+        contract, gate = "ML1_FULL_TOPUP_CONTRIB%dK_MAIN" % round(monthly_contrib / 1000), "VIABLE_HISTORICAL (V26.7 single read 2026-09-06: validation TWR +27.0%, t 3.58, MaxDD -17.6% TWR)"
     elif eq_money and topup:
         contract, gate = "ML1_EQMONEY_%dPCT_TOPUP_MAIN" % round(exposure * 100), "VIABLE_HISTORICAL (V26.6 single read 2026-09-06: validation +33.9%, t 2.56)"
     elif eq_money:
@@ -152,7 +161,7 @@ def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_C
         contract, gate = "ML1_TOP%d_MANUAL" % n, None
     summ.update({"contract": contract, "boards": boards, "max_price": max_price, "capital_yuan": capital, "n_names": ("EMERGENT" if (one_lot or eq_money) else n),
                  "exposure": (exposure if (one_lot or eq_money) else 1.0), "money": "NONE (shadow)", "orders_sent": False, "historical_gate": gate,
-                 "monthly_contrib": monthly_contrib, "equity_end_closed": round(bk.get("equity_end", capital), 2), "deposits_to_date": round(bk.get("deposits", 0.0), 2),
+                 "monthly_contrib": monthly_contrib, "n_target": n_target, "equity_end_closed": round(bk.get("equity_end", capital), 2), "deposits_to_date": round(bk.get("deposits", 0.0), 2),
                  "last_closed_signal_month": (bk["trades"][-1]["signal_date"][:7] if bk["trades"] else None)})
     out = {"summary": summ, "periods": [dict((k, v) for k, v in tr.items() if k != "names") for tr in bk["trades"]],
            "fills_by_period": dict((tr["signal_date"], tr["names"]) for tr in bk["trades"])}

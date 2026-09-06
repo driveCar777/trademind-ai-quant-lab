@@ -41,6 +41,7 @@ def main(argv=None):
     ap.add_argument("--max-price", type=float, default=100.0, help="owner's price ceiling (signal-day close)")
     ap.add_argument("--exposure", type=float, default=1.0, help="fixed fraction of capital deployable (owner 2026-09-06 09:14: 100%%, V26.7; ¥200 fee reserve; never tuned)")
     ap.add_argument("--monthly-contrib", type=float, default=2_000.0, help="owner's standing monthly deposit, added on the first signal day of each month (V26.7)")
+    ap.add_argument("--n-target", type=int, default=10, help="V26.8: unit = max(2000, capital/n_target); caps the list at n_target names as the account grows (research-selected from {10,20,40})")
     ap.add_argument("--n-names", type=int, default=0, help="legacy V26.1/V26.2 fixed-N mode; 0 = emergent-N mode (V26.4 eq-money by default)")
     ap.add_argument("--one-lot", action="store_true", help="V26.3 one-lot mode (NOT_VIABLE; kept for reference) instead of V26.4 equal-money")
     ap.add_argument("--no-topup", action="store_true", help="disable V26.6 second-pass top-up (default ON since 2026-09-06: fills the exposure budget with extra lots on the same names)")
@@ -113,7 +114,7 @@ def main(argv=None):
 
     def _shortlist(sc_t, el_t, ti, tag):
         if eq_money:
-            return write_shortlist_eq_money(pack, sc_t, el_t, ti, capital=cap_now[0], exposure=a.exposure, boards=a.boards, max_price=a.max_price, tag=tag, topup=topup)
+            return write_shortlist_eq_money(pack, sc_t, el_t, ti, capital=cap_now[0], exposure=a.exposure, boards=a.boards, max_price=a.max_price, tag=tag, topup=topup, n_target=a.n_target)
         if one_lot:
             return write_shortlist_one_lot(pack, sc_t, el_t, ti, capital=a.manual_capital, exposure=a.exposure, boards=a.boards, max_price=a.max_price, tag=tag)
         return write_shortlist(pack, sc_t, el_t, ti, tag=tag, capital=a.manual_capital, boards=a.boards, n=a.n_names, max_price=a.max_price)
@@ -121,7 +122,7 @@ def main(argv=None):
     S, sig_idx = ledger["_scores_matrix"], ledger["_signal_indices"]
     if sig_idx:
         top20 = update_top20_ledger(pack, S, elig, xok, sig_idx[0], capital=a.manual_capital, boards=a.boards, n=max(a.n_names, 1), max_price=a.max_price,
-                                    one_lot=one_lot, exposure=a.exposure, eq_money=eq_money, topup=topup, monthly_contrib=a.monthly_contrib)
+                                    one_lot=one_lot, exposure=a.exposure, eq_money=eq_money, topup=topup, monthly_contrib=a.monthly_contrib, n_target=a.n_target)
         status["ledger_top20"] = top20["summary"]
         for si in sig_idx:
             _shortlist(S[si], elig[si], si, "SHORTLIST_SHADOW")

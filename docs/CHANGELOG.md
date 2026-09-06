@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-09-06 (09:50) — V26.8 scaled unit (N_target cap) + multi-horizon analysis; adopted
+
+- Ex-ante: ¥5 minimum commission on ¥2,000 names = 0.5%/period ≈ 5.8%/yr, and deposits diluted the V26.7 list to 125 names (per-invested-yuan return 1.58% vs 1.98%, paired t −2.25). `V26_8_ML1_SCALED_UNIT_CONTRACT.md` committed before run: `unit = max(¥2,000, equity/N_target)`, grid {10, 20, 40} selected on RESEARCH by per-period Sharpe, winner read once on VALIDATION. `scale_book.py` adds a daily mark-to-market, deposit-adjusted TWR curve and day/week/month/quarter/year/rolling-1-3-5y statistics.
+- Research grid: N10 +551% (CAGR 21.3%, Sharpe 0.219) / N20 +422% / N40 +369% — monotone; winner N10. Validation: TWR +39.0% (CAGR 14.0%), excess +2.05%/20d t 2.86, 19/29, money ¥74k → ¥86.9k, profit ¥12.9k, IRR 10.4% (V26.7: +27%, IRR 4.2%). → `ML1_SCALED_UNIT_N10_FULL_CONTRIB2K_MAIN_VIABLE_HISTORICAL`; adopted as `daily.py --n-target 10` default; `shortlist.py` / `LEDGER_TOP20` use the scaled unit.
+- Multi-horizon (daily MTM): research daily σ 1.8%, worst day −9.9%, worst week −21%, worst month −31%, 2015 +147%, 2017/2018 −22% each, **daily MaxDD −55.9%** (2015-06→09, 231 sessions to recover), rolling 1y negative 22% of start days, 3y 13.5%, 5y 0%; validation weekly positive only 48%, **daily MaxDD −24.4%** (2022-01→04). Correction: period-end MaxDD computed on deposit-inclusive equity understated drawdowns (V26.7 validation −13% → −18% TWR-based; V26.8 −5% → −15%); `maxdd_period_end_twr` written into both READ files. Shell frozen.
+
 ## 2026-09-06 (09:35) — V26.7: 100% exposure + ¥2,000 monthly deposit (owner's ex-ante constraint change); adopted
 
 - Owner 09:14: no 80% cap, all cash deployable; at least ¥2k deposited monthly. `V26_7_ML1_FULL_TOPUP_CONTRIB_CONTRACT.md` committed before the run; adoption rule = VIABLE (exposure and deposits are the owner's decision, not selected by return). `top_n_book.py`: `monthly_contrib` (added on the first signal day of each month before buying), ¥200 fee reserve at 100%, `total` stays time-weighted, plus deposits / profit / IRR; `_irr` approximation superseded by exact-deposit-date IRR written into the READ file post hoc.

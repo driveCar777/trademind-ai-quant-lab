@@ -24,16 +24,17 @@ def daily_curve(pack, trades, capital):
     dates, symbols = pack["dates"], pack["symbols"]
     sidx = dict((s, i) for i, s in enumerate(symbols))
     close = pack["close"]
-    curve_d, curve_v, cash, prev_dep = [], [], float(capital), 0.0
+    curve_d, curve_v, curve_dep, cash, prev_dep = [], [], [], float(capital), 0.0
     for k, tr in enumerate(trades):
         dep = tr.get("deposits_to_date", 0.0) - prev_dep
         prev_dep = tr.get("deposits_to_date", 0.0)
         cash += dep
+        dep_today = dep
         i_entry = dates.index(tr["entry"])
         i_next = dates.index(trades[k + 1]["entry"]) if k + 1 < len(trades) else min(dates.index(tr["exit"]) + 1, len(dates))
         pos = []
         for nm in tr["names"]:
-            if nm.get("status", "").startswith("FILL") or nm.get("status") == "STUCK":
+            if "yuan" in nm and nm.get("exit"):
                 j = sidx[nm["symbol"]]
                 pos.append((j, nm["lots"] * LOT, nm["yuan"], nm["net"], dates.index(nm["exit"]) if nm.get("exit") else i_next))
                 cash -= nm["yuan"]
@@ -45,10 +46,15 @@ def daily_curve(pack, trades, capital):
                     v += sh * c if np.isfinite(c) and c > 0 else yuan
                 else:
                     v += yuan + net
-            curve_d.append(dates[d]); curve_v.append(v)
+            curve_d.append(dates[d]); curve_v.append(v); curve_dep.append(dep_today); dep_today = 0.0
         for j, sh, yuan, net, i_exit in pos:
             cash += yuan + net
-    return curve_d, np.array(curve_v)
+    v = np.array(curve_v); dep = np.array(curve_dep)
+    # time-weighted index: deposits are cash flows, not returns
+    r = np.ones(v.size)
+    r[1:] = v[1:] / (v[:-1] + dep[1:])
+    idx = float(capital) * np.cumprod(r)
+    return curve_d, idx, v
 
 
 def _period_returns(cd, cv, key):
@@ -163,7 +169,7 @@ def main():
     out["winner_n_target"] = winner
     print(TAG, "WINNER N_target", winner, flush=True)
     bk_r = grid[winner][1]
-    cd, cv = daily_curve(pack, bk_r["trades"], SHELL["capital"])
+    cd, cv, cm = daily_curve(pack, bk_r["trades"], SHELL["capital"])
     out["research"] = dict(grid[winner][0]); out["research"]["irr"] = irr_exact(bk_r["trades"], SHELL["capital"], SHELL["monthly_contrib"])
     out["research"]["multi_horizon"] = multi_horizon(cd, cv)
     # single validation read of the winner
@@ -176,15 +182,16 @@ def main():
     for k in ("equity_end", "deposits", "invested_total", "profit_yuan"):
         s[k] = bk_v.get(k)
     s["irr"] = irr_exact(bk_v["trades"], SHELL["capital"], SHELL["monthly_contrib"])
-    cd2, cv2 = daily_curve(pack, bk_v["trades"], SHELL["capital"])
+    cd2, cv2, cm2 = daily_curve(pack, bk_v["trades"], SHELL["capital"])
     s["multi_horizon"] = multi_horizon(cd2, cv2)
     out["validation"] = s
     out["validation_trades"] = [dict((k, v) for k, v in tr.items() if k != "names") for tr in bk_v["trades"]]
     out["research_trades"] = [dict((k, v) for k, v in tr.items() if k != "names") for tr in bk_r["trades"]]
     viable = bool(s["total"] > 0 and (s["mean_excess_vs_ew"] or 0) > 0)
     out["label"] = "ML1_SCALED_UNIT_N%d_FULL_CONTRIB2K_MAIN_%s" % (winner, "VIABLE_HISTORICAL" if viable else "NOT_VIABLE")
-    np.save(os.path.join(OUT, "V26_8_DAILY_CURVE_RESEARCH.npy"), np.array(list(zip(cd, cv)), dtype=object), allow_pickle=True)
-    np.save(os.path.join(OUT, "V26_8_DAILY_CURVE_VALIDATION.npy"), np.array(list(zip(cd2, cv2)), dtype=object), allow_pickle=True)
+    np.save(os.path.join(OUT, "V26_8_DAILY_CURVE_RESEARCH.npy"), np.array(list(zip(cd, cv, cm)), dtype=object), allow_pickle=True)
+    np.save(os.path.join(OUT, "V26_8_DAILY_CURVE_VALIDATION.npy"), np.array(list(zip(cd2, cv2, cm2)), dtype=object), allow_pickle=True)
+    out["research"]["money_curve_end"] = float(cm[-1]); out["validation"]["money_curve_end"] = float(cm2[-1])
     dump_json(fn, out)
     print(TAG, "validation", {k: (round(v, 4) if isinstance(v, float) else v) for k, v in s.items() if k in ("total", "cagr", "maxdd", "sharpe_period", "mean_excess_vs_ew", "t_excess", "beat_ew_periods", "mean_fill", "profit_yuan", "irr")}, flush=True)
     print(TAG, "DONE", out["label"], flush=True)

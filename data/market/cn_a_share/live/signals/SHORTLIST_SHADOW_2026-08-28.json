@@ -2,7 +2,7 @@
   "act": "next session open: buy lots=floor(2000/(100*open)) of each; then fill the remaining 100% budget with extra lots on the same names in rank order, 1 lot per pass; hold 20 sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens",
   "boards": "MAIN",
   "capital_yuan": 20000.0,
-  "contract": "ML1_FULL_TOPUP_CONTRIB2K_MAIN",
+  "contract": "ML1_SCALED_UNIT_N10_FULL_CONTRIB2K_MAIN",
   "est_invested_yuan": 19746.0,
   "execution": "MANUAL by owner in ordinary account; no API, no automation",
   "exposure": 1.0,
