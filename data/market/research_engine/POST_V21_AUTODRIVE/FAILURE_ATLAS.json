@@ -2,7 +2,7 @@
  "id": "POST_V21_FAILURE_ATLAS",
  "read_only": true,
  "span": "V8-V32",
- "n_rows": 78,
+ "n_rows": 79,
  "n_val_capital_neg": 55,
  "n_beat_ew_overlap": 13,
  "n_level1": 2,
@@ -1315,6 +1315,22 @@
    "fdr_discovery": false,
    "rolling_positive": "3/5 (2021 -5.8%, 2023H1 -4.5%)",
    "decision": "CN_FUTURES_XS_V31_NO_CANDIDATE — price/OI/term-structure layer on CN futures is a weak same-sign residual, not a second sleeve. Do not retune. Do not map GOLD/OIL on +6%. Next legal layer = CN_INFO_TO_COMMODITY (A-share PIT -> CU/AG/AU/SC), low power declared."
+  },
+  {
+   "id": "V35_CN_INFO_TO_COMMODITY",
+   "version": "V35",
+   "universe": "CU/AG/AU/SC roll-adjusted 20d; HS300+ZZ500 PIT through 2024-02-29",
+   "mechanism": "5 A-share index features (identical across names) -> pooled LGBM -> long-flat basket when pred>0",
+   "family": "CN_INFO_TO_COMMODITY",
+   "val_mean_forward": "n/a (timing)",
+   "val_mf_sign": "n/a",
+   "val_capital": "LF +11.9% on 8 periods = EW4 (always on); t 1.86; index file ends 2024-02-29",
+   "val_capital_sign": "POS_NO_TIMING",
+   "beat_ew": false,
+   "corr_h11_month": null,
+   "fdr_discovery": false,
+   "rolling_positive": "4/5",
+   "decision": "CN_INFO_TO_COMMODITY_V35_NO_CANDIDATE — no timing vs dead-hold; research LF +18% < EW4 +36%. Layer closed. Legal new D1 objects now 0. Sleeve count still 1 (ML1 V26.8)."
   }
  ]
 }

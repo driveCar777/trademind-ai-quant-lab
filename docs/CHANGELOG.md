@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-09-06 (10:25) — V35 A-share info → commodities: NO_CANDIDATE; legal new D1 objects = 0
+
+- Contract committed before run. CU/AG/AU/SC same-contract 20d returns + 5 HS300/ZZ500 features (not V31's 8) → pooled LGBM → long-flat basket if pred>0. Index daily files end 2024-02-29 so validation has 8 periods only.
+- `CN_INFO_TO_COMMODITY_V35_NO_CANDIDATE`: G1/G3/G4 pass; G2 t 1.86; G5 fail (validation always on, LF ≡ EW4). Research does time (51% invested) but LF +18% < dead-hold EW4 +36%. Layer closed. ATLAS 79. No new D1 family left that is both legal and pre-declared. Sleeve count remains 1 (ML1 V26.8).
+
 ## 2026-09-06 (10:10) — V31 CN futures XS: NO_CANDIDATE (weak same-sign residual)
 
 - Contract `V31_CN_FUTURES_XS_CONTRACT.md` committed before run. Pre-run revision (no scores yet): honest 20-day labels from per-contract series (2018-05+), first pred 2019-07, research→2023-06, validation 2023-07→2026-08. 8 features → one LightGBM (V25 params) frozen 2023-06-30 → LS tercile, 3.3 bp/side. Roll unit test passed (synthetic +10% jump → same-contract 0). `cn_futures_v31/pack.py` + `run.py`; refuses rerun.
