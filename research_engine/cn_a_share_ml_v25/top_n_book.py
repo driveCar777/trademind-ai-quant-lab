@@ -244,8 +244,9 @@ FEE_RESERVE_FULL = 200.0   # V26.7: cash kept back at 100% exposure so buy commi
 
 
 def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None, one_lot=False, exposure=0.70, eq_money=False, hold=HOLD, topup=False,
-               monthly_contrib=0.0):
-    """monthly_contrib > 0 (V26.7): add that cash on the first signal day of each calendar month, before buying. 'total' stays time-weighted (chain of per-period ret)."""
+               monthly_contrib=0.0, n_target=0):
+    """monthly_contrib > 0 (V26.7): add that cash on the first signal day of each calendar month, before buying. 'total' stays time-weighted (chain of per-period ret).
+    n_target > 0 (V26.8): unit = max(UNIT_YUAN, equity / n_target) so the name count is capped and the min-fee drag shrinks as equity grows."""
     dates = pack["dates"]
     i0, i1 = dates.index(start), dates.index(end)
     equity, trades, t = float(capital), [], i0
@@ -255,8 +256,11 @@ def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N
         if monthly_contrib > 0 and dates[t][:7] != last_month and last_month is not None:
             equity += monthly_contrib
             deposits += monthly_contrib
+        unit = max(UNIT_YUAN, equity / n_target) if n_target > 0 else UNIT_YUAN
         if eq_money:
-            per = eq_money_period(pack, scores[t], elig[t], xok, t, equity, exposure, UNIT_YUAN, boards, max_price, hold, topup, fee_reserve)
+            per = eq_money_period(pack, scores[t], elig[t], xok, t, equity, exposure, unit, boards, max_price, hold, topup, fee_reserve)
+            if per is not None:
+                per["unit_yuan"] = round(unit, 2)
         elif one_lot:
             per = one_lot_period(pack, scores[t], elig[t], xok, t, equity, exposure, boards, max_price)
         else:
