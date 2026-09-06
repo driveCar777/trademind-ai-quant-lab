@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-09-06 (10:10) — V31 CN futures XS: NO_CANDIDATE (weak same-sign residual)
+
+- Contract `V31_CN_FUTURES_XS_CONTRACT.md` committed before run. Pre-run revision (no scores yet): honest 20-day labels from per-contract series (2018-05+), first pred 2019-07, research→2023-06, validation 2023-07→2026-08. 8 features → one LightGBM (V25 params) frozen 2023-06-30 → LS tercile, 3.3 bp/side. Roll unit test passed (synthetic +10% jump → same-contract 0). `cn_futures_v31/pack.py` + `run.py`; refuses rerun.
+- Result `CN_FUTURES_XS_V31_NO_CANDIDATE`: G1 validation LS +6.0% (CAGR 1.9%, t 0.48) pass; G4 research LS +13.9% pass; G2 gross L−S +0.32%/20d t 0.81 fail; G3 rolling 3/5 fail (2021 −5.8%, 2023H1 −4.5%); G5 validation align n=0 (V26.8 book ends 2024-01-26, 7-day offset > 5-day tolerance) — combined overlap n=21 corr 0.25 would have passed. Research LO +61% is 2020 commodity β. Jump bias vs continuous 0.1–0.2%/20d. ATLAS 78. Do not retune; do not map GOLD/OIL. Next = V35 `CN_INFO_TO_COMMODITY`.
+
 ## 2026-09-06 (09:50) — V26.8 scaled unit (N_target cap) + multi-horizon analysis; adopted
 
 - Ex-ante: ¥5 minimum commission on ¥2,000 names = 0.5%/period ≈ 5.8%/yr, and deposits diluted the V26.7 list to 125 names (per-invested-yuan return 1.58% vs 1.98%, paired t −2.25). `V26_8_ML1_SCALED_UNIT_CONTRACT.md` committed before run: `unit = max(¥2,000, equity/N_target)`, grid {10, 20, 40} selected on RESEARCH by per-period Sharpe, winner read once on VALIDATION. `scale_book.py` adds a daily mark-to-market, deposit-adjusted TWR curve and day/week/month/quarter/year/rolling-1-3-5y statistics.
