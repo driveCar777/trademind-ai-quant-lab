@@ -10,7 +10,7 @@ import numpy as np
 
 from research_engine.cn_a_share.io_util import dump_json, write_csv
 from research_engine.cn_a_share_alpha_v2.books import ew_overlapping
-from research_engine.cn_a_share_ml_v25.top_n_book import HOLD, LOT, N_NAMES, UNIT_YUAN, board_mask, summarize, top_n_book
+from research_engine.cn_a_share_ml_v25.top_n_book import FEE_RESERVE_FULL, HOLD, LOT, N_NAMES, UNIT_YUAN, board_mask, summarize, top_n_book
 from research_engine.ml1_live import LEDGER_DIR, SIGNALS
 
 TAG = "ML1_LIVE_TOP20"
@@ -100,7 +100,8 @@ def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposu
         if len(rows) >= n:
             break
     if topup and rows:
-        budget = exposure * capital - sum(r["est_yuan"] for r in rows)
+        reserve = FEE_RESERVE_FULL if exposure >= 0.999 else 0.0  # V26.7: keep ¥200 for buy commissions at 100%
+        budget = exposure * capital - reserve - sum(r["est_yuan"] for r in rows)
         while True:
             added = False
             for r in rows:
@@ -115,7 +116,8 @@ def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposu
     act = ("next session open: buy lots=floor(2000/(100*open)) of each; then fill the remaining %d%% budget with extra lots on the same names in rank order, 1 lot per pass; "
            "hold %d sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens" % (round(exposure * 100), HOLD)) if topup else \
           ("next session open: buy lots=floor(2000/(100*open)) of each; hold %d sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens" % HOLD)
-    out = {"kind": tag, "contract": "ML1_EQMONEY_%dPCT_%sMAIN" % (round(exposure * 100), "TOPUP_" if topup else ""), "boards": boards, "max_price": max_price, "exposure": exposure, "unit_yuan": UNIT_YUAN, "signal_date": dates[t],
+    contract = "ML1_FULL_TOPUP_CONTRIB2K_MAIN" if (topup and exposure >= 0.999) else "ML1_EQMONEY_%dPCT_%sMAIN" % (round(exposure * 100), "TOPUP_" if topup else "")
+    out = {"kind": tag, "contract": contract, "boards": boards, "max_price": max_price, "exposure": exposure, "unit_yuan": UNIT_YUAN, "signal_date": dates[t],
            "topup": topup, "est_invested_yuan": round(sum(r["est_yuan"] for r in rows), 2), "act": act,
            "capital_yuan": capital, "n_target": n, "n_names": len(rows), "skipped_price_too_high_for_2000": skipped, "names": rows,
            "execution": "MANUAL by owner in ordinary account; no API, no automation", "orders_sent": False}
@@ -125,18 +127,22 @@ def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposu
     return out
 
 
-def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_CAPITAL, boards="MAIN_CHINEXT", n=N_NAMES, max_price=None, one_lot=False, exposure=0.70, eq_money=False, topup=False):
+def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_CAPITAL, boards="MAIN_CHINEXT", n=N_NAMES, max_price=None, one_lot=False, exposure=0.70, eq_money=False, topup=False,
+                        monthly_contrib=0.0):
     dates = pack["dates"]
     last = len(dates) - 1
     start = dates[first_signal_index]
-    bk = top_n_book(pack, S, elig, xok, start, dates[last], capital=capital, n=n, boards=boards, max_price=max_price, one_lot=one_lot, exposure=exposure, eq_money=eq_money, topup=topup)
+    bk = top_n_book(pack, S, elig, xok, start, dates[last], capital=capital, n=n, boards=boards, max_price=max_price, one_lot=one_lot, exposure=exposure, eq_money=eq_money, topup=topup,
+                    monthly_contrib=monthly_contrib)
     ewm = {}
     ew_end_i = last - HOLD - 1
     if ew_end_i >= first_signal_index:
         ew = ew_overlapping(pack, elig, xok, start, dates[ew_end_i], HOLD)
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
     summ = summarize(bk, ewm) if bk["trades"] else {"n_periods": 0}
-    if eq_money and topup:
+    if eq_money and topup and exposure >= 0.999 and monthly_contrib > 0:
+        contract, gate = "ML1_FULL_TOPUP_CONTRIB%dK_MAIN" % round(monthly_contrib / 1000), "VIABLE_HISTORICAL (V26.7 single read 2026-09-06: validation TWR +27.0%, t 3.58, MaxDD -13.2%)"
+    elif eq_money and topup:
         contract, gate = "ML1_EQMONEY_%dPCT_TOPUP_MAIN" % round(exposure * 100), "VIABLE_HISTORICAL (V26.6 single read 2026-09-06: validation +33.9%, t 2.56)"
     elif eq_money:
         contract, gate = "ML1_EQMONEY_%dPCT_MAIN" % round(exposure * 100), "VIABLE_HISTORICAL (V26.4 70%% / V26.5 80%% single reads 2026-09-06)"
@@ -145,7 +151,9 @@ def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_C
     else:
         contract, gate = "ML1_TOP%d_MANUAL" % n, None
     summ.update({"contract": contract, "boards": boards, "max_price": max_price, "capital_yuan": capital, "n_names": ("EMERGENT" if (one_lot or eq_money) else n),
-                 "exposure": (exposure if (one_lot or eq_money) else 1.0), "money": "NONE (shadow)", "orders_sent": False, "historical_gate": gate})
+                 "exposure": (exposure if (one_lot or eq_money) else 1.0), "money": "NONE (shadow)", "orders_sent": False, "historical_gate": gate,
+                 "monthly_contrib": monthly_contrib, "equity_end_closed": round(bk.get("equity_end", capital), 2), "deposits_to_date": round(bk.get("deposits", 0.0), 2),
+                 "last_closed_signal_month": (bk["trades"][-1]["signal_date"][:7] if bk["trades"] else None)})
     out = {"summary": summ, "periods": [dict((k, v) for k, v in tr.items() if k != "names") for tr in bk["trades"]],
            "fills_by_period": dict((tr["signal_date"], tr["names"]) for tr in bk["trades"])}
     dump_json(os.path.join(LEDGER_DIR, "LEDGER_TOP20.json"), out)

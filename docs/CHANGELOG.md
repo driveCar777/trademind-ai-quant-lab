@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-09-06 (09:35) — V26.7: 100% exposure + ¥2,000 monthly deposit (owner's ex-ante constraint change); adopted
+
+- Owner 09:14: no 80% cap, all cash deployable; at least ¥2k deposited monthly. `V26_7_ML1_FULL_TOPUP_CONTRIB_CONTRACT.md` committed before the run; adoption rule = VIABLE (exposure and deposits are the owner's decision, not selected by return). `top_n_book.py`: `monthly_contrib` (added on the first signal day of each month before buying), ¥200 fee reserve at 100%, `total` stays time-weighted, plus deposits / profit / IRR; `_irr` approximation superseded by exact-deposit-date IRR written into the READ file post hoc.
+- Single read: research TWR +264% (CAGR 14.2%, MaxDD −44.9%, excess +1.27%/20d t 4.47, 82/112 beat EW), money ¥236k in → ¥432k, profit ¥196k, IRR 11.2%; validation TWR +27.0% (CAGR 10.0%, MaxDD −13.2%, excess +2.44% t 3.58, 23/29), money ¥74k in → ¥79.0k, profit ¥5.0k, IRR 4.2% (last period Jan–Feb 2024 −15.1% on the largest equity). Lower TWR than V26.6 is the diversification effect of N growing with deposits (27 names in validation, 125 late research), not a defect. 2017 −30.5%, 2018 −29.6% at full exposure. → `ML1_FULL_TOPUP_CONTRIB2K_MAIN_VIABLE_HISTORICAL`, adopted: `daily.py` defaults `--exposure 1.0 --monthly-contrib 2000`; `shortlist.py` fee reserve + contract label; `LEDGER_TOP20` books monthly deposits; today's shortlist capital = closed ledger equity + this month's deposit. Smoke: 2026-08-28 shadow shortlist 10 names, ¥19,746 deployed. Shell frozen; no V26.8.
+
 ## 2026-09-06 (09:25) — V26.6 top-up: deploy the idle 42% of the ¥20k shell; adopted as `daily.py` default
 
 - Ex-ante arithmetic fact from the V26.5 read: mean idle cash 42.4% (¥2,000/name × whole lots leaves a remainder per name; names > ¥20 cannot afford one lot and are skipped), i.e. only ≈¥11.5k of ¥20k was in the market. `V26_6_ML1_EQMONEY_80PCT_TOPUP_CONTRACT.md` committed before the run: one change only — a second pass that cycles through the already-selected names in score order adding one lot each until the 80% budget is exhausted. No new names, no change to ML1, exit, or costs. Adoption rule pre-declared (VIABLE and validation > V26.5's +12.1%).
