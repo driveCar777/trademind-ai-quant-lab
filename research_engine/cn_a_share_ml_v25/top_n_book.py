@@ -158,8 +158,25 @@ def _exit_fill(pack, xok, t1, j):
     return (c if np.isfinite(c) and c > 0 else None), dates[tk], "STUCK"
 
 
-def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, hold=HOLD):
-    """V26.4: N = floor(exposure*equity/unit); equal money per name; lots = floor(unit/(100*open)); realistic carried exit."""
+def topup_lots(picks, opens, budget):
+    """V26.6 second pass: cycle through picks in score order adding 1 lot each while it fits the remaining budget. No new names."""
+    picks = [[j, lots] for j, lots in picks]
+    lot_cost = [LOT * opens[j] * (1.0 + SLIPPAGE) for j, _ in picks]
+    while True:
+        added = False
+        for i, p in enumerate(picks):
+            if lot_cost[i] <= budget:
+                p[1] += 1
+                budget -= lot_cost[i]
+                added = True
+        if not added:
+            break
+    return [(j, lots) for j, lots in picks]
+
+
+def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, hold=HOLD, topup=False):
+    """V26.4: N = floor(exposure*equity/unit); equal money per name; lots = floor(unit/(100*open)); realistic carried exit.
+    topup=True (V26.6): after the first pass, fill the remaining exposure budget with extra lots on the same names."""
     dates = pack["dates"]
     elig_t = elig_t & board_mask(pack["symbols"], boards)
     c = np.asarray(pack["close"][t], dtype=float)
@@ -187,6 +204,10 @@ def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=
         picks.append((j, lots))
         if len(picks) >= n:
             break
+    if topup and picks:
+        opens = dict((j, float(pack["open"][t0, j])) for j, _ in picks)
+        used = sum(l * LOT * opens[j] * (1.0 + SLIPPAGE) for j, l in picks)
+        picks = topup_lots(picks, opens, exposure * equity - used)
     pnl, pnl_v14, invested, n_fill, n_carry, n_stuck, names = 0.0, 0.0, 0.0, 0, 0, 0, []
     for j, lots in picks:
         r0 = "FILL" if bool(xok[t0, j]) else exec_reason(pack, t0, j)
@@ -219,13 +240,13 @@ def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=
             "pnl_v14_convention": round(pnl_v14, 2), "names": names}
 
 
-def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None, one_lot=False, exposure=0.70, eq_money=False, hold=HOLD):
+def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None, one_lot=False, exposure=0.70, eq_money=False, hold=HOLD, topup=False):
     dates = pack["dates"]
     i0, i1 = dates.index(start), dates.index(end)
     equity, trades, t = float(capital), [], i0
     while t <= i1:
         if eq_money:
-            per = eq_money_period(pack, scores[t], elig[t], xok, t, equity, exposure, UNIT_YUAN, boards, max_price, hold)
+            per = eq_money_period(pack, scores[t], elig[t], xok, t, equity, exposure, UNIT_YUAN, boards, max_price, hold, topup)
         elif one_lot:
             per = one_lot_period(pack, scores[t], elig[t], xok, t, equity, exposure, boards, max_price)
         else:
@@ -258,7 +279,7 @@ def summarize(book, ewm, hold=HOLD):
             "mean_cash_idle": float(np.mean([x["cash_idle_frac"] for x in tr])) if tr else None}
 
 
-def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=None, one_lot=False, exposure=0.70, contract=None, eq_money=False):
+def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=None, one_lot=False, exposure=0.70, contract=None, eq_money=False, topup=False):
     from research_engine.cn_a_share_alpha.pack import load_pack
     from research_engine.cn_a_share_ml_v25 import RESEARCH, VALIDATION
     from research_engine.cn_a_share_strategy_v14_1.scores import eligible, exec_ok_matrix
@@ -267,10 +288,10 @@ def main(boards="ALL", n=N_NAMES, capital=DEFAULT_CAPITAL, max_price=None, name=
     scores = np.load(os.path.join(OUT, "SCORES_ML1_LGBM.npy"), mmap_mode="r")
     elig, xok = eligible(pack, 20), exec_ok_matrix(pack)
     contract = contract or ("V26_2_ML1_TOP10_20K_MAIN_CONTRACT.md" if name else "V26_1_ML1_TOP20_MANUAL_CONTRACT.md")
-    res = {"contract": contract, "n_names": ("EMERGENT" if (one_lot or eq_money) else n), "one_lot": one_lot, "eq_money": eq_money, "unit_yuan": (UNIT_YUAN if eq_money else None),
+    res = {"contract": contract, "n_names": ("EMERGENT" if (one_lot or eq_money) else n), "one_lot": one_lot, "eq_money": eq_money, "topup": topup, "unit_yuan": (UNIT_YUAN if eq_money else None),
            "exposure": (exposure if (one_lot or eq_money) else 1.0), "min_fee": MIN_FEE, "capital": capital, "max_price": max_price, "denied_window_read": False, "boards": boards}
     for key, (a, b) in (("research", RESEARCH), ("validation", VALIDATION)):
-        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards, max_price=max_price, one_lot=one_lot, exposure=exposure, eq_money=eq_money)
+        bk = top_n_book(pack, scores, elig, xok, a, b, capital=capital, n=n, boards=boards, max_price=max_price, one_lot=one_lot, exposure=exposure, eq_money=eq_money, topup=topup)
         ew = ew_overlapping(pack, elig, xok, a, pack["dates"][pack["dates"].index(b) - HOLD - 1], HOLD)
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
         res[key] = summarize(bk, ewm)
@@ -341,7 +362,12 @@ def recent_diag(name, exposure, boards="MAIN", max_price=100.0, capital=20_000.0
 if __name__ == "__main__":
     import sys
 
-    if len(sys.argv) > 1 and sys.argv[1] == "V26_5":
+    if len(sys.argv) > 1 and sys.argv[1] == "V26_6":
+        # V26.6: V26.5 + second-pass top-up of the 80% budget with extra lots on the same names (idle cash 42% -> ~20%). Single read.
+        if os.path.isfile(os.path.join(OUT, "ML1_EQMONEY_80PCT_TOPUP_MAIN_READ.json")):
+            raise SystemExit("V26.6 already read once; refusing (single-read contract)")
+        main("MAIN", capital=20_000.0, max_price=100.0, name="ML1_EQMONEY_80PCT_TOPUP_MAIN", eq_money=True, exposure=0.80, topup=True, contract="V26_6_ML1_EQMONEY_80PCT_TOPUP_CONTRACT.md")
+    elif len(sys.argv) > 1 and sys.argv[1] == "V26_5":
         # V26.5: V26.4 with 80% exposure (owner 00:30). Single read + one recent-window diagnostic (no decision).
         if os.path.isfile(os.path.join(OUT, "ML1_EQMONEY_80PCT_MAIN_READ.json")):
             raise SystemExit("V26.5 already read once; refusing (single-read contract)")
