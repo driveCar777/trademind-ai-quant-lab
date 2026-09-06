@@ -158,13 +158,13 @@ def _exit_fill(pack, xok, t1, j):
     return (c if np.isfinite(c) and c > 0 else None), dates[tk], "STUCK"
 
 
-def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0):
+def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, hold=HOLD):
     """V26.4: N = floor(exposure*equity/unit); equal money per name; lots = floor(unit/(100*open)); realistic carried exit."""
     dates = pack["dates"]
     elig_t = elig_t & board_mask(pack["symbols"], boards)
     c = np.asarray(pack["close"][t], dtype=float)
     elig_t = elig_t & np.isfinite(c) & (c <= max_price)
-    t0, t1 = t + 1, t + 1 + HOLD
+    t0, t1 = t + 1, t + 1 + hold
     if t1 >= len(dates):
         return None
     idx = np.where(elig_t & np.isfinite(scores_t))[0]
@@ -219,35 +219,35 @@ def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=
             "pnl_v14_convention": round(pnl_v14, 2), "names": names}
 
 
-def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None, one_lot=False, exposure=0.70, eq_money=False):
+def top_n_book(pack, scores, elig, xok, start, end, capital=DEFAULT_CAPITAL, n=N_NAMES, boards="ALL", max_price=None, one_lot=False, exposure=0.70, eq_money=False, hold=HOLD):
     dates = pack["dates"]
     i0, i1 = dates.index(start), dates.index(end)
     equity, trades, t = float(capital), [], i0
     while t <= i1:
         if eq_money:
-            per = eq_money_period(pack, scores[t], elig[t], xok, t, equity, exposure, UNIT_YUAN, boards, max_price)
+            per = eq_money_period(pack, scores[t], elig[t], xok, t, equity, exposure, UNIT_YUAN, boards, max_price, hold)
         elif one_lot:
             per = one_lot_period(pack, scores[t], elig[t], xok, t, equity, exposure, boards, max_price)
         else:
             per = top_n_period(pack, scores[t], elig[t], xok, t, equity, n, boards, max_price)
         if per is None:
-            if t + 1 + HOLD >= len(dates):
+            if t + 1 + hold >= len(dates):
                 break
             t += 1
             continue
         equity += per["pnl"]
         per["equity"] = round(equity, 2)
         trades.append(per)
-        t = t + 1 + HOLD
+        t = t + 1 + hold
     return {"trades": trades, "total": equity / capital - 1.0, "equity_end": equity}
 
 
-def summarize(book, ewm):
+def summarize(book, ewm, hold=HOLD):
     tr = book["trades"]
     r = np.array([x["ret"] for x in tr])
     ew = np.array([ewm.get(x["signal_date"], np.nan) for x in tr])
     eq = np.array([x["equity"] for x in tr])
-    yrs = len(tr) * (HOLD + 1) / 242.0
+    yrs = len(tr) * (hold + 1) / 242.0
     dd = float(np.min(eq / np.maximum.accumulate(eq) - 1.0)) if len(eq) else None
     ex = r - ew
     ok = np.isfinite(ex)

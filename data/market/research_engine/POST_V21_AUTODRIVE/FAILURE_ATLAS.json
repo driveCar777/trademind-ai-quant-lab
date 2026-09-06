@@ -2,8 +2,8 @@
  "id": "POST_V21_FAILURE_ATLAS",
  "read_only": true,
  "span": "V8-V32",
- "n_rows": 76,
- "n_val_capital_neg": 54,
+ "n_rows": 77,
+ "n_val_capital_neg": 55,
  "n_beat_ew_overlap": 13,
  "n_level1": 2,
  "new_independent": 0,
@@ -1282,6 +1282,23 @@
    "rolling_positive": "n/a",
    "decision": "REPORTED_NO_DECISION (contract parameters fixed by owner constraints; nothing tuned)",
    "why_not_next": "in the recent window the 10-name low-price main-board slice carried beta only while the 999-name ML1 book had +1.00%/20d excess t 9.3 — concentration/price-cap lost the alpha; do NOT use this window to pick N/board/price; forward shadow ledger decides"
+  },
+  {
+   "id": "V33_LIMITUP_EVENT_MODEL",
+   "version": "V33",
+   "universe": "A-share eligible (V14.1), frozen panel 2012-01..2024-02; owner shell = main board close<=100, 20k, 80%, 2000/name, hold 5",
+   "mechanism": "Predict P(limit-up close within t+2..t+6) from 14 ML1 PIT features + 7 D1 event features (abnormal move, volume ratio, recent limit-ups, amplitude, distance to 250d high); LGBM classifier walk-forward, frozen 2021-08; buy top prob at t+1 open, hold 5",
+   "family": "SHORT_HORIZON_EXTREME_EVENT",
+   "val_mean_forward": "top-10% hit 12.4% vs base 4.4% (lift +8.0pp, t 60.9, 99.8% sessions positive)",
+   "val_mf_sign": "PREDICTIVE_POS",
+   "val_capital": "owner shell validation -88.1% (97 periods, excess vs shell EW -1.66%/5d t -3.4, fills 3.2/period); LO20 1M diag hold5 validation -66.5%; research shell -77.4%, LO20 -88.1%",
+   "val_capital_sign": "NEG",
+   "beat_ew": false,
+   "corr_h11_month": null,
+   "fdr_discovery": false,
+   "rolling_positive": "n/a",
+   "decision": "A_SHARE_LIMITUP_EVENT_V33_PREDICTIVE_BUT_NOT_TRADABLE_AT_20K — limit-up probability is concentrated in high-amplitude/high-vol lottery names whose mean 5d return after cost is deeply negative (MAX/lottery effect; consistent with ML1 NEG_VOL). Predictable event, unprofitable trade. Do not build higher-frequency or intraday variants on free D1 data.",
+   "why_not_next": null
   }
  ]
 }

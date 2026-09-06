@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-09-06 (09:20) — V31 dataset frozen; V33 limit-up event model single read: predictive, not tradable
+
+- `tm-cnfut-SINA-D1-20260906-000001` frozen: 73/73 declared products dominant-continuous (2005+), 5,614 per-contract series (mostly 2018-05+), 7,884 requests 0 failures, 1.22M rows, per-file sha256 manifest. V31 contract next.
+- Owner (08:37) asked for a small-capital "predict who will limit-up soon from prior-day anomalies / technicals / fundamentals" strategy. `V33_LIMITUP_EVENT_MODEL_CONTRACT.md` frozen before run; `cn_a_share_ml_v33/run.py` single read (refuses on rerun). Label = limit-up close within t+2..t+6; 21 features (ML1's 14 + 7 D1 event features); LGBM classifier walk-forward, frozen 2021-08; gate book = owner shell (¥20k, main board, 80%, ¥2,000/name) hold 5 with carried exits; diag LO20 hold 5.
+- Result: validation top-10% hit 12.4% vs base 4.4% (lift +8.0pp, t 60.9, 99.8% of sessions positive) — strongest predictive statistic in the repository; owner shell validation −88.1% (excess vs shell EW −1.66%/5d t −3.4), LO20 ¥1M −66.5%, research equally negative → `A_SHARE_LIMITUP_EVENT_V33_PREDICTIVE_BUT_NOT_TRADABLE_AT_20K`. Mechanism: lottery/MAX effect — high-amplitude, high-vol, recently-limit-up names have deeply negative mean 5-day returns; the same information ML1 uses via NEG_VOL, with the opposite sign. Not a capital-size problem. ATLAS 77 rows. `top_n_book.py` gained a `hold` parameter (default 20, unchanged behaviour).
+
 ## 2026-09-06 (01:05) — Owner execution preference (MT5); MT5 D1 legal-object inventory = 0; A-share V26.5 frozen; next cut V31
 
 - Owner: prefers to execute on MT5; futures account later; do not reopen falsified gold/oil/FX/CFD families; no H1/tick; A-share V26.5 frozen (lists + shadow ledger only, no more shell changes); no parameter/cost/leverage changes for return.
