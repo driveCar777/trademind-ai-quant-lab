@@ -4,9 +4,9 @@
   "summary": {
     "boards": "MAIN",
     "capital_yuan": 20000.0,
-    "contract": "ML1_EQMONEY_80PCT_MAIN",
+    "contract": "ML1_EQMONEY_80PCT_TOPUP_MAIN",
     "exposure": 0.8,
-    "historical_gate": "VIABLE_HISTORICAL (V26.4 70%% / V26.5 80%% single reads 2026-09-06)",
+    "historical_gate": "VIABLE_HISTORICAL (V26.6 single read 2026-09-06: validation +33.9%, t 2.56)",
     "max_price": 100.0,
     "money": "NONE (shadow)",
     "n_names": "EMERGENT",

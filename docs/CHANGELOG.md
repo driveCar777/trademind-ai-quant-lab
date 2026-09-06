@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-09-06 (09:25) — V26.6 top-up: deploy the idle 42% of the ¥20k shell; adopted as `daily.py` default
+
+- Ex-ante arithmetic fact from the V26.5 read: mean idle cash 42.4% (¥2,000/name × whole lots leaves a remainder per name; names > ¥20 cannot afford one lot and are skipped), i.e. only ≈¥11.5k of ¥20k was in the market. `V26_6_ML1_EQMONEY_80PCT_TOPUP_CONTRACT.md` committed before the run: one change only — a second pass that cycles through the already-selected names in score order adding one lot each until the 80% budget is exhausted. No new names, no change to ML1, exit, or costs. Adoption rule pre-declared (VIABLE and validation > V26.5's +12.1%).
+- Single read: research +318% (CAGR 15.9%, MaxDD −44.8%, excess +1.25%/20d t 4.30, idle 21%); validation **+33.9% (CAGR 12.3%, MaxDD −11.4%, excess +2.38%/20d t 2.56, 19/29 beat EW, idle 21%)** → `ML1_EQMONEY_80PCT_TOPUP_MAIN_VIABLE_HISTORICAL`. Adopted: `top_n_book.py` `topup` flag, `shortlist.py` top-up pass + contract label, `daily.py` default on (`--no-topup`). Smoke on disk data: 2026-08-28 shadow shortlist 8 names, ¥15,879 deployed of ¥16,000 budget. Denied/recent windows not read. No V26.7.
+
 ## 2026-09-06 (09:00) — V34 exit-rule diagnostic: take-profit / stops / trailing / break-even do not help
 
 - Owner asked whether take-profit, trailing take-profit and protective break-even stops were considered. `V34_EXIT_RULES_DIAG_CONTRACT.md` frozen before run; `cn_a_share_ml_v25/exit_rules_diag.py` (single read, RESEARCH window only, validation and denied window untouched). 13 pre-declared rules (TP 5/10/20, hard stop 5/10, trailing 5/10, break-even 3/5, two combos), close-triggered, next-open exit with V26.4 carry, on ML1 (V26.5 shell, hold 20) and V33 (hold 5).

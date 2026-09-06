@@ -1,8 +1,9 @@
 {
-  "act": "next session open: buy lots=floor(2000/(100*open)) of each; hold 20 sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens",
+  "act": "next session open: buy lots=floor(2000/(100*open)) of each; then fill the remaining 80% budget with extra lots on the same names in rank order, 1 lot per pass; hold 20 sessions; sell at open; if sell blocked (limit-down/suspended) keep trying next opens",
   "boards": "MAIN",
   "capital_yuan": 20000.0,
-  "contract": "ML1_EQMONEY_80PCT_MAIN",
+  "contract": "ML1_EQMONEY_80PCT_TOPUP_MAIN",
+  "est_invested_yuan": 15879.0,
   "execution": "MANUAL by owner in ordinary account; no API, no automation",
   "exposure": 0.8,
   "kind": "SHORTLIST_SHADOW",
@@ -11,49 +12,49 @@
   "n_target": 8,
   "names": [
     {
-      "est_yuan": 1914.0,
+      "est_yuan": 2262.0,
       "last_close": 1.7400000095367432,
-      "lots_100_est": 11,
+      "lots_100_est": 13,
       "rank": 1,
       "score": 0.0892379954457283,
       "symbol": "sh.600653"
     },
     {
-      "est_yuan": 1790.0,
+      "est_yuan": 2506.0,
       "last_close": 3.5799999237060547,
-      "lots_100_est": 5,
+      "lots_100_est": 7,
       "rank": 2,
       "score": 0.08649247884750366,
       "symbol": "sz.000868"
     },
     {
-      "est_yuan": 1114.0,
+      "est_yuan": 2228.0,
       "last_close": 11.140000343322754,
-      "lots_100_est": 1,
+      "lots_100_est": 2,
       "rank": 3,
       "score": 0.0853583961725235,
       "symbol": "sh.600697"
     },
     {
-      "est_yuan": 1784.0,
+      "est_yuan": 2230.0,
       "last_close": 2.2300000190734863,
-      "lots_100_est": 8,
+      "lots_100_est": 10,
       "rank": 4,
       "score": 0.08223000913858414,
       "symbol": "sh.600533"
     },
     {
-      "est_yuan": 1500.0,
+      "est_yuan": 2250.0,
       "last_close": 7.5,
-      "lots_100_est": 2,
+      "lots_100_est": 3,
       "rank": 5,
       "score": 0.08118359744548798,
       "symbol": "sh.600241"
     },
     {
-      "est_yuan": 1386.0,
+      "est_yuan": 2079.0,
       "last_close": 6.929999828338623,
-      "lots_100_est": 2,
+      "lots_100_est": 3,
       "rank": 6,
       "score": 0.08107254654169083,
       "symbol": "sz.002799"
@@ -78,5 +79,6 @@
   "orders_sent": false,
   "signal_date": "2026-08-28",
   "skipped_price_too_high_for_2000": 2,
+  "topup": true,
   "unit_yuan": 2000.0
 }
