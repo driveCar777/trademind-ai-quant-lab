@@ -4,6 +4,11 @@
 
 ---
 
+## 2026-09-06 (09:00) — V34 exit-rule diagnostic: take-profit / stops / trailing / break-even do not help
+
+- Owner asked whether take-profit, trailing take-profit and protective break-even stops were considered. `V34_EXIT_RULES_DIAG_CONTRACT.md` frozen before run; `cn_a_share_ml_v25/exit_rules_diag.py` (single read, RESEARCH window only, validation and denied window untouched). 13 pre-declared rules (TP 5/10/20, hard stop 5/10, trailing 5/10, break-even 3/5, two combos), close-triggered, next-open exit with V26.4 carry, on ML1 (V26.5 shell, hold 20) and V33 (hold 5).
+- ML1: BASE +144% (CAGR 9.6%, excess +0.65%/20d t 1.85). 11 of 12 rules worse; tight rules destroy it (TP5 → +25%, TRAIL5 → +12%). Only TP20 marginally better (+188%, t 1.97, 13% triggers) — 1-of-13 noise, not selected, not economically motivated. No rule materially lowers MaxDD (best −31% vs −39% at half the return). V33: no rule flips sign (best −67%). → `EXIT_RULES_NO_IMPROVEMENT`. Nothing written into `daily.py`.
+
 ## 2026-09-06 (09:20) — V31 dataset frozen; V33 limit-up event model single read: predictive, not tradable
 
 - `tm-cnfut-SINA-D1-20260906-000001` frozen: 73/73 declared products dominant-continuous (2005+), 5,614 per-contract series (mostly 2018-05+), 7,884 requests 0 failures, 1.22M rows, per-file sha256 manifest. V31 contract next.

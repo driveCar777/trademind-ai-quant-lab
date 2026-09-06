@@ -93,6 +93,7 @@
 | AMENDMENT V2 (MT5) | 用户授权解除 MT5 三条范围限制（ML 禁令 / 股票 CFD 只清点 / 只多头账本）；纪律全保留；不重开已证伪宏观家族 | ✅ 生效 | 2026-09-05 |
 | V30 MT5 US XS PRICE | 492 只美股 CFD D1 冻结（$0，5.9h）→ 7 价格特征 → 1 LightGBM → LS20 闸门 + 实测费率（多头融资 −11.09%/年）。验证毛价差 t 0.18，LS20 −71.5%（t −4.0），LO−EW −1.03%/20d，滚动 2/5 | ✅ **NO_CANDIDATE**；`MT5_STOCK_CFD_COST_CEILING`：不开 V31 on CFD | 2026-09-05 |
 | V32 MT5 MACRO POOLED | 用户要求 MT5 黄金/原油/货币对同步开始 → 数据冻结 69 只 + 池化 LightGBM 一次运行 → `NO_CANDIDATE`（毛价差 t 1.0，LS −60.5%）。MT5 宏观 D1 清点完 | ✅ 冻结 | 2026-09-05 |
+| V34 出场规则诊断 | 13 条止盈/止损/移动/保本，只读研究期：ML1 11/12 更差、TP20 略好为噪音不选；V33 无一翻正 → EXIT_RULES_NO_IMPROVEMENT | ✅ 冻结；不写进 daily.py | 2026-09-06 |
 | V33 涨停事件模型 | 用户要求的"事先预测涨停"小资金版；只算一次：预测提升 +8.0pp t 60.9（过）；外壳账本 −88% / 大账本 −66%（不过）→ PREDICTIVE_BUT_NOT_TRADABLE_AT_20K；ATLAS 77 | ✅ 冻结；不调、不做日内 | 2026-09-06 |
 | V31 数据冻结 | 73 连续 + 5,614 逐合约，0 失败，manifest sha256 | ✅ → 写合同 | 2026-09-06 |
 | MT5 D1 合法对象清点 | 用户执行偏好 MT5；对照 ATLAS：可立即做 = 0；`CN_INFO_TO_COMMODITY` 排 V31 后；V31→GOLD/SILVER/COPPER/CrudeOIL 执行映射与实测成本已写 | ✅ | 2026-09-06 |
