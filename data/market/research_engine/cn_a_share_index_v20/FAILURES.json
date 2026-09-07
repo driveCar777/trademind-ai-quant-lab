@@ -1,0 +1,71 @@
+{
+  "n": 4,
+  "rows": [
+    {
+      "family": "INDEX_MEMBERSHIP",
+      "id": "X1_HS300_SET",
+      "mechanism": "Long eligible current CSI 300 members. Institutional ownership / membership premium.",
+      "reopen": "New contract only. Do not retune. Do not flip sign.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "INDEX_MEMBERSHIP",
+      "id": "X2_ZZ500_SET",
+      "mechanism": "Long eligible current CSI 500 members. Mid-cap index membership, not mega-cap.",
+      "reopen": "New contract only. Do not retune. Do not flip sign.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "INDEX_RECONSTITUTION",
+      "id": "X3_HS300_IN_252",
+      "mechanism": "Long names that entered CSI 300 in the last 252 pack sessions and are still members. Reconstitution inflow.",
+      "reopen": "New contract only. Do not retune. Do not flip sign.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "INDEX_RECONSTITUTION",
+      "id": "X4_HS300_OUT_252",
+      "mechanism": "Long names that left CSI 300 in the last 252 pack sessions and are still listed. Post-deletion leftover after forced selling.",
+      "reopen": "New contract only. Do not retune. Do not flip sign.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    }
+  ]
+}

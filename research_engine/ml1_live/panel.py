@@ -29,6 +29,27 @@ def today():
     return datetime.date.today().isoformat()
 
 
+def _is_baostock_blocked(exc):
+    t = str(exc or "")
+    return "黑名单" in t or "blacklist" in t.lower()
+
+
+def clamp_asof(days, asof, frozen_end=FROZEN_END):
+    """Last trading day on or before asof. Never returns a date before the frozen pack end.
+
+    A truncated calendar (killed write / short BaoStock reply) used to yield 2007 and then
+    daily.py would stamp STATUS/pack asof with that date. That is not a holiday.
+    """
+    asof = asof or today()
+    cand = [d for d in days if d <= asof]
+    if not cand:
+        raise RuntimeError("CALENDAR_EMPTY_BEFORE %s" % asof)
+    session = max(cand)
+    if session < frozen_end:
+        raise RuntimeError("CALENDAR_ASOF_BEFORE_FROZEN %s < %s (truncated calendar, not a holiday)" % (session, frozen_end))
+    return session
+
+
 # ---------------------------------------------------------------- calendar / basics
 def refresh_calendar(session, end=None):
     end = end or (datetime.date.today() + datetime.timedelta(days=120)).isoformat()
@@ -39,10 +60,24 @@ def refresh_calendar(session, end=None):
     for r in rows:
         d = r.get("calendar_date")
         out.append({"calendar_date": d, "is_trading_day": 1 if str(r.get("is_trading_day")) == "1" else 0, "weekday": weekday_name(parse_ymd(d))})
-    with open(CALENDAR_CSV, "w", newline="", encoding="utf-8") as fh:
+    tmp = CALENDAR_CSV + ".tmp"
+    with open(tmp, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=("calendar_date", "is_trading_day", "weekday"))
         w.writeheader()
         w.writerows(out)
+    old_last = _tail_date(CALENDAR_CSV)
+    new_last = out[-1]["calendar_date"] if out else None
+    if old_last and new_last and new_last < old_last:
+        print(TAG, "calendar fetch shorter than disk, keep", old_last, "got", new_last, flush=True)
+        os.remove(tmp)
+        return load_live_calendar()
+    if new_last and new_last < FROZEN_END:
+        print(TAG, "calendar fetch ends before frozen, keep disk", old_last, "got", new_last, flush=True)
+        os.remove(tmp)
+        if old_last and old_last >= FROZEN_END:
+            return load_live_calendar()
+        raise RuntimeError("CALENDAR_FETCH_BEFORE_FROZEN %s" % new_last)
+    os.replace(tmp, CALENDAR_CSV)
     return out
 
 
@@ -90,6 +125,25 @@ def _bar_path(symbol):
     return os.path.join(BARS, symbol + ".csv")
 
 
+def _tail_date(path):
+    """Last bar date from the file tail. Avoids reading years of CSV just to see if asof is already there."""
+    try:
+        with open(path, "rb") as fh:
+            fh.seek(0, 2)
+            n = fh.tell()
+            if n <= 0:
+                return None
+            fh.seek(max(0, n - 800))
+            chunk = fh.read().decode("utf-8", "replace")
+    except OSError:
+        return None
+    for ln in reversed(chunk.splitlines()):
+        if not ln or ln.startswith("date"):
+            continue
+        return ln.split(",", 1)[0]
+    return None
+
+
 def _read_bars(symbol):
     p = _bar_path(symbol)
     if not os.path.isfile(p):
@@ -110,35 +164,70 @@ def _append_bars(symbol, rows):
 
 
 def update_bars(session, equities, sessions_after_frozen, asof):
-    """One BaoStock call per symbol that is missing sessions in (FROZEN_END, asof]. Idempotent."""
+    """One BaoStock call per symbol that is missing sessions in (FROZEN_END, asof]. Idempotent.
+
+    Skips files whose last row is already >= asof (no full CSV read). Hung kline (> socket timeout)
+    is logged as BAR_HANG and skipped so one dead socket cannot freeze the whole run.
+    """
     need = [d for d in sessions_after_frozen if d <= asof]
     if not need:
-        return {"symbols": 0, "rows": 0}
-    n_sym = n_rows = n_fail = 0
+        print(TAG, "bars plan asof", asof, "no sessions after frozen", flush=True)
+        return {"symbols": 0, "rows": 0, "fail": 0, "hang": 0, "gap": 0}
+    n_listed = n_gap = 0
+    for e in equities:
+        if e.get("delisting_date") and e["delisting_date"] <= need[0]:
+            continue
+        n_listed += 1
+        last = _tail_date(_bar_path(e["symbol"]))
+        if not last or last < asof:
+            n_gap += 1
+    print(TAG, "bars plan asof", asof, "gap", n_gap, "/", n_listed, "sessions", need[0], "->", need[-1], flush=True)
+    if n_gap == 0:
+        print(TAG, "bars done", 0, "symbols", 0, "rows", "fail", 0, "already have", asof, flush=True)
+        return {"symbols": 0, "rows": 0, "fail": 0, "hang": 0, "gap": 0}
+    n_sym = n_rows = n_fail = n_hang = 0
     t0 = time.time()
     for k, e in enumerate(equities):
         s = e["symbol"]
         if e.get("delisting_date") and e["delisting_date"] <= need[0]:
             continue
-        have = set(r["date"] for r in _read_bars(s))
-        missing = [d for d in need if d not in have]
-        if not missing:
+        last = _tail_date(_bar_path(s))
+        if last and last >= asof:
             continue
+        start = need[0]
+        if last:
+            after = [d for d in need if d > last]
+            if not after:
+                continue
+            start = after[0]
+        if n_sym % 50 == 0:
+            print(TAG, "bars fetching", s, start, "->", asof, "fetched", n_sym, "scan", k + 1, "/", len(equities), "%.0fs" % (time.time() - t0), flush=True)
         try:
-            rows = session.query_kline(s, missing[0], missing[-1])
+            rows = session.query_kline(s, start, asof)
         except Exception as exc:  # noqa
             n_fail += 1
-            print(TAG, "BAR_FAIL", s, repr(exc)[:120], flush=True)
+            low = str(exc).lower()
+            hang = "timeout" in low or "timed out" in low
+            if hang:
+                n_hang += 1
+                try:
+                    session.reset()
+                except Exception:
+                    pass
+            print(TAG, "BAR_HANG" if hang else "BAR_FAIL", s, repr(exc)[:120], flush=True)
+            if _is_baostock_blocked(exc) or ("BAOSTOCK_LOGIN" in str(exc) and n_fail >= 3):
+                print(TAG, "BAOSTOCK_BLOCKED abort remaining", flush=True)
+                break
             continue
-        rows = [r for r in rows if r.get("date") in set(missing) and r.get("date") not in have]
+        rows = [r for r in rows if r.get("date") and (not last or r["date"] > last) and r["date"] <= asof]
         if rows:
             _append_bars(s, rows)
             n_rows += len(rows)
         n_sym += 1
-        if n_sym % 500 == 0:
-            print(TAG, "bars", n_sym, "symbols", n_rows, "rows", "%.0fs" % (time.time() - t0), flush=True)
-    print(TAG, "bars done", n_sym, "symbols", n_rows, "rows", "fail", n_fail, "%.0fs" % (time.time() - t0), flush=True)
-    return {"symbols": n_sym, "rows": n_rows, "fail": n_fail}
+        if n_sym % 50 == 0 or (k + 1) % 200 == 0:
+            print(TAG, "bars", n_sym, "fetched", "scan", k + 1, "/", len(equities), n_rows, "rows", "fail", n_fail, "%.0fs" % (time.time() - t0), flush=True)
+    print(TAG, "bars done", n_sym, "symbols", n_rows, "rows", "fail", n_fail, "hang", n_hang, "%.0fs" % (time.time() - t0), flush=True)
+    return {"symbols": n_sym, "rows": n_rows, "fail": n_fail, "hang": n_hang, "gap": n_gap}
 
 
 # ---------------------------------------------------------------- live pack
@@ -218,19 +307,56 @@ def load_live_equities():
 
 
 def refresh_all(asof=None, session=None):
-    """Calendar + basics + bars up to asof (default: today). Returns (equities, live_sessions, asof_session)."""
+    """Calendar + basics + bars up to asof (default: today). Returns (equities, live_sessions, asof_session).
+
+    Login / calendar / basics failure falls back to files already on disk and still returns a
+    clamped asof (>= FROZEN_END). A blacklisted BaoStock account must not keep logging in.
+    """
     ensure_live()
     own = session is None
-    session = session or BaoSession(sleep_s=0.02)
+    session = session or BaoSession(sleep_s=0.02, max_retries=2, socket_timeout_s=40)
+    asof = asof or today()
+    stats = {"symbols": 0, "rows": 0, "fail": 0, "hang": 0, "gap": 0, "offline": False}
     try:
-        cal = refresh_calendar(session)
-        days = trading_days(cal)
-        asof = asof or today()
-        asof_session = max(d for d in days if d <= asof)
-        equities = refresh_basics(session, frozen_equities())
-        live_sessions = [d for d in days if d > FROZEN_END]
-        stats = update_bars(session, equities, live_sessions, asof_session)
+        fetch_ok = True
+        try:
+            session.login()
+        except Exception as exc:
+            print(TAG, "login failed, disk only", repr(exc)[:160], flush=True)
+            fetch_ok = False
+            stats["offline"] = True
+            stats["error"] = str(exc)[:200]
+        if fetch_ok:
+            try:
+                cal = refresh_calendar(session)
+            except Exception as exc:
+                print(TAG, "calendar fetch failed, disk", repr(exc)[:160], flush=True)
+                cal = load_live_calendar()
+            try:
+                equities = refresh_basics(session, frozen_equities())
+            except Exception as exc:
+                print(TAG, "basics fetch failed, disk", repr(exc)[:160], flush=True)
+                equities = load_live_equities()
+            days = trading_days(cal)
+            asof_session = clamp_asof(days, asof)
+            live_sessions = [d for d in days if d > FROZEN_END]
+            if _is_baostock_blocked(stats.get("error")):
+                stats["offline"] = True
+            else:
+                stats = update_bars(session, equities, live_sessions, asof_session)
+                stats["offline"] = bool(stats.get("offline"))
+        else:
+            equities = load_live_equities()
+            cal = load_live_calendar()
+            days = trading_days(cal)
+            asof_session = clamp_asof(days, asof)
+            live_sessions = [d for d in days if d > FROZEN_END]
+            print(TAG, "bars skipped (offline) asof", asof_session, flush=True)
+        stats["asof_session"] = asof_session
     finally:
         if own:
-            session.logout()
+            try:
+                session.logout()
+            except Exception:
+                pass
     return equities, live_sessions, asof_session, stats

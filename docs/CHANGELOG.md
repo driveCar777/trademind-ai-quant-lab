@@ -4,6 +4,37 @@
 
 ---
 
+## 2026-09-07 (21:20) — Paper update: 2007 asof was a poisoned label; stacked runs; BaoStock blacklist
+
+STATUS/pack said `asof=2007-05-23` after a truncated calendar write. Prices did not go back to 2007 (`sh.600000` still ends 2026-09-07). Repeated clicks spawned six `daily.py` because the lock was dropped when cmdline could not be read (no wmic / no psutil) after 15s, then BaoStock returned 黑名单.
+
+- Kill stacked runs. Lock: exclusive `CURRENT.json`, keep lock while pid lives even if cmdline is blank, recover orphan `ml1_live.daily`. Stop kills every daily.py.
+- `clamp_asof`: never write STATUS/pack asof before `FROZEN_END`. Login/calendar fail → disk calendar + skip bars. 黑名单 aborts remaining kline logins.
+- Update click while label is poison or BaoStock is blacklisted → `--skip-fetch` (no more logins). Page shows「截止日期标签异常」instead of pretending the market is 2007.
+- Smoke 22: 2007 STATUS is `asof_bogus` + needs_update.
+
+## 2026-09-07 (20:55) — Paper update click: no browser confirm; in-page toast 3s
+
+Clicking「更新到 YYYY-MM-DD」did nothing useful: a blocking `confirm()`, plus a truncated `live/calendar.csv` (ends 2007 after a killed write) made Monday look like 休市 so the click skipped. Removed the browser dialog. Click starts immediately; in-page toast (`pointer-events: none`, 3s). Calendar repair from frozen reference + bar dates; `refresh_calendar` writes atomically and will not replace a longer file with a shorter fetch.
+
+## 2026-09-07 (20:40) — Paper update: last completed session, skip-if-fresh, stop button, kline timeout
+
+Hung 111-minute run (pid 8232, `--asof 2026-09-07`) killed. That asof was correct for Monday after 18:00; Saturday 9/6 would have been 9/4. The bugs were: no stop, BaoStock hang, silent rescan, UI said 35 minutes.
+
+- `freshness` / confirm copy: asof = last **completed** trading day (closed market → previous open; before 18:00 → previous session). Never a future date.
+- Already at asof and bar files have that date → `skipped` + note, no spawn. Calendar fresh but N symbols missing the date → start as gap-fill and say so.
+- `POST /api/v1/paper/update/stop` + page button 「停止更新」 (`taskkill /T`). Stop is not a failure. Next click continues from holes.
+- `update_bars`: skip by last-row date (no full CSV read); print gap plan; 40s socket timeout → `BAR_HANG` skip. Live BaoSession `max_retries=2`.
+- Smoke 22: Sat→9/4, Mon morning→9/4, Mon 19:00→9/7, idle stop. SPEC §29.7.
+
+## 2026-09-07 (13:50) — Paper ops: keep the period list after a partial fill; in-place edit of fills
+
+Two bugs from live use: registering one buy hid the whole recommended list (plan flipped to HOLD); a wrong fill could only be deleted from a collapsed journal.
+
+- JOURNAL plan now always returns the period shortlist split into `logged_list` / remaining `buy_list` with `continue_register`. Names stay on screen; logged rows are "已登记 · 改".
+- `PUT /api/v1/paper/journal/{event_id}` edits a fill in place (price/lots/date/fee). Holdings and journal each have 改. SPEC §29.8 no longer append-only.
+- Smoke 22: remaining 7 after 3 fills; edit fill in place. PASS.
+
 ## 2026-09-07 (12:05) — Paper Ops Desk V2.1: two accounts, one switch; partial fills; mid-entry option
 
 User feedback 11:48 / 12:02: "我模拟账户还没买呢，为啥数据和推荐不是根据目前情况来的" / "推了 10 只我买了 3 只，别按全卖了算" / "历史每一期切换账户也得切" / "只有月初才能买吗？现在没法拿名单吗？".

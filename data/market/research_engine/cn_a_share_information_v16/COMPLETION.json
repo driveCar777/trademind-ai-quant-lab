@@ -1,0 +1,23 @@
+{
+  "completed_utc": "2026-09-01T21:29:00Z",
+  "decision_pointer": "docs/research_engine/V16_DECISION.md",
+  "exit_code": 0,
+  "machine_decision": "data/market/research_engine/cn_a_share_information_v16/DECISION.json",
+  "mission": "V16",
+  "new_candidate": 0,
+  "reconciled_utc": "2026-09-02T04:40:00Z",
+  "results_immutable": true,
+  "status": "COMPLETE",
+  "stop": "STOP_B",
+  "untouched": [
+    "FINANCIAL_RESULTS.json",
+    "INDUSTRY_RESULTS.json",
+    "CAPITAL_RESULTS.json",
+    "FDR.json",
+    "CANDIDATES.json",
+    "FAILURES.json",
+    "DECISION.json",
+    "FINANCIAL_PIT.json",
+    "INDUSTRY_PIT.json"
+  ]
+}

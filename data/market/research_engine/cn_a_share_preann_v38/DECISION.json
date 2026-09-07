@@ -1,0 +1,21 @@
+{
+  "EXISTING_INDEPENDENT_CANDIDATE": 1,
+  "LEVEL": 1,
+  "LIVE": 0,
+  "NEW_CANDIDATE": 0,
+  "NEW_INDEPENDENT_CANDIDATE": 0,
+  "NEXT": "NEXT_LAYER",
+  "OVERALL": "A_SHARE_PREANNOUNCEMENT_V38L1_NO_CANDIDATE",
+  "PAPER": 0,
+  "PORTFOLIO": 0,
+  "STOP": "STOP_B_LAYER",
+  "STRATEGY": "ML1 unchanged",
+  "amendment": "RESEARCH_RULES_AMENDMENT_V1",
+  "candidate_ids": [],
+  "contract_hash": "09c862ee54a3ce8e7e314e66045bcb3b1a5b2aef3758cd1404002c3751b853a6",
+  "cost_usd": 0.0,
+  "final_oos": "DENIED",
+  "gate_book": "LO20",
+  "independent_ids": [],
+  "new_purchase": false
+}

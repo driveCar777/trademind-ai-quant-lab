@@ -1,0 +1,177 @@
+{
+  "FINAL_OOS_LOCKED": false,
+  "acquisition": "V22_FUTURES_XS30",
+  "compression": "zstd",
+  "cost_usd": 47.098612189293,
+  "dataset": "GLBX.MDP3",
+  "dataset_id": "tm-fut-GLBX-XS30-D1-20260904-000001",
+  "encoding": "csv",
+  "end": "2026-08-29",
+  "files": [
+    {
+      "bytes": 9986,
+      "filename": "manifest.json",
+      "sha256": "ee9bd0921678a14338c4e8a9c62a4b057f96f09a3827b3983ed53005769e1005",
+      "vendor_hash": "sha256:ee9bd0921678a14338c4e8a9c62a4b057f96f09a3827b3983ed53005769e1005"
+    },
+    {
+      "bytes": 614371,
+      "filename": "condition.json",
+      "sha256": "c3c0b13d15f5f33d93473ff766b42f1143e71dcf3ab813edf20cfcfde813342b",
+      "vendor_hash": "sha256:c3c0b13d15f5f33d93473ff766b42f1143e71dcf3ab813edf20cfcfde813342b"
+    },
+    {
+      "bytes": 1326,
+      "filename": "metadata.json",
+      "sha256": "3f20f4c6bc8f9cb29c8b74e823851a2cbc987982b3953d8b10396e6bdca31163",
+      "vendor_hash": "sha256:3f20f4c6bc8f9cb29c8b74e823851a2cbc987982b3953d8b10396e6bdca31163"
+    },
+    {
+      "bytes": 2350892,
+      "filename": "glbx-mdp3-20100606-20101231.ohlcv-1d.csv.zst",
+      "sha256": "6b17768a70fad1539167aabcf18edc4b58d5e9394bfa8e98dcd554003fa556b8",
+      "vendor_hash": "sha256:6b17768a70fad1539167aabcf18edc4b58d5e9394bfa8e98dcd554003fa556b8"
+    },
+    {
+      "bytes": 4268473,
+      "filename": "glbx-mdp3-20110101-20111231.ohlcv-1d.csv.zst",
+      "sha256": "19666fe51e3bd750362cb32e457b54a9f13c18fd932d1ac8401ef23ac097bff7",
+      "vendor_hash": "sha256:19666fe51e3bd750362cb32e457b54a9f13c18fd932d1ac8401ef23ac097bff7"
+    },
+    {
+      "bytes": 4543520,
+      "filename": "glbx-mdp3-20120101-20121231.ohlcv-1d.csv.zst",
+      "sha256": "06777fb097a1592dc371686fba7d4d8225156d95fe3af92e7995cb6f944c3e9d",
+      "vendor_hash": "sha256:06777fb097a1592dc371686fba7d4d8225156d95fe3af92e7995cb6f944c3e9d"
+    },
+    {
+      "bytes": 4838674,
+      "filename": "glbx-mdp3-20130101-20131231.ohlcv-1d.csv.zst",
+      "sha256": "40734f3210f04a1c4fc69f00c9fe3203588b995f96af43b79ff57c0b13c321b3",
+      "vendor_hash": "sha256:40734f3210f04a1c4fc69f00c9fe3203588b995f96af43b79ff57c0b13c321b3"
+    },
+    {
+      "bytes": 4916825,
+      "filename": "glbx-mdp3-20140101-20141231.ohlcv-1d.csv.zst",
+      "sha256": "cb46cddf4c2078a270198d355dd0ef2834742b4bca3b5afc90bd987e41d28b73",
+      "vendor_hash": "sha256:cb46cddf4c2078a270198d355dd0ef2834742b4bca3b5afc90bd987e41d28b73"
+    },
+    {
+      "bytes": 5249248,
+      "filename": "glbx-mdp3-20150101-20151231.ohlcv-1d.csv.zst",
+      "sha256": "2d6ab80c7c2477d812986bb49e1b8414036dfd86b1a84148029ab75ad2b710f1",
+      "vendor_hash": "sha256:2d6ab80c7c2477d812986bb49e1b8414036dfd86b1a84148029ab75ad2b710f1"
+    },
+    {
+      "bytes": 5235932,
+      "filename": "glbx-mdp3-20160101-20161231.ohlcv-1d.csv.zst",
+      "sha256": "46d682a4c110276b6203bcd36681b2cb35b5eef52a4567b2de116d63c2262c3f",
+      "vendor_hash": "sha256:46d682a4c110276b6203bcd36681b2cb35b5eef52a4567b2de116d63c2262c3f"
+    },
+    {
+      "bytes": 5354429,
+      "filename": "glbx-mdp3-20170101-20171231.ohlcv-1d.csv.zst",
+      "sha256": "211f31ba7af4bed4695ff84dc93355e6ce30a72998d67f7e56f5e6845fb1641d",
+      "vendor_hash": "sha256:211f31ba7af4bed4695ff84dc93355e6ce30a72998d67f7e56f5e6845fb1641d"
+    },
+    {
+      "bytes": 5805088,
+      "filename": "glbx-mdp3-20180101-20181231.ohlcv-1d.csv.zst",
+      "sha256": "f32c1907e5e02fec3cca7af0748f9f7b7643e18059dcaac65531a5bb4a462517",
+      "vendor_hash": "sha256:f32c1907e5e02fec3cca7af0748f9f7b7643e18059dcaac65531a5bb4a462517"
+    },
+    {
+      "bytes": 5748039,
+      "filename": "glbx-mdp3-20190101-20191231.ohlcv-1d.csv.zst",
+      "sha256": "ef306dea60b67463e7c907a35c10c3914bde71f0b414ef16bec1f3adcb735afc",
+      "vendor_hash": "sha256:ef306dea60b67463e7c907a35c10c3914bde71f0b414ef16bec1f3adcb735afc"
+    },
+    {
+      "bytes": 6261839,
+      "filename": "glbx-mdp3-20200101-20201231.ohlcv-1d.csv.zst",
+      "sha256": "897dbdd6a3ff1d9f448e6bf9b6019d6d467a1a190bb439c2eeed36c25efe8db5",
+      "vendor_hash": "sha256:897dbdd6a3ff1d9f448e6bf9b6019d6d467a1a190bb439c2eeed36c25efe8db5"
+    },
+    {
+      "bytes": 6049030,
+      "filename": "glbx-mdp3-20210101-20211231.ohlcv-1d.csv.zst",
+      "sha256": "d1037bfa54543d93af4563c4283ec190754e2bd0434e486c93dacb5c603ef1f7",
+      "vendor_hash": "sha256:d1037bfa54543d93af4563c4283ec190754e2bd0434e486c93dacb5c603ef1f7"
+    },
+    {
+      "bytes": 6120368,
+      "filename": "glbx-mdp3-20220101-20221231.ohlcv-1d.csv.zst",
+      "sha256": "d908830f06ff6f5279b55ddc7825f553c61260aea178c7a2e1b28adc1e177d0e",
+      "vendor_hash": "sha256:d908830f06ff6f5279b55ddc7825f553c61260aea178c7a2e1b28adc1e177d0e"
+    },
+    {
+      "bytes": 6123132,
+      "filename": "glbx-mdp3-20230101-20231231.ohlcv-1d.csv.zst",
+      "sha256": "f8e1c6e2b990f4a8d5774c72d07d5a60bb09126c829e0e860006cc3d41defc23",
+      "vendor_hash": "sha256:f8e1c6e2b990f4a8d5774c72d07d5a60bb09126c829e0e860006cc3d41defc23"
+    },
+    {
+      "bytes": 6368690,
+      "filename": "glbx-mdp3-20240101-20241231.ohlcv-1d.csv.zst",
+      "sha256": "e4fbbf68e1d560bb3c79cf04601b1bcbc8a3635cbbc45f1dbcaaf64dce6cb2c2",
+      "vendor_hash": "sha256:e4fbbf68e1d560bb3c79cf04601b1bcbc8a3635cbbc45f1dbcaaf64dce6cb2c2"
+    },
+    {
+      "bytes": 7148806,
+      "filename": "glbx-mdp3-20250101-20251231.ohlcv-1d.csv.zst",
+      "sha256": "f4393451846e3ba43afb666f3a05b4a95da6d69ad5fb4011bd6bcbdd6cc07db0",
+      "vendor_hash": "sha256:f4393451846e3ba43afb666f3a05b4a95da6d69ad5fb4011bd6bcbdd6cc07db0"
+    },
+    {
+      "bytes": 4982196,
+      "filename": "glbx-mdp3-20260101-20260828.ohlcv-1d.csv.zst",
+      "sha256": "b08d7b108b98ba35344bdb47268334e5f697bdb04a4d13d55ca64006dc815d25",
+      "vendor_hash": "sha256:b08d7b108b98ba35344bdb47268334e5f697bdb04a4d13d55ca64006dc815d25"
+    }
+  ],
+  "job_id": "GLBX-20260904-KFU8ALRKP7",
+  "knowledge_time_rule": "ohlcv-1d session bar known at session close T 21:00Z (electronic); front contract = max volume per root per day",
+  "license": "Databento + CME historical internal research; no raw redistribution",
+  "map_symbols": true,
+  "overwrite_frozen": false,
+  "retrieval_time_utc": "2026-09-04T06:26:47Z",
+  "schema": "ohlcv-1d",
+  "source": "databento",
+  "split_duration": "year",
+  "start": "2010-06-06",
+  "stype_in": "parent",
+  "stype_out": "instrument_id",
+  "symbols": [
+    "ES.FUT",
+    "NQ.FUT",
+    "YM.FUT",
+    "RTY.FUT",
+    "ZN.FUT",
+    "ZB.FUT",
+    "ZF.FUT",
+    "ZT.FUT",
+    "6E.FUT",
+    "6J.FUT",
+    "6B.FUT",
+    "6A.FUT",
+    "6C.FUT",
+    "6S.FUT",
+    "GC.FUT",
+    "SI.FUT",
+    "HG.FUT",
+    "PL.FUT",
+    "CL.FUT",
+    "NG.FUT",
+    "HO.FUT",
+    "RB.FUT",
+    "ZC.FUT",
+    "ZS.FUT",
+    "ZW.FUT",
+    "ZM.FUT",
+    "ZL.FUT",
+    "LE.FUT",
+    "HE.FUT",
+    "GF.FUT"
+  ],
+  "vendor": "Databento"
+}

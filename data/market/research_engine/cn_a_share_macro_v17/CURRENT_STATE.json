@@ -1,0 +1,9 @@
+{
+  "mission": "POST_V16_AUTONOMOUS",
+  "active_family": "V17_A_SHARE_MACRO",
+  "v16": "COMPLETE_STOP_B",
+  "started_utc": "2026-09-02T04:50:00Z",
+  "new_purchase": false,
+  "final_oos": "DENIED",
+  "xavier": false
+}

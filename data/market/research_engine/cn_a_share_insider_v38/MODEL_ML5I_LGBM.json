@@ -1,0 +1,358 @@
+{
+  "features": [
+    "INS_NET_AMT",
+    "INS_BUY_AMT",
+    "INS_NEG_SELL",
+    "INS_NET_CNT",
+    "INS_NET_RATIO",
+    "INS_NEG_AGE",
+    "INS_LAST_DIR"
+  ],
+  "first_pred": "2012-01-04",
+  "frozen_after_research": true,
+  "n_features": 7,
+  "refits": [
+    {
+      "fit_at": "2012-01-04",
+      "gain_share": {
+        "INS_BUY_AMT": 0.2178,
+        "INS_LAST_DIR": 0.1059,
+        "INS_NEG_AGE": 0.1168,
+        "INS_NEG_SELL": 0.1274,
+        "INS_NET_AMT": 0.0846,
+        "INS_NET_CNT": 0.1761,
+        "INS_NET_RATIO": 0.1713
+      },
+      "scores_until": "2012-07-04",
+      "sec": 1.8,
+      "train_last_label_session": "2011-12-02",
+      "train_rows": 162803,
+      "train_sessions": 94
+    },
+    {
+      "fit_at": "2012-07-05",
+      "gain_share": {
+        "INS_BUY_AMT": 0.2021,
+        "INS_LAST_DIR": 0.116,
+        "INS_NEG_AGE": 0.119,
+        "INS_NEG_SELL": 0.1373,
+        "INS_NET_AMT": 0.0813,
+        "INS_NET_CNT": 0.1668,
+        "INS_NET_RATIO": 0.1775
+      },
+      "scores_until": "2012-12-26",
+      "sec": 2.2,
+      "train_last_label_session": "2012-06-05",
+      "train_rows": 212279,
+      "train_sessions": 118
+    },
+    {
+      "fit_at": "2012-12-27",
+      "gain_share": {
+        "INS_BUY_AMT": 0.2019,
+        "INS_LAST_DIR": 0.108,
+        "INS_NEG_AGE": 0.1204,
+        "INS_NEG_SELL": 0.135,
+        "INS_NET_AMT": 0.0853,
+        "INS_NET_CNT": 0.1709,
+        "INS_NET_RATIO": 0.1785
+      },
+      "scores_until": "2013-07-04",
+      "sec": 2.3,
+      "train_last_label_session": "2012-11-28",
+      "train_rows": 266435,
+      "train_sessions": 142
+    },
+    {
+      "fit_at": "2013-07-05",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1975,
+        "INS_LAST_DIR": 0.1088,
+        "INS_NEG_AGE": 0.1211,
+        "INS_NEG_SELL": 0.13,
+        "INS_NET_AMT": 0.0961,
+        "INS_NET_CNT": 0.1595,
+        "INS_NET_RATIO": 0.1869
+      },
+      "scores_until": "2013-12-30",
+      "sec": 2.3,
+      "train_last_label_session": "2013-06-03",
+      "train_rows": 322012,
+      "train_sessions": 166
+    },
+    {
+      "fit_at": "2013-12-31",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1959,
+        "INS_LAST_DIR": 0.102,
+        "INS_NEG_AGE": 0.1217,
+        "INS_NEG_SELL": 0.1305,
+        "INS_NET_AMT": 0.0934,
+        "INS_NET_CNT": 0.1706,
+        "INS_NET_RATIO": 0.1859
+      },
+      "scores_until": "2014-06-30",
+      "sec": 2.6,
+      "train_last_label_session": "2013-12-02",
+      "train_rows": 377176,
+      "train_sessions": 190
+    },
+    {
+      "fit_at": "2014-07-01",
+      "gain_share": {
+        "INS_BUY_AMT": 0.197,
+        "INS_LAST_DIR": 0.0989,
+        "INS_NEG_AGE": 0.1145,
+        "INS_NEG_SELL": 0.1294,
+        "INS_NET_AMT": 0.0955,
+        "INS_NET_CNT": 0.1866,
+        "INS_NET_RATIO": 0.1782
+      },
+      "scores_until": "2014-12-23",
+      "sec": 2.7,
+      "train_last_label_session": "2014-05-30",
+      "train_rows": 431932,
+      "train_sessions": 214
+    },
+    {
+      "fit_at": "2014-12-24",
+      "gain_share": {
+        "INS_BUY_AMT": 0.206,
+        "INS_LAST_DIR": 0.0984,
+        "INS_NEG_AGE": 0.1142,
+        "INS_NEG_SELL": 0.1376,
+        "INS_NET_AMT": 0.0821,
+        "INS_NET_CNT": 0.1793,
+        "INS_NET_RATIO": 0.1823
+      },
+      "scores_until": "2015-06-23",
+      "sec": 2.7,
+      "train_last_label_session": "2014-11-25",
+      "train_rows": 485949,
+      "train_sessions": 238
+    },
+    {
+      "fit_at": "2015-06-24",
+      "gain_share": {
+        "INS_BUY_AMT": 0.2009,
+        "INS_LAST_DIR": 0.099,
+        "INS_NEG_AGE": 0.1177,
+        "INS_NEG_SELL": 0.1399,
+        "INS_NET_AMT": 0.0843,
+        "INS_NET_CNT": 0.1753,
+        "INS_NET_RATIO": 0.1829
+      },
+      "scores_until": "2015-12-17",
+      "sec": 3.1,
+      "train_last_label_session": "2015-05-25",
+      "train_rows": 539779,
+      "train_sessions": 262
+    },
+    {
+      "fit_at": "2015-12-18",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1881,
+        "INS_LAST_DIR": 0.1136,
+        "INS_NEG_AGE": 0.1129,
+        "INS_NEG_SELL": 0.1385,
+        "INS_NET_AMT": 0.0869,
+        "INS_NET_CNT": 0.1794,
+        "INS_NET_RATIO": 0.1805
+      },
+      "scores_until": "2016-06-16",
+      "sec": 3.2,
+      "train_last_label_session": "2015-11-19",
+      "train_rows": 589976,
+      "train_sessions": 285
+    },
+    {
+      "fit_at": "2016-06-17",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1891,
+        "INS_LAST_DIR": 0.1079,
+        "INS_NEG_AGE": 0.1118,
+        "INS_NEG_SELL": 0.1505,
+        "INS_NET_AMT": 0.0921,
+        "INS_NET_CNT": 0.1613,
+        "INS_NET_RATIO": 0.1873
+      },
+      "scores_until": "2016-12-12",
+      "sec": 3.4,
+      "train_last_label_session": "2016-05-17",
+      "train_rows": 648884,
+      "train_sessions": 309
+    },
+    {
+      "fit_at": "2016-12-13",
+      "gain_share": {
+        "INS_BUY_AMT": 0.183,
+        "INS_LAST_DIR": 0.1012,
+        "INS_NEG_AGE": 0.1097,
+        "INS_NEG_SELL": 0.1624,
+        "INS_NET_AMT": 0.0913,
+        "INS_NET_CNT": 0.1646,
+        "INS_NET_RATIO": 0.1878
+      },
+      "scores_until": "2017-06-13",
+      "sec": 3.5,
+      "train_last_label_session": "2016-11-14",
+      "train_rows": 710459,
+      "train_sessions": 333
+    },
+    {
+      "fit_at": "2017-06-14",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1873,
+        "INS_LAST_DIR": 0.1082,
+        "INS_NEG_AGE": 0.1023,
+        "INS_NEG_SELL": 0.1585,
+        "INS_NET_AMT": 0.0906,
+        "INS_NET_CNT": 0.1581,
+        "INS_NET_RATIO": 0.1949
+      },
+      "scores_until": "2017-12-05",
+      "sec": 3.6,
+      "train_last_label_session": "2017-05-12",
+      "train_rows": 776201,
+      "train_sessions": 357
+    },
+    {
+      "fit_at": "2017-12-06",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1784,
+        "INS_LAST_DIR": 0.1056,
+        "INS_NEG_AGE": 0.1014,
+        "INS_NEG_SELL": 0.1729,
+        "INS_NET_AMT": 0.0899,
+        "INS_NET_CNT": 0.154,
+        "INS_NET_RATIO": 0.1979
+      },
+      "scores_until": "2018-06-05",
+      "sec": 3.9,
+      "train_last_label_session": "2017-11-07",
+      "train_rows": 847344,
+      "train_sessions": 381
+    },
+    {
+      "fit_at": "2018-06-06",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1763,
+        "INS_LAST_DIR": 0.1028,
+        "INS_NEG_AGE": 0.0988,
+        "INS_NEG_SELL": 0.1707,
+        "INS_NET_AMT": 0.0941,
+        "INS_NET_CNT": 0.1542,
+        "INS_NET_RATIO": 0.2032
+      },
+      "scores_until": "2018-11-29",
+      "sec": 4.2,
+      "train_last_label_session": "2018-05-08",
+      "train_rows": 922484,
+      "train_sessions": 405
+    },
+    {
+      "fit_at": "2018-11-30",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1702,
+        "INS_LAST_DIR": 0.1019,
+        "INS_NEG_AGE": 0.0984,
+        "INS_NEG_SELL": 0.1734,
+        "INS_NET_AMT": 0.0882,
+        "INS_NET_CNT": 0.156,
+        "INS_NET_RATIO": 0.212
+      },
+      "scores_until": "2019-05-31",
+      "sec": 4.4,
+      "train_last_label_session": "2018-11-01",
+      "train_rows": 1001390,
+      "train_sessions": 429
+    },
+    {
+      "fit_at": "2019-06-03",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1736,
+        "INS_LAST_DIR": 0.1033,
+        "INS_NEG_AGE": 0.096,
+        "INS_NEG_SELL": 0.1675,
+        "INS_NET_AMT": 0.0966,
+        "INS_NET_CNT": 0.149,
+        "INS_NET_RATIO": 0.2139
+      },
+      "scores_until": "2019-11-26",
+      "sec": 4.7,
+      "train_last_label_session": "2019-04-30",
+      "train_rows": 1083938,
+      "train_sessions": 453
+    },
+    {
+      "fit_at": "2019-11-27",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1774,
+        "INS_LAST_DIR": 0.0977,
+        "INS_NEG_AGE": 0.0988,
+        "INS_NEG_SELL": 0.1668,
+        "INS_NET_AMT": 0.0926,
+        "INS_NET_CNT": 0.1534,
+        "INS_NET_RATIO": 0.2133
+      },
+      "scores_until": "2020-05-27",
+      "sec": 4.9,
+      "train_last_label_session": "2019-10-29",
+      "train_rows": 1167050,
+      "train_sessions": 477
+    },
+    {
+      "fit_at": "2020-05-28",
+      "gain_share": {
+        "INS_BUY_AMT": 0.1746,
+        "INS_LAST_DIR": 0.0998,
+        "INS_NEG_AGE": 0.0946,
+        "INS_NEG_SELL": 0.1677,
+        "INS_NET_AMT": 0.0971,
+        "INS_NET_CNT": 0.1549,
+        "INS_NET_RATIO": 0.2113
+      },
+      "scores_until": "2020-11-23",
+      "sec": 5.3,
+      "train_last_label_session": "2020-04-24",
+      "train_rows": 1252562,
+      "train_sessions": 501
+    },
+    {
+      "fit_at": "2020-11-24",
+      "gain_share": {
+        "INS_BUY_AMT": 0.181,
+        "INS_LAST_DIR": 0.0948,
+        "INS_NEG_AGE": 0.0975,
+        "INS_NEG_SELL": 0.1664,
+        "INS_NET_AMT": 0.1003,
+        "INS_NET_CNT": 0.1482,
+        "INS_NET_RATIO": 0.2118
+      },
+      "scores_until": "2021-05-24",
+      "sec": 5.4,
+      "train_last_label_session": "2020-10-26",
+      "train_rows": 1339412,
+      "train_sessions": 525
+    },
+    {
+      "fit_at": "2021-05-25",
+      "gain_share": {
+        "INS_BUY_AMT": 0.167,
+        "INS_LAST_DIR": 0.0873,
+        "INS_NEG_AGE": 0.0911,
+        "INS_NEG_SELL": 0.1755,
+        "INS_NET_AMT": 0.1083,
+        "INS_NET_CNT": 0.1463,
+        "INS_NET_RATIO": 0.2245
+      },
+      "scores_until": "2024-02-29",
+      "sec": 11.5,
+      "train_last_label_session": "2021-04-21",
+      "train_rows": 1432040,
+      "train_sessions": 549
+    }
+  ],
+  "research_end_index": 7499,
+  "validation_end_index": 8106
+}

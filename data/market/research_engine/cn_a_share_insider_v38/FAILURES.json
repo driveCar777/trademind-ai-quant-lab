@@ -1,0 +1,23 @@
+{
+  "n": 1,
+  "rows": [
+    {
+      "excess_corr": {
+        "ML1_LGBM_STACK": {
+          "excess_corr": 0.2082707123411989,
+          "n": 2950
+        },
+        "ML2F_LGBM_FINDEEP_ONLY": {
+          "excess_corr": -0.09467267365522018,
+          "n": 2950
+        }
+      },
+      "id": "ML5I_LGBM_INSIDER_ONLY",
+      "reopen": "New contract only. No feature/param search.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_capital"
+      ]
+    }
+  ]
+}

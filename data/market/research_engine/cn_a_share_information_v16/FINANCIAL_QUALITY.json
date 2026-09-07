@@ -1,0 +1,12 @@
+{
+  "duplicate_ok": true,
+  "n_announce_before_year": 0,
+  "n_duplicate_keys": 0,
+  "n_invalid_numeric": 0,
+  "n_missing_announcement": 0,
+  "n_missing_net_profit": 8,
+  "n_period_overlap_symbols": 0,
+  "n_rows": 64440,
+  "n_symbols": 5500,
+  "restatement_risk": true
+}

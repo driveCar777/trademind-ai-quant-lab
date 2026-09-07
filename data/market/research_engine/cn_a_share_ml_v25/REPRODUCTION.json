@@ -1,0 +1,374 @@
+{
+  "placebo": {
+    "HN20_research_total": -0.6513816116758451,
+    "HN20_validation_total": -0.09012059552161533,
+    "LO20_research_total": -0.18106895083590324,
+    "LO20_validation_total": -0.20391884895095858,
+    "excess_corr_vs_H11": 0.2691814834990116,
+    "excess_research": -0.0009151007128036262,
+    "excess_research_t": -5.518773615859092,
+    "excess_validation": -0.0006630979991109796,
+    "excess_validation_t": -2.81234172195019,
+    "id": "PLACEBO_SHUFFLED_LABELS",
+    "level1_shape": false,
+    "refit": null,
+    "rolling": [
+      {
+        "block": "RB1_2014_15",
+        "excess": 0.0016214044097199055,
+        "t": 3.480637235538993
+      },
+      {
+        "block": "RB2_2016_17",
+        "excess": -0.00032537836909344437,
+        "t": -0.842723420761755
+      },
+      {
+        "block": "RB3_2018_19",
+        "excess": -0.0013562631027118196,
+        "t": -5.532608992778306
+      },
+      {
+        "block": "RB4_2020_21",
+        "excess": -0.0036067624529276033,
+        "t": -10.738017856277636
+      },
+      {
+        "block": "RB5_VALID",
+        "excess": -0.0006630979991109796,
+        "t": -2.81234172195019
+      }
+    ],
+    "rolling_positive": 1,
+    "sec": 100,
+    "seed": null,
+    "stride": null
+  },
+  "primary_stays": "V25 contract configuration; this battery selects nothing",
+  "summary": {
+    "HN20_validation_min": 0.2657079435525742,
+    "LO20_research_min": 2.6524885262151736,
+    "excess_corr_vs_H11_max": 0.07381534314507536,
+    "n_level1_shape": 7,
+    "n_variants": 7,
+    "validation_excess_max": 0.014753742773913024,
+    "validation_excess_min": 0.013466326282094909
+  },
+  "variants": [
+    {
+      "HN20_research_total": 0.27271899384818865,
+      "HN20_validation_total": 0.3383608089519876,
+      "LO20_research_total": 2.7596246687185513,
+      "LO20_validation_total": 0.3088211405985257,
+      "excess_corr_vs_H11": 0.06307291926333271,
+      "excess_research": 0.012436767710548994,
+      "excess_research_t": 28.320357785417706,
+      "excess_validation": 0.014722122965189231,
+      "excess_validation_t": 17.127502051994036,
+      "id": "PRIMARY_AS_CONTRACT",
+      "level1_shape": true,
+      "refit": null,
+      "rolling": [
+        {
+          "block": "RB1_2014_15",
+          "excess": 0.023536209298528732,
+          "t": 17.046113424841952
+        },
+        {
+          "block": "RB2_2016_17",
+          "excess": 0.012856529015827482,
+          "t": 18.011949501706688
+        },
+        {
+          "block": "RB3_2018_19",
+          "excess": 0.008578652338630052,
+          "t": 12.213369806155583
+        },
+        {
+          "block": "RB4_2020_21",
+          "excess": 0.004008114232858092,
+          "t": 3.472298089422341
+        },
+        {
+          "block": "RB5_VALID",
+          "excess": 0.014722122965189231,
+          "t": 17.127502051994036
+        }
+      ],
+      "rolling_positive": 5,
+      "sec": 1,
+      "seed": null,
+      "stride": null
+    },
+    {
+      "HN20_research_total": 0.2875560361964067,
+      "HN20_validation_total": 0.34138459252592557,
+      "LO20_research_total": 2.807559601808855,
+      "LO20_validation_total": 0.3123519745399377,
+      "excess_corr_vs_H11": 0.06978563348972842,
+      "excess_research": 0.012432498732078183,
+      "excess_research_t": 28.50638722476758,
+      "excess_validation": 0.014753742773913024,
+      "excess_validation_t": 17.100995406424875,
+      "id": "SEED_1",
+      "level1_shape": true,
+      "refit": null,
+      "rolling": [
+        {
+          "block": "RB1_2014_15",
+          "excess": 0.023314849707571514,
+          "t": 16.942537826674624
+        },
+        {
+          "block": "RB2_2016_17",
+          "excess": 0.012661500287145175,
+          "t": 17.716604433794124
+        },
+        {
+          "block": "RB3_2018_19",
+          "excess": 0.00860771984898417,
+          "t": 12.323919434945442
+        },
+        {
+          "block": "RB4_2020_21",
+          "excess": 0.004273876170385255,
+          "t": 3.7646663175454065
+        },
+        {
+          "block": "RB5_VALID",
+          "excess": 0.014753742773913024,
+          "t": 17.100995406424875
+        }
+      ],
+      "rolling_positive": 5,
+      "sec": 104,
+      "seed": 1,
+      "stride": null
+    },
+    {
+      "HN20_research_total": 0.3112760748030241,
+      "HN20_validation_total": 0.34988987159545815,
+      "LO20_research_total": 2.888337820337729,
+      "LO20_validation_total": 0.3204588865575577,
+      "excess_corr_vs_H11": 0.06984523198255957,
+      "excess_research": 0.012559452902676363,
+      "excess_research_t": 28.69993181152762,
+      "excess_validation": 0.014559285456625042,
+      "excess_validation_t": 16.976354452009577,
+      "id": "SEED_2",
+      "level1_shape": true,
+      "refit": null,
+      "rolling": [
+        {
+          "block": "RB1_2014_15",
+          "excess": 0.02373527459473564,
+          "t": 17.189080601481592
+        },
+        {
+          "block": "RB2_2016_17",
+          "excess": 0.012877629603187573,
+          "t": 17.88826523613333
+        },
+        {
+          "block": "RB3_2018_19",
+          "excess": 0.00856497297841185,
+          "t": 12.247554393430153
+        },
+        {
+          "block": "RB4_2020_21",
+          "excess": 0.004158465593465209,
+          "t": 3.686704258475516
+        },
+        {
+          "block": "RB5_VALID",
+          "excess": 0.014559285456625042,
+          "t": 16.976354452009577
+        }
+      ],
+      "rolling_positive": 5,
+      "sec": 107,
+      "seed": 2,
+      "stride": null
+    },
+    {
+      "HN20_research_total": 0.30488872526401667,
+      "HN20_validation_total": 0.3275907890391454,
+      "LO20_research_total": 2.869143461103717,
+      "LO20_validation_total": 0.2990691390718738,
+      "excess_corr_vs_H11": 0.05388324581845104,
+      "excess_research": 0.012612175977102643,
+      "excess_research_t": 28.426319390037833,
+      "excess_validation": 0.014689366911653972,
+      "excess_validation_t": 17.06270539727934,
+      "id": "STRIDE_3",
+      "level1_shape": true,
+      "refit": null,
+      "rolling": [
+        {
+          "block": "RB1_2014_15",
+          "excess": 0.02368913920757443,
+          "t": 16.755332769422257
+        },
+        {
+          "block": "RB2_2016_17",
+          "excess": 0.012699373624341613,
+          "t": 17.77058278297217
+        },
+        {
+          "block": "RB3_2018_19",
+          "excess": 0.008581635144105839,
+          "t": 12.162417221333747
+        },
+        {
+          "block": "RB4_2020_21",
+          "excess": 0.00460725567022044,
+          "t": 4.024883010448856
+        },
+        {
+          "block": "RB5_VALID",
+          "excess": 0.014689366911653972,
+          "t": 17.06270539727934
+        }
+      ],
+      "rolling_positive": 5,
+      "sec": 151,
+      "seed": null,
+      "stride": 3
+    },
+    {
+      "HN20_research_total": 0.26495863944116516,
+      "HN20_validation_total": 0.3206325397482872,
+      "LO20_research_total": 2.739553133688362,
+      "LO20_validation_total": 0.28606460858742233,
+      "excess_corr_vs_H11": 0.07381534314507536,
+      "excess_research": 0.012636448591374165,
+      "excess_research_t": 29.002469771584906,
+      "excess_validation": 0.014477284065011354,
+      "excess_validation_t": 16.907141001203293,
+      "id": "STRIDE_10",
+      "level1_shape": true,
+      "refit": null,
+      "rolling": [
+        {
+          "block": "RB1_2014_15",
+          "excess": 0.02353688911407766,
+          "t": 17.07831443226324
+        },
+        {
+          "block": "RB2_2016_17",
+          "excess": 0.01285302627572721,
+          "t": 17.874286360997157
+        },
+        {
+          "block": "RB3_2018_19",
+          "excess": 0.008427501996845797,
+          "t": 12.24587663946954
+        },
+        {
+          "block": "RB4_2020_21",
+          "excess": 0.0044620491681411885,
+          "t": 3.9521509683419733
+        },
+        {
+          "block": "RB5_VALID",
+          "excess": 0.014477284065011354,
+          "t": 16.907141001203293
+        }
+      ],
+      "rolling_positive": 5,
+      "sec": 77,
+      "seed": null,
+      "stride": 10
+    },
+    {
+      "HN20_research_total": 0.29886803393179884,
+      "HN20_validation_total": 0.2657079435525742,
+      "LO20_research_total": 2.865744884113855,
+      "LO20_validation_total": 0.22281136658218137,
+      "excess_corr_vs_H11": 0.02153441005984246,
+      "excess_research": 0.012523810959075425,
+      "excess_research_t": 28.61072752175076,
+      "excess_validation": 0.013466326282094909,
+      "excess_validation_t": 15.896537931689327,
+      "id": "REFIT_60",
+      "level1_shape": true,
+      "refit": 60,
+      "rolling": [
+        {
+          "block": "RB1_2014_15",
+          "excess": 0.023348165261293928,
+          "t": 17.035375545123905
+        },
+        {
+          "block": "RB2_2016_17",
+          "excess": 0.01280144296372366,
+          "t": 17.91603710233719
+        },
+        {
+          "block": "RB3_2018_19",
+          "excess": 0.008822805260186948,
+          "t": 12.432718764597656
+        },
+        {
+          "block": "RB4_2020_21",
+          "excess": 0.004683294305486373,
+          "t": 4.051404348761289
+        },
+        {
+          "block": "RB5_VALID",
+          "excess": 0.013466326282094909,
+          "t": 15.896537931689327
+        }
+      ],
+      "rolling_positive": 5,
+      "sec": 173,
+      "seed": null,
+      "stride": null
+    },
+    {
+      "HN20_research_total": 0.2425168493175618,
+      "HN20_validation_total": 0.30107327728987987,
+      "LO20_research_total": 2.6524885262151736,
+      "LO20_validation_total": 0.2720140568373546,
+      "excess_corr_vs_H11": 0.023872616144659534,
+      "excess_research": 0.012390395460023962,
+      "excess_research_t": 27.28184069706234,
+      "excess_validation": 0.014350557911456034,
+      "excess_validation_t": 15.965992050062626,
+      "id": "REFIT_240",
+      "level1_shape": true,
+      "refit": 240,
+      "rolling": [
+        {
+          "block": "RB1_2014_15",
+          "excess": 0.024383662378959354,
+          "t": 17.502146053618272
+        },
+        {
+          "block": "RB2_2016_17",
+          "excess": 0.012276558240649701,
+          "t": 16.079368480042874
+        },
+        {
+          "block": "RB3_2018_19",
+          "excess": 0.009095078767242856,
+          "t": 12.150361723741185
+        },
+        {
+          "block": "RB4_2020_21",
+          "excess": 0.004740441634927923,
+          "t": 4.033088001595358
+        },
+        {
+          "block": "RB5_VALID",
+          "excess": 0.014350557911456034,
+          "t": 15.965992050062626
+        }
+      ],
+      "rolling_positive": 5,
+      "sec": 71,
+      "seed": null,
+      "stride": null
+    }
+  ]
+}

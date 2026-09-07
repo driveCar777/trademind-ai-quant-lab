@@ -930,15 +930,16 @@ Windows 只编排。Xavier 只计算。四台各至少 10 次 feature / window /
 | 方法 | 路径 | 作用 |
 |------|------|------|
 | `GET` | `/api/v1/paper/ops` | 今天的操作计划 + 数据新鲜度 + 运行状态 + 成交日志派生账户 + 历史每一期 |
-| `POST` | `/api/v1/paper/update` | 后台启动一次 `python -m research_engine.ml1_live.daily`（官方默认参数；有锁，重复调用返回当前运行） |
-| `GET` | `/api/v1/paper/update/status` | 运行锁 / 进度阶段 / 日志尾 / 上次运行结果 |
+| `POST` | `/api/v1/paper/update` | 后台启动 `daily.py --asof <最近已收盘交易日>`。休市自动回跳上一开盘日。已是最新且日线无缺口则 `skipped` 不启动。有锁则返回当前运行。 |
+| `POST` | `/api/v1/paper/update/stop` | 结束正在跑的更新（`taskkill /T`）。已下好的日线保留，下次从缺口续。没有在跑则返回 `stopped=false`。 |
+| `GET` | `/api/v1/paper/update/status` | 运行锁 / 进度阶段 / 日志尾 / 上次运行结果 / `asof_target` |
 | `GET` | `/api/v1/paper/journal` | 成交日志（事件 + 派生持仓/现金） |
 | `POST` | `/api/v1/paper/journal` | 追加一条事件 `{type: BUY|SELL|DEPOSIT|WITHDRAW|NOTE, date, symbol?, lots?, price?, fee?, note?}` |
 | `DELETE` | `/api/v1/paper/journal/{event_id}` | 删除一条事件（用于改错） |
 
 ### 29.6 `GET /api/v1/paper/ops` 的 `data`
 
-- `freshness`：`today`、`today_is_trading_day`、`last_completed_session`（今天 18:00 前 = 上一个交易日）、`asof_session`、`stale_sessions`（落后交易日数）、`needs_update`、`update_window`（文字："收盘后 18:30 以后，或次日 08:30 前"）。
+- `freshness`：`today`、`today_is_trading_day`、`last_completed_session`（今天 18:00 前 = 上一个交易日；休市回跳上一开盘日，不用未来）、`asof_session`、`stale_sessions`、`needs_update`、`bars_gap`（`n_missing`/`n_ok`，页面加载时清点）、`update_window`。
 - `run`：`running`、`pid`、`started_at`、`elapsed_s`、`stage`（从日志识别的阶段文字）、`log_tail[]`、`last_run`（`STATUS.json` 摘要：`asof_session,started_at,elapsed_s,errors[]`）、`last_failed`。
 - `plan`：`phase` ∈ `UPDATE_FIRST | SELL_TODAY | LIST_READY_BUY_TOMORROW | SIGNAL_TONIGHT | BUY_TODAY | HOLD | NO_POSITION`；`headline`、`sub`、`steps[]`（每步 `{when, text}`）、`sell_list[]`、`buy_list[]`（按实际现金重算：`rank,symbol,name,last_close,lots_100_est,est_yuan,score`）、`cash_check`（`cash_available, reserve, budget, planned_yuan, ok, shortfall, source ∈ JOURNAL|MODEL`）、`warnings[]`、`key_dates`（`signal_date, entry, exit_date, next_signal, next_entry`）、`sessions_held/left/total`。
 - `plans`：`{actual, model}` 两份独立 `plan`（V2.1）。`actual` = `mode=JOURNAL`，只按成交日志：空仓则 `NO_POSITION/today_action=WAIT`（"等下一买入日"，不建议中途进场），部分买入则卖出清单只含实际持有的几只并带 `partial` 提示，现金 0 时提示先入金；`model` = `mode=MODEL`，¥20,000 影子账本假设全买。两者永不混用；顶层 `plan` = `plans.actual`（兼容）。
@@ -950,11 +951,20 @@ Windows 只编排。Xavier 只计算。四台各至少 10 次 feature / window /
 
 ### 29.7 `POST /api/v1/paper/update`
 
-`body` 可选 `{force: bool}`（默认 `false`；`true` 只在已有运行时返回 `TM-1007` 冲突而不是复用）。返回 `run` 结构。`daily.py` 以仓库默认参数运行（V26.8 官方外壳），页面**不能**传特征/参数/持有期/资金。
+`body` 可选 `{force: bool}`（默认 `false`；`true` 只在已有运行时返回 `TM-1005` 冲突而不是复用）。返回 `run` 结构，含 `asof_target`（最近已收盘交易日）、`skipped`、`note`、`bars_gap`。
+
+- **截止日期**：`last_completed_session`。今天休市 → 上一开盘日（周六 9/6 → 周五 9/4）。今天开市但 18:00 前 → 仍是上一交易日。今天开市且 18:00 后 → 今天。不会用未来日期。
+- **已是最新**：`STATUS.asof_session >= asof_target` 且日线文件最后一行已覆盖该日 → `skipped=true`，不 spawn。
+- **补漏**：日历已齐但有票缺该日 K 线 → 启动，只拉缺口；`note` 写明补漏只数。
+- **截断日历 / 2007 标签**：`STATUS.asof_session` 早于冻结日 `2026-08-28` 是被写坏的标签（killed write / 短日历），不是行情回到 2007。`freshness.asof_bogus=true`，页面不得把它当成已是最新。`daily.py` 拒绝写出早于冻结日的 STATUS。点击更新在东财不可用时走 `--skip-fetch` 用本地日线重算。
+- **单实例**：同一时刻只允许一个 `ml1_live.daily`。锁文件用独占创建；pid 仍在但 cmdline 读不到时不得拆锁。发现无锁的 daily.py 视为仍在跑。东财返回「黑名单」则立刻停拉取、不再登录。
+- 正在跑时页面按钮为「停止更新」（`POST /api/v1/paper/update/stop`）。日线单票超过约 40 秒无响应记 `BAR_HANG` 并跳过。
+- `daily.py` 以仓库默认参数运行（V26.8 官方外壳），页面**不能**传特征/参数/持有期/资金。
 
 ### 29.8 成交日志规则
 
-- 事件不可编辑，只能追加/删除；持仓与现金全部由事件推导（FIFO 按票）。
+- 事件可追加、就地修改（`PUT /api/v1/paper/journal/{event_id}`）或删除；持仓与现金全部由事件推导（FIFO 按票）。填错改手数/价格/日期即可，不必删了重登。
+- 本期推荐名单在部分登记后仍返回：`buy_list` = 尚未持有的名字，`logged_list` = 已登记的，`continue_register=true`。页面不得在登记第一只后把名单收掉。
 - 手续费空则按 `max(5, 成交额×0.0003)` 估（买）/ `max(5, 成交额×0.0003)+成交额×0.0005 印花税`（卖）；用户填了以填的为准。
 - 日志不进冻结目录，不影响 `LEDGER_TOP20.json`；只改页面的「实际账户」视图和买入手数。
 

@@ -1,0 +1,258 @@
+{
+  "live_open": {
+    "buy_fees": 50.2,
+    "cash": 210.08,
+    "close_est_invested": 19746.0,
+    "curve": [
+      {
+        "cash": 210.08,
+        "date": "2026-08-31",
+        "equity": 20094.08,
+        "positions": 19884.0
+      },
+      {
+        "cash": 210.08,
+        "date": "2026-09-01",
+        "equity": 20516.08,
+        "positions": 20306.0
+      },
+      {
+        "cash": 210.08,
+        "date": "2026-09-02",
+        "equity": 20307.08,
+        "positions": 20097.0
+      },
+      {
+        "cash": 210.08,
+        "date": "2026-09-03",
+        "equity": 20135.08,
+        "positions": 19925.0
+      },
+      {
+        "cash": 210.08,
+        "date": "2026-09-04",
+        "equity": 20157.08,
+        "positions": 19947.0
+      }
+    ],
+    "entry": "2026-08-31",
+    "hold_target": 20,
+    "invested_delta": -6.28,
+    "invested_open": 19739.72,
+    "lot_diffs": [
+      {
+        "close_est_lots": 12,
+        "lot_delta": 0,
+        "open": 1.73,
+        "open_lots": 12,
+        "status": "FILL",
+        "symbol": "sh.600653",
+        "unrealized": -19.1
+      },
+      {
+        "close_est_lots": 6,
+        "lot_delta": 0,
+        "open": 3.57,
+        "open_lots": 6,
+        "status": "FILL",
+        "symbol": "sz.000868",
+        "unrealized": -13.16
+      },
+      {
+        "close_est_lots": 2,
+        "lot_delta": 0,
+        "open": 11.06,
+        "open_lots": 2,
+        "status": "FILL",
+        "symbol": "sh.600697",
+        "unrealized": 24.77
+      },
+      {
+        "close_est_lots": 9,
+        "lot_delta": 0,
+        "open": 2.3,
+        "open_lots": 9,
+        "status": "FILL",
+        "symbol": "sh.600533",
+        "unrealized": -52.09
+      },
+      {
+        "close_est_lots": 3,
+        "lot_delta": 0,
+        "open": 7.44,
+        "open_lots": 3,
+        "status": "FILL",
+        "symbol": "sh.600241",
+        "unrealized": 1.75
+      },
+      {
+        "close_est_lots": 3,
+        "lot_delta": 0,
+        "open": 6.86,
+        "open_lots": 3,
+        "status": "FILL",
+        "symbol": "sz.002799",
+        "unrealized": 7.92
+      },
+      {
+        "close_est_lots": 1,
+        "lot_delta": 0,
+        "open": 11.85,
+        "open_lots": 1,
+        "status": "FILL",
+        "symbol": "sz.002858",
+        "unrealized": 36.8
+      },
+      {
+        "close_est_lots": 1,
+        "lot_delta": 0,
+        "open": 11.42,
+        "open_lots": 1,
+        "status": "FILL",
+        "symbol": "sh.603208",
+        "unrealized": -12.15
+      },
+      {
+        "close_est_lots": 3,
+        "lot_delta": 0,
+        "open": 9.21,
+        "open_lots": 3,
+        "status": "FILL",
+        "symbol": "sz.000929",
+        "unrealized": 124.21
+      },
+      {
+        "close_est_lots": 5,
+        "lot_delta": 0,
+        "open": 3.68,
+        "open_lots": 5,
+        "status": "FILL",
+        "symbol": "sz.000607",
+        "unrealized": 58.14
+      }
+    ],
+    "mark_date": "2026-09-04",
+    "mtm_equity": 20157.08,
+    "n_fill": 10,
+    "names_only_in_close_est": [],
+    "names_only_in_open": [],
+    "overnight_gaps": [
+      {
+        "entry_open": 1.73,
+        "gap": -0.005747,
+        "signal_close": 1.74,
+        "symbol": "sh.600653"
+      },
+      {
+        "entry_open": 3.57,
+        "gap": -0.002793,
+        "signal_close": 3.58,
+        "symbol": "sz.000868"
+      },
+      {
+        "entry_open": 11.06,
+        "gap": -0.007181,
+        "signal_close": 11.14,
+        "symbol": "sh.600697"
+      },
+      {
+        "entry_open": 2.3,
+        "gap": 0.03139,
+        "signal_close": 2.23,
+        "symbol": "sh.600533"
+      },
+      {
+        "entry_open": 7.44,
+        "gap": -0.008,
+        "signal_close": 7.5,
+        "symbol": "sh.600241"
+      },
+      {
+        "entry_open": 6.86,
+        "gap": -0.010101,
+        "signal_close": 6.93,
+        "symbol": "sz.002799"
+      },
+      {
+        "entry_open": 11.85,
+        "gap": 0.005942,
+        "signal_close": 11.78,
+        "symbol": "sz.002858"
+      },
+      {
+        "entry_open": 11.42,
+        "gap": -0.00349,
+        "signal_close": 11.46,
+        "symbol": "sh.603208"
+      },
+      {
+        "entry_open": 9.21,
+        "gap": -0.003247,
+        "signal_close": 9.24,
+        "symbol": "sz.000929"
+      },
+      {
+        "entry_open": 3.68,
+        "gap": -0.005405,
+        "signal_close": 3.7,
+        "symbol": "sz.000607"
+      }
+    ],
+    "ret_unrealized": 0.007854000000000028,
+    "sessions_held": 5,
+    "signal_date": "2026-08-28",
+    "slippage": 0.001,
+    "unit": 2000.0,
+    "unrealized": 157.08
+  },
+  "tag": "AUDIT_OPEN",
+  "v26_8_replay": {
+    "close_vs_open": {
+      "any_diff": 12,
+      "gap_abs_mean": 0.00430162882182551,
+      "gap_mean": 0.001034126224595445,
+      "gap_p05": -0.00867118853593984,
+      "gap_p95": 0.01163932676729429,
+      "lots_and_names_identical": 17,
+      "name_set_diff": 0,
+      "periods": 29
+    },
+    "delta_equity": 0.0,
+    "delta_total": 0.0,
+    "equity_end": 86856.14999999997,
+    "last3": [
+      {
+        "invested": 91043.95,
+        "n_fill": 9,
+        "pnl": -5281.65,
+        "ret": -0.05787937288863857,
+        "signal_date": "2023-11-28"
+      },
+      {
+        "invested": 87660.57,
+        "n_fill": 10,
+        "pnl": 2978.37,
+        "ret": 0.03385625713644572,
+        "signal_date": "2023-12-27"
+      },
+      {
+        "invested": 92184.09,
+        "n_fill": 10,
+        "pnl": -6093.32,
+        "ret": -0.06555513820391903,
+        "signal_date": "2024-01-26"
+      }
+    ],
+    "match": true,
+    "n_periods": 29,
+    "profit_yuan": 12856.149999999965,
+    "read_equity_end": 86856.14999999997,
+    "read_n_periods": 29,
+    "read_total": 0.39029806098432296,
+    "total": 0.39029806098432296,
+    "window": [
+      "2021-08-25",
+      "2024-02-29"
+    ]
+  }
+}

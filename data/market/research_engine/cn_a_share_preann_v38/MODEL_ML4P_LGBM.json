@@ -1,0 +1,400 @@
+{
+  "features": [
+    "PA_SURPRISE",
+    "PA_TYPE",
+    "PA_REV",
+    "PA_NEG_UNCERT",
+    "PA_LEAD",
+    "PA_JOR",
+    "PA_CAR3",
+    "PA_ABNVOL",
+    "PA_NEG_AGE"
+  ],
+  "first_pred": "2012-01-04",
+  "frozen_after_research": true,
+  "n_features": 9,
+  "refits": [
+    {
+      "fit_at": "2012-01-04",
+      "gain_share": {
+        "PA_ABNVOL": 0.144,
+        "PA_CAR3": 0.1524,
+        "PA_JOR": 0.1155,
+        "PA_LEAD": 0.123,
+        "PA_NEG_AGE": 0.1238,
+        "PA_NEG_UNCERT": 0.0993,
+        "PA_REV": 0.0342,
+        "PA_SURPRISE": 0.1045,
+        "PA_TYPE": 0.1034
+      },
+      "scores_until": "2012-07-04",
+      "sec": 2.1,
+      "train_last_label_session": "2011-12-02",
+      "train_rows": 162803,
+      "train_sessions": 94
+    },
+    {
+      "fit_at": "2012-07-05",
+      "gain_share": {
+        "PA_ABNVOL": 0.1491,
+        "PA_CAR3": 0.1418,
+        "PA_JOR": 0.1129,
+        "PA_LEAD": 0.1243,
+        "PA_NEG_AGE": 0.1262,
+        "PA_NEG_UNCERT": 0.0999,
+        "PA_REV": 0.0316,
+        "PA_SURPRISE": 0.0963,
+        "PA_TYPE": 0.1178
+      },
+      "scores_until": "2012-12-26",
+      "sec": 2.4,
+      "train_last_label_session": "2012-06-05",
+      "train_rows": 212279,
+      "train_sessions": 118
+    },
+    {
+      "fit_at": "2012-12-27",
+      "gain_share": {
+        "PA_ABNVOL": 0.1471,
+        "PA_CAR3": 0.1323,
+        "PA_JOR": 0.1015,
+        "PA_LEAD": 0.1264,
+        "PA_NEG_AGE": 0.1196,
+        "PA_NEG_UNCERT": 0.1165,
+        "PA_REV": 0.0294,
+        "PA_SURPRISE": 0.1048,
+        "PA_TYPE": 0.1224
+      },
+      "scores_until": "2013-07-04",
+      "sec": 2.4,
+      "train_last_label_session": "2012-11-28",
+      "train_rows": 266435,
+      "train_sessions": 142
+    },
+    {
+      "fit_at": "2013-07-05",
+      "gain_share": {
+        "PA_ABNVOL": 0.1387,
+        "PA_CAR3": 0.1411,
+        "PA_JOR": 0.106,
+        "PA_LEAD": 0.118,
+        "PA_NEG_AGE": 0.1244,
+        "PA_NEG_UNCERT": 0.1134,
+        "PA_REV": 0.0246,
+        "PA_SURPRISE": 0.1147,
+        "PA_TYPE": 0.1191
+      },
+      "scores_until": "2013-12-30",
+      "sec": 2.5,
+      "train_last_label_session": "2013-06-03",
+      "train_rows": 322012,
+      "train_sessions": 166
+    },
+    {
+      "fit_at": "2013-12-31",
+      "gain_share": {
+        "PA_ABNVOL": 0.143,
+        "PA_CAR3": 0.1421,
+        "PA_JOR": 0.1074,
+        "PA_LEAD": 0.1216,
+        "PA_NEG_AGE": 0.1166,
+        "PA_NEG_UNCERT": 0.1153,
+        "PA_REV": 0.0274,
+        "PA_SURPRISE": 0.1064,
+        "PA_TYPE": 0.1202
+      },
+      "scores_until": "2014-06-30",
+      "sec": 2.7,
+      "train_last_label_session": "2013-12-02",
+      "train_rows": 377176,
+      "train_sessions": 190
+    },
+    {
+      "fit_at": "2014-07-01",
+      "gain_share": {
+        "PA_ABNVOL": 0.133,
+        "PA_CAR3": 0.1381,
+        "PA_JOR": 0.1093,
+        "PA_LEAD": 0.1191,
+        "PA_NEG_AGE": 0.1283,
+        "PA_NEG_UNCERT": 0.1156,
+        "PA_REV": 0.0243,
+        "PA_SURPRISE": 0.1169,
+        "PA_TYPE": 0.1153
+      },
+      "scores_until": "2014-12-23",
+      "sec": 2.8,
+      "train_last_label_session": "2014-05-30",
+      "train_rows": 431932,
+      "train_sessions": 214
+    },
+    {
+      "fit_at": "2014-12-24",
+      "gain_share": {
+        "PA_ABNVOL": 0.1349,
+        "PA_CAR3": 0.1469,
+        "PA_JOR": 0.1124,
+        "PA_LEAD": 0.1196,
+        "PA_NEG_AGE": 0.123,
+        "PA_NEG_UNCERT": 0.1253,
+        "PA_REV": 0.0235,
+        "PA_SURPRISE": 0.1123,
+        "PA_TYPE": 0.1021
+      },
+      "scores_until": "2015-06-23",
+      "sec": 3.0,
+      "train_last_label_session": "2014-11-25",
+      "train_rows": 485949,
+      "train_sessions": 238
+    },
+    {
+      "fit_at": "2015-06-24",
+      "gain_share": {
+        "PA_ABNVOL": 0.1403,
+        "PA_CAR3": 0.1508,
+        "PA_JOR": 0.1097,
+        "PA_LEAD": 0.1151,
+        "PA_NEG_AGE": 0.1239,
+        "PA_NEG_UNCERT": 0.1206,
+        "PA_REV": 0.0269,
+        "PA_SURPRISE": 0.1136,
+        "PA_TYPE": 0.099
+      },
+      "scores_until": "2015-12-17",
+      "sec": 3.0,
+      "train_last_label_session": "2015-05-25",
+      "train_rows": 539779,
+      "train_sessions": 262
+    },
+    {
+      "fit_at": "2015-12-18",
+      "gain_share": {
+        "PA_ABNVOL": 0.1391,
+        "PA_CAR3": 0.1418,
+        "PA_JOR": 0.11,
+        "PA_LEAD": 0.1138,
+        "PA_NEG_AGE": 0.1262,
+        "PA_NEG_UNCERT": 0.114,
+        "PA_REV": 0.0268,
+        "PA_SURPRISE": 0.1174,
+        "PA_TYPE": 0.1109
+      },
+      "scores_until": "2016-06-16",
+      "sec": 3.3,
+      "train_last_label_session": "2015-11-19",
+      "train_rows": 589976,
+      "train_sessions": 285
+    },
+    {
+      "fit_at": "2016-06-17",
+      "gain_share": {
+        "PA_ABNVOL": 0.1413,
+        "PA_CAR3": 0.1458,
+        "PA_JOR": 0.1139,
+        "PA_LEAD": 0.1146,
+        "PA_NEG_AGE": 0.1256,
+        "PA_NEG_UNCERT": 0.111,
+        "PA_REV": 0.0262,
+        "PA_SURPRISE": 0.114,
+        "PA_TYPE": 0.1076
+      },
+      "scores_until": "2016-12-12",
+      "sec": 3.5,
+      "train_last_label_session": "2016-05-17",
+      "train_rows": 648884,
+      "train_sessions": 309
+    },
+    {
+      "fit_at": "2016-12-13",
+      "gain_share": {
+        "PA_ABNVOL": 0.1402,
+        "PA_CAR3": 0.147,
+        "PA_JOR": 0.1145,
+        "PA_LEAD": 0.1175,
+        "PA_NEG_AGE": 0.1177,
+        "PA_NEG_UNCERT": 0.1167,
+        "PA_REV": 0.0258,
+        "PA_SURPRISE": 0.1225,
+        "PA_TYPE": 0.0981
+      },
+      "scores_until": "2017-06-13",
+      "sec": 3.9,
+      "train_last_label_session": "2016-11-14",
+      "train_rows": 710459,
+      "train_sessions": 333
+    },
+    {
+      "fit_at": "2017-06-14",
+      "gain_share": {
+        "PA_ABNVOL": 0.1428,
+        "PA_CAR3": 0.1488,
+        "PA_JOR": 0.1209,
+        "PA_LEAD": 0.1152,
+        "PA_NEG_AGE": 0.1155,
+        "PA_NEG_UNCERT": 0.1154,
+        "PA_REV": 0.0268,
+        "PA_SURPRISE": 0.1155,
+        "PA_TYPE": 0.0992
+      },
+      "scores_until": "2017-12-05",
+      "sec": 3.9,
+      "train_last_label_session": "2017-05-12",
+      "train_rows": 776201,
+      "train_sessions": 357
+    },
+    {
+      "fit_at": "2017-12-06",
+      "gain_share": {
+        "PA_ABNVOL": 0.1411,
+        "PA_CAR3": 0.1505,
+        "PA_JOR": 0.12,
+        "PA_LEAD": 0.1188,
+        "PA_NEG_AGE": 0.1123,
+        "PA_NEG_UNCERT": 0.1131,
+        "PA_REV": 0.028,
+        "PA_SURPRISE": 0.11,
+        "PA_TYPE": 0.1062
+      },
+      "scores_until": "2018-06-05",
+      "sec": 4.3,
+      "train_last_label_session": "2017-11-07",
+      "train_rows": 847344,
+      "train_sessions": 381
+    },
+    {
+      "fit_at": "2018-06-06",
+      "gain_share": {
+        "PA_ABNVOL": 0.1406,
+        "PA_CAR3": 0.1461,
+        "PA_JOR": 0.1192,
+        "PA_LEAD": 0.1287,
+        "PA_NEG_AGE": 0.1207,
+        "PA_NEG_UNCERT": 0.114,
+        "PA_REV": 0.024,
+        "PA_SURPRISE": 0.1067,
+        "PA_TYPE": 0.1
+      },
+      "scores_until": "2018-11-29",
+      "sec": 4.4,
+      "train_last_label_session": "2018-05-08",
+      "train_rows": 922484,
+      "train_sessions": 405
+    },
+    {
+      "fit_at": "2018-11-30",
+      "gain_share": {
+        "PA_ABNVOL": 0.137,
+        "PA_CAR3": 0.1487,
+        "PA_JOR": 0.1195,
+        "PA_LEAD": 0.1213,
+        "PA_NEG_AGE": 0.1167,
+        "PA_NEG_UNCERT": 0.1114,
+        "PA_REV": 0.0244,
+        "PA_SURPRISE": 0.1141,
+        "PA_TYPE": 0.1068
+      },
+      "scores_until": "2019-05-31",
+      "sec": 4.5,
+      "train_last_label_session": "2018-11-01",
+      "train_rows": 1001390,
+      "train_sessions": 429
+    },
+    {
+      "fit_at": "2019-06-03",
+      "gain_share": {
+        "PA_ABNVOL": 0.14,
+        "PA_CAR3": 0.16,
+        "PA_JOR": 0.118,
+        "PA_LEAD": 0.122,
+        "PA_NEG_AGE": 0.1166,
+        "PA_NEG_UNCERT": 0.1096,
+        "PA_REV": 0.0253,
+        "PA_SURPRISE": 0.1075,
+        "PA_TYPE": 0.1009
+      },
+      "scores_until": "2019-11-26",
+      "sec": 4.7,
+      "train_last_label_session": "2019-04-30",
+      "train_rows": 1083938,
+      "train_sessions": 453
+    },
+    {
+      "fit_at": "2019-11-27",
+      "gain_share": {
+        "PA_ABNVOL": 0.1307,
+        "PA_CAR3": 0.161,
+        "PA_JOR": 0.1266,
+        "PA_LEAD": 0.1117,
+        "PA_NEG_AGE": 0.116,
+        "PA_NEG_UNCERT": 0.1099,
+        "PA_REV": 0.0269,
+        "PA_SURPRISE": 0.1084,
+        "PA_TYPE": 0.1087
+      },
+      "scores_until": "2020-05-27",
+      "sec": 5.0,
+      "train_last_label_session": "2019-10-29",
+      "train_rows": 1167050,
+      "train_sessions": 477
+    },
+    {
+      "fit_at": "2020-05-28",
+      "gain_share": {
+        "PA_ABNVOL": 0.1294,
+        "PA_CAR3": 0.1648,
+        "PA_JOR": 0.1252,
+        "PA_LEAD": 0.1058,
+        "PA_NEG_AGE": 0.1151,
+        "PA_NEG_UNCERT": 0.1093,
+        "PA_REV": 0.0287,
+        "PA_SURPRISE": 0.1079,
+        "PA_TYPE": 0.1138
+      },
+      "scores_until": "2020-11-23",
+      "sec": 5.7,
+      "train_last_label_session": "2020-04-24",
+      "train_rows": 1252562,
+      "train_sessions": 501
+    },
+    {
+      "fit_at": "2020-11-24",
+      "gain_share": {
+        "PA_ABNVOL": 0.127,
+        "PA_CAR3": 0.1658,
+        "PA_JOR": 0.1267,
+        "PA_LEAD": 0.1111,
+        "PA_NEG_AGE": 0.1169,
+        "PA_NEG_UNCERT": 0.1038,
+        "PA_REV": 0.0318,
+        "PA_SURPRISE": 0.1076,
+        "PA_TYPE": 0.1093
+      },
+      "scores_until": "2021-05-24",
+      "sec": 6.1,
+      "train_last_label_session": "2020-10-26",
+      "train_rows": 1339412,
+      "train_sessions": 525
+    },
+    {
+      "fit_at": "2021-05-25",
+      "gain_share": {
+        "PA_ABNVOL": 0.131,
+        "PA_CAR3": 0.1579,
+        "PA_JOR": 0.1273,
+        "PA_LEAD": 0.1109,
+        "PA_NEG_AGE": 0.111,
+        "PA_NEG_UNCERT": 0.111,
+        "PA_REV": 0.0394,
+        "PA_SURPRISE": 0.1067,
+        "PA_TYPE": 0.1048
+      },
+      "scores_until": "2024-02-29",
+      "sec": 12.3,
+      "train_last_label_session": "2021-04-21",
+      "train_rows": 1432040,
+      "train_sessions": 549
+    }
+  ],
+  "research_end_index": 7499,
+  "validation_end_index": 8106
+}

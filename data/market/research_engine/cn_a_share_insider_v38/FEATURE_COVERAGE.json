@@ -1,0 +1,62 @@
+{
+  "features": {
+    "INS_BUY_AMT": {
+      "last_session": 0.0,
+      "mean_over_research": 0.10014674458718431
+    },
+    "INS_LAST_DIR": {
+      "last_session": 0.0,
+      "mean_over_research": 0.10332363617640246
+    },
+    "INS_NEG_AGE": {
+      "last_session": 0.0,
+      "mean_over_research": 0.10332363617640246
+    },
+    "INS_NEG_SELL": {
+      "last_session": 0.0,
+      "mean_over_research": 0.10014674458718431
+    },
+    "INS_NET_AMT": {
+      "last_session": 0.0,
+      "mean_over_research": 0.10014674458718431
+    },
+    "INS_NET_CNT": {
+      "last_session": 0.0,
+      "mean_over_research": 0.10332363617640246
+    },
+    "INS_NET_RATIO": {
+      "last_session": 0.0,
+      "mean_over_research": 0.10332363617640246
+    }
+  },
+  "pit": {
+    "N": 5549,
+    "T": 8714,
+    "arrays": [
+      "INS_SIGNED_YUAN",
+      "INS_BUY_YUAN",
+      "INS_SELL_YUAN",
+      "INS_BUY_CNT",
+      "INS_SELL_CNT",
+      "INS_SIGNED_RATIO"
+    ],
+    "content_hash": "37aa4238485529c72862135784cc95238868fbb7b16329372e27d0fbb603fe50",
+    "dataset_id": "tm-ashare-INSIDER-EVT-20260906-000001",
+    "exec_lag_sessions": 3,
+    "notice_cutoff": "2024-02-29",
+    "pit_rule": "HOLDER visible first session after NOTICE_DATE; EXEC visible CHANGE_DATE + 3 sessions",
+    "stats": {
+      "dropped_denied": 11898,
+      "no_amount": 911,
+      "no_symbol": 1968,
+      "rows_exec": 150888,
+      "rows_holder": 130812,
+      "used_exec": 142364,
+      "used_holder": 125466
+    },
+    "tables_used": [
+      "RPT_SHARE_HOLDER_INCREASE",
+      "RPT_EXECUTIVE_HOLD_DETAILS"
+    ]
+  }
+}

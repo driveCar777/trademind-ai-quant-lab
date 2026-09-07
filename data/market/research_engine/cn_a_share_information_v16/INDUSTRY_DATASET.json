@@ -1,0 +1,14 @@
+{
+  "asof_max": "2024-02-15",
+  "asof_min": "2009-12-15",
+  "content_hash": "6ba883265c3a0d1be6599fe1832ef31354511a8451a7193e824cf2890971cc9c",
+  "csv_sha256": "02b0003e6b6c43cfe77323aef1b9c104056ea67eb3058b0859bc3b9408394df2",
+  "dataset_id": "tm-ashare-INDUSTRY-PIT-20260831-000001",
+  "grid": "15th_of_month",
+  "kind": "INDUSTRY-PIT",
+  "knowledge_time": "effective_date",
+  "n_asof": 171,
+  "n_rows": 575002,
+  "pit_test_ok": true,
+  "taxonomy_change_risk": true
+}

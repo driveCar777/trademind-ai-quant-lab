@@ -1,0 +1,167 @@
+{
+  "amendment": "RESEARCH_RULES_AMENDMENT_V1 (A1 LO20 gate, A2 rolling, A3 one model per layer, A4 excess-series cluster test)",
+  "books": {
+    "gate": "LO20 legacy long-only (A1)",
+    "predictive": "overlapping MEAN_FORWARD_RETURN excess vs eligible EW",
+    "secondary": "HN20 hedged (reported only)"
+  },
+  "contract_hash": "890c4e8e199f9b2c30c7d473ef26644816a90a19a5ca14e1ea9ac4066dfc7893",
+  "cost_model_stock": {
+    "commission": 0.00025,
+    "slippage": 0.001,
+    "stamp_new": 0.0005,
+    "stamp_old": 0.001,
+    "transfer": 1e-05
+  },
+  "cost_usd": 0.0,
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "effective_start": "layer live from 2014-03-12; sessions with < 50% of eligible names live are excluded from training and scoring (research period effectively 2014-03 -> 2021-08; declared before run)",
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_m_layer": 1,
+  "fdr_q": 0.05,
+  "feature_transform": "cross-sectional rank in [0,1] per session over eligible live names",
+  "features": [
+    {
+      "layer": "pledge",
+      "ml0_sign": 1,
+      "name": "PL_NEG_RATIO"
+    },
+    {
+      "layer": "pledge",
+      "ml0_sign": 1,
+      "name": "PL_NEG_D20"
+    },
+    {
+      "layer": "pledge",
+      "ml0_sign": 1,
+      "name": "PL_NEG_D60"
+    },
+    {
+      "layer": "pledge",
+      "ml0_sign": 1,
+      "name": "PL_NEG_DEALS"
+    },
+    {
+      "layer": "pledge",
+      "ml0_sign": 1,
+      "name": "PL_NEG_MCAP"
+    },
+    {
+      "layer": "pledge",
+      "ml0_sign": 1,
+      "name": "PL_STRESS"
+    }
+  ],
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "EQUITY_PLEDGE_MODEL",
+      "features": [
+        "PL_NEG_RATIO",
+        "PL_NEG_D20",
+        "PL_NEG_D60",
+        "PL_NEG_DEALS",
+        "PL_NEG_MCAP",
+        "PL_STRESS"
+      ],
+      "id": "ML6P_LGBM_PLEDGE_ONLY",
+      "mechanism": "Controller equity-pledge level, 20/60-session change, deal count, pledged cap vs liquidity and a price-stress interaction from weekly CSDC snapshots. Literature recorded BEFORE the run: high / rising pledge ratios predict crash risk and underperformance (2018 forced-liquidation wave); low or falling pledge = healthier controller. Long side = low-pledge names. One fitted model on this layer alone; LO20 gate; independence vs ML1 by excess series.",
+      "not": "FEATURE_SEARCH; WINDOW_SEARCH; HYPERPARAMETER_SEARCH; REFIT_AFTER_RESEARCH; SELECTING_ON_VALIDATION; SWITCHING_BOOK; USING_AS_ML1_FILTER_AFTER_SEEING_RESULTS",
+      "signal": "ML6P_LGBM"
+    }
+  ],
+  "id": "A_SHARE_EQUITY_PLEDGE_MODEL_V38L7",
+  "independence_test": "A4: corr of excess-vs-EW series vs ML1 (V25 SCORES_ML1_LGBM); > 0.90 = SAME_CLUSTER",
+  "label": "cross-sectional rank of open(t+1)->open(t+1+20) return minus 0.5",
+  "level1_gate": "fixed-split gates (pred net>0 both, excess/IC evidence>=2 both, FDR q=0.05, LO20 capital>0 both) AND excess>0 in >= 4 of 5 rolling blocks",
+  "live_api": false,
+  "mission": "V38_EVOLUTION_MISSION S1 layer L7",
+  "model": {
+    "note": "identical to V25/V27/V38-L1/L4; not tuned",
+    "params": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.03,
+      "min_child_samples": 1000,
+      "n_estimators": 400,
+      "num_leaves": 31,
+      "num_threads": 16,
+      "objective": "regression",
+      "random_state": 20260904,
+      "reg_lambda": 1.0,
+      "subsample": 0.7,
+      "subsample_freq": 1,
+      "verbosity": -1
+    },
+    "type": "lightgbm.LGBMRegressor"
+  },
+  "modify_ml1": false,
+  "new_purchase": false,
+  "no_search": "features, lag, transform, label, params and schedule fixed here; one run",
+  "pledge_content_hash": "ba293d7d9ab34f3061362c13a7e932b52aab3e640c128a8ce200d2bd3419f39d",
+  "pledge_dataset_id": "tm-ashare-PLEDGE-W1-20260907-000001",
+  "pledge_pit": "snapshot visible first session after TRADE_DATE + 2 sessions; carried forward <= 30 sessions; absent name = zero pledge; snapshots after 2024-02-29 dropped",
+  "pledge_source": "Eastmoney datacenter RPT_CSDC_LIST (中登 weekly 股权质押, TRADE_DATE = Friday); free; 2014-03 ->",
+  "quantile": 0.2,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "rolling_blocks": [
+    [
+      "RB1_2014_15",
+      "2014-01-01",
+      "2015-12-31"
+    ],
+    [
+      "RB2_2016_17",
+      "2016-01-01",
+      "2017-12-31"
+    ],
+    [
+      "RB3_2018_19",
+      "2018-01-01",
+      "2019-12-31"
+    ],
+    [
+      "RB4_2020_21",
+      "2020-01-01",
+      "2021-08-24"
+    ],
+    [
+      "RB5_VALID",
+      "2021-08-25",
+      "2024-02-29"
+    ]
+  ],
+  "same_cluster_corr": 0.9,
+  "seed": 20260907,
+  "signal_price": "RAW_CLOSE_T",
+  "universe": "all eligible names in the frozen panel on live sessions",
+  "upstream_pit_layers": [
+    "V38-L7 equity pledge (6)"
+  ],
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ],
+  "verdict_labels": {
+    "fail": "A_SHARE_EQUITY_PLEDGE_V38L7_NO_CANDIDATE",
+    "pass": "A_SHARE_EQUITY_PLEDGE_V38L7_INDEPENDENT_CANDIDATE",
+    "same_cluster": "A_SHARE_EQUITY_PLEDGE_V38L7_SAME_CLUSTER"
+  },
+  "walk_forward": {
+    "embargo_sessions": 21,
+    "expanding": true,
+    "first_pred": "2016-03-28",
+    "first_pred_rule": "layer live start + 500 sessions (V25 rule of >= 2 years of labels; V25 global 2012-01-04 not applicable to a 2014 layer)",
+    "frozen_after_research": true,
+    "refit_every_sessions": 120,
+    "train_stride_sessions": 5
+  }
+}

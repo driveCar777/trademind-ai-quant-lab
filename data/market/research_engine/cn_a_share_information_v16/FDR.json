@@ -1,0 +1,41 @@
+{
+  "adjusted_p": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "discoveries": [],
+  "ids": [
+    "F1_YOY_NP_ANN",
+    "F1_YOY_REV_ANN",
+    "F2_ROE_ANN",
+    "F2_GPM_ANN",
+    "F3_NPM_ANN",
+    "F4_ROE_DELTA_ANN",
+    "I1_IND_RS_20",
+    "I2_IND_RS_60",
+    "I3_IND_BREADTH_20"
+  ],
+  "m": 9,
+  "method": "BH",
+  "note": "All pre-registered V16 hypotheses. Family-level FDR is not authority.",
+  "onesided_p": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "q": 0.05,
+  "unified": true
+}

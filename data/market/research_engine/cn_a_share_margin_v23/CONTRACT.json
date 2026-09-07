@@ -1,0 +1,94 @@
+{
+  "cagr_only_from": "CANONICAL_CAPITAL_ACCOUNT",
+  "cagr_target_not_a_gate": 0.1,
+  "contract_hash": "95d1b9c51bcb79600ebe0ed8c7010e5bd52119489a5a44f2d4817ff88729feff",
+  "cost_model": {
+    "commission": 0.00025,
+    "id": "A_SHARE_STRATEGY_COST_MODEL_V1",
+    "optimize": false,
+    "slippage": 0.001,
+    "stamp_before_20230828": 0.001,
+    "stamp_from_20230828": 0.0005,
+    "transfer": 1e-05
+  },
+  "cost_usd": 0.0,
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied_downloaded": false,
+  "denied_window": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "do_not_flip_sign": true,
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_q": 0.05,
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "MARGIN_FLOW",
+      "id": "M1_LOW_NET_MARGIN_INFLOW_20",
+      "mechanism": "Leveraged retail net margin buying over the last 20 sessions, scaled by float market cap, predicts lower forward returns (crowded, forced-deleveraging risk). Long the quintile with the LOWEST inflow. score = -sum(RZJME,20)/SZ.",
+      "not": "PRICE_REVERSAL_OR_TURNOVER_CLONE",
+      "signal": "NEG_NET_INFLOW_20_OVER_CAP",
+      "state": null
+    },
+    {
+      "family": "MARGIN_LEVEL",
+      "id": "M2_LOW_MARGIN_BALANCE_RATIO",
+      "mechanism": "Margin balance as a fraction of float market cap = leverage overhang. Long the quintile with the LOWEST ratio. score = -RZYE/SZ.",
+      "not": "SIZE_CLONE_OR_LOW_VOL",
+      "signal": "NEG_BALANCE_OVER_CAP",
+      "state": null
+    },
+    {
+      "family": "MARGIN_FLOW",
+      "id": "M3_MARGIN_DELEVERAGED_60",
+      "mechanism": "Names whose margin balance fell most over 60 sessions have already shed leveraged holders. Long the quintile with the LARGEST 60-session balance decline. score = -(RZYE_t / RZYE_{t-60} - 1).",
+      "not": "PRICE_MOMENTUM_CLONE",
+      "signal": "NEG_BALANCE_CHG_60",
+      "state": null
+    }
+  ],
+  "id": "A_SHARE_MARGIN_POSITIONING_V23",
+  "keep_h11_h12": true,
+  "live_api": false,
+  "long_only": true,
+  "margin_dataset_id": "tm-ashare-MARGIN-D1-20260904-000001",
+  "margin_fields_used": [
+    "RZYE",
+    "RZJME",
+    "SZ"
+  ],
+  "margin_source": "Eastmoney datacenter RPTA_WEB_RZRQ_GGMX (mirror of SSE/SZSE daily margin detail); official exchange pages probed reachable for cross-check",
+  "min_cross_section": 100,
+  "new_purchase": false,
+  "not": [
+    "PRICE_ONLY_FARM",
+    "ANNOUNCEMENT_WINDOW",
+    "RATIO",
+    "MEMBERSHIP",
+    "SIGN_FLIP"
+  ],
+  "pit_lag_sessions": 1,
+  "pit_rule": "margin detail for session D is exchange-published D+1 pre-open; score at close of t uses rows with DATE <= t-1",
+  "portfolio": "QUINTILE_TOP_20",
+  "predictive_is_not_cagr": true,
+  "predictive_metric_name": "MEAN_FORWARD_RETURN",
+  "quantile": 0.2,
+  "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+  "reopen_h11_h12": false,
+  "reopen_v13_v21": false,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "same_cluster_corr": 0.9,
+  "seed": 20260904,
+  "signal_price": "RAW_CLOSE_T",
+  "universe": "eligible names in the frozen panel that have a margin row on t-1 (marginable set)",
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ]
+}

@@ -382,7 +382,9 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 | 6 | 名单已出 → `LIST_READY_BUY_TOMORROW`，买入手数按可用现金 − ¥200 重算且不超预算 | ✅ |
 | 7 | 非法成交拒绝 / 删除事件 / 手续费估算 | ✅ |
 | 8 | HTTP：`/ops` `/update/status` `/journal` 增删；`/paper` `/paper/v1` 200；页面点「更新数据」→ 后台 `daily.py` 有锁、有进度、正常结束并归档 `HISTORY.json` | ✅ |
-| 9 | V2.1（12:05）：买入日 / 持有日 `plans.actual` 与 `plans.model` 各自正确；空仓期中 → `NO_POSITION/WAIT` + `mid_entry_option` + 名单按现金（现金 0 → 空名单）；买 3/10 只 → 我的持仓 3、警告「3/10」、`history_actual` OPEN n=3，模型视图不受影响；全卖后 CLOSED 有收回；信号夜新期 `PENDING_ENTRY`；浏览器两视图切换截图核对 | ✅ |
+| 10 | V2.1 登记一只后本期名单仍在（已登记 3 / 还剩 7）；`PUT /journal/{id}` 就地改成交价金额 | ✅ |
+| 11 | 周六 9/6 → `last_completed=9/4`；周一 10:00 仍 9/4；周一 19:00 → 9/7 | ✅ |
+| 12 | 无运行时 `stop_update` 不报错；`stopped=false` | ✅ |
 
 稳定性：跟 V29 到 2026-09-29（真实卖出日）/ 09-30（买入日）各走一遍页面状态 → Freeze。
 

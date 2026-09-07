@@ -1,0 +1,18 @@
+{
+  "asof_max": "2026-08-15",
+  "asof_min": "2009-12-15",
+  "csv": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\index\\normalized\\INDEX_MONTHLY.csv",
+  "csv_sha256": "71341a591fe8868caf5c5faa185f624f1af335fcbd7cfa60afb5a3690faab4e8",
+  "download_complete": true,
+  "effective_date_present": true,
+  "grid": "15th_of_month",
+  "knowledge_time": "effective_date = query date",
+  "label": "MONTHLY_ASOF",
+  "n_asof": 201,
+  "n_expected": 171,
+  "n_hs300_rows": 60300,
+  "n_rows": 160798,
+  "n_symbols": 1889,
+  "n_zz500_rows": 100498,
+  "pit_available": true
+}

@@ -17,7 +17,7 @@
 | 出新名单前先看余额？ | **是**。买入日的名单手数按「你的可用现金 − ¥200 预留」重算（同一套 V26.8 算术）；现金不够就自然少买几只/少几手；上期还没卖干净会红字提醒「先卖后买」。不会建议"卖别的换这只"或做 T。 | `preview_lots` |
 | 每天要手动更新数据吗？ | 需要点一下（或者你以后设 Windows 计划任务）。V2 在页面放「更新数据」按钮，后台跑 `daily.py`，有进度、有日志。**不更新也不会给错名单**：名单只依赖信号日收盘，所以只要信号日当晚（或次日开盘前）更新过就够；平时不更新只是持仓市值不刷新。 | run manager |
 | 几点更新？几点看名单？ | 收盘后 **18:30 以后**更新（BaoStock 日线一般 17:30–18:00 齐）；忘了就次日 **08:30 前**补。操作日 09:15–09:25 集合竞价或 09:30 开盘按名单下单。 | BaoStock 更新时点 |
-| 更新到一半断了/报错/重复点？ | 管线每步幂等：日线按缺失交易日补、融资按日文件、户数按文件龄。中断后再点一次会从缺的地方继续；重复点无害（有锁：正在跑时按钮灰掉，第二次点只是看进度）。上次失败/中断会在状态栏红字提示，并给日志。 | `update_bars` idempotent；锁文件 |
+| 更新到一半断了/报错/重复点？怎么停？ | 管线每步幂等：日线按缺失交易日补。已到截止日期且无缺口 → 直接告诉你「没有新任务」，不跑。有缺口提示补漏 N 只。正在跑时按钮是「停止更新」（`POST /update/stop`）；停掉后已下好的日线留着，下次续。单只行情卡住约 40 秒跳过。上次失败/中断红字+日志。 | `update_bars` 幂等；锁；stop |
 | 第二天会补前面缺的数据吗？ | 会。`daily.py` 补 (冻结末日, 今天] 之间所有缺的交易日。 | `panel.refresh_all` |
 | 新闻、财报等要更新吗？ | ML1 只用价格 + 融资 + 户数 + 指数成分 + 年报（年更），全部在 `daily.py` 里自动增量。新闻不用（不是特征）。季报/预告/增减持/质押是 ML7 影子的输入，也已并进同一次运行。 | V25/V38-S3 |
 | 每次计算要用付费数据吗？ | **不用**。BaoStock、东财数据中心、中登（经东财）全部免费。Databento 只花在期货研究上，与 A 股每日运行无关。 | 数据源清单 |
@@ -69,7 +69,7 @@
 - `paper/JOURNAL.json`：`{account:{base_cash}, events:[{id, ts, type: BUY|SELL|DEPOSIT|WITHDRAW|NOTE, date, symbol, lots, price, fee, note}]}`。持仓、现金都从事件推导（不存派生量）。
 - `runs/CURRENT.json`：运行锁 `{pid, started_at, log, args}`；`runs/RUN_{ts}.log`：`daily.py` 输出。
 
-新增接口（见 SPEC §29.5–§29.8）：`GET /api/v1/paper/ops`、`POST /api/v1/paper/update`、`GET /api/v1/paper/update/status`、`GET/POST/DELETE /api/v1/paper/journal`。
+新增接口（见 SPEC §29.5–§29.8）：`GET /api/v1/paper/ops`、`POST /api/v1/paper/update`、`POST /api/v1/paper/update/stop`、`GET /api/v1/paper/update/status`、`GET/POST/PUT/DELETE /api/v1/paper/journal`。截止日期 = 最近已收盘交易日（休市回跳上一开盘日）；已是最新则 `skipped`。
 
 ## 4. 不变量
 

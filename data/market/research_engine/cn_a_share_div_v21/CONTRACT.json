@@ -1,0 +1,77 @@
+{
+  "cagr_only_from": "CANONICAL_CAPITAL_ACCOUNT",
+  "cagr_target_not_a_gate": 0.1,
+  "contract_hash": "946e2ee19f99d21af0bb22c1900ab642600be5d76431afba0759f2426c615e1e",
+  "cost_model": {
+    "commission": 0.00025,
+    "id": "A_SHARE_STRATEGY_COST_MODEL_V1",
+    "optimize": false,
+    "slippage": 0.001,
+    "stamp_before_20230828": 0.001,
+    "stamp_from_20230828": 0.0005,
+    "transfer": 1e-05
+  },
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied_window": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "dividend_pit": "tm-ashare-DIVIDEND-PIT-20260902-000001",
+  "do_not_flip_sign": true,
+  "event_window_sessions": 20,
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_q": 0.05,
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "DIVIDEND_CASH_EVENT",
+      "id": "D1_CASH_ANN_20",
+      "mechanism": "Long names with a cash-dividend plan announced in the last 20 sessions. Event window, not yield level.",
+      "min_n": 20,
+      "not": "HIGH_YIELD_QUINTILE_OR_V16_ROE",
+      "signal": "CASH_ANN_20"
+    },
+    {
+      "family": "DIVIDEND_STOCK_EVENT",
+      "id": "D2_STOCK_ANN_20",
+      "mechanism": "Long names with a stock/reserve dividend plan announced in the last 20 sessions. Bonus-share event, not cash yield.",
+      "min_n": 20,
+      "not": "CASH_YIELD_OR_PRICE_MOMENTUM",
+      "signal": "STOCK_ANN_20"
+    }
+  ],
+  "id": "A_SHARE_DIVIDEND_EVENT_V21",
+  "keep_h11_h12": true,
+  "live_api": false,
+  "long_only": true,
+  "min_event_set": 20,
+  "new_purchase": false,
+  "not": [
+    "DIVIDEND_YIELD_QUINTILE",
+    "V16_ANNUAL_RATIO",
+    "INDEX_MEMBERSHIP",
+    "OPERATE_DATE_AS_KNOWLEDGE"
+  ],
+  "pit_rule": "announce_date_lt_signal",
+  "portfolio": "MEMBERSHIP_SET",
+  "predictive_is_not_cagr": true,
+  "predictive_metric_name": "MEAN_FORWARD_RETURN",
+  "quantile": null,
+  "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+  "reopen_h11_h12": false,
+  "reopen_v16": false,
+  "reopen_v20": false,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "same_cluster_corr": 0.9,
+  "seed": 20260902,
+  "signal_price": "RAW_CLOSE_T",
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ]
+}

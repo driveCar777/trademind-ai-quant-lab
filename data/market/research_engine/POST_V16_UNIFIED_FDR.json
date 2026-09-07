@@ -1,0 +1,191 @@
+{
+  "discoveries": [
+    "IM6_GVZ_IND_DEF_120"
+  ],
+  "m": 18,
+  "n_discoveries": 1,
+  "n_level1": 0,
+  "q": 0.05,
+  "rows": [
+    {
+      "family_mission": "V17",
+      "fdr_adj_p": 1.0,
+      "id": "M1_USD_DEF_60",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.20261728200421203,
+      "val_capital": -0.4401495713414506
+    },
+    {
+      "family_mission": "V17",
+      "fdr_adj_p": 1.0,
+      "id": "M2_USD_DEF_120",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.1797768961846682,
+      "val_capital": -0.39814038633024085
+    },
+    {
+      "family_mission": "V17",
+      "fdr_adj_p": 1.0,
+      "id": "M3_US_CONT_60",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.09834874142112182,
+      "val_capital": -0.23297482391261637
+    },
+    {
+      "family_mission": "V17",
+      "fdr_adj_p": 1.0,
+      "id": "M4_US_CONT_120",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.07753485879956756,
+      "val_capital": -0.18679060698710737
+    },
+    {
+      "family_mission": "V17",
+      "fdr_adj_p": 1.0,
+      "id": "M5_GVZ_DEF_60",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.1814656040009036,
+      "val_capital": -0.4013099204451377
+    },
+    {
+      "family_mission": "V17",
+      "fdr_adj_p": 1.0,
+      "id": "M6_GVZ_DEF_120",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.13335585954560825,
+      "val_capital": -0.30697457176739473
+    },
+    {
+      "family_mission": "V18",
+      "fdr_adj_p": 0.08658143032474819,
+      "id": "A1_SEASONED_AGE",
+      "level1": false,
+      "onesided_p": 0.01443023838745803,
+      "unified_discovery": false,
+      "val_cagr": -0.04263657560718026,
+      "val_capital": -0.10562602174627911
+    },
+    {
+      "family_mission": "V18",
+      "fdr_adj_p": 0.08658143032474819,
+      "id": "A2_RELATIVE_AGE",
+      "level1": false,
+      "onesided_p": 0.01443023838745803,
+      "unified_discovery": false,
+      "val_cagr": -0.04263657560718026,
+      "val_capital": -0.10562602174627911
+    },
+    {
+      "family_mission": "V18",
+      "fdr_adj_p": 1.0,
+      "id": "A3_CLEAN_STREAK",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.13933956172222262,
+      "val_capital": -0.31916754201902064
+    },
+    {
+      "family_mission": "V18",
+      "fdr_adj_p": 1.0,
+      "id": "A4_RECENT_RESUME",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.15180911661491814,
+      "val_capital": -0.3441541335631001
+    },
+    {
+      "family_mission": "V18",
+      "fdr_adj_p": 0.8517871761733582,
+      "id": "A5_MONTH_END_SEASONED",
+      "level1": false,
+      "onesided_p": 0.23660754893704397,
+      "unified_discovery": false,
+      "val_cagr": -0.10615061159086658,
+      "val_capital": -0.19954993793339326
+    },
+    {
+      "family_mission": "V18",
+      "fdr_adj_p": 1.0,
+      "id": "A6_QUARTER_END_SEASONED",
+      "level1": false,
+      "onesided_p": 0.4535841919496209,
+      "unified_discovery": false,
+      "val_cagr": -0.40603521227168804,
+      "val_capital": -0.349832328241521
+    },
+    {
+      "family_mission": "V19",
+      "fdr_adj_p": 1.0,
+      "id": "IM1_USD_IND_DEF_60",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.1998362956225308,
+      "val_capital": -0.4351335140928375
+    },
+    {
+      "family_mission": "V19",
+      "fdr_adj_p": 1.0,
+      "id": "IM2_USD_IND_DEF_120",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.16276629982304947,
+      "val_capital": -0.3656418503808253
+    },
+    {
+      "family_mission": "V19",
+      "fdr_adj_p": 1.0,
+      "id": "IM3_US_IND_CONT_60",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.05487118990052109,
+      "val_capital": -0.13461701518387903
+    },
+    {
+      "family_mission": "V19",
+      "fdr_adj_p": 1.0,
+      "id": "IM4_US_IND_CONT_120",
+      "level1": false,
+      "onesided_p": 1.0,
+      "unified_discovery": false,
+      "val_cagr": -0.019808670257939087,
+      "val_capital": -0.049967290240600315
+    },
+    {
+      "family_mission": "V19",
+      "fdr_adj_p": 0.333955976950562,
+      "id": "IM5_GVZ_IND_DEF_60",
+      "level1": false,
+      "onesided_p": 0.07421243932234711,
+      "unified_discovery": false,
+      "val_cagr": -0.15016598996125186,
+      "val_capital": -0.34089417292873825
+    },
+    {
+      "family_mission": "V19",
+      "fdr_adj_p": 0.0006439278095423245,
+      "id": "IM6_GVZ_IND_DEF_120",
+      "level1": false,
+      "onesided_p": 3.577376719679581e-05,
+      "unified_discovery": true,
+      "val_cagr": -0.09437462050637369,
+      "val_capital": -0.22428357754526995
+    }
+  ]
+}

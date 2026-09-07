@@ -1,0 +1,42 @@
+{
+  "n": 3,
+  "rows": [
+    {
+      "family": "MARGIN_FLOW",
+      "id": "M1_LOW_NET_MARGIN_INFLOW_20",
+      "mechanism": "Leveraged retail net margin buying over the last 20 sessions, scaled by float market cap, predicts lower forward returns (crowded, forced-deleveraging risk). Long the quintile with the LOWEST inflow. score = -sum(RZJME,20)/SZ.",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "fdr",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "MARGIN_LEVEL",
+      "id": "M2_LOW_MARGIN_BALANCE_RATIO",
+      "mechanism": "Margin balance as a fraction of float market cap = leverage overhang. Long the quintile with the LOWEST ratio. score = -RZYE/SZ.",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_excess",
+        "validation_rank_ic",
+        "fdr",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "MARGIN_FLOW",
+      "id": "M3_MARGIN_DELEVERAGED_60",
+      "mechanism": "Names whose margin balance fell most over 60 sessions have already shed leveraged holders. Long the quintile with the LARGEST 60-session balance decline. score = -(RZYE_t / RZYE_{t-60} - 1).",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_excess",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    }
+  ]
+}

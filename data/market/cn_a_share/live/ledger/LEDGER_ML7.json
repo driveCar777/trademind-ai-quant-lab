@@ -1,0 +1,30 @@
+{
+  "periods": [
+    {
+      "entry": "2026-08-31",
+      "exit_expected": "20 sessions after 2026-08-31",
+      "model_refit_date": "2025-11-06",
+      "n_sel": 999,
+      "name_overlap_with_ml1": 0.385,
+      "signal_date": "2026-08-28",
+      "status": "OPEN"
+    }
+  ],
+  "summary": {
+    "affects_shortlist": false,
+    "capital_yuan": 5000000.0,
+    "chain_anchor": "2026-07-30",
+    "equity": 5000000.0,
+    "id": "A_SHARE_INFO_STACK_ML7_V38S3",
+    "money": "NONE (shadow, output-only)",
+    "n_lo_beat_ew": 0,
+    "n_periods_closed": 0,
+    "n_periods_open": 1,
+    "next_signal_date": "21 sessions after 2026-08-28",
+    "orders_sent": false,
+    "periods_until_read": 24,
+    "read_rule": "one read after >= 24 closed periods: excess vs EW t >= 2, LO20 capital > 0, excess corr vs ML1 < 0.90",
+    "state": "ACCUMULATING",
+    "total_capital_ret": null
+  }
+}

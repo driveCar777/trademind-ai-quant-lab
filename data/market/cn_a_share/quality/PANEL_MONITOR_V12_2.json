@@ -1,0 +1,12 @@
+{
+  "acquire_pids": [],
+  "c_disk_low": true,
+  "disk_c_gb": 12.965423583984375,
+  "disk_d_gb": 123.71739196777344,
+  "disk_flag": "OK",
+  "eta_min": 0.0,
+  "n_raw": 5549,
+  "rate_per_min": 23.98497092697829,
+  "remaining": 0,
+  "ts": "2026-08-30T21:51:58Z"
+}

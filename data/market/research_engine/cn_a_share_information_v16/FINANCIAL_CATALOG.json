@@ -1,0 +1,22 @@
+{
+  "announcement_rate": 1.0,
+  "csv": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\financial\\normalized\\FINANCIAL_ANNUAL.csv",
+  "csv_sha256": "d660c85e2bbca23569ce7b8aa6045c87028198b242651aa81b6c8fe7c72c1573",
+  "debt_ratio": "UNAVAILABLE",
+  "eps_kind": "VENDOR_TTM",
+  "jsonl_sha256": "227b8770fde6f6bc809afccf0ddf03a204e1c9262438c0c68f1d39d076349c24",
+  "n_empty_files": 38,
+  "n_files": 5538,
+  "n_rows": 64440,
+  "n_symbols": 5500,
+  "n_with_announcement": 64440,
+  "n_with_gross_margin": 63059,
+  "n_with_net_profit": 64432,
+  "n_with_revenue": 64096,
+  "n_with_roe": 63656,
+  "period": "ANNUAL_Q4",
+  "quarterly_downloaded": false,
+  "restatement_risk": true,
+  "roa": "UNAVAILABLE",
+  "ttm_constructed": false
+}

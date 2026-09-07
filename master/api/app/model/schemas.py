@@ -407,6 +407,13 @@ class PaperRunData(BaseModel):
     last_run: Dict[str, Any] = Field(default_factory=dict)
     last_failed: Optional[Dict[str, Any]] = None
     history: List[Dict[str, Any]] = Field(default_factory=list)
+    skipped: Optional[bool] = None
+    stopped: Optional[bool] = None
+    asof_target: Optional[str] = None
+    needs_update: Optional[bool] = None
+    stale_sessions: Optional[int] = None
+    note: Optional[str] = None
+    bars_gap: Optional[Dict[str, Any]] = None
     python: Optional[str] = None
 
 
@@ -415,9 +422,9 @@ class PaperUpdateRequest(BaseModel):
 
 
 class PaperJournalEventRequest(BaseModel):
-    """POST /api/v1/paper/journal — SPEC §29.8. Append-only."""
+    """POST / PUT /api/v1/paper/journal — SPEC §29.8. Append or in-place edit."""
 
-    type: str
+    type: Optional[str] = None
     date: Optional[str] = None
     symbol: Optional[str] = None
     lots: Optional[int] = None

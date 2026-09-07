@@ -32,6 +32,7 @@ JOURNAL = LIVE / "paper" / "JOURNAL.json"
 STATUS = LIVE / "STATUS.json"
 
 CHAIN_ANCHOR = "2026-07-30"   # research_engine.ml1_live.CHAIN_ANCHOR_SIGNAL
+FROZEN_END = "2026-08-28"     # ml1_live.FROZEN_END — STATUS asof before this is poison, not a holiday
 HOLD = 20
 STEP = HOLD + 1
 LOT = 100
@@ -42,8 +43,10 @@ COMMISSION_RATE = 0.0003
 COMMISSION_MIN = 5.0
 STAMP_TAX = 0.0005
 STAGE_MARKERS = (  # (substring of a daily.py log line, stage label); later markers win
+    ("ML1_LIVE asof_requested", "已选定截止日期"),
     ("ML1_LIVE_PANEL basics", "股票列表"),
-    ("ML1_LIVE_PANEL bars", "日线（约 999 只，最慢的一步）"),
+    ("ML1_LIVE_PANEL bars plan", "日线：清点缺哪些天"),
+    ("ML1_LIVE_PANEL bars fetching", "日线补漏（已有的跳过）"),
     ("ML1_LIVE_PANEL bars done", "日线完成"),
     ("ML1_LIVE_LAYERS margin", "融资融券"),
     ("ML1_LIVE_LAYERS holders", "股东户数"),
@@ -85,7 +88,68 @@ def _dump(path, obj):
 def _days():
     # bypass paper_service's process cache so a finished update is seen at once
     ps._TRADING_DAYS = None
-    return ps._trading_days()
+    days = ps._trading_days()
+    if not days or days[-1] < "2020-01-01":
+        _repair_live_calendar()
+        ps._TRADING_DAYS = None
+        days = ps._trading_days()
+    return days
+
+
+_WD = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+_REF_CAL = ROOT / "data" / "market" / "cn_a_share" / "reference" / "tm-cn-a-CALENDAR-20260830-000001.csv"
+
+
+def _repair_live_calendar():
+    """A killed daily.py can truncate live/calendar.csv (open-w then write). Rebuild from the frozen reference + dates already in live bars."""
+    dst = LIVE / "calendar.csv"
+    rows, seen = [], set()
+    src = _REF_CAL if _REF_CAL.is_file() else dst
+    if src.is_file():
+        try:
+            with open(src, encoding="utf-8", newline="") as fh:
+                for r in csv.DictReader(fh):
+                    d = r.get("calendar_date")
+                    if not d or d in seen:
+                        continue
+                    seen.add(d)
+                    rows.append({"calendar_date": d, "is_trading_day": r.get("is_trading_day"), "weekday": r.get("weekday") or _WD[datetime.strptime(d, "%Y-%m-%d").weekday()]})
+        except OSError:
+            pass
+    sample = BARS / "sh.600000.csv"
+    if not sample.is_file() and BARS.is_dir():
+        sample = next(BARS.glob("*.csv"), None)
+    if sample and Path(sample).is_file():
+        try:
+            with open(sample, encoding="utf-8", newline="") as fh:
+                for r in csv.DictReader(fh):
+                    d = r.get("date")
+                    if not d or d in seen:
+                        continue
+                    seen.add(d)
+                    rows.append({"calendar_date": d, "is_trading_day": 1, "weekday": _WD[datetime.strptime(d, "%Y-%m-%d").weekday()]})
+        except OSError:
+            pass
+    if not rows:
+        return
+    rows.sort(key=lambda r: r["calendar_date"])
+    last = datetime.strptime(rows[-1]["calendar_date"], "%Y-%m-%d").date()
+    end = _now().date() + timedelta(days=120)
+    d = last + timedelta(days=1)
+    while d <= end:
+        iso = d.isoformat()
+        if iso not in seen:
+            seen.add(iso)
+            rows.append({"calendar_date": iso, "is_trading_day": 0 if d.weekday() >= 5 else 1, "weekday": _WD[d.weekday()]})
+        d += timedelta(days=1)
+    rows.sort(key=lambda r: r["calendar_date"])
+    tmp = str(dst) + ".tmp"
+    Path(dst).parent.mkdir(parents=True, exist_ok=True)
+    with open(tmp, "w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=("calendar_date", "is_trading_day", "weekday"))
+        w.writeheader()
+        w.writerows(rows)
+    os.replace(tmp, str(dst))
 
 
 def _idx(days, d):
@@ -146,23 +210,86 @@ def period_of(days, signal_date):
 
 
 # ----------------------------------------------------------------------------- freshness
-def freshness(days, status):
+def freshness(days, status, with_gap=False):
     now = _now()
     today = now.date().isoformat()
+    calendar_stale = (not days) or (days[-1] < today)
     is_td = today in days
     before = [d for d in days if d < today]
-    last_completed = today if (is_td and now.hour >= DATA_READY_HOUR) else (before[-1] if before else None)
     asof = (status or {}).get("asof_session") or ((status or {}).get("live_pack") or {}).get("asof")
-    stale = 0
-    if asof and last_completed and asof < last_completed:
-        stale = len([d for d in days if asof < d <= last_completed])
+    asof_bogus = bool(asof and asof < FROZEN_END)
+    if calendar_stale:
+        # Local calendar file does not reach today (truncated write ≠ holiday). After 18:00 asof is today so daily.py can refresh the calendar.
+        last_completed = today if now.hour >= DATA_READY_HOUR else (before[-1] if before else today)
+        stale = 1
+        needs = True
+    else:
+        last_completed = today if (is_td and now.hour >= DATA_READY_HOUR) else (before[-1] if before else None)
+        stale = 0
+        if asof and last_completed and asof < last_completed:
+            stale = len([d for d in days if asof < d <= last_completed])
+        needs = stale > 0
+    if asof_bogus:
+        needs = True
+        stale = max(stale, 1)
     nxt = [d for d in days if d > today]
-    return {"today": today, "weekday": now.strftime("%a"), "today_is_trading_day": is_td, "last_completed_session": last_completed,
-            "next_trading_day": nxt[0] if nxt else None, "asof_session": asof, "stale_sessions": stale, "needs_update": stale > 0,
-            "data_ready_after": "%02d:00" % DATA_READY_HOUR, "update_window": UPDATE_WINDOW, "clock": now.strftime("%Y-%m-%d %H:%M")}
+    out = {"today": today, "weekday": now.strftime("%a"), "today_is_trading_day": is_td, "calendar_stale": calendar_stale,
+           "last_completed_session": last_completed, "next_trading_day": nxt[0] if nxt else None, "asof_session": asof,
+           "asof_bogus": asof_bogus, "stale_sessions": stale, "needs_update": needs, "data_ready_after": "%02d:00" % DATA_READY_HOUR,
+           "update_window": UPDATE_WINDOW, "clock": now.strftime("%Y-%m-%d %H:%M")}
+    if with_gap and last_completed:
+        out["bars_gap"] = bars_coverage(last_completed)
+        out["needs_gapfill"] = (not out["needs_update"]) and int((out["bars_gap"] or {}).get("n_missing") or 0) > 0
+    return out
 
 
 # ----------------------------------------------------------------------------- run manager
+def _pid_cmd(pid):
+    try:
+        import psutil
+        return " ".join(psutil.Process(int(pid)).cmdline() or [])
+    except Exception:
+        pass
+    if os.name == "nt":
+        try:
+            out = subprocess.run(
+                ["powershell", "-NoProfile", "-Command",
+                 "(Get-CimInstance Win32_Process -Filter 'ProcessId=%d').CommandLine" % int(pid)],
+                capture_output=True, text=True, timeout=10,
+            ).stdout or ""
+            return (out or "").strip()
+        except Exception:
+            return ""
+    return ""
+
+
+def _find_daily_pids():
+    """Any python running ml1_live.daily (lock file can vanish; wmic is gone on some Win11)."""
+    pids = []
+    if os.name != "nt":
+        return pids
+    cmd = (
+        "Get-CimInstance Win32_Process | Where-Object { "
+        "$_.Name -match 'python' -and $_.CommandLine -and "
+        "($_.CommandLine -like '*ml1_live.daily*' -or $_.CommandLine -like '*research_engine.ml1_live.daily*') "
+        "} | Select-Object -ExpandProperty ProcessId"
+    )
+    try:
+        out = subprocess.run(["powershell", "-NoProfile", "-Command", cmd], capture_output=True, text=True, timeout=15).stdout or ""
+    except Exception:
+        return pids
+    for ln in out.splitlines():
+        s = ln.strip()
+        if s.isdigit():
+            pids.append(int(s))
+    return pids
+
+
+def _pid_is_daily(pid):
+    cmd = (_pid_cmd(pid) or "").lower()
+    return "ml1_live.daily" in cmd or "research_engine.ml1_live" in cmd
+
+
 def _pid_alive(pid):
     if not pid:
         return False
@@ -184,7 +311,73 @@ def _pid_alive(pid):
 
 
 def _python():
+    # daily.py needs baostock/lightgbm; Master venv often does not. Override with TRADEMIND_DAILY_PYTHON.
     return os.environ.get("TRADEMIND_DAILY_PYTHON") or shutil.which("python") or sys.executable
+
+
+_COV = {"t": 0.0, "asof": None, "val": None}
+
+
+def _last_csv_date(path):
+    try:
+        with open(path, "rb") as fh:
+            fh.seek(0, 2)
+            n = fh.tell()
+            if n <= 0:
+                return None
+            fh.seek(max(0, n - 800))
+            chunk = fh.read().decode("utf-8", "replace")
+    except OSError:
+        return None
+    for ln in reversed(chunk.splitlines()):
+        if not ln or ln.startswith("date"):
+            continue
+        return ln.split(",", 1)[0]
+    return None
+
+
+def bars_coverage(asof, ttl=30):
+    """How many live bar files already include `asof` (last row date >= asof). Cached ~30s — not on the 8s poll path."""
+    now = time.time()
+    if _COV["val"] is not None and _COV["asof"] == asof and now - _COV["t"] < ttl:
+        return _COV["val"]
+    n_files = n_ok = n_missing = n_empty = 0
+    if asof and BARS.is_dir():
+        for p in BARS.glob("*.csv"):
+            n_files += 1
+            last = _last_csv_date(p)
+            if not last:
+                n_empty += 1
+                n_missing += 1
+            elif last >= asof:
+                n_ok += 1
+            else:
+                n_missing += 1
+    out = {"asof": asof, "n_files": n_files, "n_ok": n_ok, "n_missing": n_missing, "n_empty": n_empty}
+    _COV["t"], _COV["asof"], _COV["val"] = now, asof, out
+    return out
+
+
+def _date_reason(fresh):
+    asof = fresh.get("last_completed_session") or "—"
+    if not fresh.get("today_is_trading_day"):
+        return "今天休市，截止日期自动回跳到最近一个开盘日 %s（不会用明天）。" % asof
+    hour = _now().hour
+    if hour < DATA_READY_HOUR:
+        return "今天还没收盘齐（%s 前），截止日期是上一交易日 %s。" % (fresh.get("data_ready_after") or "18:00", asof)
+    return "今天已收盘，截止日期就是今天 %s。" % asof
+
+
+def _decorate_run(out, fresh=None, coverage=None, **extra):
+    if fresh is None:
+        fresh = freshness(_days(), _load(STATUS, {}) or {})
+    out["asof_target"] = fresh.get("last_completed_session")
+    out["needs_update"] = fresh.get("needs_update")
+    out["stale_sessions"] = fresh.get("stale_sessions")
+    if coverage is not None:
+        out["bars_gap"] = coverage
+    out.update(extra)
+    return out
 
 
 def _log_tail(path, n=25):
@@ -202,10 +395,30 @@ def _stage(lines):
         for marker, label in STAGE_MARKERS:
             if marker in ln:
                 stage = label
-        if "ML1_LIVE_PANEL bars" in ln and "done" not in ln:
+        if "ML1_LIVE asof_requested" in ln:
+            stage = "截止日期 " + ln.split()[-1]
+        if "bars plan" in ln and "gap" in ln:
+            bits = ln.split()
+            try:
+                stage = "日线缺口 %s / %s · 截止日期 %s" % (bits[bits.index("gap") + 1], bits[bits.index("/") + 1], bits[bits.index("asof") + 1])
+            except (ValueError, IndexError):
+                stage = "日线：清点缺哪些天"
+        if "bars fetching" in ln:
+            bits = ln.split()
+            try:
+                i = bits.index("fetching")
+                n = bits[bits.index("fetched") + 1] if "fetched" in bits else "?"
+                stage = "日线正在拉 %s · 已补 %s 只" % (bits[i + 1], n)
+            except (ValueError, IndexError):
+                stage = "日线补漏"
+        if "ML1_LIVE_PANEL bars" in ln and "done" not in ln and "fetching" not in ln and "plan" not in ln:
             parts = ln.split()
             if len(parts) > 3 and parts[2].isdigit():
                 stage = "日线 %s 只已补" % parts[2]
+        if "BAR_HANG" in ln:
+            stage = "日线：一只卡住已跳过，继续"
+        if "PAPER_OPS STOP" in ln:
+            stage = "已停止"
         if "ML1_LIVE_LAYERS holders" in ln and "/" in ln:
             parts = ln.split()
             try:
@@ -232,40 +445,76 @@ def _last_run_summary():
 def run_status():
     lock = _load(LOCK, None)
     out = {"running": False, "pid": None, "started_at": None, "elapsed_s": None, "stage": None, "log": None, "log_tail": [],
-           "last_run": _last_run_summary(), "last_failed": None, "python": _python()}
+           "last_run": _last_run_summary(), "last_failed": None, "python": _python(), "stopped": False, "skipped": False}
     if lock:
-        alive = _pid_alive(lock.get("pid"))
+        pid = lock.get("pid")
         tail = _log_tail(lock.get("log"))
-        out.update({"pid": lock.get("pid"), "started_at": lock.get("started_at"), "log": lock.get("log"), "log_tail": tail})
-        if alive:
-            out["running"] = True
-            out["elapsed_s"] = round(time.time() - float(lock.get("t0", time.time())), 0)
-            out["stage"] = _stage(tail)
-        else:
-            # finished or died: decide by the exit marker written by _finish (or absence of it)
-            done = any("ML1_LIVE DONE" in ln for ln in tail)
-            out["stage"] = "完成" if done else "中断/失败"
-            if not done:
+        out.update({"pid": pid, "started_at": lock.get("started_at"), "log": lock.get("log"), "log_tail": tail})
+        if not pid:
+            if time.time() - float(lock.get("t0") or 0) < 30:
+                out["running"] = True
+                out["elapsed_s"] = round(time.time() - float(lock.get("t0", time.time())), 0)
+                out["stage"] = "正在启动"
+            else:
+                _archive_lock(lock, False, stopped=False)
+                out["stage"] = "中断/失败"
                 out["last_failed"] = {"started_at": lock.get("started_at"), "log": lock.get("log"), "tail": tail[-8:]}
-            _archive_lock(lock, done)
+        else:
+            cmd = _pid_cmd(pid)
+            alive = _pid_alive(pid)
+            ours = _pid_is_daily(pid)
+            young = time.time() - float(lock.get("t0") or 0) < 15
+            # If the pid is alive but cmdline cannot be read, do not steal the lock (PID reuse is the other branch).
+            still = alive and (ours or young or not cmd)
+            if still:
+                out["running"] = True
+                out["elapsed_s"] = round(time.time() - float(lock.get("t0", time.time())), 0)
+                out["stage"] = _stage(tail) if tail else "更新进行中"
+            else:
+                done = any("ML1_LIVE DONE" in ln for ln in tail)
+                stopped = any("PAPER_OPS STOP" in ln for ln in tail)
+                out["stage"] = "完成" if done else ("已停止" if stopped else "中断/失败")
+                out["stopped"] = stopped and not done
+                if not done and not stopped:
+                    out["last_failed"] = {"started_at": lock.get("started_at"), "log": lock.get("log"), "tail": tail[-8:]}
+                _archive_lock(lock, done, stopped=stopped and not done)
+    if not out["running"]:
+        orphans = _find_daily_pids()
+        if orphans:
+            out["running"] = True
+            out["pid"] = orphans[0]
+            out["stage"] = "发现已有更新进程（锁文件丢了）"
+            out["elapsed_s"] = None
+            if not lock:
+                _dump(LOCK, {"pid": orphans[0], "t0": time.time(), "started_at": _now().strftime("%Y-%m-%dT%H:%M:%S"),
+                             "log": None, "args": [], "asof": None, "recovered": True})
     hist = _load(RUNS / "HISTORY.json", []) or []
     out["history"] = hist[-10:]
     if not lock and hist:
-        out["log"] = hist[-1].get("log")
+        last = hist[-1]
+        out["log"] = last.get("log")
         out["log_tail"] = _log_tail(out["log"], 40)
-        out["stage"] = "完成" if hist[-1].get("ok") else "中断/失败"
+        if last.get("ok"):
+            out["stage"] = "完成"
+        elif last.get("stopped"):
+            out["stage"] = "已停止"
+            out["stopped"] = True
+        else:
+            out["stage"] = "中断/失败"
     if out["last_failed"] is None:
         for h in reversed(hist):
-            if not h.get("ok"):
-                out["last_failed"] = {"started_at": h.get("started_at"), "log": h.get("log"), "tail": h.get("tail")}
+            if h.get("ok") or h.get("stopped"):
+                continue
+            out["last_failed"] = {"started_at": h.get("started_at"), "log": h.get("log"), "tail": h.get("tail")}
             break
-    return out
+    return _decorate_run(out)
 
 
-def _archive_lock(lock, ok):
+def _archive_lock(lock, ok, stopped=False):
     hist = _load(RUNS / "HISTORY.json", []) or []
     hist.append({"started_at": lock.get("started_at"), "ended_at": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "ok": ok,
-                 "log": lock.get("log"), "tail": _log_tail(lock.get("log"), 8), "args": lock.get("args")})
+                 "stopped": stopped, "log": lock.get("log"), "tail": _log_tail(lock.get("log"), 8), "args": lock.get("args"),
+                 "asof": lock.get("asof")})
     _dump(RUNS / "HISTORY.json", hist[-200:])
     try:
         os.remove(str(LOCK))
@@ -273,30 +522,165 @@ def _archive_lock(lock, ok):
         pass
 
 
+def _kill_pid(pid):
+    pid = int(pid)
+    if os.name == "nt":
+        subprocess.run(["taskkill", "/PID", str(pid), "/T", "/F"], capture_output=True, timeout=30)
+        return
+    try:
+        os.kill(pid, 15)
+    except OSError:
+        pass
+    time.sleep(1)
+    if _pid_alive(pid):
+        try:
+            os.kill(pid, 9)
+        except OSError:
+            pass
+
+
+def _try_claim_run(meta):
+    """Create CURRENT.json exclusively so two Master workers cannot both spawn daily.py."""
+    flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
+    if hasattr(os, "O_BINARY"):
+        flags |= os.O_BINARY
+    try:
+        fd = os.open(str(LOCK), flags)
+    except OSError:
+        return False
+    try:
+        os.write(fd, json.dumps(meta, ensure_ascii=False).encode("utf-8"))
+    finally:
+        os.close(fd)
+    return True
+
+
+def _recent_baostock_blocked(minutes=120):
+    cutoff = time.time() - minutes * 60
+    if not RUNS.is_dir():
+        return False
+    logs = sorted(RUNS.glob("RUN_*.log"), key=lambda p: p.stat().st_mtime, reverse=True)[:8]
+    for p in logs:
+        try:
+            if p.stat().st_mtime < cutoff:
+                continue
+            text = p.read_text(encoding="utf-8", errors="replace")[-12000:]
+        except OSError:
+            continue
+        if "黑名单" in text:
+            return True
+    return False
+
+
+def stop_update():
+    lock = _load(LOCK, None)
+    pids = list(_find_daily_pids())
+    if lock and lock.get("pid") and _pid_is_daily(lock.get("pid")):
+        pid = int(lock["pid"])
+        if pid not in pids:
+            pids.append(pid)
+    if not pids:
+        out = run_status()
+        return _decorate_run(out, stopped=False, note="当前没有在跑的更新。")
+    logp = (lock or {}).get("log")
+    try:
+        if logp:
+            with open(logp, "a", encoding="utf-8") as fh:
+                fh.write("\nPAPER_OPS STOP requested %s pids %s\n" % (_now().strftime("%Y-%m-%dT%H:%M:%S"), pids))
+    except OSError:
+        pass
+    for pid in pids:
+        _kill_pid(pid)
+    time.sleep(1.2)
+    left = [p for p in pids if _pid_alive(p)]
+    if left:
+        raise RuntimeError("停止失败：进程 %s 仍在。可在任务管理器结束 python。" % left)
+    out = run_status()
+    return _decorate_run(out, stopped=True, note="已停止。已下好的日线会留着，下次点更新从漏的票继续。")
+
+
 def start_update(force=False):
     RUNS.mkdir(parents=True, exist_ok=True)
+    orphans = _find_daily_pids()
+    if orphans:
+        cur = run_status()
+        if force:
+            raise RuntimeError("已有一次更新在跑（pid %s）。要停掉请点「停止更新」。" % orphans[0])
+        cur["reused"] = True
+        cur["running"] = True
+        cur["pid"] = orphans[0]
+        cur["note"] = "已有一次更新在跑（pid %s）。要点停止用右上角「停止更新」。不要连点。" % orphans[0]
+        return cur
     cur = run_status()
     if cur["running"]:
         if force:
-            raise RuntimeError("已有一次更新在跑（pid %s），不重复启动。" % cur["pid"])
+            raise RuntimeError("已有一次更新在跑（pid %s）。要停掉请点「停止更新」。" % cur["pid"])
         cur["reused"] = True
+        cur["note"] = "已有一次更新在跑。要点停止用右上角「停止更新」。不要连点。"
         return cur
-    ts = _now().strftime("%Y%m%d_%H%M%S")
-    log = RUNS / ("RUN_%s.log" % ts)
-    # asof = last COMPLETED session (today only after 18:00), so an intraday click never ingests a half-day bar
     fresh = freshness(_days(), _load(STATUS, {}) or {})
     asof = fresh.get("last_completed_session") or _now().date().isoformat()
+    reason = _date_reason(fresh)
+    local = "本地 STATUS 标签是 %s。" % (fresh.get("asof_session") or "无")
+    blocked = _recent_baostock_blocked()
+    bogus = bool(fresh.get("asof_bogus"))
+    skip_fetch = bogus or blocked
+    # Only scan bar tails when the calendar is already current — otherwise spawn immediately.
+    cov = None
+    n_miss = 0
+    if not fresh.get("needs_update") and not skip_fetch:
+        cov = bars_coverage(asof)
+        n_miss = int(cov.get("n_missing") or 0)
+        if not force and n_miss == 0:
+            return _decorate_run(run_status(), fresh, cov, skipped=True, reused=False,
+                                 note="%s %s 日线没有缺口。没有新任务。" % (reason, local))
+    if blocked and not bogus and not fresh.get("needs_update"):
+        return _decorate_run(run_status(), fresh, cov, skipped=True, reused=False,
+                             note="东财刚把账号拉黑了。本地已是 %s。先不要连点，过一阵再补漏。" % (fresh.get("asof_session") or asof))
+    bits = [reason, local]
+    if bogus:
+        bits.append("截止日期标签被写坏了（不是行情回到 2007）。这次用本地日线重算到 %s，不连东财。" % asof)
+    elif blocked:
+        bits.append("东财暂不可用（黑名单）。这次只用本地已有日线重算，不连网。过一阵再点更新补漏。")
+    elif fresh.get("needs_update"):
+        bits.append("落后 %s 个交易日，会补缺的日线（已经有的票跳过）。" % fresh.get("stale_sessions"))
+    elif n_miss > 0:
+        bits.append("没有新的交易日，但有 %s 只日线缺 %s，这次只补漏。" % (n_miss, asof))
+    ts = _now().strftime("%Y%m%d_%H%M%S")
+    log = RUNS / ("RUN_%s.log" % ts)
+    pending = {"pid": None, "t0": time.time(), "started_at": _now().strftime("%Y-%m-%dT%H:%M:%S"),
+               "log": str(log), "args": ["-m", "research_engine.ml1_live.daily", "--asof", asof], "asof": asof, "pending": True}
+    if not _try_claim_run(pending):
+        cur = run_status()
+        cur["reused"] = True
+        cur["note"] = "已有一次更新在跑。要点停止用右上角「停止更新」。"
+        return cur
     args = [_python(), "-m", "research_engine.ml1_live.daily", "--asof", asof]
+    if skip_fetch:
+        args.append("--skip-fetch")
+        pending["args"] = args[1:]
     env = dict(os.environ)
     env["PYTHONIOENCODING"] = "utf-8"
     env["PYTHONUNBUFFERED"] = "1"
     fh = open(str(log), "w", encoding="utf-8")
     flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
-    proc = subprocess.Popen(args, cwd=str(ROOT), stdout=fh, stderr=subprocess.STDOUT, env=env, close_fds=False, creationflags=flags)
-    _dump(LOCK, {"pid": proc.pid, "t0": time.time(), "started_at": _now().strftime("%Y-%m-%dT%H:%M:%S"), "log": str(log), "args": args[1:]})
+    if os.name == "nt":
+        flags |= getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+    try:
+        proc = subprocess.Popen(args, cwd=str(ROOT), stdout=fh, stderr=subprocess.STDOUT, env=env, close_fds=False, creationflags=flags)
+    except Exception:
+        try:
+            os.remove(str(LOCK))
+        except OSError:
+            pass
+        raise
+    _dump(LOCK, {"pid": proc.pid, "t0": time.time(), "started_at": _now().strftime("%Y-%m-%dT%H:%M:%S"),
+                 "log": str(log), "args": args[1:], "asof": asof, "skip_fetch": skip_fetch})
+    _COV["val"] = None
     out = run_status()
     out["reused"] = False
-    return out
+    out["skipped"] = False
+    return _decorate_run(out, fresh, cov, note=" ".join(bits))
 
 
 # ----------------------------------------------------------------------------- journal
@@ -307,12 +691,13 @@ def load_journal():
     return j
 
 
-def add_event(body):
+def _make_event(body, keep_id=None, keep_ts=None, reestimate_fee=True):
     typ = str(body.get("type") or "").upper()
     if typ not in ("BUY", "SELL", "DEPOSIT", "WITHDRAW", "NOTE"):
         raise ValueError("type 必须是 BUY / SELL / DEPOSIT / WITHDRAW / NOTE")
     date = body.get("date") or _now().date().isoformat()
-    ev = {"id": uuid.uuid4().hex[:10], "ts": _now().strftime("%Y-%m-%dT%H:%M:%S"), "type": typ, "date": date, "note": (body.get("note") or "")[:200]}
+    ev = {"id": keep_id or uuid.uuid4().hex[:10], "ts": keep_ts or _now().strftime("%Y-%m-%dT%H:%M:%S"),
+          "type": typ, "date": date, "note": (body.get("note") or "")[:200]}
     if typ in ("BUY", "SELL"):
         sym = str(body.get("symbol") or "").strip()
         if not sym:
@@ -325,15 +710,45 @@ def add_event(body):
             raise ValueError("lots 和 price 必须 > 0")
         amount = round(lots * LOT * price, 2)
         fee = body.get("fee")
-        fee = float(fee) if fee is not None else _est_fee(typ, amount)
+        if fee is None or (reestimate_fee and fee == ""):
+            fee = _est_fee(typ, amount)
+        else:
+            fee = float(fee)
         ev.update({"symbol": sym, "lots": lots, "price": price, "amount": amount, "fee": round(fee, 2)})
     elif typ in ("DEPOSIT", "WITHDRAW"):
         amt = float(body.get("amount") or 0)
         if amt <= 0:
             raise ValueError("amount 必须 > 0")
         ev["amount"] = round(amt, 2)
+    return ev
+
+
+def add_event(body):
+    ev = _make_event(body)
     j = load_journal()
     j["events"].append(ev)
+    j["events"].sort(key=lambda e: (e.get("date") or "", e.get("ts") or ""))
+    _dump(JOURNAL, j)
+    return ev
+
+
+def update_event(event_id, body):
+    j = load_journal()
+    idx = next((i for i, e in enumerate(j["events"]) if e.get("id") == event_id), None)
+    if idx is None:
+        raise KeyError(event_id)
+    old = j["events"][idx]
+    merged = dict(old)
+    for k, v in (body or {}).items():
+        if k in ("id", "ts"):
+            continue
+        if v is not None:
+            merged[k] = v
+    reestimate = "fee" not in (body or {}) or body.get("fee") is None
+    if reestimate:
+        merged.pop("fee", None)
+    ev = _make_event(merged, keep_id=old["id"], keep_ts=old.get("ts"), reestimate_fee=reestimate)
+    j["events"][idx] = ev
     j["events"].sort(key=lambda e: (e.get("date") or "", e.get("ts") or ""))
     _dump(JOURNAL, j)
     return ev
@@ -394,9 +809,11 @@ def derive_account(journal, days):
         val = px * shares if px else None
         if val:
             mv += val
+        last_buy = next((f for f in reversed(p.get("fills") or []) if f.get("type") == "BUY"), None)
         positions.append({"symbol": sym, "name": names.get(sym, ""), "lots": p["lots"], "shares": shares, "avg_price": round(p["cost"] / shares, 4) if shares else None,
                           "buy_date": p["buy_date"], "mark_price": px, "mark_date": pdate, "cost_in": round(p["cost"], 2),
-                          "market_value": round(val, 2) if val else None, "unrealized": round(val - p["cost"], 2) if val else None, "status": "HELD"})
+                          "market_value": round(val, 2) if val else None, "unrealized": round(val - p["cost"], 2) if val else None, "status": "HELD",
+                          "buy_event_id": (last_buy or {}).get("id"), "buy_price": (last_buy or {}).get("price"), "buy_lots": (last_buy or {}).get("lots")})
     positions.sort(key=lambda r: r["symbol"])
     month = _now().strftime("%Y-%m")
     dep_months = sorted(set((e.get("date") or "")[:7] for e in journal.get("events") or [] if e.get("type") == "DEPOSIT"))
@@ -543,6 +960,46 @@ def _buy_list(signal_date, settings, cash_available, source):
     return rows, planned, unit, basis
 
 
+def _split_period_list(signal_date, account, remark_latest=False):
+    """Keep the period's recommended names on screen after a partial fill.
+    Remaining = not yet held; logged = already in the journal. Names never vanish mid-registration."""
+    sl = _load(SIGNALS / ("SHORTLIST_SHADOW_%s.json" % signal_date), None) or _load(SIGNALS / ("SHORTLIST_%s.json" % signal_date), None) or {}
+    names = ps._stock_names()
+    held = dict((p["symbol"], p) for p in (account.get("positions") or []))
+    remaining, logged, planned = [], [], 0.0
+    for n in sl.get("names") or []:
+        r = {"rank": n.get("rank"), "symbol": n.get("symbol"), "name": names.get(n.get("symbol"), ""), "score": n.get("score"),
+             "last_close": n.get("last_close"), "lots_100_est": n.get("lots_100_est"), "est_yuan": n.get("est_yuan")}
+        if remark_latest:
+            px, pdate = _last_close(r["symbol"])
+            if px:
+                r["last_close"], r["mark_date"] = px, pdate
+                r["est_yuan"] = round((r.get("lots_100_est") or 0) * LOT * px, 2)
+        p = held.get(r["symbol"])
+        if p:
+            r.update({"logged": True, "lots": p.get("lots"), "avg_price": p.get("avg_price"), "buy_event_id": p.get("buy_event_id"),
+                      "buy_date": p.get("buy_date"), "unrealized": p.get("unrealized")})
+            logged.append(r)
+        else:
+            r["logged"] = False
+            remaining.append(r)
+            planned += r.get("est_yuan") or 0.0
+    return remaining, logged, planned
+
+
+def _attach_period_list(out, signal_date, settings, account, source, remark_latest, asof, leftover=None):
+    if source != "JOURNAL":
+        return
+    remaining, logged, planned = _split_period_list(signal_date, account, remark_latest=remark_latest)
+    out["buy_list"] = remaining
+    out["logged_list"] = logged
+    out["continue_register"] = bool(remaining or logged)
+    out["basis"] = ("本期 %s 名单 · 已登记 %d / %d 只 · 买几只登记几只，填错点「改」"
+                    % (signal_date, len(logged), len(remaining) + len(logged)))
+    if remaining:
+        out["cash_check"] = _cash_check(account, planned, "JOURNAL", leftover or [])
+
+
 def plan(days, fresh, status, ledger, settings, account, mode="MODEL"):
     """mode = 'JOURNAL' (the owner's real/simulated account, from fills) or 'MODEL' (the ¥20,000 shadow book).
     The two never mix: in JOURNAL mode the sell list, holdings and cash are the owner's own, even if partial or empty."""
@@ -576,6 +1033,8 @@ def plan(days, fresh, status, ledger, settings, account, mode="MODEL"):
     have_pos = len(positions) > 0
     list_today = (SIGNALS / ("SHORTLIST_SHADOW_%s.json" % today)).is_file()
     stale_warn = "数据截至 %s，落后 %d 个交易日。名单不受影响，但持仓市值不是最新的。" % (fresh["asof_session"], fresh["stale_sessions"])
+    if fresh.get("asof_bogus"):
+        stale_warn = "上次更新把截止日期标签写成了 %s（日历被截断），不是行情回到 2007。K 线还在。点一次更新会用本地数据重算，不要连点。" % fresh.get("asof_session")
     n_model_names = len(_model_positions(ledger, cur_sig, days))
     partial_note = None
     if source == "JOURNAL" and have_pos and n_model_names and len(positions) < n_model_names:
@@ -651,10 +1110,11 @@ def plan(days, fresh, status, ledger, settings, account, mode="MODEL"):
         out["sub"] = "09:15–09:25 集合竞价或 09:30 开盘按下表下单；每只手数以表为准，开盘价偏离昨收太多时手数=floor(单位/(100×开盘价))。买完回来登记。"
         out["steps"] = [{"when": "09:30 开盘", "text": "买入下表 %d 只" % len(rows)}, {"when": "买完", "text": "逐只「登记买入」"},
                         {"when": "%s 开盘" % exit_d, "text": "卖出全部（系统到那天会提示）"}]
-        leftover = account["positions"] if source == "JOURNAL" else []
+        leftover = [p for p in (account["positions"] if source == "JOURNAL" else []) if (p.get("buy_date") or "") < (entry or "")]
         out["cash_check"] = _cash_check(account, planned, source, leftover)
         if leftover:
             out["warnings"].append("日志里还有 %d 只上一期持仓未登记卖出；先卖后买。" % len(leftover))
+        _attach_period_list(out, cur_sig, settings, account, source, False, None, leftover)
         if source == "JOURNAL" and account["cash"] <= 0:
             out["warnings"].append("你的账户现金为 0，名单算不出手数：先「入金」登记本金。")
         if source == "JOURNAL" and float(settings.get("monthly_contrib") or 0) > 0 and not _contrib_logged(account, (cur_sig or today)[:7]):
@@ -677,6 +1137,9 @@ def plan(days, fresh, status, ledger, settings, account, mode="MODEL"):
                         {"when": "%s 晚" % exit_d, "text": "更新数据 → 新名单"}, {"when": "%s 开盘" % per.get("next_entry"), "text": "买入新名单"}]
         if partial_note:
             out["warnings"].append(partial_note)
+        _attach_period_list(out, cur_sig, settings, account, source, True, fresh.get("asof_session"))
+        if source == "JOURNAL" and out.get("buy_list"):
+            out["steps"] = [{"when": "现在", "text": "还可继续登记下表剩下的 %d 只（填错点持仓「改」）" % len(out["buy_list"])}] + out["steps"]
         if fresh["needs_update"]:
             out["warnings"].append(stale_warn)
         return out
@@ -693,18 +1156,10 @@ def plan(days, fresh, status, ledger, settings, account, mode="MODEL"):
         out["steps"] = [{"when": "现在", "text": "先「入金」登记模拟盘本金（现在 ¥%.0f）" % account["cash"] if account["cash"] <= 0 else "本金已登记 ¥%.0f" % account["cash"]},
                         {"when": "选 A", "text": "%s 晚 18:30 后「更新数据」→ 新名单 → %s 开盘买 → 回来登记" % (exit_d, per.get("next_entry"))},
                         {"when": "选 B", "text": "按下表任意几只在下一个开盘买入 → 回来「登记买入」→ 页面立刻切到持有状态，%s 提示卖出" % exit_d}]
-        rows, planned, unit, basis = _buy_list(cur_sig, settings, account["cash"], "JOURNAL")
-        # mid-period: keep the official lot arithmetic (incl. top-up round) but re-mark amounts at the latest close
-        planned = 0.0
-        for r in rows:
-            px, pdate = _last_close(r["symbol"])
-            if px:
-                r["last_close"], r["mark_date"] = px, pdate
-                r["est_yuan"] = round((r.get("lots_100_est") or 0) * LOT * px, 2)
-            planned += r.get("est_yuan") or 0.0
-        out["buy_list"], out["basis"] = rows, "本期 %s 名单 · 手数按你的现金算，金额按最新收盘 %s · 中途跟买（未检验）" % (cur_sig, fresh["asof_session"])
-        out["cash_check"] = _cash_check(account, planned, "JOURNAL", [])
         out["mid_entry_option"] = True
+        _attach_period_list(out, cur_sig, settings, account, "JOURNAL", True, fresh.get("asof_session"))
+        if out.get("basis"):
+            out["basis"] = out["basis"] + " · 中途跟买（未检验）"
         if account["n_events"] == 0:
             out["warnings"].append("成交日志为空。若你其实已在模拟盘买了本期名单，请「登记买入」（日期填实际成交日），页面会立刻切到持有状态。")
         return out
@@ -743,14 +1198,17 @@ def ops():
     settings = ps.load_settings()
     journal = load_journal()
     account = derive_account(journal, days)
-    fresh = freshness(days, status)
     run = run_status()
+    # Scanning 5k bar tails while daily.py is reading the same files makes this page hang.
+    fresh = freshness(days, status, with_gap=not bool(run.get("running")))
     plans = {"actual": plan(days, fresh, status, ledger, settings, account, mode="JOURNAL"),
              "model": plan(days, fresh, status, ledger, settings, account, mode="MODEL")}
     for pl in plans.values():
         if run["running"]:
-            pl["warnings"].insert(0, "数据正在更新（%s）。跑完后刷新本页。" % (run.get("stage") or "运行中"))
-        if run.get("last_failed") and not run["running"]:
+            pl["warnings"].insert(0, "数据正在更新（%s）。右上角可「停止更新」。跑完后刷新本页。" % (run.get("stage") or "运行中"))
+        if run.get("stopped") and not run["running"]:
+            pl["warnings"].append("上一次更新是手动停止的。已下好的日线留着，再点会从漏的地方继续。")
+        elif run.get("last_failed") and not run["running"]:
             pl["warnings"].append("上一次更新没有正常结束（%s）。再点一次「更新数据」会从缺的地方继续。" % (run["last_failed"].get("started_at") or ""))
     pl = plans["model"]
     model_pos = _model_positions(ledger, pl["key_dates"].get("signal_date"), days) if pl["key_dates"].get("signal_date") else []
@@ -770,15 +1228,16 @@ def ops():
 FAQ = [
     {"q": "系统什么时候让我卖？", "a": "只有卖出日（买入后第 20 个交易日）开盘卖全部。中间每天都是「无需操作」。没有加仓、做 T、止损——这些在研究期都测过，更差（V33/V34）。"},
     {"q": "明天再算会不会换一批票？", "a": "不会。名单只在信号日（每 21 个交易日一次）生成，平时运行只补数据。"},
-    {"q": "几点更新数据？", "a": UPDATE_WINDOW},
-    {"q": "更新到一半断了 / 重复点了怎么办？", "a": "每一步都按缺什么补什么，重复点无害；正在跑时按钮会灰掉。断了再点一次就从缺的地方继续，上次失败会在状态栏红字提示。"},
-    {"q": "隔几天没更新，会补齐吗？", "a": "会。一次运行补齐冻结末日到今天之间所有缺的交易日。"},
+    {"q": "几点更新数据？截止日期是哪一天？", "a": "截止日期永远是「最近一个已经收盘的交易日」，不是墙上的日历、也不会用未来。周末/节假日自动回跳到上一开盘日（周六 9 月 6 日 → 周五 9 月 4 日）。当天开市但 18:00 前点，也还是上一交易日。当天开市且 18:00 后点，截止日期才是今天。"},
+    {"q": "已经更新过 / 漏了几只怎么办？怎么停止？", "a": "点更新立刻后台开始，页面上方出一条说明 3 秒后自己消失，不挡操作、没有浏览器弹窗。已经到截止日期且日线没有缺口：提示「没有新任务」。有缺口会写补漏只数。跑的时候右上角变成「停止更新」；停掉后已下好的日线留着，下次从漏的地方续。"},
+    {"q": "隔几天没更新，会补齐吗？", "a": "会。一次运行补齐冻结末日到截止日期之间所有缺的交易日；已经有的票会跳过。"},
     {"q": "新闻、财报要更新吗？", "a": "ML1 只用价格、融资、股东户数、指数成分、年报，全部在同一次「更新数据」里自动增量；新闻不是特征。季报/预告/增减持/质押是 ML7 影子的输入，也一起更新。"},
     {"q": "每次计算要花钱吗？", "a": "不用。BaoStock、东方财富数据中心、中登（经东财）全免费。Databento 只花在期货研究上。"},
     {"q": "出名单前看余额吗？", "a": "看。登记入金/成交后，买入手数按你的可用现金 − ¥200 重算；不够就少买几手/几只，不会建议卖别的换这只。"},
     {"q": "买卖后要做什么？", "a": "回来「登记成交」，买几只登记几只。「我的模拟账户」只按你登记的算：没登记 = 空仓，系统不会假设你买了。"},
     {"q": "可以只买名单里的几只吗？", "a": "可以。名单是 10 只等金额，你买 3 只就登记 3 只；卖出日系统只让你卖这 3 只，历史每一期也按你实际的 3 只算。「模型影子账本」永远假设全买，两边互不影响。"},
     {"q": "我的模拟账户 vs 模型影子账本？", "a": "影子账本 = 官方 V26.8 合同（¥20,000 起、每期全买、每月定投 ¥2,000），用来核对策略本身；我的模拟账户 = 你真正登记的入金和成交。顶部切换后，整页（今天做什么 / 资金 / 持仓 / 每一期）都跟着切。"},
-    {"q": "只有月初才能买吗？现在中途能进场吗？", "a": "跟月份无关：每 21 个交易日一期，信号日收盘出名单、次日开盘买、第 20 个交易日开盘卖。合同路径是等下一买入日。你空仓时页面同时给出本期名单（按你的现金重算手数）作为选项 B：现在跟买、卖出日不变——这是中途进场，历史上没测过，好坏未知，买不买你定；登记后页面立刻切到持有状态。"},
+    {"q": "只有月初才能买吗？现在中途能进场吗？", "a": "跟月份无关：每 21 个交易日一期，信号日收盘出名单、次日开盘买、第 20 个交易日开盘卖。合同路径是等下一买入日。你空仓时页面同时给出本期名单作为选项 B：现在跟买、卖出日不变——这是中途进场，历史上没测过，好坏未知，买不买你定。登记一只后名单还在：已登记的标「已登记·改」，剩下的继续点「已买，登记」。"},
+    {"q": "登记填错了怎么办？", "a": "持仓行或操作日志点「改」，改手数/价格/日期后保存（手续费空着会按新金额重估）。也可以「删」掉重登。改的是你的成交日志，不动模型影子账本。"},
     {"q": "这套东西能保证赚钱吗？", "a": "不能。历史三段账本为正（研究 +551%、验证 +39%、最终 OOS +71%），2017/2018 各 −30%；近 6 个月为负。它是一个有纪律的练手外壳，不是承诺。"},
 ]

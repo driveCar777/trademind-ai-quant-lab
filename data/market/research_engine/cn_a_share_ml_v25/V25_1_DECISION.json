@@ -1,0 +1,41 @@
+{
+  "id": "V25_1_REPRODUCTION",
+  "object": "ML1_LGBM_STACK",
+  "contract": "docs/research_engine/V25_1_REPRODUCTION_CONTRACT.md",
+  "pass_criteria": {
+    "level1_shape_all_variants": "7 of 7 required",
+    "validation_excess_min_per_20d": 0.005,
+    "excess_corr_vs_H11_max": 0.9
+  },
+  "observed": {
+    "n_variants": 7,
+    "n_level1_shape": 7,
+    "validation_excess_min": 0.01347,
+    "validation_excess_max": 0.01475,
+    "research_excess_range": [0.0124, 0.0126],
+    "LO20_research_total_range": [2.65, 2.89],
+    "LO20_validation_total_range": [0.22, 0.32],
+    "HN20_validation_total_range": [0.27, 0.35],
+    "rolling_positive_all": 5,
+    "excess_corr_vs_H11_range": [0.022, 0.074],
+    "placebo_shuffled_labels": {"excess_research": -0.0009, "excess_research_t": -5.5, "excess_validation": -0.0007, "LO20_research_total": -0.18, "LO20_validation_total": -0.20, "rolling_positive": 1, "reading": "no pipeline leak; random selection loses the round-trip cost as expected"}
+  },
+  "RESULT": "PASS",
+  "NEW_INDEPENDENT_CANDIDATE_under_A4": 1,
+  "V25_formal_tag_unchanged": "WEAK_CANDIDATE_SAME_CLUSTER (raw-MF cluster test, mis-specified for long books; not re-scored)",
+  "LEVEL": 1,
+  "CANDIDATE": 3,
+  "NEW_CANDIDATE": 1,
+  "NEW_INDEPENDENT_CANDIDATE": 1,
+  "STRATEGY": 2,
+  "PORTFOLIO": 0,
+  "PAPER": 0,
+  "LIVE": 0,
+  "OVERALL": "A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE",
+  "STOP": "STOP_A",
+  "NEXT": "STRATEGY_SPEC_FOR_ML1 (LO20 book as specified; HN20-vs-HS300 is a size-spread carrier and is NOT the strategy) then human decision on the single pre-declared Final OOS read",
+  "final_oos": "DENIED_UNTIL_HUMAN_UNLOCK",
+  "new_purchase": false,
+  "cost_usd": 0.0,
+  "date": "2026-09-04"
+}

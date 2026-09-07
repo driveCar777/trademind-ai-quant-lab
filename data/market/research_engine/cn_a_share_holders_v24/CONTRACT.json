@@ -1,0 +1,87 @@
+{
+  "cagr_only_from": "CANONICAL_CAPITAL_ACCOUNT",
+  "cagr_target_not_a_gate": 0.1,
+  "contract_hash": "dcac86074f4b6db6eb3d30a33f71c5d4d5e6ed9064fae4f34ac710f8a367f8b0",
+  "cost_model": {
+    "commission": 0.00025,
+    "id": "A_SHARE_STRATEGY_COST_MODEL_V1",
+    "optimize": false,
+    "slippage": 0.001,
+    "stamp_before_20230828": 0.001,
+    "stamp_from_20230828": 0.0005,
+    "transfer": 1e-05
+  },
+  "cost_usd": 0.0,
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied_window": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "do_not_flip_sign": true,
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_q": 0.05,
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "holders_dataset_id": "tm-ashare-HOLDERS-Q-20260904-000001",
+  "holders_source": "Eastmoney datacenter RPT_HOLDERNUM_DET per stock; fields HOLDER_NUM, PRE_HOLDER_NUM, TOTAL_A_SHARES, END_DATE, HOLD_NOTICE_DATE",
+  "hypotheses": [
+    {
+      "family": "HOLDER_CONCENTRATION",
+      "id": "HC1_CONCENTRATION_QOQ",
+      "mechanism": "Falling shareholder count between consecutive reports = chips concentrating into fewer hands (informed accumulation, retail exit). Long the quintile with the largest QoQ decline. score = -(HOLDER_NUM / PRE_HOLDER_NUM - 1) from the latest announced report.",
+      "not": "PRICE_MOMENTUM_OR_TURNOVER_CLONE",
+      "signal": "NEG_QOQ_CHANGE",
+      "state": null
+    },
+    {
+      "family": "HOLDER_CONCENTRATION",
+      "id": "HC2_CONCENTRATION_2Q",
+      "mechanism": "Persistent concentration over two reports. Long the quintile with the largest decline vs the report two periods back. score = -(HOLDER_NUM_t / HOLDER_NUM_{t-2} - 1).",
+      "not": "HC1_CLONE_BY_CONSTRUCTION_IS_ACCEPTED_AS_HORIZON_VARIANT",
+      "signal": "NEG_2Q_CHANGE",
+      "state": null
+    },
+    {
+      "family": "HOLDER_LEVEL",
+      "id": "HC3_LOW_HOLDERS_PER_SHARE",
+      "mechanism": "Fewer holders per A-share outstanding = concentrated ownership level. Long the quintile with the lowest holders/share. score = -(HOLDER_NUM / TOTAL_A_SHARES).",
+      "not": "PURE_SIZE_CLONE",
+      "signal": "NEG_HOLDERS_PER_SHARE",
+      "state": null
+    }
+  ],
+  "id": "A_SHARE_HOLDER_CONCENTRATION_V24",
+  "keep_h11_h12": true,
+  "live_api": false,
+  "long_only": true,
+  "min_cross_section": 100,
+  "new_purchase": false,
+  "not": [
+    "PRICE_ONLY_FARM",
+    "ANNOUNCEMENT_WINDOW_LONG",
+    "RATIO",
+    "MEMBERSHIP",
+    "SIGN_FLIP"
+  ],
+  "pit_rule": "value from report R visible from the first session strictly after HOLD_NOTICE_DATE(R); rows with HOLD_NOTICE_DATE > 2024-02-29 dropped at compile",
+  "portfolio": "QUINTILE_TOP_20",
+  "predictive_is_not_cagr": true,
+  "predictive_metric_name": "MEAN_FORWARD_RETURN",
+  "quantile": 0.2,
+  "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+  "reopen_h11_h12": false,
+  "reopen_v13_v23": false,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "same_cluster_corr": 0.9,
+  "seed": 20260904,
+  "signal_price": "RAW_CLOSE_T",
+  "universe": "eligible names in the frozen panel with at least one announced holder-count report",
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ]
+}

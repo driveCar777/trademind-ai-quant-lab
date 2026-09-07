@@ -1,0 +1,43 @@
+{
+  "blocked": false,
+  "contract_hash": "479ed94e072c9036ed1575eb14907de9003aadd70eda74d6e56018ed43db680f",
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "INDUSTRY_RELATIVE_STRENGTH",
+      "hold_days": 20,
+      "id": "I1_IND_RS_20",
+      "lookback": 20,
+      "mechanism": "PIT industry 20-day EW close return. Long names in strong industries.",
+      "signal": "INDUSTRY_RS_20"
+    },
+    {
+      "family": "INDUSTRY_RELATIVE_STRENGTH",
+      "hold_days": 20,
+      "id": "I2_IND_RS_60",
+      "lookback": 60,
+      "mechanism": "PIT industry 60-day EW close return. Long names in strong industries.",
+      "signal": "INDUSTRY_RS_60"
+    },
+    {
+      "family": "INDUSTRY_BREADTH",
+      "hold_days": 20,
+      "id": "I3_IND_BREADTH_20",
+      "lookback": 20,
+      "mechanism": "PIT industry 20-day breadth (pct members with positive close return). Long high breadth.",
+      "signal": "INDUSTRY_BREADTH_20"
+    }
+  ],
+  "id": "A_SHARE_INFORMATION_EXPANSION_V16_INDUSTRY_ALPHA",
+  "knowledge_time": "effective_date <= signal_date",
+  "max_hypotheses": 3,
+  "new_purchase": false,
+  "not": "INDUSTRY_X_MOMENTUM_X_LOWVOL",
+  "predictive_is_not_cagr": true,
+  "predictive_metric_name": "MEAN_FORWARD_RETURN",
+  "price_dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "price_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "quantile": 0.2,
+  "reason": "MONTHLY_ASOF_PIT"
+}

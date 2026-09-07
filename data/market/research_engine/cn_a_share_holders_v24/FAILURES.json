@@ -1,0 +1,45 @@
+{
+  "n": 3,
+  "rows": [
+    {
+      "family": "HOLDER_CONCENTRATION",
+      "id": "HC1_CONCENTRATION_QOQ",
+      "mechanism": "Falling shareholder count between consecutive reports = chips concentrating into fewer hands (informed accumulation, retail exit). Long the quintile with the largest QoQ decline. score = -(HOLDER_NUM / PRE_HOLDER_NUM - 1) from the latest announced report.",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "HOLDER_CONCENTRATION",
+      "id": "HC2_CONCENTRATION_2Q",
+      "mechanism": "Persistent concentration over two reports. Long the quintile with the largest decline vs the report two periods back. score = -(HOLDER_NUM_t / HOLDER_NUM_{t-2} - 1).",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "fdr",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "HOLDER_LEVEL",
+      "id": "HC3_LOW_HOLDERS_PER_SHARE",
+      "mechanism": "Fewer holders per A-share outstanding = concentrated ownership level. Long the quintile with the lowest holders/share. score = -(HOLDER_NUM / TOTAL_A_SHARES).",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "fdr",
+        "validation_capital"
+      ]
+    }
+  ]
+}

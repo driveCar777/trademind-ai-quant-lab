@@ -1,0 +1,115 @@
+{
+  "alt_sources": [
+    "tm-cn-a-BASIC-20260830-000001",
+    "pack.isST",
+    "pack.tradestatus",
+    "tm-cn-a-CALENDAR-20260830-000001"
+  ],
+  "cagr_only_from": "CANONICAL_CAPITAL_ACCOUNT",
+  "cagr_target_not_a_gate": 0.1,
+  "contract_hash": "709e429f05e3db492746a634696d650bea2231086778cf0a18d5cc38e189a315",
+  "cost_model": {
+    "commission": 0.00025,
+    "id": "A_SHARE_STRATEGY_COST_MODEL_V1",
+    "optimize": false,
+    "slippage": 0.001,
+    "stamp_before_20230828": 0.001,
+    "stamp_from_20230828": 0.0005,
+    "transfer": 1e-05
+  },
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied_window": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "do_not_flip_sign": true,
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_q": 0.05,
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "LISTING_AGE",
+      "id": "A1_SEASONED_AGE",
+      "mechanism": "IPO long-run underperformance. Long the most seasoned names. score = calendar age in days.",
+      "not": "YOUNG_IPO_MOMENTUM_OR_PRICE_ONLY",
+      "signal": "AGE_DAYS",
+      "state": null
+    },
+    {
+      "family": "LISTING_AGE",
+      "id": "A2_RELATIVE_AGE",
+      "mechanism": "Long names older than that day's eligible median age. Relative seasoning, not absolute.",
+      "not": "ABSOLUTE_AGE_CLONE_OR_SIZE",
+      "signal": "AGE_MINUS_CS_MEDIAN",
+      "state": null
+    },
+    {
+      "family": "ST_HISTORY",
+      "id": "A3_CLEAN_STREAK",
+      "mechanism": "Long names with the longest consecutive non-ST streak. Special-treatment risk fading.",
+      "not": "H11_VOL_OR_CURRENT_ST_FILTER",
+      "signal": "CLEAN_STREAK",
+      "state": null
+    },
+    {
+      "family": "SUSPEND_RESUME",
+      "id": "A4_RECENT_RESUME",
+      "mechanism": "After suspension lifts, delayed catching-up. Long shortest consecutive tradable streak (recent resume).",
+      "not": "PRICE_REVERSAL_OR_LIMIT_LOCK",
+      "signal": "NEG_UP_STREAK",
+      "state": null
+    },
+    {
+      "family": "CALENDAR_WINDOW",
+      "id": "A5_MONTH_END_SEASONED",
+      "mechanism": "Month-end window dressing into seasoned names. Age score only on last 2 CN trading days of the month.",
+      "not": "IT_GOLD_MONTH_END_OR_PRICE_REVERSAL",
+      "signal": "AGE_DAYS",
+      "state": "MONTH_END_2"
+    },
+    {
+      "family": "CALENDAR_WINDOW",
+      "id": "A6_QUARTER_END_SEASONED",
+      "mechanism": "Quarter-end reporting window dressing into seasoned names. Age score only on last 5 CN trading days of the quarter.",
+      "not": "IT_GOLD_MONTH_END_OR_PRICE_REVERSAL",
+      "signal": "AGE_DAYS",
+      "state": "QUARTER_END_5"
+    }
+  ],
+  "id": "A_SHARE_ALTINFO_V18",
+  "keep_h11_h12": true,
+  "live_api": false,
+  "long_only": true,
+  "min_cross_section": 100,
+  "new_h13": false,
+  "new_purchase": false,
+  "not": [
+    "PRICE_ONLY_FARM",
+    "V17_MACRO_RETUNE",
+    "EVENT_ANNOUNCEMENT",
+    "NEWS_TEXT"
+  ],
+  "pit_rule": "listing_date_and_flags_through_signal_date_only",
+  "portfolio": "QUINTILE_TOP_20",
+  "predictive_is_not_cagr": true,
+  "predictive_metric_name": "MEAN_FORWARD_RETURN",
+  "price_only_reopen": false,
+  "quantile": 0.2,
+  "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+  "reopen_h11_h12": false,
+  "reopen_v16": false,
+  "reopen_v17": false,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "same_cluster_corr": 0.9,
+  "seed": 20260902,
+  "signal_price": "RAW_CLOSE_T",
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ]
+}

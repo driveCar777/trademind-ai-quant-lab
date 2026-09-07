@@ -1,0 +1,111 @@
+{
+  "LO20_minus_EW_by_year": {
+    "2012": {
+      "compound": 0.12116850232985032,
+      "mean": 0.008920682950667967,
+      "n": 13
+    },
+    "2013": {
+      "compound": 0.06165990472584415,
+      "mean": 0.005047692701159692,
+      "n": 12
+    },
+    "2014": {
+      "compound": 0.06657676559408299,
+      "mean": 0.005670747682887588,
+      "n": 12
+    },
+    "2015": {
+      "compound": 0.38227506619499363,
+      "mean": 0.027499653975365662,
+      "n": 12
+    },
+    "2016": {
+      "compound": 0.2825329292927421,
+      "mean": 0.020984073479833224,
+      "n": 12
+    },
+    "2017": {
+      "compound": -0.026919594413758352,
+      "mean": -0.00223722402381049,
+      "n": 12
+    },
+    "2018": {
+      "compound": 0.11788337914685809,
+      "mean": 0.008646731237977741,
+      "n": 13
+    },
+    "2019": {
+      "compound": 0.06470659801549017,
+      "mean": 0.005602067654011351,
+      "n": 12
+    },
+    "2020": {
+      "compound": -0.0723535594160355,
+      "mean": -0.005538379967338282,
+      "n": 12
+    },
+    "2021": {
+      "compound": 0.07505374536812615,
+      "mean": 0.006186873148313637,
+      "n": 12
+    },
+    "2022": {
+      "compound": 0.18021698972763778,
+      "mean": 0.014033486243047101,
+      "n": 12
+    },
+    "2023": {
+      "compound": 0.16613282913734362,
+      "mean": 0.013154646929792251,
+      "n": 12
+    },
+    "2024": {
+      "compound": -0.004831623581991407,
+      "mean": -0.004831623581991379,
+      "n": 1
+    }
+  },
+  "cost_stress_LO20": {
+    "1.5x": {
+      "research_total": 2.082035485034747,
+      "validation_total": 0.24169831952774912
+    },
+    "1x": {
+      "research_total": 2.7596246687185513,
+      "validation_total": 0.3088211405985257
+    },
+    "2x": {
+      "research_total": 1.5263411478779267,
+      "validation_total": 0.1779901362790628
+    }
+  },
+  "independence": {
+    "EXCESS_series_corr_ML1_vs_H11": 0.06307291926333271,
+    "contract_test_raw_MF_corr_vs_H11_legacy_file": 0.9416864615546288,
+    "contract_test_raw_MF_corr_vs_H11_recomputed": 0.9394143573024069,
+    "n": 2952,
+    "n_excess": 2950,
+    "n_legacy": 147,
+    "raw_MF_corr_H11_vs_EW": 0.9553408655952904,
+    "raw_MF_corr_ML1_vs_EW": 0.9727841994990324,
+    "reading": "raw MF series of any long quintile co-move with the market; the excess-series correlation is the informative one"
+  },
+  "selection_footprint": {
+    "median_NEG_LOG_AMT_rank_of_selected(1=smallest_amount)": 0.8616186717033454,
+    "median_names_per_period": 626.5,
+    "reading": "close to 1 means the model is mostly buying the lowest-turnover-value names (size/illiquidity tilt)"
+  },
+  "size_exposure_HN20": {
+    "LO20_minus_EW_basket_per_period_mean": 0.008900601460881247,
+    "LO20_minus_EW_basket_share_positive": 0.7074829931972789,
+    "LO20_minus_EW_basket_t": 5.0967603318700805,
+    "alpha_per_period_after_spread": 0.005644404117599866,
+    "beta_to_EW_minus_HS300": 0.9180110180316685,
+    "mean_EW_minus_HS300_spread_per_period": -0.0008818319342821099,
+    "mean_period_ret_HN20": 0.004834872685876711,
+    "n_periods": 147,
+    "r2": 0.9279319797474546,
+    "reading": "HN20 hedges HS300, so it carries the small-vs-large spread; LO20 minus the eligible EW basket is the stock-selection-only read"
+  }
+}

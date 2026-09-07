@@ -1,0 +1,18 @@
+{
+  "COMPLETE_PIT": false,
+  "FINANCIAL_ALPHA_READY": true,
+  "FINANCIAL_ALPHA_STATUS": "READY",
+  "INDUSTRY_ALPHA_READY": true,
+  "INDUSTRY_ALPHA_STATUS": "READY",
+  "RESTATEMENT_RISK": true,
+  "checks": {
+    "download_complete": true,
+    "effective_dating": true,
+    "historical_membership": true,
+    "mutation": true,
+    "not_current_only": true,
+    "pit_available": true,
+    "pit_test": true
+  },
+  "label": "MONTHLY_ASOF"
+}

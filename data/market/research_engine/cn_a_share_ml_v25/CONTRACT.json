@@ -1,0 +1,199 @@
+{
+  "amendment": "RESEARCH_RULES_AMENDMENT_V1 (A1 construction menu, A2 rolling validation, A3 one model per layer)",
+  "books": {
+    "predictive": "overlapping MEAN_FORWARD_RETURN excess vs eligible EW (unchanged)",
+    "primary": "HN20 hedged-neutral: long top-quintile book (legacy LO20 fills/costs) with 0.85 stock fraction, short HS300 index futures 1:1 on filled notional; futures cost = basis 3.0%/yr + fee 0.000046 + slip 0.000200 per round trip",
+    "secondary": "LO20 legacy long-only (reported, not gated)"
+  },
+  "contract_hash": "082b7c2f8faeee82ca5502b58c8c375fef53b87c8436a5b72b3aa410b12ba72f",
+  "cost_model_stock": {
+    "commission": 0.00025,
+    "slippage": 0.001,
+    "stamp_new": 0.0005,
+    "stamp_old": 0.001,
+    "transfer": 1e-05
+  },
+  "cost_usd": 0.0,
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "diagnostics": "H11 (NEG_VOL_60) and V23 M1 re-read on HN20 book, labelled DIAGNOSTIC, never gated or promoted",
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_m": 2,
+  "fdr_q": 0.05,
+  "feature_transform": "cross-sectional rank in [0,1] per session over eligible names (HS300_MEMBER raw 0/1)",
+  "features": [
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "NEG_VOL_60"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "NEG_VOL_120"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "REV_20"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "MOM_250_20"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "NEG_TURN_20"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "NEG_LOG_AMT_20"
+    },
+    {
+      "layer": "margin",
+      "ml0_sign": 1,
+      "name": "NEG_NET_INFLOW_20_OVER_CAP"
+    },
+    {
+      "layer": "margin",
+      "ml0_sign": 1,
+      "name": "NEG_BALANCE_OVER_CAP"
+    },
+    {
+      "layer": "margin",
+      "ml0_sign": 1,
+      "name": "NEG_BALANCE_CHG_60"
+    },
+    {
+      "layer": "holders",
+      "ml0_sign": 1,
+      "name": "NEG_QOQ_CHANGE"
+    },
+    {
+      "layer": "holders",
+      "ml0_sign": 1,
+      "name": "NEG_HOLDERS_PER_SHARE"
+    },
+    {
+      "layer": "finance",
+      "ml0_sign": 1,
+      "name": "ROE_ANNUAL"
+    },
+    {
+      "layer": "finance",
+      "ml0_sign": 1,
+      "name": "YOY_NET_PROFIT_ANNUAL"
+    },
+    {
+      "layer": "index",
+      "ml0_sign": 0,
+      "name": "HS300_MEMBER"
+    }
+  ],
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "MULTILAYER_MODEL",
+      "id": "ML1_LGBM_STACK",
+      "mechanism": "Several weak, economically distinct A-share signals (low vol, short-term reversal, 12-1 momentum, low turnover, small size, margin de-leveraging, holder concentration, ROE, profit growth, index membership) each carried too little information alone to beat costs. A single cross-sectional model combining their ranks may.",
+      "not": "FEATURE_SEARCH; HYPERPARAMETER_SEARCH; REFIT_AFTER_RESEARCH",
+      "signal": "ML1_LGBM"
+    },
+    {
+      "family": "MULTILAYER_BASELINE",
+      "id": "ML0_RANK_AVERAGE",
+      "mechanism": "Same features, equal-weight average of a-priori-signed ranks, no fitting. Tells whether any ML1 edge comes from combination itself or from the fitted nonlinearity.",
+      "not": "FITTED",
+      "signal": "ML0_RANKAVG"
+    }
+  ],
+  "id": "A_SHARE_MULTILAYER_MODEL_V25",
+  "index_daily_dataset_id": "tm-cn-a-INDEX-D1-20260904-000001",
+  "label": "cross-sectional rank of open(t+1)->open(t+1+20) return minus 0.5",
+  "level1_gate": "fixed-split gates (pred net>0 both, excess/IC evidence>=2 both, FDR q=0.05, HN20 capital>0 research and validation) AND positive excess-vs-EW in >= 4 of 5 rolling blocks",
+  "live_api": false,
+  "model": {
+    "params": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.03,
+      "min_child_samples": 1000,
+      "n_estimators": 400,
+      "num_leaves": 31,
+      "num_threads": 16,
+      "objective": "regression",
+      "random_state": 20260904,
+      "reg_lambda": 1.0,
+      "subsample": 0.7,
+      "subsample_freq": 1,
+      "verbosity": -1
+    },
+    "type": "lightgbm.LGBMRegressor"
+  },
+  "new_purchase": false,
+  "no_search": "features, transform, label, params and schedule are fixed here; one run; no second configuration",
+  "quantile": 0.2,
+  "reopen_h11_h12": false,
+  "reopen_v13_v24_as_hypotheses": false,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "rolling_blocks": [
+    [
+      "RB1_2014_15",
+      "2014-01-01",
+      "2015-12-31"
+    ],
+    [
+      "RB2_2016_17",
+      "2016-01-01",
+      "2017-12-31"
+    ],
+    [
+      "RB3_2018_19",
+      "2018-01-01",
+      "2019-12-31"
+    ],
+    [
+      "RB4_2020_21",
+      "2020-01-01",
+      "2021-08-24"
+    ],
+    [
+      "RB5_VALID",
+      "2021-08-25",
+      "2024-02-29"
+    ]
+  ],
+  "same_cluster_corr": 0.9,
+  "seed": 20260904,
+  "signal_price": "RAW_CLOSE_T",
+  "universe": "eligible names in the frozen panel (listed, trading, non-ST, >= 40 sessions history)",
+  "upstream_pit_layers": [
+    "V13 price pack",
+    "V16 FINANCIAL_ANNOUNCEMENT_DATE",
+    "V20 index as-of snapshots",
+    "V23 margin PIT lag 1",
+    "V24 holders HOLD_NOTICE_DATE"
+  ],
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ],
+  "walk_forward": {
+    "embargo_sessions": 21,
+    "expanding": true,
+    "first_pred": "2012-01-04",
+    "frozen_after_research": true,
+    "refit_every_sessions": 120,
+    "train_stride_sessions": 5
+  }
+}

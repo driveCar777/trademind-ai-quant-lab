@@ -1,0 +1,17 @@
+{
+  "asof_max": "2024-02-15",
+  "asof_min": "2009-12-15",
+  "content_hash": "0665eade4e0e2541ee11d400d8529c8bc065b340845ea440ddd460af015c3fc0",
+  "csv_sha256": "3fa6a5b54afe32a364e867c49af465ec5a2905f83872c0d53f8f83da5dbbbf38",
+  "dataset_id": "tm-ashare-INDEX-PIT-20260902-000001",
+  "grid": "15th_of_month",
+  "indices": [
+    "HS300",
+    "ZZ500"
+  ],
+  "kind": "INDEX-PIT",
+  "knowledge_time": "effective_date",
+  "n_asof": 171,
+  "n_rows": 136798,
+  "pit_test_ok": true
+}

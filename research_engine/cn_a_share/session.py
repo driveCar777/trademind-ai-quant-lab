@@ -1,6 +1,7 @@
 """Single BaoStock session. No concurrent login. Not a data store."""
 from __future__ import print_function
 
+import socket
 import time
 
 
@@ -16,6 +17,8 @@ DATA_GAP = "DATA_GAP"
 def classify_error(exc, n_rows=None, elapsed=None):
     text = str(exc or "")
     low = text.lower()
+    if "黑名单" in text or "blacklist" in low:
+        return PERMANENT
     if "payment" in low or "credential" in low or "license" in low or "blocked" in low:
         return PERMANENT
     if "permission" in low or "auth" in low:
@@ -36,13 +39,26 @@ def classify_error(exc, n_rows=None, elapsed=None):
 class BaoSession(object):
     """One login at a time. Caller must not construct a second live session."""
 
-    def __init__(self, sleep_s=0.05, max_retries=5):
+    def __init__(self, sleep_s=0.05, max_retries=5, socket_timeout_s=60):
         self.sleep_s = float(sleep_s)
         self.max_retries = int(max_retries)
+        self.socket_timeout_s = None if socket_timeout_s in (None, 0) else float(socket_timeout_s)
         self.bs = None
         self.logged_in = False
         self.n_queries = 0
         self.n_resets = 0
+
+    def _arm_socket_timeout(self):
+        """BaoStock recv() has no timeout; a hung kline would block the whole live run."""
+        if not self.socket_timeout_s:
+            return
+        try:
+            import baostock.common.context as ctx
+            sock = getattr(ctx, "default_socket", None)
+            if sock is not None:
+                sock.settimeout(self.socket_timeout_s)
+        except Exception:
+            pass
 
     def login(self):
         import baostock as bs
@@ -54,6 +70,7 @@ class BaoSession(object):
         if getattr(login, "error_code", "1") != "0":
             raise RuntimeError("BAOSTOCK_LOGIN:%s" % getattr(login, "error_msg", login))
         self.logged_in = True
+        self._arm_socket_timeout()
 
     def logout(self):
         if not self.logged_in or self.bs is None:
@@ -128,13 +145,13 @@ class BaoSession(object):
             except RuntimeError:
                 raise
             except Exception as exc:
-                last = exc
-                kind = classify_error(exc)
+                last = RuntimeError("BAOSTOCK_TIMEOUT") if isinstance(exc, socket.timeout) else exc
+                kind = classify_error(last)
                 if kind == PERMANENT:
                     raise
                 if attempt + 1 < self.max_retries:
                     self.reset()
                     time.sleep(0.5 * (2 ** attempt))
                     continue
-                raise
+                raise last
         raise last

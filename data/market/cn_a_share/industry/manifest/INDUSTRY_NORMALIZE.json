@@ -1,0 +1,15 @@
+{
+  "asof_max": "2024-02-15",
+  "asof_min": "2009-12-15",
+  "csv_sha256": "02b0003e6b6c43cfe77323aef1b9c104056ea67eb3058b0859bc3b9408394df2",
+  "download_complete": true,
+  "effective_date_present": true,
+  "grid": "15th_of_month",
+  "knowledge_time": "effective_date = query date",
+  "label": "MONTHLY_ASOF",
+  "n_asof": 171,
+  "n_expected": 171,
+  "n_rows": 575002,
+  "n_symbols": 5346,
+  "pit_available": true
+}

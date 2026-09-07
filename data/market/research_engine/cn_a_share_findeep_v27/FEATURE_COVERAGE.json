@@ -1,0 +1,63 @@
+{
+  "last_session": {
+    "BP": 0.9183636691295729,
+    "CFO_TTM_BP": 0.8713281672373401,
+    "EP_TTM": 0.9122364389980177,
+    "GM_CHG": 0.8974590016219138,
+    "NEG_ACCRUALS": 0.8677239142187781,
+    "NEG_ASSET_GROWTH": 0.8843034781041629,
+    "NEG_LEV_CHG": 0.8814200756893134,
+    "REV_YOY_Q": 0.9068300594701748,
+    "ROE_TTM": 0.9073706974229591,
+    "SUE_Q": 0.8763741214633267
+  },
+  "pit": {
+    "N": 5549,
+    "T": 8714,
+    "arrays": [
+      "SUE_Q",
+      "REV_YOY_Q",
+      "NEG_ACCRUALS",
+      "CFO_TTM_BP",
+      "ROE_TTM",
+      "GM_CHG",
+      "EPS_TTM",
+      "BPS",
+      "NEG_ASSET_GROWTH",
+      "NEG_LEV_CHG"
+    ],
+    "content_hash": "4e2589b834a98fabd6d4cff50c5cf29bee44efec3a8f58ba8f7d040861a65b61",
+    "coverage_last_session": {
+      "BPS": 0.918543881780501,
+      "CFO_TTM_BP": 0.8713281672373401,
+      "EPS_TTM": 0.9124166516489458,
+      "GM_CHG": 0.8974590016219138,
+      "NEG_ACCRUALS": 0.8677239142187781,
+      "NEG_ASSET_GROWTH": 0.8843034781041629,
+      "NEG_LEV_CHG": 0.8814200756893134,
+      "REV_YOY_Q": 0.9068300594701748,
+      "ROE_TTM": 0.9073706974229591,
+      "SUE_Q": 0.8763741214633267
+    },
+    "dataset_id": "tm-ashare-FINDEEP-Q-20260904-000001",
+    "notice_cutoff": "2024-02-29",
+    "pit_rule": "visible from first session strictly after NOTICE_DATE; stale report dates arriving late ignored",
+    "stats": {
+      "dropped_denied": 16987,
+      "events": 324931,
+      "rows_balance": 221927,
+      "rows_cpd": 353869,
+      "stale_late": 64554,
+      "symbols_balance_matched": 5230,
+      "symbols_cpd_matched": 5212
+    },
+    "tables_unused": {
+      "RPT_DMSK_FN_CASHFLOW": "same",
+      "RPT_DMSK_FN_INCOME": "NOTICE_DATE is next-year comparative (~12m late); restated"
+    },
+    "tables_used": [
+      "RPT_LICO_FN_CPD",
+      "RPT_DMSK_FN_BALANCE"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "announcement_rate": 1.0,
+  "complete_pit_claimed": false,
+  "content_hash": "bdd857d0c126c7d3b52188fc93da5063ba503c6d54a08235778baa9d71e332ee",
+  "csv_sha256": "d660c85e2bbca23569ce7b8aa6045c87028198b242651aa81b6c8fe7c72c1573",
+  "dataset_id": "tm-ashare-FINANCIAL-PIT-20260831-000001",
+  "kind": "FINANCIAL-PIT",
+  "knowledge_time": "announcement_date",
+  "n_rows": 64440,
+  "n_symbols": 5500,
+  "parent_price": "tm-ashare-EQUITY-D1-20260830-000002",
+  "parent_price_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "period": "ANNUAL_Q4",
+  "pit_test_ok": true,
+  "restatement_risk": true
+}

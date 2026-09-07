@@ -131,3 +131,16 @@ data/market/cn_a_share/alpha_cache/mt5_xs_v30/
 data/market/research_engine/mt5_xs_v30/*.npy
 data/market/cn_futures/v37_warehouse/shfe_raw/
 data/market/cn_futures/v37_warehouse/*.npz
+
+# V38 information layers: raw gz + 8714x5549 float32 matrices (~185MB each) regenerate from the layer packages
+data/market/cn_a_share/preann/raw/
+data/market/cn_a_share/preann/normalized/*.npy
+data/market/cn_a_share/insider/raw/
+data/market/cn_a_share/insider/normalized/*.npy
+data/market/cn_a_share/pledge/raw/
+data/market/cn_a_share/pledge/normalized/*.npy
+data/market/cn_a_share/financial_deep/normalized/
+data/market/research_engine/*/SCORES_*.npy
+data/market/research_engine/*/*_CURVE_*.npy
+# V30 US share CFD D1 (492 csv, MT5 export) — manifest/specs tracked, bars local-only
+data/market/immutable/tm-mt5-USSHARES-D1-*/*.csv

@@ -1,0 +1,45 @@
+{
+  "CANDIDATE": 2,
+  "EXISTING_CANDIDATE": 2,
+  "LEVEL": 1,
+  "LIVE": 0,
+  "NEW_CANDIDATE": 0,
+  "NEXT": "A_SHARE_PRICE_ALPHA_REVIEW_V2",
+  "OVERALL": "NO_NEW_CANDIDATE",
+  "PAPER": 0,
+  "PORTFOLIO": 0,
+  "STRATEGY": 2,
+  "candidate_ids": [],
+  "cluster_tags": {},
+  "denied": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "fdr": {
+    "adjusted_p": [
+      2.5981700082403992e-09,
+      3.658875709660713e-07,
+      0.06479817780646532,
+      5.398379411701395e-09,
+      2.9929255715040975e-09,
+      5.601296839821335e-06,
+      1.0,
+      1.0,
+      2.6174229518194573e-15
+    ],
+    "discoveries": [
+      8,
+      0,
+      4,
+      3,
+      1,
+      5
+    ],
+    "q": 0.05
+  },
+  "final_oos": "DENIED",
+  "h11_h12": "KEEP_LOW_PRIORITY",
+  "make_10pct": false,
+  "new_purchase": false,
+  "retune": false
+}

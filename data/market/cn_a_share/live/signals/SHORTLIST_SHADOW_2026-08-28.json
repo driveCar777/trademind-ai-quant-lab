@@ -9,6 +9,7 @@
   "kind": "SHORTLIST_SHADOW",
   "max_price": 100.0,
   "n_names": 10,
+  "n_selected": 10,
   "n_target": 10,
   "names": [
     {

@@ -48,10 +48,12 @@ def main(argv=None):
     ap.add_argument("--force-score", action="store_true")
     ap.add_argument("--no-holders", action="store_true")
     ap.add_argument("--skip-fetch", action="store_true", help="use data already on disk (no BaoStock/Eastmoney)")
+    ap.add_argument("--no-ml7", action="store_true", help="skip the output-only ML7 information-stack shadow (V38-S3)")
     a = ap.parse_args(argv)
     ensure_live()
     _set_env(a.asof)
     t0 = time.time()
+    print("ML1_LIVE asof_requested", a.asof, flush=True)
     status = {"asof_requested": a.asof, "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "steps": {}}
 
     from research_engine.ml1_live import layers, panel
@@ -63,7 +65,7 @@ def main(argv=None):
         equities = panel.load_live_equities()
         cal = panel.load_live_calendar()
         days = panel.trading_days(cal)
-        asof_session = max(d for d in days if d <= a.asof)
+        asof_session = panel.clamp_asof(days, a.asof)
         live_sessions = [d for d in days if d > panel.FROZEN_END]
         status["steps"]["fetch"] = "skipped"
     else:
@@ -87,6 +89,8 @@ def main(argv=None):
             status["steps"]["index"] = {"error": str(e)[:200]}
         status["steps"]["annual"] = layers.annual_status(asof_session)
     status["asof_session"] = asof_session
+    if asof_session < panel.FROZEN_END:
+        raise RuntimeError("REFUSING_TO_WRITE_STATUS asof %s < frozen %s" % (asof_session, panel.FROZEN_END))
 
     # 5 live pack
     pack = panel.build_live_pack(equities, live_sessions, asof_session)
@@ -141,6 +145,15 @@ def main(argv=None):
                             "shortlist_file": os.path.join(SIGNALS, "SHORTLIST_%s.csv" % pack["dates"][t]), "shortlist_n": sl["n_names"]}
     else:
         status["signal"] = {"is_chain_signal_day": False, "next_signal_date": ledger["summary"].get("next_signal_date")}
+    # 9 ML7 information-stack shadow (V38-S3, owner-authorised 2026-09-07 09:44): output-only, after every ML1 file is written.
+    # It cannot change SIGNAL / SHORTLIST / LEDGER / LEDGER_TOP20; any failure is recorded and ignored.
+    if not a.no_ml7:
+        try:
+            from research_engine.ml7_live.daily import run as ml7_run
+            status["ml7"] = ml7_run(pack, elig, xok, asof_session, skip_fetch=a.skip_fetch, force_score=a.force_score, capital=a.capital, ml1_scores=S)
+        except Exception as e:  # noqa
+            status["ml7"] = {"error": str(e)[:300]}
+            print("ML7_LIVE FAILED (ML1 outputs unaffected):", str(e)[:200], flush=True)
     status["elapsed_s"] = round(time.time() - t0, 1)
     status["orders_sent"] = False
     with open(STATUS, "w", encoding="utf-8") as fh:

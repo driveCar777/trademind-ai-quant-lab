@@ -1,0 +1,67 @@
+{
+  "authorised_by": "user 2026-09-04 21:07 (delegated)",
+  "benchmark": "eligible EW overlapping",
+  "book": "LO20 legacy, A_SHARE_STRATEGY_COST_MODEL_V1, hold 20, top 20% EW",
+  "diag_scores": {
+    "gated": false,
+    "policy": "V25 official frozen model (last refit 2021-05-25) applied to the denied window"
+  },
+  "features": [
+    "NEG_VOL_60",
+    "NEG_VOL_120",
+    "REV_20",
+    "MOM_250_20",
+    "NEG_TURN_20",
+    "NEG_LOG_AMT_20",
+    "NEG_NET_INFLOW_20_OVER_CAP",
+    "NEG_BALANCE_OVER_CAP",
+    "NEG_BALANCE_CHG_60",
+    "NEG_QOQ_CHANGE",
+    "NEG_HOLDERS_PER_SHARE",
+    "ROE_ANNUAL",
+    "YOY_NET_PROFIT_ANNUAL",
+    "HS300_MEMBER"
+  ],
+  "gate_scores": {
+    "embargo": 21,
+    "expanding": true,
+    "first_pred": "2012-01-04",
+    "policy": "V26 live policy",
+    "refit_every_sessions": 240,
+    "stride": 5,
+    "walks_through": "2026-08-28"
+  },
+  "gates": {
+    "G1": "mean predictive excess vs EW > 0",
+    "G2": "LO20 capital total > 0 after cost",
+    "G3": "no 24 consecutive periods with LO-EW <= 0 (V26 retire rule)"
+  },
+  "id": "V28_ML1_FINAL_OOS_SINGLE_READ",
+  "labels": {
+    "!G1": "FINAL_OOS_FAIL",
+    "G1&!G2": "FINAL_OOS_EXCESS_ONLY",
+    "G1&G2&G3": "FINAL_OOS_PASS"
+  },
+  "no_tuning_after": true,
+  "params": {
+    "colsample_bytree": 0.8,
+    "learning_rate": 0.03,
+    "min_child_samples": 1000,
+    "n_estimators": 400,
+    "num_leaves": 31,
+    "num_threads": 16,
+    "objective": "regression",
+    "random_state": 20260904,
+    "reg_lambda": 1.0,
+    "subsample": 0.7,
+    "subsample_freq": 1,
+    "verbosity": -1
+  },
+  "protocol_hash": "844a4ea070ba91a6f090b40b25d01c95ada09fbb4948e501e37527f65491e74b",
+  "signal": "ML1_LGBM_STACK",
+  "single_read": true,
+  "window": [
+    "2024-03-01",
+    "2026-08-28"
+  ]
+}

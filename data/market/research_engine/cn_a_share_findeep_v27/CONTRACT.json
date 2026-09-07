@@ -1,0 +1,345 @@
+{
+  "amendment": "RESEARCH_RULES_AMENDMENT_V1 (A1 LO20 book pre-registered as gate book, A2 rolling validation, A3 one model per layer = deep financials, A4 excess-series cluster test)",
+  "books": {
+    "gate": "LO20 legacy long-only (A1 pre-registered; V26 found LO20 is the strategy book, HN20 a size-spread carrier)",
+    "predictive": "overlapping MEAN_FORWARD_RETURN excess vs eligible EW",
+    "secondary": "HN20 hedged (reported only)"
+  },
+  "contract_hash": "7d51ba936bdc7449faba4a3a01118fc304039600ba8f279932371f412ec9bb39",
+  "cost_model_stock": {
+    "commission": 0.00025,
+    "slippage": 0.001,
+    "stamp_new": 0.0005,
+    "stamp_old": 0.001,
+    "transfer": 1e-05
+  },
+  "cost_usd": 0.0,
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_m": 2,
+  "fdr_q": 0.05,
+  "feature_transform": "cross-sectional rank in [0,1] per session over eligible names (HS300_MEMBER raw 0/1)",
+  "features_ML2": [
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "NEG_VOL_60"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "NEG_VOL_120"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "REV_20"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "MOM_250_20"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "NEG_TURN_20"
+    },
+    {
+      "layer": "price",
+      "ml0_sign": 1,
+      "name": "NEG_LOG_AMT_20"
+    },
+    {
+      "layer": "margin",
+      "ml0_sign": 1,
+      "name": "NEG_NET_INFLOW_20_OVER_CAP"
+    },
+    {
+      "layer": "margin",
+      "ml0_sign": 1,
+      "name": "NEG_BALANCE_OVER_CAP"
+    },
+    {
+      "layer": "margin",
+      "ml0_sign": 1,
+      "name": "NEG_BALANCE_CHG_60"
+    },
+    {
+      "layer": "holders",
+      "ml0_sign": 1,
+      "name": "NEG_QOQ_CHANGE"
+    },
+    {
+      "layer": "holders",
+      "ml0_sign": 1,
+      "name": "NEG_HOLDERS_PER_SHARE"
+    },
+    {
+      "layer": "finance",
+      "ml0_sign": 1,
+      "name": "ROE_ANNUAL"
+    },
+    {
+      "layer": "finance",
+      "ml0_sign": 1,
+      "name": "YOY_NET_PROFIT_ANNUAL"
+    },
+    {
+      "layer": "index",
+      "ml0_sign": 0,
+      "name": "HS300_MEMBER"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "SUE_Q"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "REV_YOY_Q"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "NEG_ACCRUALS"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "CFO_TTM_BP"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "ROE_TTM"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "GM_CHG"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "NEG_ASSET_GROWTH"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "NEG_LEV_CHG"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "EP_TTM"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "BP"
+    }
+  ],
+  "features_ML2F": [
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "SUE_Q"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "REV_YOY_Q"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "NEG_ACCRUALS"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "CFO_TTM_BP"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "ROE_TTM"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "GM_CHG"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "NEG_ASSET_GROWTH"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "NEG_LEV_CHG"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "EP_TTM"
+    },
+    {
+      "layer": "findeep",
+      "ml0_sign": 1,
+      "name": "BP"
+    }
+  ],
+  "final_oos": "DENIED",
+  "findeep_content_hash": "4e2589b834a98fabd6d4cff50c5cf29bee44efec3a8f58ba8f7d040861a65b61",
+  "findeep_dataset_id": "tm-ashare-FINDEEP-Q-20260904-000001",
+  "findeep_pit": "visible from first session strictly after NOTICE_DATE; filings with NOTICE_DATE > 2024-02-29 dropped; late stale report dates ignored",
+  "findeep_source": "Eastmoney datacenter RPT_LICO_FN_CPD (performance table) + RPT_DMSK_FN_BALANCE; free; mirrors exchange filings",
+  "findeep_tables_rejected": {
+    "RPT_DMSK_FN_CASHFLOW": "same",
+    "RPT_DMSK_FN_INCOME": "NOTICE_DATE = next-year comparative filing (~12 months late)"
+  },
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "FINANCIAL_DEEP_MODEL",
+      "features": [
+        "SUE_Q",
+        "REV_YOY_Q",
+        "NEG_ACCRUALS",
+        "CFO_TTM_BP",
+        "ROE_TTM",
+        "GM_CHG",
+        "NEG_ASSET_GROWTH",
+        "NEG_LEV_CHG",
+        "EP_TTM",
+        "BP"
+      ],
+      "id": "ML2F_LGBM_FINDEEP_ONLY",
+      "mechanism": "Quarterly filings carry information the annual ratios of V16/V25 did not: earnings surprise (PEAD), revenue growth, accrual quality, cash generation, margin trend, asset growth, leverage change, and price-scaled value (EP/BP). One fitted cross-sectional model on this layer alone. If Level-1 and its excess-vs-EW series is uncorrelated (<= 0.90) with ML1 and H11, it is a SECOND independent sleeve.",
+      "not": "FEATURE_SEARCH; HYPERPARAMETER_SEARCH; REFIT_AFTER_RESEARCH; SELECTING_FEATURES_ON_VALIDATION",
+      "signal": "ML2F_LGBM"
+    },
+    {
+      "family": "FINANCIAL_DEEP_MODEL",
+      "features": [
+        "NEG_VOL_60",
+        "NEG_VOL_120",
+        "REV_20",
+        "MOM_250_20",
+        "NEG_TURN_20",
+        "NEG_LOG_AMT_20",
+        "NEG_NET_INFLOW_20_OVER_CAP",
+        "NEG_BALANCE_OVER_CAP",
+        "NEG_BALANCE_CHG_60",
+        "NEG_QOQ_CHANGE",
+        "NEG_HOLDERS_PER_SHARE",
+        "ROE_ANNUAL",
+        "YOY_NET_PROFIT_ANNUAL",
+        "HS300_MEMBER",
+        "SUE_Q",
+        "REV_YOY_Q",
+        "NEG_ACCRUALS",
+        "CFO_TTM_BP",
+        "ROE_TTM",
+        "GM_CHG",
+        "NEG_ASSET_GROWTH",
+        "NEG_LEV_CHG",
+        "EP_TTM",
+        "BP"
+      ],
+      "id": "ML2_LGBM_FULL_STACK",
+      "mechanism": "ML1's 14 features plus the 10 deep-financial features in one model. Answers whether the quarterly layer adds to the frozen ML1 stack. Pre-declared reading: ML2 contains ML1's inputs, so it is expected to sit in ML1's cluster; a SAME_CLUSTER result does NOT replace ML1 (the strategy stays ML1; switching would be selection on validation). Only a Level-1 with excess corr <= 0.90 vs ML1 counts as new.",
+      "not": "REPLACING_ML1_ON_VALIDATION_NUMBERS; FEATURE_SEARCH; REFIT_AFTER_RESEARCH",
+      "signal": "ML2_LGBM"
+    }
+  ],
+  "id": "A_SHARE_FINANCIAL_DEEP_MODEL_V27",
+  "independence_test": "A4: corr of excess-vs-EW MEAN_FORWARD series vs ML1 (V25 SCORES_ML1_LGBM) and vs H11 NEG_VOL_60; > 0.90 = SAME_CLUSTER",
+  "label": "cross-sectional rank of open(t+1)->open(t+1+20) return minus 0.5",
+  "level1_gate": "fixed-split gates (pred net>0 both, excess/IC evidence>=2 both, FDR q=0.05, LO20 capital>0 research and validation) AND positive excess-vs-EW in >= 4 of 5 rolling blocks",
+  "live_api": false,
+  "model": {
+    "note": "identical to V25; not tuned",
+    "params": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.03,
+      "min_child_samples": 1000,
+      "n_estimators": 400,
+      "num_leaves": 31,
+      "num_threads": 16,
+      "objective": "regression",
+      "random_state": 20260904,
+      "reg_lambda": 1.0,
+      "subsample": 0.7,
+      "subsample_freq": 1,
+      "verbosity": -1
+    },
+    "type": "lightgbm.LGBMRegressor"
+  },
+  "modify_ml1": false,
+  "new_purchase": false,
+  "no_search": "features, transform, label, params and schedule fixed here; one run; no second configuration",
+  "quantile": 0.2,
+  "reopen_h11_h12": false,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "restatement_caveat": "values may be the latest restated figures with the original NOTICE_DATE (same caveat as V16/V25 BaoStock)",
+  "rolling_blocks": [
+    [
+      "RB1_2014_15",
+      "2014-01-01",
+      "2015-12-31"
+    ],
+    [
+      "RB2_2016_17",
+      "2016-01-01",
+      "2017-12-31"
+    ],
+    [
+      "RB3_2018_19",
+      "2018-01-01",
+      "2019-12-31"
+    ],
+    [
+      "RB4_2020_21",
+      "2020-01-01",
+      "2021-08-24"
+    ],
+    [
+      "RB5_VALID",
+      "2021-08-25",
+      "2024-02-29"
+    ]
+  ],
+  "same_cluster_corr": 0.9,
+  "seed": 20260904,
+  "signal_price": "RAW_CLOSE_T",
+  "universe": "eligible names in the frozen panel (listed, trading, non-ST, >= 40 sessions history)",
+  "upstream_pit_layers": [
+    "V25 feature stack (14, frozen)",
+    "V27 deep financial (10)"
+  ],
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ],
+  "walk_forward": {
+    "embargo_sessions": 21,
+    "expanding": true,
+    "first_pred": "2012-01-04",
+    "frozen_after_research": true,
+    "refit_every_sessions": 120,
+    "train_stride_sessions": 5
+  }
+}

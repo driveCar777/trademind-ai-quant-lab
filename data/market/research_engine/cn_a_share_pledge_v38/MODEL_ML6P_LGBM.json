@@ -1,0 +1,193 @@
+{
+  "features": [
+    "PL_NEG_RATIO",
+    "PL_NEG_D20",
+    "PL_NEG_D60",
+    "PL_NEG_DEALS",
+    "PL_NEG_MCAP",
+    "PL_STRESS"
+  ],
+  "first_pred": "2016-03-28",
+  "frozen_after_research": true,
+  "n_features": 6,
+  "refits": [
+    {
+      "fit_at": "2016-03-28",
+      "gain_share": {
+        "PL_NEG_D20": 0.1502,
+        "PL_NEG_D60": 0.1525,
+        "PL_NEG_DEALS": 0.1661,
+        "PL_NEG_MCAP": 0.1793,
+        "PL_NEG_RATIO": 0.1425,
+        "PL_STRESS": 0.2094
+      },
+      "scores_until": "2016-09-19",
+      "sec": 2.2,
+      "train_last_label_session": "2016-02-26",
+      "train_rows": 214890,
+      "train_sessions": 95
+    },
+    {
+      "fit_at": "2016-09-20",
+      "gain_share": {
+        "PL_NEG_D20": 0.1275,
+        "PL_NEG_D60": 0.1407,
+        "PL_NEG_DEALS": 0.1732,
+        "PL_NEG_MCAP": 0.1969,
+        "PL_NEG_RATIO": 0.1466,
+        "PL_STRESS": 0.2151
+      },
+      "scores_until": "2017-03-21",
+      "sec": 2.4,
+      "train_last_label_session": "2016-08-18",
+      "train_rows": 274812,
+      "train_sessions": 119
+    },
+    {
+      "fit_at": "2017-03-22",
+      "gain_share": {
+        "PL_NEG_D20": 0.1194,
+        "PL_NEG_D60": 0.137,
+        "PL_NEG_DEALS": 0.1678,
+        "PL_NEG_MCAP": 0.2122,
+        "PL_NEG_RATIO": 0.1632,
+        "PL_STRESS": 0.2004
+      },
+      "scores_until": "2017-09-12",
+      "sec": 2.4,
+      "train_last_label_session": "2017-02-21",
+      "train_rows": 338542,
+      "train_sessions": 143
+    },
+    {
+      "fit_at": "2017-09-13",
+      "gain_share": {
+        "PL_NEG_D20": 0.1267,
+        "PL_NEG_D60": 0.1423,
+        "PL_NEG_DEALS": 0.1355,
+        "PL_NEG_MCAP": 0.2293,
+        "PL_NEG_RATIO": 0.1826,
+        "PL_STRESS": 0.1835
+      },
+      "scores_until": "2018-03-14",
+      "sec": 2.6,
+      "train_last_label_session": "2017-08-15",
+      "train_rows": 406948,
+      "train_sessions": 167
+    },
+    {
+      "fit_at": "2018-03-15",
+      "gain_share": {
+        "PL_NEG_D20": 0.1139,
+        "PL_NEG_D60": 0.1302,
+        "PL_NEG_DEALS": 0.1301,
+        "PL_NEG_MCAP": 0.247,
+        "PL_NEG_RATIO": 0.2157,
+        "PL_STRESS": 0.1631
+      },
+      "scores_until": "2018-09-05",
+      "sec": 2.9,
+      "train_last_label_session": "2018-02-07",
+      "train_rows": 480992,
+      "train_sessions": 191
+    },
+    {
+      "fit_at": "2018-09-06",
+      "gain_share": {
+        "PL_NEG_D20": 0.0965,
+        "PL_NEG_D60": 0.1186,
+        "PL_NEG_DEALS": 0.125,
+        "PL_NEG_MCAP": 0.2516,
+        "PL_NEG_RATIO": 0.2266,
+        "PL_STRESS": 0.1818
+      },
+      "scores_until": "2019-03-11",
+      "sec": 3.2,
+      "train_last_label_session": "2018-08-08",
+      "train_rows": 557636,
+      "train_sessions": 215
+    },
+    {
+      "fit_at": "2019-03-12",
+      "gain_share": {
+        "PL_NEG_D20": 0.0986,
+        "PL_NEG_D60": 0.1174,
+        "PL_NEG_DEALS": 0.1198,
+        "PL_NEG_MCAP": 0.2485,
+        "PL_NEG_RATIO": 0.2343,
+        "PL_STRESS": 0.1815
+      },
+      "scores_until": "2019-09-02",
+      "sec": 3.2,
+      "train_last_label_session": "2019-02-11",
+      "train_rows": 639184,
+      "train_sessions": 239
+    },
+    {
+      "fit_at": "2019-09-03",
+      "gain_share": {
+        "PL_NEG_D20": 0.0952,
+        "PL_NEG_D60": 0.1112,
+        "PL_NEG_DEALS": 0.1224,
+        "PL_NEG_MCAP": 0.2561,
+        "PL_NEG_RATIO": 0.2467,
+        "PL_STRESS": 0.1683
+      },
+      "scores_until": "2020-03-05",
+      "sec": 3.4,
+      "train_last_label_session": "2019-08-05",
+      "train_rows": 721758,
+      "train_sessions": 263
+    },
+    {
+      "fit_at": "2020-03-06",
+      "gain_share": {
+        "PL_NEG_D20": 0.1054,
+        "PL_NEG_D60": 0.1166,
+        "PL_NEG_DEALS": 0.1194,
+        "PL_NEG_MCAP": 0.2566,
+        "PL_NEG_RATIO": 0.2469,
+        "PL_STRESS": 0.1551
+      },
+      "scores_until": "2020-08-28",
+      "sec": 3.6,
+      "train_last_label_session": "2020-02-06",
+      "train_rows": 806071,
+      "train_sessions": 287
+    },
+    {
+      "fit_at": "2020-08-31",
+      "gain_share": {
+        "PL_NEG_D20": 0.1024,
+        "PL_NEG_D60": 0.11,
+        "PL_NEG_DEALS": 0.116,
+        "PL_NEG_MCAP": 0.2665,
+        "PL_NEG_RATIO": 0.2512,
+        "PL_STRESS": 0.154
+      },
+      "scores_until": "2021-03-02",
+      "sec": 3.7,
+      "train_last_label_session": "2020-07-31",
+      "train_rows": 892211,
+      "train_sessions": 311
+    },
+    {
+      "fit_at": "2021-03-03",
+      "gain_share": {
+        "PL_NEG_D20": 0.0983,
+        "PL_NEG_D60": 0.1148,
+        "PL_NEG_DEALS": 0.1105,
+        "PL_NEG_MCAP": 0.2716,
+        "PL_NEG_RATIO": 0.2511,
+        "PL_STRESS": 0.1537
+      },
+      "scores_until": "2024-02-29",
+      "sec": 10.8,
+      "train_last_label_session": "2021-01-26",
+      "train_rows": 982006,
+      "train_sessions": 335
+    }
+  ],
+  "research_end_index": 7499,
+  "validation_end_index": 8106
+}

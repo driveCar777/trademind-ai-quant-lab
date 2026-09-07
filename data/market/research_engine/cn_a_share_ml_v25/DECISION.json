@@ -1,0 +1,24 @@
+{
+  "CANDIDATE": 2,
+  "EXISTING_CANDIDATE": 2,
+  "LEVEL": 1,
+  "LIVE": 0,
+  "NEW_CANDIDATE": 1,
+  "NEW_INDEPENDENT_CANDIDATE": 0,
+  "NEXT": "KEEP_LOW_VOL_CLUSTER_NO_NEW_SLEEVE",
+  "OVERALL": "WEAK_CANDIDATE_SAME_CLUSTER",
+  "PAPER": 0,
+  "PORTFOLIO": 0,
+  "STOP": "STOP_A_SAME_CLUSTER_NOT_NEW_SLEEVE",
+  "STRATEGY": 2,
+  "amendment": "RESEARCH_RULES_AMENDMENT_V1",
+  "candidate_ids": [
+    "ML1_LGBM_STACK"
+  ],
+  "cost_usd": 0.0,
+  "final_oos": "DENIED",
+  "gate_book": "HN20",
+  "h11_h12": "KEEP_LOW_PRIORITY",
+  "independent_ids": [],
+  "new_purchase": false
+}

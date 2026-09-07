@@ -1,0 +1,39 @@
+{
+  "n": 2,
+  "rows": [
+    {
+      "family": "DIVIDEND_CASH_EVENT",
+      "id": "D1_CASH_ANN_20",
+      "mechanism": "Long names with a cash-dividend plan announced in the last 20 sessions. Event window, not yield level.",
+      "reopen": "New contract only. Do not retune. Do not flip sign.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "DIVIDEND_STOCK_EVENT",
+      "id": "D2_STOCK_ANN_20",
+      "mechanism": "Long names with a stock/reserve dividend plan announced in the last 20 sessions. Bonus-share event, not cash yield.",
+      "reopen": "New contract only. Do not retune. Do not flip sign.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    }
+  ]
+}

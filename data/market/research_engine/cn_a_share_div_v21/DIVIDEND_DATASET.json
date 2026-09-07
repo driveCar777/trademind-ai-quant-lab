@@ -1,0 +1,10 @@
+{
+  "content_hash": "9eeb9940e2411245dd7cf77016353a68b49486f33de1d5467f661a8510cdd850",
+  "csv_sha256": "368b75495e68f6ad3bdd1901dc913460891fdd05620fddf05d749ac1da8cb1a0",
+  "dataset_id": "tm-ashare-DIVIDEND-PIT-20260902-000001",
+  "kind": "DIVIDEND-PIT",
+  "knowledge_time": "dividPlanAnnounceDate else dividPreNoticeDate",
+  "n_files": 5549,
+  "n_rows": 24803,
+  "pit_test_ok": true
+}

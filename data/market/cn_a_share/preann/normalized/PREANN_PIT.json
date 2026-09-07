@@ -1,0 +1,58 @@
+{
+  "N": 5549,
+  "T": 8714,
+  "arrays": [
+    "PA_SURPRISE",
+    "PA_TYPE",
+    "PA_REV",
+    "PA_NEG_UNCERT",
+    "PA_LEAD",
+    "PA_EVT_INDEX"
+  ],
+  "content_hash": "89fdde948f1e379dba4cf6bad9f1a9d866e50a74174a721efada17aa184a220b",
+  "coverage_last_session": {
+    "PA_EVT_INDEX": 0.0,
+    "PA_LEAD": 0.0,
+    "PA_NEG_UNCERT": 0.0,
+    "PA_REV": 0.0,
+    "PA_SURPRISE": 0.0,
+    "PA_TYPE": 0.0
+  },
+  "dataset_id": "tm-ashare-PREANN-EVT-20260906-000001",
+  "event_horizon_sessions": 120,
+  "notice_cutoff": "2024-02-29",
+  "notice_lag_days": [
+    -200,
+    120
+  ],
+  "pit_rule": "visible from first session strictly after NOTICE_DATE for <= horizon sessions or until a newer event",
+  "stats": {
+    "dropped_denied": 283,
+    "dropped_lag_express": 20780,
+    "dropped_lag_forecast": 112,
+    "events": 100400,
+    "events_express": 10984,
+    "events_forecast": 89416,
+    "no_profit_line": 573,
+    "rows_express": 34890,
+    "rows_forecast": 150502,
+    "symbols_matched": 5119
+  },
+  "tables_used": [
+    "RPT_PUBLIC_OP_NEWPREDICT",
+    "RPT_FCI_PERFORMANCEE"
+  ],
+  "type_ordinal": {
+    "不确定": 0.0,
+    "减亏": 1.0,
+    "增亏": -2.0,
+    "扭亏": 3.0,
+    "略减": -1.0,
+    "略增": 1.0,
+    "续亏": -2.0,
+    "续盈": 1.0,
+    "预减": -3.0,
+    "预增": 3.0,
+    "首亏": -3.0
+  }
+}

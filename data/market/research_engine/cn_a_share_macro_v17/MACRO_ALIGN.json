@@ -1,0 +1,8 @@
+{
+  "eurusd_n": 15792,
+  "gvz_definition": "dlog_close",
+  "gvz_n": 4258,
+  "pit_rule": "macro_date < ashare_signal_date",
+  "us500_n": 4849,
+  "usd_definition": "negated_EURUSD_close_to_close"
+}

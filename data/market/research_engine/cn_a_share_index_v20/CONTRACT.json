@@ -1,0 +1,100 @@
+{
+  "add_lookback_sessions": 252,
+  "cagr_only_from": "CANONICAL_CAPITAL_ACCOUNT",
+  "cagr_target_not_a_gate": 0.1,
+  "contract_hash": "feb90c5d9e210de3500e724c48bb9dcc0643d3a74d815d272bd44bcbbf998daa",
+  "cost_model": {
+    "commission": 0.00025,
+    "id": "A_SHARE_STRATEGY_COST_MODEL_V1",
+    "optimize": false,
+    "slippage": 0.001,
+    "stamp_before_20230828": 0.001,
+    "stamp_from_20230828": 0.0005,
+    "transfer": 1e-05
+  },
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied_window": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "do_not_flip_sign": true,
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_q": 0.05,
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "INDEX_MEMBERSHIP",
+      "id": "X1_HS300_SET",
+      "index": "HS300",
+      "mechanism": "Long eligible current CSI 300 members. Institutional ownership / membership premium.",
+      "min_n": 80,
+      "not": "H11_LOW_VOL_OR_PRICE_SIZE_SORT",
+      "signal": "HS300_MEMBER"
+    },
+    {
+      "family": "INDEX_MEMBERSHIP",
+      "id": "X2_ZZ500_SET",
+      "index": "ZZ500",
+      "mechanism": "Long eligible current CSI 500 members. Mid-cap index membership, not mega-cap.",
+      "min_n": 80,
+      "not": "HS300_CLONE_OR_H11",
+      "signal": "ZZ500_MEMBER"
+    },
+    {
+      "family": "INDEX_RECONSTITUTION",
+      "id": "X3_HS300_IN_252",
+      "index": "HS300",
+      "mechanism": "Long names that entered CSI 300 in the last 252 pack sessions and are still members. Reconstitution inflow.",
+      "min_n": 20,
+      "not": "STATIC_MEMBERSHIP_OR_MOMENTUM",
+      "signal": "HS300_ADD_252"
+    },
+    {
+      "family": "INDEX_RECONSTITUTION",
+      "id": "X4_HS300_OUT_252",
+      "index": "HS300",
+      "mechanism": "Long names that left CSI 300 in the last 252 pack sessions and are still listed. Post-deletion leftover after forced selling.",
+      "min_n": 20,
+      "not": "SHORT_DELETES_OR_H11",
+      "signal": "HS300_DROP_252"
+    }
+  ],
+  "id": "A_SHARE_INDEX_MEMBERSHIP_V20",
+  "index_pit": "tm-ashare-INDEX-PIT-20260902-000001",
+  "keep_h11_h12": true,
+  "live_api": false,
+  "long_only": true,
+  "min_event_set": 20,
+  "min_set": 80,
+  "new_purchase": false,
+  "not": [
+    "PRICE_ONLY_FARM",
+    "V16_ANNUAL_RATIO",
+    "V17_MACRO_BETA",
+    "QUINTILE_OF_BINARY"
+  ],
+  "pit_rule": "index_effective_date_le_signal",
+  "portfolio": "MEMBERSHIP_SET",
+  "predictive_is_not_cagr": true,
+  "predictive_metric_name": "MEAN_FORWARD_RETURN",
+  "quantile": null,
+  "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+  "reopen_h11_h12": false,
+  "reopen_v16": false,
+  "reopen_v17": false,
+  "reopen_v18": false,
+  "reopen_v19": false,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "same_cluster_corr": 0.9,
+  "seed": 20260902,
+  "signal_price": "RAW_CLOSE_T",
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ]
+}

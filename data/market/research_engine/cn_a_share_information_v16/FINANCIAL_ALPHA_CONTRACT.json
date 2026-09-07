@@ -1,0 +1,93 @@
+{
+  "cagr_only_from": "CANONICAL_CAPITAL_ACCOUNT",
+  "cagr_target_not_a_gate": 0.1,
+  "contract_hash": "f582b935ca28310f9e83a72672ef03693b310ad2c1bcb60e6b894f5baa83504d",
+  "cost_model": {
+    "commission": 0.00025,
+    "id": "A_SHARE_STRATEGY_COST_MODEL_V1",
+    "slippage": 0.001,
+    "stamp_before_20230828": 0.001,
+    "stamp_from_20230828": 0.0005,
+    "transfer": 1e-05
+  },
+  "denied": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "fdr_q": 0.05,
+  "final_oos": "DENIED",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "EARNINGS_GROWTH",
+      "hold_days": 20,
+      "id": "F1_YOY_NP_ANN",
+      "lookback": "latest_visible_annual",
+      "mechanism": "Latest visible annual net_profit vs prior visible annual. Long high YoY.",
+      "signal": "YOY_NET_PROFIT_ANNUAL"
+    },
+    {
+      "family": "EARNINGS_GROWTH",
+      "hold_days": 20,
+      "id": "F1_YOY_REV_ANN",
+      "lookback": "latest_visible_annual",
+      "mechanism": "Latest visible annual revenue vs prior visible annual. Long high YoY.",
+      "signal": "YOY_REVENUE_ANNUAL"
+    },
+    {
+      "family": "PROFITABILITY",
+      "hold_days": 20,
+      "id": "F2_ROE_ANN",
+      "lookback": "latest_visible_annual",
+      "mechanism": "Latest visible annual ROE. Long high ROE.",
+      "signal": "ROE_ANNUAL"
+    },
+    {
+      "family": "PROFITABILITY",
+      "hold_days": 20,
+      "id": "F2_GPM_ANN",
+      "lookback": "latest_visible_annual",
+      "mechanism": "Latest visible annual gross margin. Long high GPM.",
+      "signal": "GPM_ANNUAL"
+    },
+    {
+      "family": "QUALITY",
+      "hold_days": 20,
+      "id": "F3_NPM_ANN",
+      "lookback": "latest_visible_annual",
+      "mechanism": "Latest visible annual net profit margin. Long high quality.",
+      "signal": "NPM_ANNUAL"
+    },
+    {
+      "family": "FINANCIAL_CHANGE",
+      "hold_days": 20,
+      "id": "F4_ROE_DELTA_ANN",
+      "lookback": "latest_visible_annual",
+      "mechanism": "Change in annual ROE vs prior visible annual. Long improving ROE.",
+      "signal": "ROE_DELTA_ANNUAL"
+    }
+  ],
+  "id": "A_SHARE_INFORMATION_EXPANSION_V16_FINANCIAL_ALPHA",
+  "knowledge_time": "announcement_date <= signal_date",
+  "long_only": true,
+  "new_h13": false,
+  "new_purchase": false,
+  "predictive_is_not_cagr": true,
+  "predictive_metric_name": "MEAN_FORWARD_RETURN",
+  "price_dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "price_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "price_only": false,
+  "quantile": 0.2,
+  "reopen_h11_h12": false,
+  "report_period_is_not_knowledge_time": true,
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "restatement_risk": true,
+  "seed": 20260831,
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ]
+}

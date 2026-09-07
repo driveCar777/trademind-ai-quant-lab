@@ -1,0 +1,108 @@
+{
+  "by_hyp": {
+    "H21_RESID_REV_20_H20": {
+      "H11_VOL_60": {
+        "capital": 0.9008962104989822,
+        "predictive": 0.9056608300081467
+      },
+      "H12_VOL_120": {
+        "capital": 0.8954931831398887,
+        "predictive": 0.9002041053856235
+      }
+    },
+    "H22_RESID_REV_60_H20": {
+      "H11_VOL_60": {
+        "capital": 0.9237849101523435,
+        "predictive": 0.9256080108571636
+      },
+      "H12_VOL_120": {
+        "capital": 0.9145319994642878,
+        "predictive": 0.9157460140294708
+      }
+    },
+    "H23_RESID_REV_20_H5": {
+      "H11_VOL_60": {
+        "capital": 0.502146306148935,
+        "predictive": 0.5048100498492494
+      },
+      "H12_VOL_120": {
+        "capital": 0.4973995120698812,
+        "predictive": 0.501710847156274
+      }
+    },
+    "H24_DISP_HIGH_RESID_20_H20": {
+      "H11_VOL_60": {
+        "capital": 0.5566839948751429,
+        "predictive": 0.9131054885508436
+      },
+      "H12_VOL_120": {
+        "capital": 0.5950080069465171,
+        "predictive": 0.9115048924730016
+      }
+    },
+    "H25_DISP_UP_RESID_20_H20": {
+      "H11_VOL_60": {
+        "capital": 0.9522512614172042,
+        "predictive": 0.9221334340963429
+      },
+      "H12_VOL_120": {
+        "capital": 0.9492327496853601,
+        "predictive": 0.9167461106840868
+      }
+    },
+    "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+      "H11_VOL_60": {
+        "capital": 0.5022761805582874,
+        "predictive": 0.9129553641717525
+      },
+      "H12_VOL_120": {
+        "capital": 0.4155344190175976,
+        "predictive": 0.908398339688685
+      }
+    },
+    "H27_CAPITULATION_20_H20": {
+      "H11_VOL_60": {
+        "capital": 0.8937262689758755,
+        "predictive": 0.8987122506303863
+      },
+      "H12_VOL_120": {
+        "capital": 0.8915454518665985,
+        "predictive": 0.896010918116179
+      }
+    },
+    "H28_CAPITULATION_60_H20": {
+      "H11_VOL_60": {
+        "capital": 0.920659105778986,
+        "predictive": 0.9218285986740861
+      },
+      "H12_VOL_120": {
+        "capital": 0.9133322233315828,
+        "predictive": 0.9137359991248428
+      }
+    },
+    "H29_PX_AMT_CORR_20_H20": {
+      "H11_VOL_60": {
+        "capital": 0.93220992717276,
+        "predictive": 0.9392733614800309
+      },
+      "H12_VOL_120": {
+        "capital": 0.9272733168464111,
+        "predictive": 0.9351016842825838
+      }
+    }
+  },
+  "existing": "LOW_VOL_CANDIDATE_CLUSTER",
+  "permutation": {},
+  "same_cluster_cut": 0.9,
+  "tags": {
+    "H21_RESID_REV_20_H20": null,
+    "H22_RESID_REV_60_H20": null,
+    "H23_RESID_REV_20_H5": null,
+    "H24_DISP_HIGH_RESID_20_H20": null,
+    "H25_DISP_UP_RESID_20_H20": null,
+    "H26_DISP_HIGH_LOW_BREADTH_20_H20": null,
+    "H27_CAPITULATION_20_H20": null,
+    "H28_CAPITULATION_60_H20": null,
+    "H29_PX_AMT_CORR_20_H20": null
+  }
+}

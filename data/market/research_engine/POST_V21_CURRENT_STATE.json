@@ -1,0 +1,81 @@
+{
+ "OVERALL": "A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE",
+ "STOP": "STOP_A",
+ "FORENSICS_VERDICT": "A_then_overturned_by_V25 (single signals had no edge alone; their combination does)",
+ "FORENSICS_CONFIDENCE": 0.91,
+ "STRATEGIC_CHOICE": "S1 -> user-authorised spend (V22) -> free behavioral layer (V23/V24) -> RESEARCH_RULES_AMENDMENT_V1 -> V25 model -> V27 deep financial layer (frozen) -> V28 Final OOS single read PASS (owner delegated)",
+ "Q1_RELATIVE_EW": "NEGATIVE_for_singles; ML1 excess vs EW +1.24% research / +1.47% validation per 20d",
+ "LEVEL": 1,
+ "CANDIDATE": 3,
+ "NEW_CANDIDATE": 1,
+ "NEW_INDEPENDENT_CANDIDATE": 1,
+ "STRATEGY": 2,
+ "PORTFOLIO": 0,
+ "PAPER": 0,
+ "LIVE": 0,
+ "FINAL_OOS": "READ_ONCE_2026-09-04 -> FINAL_OOS_PASS (excess vs EW +1.00%/20d t 9.3; LO20 +71.4%, CAGR 24.3%, MaxDD -21.3%; 19/30 periods beat EW). Locked: FINAL_OOS_READ.json exists.",
+ "NEW_PURCHASE": true,
+ "purchase_2026_09_04": {
+  "vendor": "Databento",
+  "item": "GLBX.MDP3 ohlcv-1d 30 CME roots 2010-06-06..2026-08-29",
+  "usd": 47.1,
+  "dataset_id": "tm-fut-GLBX-XS30-D1-20260904-000001",
+  "authorised_by": "user 2026-09-04"
+ },
+ "databento_reserve_usd_est": 46.08,
+ "purchase_default_now": "DO_NOT_SPEND_RESERVE",
+ "families_2026_09_04": {
+  "V22_FUTURES_XS": "FUTURES_XS_V1_NO_CANDIDATE",
+  "V23_MARGIN": "A_SHARE_MARGIN_POSITIONING_V1_NO_CANDIDATE",
+  "V24_HOLDERS": "A_SHARE_HOLDER_CONCENTRATION_V1_NO_CANDIDATE",
+  "NORTHBOUND": "DATA_BLOCKED_FREE (HKEX 12-month window, quarterly disclosure)",
+  "V25_MULTILAYER_MODEL": "LEVEL1 PASS; formal tag WEAK_CANDIDATE_SAME_CLUSTER (mis-specified raw-MF test); V25.1 7/7 + placebo clean -> INDEPENDENT under A4",
+  "V27_FINDEEP": "LEVEL1_SAME_CLUSTER_AS_ML1: ML2F (quarterly only) excess-corr vs ML1 0.06, val excess +0.52% t 5.6, rolling 5/5, FDR Y, but LO20 val capital -0.3% -> not Level-1; ML2 (24) Level-1 but corr vs ML1 0.96 -> same cluster, no increment. ML1 unchanged.",
+  "V28_FINAL_OOS": "FINAL_OOS_PASS"
+ },
+ "rules_amendment": {
+  "file": "docs/research_engine/RESEARCH_RULES_AMENDMENT_V1.md",
+  "A1": "construction menu (LO20 / HN20 pre-registered per family)",
+  "A2": "five rolling validation blocks in addition to fixed split",
+  "A3": "one pre-registered model per information layer",
+  "A4": "cluster test on excess-vs-EW series (raw-MF test measured the market)",
+  "kept": [
+   "pre-registration",
+   "fixed cost model",
+   "CAGR only from non-overlapping capital",
+   "FDR",
+   "no Paper/Live without independent positive validated book",
+   "no rewriting evidence"
+  ]
+ },
+ "v25_key_numbers": {
+  "ML1_validation_excess_per_20d": 0.0147,
+  "ML1_validation_excess_t": 17.1,
+  "ML1_LO20_research_total": 2.76,
+  "ML1_LO20_research_CAGR": 0.145,
+  "ML1_LO20_research_maxdd": -0.468,
+  "ML1_LO20_validation_total": 0.309,
+  "ML1_LO20_validation_CAGR": 0.111,
+  "ML1_LO20_validation_maxdd": -0.209,
+  "ML1_LO20_full_2010_2024_CAGR": 0.137,
+  "ML1_HN20_vs_HS300": "size-spread carrier (beta 0.92 to EW-HS300, R2 0.93); MaxDD -54%; NOT the strategy",
+  "LO20_minus_EW_basket_per_20d": 0.0089,
+  "LO20_minus_EW_basket_t": 5.1,
+  "years_positive_of_13": 11,
+  "cost_stress_validation_2x": 0.178,
+  "rolling_blocks_positive": "5/5",
+  "excess_corr_vs_H11": 0.063,
+  "reproduction": "7/7 variants Level-1 shape; placebo shuffled labels -0.09%/20d"
+ },
+ "h11_h12": "KEEP_LOW_PRIORITY",
+ "next_unit": "ML1 Paper preparation: daily five-source incremental pipeline (price/margin/holders/annual/index as-of), scorer emitting the top-20% list only (REFIT_240 policy), monitoring ledger with V26 pause/retire rules. Design phase first. Paper start date / account / feed = owner. Portfolio still needs a second positive independent sleeve.",
+ "autodrive_W": "W6_done + V22/V23/V24 done + amendment + V25/V25.1 done",
+ "failure_atlas_rows": 73,
+ "date": "2026-09-04",
+ "ML1_BOOKS_NON_OVERLAPPING": {
+  "research_2010_2021": 2.76,
+  "validation_2021_2024": 0.309,
+  "final_oos_2024_2026": 0.714,
+  "approx_cagr_full": 0.137
+ }
+}

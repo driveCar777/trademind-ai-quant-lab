@@ -1,0 +1,23 @@
+{
+  "n": 1,
+  "rows": [
+    {
+      "excess_corr": {
+        "H11_VOL_60": {
+          "excess_corr": 0.6703604947749514,
+          "n": 2950
+        },
+        "ML1_LGBM_STACK": {
+          "excess_corr": 0.06113589230306818,
+          "n": 2950
+        }
+      },
+      "id": "ML2F_LGBM_FINDEEP_ONLY",
+      "reopen": "New contract only. No feature/param search.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_capital"
+      ]
+    }
+  ]
+}

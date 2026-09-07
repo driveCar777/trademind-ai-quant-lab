@@ -1,0 +1,3390 @@
+{
+  "id": "POST_V21_BEAT_EW_CLUSTER",
+  "read_only": true,
+  "ids_13": [
+    "H21_RESID_REV_20_H20",
+    "H22_RESID_REV_60_H20",
+    "H23_RESID_REV_20_H5",
+    "H24_DISP_HIGH_RESID_20_H20",
+    "H25_DISP_UP_RESID_20_H20",
+    "H26_DISP_HIGH_LOW_BREADTH_20_H20",
+    "H29_PX_AMT_CORR_20_H20",
+    "A1_SEASONED_AGE",
+    "A2_RELATIVE_AGE",
+    "A5_MONTH_END_SEASONED",
+    "A6_QUARTER_END_SEASONED",
+    "IM5_GVZ_IND_DEF_60",
+    "IM6_GVZ_IND_DEF_120"
+  ],
+  "anchors": [
+    "H11_VOL_60",
+    "H12_VOL_120",
+    "X1_HS300_SET"
+  ],
+  "missing": [],
+  "series_len": {
+    "H21_RESID_REV_20_H20": 172,
+    "H22_RESID_REV_60_H20": 172,
+    "H23_RESID_REV_20_H5": 688,
+    "H24_DISP_HIGH_RESID_20_H20": 150,
+    "H25_DISP_UP_RESID_20_H20": 155,
+    "H26_DISP_HIGH_LOW_BREADTH_20_H20": 143,
+    "H29_PX_AMT_CORR_20_H20": 172,
+    "A1_SEASONED_AGE": 172,
+    "A2_RELATIVE_AGE": 172,
+    "A5_MONTH_END_SEASONED": 133,
+    "A6_QUARTER_END_SEASONED": 56,
+    "IM5_GVZ_IND_DEF_60": 168,
+    "IM6_GVZ_IND_DEF_120": 162,
+    "H11_VOL_60": 172,
+    "H12_VOL_120": 172,
+    "X1_HS300_SET": 172
+  },
+  "alignment": {
+    "exact": "same signal_date",
+    "month": "mean capital_ret per YYYY-MM (grids differ by a few days across families)",
+    "val": "month alignment, months >= 2021-08"
+  },
+  "summary_exact": {
+    "vs_H11": {
+      "H21_RESID_REV_20_H20": 0.9008962104989866,
+      "H22_RESID_REV_60_H20": 0.9237849101523479,
+      "H23_RESID_REV_20_H5": 0.502146306148938,
+      "H24_DISP_HIGH_RESID_20_H20": 0.5566839948752361,
+      "H25_DISP_UP_RESID_20_H20": 0.9522512614172292,
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": 0.5022761805584246,
+      "H29_PX_AMT_CORR_20_H20": 0.9322099271727634,
+      "A1_SEASONED_AGE": 0.9740833624230483,
+      "A2_RELATIVE_AGE": 0.9740833624230483,
+      "A5_MONTH_END_SEASONED": null,
+      "A6_QUARTER_END_SEASONED": null,
+      "IM5_GVZ_IND_DEF_60": null,
+      "IM6_GVZ_IND_DEF_120": null
+    },
+    "vs_X1": {
+      "H21_RESID_REV_20_H20": 0.7877944383128531,
+      "H22_RESID_REV_60_H20": 0.8057793635024666,
+      "H23_RESID_REV_20_H5": 0.3225314526351108,
+      "H24_DISP_HIGH_RESID_20_H20": 0.6705631384566778,
+      "H25_DISP_UP_RESID_20_H20": 0.8844896477035932,
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": -0.24063752701311047,
+      "H29_PX_AMT_CORR_20_H20": 0.812519175233952,
+      "A1_SEASONED_AGE": 0.8737606985285664,
+      "A2_RELATIVE_AGE": 0.8737606985285664,
+      "A5_MONTH_END_SEASONED": null,
+      "A6_QUARTER_END_SEASONED": null,
+      "IM5_GVZ_IND_DEF_60": null,
+      "IM6_GVZ_IND_DEF_120": null
+    },
+    "n_vs_H11_gt_0_9": 6,
+    "n_vs_H11_gt_0_8": 6,
+    "n_vs_H11_gt_0_7": 6,
+    "n_vs_H11_available": 9,
+    "within13_pair_n": 47,
+    "within13_pair_median": 0.9439271299764282,
+    "within13_pair_min": 0.2158428409194503,
+    "within13_pair_max": 1.0000000000000002,
+    "within13_n_gt_0_9": 29,
+    "within13_n_gt_0_7": 34
+  },
+  "summary_month": {
+    "vs_H11": {
+      "H21_RESID_REV_20_H20": 0.9053199099403169,
+      "H22_RESID_REV_60_H20": 0.9249806395960734,
+      "H23_RESID_REV_20_H5": 0.6309214820960297,
+      "H24_DISP_HIGH_RESID_20_H20": 0.6650722041769959,
+      "H25_DISP_UP_RESID_20_H20": 0.6738020793366122,
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": 0.5889829730428713,
+      "H29_PX_AMT_CORR_20_H20": 0.9342646623378118,
+      "A1_SEASONED_AGE": 0.9744298240517522,
+      "A2_RELATIVE_AGE": 0.9744298240517522,
+      "A5_MONTH_END_SEASONED": 0.45721154848276147,
+      "A6_QUARTER_END_SEASONED": 0.7087682432679957,
+      "IM5_GVZ_IND_DEF_60": 0.6703862233231485,
+      "IM6_GVZ_IND_DEF_120": 0.6411469111602375
+    },
+    "vs_X1": {
+      "H21_RESID_REV_20_H20": 0.7914967830363906,
+      "H22_RESID_REV_60_H20": 0.8076901874791235,
+      "H23_RESID_REV_20_H5": 0.41508789828775416,
+      "H24_DISP_HIGH_RESID_20_H20": 0.5483709375924414,
+      "H25_DISP_UP_RESID_20_H20": 0.5995384601157513,
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": 0.5042054086030424,
+      "H29_PX_AMT_CORR_20_H20": 0.8159706538482521,
+      "A1_SEASONED_AGE": 0.873944395909614,
+      "A2_RELATIVE_AGE": 0.873944395909614,
+      "A5_MONTH_END_SEASONED": 0.5048964455214888,
+      "A6_QUARTER_END_SEASONED": 0.695278572480825,
+      "IM5_GVZ_IND_DEF_60": 0.5368491197662129,
+      "IM6_GVZ_IND_DEF_120": 0.5095003790778707
+    },
+    "n_vs_H11_gt_0_9": 5,
+    "n_vs_H11_gt_0_8": 5,
+    "n_vs_H11_gt_0_7": 6,
+    "n_vs_H11_available": 13,
+    "within13_pair_n": 78,
+    "within13_pair_median": 0.6686336355114708,
+    "within13_pair_min": 0.20388496182441496,
+    "within13_pair_max": 1.0,
+    "within13_n_gt_0_9": 11,
+    "within13_n_gt_0_7": 29
+  },
+  "summary_month_validation": {
+    "vs_H11": {
+      "H21_RESID_REV_20_H20": 0.7425486546177225,
+      "H22_RESID_REV_60_H20": 0.7765518070404279,
+      "H23_RESID_REV_20_H5": 0.5506579909871183,
+      "H24_DISP_HIGH_RESID_20_H20": 0.27408965506068184,
+      "H25_DISP_UP_RESID_20_H20": 0.10558468978968073,
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": 0.17969717787151337,
+      "H29_PX_AMT_CORR_20_H20": 0.8325707445480071,
+      "A1_SEASONED_AGE": 0.9491516707199337,
+      "A2_RELATIVE_AGE": 0.9491516707199337,
+      "A5_MONTH_END_SEASONED": -0.3471214299333673,
+      "A6_QUARTER_END_SEASONED": 0.03187839436548808,
+      "IM5_GVZ_IND_DEF_60": 0.36839307178714575,
+      "IM6_GVZ_IND_DEF_120": 0.25192101442937354
+    },
+    "vs_X1": {
+      "H21_RESID_REV_20_H20": 0.6621921645548511,
+      "H22_RESID_REV_60_H20": 0.6624083336136938,
+      "H23_RESID_REV_20_H5": 0.10081209008104862,
+      "H24_DISP_HIGH_RESID_20_H20": 0.24613285073260305,
+      "H25_DISP_UP_RESID_20_H20": 0.15657329845465887,
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": 0.01326731074210878,
+      "H29_PX_AMT_CORR_20_H20": 0.636301774009744,
+      "A1_SEASONED_AGE": 0.6643985536349216,
+      "A2_RELATIVE_AGE": 0.6643985536349216,
+      "A5_MONTH_END_SEASONED": -0.011587595834454135,
+      "A6_QUARTER_END_SEASONED": 0.23153403142482173,
+      "IM5_GVZ_IND_DEF_60": 0.2930474603937656,
+      "IM6_GVZ_IND_DEF_120": 0.264950706671341
+    },
+    "n_vs_H11_gt_0_9": 2,
+    "n_vs_H11_gt_0_8": 3,
+    "n_vs_H11_gt_0_7": 5,
+    "n_vs_H11_available": 13,
+    "within13_pair_n": 77,
+    "within13_pair_median": 0.4241963226988534,
+    "within13_pair_min": -0.3119110229179945,
+    "within13_pair_max": 0.9999999999999999,
+    "within13_n_gt_0_9": 6,
+    "within13_n_gt_0_7": 16
+  },
+  "clusters_month_gt_0_8": [
+    [
+      "H21_RESID_REV_20_H20",
+      "H22_RESID_REV_60_H20",
+      "H29_PX_AMT_CORR_20_H20",
+      "A1_SEASONED_AGE",
+      "A2_RELATIVE_AGE",
+      "H11_VOL_60",
+      "H12_VOL_120",
+      "X1_HS300_SET"
+    ],
+    [
+      "H25_DISP_UP_RESID_20_H20",
+      "A5_MONTH_END_SEASONED",
+      "A6_QUARTER_END_SEASONED"
+    ],
+    [
+      "IM5_GVZ_IND_DEF_60",
+      "IM6_GVZ_IND_DEF_120"
+    ],
+    [
+      "H23_RESID_REV_20_H5"
+    ],
+    [
+      "H24_DISP_HIGH_RESID_20_H20"
+    ],
+    [
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20"
+    ]
+  ],
+  "h11_cluster_month_gt_0_8": [
+    "H21_RESID_REV_20_H20",
+    "H22_RESID_REV_60_H20",
+    "H29_PX_AMT_CORR_20_H20",
+    "A1_SEASONED_AGE",
+    "A2_RELATIVE_AGE",
+    "H11_VOL_60",
+    "H12_VOL_120",
+    "X1_HS300_SET"
+  ],
+  "n_of_13_in_h11_cluster": 5,
+  "shadow_verdict": "NOT_ONE_SHADOW",
+  "matrix_month_full": {
+    "H21_RESID_REV_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9696894891423167,
+        "n": 166
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6559570695611385,
+        "n": 166
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.7578416609760467,
+        "n": 145
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.7292869690843764,
+        "n": 150
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.6609524890545274,
+        "n": 136
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9805741718740041,
+        "n": 166
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.928987638324769,
+        "n": 166
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.928987638324769,
+        "n": 166
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.4760927791189771,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.720927476477678,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6689773004644344,
+        "n": 155
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.650614636123595,
+        "n": 149
+      },
+      "H11_VOL_60": {
+        "corr": 0.9053199099403169,
+        "n": 166
+      },
+      "H12_VOL_120": {
+        "corr": 0.9003716206568501,
+        "n": 166
+      },
+      "X1_HS300_SET": {
+        "corr": 0.7914967830363906,
+        "n": 166
+      }
+    },
+    "H22_RESID_REV_60_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9696894891423167,
+        "n": 166
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6453432028875354,
+        "n": 166
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.7269988550172644,
+        "n": 145
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.7224310549788902,
+        "n": 150
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.6576064852738466,
+        "n": 136
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.966096743691441,
+        "n": 166
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9384394827334808,
+        "n": 166
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9384394827334808,
+        "n": 166
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.47766012974536687,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.703982044938388,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6825545288322029,
+        "n": 155
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.6581223222382623,
+        "n": 149
+      },
+      "H11_VOL_60": {
+        "corr": 0.9249806395960734,
+        "n": 166
+      },
+      "H12_VOL_120": {
+        "corr": 0.9159627899842739,
+        "n": 166
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8076901874791235,
+        "n": 166
+      }
+    },
+    "H23_RESID_REV_20_H5": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.6559570695611385,
+        "n": 166
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.6453432028875354,
+        "n": 166
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 1.0,
+        "n": 688
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.6682899705585071,
+        "n": 147
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.5955953306222234,
+        "n": 153
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5773333391673183,
+        "n": 140
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.6631617863964778,
+        "n": 166
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.625987691740335,
+        "n": 166
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.625987691740335,
+        "n": 166
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.20388496182441496,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.5426174960165318,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6771649875772143,
+        "n": 159
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.6544021331691133,
+        "n": 153
+      },
+      "H11_VOL_60": {
+        "corr": 0.6309214820960297,
+        "n": 166
+      },
+      "H12_VOL_120": {
+        "corr": 0.6285571164119478,
+        "n": 166
+      },
+      "X1_HS300_SET": {
+        "corr": 0.41508789828775416,
+        "n": 166
+      }
+    },
+    "H24_DISP_HIGH_RESID_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.7578416609760467,
+        "n": 145
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.7269988550172644,
+        "n": 145
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6682899705585071,
+        "n": 147
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 150
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.7050428037151634,
+        "n": 136
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.6761335871342635,
+        "n": 129
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.7195541109161342,
+        "n": 145
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.6909435412591198,
+        "n": 145
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.6909435412591198,
+        "n": 145
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.532038196239045,
+        "n": 118
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7082997724408182,
+        "n": 49
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.699002433381046,
+        "n": 139
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.7027160238560792,
+        "n": 133
+      },
+      "H11_VOL_60": {
+        "corr": 0.6650722041769959,
+        "n": 145
+      },
+      "H12_VOL_120": {
+        "corr": 0.66780875120446,
+        "n": 145
+      },
+      "X1_HS300_SET": {
+        "corr": 0.5483709375924414,
+        "n": 145
+      }
+    },
+    "H25_DISP_UP_RESID_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.7292869690843764,
+        "n": 150
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.7224310549788902,
+        "n": 150
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5955953306222234,
+        "n": 153
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.7050428037151634,
+        "n": 136
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 155
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.7208977282381033,
+        "n": 129
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.709296823756432,
+        "n": 150
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.6969627815056887,
+        "n": 150
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.6969627815056887,
+        "n": 150
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.5552482785616394,
+        "n": 122
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.8724208723673588,
+        "n": 49
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6631829515241389,
+        "n": 142
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.624022259278322,
+        "n": 136
+      },
+      "H11_VOL_60": {
+        "corr": 0.6738020793366122,
+        "n": 150
+      },
+      "H12_VOL_120": {
+        "corr": 0.6654246581890811,
+        "n": 150
+      },
+      "X1_HS300_SET": {
+        "corr": 0.5995384601157513,
+        "n": 150
+      }
+    },
+    "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.6609524890545274,
+        "n": 136
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.6576064852738466,
+        "n": 136
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5773333391673183,
+        "n": 140
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.6761335871342635,
+        "n": 129
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.7208977282381033,
+        "n": 129
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 1.0,
+        "n": 143
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.6648643022053151,
+        "n": 136
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.6043268745228262,
+        "n": 136
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.6043268745228262,
+        "n": 136
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.6328288921260915,
+        "n": 112
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7954249411609401,
+        "n": 44
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.589437299810099,
+        "n": 131
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.5597212544029093,
+        "n": 126
+      },
+      "H11_VOL_60": {
+        "corr": 0.5889829730428713,
+        "n": 136
+      },
+      "H12_VOL_120": {
+        "corr": 0.5873522266910871,
+        "n": 136
+      },
+      "X1_HS300_SET": {
+        "corr": 0.5042054086030424,
+        "n": 136
+      }
+    },
+    "H29_PX_AMT_CORR_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9805741718740041,
+        "n": 166
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.966096743691441,
+        "n": 166
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6631617863964778,
+        "n": 166
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.7195541109161342,
+        "n": 145
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.709296823756432,
+        "n": 150
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.6648643022053151,
+        "n": 136
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9464189297357412,
+        "n": 166
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9464189297357412,
+        "n": 166
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.4784065171896901,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7200837221296691,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6804600312697938,
+        "n": 155
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.6633388533432835,
+        "n": 149
+      },
+      "H11_VOL_60": {
+        "corr": 0.9342646623378118,
+        "n": 166
+      },
+      "H12_VOL_120": {
+        "corr": 0.9300441645163006,
+        "n": 166
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8159706538482521,
+        "n": 166
+      }
+    },
+    "A1_SEASONED_AGE": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.928987638324769,
+        "n": 166
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9384394827334808,
+        "n": 166
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.625987691740335,
+        "n": 166
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.6909435412591198,
+        "n": 145
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.6969627815056887,
+        "n": 150
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.6043268745228262,
+        "n": 136
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9464189297357412,
+        "n": 166
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 1.0,
+        "n": 166
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.4972055393502906,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7597642263160732,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6620447583766573,
+        "n": 155
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.6372835841902922,
+        "n": 149
+      },
+      "H11_VOL_60": {
+        "corr": 0.9744298240517522,
+        "n": 166
+      },
+      "H12_VOL_120": {
+        "corr": 0.9758450314330739,
+        "n": 166
+      },
+      "X1_HS300_SET": {
+        "corr": 0.873944395909614,
+        "n": 166
+      }
+    },
+    "A2_RELATIVE_AGE": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.928987638324769,
+        "n": 166
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9384394827334808,
+        "n": 166
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.625987691740335,
+        "n": 166
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.6909435412591198,
+        "n": 145
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.6969627815056887,
+        "n": 150
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.6043268745228262,
+        "n": 136
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9464189297357412,
+        "n": 166
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 1.0,
+        "n": 166
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.4972055393502906,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7597642263160732,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6620447583766573,
+        "n": 155
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.6372835841902922,
+        "n": 149
+      },
+      "H11_VOL_60": {
+        "corr": 0.9744298240517522,
+        "n": 166
+      },
+      "H12_VOL_120": {
+        "corr": 0.9758450314330739,
+        "n": 166
+      },
+      "X1_HS300_SET": {
+        "corr": 0.873944395909614,
+        "n": 166
+      }
+    },
+    "A5_MONTH_END_SEASONED": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.4760927791189771,
+        "n": 133
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.47766012974536687,
+        "n": 133
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.20388496182441496,
+        "n": 133
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.532038196239045,
+        "n": 118
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.5552482785616394,
+        "n": 122
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.6328288921260915,
+        "n": 112
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.4784065171896901,
+        "n": 133
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.4972055393502906,
+        "n": 133
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.4972055393502906,
+        "n": 133
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 1.0,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.8443333776542021,
+        "n": 55
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.41237926703050287,
+        "n": 130
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.41427127684892756,
+        "n": 126
+      },
+      "H11_VOL_60": {
+        "corr": 0.45721154848276147,
+        "n": 133
+      },
+      "H12_VOL_120": {
+        "corr": 0.4687702373701933,
+        "n": 133
+      },
+      "X1_HS300_SET": {
+        "corr": 0.5048964455214888,
+        "n": 133
+      }
+    },
+    "A6_QUARTER_END_SEASONED": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.720927476477678,
+        "n": 56
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.703982044938388,
+        "n": 56
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5426174960165318,
+        "n": 56
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.7082997724408182,
+        "n": 49
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.8724208723673588,
+        "n": 49
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.7954249411609401,
+        "n": 44
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.7200837221296691,
+        "n": 56
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.7597642263160732,
+        "n": 56
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.7597642263160732,
+        "n": 56
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.8443333776542021,
+        "n": 55
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 1.0,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.59742676225476,
+        "n": 55
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.6022287439638615,
+        "n": 53
+      },
+      "H11_VOL_60": {
+        "corr": 0.7087682432679957,
+        "n": 56
+      },
+      "H12_VOL_120": {
+        "corr": 0.7117145337173894,
+        "n": 56
+      },
+      "X1_HS300_SET": {
+        "corr": 0.695278572480825,
+        "n": 56
+      }
+    },
+    "IM5_GVZ_IND_DEF_60": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.6689773004644344,
+        "n": 155
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.6825545288322029,
+        "n": 155
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6771649875772143,
+        "n": 159
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.699002433381046,
+        "n": 139
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.6631829515241389,
+        "n": 142
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.589437299810099,
+        "n": 131
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.6804600312697938,
+        "n": 155
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.6620447583766573,
+        "n": 155
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.6620447583766573,
+        "n": 155
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.41237926703050287,
+        "n": 130
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.59742676225476,
+        "n": 55
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 1.0,
+        "n": 168
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.9824526636790796,
+        "n": 153
+      },
+      "H11_VOL_60": {
+        "corr": 0.6703862233231485,
+        "n": 155
+      },
+      "H12_VOL_120": {
+        "corr": 0.6662907941505871,
+        "n": 155
+      },
+      "X1_HS300_SET": {
+        "corr": 0.5368491197662129,
+        "n": 155
+      }
+    },
+    "IM6_GVZ_IND_DEF_120": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.650614636123595,
+        "n": 149
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.6581223222382623,
+        "n": 149
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6544021331691133,
+        "n": 153
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.7027160238560792,
+        "n": 133
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.624022259278322,
+        "n": 136
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5597212544029093,
+        "n": 126
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.6633388533432835,
+        "n": 149
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.6372835841902922,
+        "n": 149
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.6372835841902922,
+        "n": 149
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.41427127684892756,
+        "n": 126
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.6022287439638615,
+        "n": 53
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.9824526636790796,
+        "n": 153
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 1.0,
+        "n": 162
+      },
+      "H11_VOL_60": {
+        "corr": 0.6411469111602375,
+        "n": 149
+      },
+      "H12_VOL_120": {
+        "corr": 0.6377011757518659,
+        "n": 149
+      },
+      "X1_HS300_SET": {
+        "corr": 0.5095003790778707,
+        "n": 149
+      }
+    },
+    "H11_VOL_60": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9053199099403169,
+        "n": 166
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9249806395960734,
+        "n": 166
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6309214820960297,
+        "n": 166
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.6650722041769959,
+        "n": 145
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.6738020793366122,
+        "n": 150
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5889829730428713,
+        "n": 136
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9342646623378118,
+        "n": 166
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9744298240517522,
+        "n": 166
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9744298240517522,
+        "n": 166
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.45721154848276147,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7087682432679957,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6703862233231485,
+        "n": 155
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.6411469111602375,
+        "n": 149
+      },
+      "H11_VOL_60": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.9961351719576703,
+        "n": 166
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8650767866800847,
+        "n": 166
+      }
+    },
+    "H12_VOL_120": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9003716206568501,
+        "n": 166
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9159627899842739,
+        "n": 166
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6285571164119478,
+        "n": 166
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.66780875120446,
+        "n": 145
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.6654246581890811,
+        "n": 150
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5873522266910871,
+        "n": 136
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9300441645163006,
+        "n": 166
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9758450314330739,
+        "n": 166
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9758450314330739,
+        "n": 166
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.4687702373701933,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7117145337173894,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6662907941505871,
+        "n": 155
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.6377011757518659,
+        "n": 149
+      },
+      "H11_VOL_60": {
+        "corr": 0.9961351719576703,
+        "n": 166
+      },
+      "H12_VOL_120": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8668615083295411,
+        "n": 166
+      }
+    },
+    "X1_HS300_SET": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.7914967830363906,
+        "n": 166
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.8076901874791235,
+        "n": 166
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.41508789828775416,
+        "n": 166
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.5483709375924414,
+        "n": 145
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.5995384601157513,
+        "n": 150
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5042054086030424,
+        "n": 136
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.8159706538482521,
+        "n": 166
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.873944395909614,
+        "n": 166
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.873944395909614,
+        "n": 166
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.5048964455214888,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.695278572480825,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.5368491197662129,
+        "n": 155
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.5095003790778707,
+        "n": 149
+      },
+      "H11_VOL_60": {
+        "corr": 0.8650767866800847,
+        "n": 166
+      },
+      "H12_VOL_120": {
+        "corr": 0.8668615083295411,
+        "n": 166
+      },
+      "X1_HS300_SET": {
+        "corr": 1.0,
+        "n": 172
+      }
+    }
+  },
+  "matrix_exact_full": {
+    "H21_RESID_REV_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9680460534270937,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5205153674785329,
+        "n": 172
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 8
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 15
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 1.0,
+        "n": 9
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.979762933980684,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9246052583237276,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9246052583237276,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 6
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 4
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 0
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 0
+      },
+      "H11_VOL_60": {
+        "corr": 0.9008962104989866,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.8954931831398872,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.7877944383128531,
+        "n": 172
+      }
+    },
+    "H22_RESID_REV_60_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9680460534270937,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5104737861836929,
+        "n": 172
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.950269573258684,
+        "n": 8
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.9766839488034035,
+        "n": 15
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.865331673510949,
+        "n": 9
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9657011353150493,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9370753232129763,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9370753232129763,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 6
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 4
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 0
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 0
+      },
+      "H11_VOL_60": {
+        "corr": 0.9237849101523479,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.9145319994642905,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8057793635024666,
+        "n": 172
+      }
+    },
+    "H23_RESID_REV_20_H5": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.5205153674785329,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.5104737861836929,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 1.0,
+        "n": 688
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.7191797325837683,
+        "n": 35
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.5654007183945209,
+        "n": 34
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.6175626984638912,
+        "n": 36
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.5373253166576981,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.5048016428990034,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.5048016428990034,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.2158428409194503,
+        "n": 22
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.43829581899271114,
+        "n": 11
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.581427794759965,
+        "n": 133
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.5919048608654212,
+        "n": 130
+      },
+      "H11_VOL_60": {
+        "corr": 0.502146306148938,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.49739951206988736,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.3225314526351108,
+        "n": 172
+      }
+    },
+    "H24_DISP_HIGH_RESID_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 1.0,
+        "n": 8
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.950269573258684,
+        "n": 8
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.7191797325837683,
+        "n": 35
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 150
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 16
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 1.0000000000000002,
+        "n": 49
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9673755919775129,
+        "n": 8
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.8735249625702011,
+        "n": 8
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.8735249625702011,
+        "n": 8
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.803481153018209,
+        "n": 12
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 3
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.9596019870898289,
+        "n": 12
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.9904728616888581,
+        "n": 12
+      },
+      "H11_VOL_60": {
+        "corr": 0.5566839948752361,
+        "n": 8
+      },
+      "H12_VOL_120": {
+        "corr": 0.5950080069464819,
+        "n": 8
+      },
+      "X1_HS300_SET": {
+        "corr": 0.6705631384566778,
+        "n": 8
+      }
+    },
+    "H25_DISP_UP_RESID_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 1.0,
+        "n": 15
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9766839488034035,
+        "n": 15
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5654007183945209,
+        "n": 34
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 16
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 155
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 1.0,
+        "n": 21
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9814874196713637,
+        "n": 15
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9497293295315524,
+        "n": 15
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9497293295315524,
+        "n": 15
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 7
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 3
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 4
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 1
+      },
+      "H11_VOL_60": {
+        "corr": 0.9522512614172292,
+        "n": 15
+      },
+      "H12_VOL_120": {
+        "corr": 0.9492327496853751,
+        "n": 15
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8844896477035932,
+        "n": 15
+      }
+    },
+    "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 1.0,
+        "n": 9
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.865331673510949,
+        "n": 9
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6175626984638912,
+        "n": 36
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 1.0000000000000002,
+        "n": 49
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 21
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 1.0,
+        "n": 143
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.96781205121093,
+        "n": 9
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.5635876580966567,
+        "n": 9
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.5635876580966567,
+        "n": 9
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.9778519008524437,
+        "n": 8
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 2
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 7
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 7
+      },
+      "H11_VOL_60": {
+        "corr": 0.5022761805584246,
+        "n": 9
+      },
+      "H12_VOL_120": {
+        "corr": 0.41553441901760574,
+        "n": 9
+      },
+      "X1_HS300_SET": {
+        "corr": -0.24063752701311047,
+        "n": 9
+      }
+    },
+    "H29_PX_AMT_CORR_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.979762933980684,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9657011353150493,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5373253166576981,
+        "n": 172
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.9673755919775129,
+        "n": 8
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.9814874196713637,
+        "n": 15
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.96781205121093,
+        "n": 9
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9439271299764282,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9439271299764282,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 6
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 4
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 0
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 0
+      },
+      "H11_VOL_60": {
+        "corr": 0.9322099271727634,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.9272733168464093,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.812519175233952,
+        "n": 172
+      }
+    },
+    "A1_SEASONED_AGE": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9246052583237276,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9370753232129763,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5048016428990034,
+        "n": 172
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.8735249625702011,
+        "n": 8
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.9497293295315524,
+        "n": 15
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5635876580966567,
+        "n": 9
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9439271299764282,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 6
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 4
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 0
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 0
+      },
+      "H11_VOL_60": {
+        "corr": 0.9740833624230483,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.975448045031414,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8737606985285664,
+        "n": 172
+      }
+    },
+    "A2_RELATIVE_AGE": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9246052583237276,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9370753232129763,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5048016428990034,
+        "n": 172
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.8735249625702011,
+        "n": 8
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.9497293295315524,
+        "n": 15
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5635876580966567,
+        "n": 9
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9439271299764282,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 6
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 4
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 0
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 0
+      },
+      "H11_VOL_60": {
+        "corr": 0.9740833624230483,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.975448045031414,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8737606985285664,
+        "n": 172
+      }
+    },
+    "A5_MONTH_END_SEASONED": {
+      "H21_RESID_REV_20_H20": {
+        "corr": null,
+        "n": 6
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": null,
+        "n": 6
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.2158428409194503,
+        "n": 22
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.803481153018209,
+        "n": 12
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": null,
+        "n": 7
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.9778519008524437,
+        "n": 8
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": null,
+        "n": 6
+      },
+      "A1_SEASONED_AGE": {
+        "corr": null,
+        "n": 6
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": null,
+        "n": 6
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 1.0,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 0
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.9819287184026514,
+        "n": 8
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.9723233369384952,
+        "n": 8
+      },
+      "H11_VOL_60": {
+        "corr": null,
+        "n": 6
+      },
+      "H12_VOL_120": {
+        "corr": null,
+        "n": 6
+      },
+      "X1_HS300_SET": {
+        "corr": null,
+        "n": 6
+      }
+    },
+    "A6_QUARTER_END_SEASONED": {
+      "H21_RESID_REV_20_H20": {
+        "corr": null,
+        "n": 4
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": null,
+        "n": 4
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.43829581899271114,
+        "n": 11
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": null,
+        "n": 3
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": null,
+        "n": 3
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": null,
+        "n": 2
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": null,
+        "n": 4
+      },
+      "A1_SEASONED_AGE": {
+        "corr": null,
+        "n": 4
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": null,
+        "n": 4
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 0
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 1.0,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 2
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 2
+      },
+      "H11_VOL_60": {
+        "corr": null,
+        "n": 4
+      },
+      "H12_VOL_120": {
+        "corr": null,
+        "n": 4
+      },
+      "X1_HS300_SET": {
+        "corr": null,
+        "n": 4
+      }
+    },
+    "IM5_GVZ_IND_DEF_60": {
+      "H21_RESID_REV_20_H20": {
+        "corr": null,
+        "n": 0
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": null,
+        "n": 0
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.581427794759965,
+        "n": 133
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.9596019870898289,
+        "n": 12
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": null,
+        "n": 4
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": null,
+        "n": 7
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": null,
+        "n": 0
+      },
+      "A1_SEASONED_AGE": {
+        "corr": null,
+        "n": 0
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": null,
+        "n": 0
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.9819287184026514,
+        "n": 8
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 2
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 1.0,
+        "n": 168
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.9836887009098207,
+        "n": 162
+      },
+      "H11_VOL_60": {
+        "corr": null,
+        "n": 0
+      },
+      "H12_VOL_120": {
+        "corr": null,
+        "n": 0
+      },
+      "X1_HS300_SET": {
+        "corr": null,
+        "n": 0
+      }
+    },
+    "IM6_GVZ_IND_DEF_120": {
+      "H21_RESID_REV_20_H20": {
+        "corr": null,
+        "n": 0
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": null,
+        "n": 0
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5919048608654212,
+        "n": 130
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.9904728616888581,
+        "n": 12
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": null,
+        "n": 1
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": null,
+        "n": 7
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": null,
+        "n": 0
+      },
+      "A1_SEASONED_AGE": {
+        "corr": null,
+        "n": 0
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": null,
+        "n": 0
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.9723233369384952,
+        "n": 8
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 2
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.9836887009098207,
+        "n": 162
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 1.0,
+        "n": 162
+      },
+      "H11_VOL_60": {
+        "corr": null,
+        "n": 0
+      },
+      "H12_VOL_120": {
+        "corr": null,
+        "n": 0
+      },
+      "X1_HS300_SET": {
+        "corr": null,
+        "n": 0
+      }
+    },
+    "H11_VOL_60": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9008962104989866,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9237849101523479,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.502146306148938,
+        "n": 172
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.5566839948752361,
+        "n": 8
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.9522512614172292,
+        "n": 15
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5022761805584246,
+        "n": 9
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9322099271727634,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9740833624230483,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9740833624230483,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 6
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 4
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 0
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 0
+      },
+      "H11_VOL_60": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.9959656057073635,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8637996176778686,
+        "n": 172
+      }
+    },
+    "H12_VOL_120": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.8954931831398872,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9145319994642905,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.49739951206988736,
+        "n": 172
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.5950080069464819,
+        "n": 8
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.9492327496853751,
+        "n": 15
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.41553441901760574,
+        "n": 9
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9272733168464093,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.975448045031414,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.975448045031414,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 6
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 4
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 0
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 0
+      },
+      "H11_VOL_60": {
+        "corr": 0.9959656057073635,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.8662845074486709,
+        "n": 172
+      }
+    },
+    "X1_HS300_SET": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.7877944383128531,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.8057793635024666,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.3225314526351108,
+        "n": 172
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.6705631384566778,
+        "n": 8
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.8844896477035932,
+        "n": 15
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": -0.24063752701311047,
+        "n": 9
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.812519175233952,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.8737606985285664,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.8737606985285664,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": null,
+        "n": 6
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 4
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": null,
+        "n": 0
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": null,
+        "n": 0
+      },
+      "H11_VOL_60": {
+        "corr": 0.8637996176778686,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.8662845074486709,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 1.0,
+        "n": 172
+      }
+    }
+  },
+  "matrix_month_validation": {
+    "H21_RESID_REV_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.9397105325010185,
+        "n": 29
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5713186686539952,
+        "n": 29
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.4796354668884064,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.40730307357488515,
+        "n": 25
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.40428536662369746,
+        "n": 23
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.9639384878880536,
+        "n": 29
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.764401481242767,
+        "n": 29
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.764401481242767,
+        "n": 29
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": -0.09780333488225516,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.30554548097194567,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.4241963226988534,
+        "n": 25
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.3527731540004193,
+        "n": 25
+      },
+      "H11_VOL_60": {
+        "corr": 0.7425486546177225,
+        "n": 29
+      },
+      "H12_VOL_120": {
+        "corr": 0.7073429334880681,
+        "n": 29
+      },
+      "X1_HS300_SET": {
+        "corr": 0.6621921645548511,
+        "n": 29
+      }
+    },
+    "H22_RESID_REV_60_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9397105325010185,
+        "n": 29
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5828609373893724,
+        "n": 29
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.5235769381796407,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.47829316041471515,
+        "n": 25
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.4534281626902586,
+        "n": 23
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.939211741652063,
+        "n": 29
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.769580107570884,
+        "n": 29
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.769580107570884,
+        "n": 29
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.0006361870214082339,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.43279579020451,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.4917405137975152,
+        "n": 25
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.39373032990917145,
+        "n": 25
+      },
+      "H11_VOL_60": {
+        "corr": 0.7765518070404279,
+        "n": 29
+      },
+      "H12_VOL_120": {
+        "corr": 0.725353978845499,
+        "n": 29
+      },
+      "X1_HS300_SET": {
+        "corr": 0.6624083336136938,
+        "n": 29
+      }
+    },
+    "H23_RESID_REV_20_H5": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.5713186686539952,
+        "n": 29
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.5828609373893724,
+        "n": 29
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 1.0,
+        "n": 688
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.5571541403295073,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.23458792772238363,
+        "n": 26
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5294866239345797,
+        "n": 25
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.6739551069796489,
+        "n": 29
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.6288678448621964,
+        "n": 29
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.6288678448621964,
+        "n": 29
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": -0.12742276284607565,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.5693173187485621,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.38497178873218524,
+        "n": 27
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.28800862907397895,
+        "n": 27
+      },
+      "H11_VOL_60": {
+        "corr": 0.5506579909871183,
+        "n": 29
+      },
+      "H12_VOL_120": {
+        "corr": 0.5631706921296895,
+        "n": 29
+      },
+      "X1_HS300_SET": {
+        "corr": 0.10081209008104862,
+        "n": 29
+      }
+    },
+    "H24_DISP_HIGH_RESID_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.4796354668884064,
+        "n": 26
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.5235769381796407,
+        "n": 26
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5571541403295073,
+        "n": 26
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 150
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.19140999936033437,
+        "n": 22
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.2876381494867057,
+        "n": 21
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.5092663519776973,
+        "n": 26
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.31270764192442135,
+        "n": 26
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.31270764192442135,
+        "n": 26
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.07950136973284902,
+        "n": 22
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.6786320898657532,
+        "n": 9
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.6807989289893108,
+        "n": 23
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.7129750075418362,
+        "n": 23
+      },
+      "H11_VOL_60": {
+        "corr": 0.27408965506068184,
+        "n": 26
+      },
+      "H12_VOL_120": {
+        "corr": 0.26018870569565244,
+        "n": 26
+      },
+      "X1_HS300_SET": {
+        "corr": 0.24613285073260305,
+        "n": 26
+      }
+    },
+    "H25_DISP_UP_RESID_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.40730307357488515,
+        "n": 25
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.47829316041471515,
+        "n": 25
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.23458792772238363,
+        "n": 26
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.19140999936033437,
+        "n": 22
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 1.0,
+        "n": 155
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.8188914651017907,
+        "n": 20
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.3669259868539487,
+        "n": 25
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.031090194057599788,
+        "n": 25
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.031090194057599788,
+        "n": 25
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.6535880061580149,
+        "n": 21
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.6586980895595272,
+        "n": 9
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": -0.0098590825970463,
+        "n": 22
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.0033324584629739282,
+        "n": 22
+      },
+      "H11_VOL_60": {
+        "corr": 0.10558468978968073,
+        "n": 25
+      },
+      "H12_VOL_120": {
+        "corr": 0.008376890902042173,
+        "n": 25
+      },
+      "X1_HS300_SET": {
+        "corr": 0.15657329845465887,
+        "n": 25
+      }
+    },
+    "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.40428536662369746,
+        "n": 23
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.4534281626902586,
+        "n": 23
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5294866239345797,
+        "n": 25
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.2876381494867057,
+        "n": 21
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.8188914651017907,
+        "n": 20
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 1.0,
+        "n": 143
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.4602512047275178,
+        "n": 23
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.19263616218895038,
+        "n": 23
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.19263616218895038,
+        "n": 23
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.5596688200788437,
+        "n": 19
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": null,
+        "n": 7
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.09257249342924316,
+        "n": 22
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.07370796338340314,
+        "n": 22
+      },
+      "H11_VOL_60": {
+        "corr": 0.17969717787151337,
+        "n": 23
+      },
+      "H12_VOL_120": {
+        "corr": 0.11231547872957377,
+        "n": 23
+      },
+      "X1_HS300_SET": {
+        "corr": 0.01326731074210878,
+        "n": 23
+      }
+    },
+    "H29_PX_AMT_CORR_20_H20": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.9639384878880536,
+        "n": 29
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.939211741652063,
+        "n": 29
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6739551069796489,
+        "n": 29
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.5092663519776973,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.3669259868539487,
+        "n": 25
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.4602512047275178,
+        "n": 23
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.8535789777534116,
+        "n": 29
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.8535789777534116,
+        "n": 29
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": -0.18779357532889124,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.27920201991690824,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.4325956241506893,
+        "n": 25
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.35176886014005543,
+        "n": 25
+      },
+      "H11_VOL_60": {
+        "corr": 0.8325707445480071,
+        "n": 29
+      },
+      "H12_VOL_120": {
+        "corr": 0.8025866175489756,
+        "n": 29
+      },
+      "X1_HS300_SET": {
+        "corr": 0.636301774009744,
+        "n": 29
+      }
+    },
+    "A1_SEASONED_AGE": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.764401481242767,
+        "n": 29
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.769580107570884,
+        "n": 29
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6288678448621964,
+        "n": 29
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.31270764192442135,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.031090194057599788,
+        "n": 25
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.19263616218895038,
+        "n": 23
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.8535789777534116,
+        "n": 29
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9999999999999999,
+        "n": 29
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": -0.3119110229179945,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.053140062488976576,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.39632736047825623,
+        "n": 25
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.2829848796713558,
+        "n": 25
+      },
+      "H11_VOL_60": {
+        "corr": 0.9491516707199337,
+        "n": 29
+      },
+      "H12_VOL_120": {
+        "corr": 0.9519686126869505,
+        "n": 29
+      },
+      "X1_HS300_SET": {
+        "corr": 0.6643985536349216,
+        "n": 29
+      }
+    },
+    "A2_RELATIVE_AGE": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.764401481242767,
+        "n": 29
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.769580107570884,
+        "n": 29
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.6288678448621964,
+        "n": 29
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.31270764192442135,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.031090194057599788,
+        "n": 25
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.19263616218895038,
+        "n": 23
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.8535789777534116,
+        "n": 29
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9999999999999999,
+        "n": 29
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": -0.3119110229179945,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.053140062488976576,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.39632736047825623,
+        "n": 25
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.2829848796713558,
+        "n": 25
+      },
+      "H11_VOL_60": {
+        "corr": 0.9491516707199337,
+        "n": 29
+      },
+      "H12_VOL_120": {
+        "corr": 0.9519686126869505,
+        "n": 29
+      },
+      "X1_HS300_SET": {
+        "corr": 0.6643985536349216,
+        "n": 29
+      }
+    },
+    "A5_MONTH_END_SEASONED": {
+      "H21_RESID_REV_20_H20": {
+        "corr": -0.09780333488225516,
+        "n": 24
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.0006361870214082339,
+        "n": 24
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": -0.12742276284607565,
+        "n": 24
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.07950136973284902,
+        "n": 22
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.6535880061580149,
+        "n": 21
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.5596688200788437,
+        "n": 19
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": -0.18779357532889124,
+        "n": 24
+      },
+      "A1_SEASONED_AGE": {
+        "corr": -0.3119110229179945,
+        "n": 24
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": -0.3119110229179945,
+        "n": 24
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 1.0,
+        "n": 133
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.9182330203398182,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.2611888236231352,
+        "n": 24
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.33315385458381175,
+        "n": 24
+      },
+      "H11_VOL_60": {
+        "corr": -0.3471214299333673,
+        "n": 24
+      },
+      "H12_VOL_120": {
+        "corr": -0.40105183327710986,
+        "n": 24
+      },
+      "X1_HS300_SET": {
+        "corr": -0.011587595834454135,
+        "n": 24
+      }
+    },
+    "A6_QUARTER_END_SEASONED": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.30554548097194567,
+        "n": 10
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.43279579020451,
+        "n": 10
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5693173187485621,
+        "n": 10
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.6786320898657532,
+        "n": 9
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.6586980895595272,
+        "n": 9
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": null,
+        "n": 7
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.27920201991690824,
+        "n": 10
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.053140062488976576,
+        "n": 10
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.053140062488976576,
+        "n": 10
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.9182330203398182,
+        "n": 10
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 1.0,
+        "n": 56
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.7587826203463712,
+        "n": 10
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.7671214813337827,
+        "n": 10
+      },
+      "H11_VOL_60": {
+        "corr": 0.03187839436548808,
+        "n": 10
+      },
+      "H12_VOL_120": {
+        "corr": -0.032209339037797734,
+        "n": 10
+      },
+      "X1_HS300_SET": {
+        "corr": 0.23153403142482173,
+        "n": 10
+      }
+    },
+    "IM5_GVZ_IND_DEF_60": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.4241963226988534,
+        "n": 25
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.4917405137975152,
+        "n": 25
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.38497178873218524,
+        "n": 27
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.6807989289893108,
+        "n": 23
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": -0.0098590825970463,
+        "n": 22
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.09257249342924316,
+        "n": 22
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.4325956241506893,
+        "n": 25
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.39632736047825623,
+        "n": 25
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.39632736047825623,
+        "n": 25
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.2611888236231352,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7587826203463712,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 1.0,
+        "n": 168
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.963488017627716,
+        "n": 27
+      },
+      "H11_VOL_60": {
+        "corr": 0.36839307178714575,
+        "n": 25
+      },
+      "H12_VOL_120": {
+        "corr": 0.3591464910099568,
+        "n": 25
+      },
+      "X1_HS300_SET": {
+        "corr": 0.2930474603937656,
+        "n": 25
+      }
+    },
+    "IM6_GVZ_IND_DEF_120": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.3527731540004193,
+        "n": 25
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.39373032990917145,
+        "n": 25
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.28800862907397895,
+        "n": 27
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.7129750075418362,
+        "n": 23
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.0033324584629739282,
+        "n": 22
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.07370796338340314,
+        "n": 22
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.35176886014005543,
+        "n": 25
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.2829848796713558,
+        "n": 25
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.2829848796713558,
+        "n": 25
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": 0.33315385458381175,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.7671214813337827,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.963488017627716,
+        "n": 27
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 1.0,
+        "n": 162
+      },
+      "H11_VOL_60": {
+        "corr": 0.25192101442937354,
+        "n": 25
+      },
+      "H12_VOL_120": {
+        "corr": 0.24468741691503737,
+        "n": 25
+      },
+      "X1_HS300_SET": {
+        "corr": 0.264950706671341,
+        "n": 25
+      }
+    },
+    "H11_VOL_60": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.7425486546177225,
+        "n": 29
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.7765518070404279,
+        "n": 29
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5506579909871183,
+        "n": 29
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.27408965506068184,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.10558468978968073,
+        "n": 25
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.17969717787151337,
+        "n": 23
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.8325707445480071,
+        "n": 29
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9491516707199337,
+        "n": 29
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9491516707199337,
+        "n": 29
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": -0.3471214299333673,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.03187839436548808,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.36839307178714575,
+        "n": 25
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.25192101442937354,
+        "n": 25
+      },
+      "H11_VOL_60": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "H12_VOL_120": {
+        "corr": 0.989310578247435,
+        "n": 29
+      },
+      "X1_HS300_SET": {
+        "corr": 0.6876278996320092,
+        "n": 29
+      }
+    },
+    "H12_VOL_120": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.7073429334880681,
+        "n": 29
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.725353978845499,
+        "n": 29
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.5631706921296895,
+        "n": 29
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.26018870569565244,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.008376890902042173,
+        "n": 25
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.11231547872957377,
+        "n": 23
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.8025866175489756,
+        "n": 29
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.9519686126869505,
+        "n": 29
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.9519686126869505,
+        "n": 29
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": -0.40105183327710986,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": -0.032209339037797734,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.3591464910099568,
+        "n": 25
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.24468741691503737,
+        "n": 25
+      },
+      "H11_VOL_60": {
+        "corr": 0.989310578247435,
+        "n": 29
+      },
+      "H12_VOL_120": {
+        "corr": 1.0,
+        "n": 172
+      },
+      "X1_HS300_SET": {
+        "corr": 0.6507580296046405,
+        "n": 29
+      }
+    },
+    "X1_HS300_SET": {
+      "H21_RESID_REV_20_H20": {
+        "corr": 0.6621921645548511,
+        "n": 29
+      },
+      "H22_RESID_REV_60_H20": {
+        "corr": 0.6624083336136938,
+        "n": 29
+      },
+      "H23_RESID_REV_20_H5": {
+        "corr": 0.10081209008104862,
+        "n": 29
+      },
+      "H24_DISP_HIGH_RESID_20_H20": {
+        "corr": 0.24613285073260305,
+        "n": 26
+      },
+      "H25_DISP_UP_RESID_20_H20": {
+        "corr": 0.15657329845465887,
+        "n": 25
+      },
+      "H26_DISP_HIGH_LOW_BREADTH_20_H20": {
+        "corr": 0.01326731074210878,
+        "n": 23
+      },
+      "H29_PX_AMT_CORR_20_H20": {
+        "corr": 0.636301774009744,
+        "n": 29
+      },
+      "A1_SEASONED_AGE": {
+        "corr": 0.6643985536349216,
+        "n": 29
+      },
+      "A2_RELATIVE_AGE": {
+        "corr": 0.6643985536349216,
+        "n": 29
+      },
+      "A5_MONTH_END_SEASONED": {
+        "corr": -0.011587595834454135,
+        "n": 24
+      },
+      "A6_QUARTER_END_SEASONED": {
+        "corr": 0.23153403142482173,
+        "n": 10
+      },
+      "IM5_GVZ_IND_DEF_60": {
+        "corr": 0.2930474603937656,
+        "n": 25
+      },
+      "IM6_GVZ_IND_DEF_120": {
+        "corr": 0.264950706671341,
+        "n": 25
+      },
+      "H11_VOL_60": {
+        "corr": 0.6876278996320092,
+        "n": 29
+      },
+      "H12_VOL_120": {
+        "corr": 0.6507580296046405,
+        "n": 29
+      },
+      "X1_HS300_SET": {
+        "corr": 1.0,
+        "n": 172
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "download_complete": true,
+  "future_row_mutation_ok": true,
+  "knowledge_time": "announce_date < signal_date",
+  "moutai_2023_announce": "2023-03-31",
+  "moutai_hidden_on_2023_03_31": true,
+  "moutai_visible_on_2023_04_01": true,
+  "n_cash": 24029,
+  "n_files": 5549,
+  "n_rows": 24803,
+  "operate_date_used_as_knowledge": false,
+  "pit_available": true,
+  "pit_test_ok": true,
+  "status": "DIVIDEND_PIT_OK"
+}

@@ -1,0 +1,35 @@
+{
+  "current_only": false,
+  "download_complete": true,
+  "effective_dating": true,
+  "freeze": true,
+  "future_snapshot_mutation_ok": true,
+  "grid": "15th_of_month",
+  "historical_membership": true,
+  "label": "MONTHLY_ASOF",
+  "moutai": {
+    "2010": "制造业-饮料制造业-食品、饮料-酒精及饮料酒制造业",
+    "2015": "C15酒、饮料和精制茶制造业",
+    "2020": "C15酒、饮料和精制茶制造业",
+    "2024": "C15酒、饮料和精制茶制造业"
+  },
+  "n_2010": 1926,
+  "n_2015": 2842,
+  "n_2015_vs_2024_differ": 638,
+  "n_2020": 3854,
+  "n_2024": 5319,
+  "n_asof": 171,
+  "n_expected": 171,
+  "note": "query_stock_industry(date=) returns as-of membership. Taxonomy changed ~2015 (name → CSRC code). Use then-current labels. Do not backfill 2026.",
+  "pit_available": true,
+  "pit_test_ok": true,
+  "status": "INDUSTRY_PIT_OK",
+  "sz300750_absent_2010": true,
+  "sz300750_absent_2015": true,
+  "sz300750_in": {
+    "2010": false,
+    "2015": false,
+    "2020": true,
+    "2024": true
+  }
+}

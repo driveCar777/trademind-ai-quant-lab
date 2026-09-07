@@ -10,7 +10,9 @@ import numpy as np
 
 from research_engine.cn_a_share.io_util import dump_json, write_csv
 from research_engine.cn_a_share_alpha_v2.books import ew_overlapping
-from research_engine.cn_a_share_ml_v25.top_n_book import FEE_RESERVE_FULL, HOLD, LOT, N_NAMES, UNIT_YUAN, board_mask, summarize, top_n_book
+from research_engine.cn_a_share_ml_v25.top_n_book import (
+    FEE_RESERVE_FULL, HOLD, LOT, N_NAMES, UNIT_YUAN, board_mask, eq_money_open_mark, summarize, top_n_book,
+)
 from research_engine.ml1_live import LEDGER_DIR, SIGNALS
 
 TAG = "ML1_LIVE_TOP20"
@@ -124,9 +126,10 @@ def write_shortlist_eq_money(pack, scores_t, elig_t, t, capital=20_000.0, exposu
         contract = "ML1_FULL_TOPUP_CONTRIB2K_MAIN"
     else:
         contract = "ML1_EQMONEY_%dPCT_%sMAIN" % (round(exposure * 100), "TOPUP_" if topup else "")
-    out = {"kind": tag, "contract": contract, "boards": boards, "max_price": max_price, "exposure": exposure, "unit_yuan": round(unit, 2), "n_target": n_target, "signal_date": dates[t],
+    out = {"kind": tag, "contract": contract, "boards": boards, "max_price": max_price, "exposure": exposure, "unit_yuan": round(unit, 2),
+           "n_target": n_target, "n_selected": n, "signal_date": dates[t],
            "topup": topup, "est_invested_yuan": round(sum(r["est_yuan"] for r in rows), 2), "act": act,
-           "capital_yuan": capital, "n_target": n, "n_names": len(rows), "skipped_price_too_high_for_2000": skipped, "names": rows,
+           "capital_yuan": capital, "n_names": len(rows), "skipped_price_too_high_for_2000": skipped, "names": rows,
            "execution": "MANUAL by owner in ordinary account; no API, no automation", "orders_sent": False}
     dump_json(os.path.join(SIGNALS, "%s_%s.json" % (tag, dates[t])), out)
     write_csv(os.path.join(SIGNALS, "%s_%s.csv" % (tag, dates[t])), ("rank", "symbol", "last_close", "lots_100_est", "est_yuan", "score"), rows)
@@ -146,7 +149,7 @@ def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_C
     if ew_end_i >= first_signal_index:
         ew = ew_overlapping(pack, elig, xok, start, dates[ew_end_i], HOLD)
         ewm = dict((r["date"], r["MEAN_FORWARD_RETURN"]) for r in ew)
-    summ = summarize(bk, ewm) if bk["trades"] else {"n_periods": 0}
+    summ = summarize(bk, ewm) if bk["trades"] else {"n_periods": 0, "n_periods_closed": 0}
     if eq_money and topup and exposure >= 0.999 and monthly_contrib > 0 and n_target > 0:
         contract, gate = "ML1_SCALED_UNIT_N%d_FULL_CONTRIB%dK_MAIN" % (n_target, round(monthly_contrib / 1000)), "VIABLE_HISTORICAL (V26.8 single read 2026-09-06: validation TWR +39.0%, t 2.86, daily MaxDD -24.4%)"
     elif eq_money and topup and exposure >= 0.999 and monthly_contrib > 0:
@@ -163,8 +166,47 @@ def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_C
                  "exposure": (exposure if (one_lot or eq_money) else 1.0), "money": "NONE (shadow)", "orders_sent": False, "historical_gate": gate,
                  "monthly_contrib": monthly_contrib, "n_target": n_target, "equity_end_closed": round(bk.get("equity_end", capital), 2), "deposits_to_date": round(bk.get("deposits", 0.0), 2),
                  "last_closed_signal_month": (bk["trades"][-1]["signal_date"][:7] if bk["trades"] else None)})
-    out = {"summary": summ, "periods": [dict((k, v) for k, v in tr.items() if k != "names") for tr in bk["trades"]],
-           "fills_by_period": dict((tr["signal_date"], tr["names"]) for tr in bk["trades"])}
+    periods = [dict((k, v) for k, v in tr.items() if k != "names") for tr in bk["trades"]]
+    fills = dict((tr["signal_date"], tr["names"]) for tr in bk["trades"])
+    # Last chain signal whose 20-day hold is not finished (same shape as LEDGER.json OPEN).
+    open_t, ti = None, first_signal_index
+    while ti <= last:
+        if ti + 1 + HOLD > last:
+            open_t = ti
+            break
+        ti += HOLD + 1
+    if open_t is not None:
+        sl = None
+        if eq_money:
+            sl = write_shortlist_eq_money(pack, S[open_t], elig[open_t], open_t, capital=capital, exposure=exposure,
+                                         boards=boards, max_price=max_price, tag="SHORTLIST_SHADOW", topup=topup, n_target=n_target)
+        unit = max(UNIT_YUAN, capital / n_target) if n_target > 0 else UNIT_YUAN
+        reserve = FEE_RESERVE_FULL if exposure >= 0.999 else 0.0
+        snap = eq_money_open_mark(pack, S[open_t], elig[open_t], xok, open_t, capital, exposure, unit, boards, max_price, topup, reserve, last) if eq_money and open_t + 1 <= last else None
+        entry = dates[open_t + 1] if open_t + 1 <= last else None
+        open_row = {"status": "OPEN", "signal_date": dates[open_t], "entry": entry,
+                    "exit_expected": "%d sessions after %s" % (HOLD, entry or dates[open_t]),
+                    "n_names": (snap or sl or {}).get("n_sel") or (sl or {}).get("n_names"),
+                    "est_invested_yuan": (sl or {}).get("est_invested_yuan"),
+                    "contract": contract}
+        if snap:
+            open_row.update({"n_fill": snap["n_fill"], "invested_open": snap["invested"], "buy_fees": snap["buy_fees"],
+                             "cash": snap["cash"], "mtm_equity": snap["mtm_equity"], "unrealized": snap["unrealized"],
+                             "ret_unrealized": snap["ret_unrealized"], "mark_date": snap["mark_date"]})
+            fills[dates[open_t]] = snap["names"]
+            summ["mtm_equity"] = snap["mtm_equity"]
+            summ["unrealized"] = snap["unrealized"]
+            summ["open_mark_date"] = snap["mark_date"]
+        elif sl:
+            fills[dates[open_t]] = sl["names"]
+        periods.append(open_row)
+        summ["n_periods_open"] = 1
+        summ["open_signal_date"] = dates[open_t]
+    else:
+        summ["n_periods_open"] = 0
+    summ["n_periods_closed"] = len(bk["trades"])
+    summ["n_periods"] = summ["n_periods_closed"] + summ.get("n_periods_open", 0)
+    out = {"summary": summ, "periods": periods, "fills_by_period": fills}
     dump_json(os.path.join(LEDGER_DIR, "LEDGER_TOP20.json"), out)
-    print(TAG, "ledger closed", summ.get("n_periods", 0), flush=True)
+    print(TAG, "ledger closed", summ["n_periods_closed"], "open", summ["n_periods_open"], flush=True)
     return out

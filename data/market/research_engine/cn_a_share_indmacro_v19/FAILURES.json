@@ -1,0 +1,91 @@
+{
+  "n": 6,
+  "rows": [
+    {
+      "family": "INDUSTRY_USD_DEFENSIVE",
+      "id": "IM1_USD_IND_DEF_60",
+      "mechanism": "After USD up, long members of low industry-USD-beta groups.",
+      "reopen": "New contract only.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "INDUSTRY_USD_DEFENSIVE",
+      "id": "IM2_USD_IND_DEF_120",
+      "mechanism": "Same industry USD defensive, 120-day industry beta.",
+      "reopen": "New contract only.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "INDUSTRY_US_CONTINUATION",
+      "id": "IM3_US_IND_CONT_60",
+      "mechanism": "After US500 up, long members of high industry-US500-beta groups.",
+      "reopen": "New contract only.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "validation_excess",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "INDUSTRY_US_CONTINUATION",
+      "id": "IM4_US_IND_CONT_120",
+      "mechanism": "Same industry US500 continuation, 120-day industry beta.",
+      "reopen": "New contract only.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "validation_rank_ic",
+        "fdr",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "INDUSTRY_GVZ_DEFENSIVE",
+      "id": "IM5_GVZ_IND_DEF_60",
+      "mechanism": "After GVZ up, long members of low industry-GVZ-beta groups.",
+      "reopen": "New contract only.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "research_rank_ic",
+        "fdr",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "INDUSTRY_GVZ_DEFENSIVE",
+      "id": "IM6_GVZ_IND_DEF_120",
+      "mechanism": "Same industry GVZ defensive, 120-day industry beta.",
+      "reopen": "New contract only.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "research_excess",
+        "research_rank_ic",
+        "validation_capital"
+      ]
+    }
+  ]
+}

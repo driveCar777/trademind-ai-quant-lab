@@ -301,8 +301,25 @@ def paper_update_start(request: Optional[PaperUpdateRequest] = None):
         return api_error(ErrorCode.WORKER_BUSY, str(exc))
     except OSError as exc:
         return api_error(ErrorCode.TASK_FAILED, "启动失败：%s" % exc)
-    msg = "已有一次更新在跑，给你看它的进度。" if run.get("reused") else "已在后台开始更新（约 35 分钟）。"
+    if run.get("skipped"):
+        msg = run.get("note") or "已经是最新，没有启动。"
+    elif run.get("reused"):
+        msg = run.get("note") or "已有一次更新在跑，给你看它的进度。"
+    else:
+        asof = run.get("asof_target") or ""
+        gap = (run.get("bars_gap") or {}).get("n_missing")
+        extra = "约 %s 只日线要补。" % gap if gap else ""
+        msg = "已在后台开始更新到 %s。%s卡住可点「停止更新」。" % (asof, extra)
     return api_success(PaperRunData(**run), message=msg)
+
+
+@router.post("/api/v1/paper/update/stop", response_model=PaperRunResponse)
+def paper_update_stop():
+    try:
+        run = paper_ops.stop_update()
+    except RuntimeError as exc:
+        return api_error(ErrorCode.TASK_FAILED, str(exc))
+    return api_success(PaperRunData(**run), message=run.get("note") or "已处理。")
 
 
 @router.get("/api/v1/paper/update/status", response_model=PaperRunResponse)
@@ -325,6 +342,19 @@ def paper_journal_add(request: PaperJournalEventRequest):
     j = paper_ops.load_journal()
     return api_success(PaperJournalData(events=list(reversed(j["events"])), account=paper_ops.derive_account(j, paper_ops._days()), last_event=ev),
                        message="已登记。")
+
+
+@router.put("/api/v1/paper/journal/{event_id}", response_model=PaperJournalResponse)
+def paper_journal_update(event_id: str, request: PaperJournalEventRequest):
+    try:
+        ev = paper_ops.update_event(event_id, request.model_dump(exclude_none=True))
+    except KeyError:
+        return api_error(ErrorCode.TASK_FAILED, "没有这条记录。")
+    except ValueError as exc:
+        return api_error(ErrorCode.TASK_FAILED, str(exc))
+    j = paper_ops.load_journal()
+    return api_success(PaperJournalData(events=list(reversed(j["events"])), account=paper_ops.derive_account(j, paper_ops._days()), last_event=ev),
+                       message="已修改。")
 
 
 @router.delete("/api/v1/paper/journal/{event_id}", response_model=PaperJournalResponse)

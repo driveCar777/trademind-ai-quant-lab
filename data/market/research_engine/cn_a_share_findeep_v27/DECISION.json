@@ -1,0 +1,23 @@
+{
+  "EXISTING_INDEPENDENT_CANDIDATE": 1,
+  "LEVEL": 1,
+  "LIVE": 0,
+  "NEW_CANDIDATE": 1,
+  "NEW_INDEPENDENT_CANDIDATE": 0,
+  "NEXT": "KEEP_ML1_NO_NEW_SLEEVE",
+  "OVERALL": "LEVEL1_SAME_CLUSTER_AS_ML1",
+  "PAPER": 0,
+  "PORTFOLIO": 0,
+  "STOP": "STOP_A_SAME_CLUSTER_NOT_NEW_SLEEVE",
+  "STRATEGY": "ML1 unchanged",
+  "amendment": "RESEARCH_RULES_AMENDMENT_V1",
+  "candidate_ids": [
+    "ML2_LGBM_FULL_STACK"
+  ],
+  "contract_hash": "7d51ba936bdc7449faba4a3a01118fc304039600ba8f279932371f412ec9bb39",
+  "cost_usd": 0.0,
+  "final_oos": "DENIED",
+  "gate_book": "LO20",
+  "independent_ids": [],
+  "new_purchase": false
+}

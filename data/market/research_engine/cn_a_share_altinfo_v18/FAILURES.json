@@ -1,0 +1,85 @@
+{
+  "n": 6,
+  "rows": [
+    {
+      "family": "LISTING_AGE",
+      "id": "A1_SEASONED_AGE",
+      "mechanism": "IPO long-run underperformance. Long the most seasoned names. score = calendar age in days.",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "LISTING_AGE",
+      "id": "A2_RELATIVE_AGE",
+      "mechanism": "Long names older than that day's eligible median age. Relative seasoning, not absolute.",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "ST_HISTORY",
+      "id": "A3_CLEAN_STREAK",
+      "mechanism": "Long names with the longest consecutive non-ST streak. Special-treatment risk fading.",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "SUSPEND_RESUME",
+      "id": "A4_RECENT_RESUME",
+      "mechanism": "After suspension lifts, delayed catching-up. Long shortest consecutive tradable streak (recent resume).",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "CALENDAR_WINDOW",
+      "id": "A5_MONTH_END_SEASONED",
+      "mechanism": "Month-end window dressing into seasoned names. Age score only on last 2 CN trading days of the month.",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "CALENDAR_WINDOW",
+      "id": "A6_QUARTER_END_SEASONED",
+      "mechanism": "Quarter-end reporting window dressing into seasoned names. Age score only on last 5 CN trading days of the quarter.",
+      "reopen": "New contract only. Do not retune.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    }
+  ]
+}

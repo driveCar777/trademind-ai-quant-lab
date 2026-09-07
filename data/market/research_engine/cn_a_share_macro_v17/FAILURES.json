@@ -1,0 +1,101 @@
+{
+  "n": 6,
+  "rows": [
+    {
+      "family": "USD_STRENGTH_DEFENSIVE",
+      "id": "M1_USD_DEF_60",
+      "mechanism": "After USD strengthens, long low USD-beta A-shares. score = -beta_usd_60 * r_usd. r_usd = -r_EURUSD.",
+      "reopen": "New contract only. Do not retune. Do not mix with H11/H12.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "USD_STRENGTH_DEFENSIVE",
+      "id": "M2_USD_DEF_120",
+      "mechanism": "Same USD-strength defensive, 120-day beta.",
+      "reopen": "New contract only. Do not retune. Do not mix with H11/H12.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "GLOBAL_EQUITY_CONTINUATION",
+      "id": "M3_US_CONT_60",
+      "mechanism": "After US500 rises, long high US500-beta A-shares. score = beta_us500_60 * r_us500. Risk-on spillover, not A-share residual.",
+      "reopen": "New contract only. Do not retune. Do not mix with H11/H12.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "GLOBAL_EQUITY_CONTINUATION",
+      "id": "M4_US_CONT_120",
+      "mechanism": "Same US500 continuation, 120-day beta.",
+      "reopen": "New contract only. Do not retune. Do not mix with H11/H12.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "GOLD_VOL_DEFENSIVE",
+      "id": "M5_GVZ_DEF_60",
+      "mechanism": "After GVZ rises, long low GVZ-beta A-shares. score = -beta_gvz_60 * dlog_gvz. Gold-vol risk-off, not realized-vol rank.",
+      "reopen": "New contract only. Do not retune. Do not mix with H11/H12.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "GOLD_VOL_DEFENSIVE",
+      "id": "M6_GVZ_DEF_120",
+      "mechanism": "Same GVZ defensive, 120-day beta.",
+      "reopen": "New contract only. Do not retune. Do not mix with H11/H12.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "research_excess",
+        "validation_excess",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    }
+  ]
+}

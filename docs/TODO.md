@@ -1,10 +1,10 @@
 # TradeMind TODO — 版本任务清单
 
 > **当前活跃模块:** **V25 多层组合模型 = 第一个通过 Level-1 + 复现 + 独立性的 Candidate**（`A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE`，STOP A）。NEW_INDEPENDENT=**1**。规则修正见 `RESEARCH_RULES_AMENDMENT_V1.md`（A1 构造菜单 / A2 滚动验证 / A3 每层一个模型 / A4 超额序列聚类）。V22–V24 NO_CANDIDATE 已冻。Databento 余额 ≈$46 不花。
-> **最后更新:** 2026-09-07 11:00（纸面操作台 V2 上线；ML7 影子接入）
-> **下一入口:** 用户准备操作模拟盘。**纸面操作台 V2** `http://127.0.0.1:9000/paper`（`PAPER_OPS_DESK_V2_DESIGN.md`）：真实日历上的「今天要做什么」、一键后台更新、成交日志、历史每一期。Phase 3 Smoke PASS；Phase 4 Stability 跟 V29 到 09-29 第一次真实卖出日。ML1 / V26.8 / `daily.py` 参数不动。V38 S3 ML7 影子只输出。
+> **最后更新:** 2026-09-07 21:20（2007 标签=截断日历，不是行情回到 2007；叠跑已杀；不要连点更新。ML1 / V26.8 参数不动）
+> **下一入口:** 用户准备操作模拟盘。**纸面操作台** `http://127.0.0.1:9000/paper`。刷新后若仍显示 2007，等本地重算跑完（不连东财）。东财黑名单解除前不要连点「更新」。
 
-| PAPER OPS V2 | 用户 10:24 提出模拟盘日常问题（卖出在哪显示 / 明天换票？/ 标记成交 / 几点更新 / 中断重复 / 补数据 / 新闻财报 / 付费数据 / 先看余额）。设计+逐条回答 `PAPER_OPS_DESK_V2_DESIGN.md`；`paper_ops.py` + SPEC §29.5–29.8 + `paper.html` 重写（旧页 `/paper/v1`） | ✅ Design ✅ Implement ✅ Smoke（8 场景状态机 + HTTP + 浏览器 + 页面触发后台更新）；🔄 Stability 至 09-29 卖出日/09-30 买入日走一遍 → Freeze | 2026-09-07 |
+| PAPER OPS V2 | 用户 10:24 提出模拟盘日常问题。V2.1 双账户。20:40：截止日期=最近已收盘交易日；已是最新 `skipped`；`POST /update/stop`；日线 40s 超时跳过。21:20：截断日历→2007 标签；锁失效叠跑；黑名单则 `--skip-fetch`。 | ✅ Design ✅ Implement ✅ Smoke；🔄 Stability 至 09-29 | 2026-09-07 |
 | V38 EVOLUTION | 用户 22:45 授权长期研究。S0 ✅；S1 L1 ✅ NO_CANDIDATE、L4 增减持 ✅ NO_CANDIDATE（有边 t 5.9 / 账本负）、L7 质押 ✅ NO_CANDIDATE（有边 t 6.6 / 账本负）、L2 DATA_BLOCKED、L3/L5/L6 DEFERRED；S2 O1/O2/O3 ✅ 全 REJECT；ATLAS 87；报告 `V38_EVOLUTION_MISSION_REPORT.md` | ✅ O4/O5 各读一次（O4 REJECT；O5 过门但 NOT_DEPLOYABLE）S2 关闭；✅ ML7 影子接入 `daily.py`（只输出，`LEDGER_ML7` 倒计时 24 期）。🔄 每日 `daily.py` 照跑；ML7 读取 ≈2028-Q3。不在历史窗跑堆叠。 | 2026-09-07 |
 
 ---

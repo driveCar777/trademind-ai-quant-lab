@@ -1,0 +1,12 @@
+{
+  "completed_utc": "2026-09-01T21:29:00Z",
+  "decision": "A_SHARE_INFORMATION_ALPHA_V1_NO_CANDIDATE",
+  "decision_pointer": "docs/research_engine/V16_DECISION.md",
+  "machine_decision": "data/market/research_engine/cn_a_share_information_v16/DECISION.json",
+  "new_candidate": 0,
+  "overall": "A_SHARE_INFORMATION_ALPHA_V1_NO_CANDIDATE",
+  "reconcile_note": "stage COMPILE was leftover metadata after compile_v16. Immutable result files were not modified.",
+  "reconciled_utc": "2026-09-02T04:40:00Z",
+  "stage": "COMPLETE",
+  "stop": "STOP_B"
+}

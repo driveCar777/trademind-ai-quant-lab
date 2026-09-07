@@ -1,0 +1,28 @@
+{
+  "2022_annual_visible": true,
+  "2023_annual_must_be_hidden": true,
+  "announcement_rate": 1.0,
+  "asof": "2024-01-01",
+  "complete_pit_claimed": false,
+  "coverage_2010": 0.9364331959976456,
+  "coverage_ok": true,
+  "future_announcement_mutation_ok": true,
+  "future_value_mutation_ok": true,
+  "moutai_2024_01_01": "2022-12-31",
+  "moutai_2024_04_03_can_see_2023": true,
+  "moutai_hides_2023": true,
+  "n_2022_annual_visible": 5208,
+  "n_2023_annual_visible": 0,
+  "n_listed_2010": 1699,
+  "n_symbols_with_annual": 5500,
+  "n_visible": 48750,
+  "n_with_annual_2010": 1591,
+  "no_future_ttm": {
+    "n_leaked": 0,
+    "ok": true
+  },
+  "pit_test_ok": true,
+  "price_dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "price_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "restatement_risk": true
+}

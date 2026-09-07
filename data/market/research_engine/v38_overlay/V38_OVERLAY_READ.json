@@ -1,0 +1,1519 @@
+{
+  "contract": "V38_OVERLAY_CONTRACT.md",
+  "denied_window_read": false,
+  "reduced_exposure": 0.5,
+  "rules": {
+    "O1_TREND": {
+      "gate": {
+        "validation_maxdd_improved": true,
+        "validation_sharpe_not_lower": false
+      },
+      "research": {
+        "base": {
+          "cagr": 0.21605004953851892,
+          "daily_maxdd": -0.5589735308767796,
+          "n_days": 2352,
+          "sharpe_daily_ann": 0.8342640307218963,
+          "twr_total": 5.618968664212873
+        },
+        "frac_periods_reduced": 0.5,
+        "mean_ret_when_full": 0.015086980643641112,
+        "mean_ret_when_reduced": 0.02801314896338299,
+        "overlay": {
+          "cagr": 0.13704980048557047,
+          "daily_maxdd": -0.5589735308767793,
+          "n_days": 2352,
+          "sharpe_daily_ann": 0.6552279187281926,
+          "twr_total": 2.4588716624619615
+        },
+        "signals": [
+          {
+            "reduced": true,
+            "ret": 0.07701109687114241,
+            "signal_date": "2012-01-04"
+          },
+          {
+            "reduced": true,
+            "ret": -0.008542151838791805,
+            "signal_date": "2012-02-09"
+          },
+          {
+            "reduced": true,
+            "ret": -0.044388278516981475,
+            "signal_date": "2012-03-09"
+          },
+          {
+            "reduced": true,
+            "ret": -0.005466081181123778,
+            "signal_date": "2012-04-12"
+          },
+          {
+            "reduced": true,
+            "ret": -0.042708903343949126,
+            "signal_date": "2012-05-15"
+          },
+          {
+            "reduced": true,
+            "ret": -0.04660973012751736,
+            "signal_date": "2012-06-13"
+          },
+          {
+            "reduced": true,
+            "ret": 0.0044342408704820865,
+            "signal_date": "2012-07-13"
+          },
+          {
+            "reduced": true,
+            "ret": 0.09392078275754404,
+            "signal_date": "2012-08-13"
+          },
+          {
+            "reduced": true,
+            "ret": -0.04228546893557357,
+            "signal_date": "2012-09-11"
+          },
+          {
+            "reduced": true,
+            "ret": -0.0006585166155926665,
+            "signal_date": "2012-10-17"
+          },
+          {
+            "reduced": true,
+            "ret": 0.011841635037192415,
+            "signal_date": "2012-11-15"
+          },
+          {
+            "reduced": true,
+            "ret": 0.11877335739088508,
+            "signal_date": "2012-12-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.051611871600188236,
+            "signal_date": "2013-01-17"
+          },
+          {
+            "reduced": false,
+            "ret": 0.04139644228278952,
+            "signal_date": "2013-02-22"
+          },
+          {
+            "reduced": false,
+            "ret": -0.009790789157788833,
+            "signal_date": "2013-03-25"
+          },
+          {
+            "reduced": false,
+            "ret": 0.05894522464302365,
+            "signal_date": "2013-04-25"
+          },
+          {
+            "reduced": false,
+            "ret": -0.1581446304948652,
+            "signal_date": "2013-05-29"
+          },
+          {
+            "reduced": true,
+            "ret": 0.06602718062527885,
+            "signal_date": "2013-07-02"
+          },
+          {
+            "reduced": true,
+            "ret": 0.18052965012568822,
+            "signal_date": "2013-07-31"
+          },
+          {
+            "reduced": false,
+            "ret": 0.07281440289205594,
+            "signal_date": "2013-08-29"
+          },
+          {
+            "reduced": false,
+            "ret": -0.016267075212158682,
+            "signal_date": "2013-10-08"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03413175971760228,
+            "signal_date": "2013-11-06"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0162773124118973,
+            "signal_date": "2013-12-05"
+          },
+          {
+            "reduced": false,
+            "ret": 0.07372177540044457,
+            "signal_date": "2014-01-06"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0034865812066121886,
+            "signal_date": "2014-02-11"
+          },
+          {
+            "reduced": false,
+            "ret": 0.05363113926487064,
+            "signal_date": "2014-03-12"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0397823855225865,
+            "signal_date": "2014-04-11"
+          },
+          {
+            "reduced": false,
+            "ret": 0.04046775770870882,
+            "signal_date": "2014-05-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.06734759520716746,
+            "signal_date": "2014-06-13"
+          },
+          {
+            "reduced": false,
+            "ret": 0.10475208199468604,
+            "signal_date": "2014-07-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.14463452185165301,
+            "signal_date": "2014-08-12"
+          },
+          {
+            "reduced": false,
+            "ret": 0.12307532824932561,
+            "signal_date": "2014-09-11"
+          },
+          {
+            "reduced": false,
+            "ret": 0.007241927870082258,
+            "signal_date": "2014-10-17"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03264269976441135,
+            "signal_date": "2014-11-17"
+          },
+          {
+            "reduced": false,
+            "ret": -0.08267032965953024,
+            "signal_date": "2014-12-16"
+          },
+          {
+            "reduced": false,
+            "ret": 0.13791383457612774,
+            "signal_date": "2015-01-16"
+          },
+          {
+            "reduced": false,
+            "ret": 0.2314587987363693,
+            "signal_date": "2015-02-16"
+          },
+          {
+            "reduced": false,
+            "ret": 0.17907568418715855,
+            "signal_date": "2015-03-24"
+          },
+          {
+            "reduced": false,
+            "ret": 0.2997004943183226,
+            "signal_date": "2015-04-23"
+          },
+          {
+            "reduced": false,
+            "ret": -0.08384597288959614,
+            "signal_date": "2015-05-25"
+          },
+          {
+            "reduced": false,
+            "ret": -0.23391912761989878,
+            "signal_date": "2015-06-24"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0548945353304538,
+            "signal_date": "2015-07-23"
+          },
+          {
+            "reduced": false,
+            "ret": -0.12843710162823757,
+            "signal_date": "2015-08-21"
+          },
+          {
+            "reduced": true,
+            "ret": 0.2311952706803363,
+            "signal_date": "2015-09-23"
+          },
+          {
+            "reduced": true,
+            "ret": 0.2932422304679527,
+            "signal_date": "2015-10-29"
+          },
+          {
+            "reduced": false,
+            "ret": 0.21192080777846245,
+            "signal_date": "2015-11-27"
+          },
+          {
+            "reduced": false,
+            "ret": -0.29890260672491176,
+            "signal_date": "2015-12-28"
+          },
+          {
+            "reduced": true,
+            "ret": 0.1170663709317597,
+            "signal_date": "2016-01-27"
+          },
+          {
+            "reduced": true,
+            "ret": 0.1779169767750174,
+            "signal_date": "2016-03-03"
+          },
+          {
+            "reduced": true,
+            "ret": 0.10833305642002238,
+            "signal_date": "2016-04-01"
+          },
+          {
+            "reduced": true,
+            "ret": -0.05436327987087075,
+            "signal_date": "2016-05-04"
+          },
+          {
+            "reduced": true,
+            "ret": 0.031670589838955564,
+            "signal_date": "2016-06-02"
+          },
+          {
+            "reduced": true,
+            "ret": 0.003278291096591415,
+            "signal_date": "2016-07-05"
+          },
+          {
+            "reduced": true,
+            "ret": 0.11510556159789555,
+            "signal_date": "2016-08-03"
+          },
+          {
+            "reduced": true,
+            "ret": 0.014887939509364997,
+            "signal_date": "2016-09-01"
+          },
+          {
+            "reduced": false,
+            "ret": 0.08413327729194864,
+            "signal_date": "2016-10-11"
+          },
+          {
+            "reduced": false,
+            "ret": -0.007090854676986353,
+            "signal_date": "2016-11-09"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0044512961733015975,
+            "signal_date": "2016-12-08"
+          },
+          {
+            "reduced": false,
+            "ret": -0.03600134808080024,
+            "signal_date": "2017-01-09"
+          },
+          {
+            "reduced": false,
+            "ret": 0.017995529189246722,
+            "signal_date": "2017-02-14"
+          },
+          {
+            "reduced": false,
+            "ret": -0.048420609001633835,
+            "signal_date": "2017-03-15"
+          },
+          {
+            "reduced": true,
+            "ret": -0.11621188855985917,
+            "signal_date": "2017-04-17"
+          },
+          {
+            "reduced": true,
+            "ret": 0.020891561816168108,
+            "signal_date": "2017-05-17"
+          },
+          {
+            "reduced": true,
+            "ret": -0.09094839021135459,
+            "signal_date": "2017-06-19"
+          },
+          {
+            "reduced": true,
+            "ret": 0.04675375866358212,
+            "signal_date": "2017-07-18"
+          },
+          {
+            "reduced": true,
+            "ret": 0.038481631246891065,
+            "signal_date": "2017-08-16"
+          },
+          {
+            "reduced": true,
+            "ret": -0.012122177652495661,
+            "signal_date": "2017-09-14"
+          },
+          {
+            "reduced": true,
+            "ret": -0.06323404943720852,
+            "signal_date": "2017-10-20"
+          },
+          {
+            "reduced": true,
+            "ret": -0.02968583921968346,
+            "signal_date": "2017-11-20"
+          },
+          {
+            "reduced": true,
+            "ret": -0.0008794622994696841,
+            "signal_date": "2017-12-19"
+          },
+          {
+            "reduced": true,
+            "ret": -0.09386061043169816,
+            "signal_date": "2018-01-18"
+          },
+          {
+            "reduced": true,
+            "ret": 0.051557934801201875,
+            "signal_date": "2018-02-23"
+          },
+          {
+            "reduced": true,
+            "ret": 0.013752051531117722,
+            "signal_date": "2018-03-26"
+          },
+          {
+            "reduced": true,
+            "ret": 0.06937881132445002,
+            "signal_date": "2018-04-26"
+          },
+          {
+            "reduced": true,
+            "ret": -0.1494848490943406,
+            "signal_date": "2018-05-29"
+          },
+          {
+            "reduced": true,
+            "ret": 0.03813517085807725,
+            "signal_date": "2018-06-28"
+          },
+          {
+            "reduced": true,
+            "ret": -0.022152585722169993,
+            "signal_date": "2018-07-27"
+          },
+          {
+            "reduced": true,
+            "ret": -0.002100645720045253,
+            "signal_date": "2018-08-27"
+          },
+          {
+            "reduced": true,
+            "ret": -0.07033343081529429,
+            "signal_date": "2018-09-26"
+          },
+          {
+            "reduced": true,
+            "ret": -0.000984364530813094,
+            "signal_date": "2018-11-01"
+          },
+          {
+            "reduced": true,
+            "ret": -0.038262895307940956,
+            "signal_date": "2018-11-30"
+          },
+          {
+            "reduced": true,
+            "ret": 0.025524364952616736,
+            "signal_date": "2019-01-02"
+          },
+          {
+            "reduced": true,
+            "ret": 0.31982395341922637,
+            "signal_date": "2019-01-31"
+          },
+          {
+            "reduced": false,
+            "ret": 0.1687989889862029,
+            "signal_date": "2019-03-08"
+          },
+          {
+            "reduced": false,
+            "ret": -0.11448738681127374,
+            "signal_date": "2019-04-09"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0008036363848074656,
+            "signal_date": "2019-05-13"
+          },
+          {
+            "reduced": false,
+            "ret": 0.018089855185884376,
+            "signal_date": "2019-06-12"
+          },
+          {
+            "reduced": false,
+            "ret": -0.059890804340846406,
+            "signal_date": "2019-07-11"
+          },
+          {
+            "reduced": true,
+            "ret": 0.10565128670336107,
+            "signal_date": "2019-08-09"
+          },
+          {
+            "reduced": false,
+            "ret": 0.013582015046889433,
+            "signal_date": "2019-09-09"
+          },
+          {
+            "reduced": true,
+            "ret": -0.07490725108670893,
+            "signal_date": "2019-10-16"
+          },
+          {
+            "reduced": true,
+            "ret": 0.04714957422188873,
+            "signal_date": "2019-11-14"
+          },
+          {
+            "reduced": true,
+            "ret": 0.060673101039651935,
+            "signal_date": "2019-12-13"
+          },
+          {
+            "reduced": false,
+            "ret": -0.005858107135704514,
+            "signal_date": "2020-01-14"
+          },
+          {
+            "reduced": false,
+            "ret": -0.039015485832870414,
+            "signal_date": "2020-02-20"
+          },
+          {
+            "reduced": false,
+            "ret": 0.07330849967768152,
+            "signal_date": "2020-03-20"
+          },
+          {
+            "reduced": false,
+            "ret": -0.014366496208183395,
+            "signal_date": "2020-04-21"
+          },
+          {
+            "reduced": true,
+            "ret": 0.01571749178745754,
+            "signal_date": "2020-05-25"
+          },
+          {
+            "reduced": false,
+            "ret": 0.08133699110580452,
+            "signal_date": "2020-06-23"
+          },
+          {
+            "reduced": false,
+            "ret": 0.10748513299287019,
+            "signal_date": "2020-07-24"
+          },
+          {
+            "reduced": false,
+            "ret": -0.014458677468882051,
+            "signal_date": "2020-08-24"
+          },
+          {
+            "reduced": false,
+            "ret": -0.05474735685328705,
+            "signal_date": "2020-09-22"
+          },
+          {
+            "reduced": false,
+            "ret": 0.041881589970486154,
+            "signal_date": "2020-10-29"
+          },
+          {
+            "reduced": false,
+            "ret": -0.09125453913164393,
+            "signal_date": "2020-11-27"
+          },
+          {
+            "reduced": true,
+            "ret": 0.05429737387662346,
+            "signal_date": "2020-12-28"
+          },
+          {
+            "reduced": true,
+            "ret": -0.011208667022024325,
+            "signal_date": "2021-01-27"
+          },
+          {
+            "reduced": true,
+            "ret": 0.04127359719588537,
+            "signal_date": "2021-03-04"
+          },
+          {
+            "reduced": true,
+            "ret": -0.012605313613565292,
+            "signal_date": "2021-04-02"
+          },
+          {
+            "reduced": true,
+            "ret": 0.008445278670211633,
+            "signal_date": "2021-05-07"
+          },
+          {
+            "reduced": false,
+            "ret": -0.10764798771499007,
+            "signal_date": "2021-06-07"
+          },
+          {
+            "reduced": false,
+            "ret": -0.023688866327846222,
+            "signal_date": "2021-07-07"
+          },
+          {
+            "reduced": false,
+            "ret": 0.02037678855503217,
+            "signal_date": "2021-08-05"
+          }
+        ]
+      },
+      "validation": {
+        "base": {
+          "cagr": 0.1362145497062628,
+          "daily_maxdd": -0.2437657727679683,
+          "n_days": 609,
+          "sharpe_daily_ann": 0.699788428853606,
+          "twr_total": 0.38037938523525483
+        },
+        "frac_periods_reduced": 0.41379310344827586,
+        "mean_ret_when_full": 0.0036700381895983314,
+        "mean_ret_when_reduced": 0.02644485118832961,
+        "overlay": {
+          "cagr": 0.07585721346453056,
+          "daily_maxdd": -0.17280071272663622,
+          "n_days": 609,
+          "sharpe_daily_ann": 0.5175702715543283,
+          "twr_total": 0.20270240078065704
+        },
+        "signals": [
+          {
+            "reduced": false,
+            "ret": 0.015767885432930964,
+            "signal_date": "2021-08-25"
+          },
+          {
+            "reduced": false,
+            "ret": -0.03127654323219138,
+            "signal_date": "2021-09-27"
+          },
+          {
+            "reduced": false,
+            "ret": 0.12322138451088306,
+            "signal_date": "2021-11-02"
+          },
+          {
+            "reduced": false,
+            "ret": 0.038442873419953325,
+            "signal_date": "2021-12-01"
+          },
+          {
+            "reduced": false,
+            "ret": -0.021492437865541662,
+            "signal_date": "2021-12-30"
+          },
+          {
+            "reduced": false,
+            "ret": 0.056199213553413,
+            "signal_date": "2022-02-07"
+          },
+          {
+            "reduced": false,
+            "ret": -0.048416845739602324,
+            "signal_date": "2022-03-08"
+          },
+          {
+            "reduced": true,
+            "ret": -0.10483418316451874,
+            "signal_date": "2022-04-08"
+          },
+          {
+            "reduced": true,
+            "ret": 0.04143357924208323,
+            "signal_date": "2022-05-12"
+          },
+          {
+            "reduced": true,
+            "ret": 0.13139014234381313,
+            "signal_date": "2022-06-13"
+          },
+          {
+            "reduced": true,
+            "ret": 0.06175005443542649,
+            "signal_date": "2022-07-12"
+          },
+          {
+            "reduced": false,
+            "ret": 0.0020988014173563075,
+            "signal_date": "2022-08-10"
+          },
+          {
+            "reduced": false,
+            "ret": -0.00026986886827171065,
+            "signal_date": "2022-09-08"
+          },
+          {
+            "reduced": true,
+            "ret": 0.06455799725282149,
+            "signal_date": "2022-10-17"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03303583084946329,
+            "signal_date": "2022-11-15"
+          },
+          {
+            "reduced": false,
+            "ret": -0.041096982693841634,
+            "signal_date": "2022-12-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.07475013739275072,
+            "signal_date": "2023-01-13"
+          },
+          {
+            "reduced": false,
+            "ret": -0.01230607120433186,
+            "signal_date": "2023-02-20"
+          },
+          {
+            "reduced": false,
+            "ret": -0.07510373326871635,
+            "signal_date": "2023-03-21"
+          },
+          {
+            "reduced": false,
+            "ret": 0.06469882849186155,
+            "signal_date": "2023-04-20"
+          },
+          {
+            "reduced": true,
+            "ret": -0.005242730387483657,
+            "signal_date": "2023-05-24"
+          },
+          {
+            "reduced": true,
+            "ret": 0.08486113901518419,
+            "signal_date": "2023-06-26"
+          },
+          {
+            "reduced": false,
+            "ret": -0.05798245008430507,
+            "signal_date": "2023-07-25"
+          },
+          {
+            "reduced": true,
+            "ret": 0.03702231237181912,
+            "signal_date": "2023-08-23"
+          },
+          {
+            "reduced": true,
+            "ret": -0.0034882084877689,
+            "signal_date": "2023-09-21"
+          },
+          {
+            "reduced": true,
+            "ret": 0.04158699270605226,
+            "signal_date": "2023-10-30"
+          },
+          {
+            "reduced": false,
+            "ret": -0.05787937288863857,
+            "signal_date": "2023-11-28"
+          },
+          {
+            "reduced": true,
+            "ret": 0.03385625713644572,
+            "signal_date": "2023-12-27"
+          },
+          {
+            "reduced": true,
+            "ret": -0.06555513820391903,
+            "signal_date": "2024-01-26"
+          }
+        ]
+      },
+      "verdict": "REJECT"
+    },
+    "O2_VOL": {
+      "gate": {
+        "validation_maxdd_improved": false,
+        "validation_sharpe_not_lower": false
+      },
+      "research": {
+        "base": {
+          "cagr": 0.21605004953851892,
+          "daily_maxdd": -0.5589735308767796,
+          "n_days": 2352,
+          "sharpe_daily_ann": 0.8342640307218963,
+          "twr_total": 5.618968664212873
+        },
+        "frac_periods_reduced": 0.13392857142857142,
+        "mean_ret_when_full": 0.016178865822237418,
+        "mean_ret_when_reduced": 0.056283818215754684,
+        "overlay": {
+          "cagr": 0.17874723978315665,
+          "daily_maxdd": -0.4699585103311278,
+          "n_days": 2352,
+          "sharpe_daily_ann": 0.8167197173550365,
+          "twr_total": 3.8984400577905207
+        },
+        "signals": [
+          {
+            "reduced": false,
+            "ret": 0.07701109687114241,
+            "signal_date": "2012-01-04"
+          },
+          {
+            "reduced": false,
+            "ret": -0.008542151838791805,
+            "signal_date": "2012-02-09"
+          },
+          {
+            "reduced": false,
+            "ret": -0.044388278516981475,
+            "signal_date": "2012-03-09"
+          },
+          {
+            "reduced": false,
+            "ret": -0.005466081181123778,
+            "signal_date": "2012-04-12"
+          },
+          {
+            "reduced": false,
+            "ret": -0.042708903343949126,
+            "signal_date": "2012-05-15"
+          },
+          {
+            "reduced": false,
+            "ret": -0.04660973012751736,
+            "signal_date": "2012-06-13"
+          },
+          {
+            "reduced": false,
+            "ret": 0.0044342408704820865,
+            "signal_date": "2012-07-13"
+          },
+          {
+            "reduced": false,
+            "ret": 0.09392078275754404,
+            "signal_date": "2012-08-13"
+          },
+          {
+            "reduced": false,
+            "ret": -0.04228546893557357,
+            "signal_date": "2012-09-11"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0006585166155926665,
+            "signal_date": "2012-10-17"
+          },
+          {
+            "reduced": false,
+            "ret": 0.011841635037192415,
+            "signal_date": "2012-11-15"
+          },
+          {
+            "reduced": false,
+            "ret": 0.11877335739088508,
+            "signal_date": "2012-12-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.051611871600188236,
+            "signal_date": "2013-01-17"
+          },
+          {
+            "reduced": false,
+            "ret": 0.04139644228278952,
+            "signal_date": "2013-02-22"
+          },
+          {
+            "reduced": false,
+            "ret": -0.009790789157788833,
+            "signal_date": "2013-03-25"
+          },
+          {
+            "reduced": false,
+            "ret": 0.05894522464302365,
+            "signal_date": "2013-04-25"
+          },
+          {
+            "reduced": false,
+            "ret": -0.1581446304948652,
+            "signal_date": "2013-05-29"
+          },
+          {
+            "reduced": false,
+            "ret": 0.06602718062527885,
+            "signal_date": "2013-07-02"
+          },
+          {
+            "reduced": false,
+            "ret": 0.18052965012568822,
+            "signal_date": "2013-07-31"
+          },
+          {
+            "reduced": false,
+            "ret": 0.07281440289205594,
+            "signal_date": "2013-08-29"
+          },
+          {
+            "reduced": false,
+            "ret": -0.016267075212158682,
+            "signal_date": "2013-10-08"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03413175971760228,
+            "signal_date": "2013-11-06"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0162773124118973,
+            "signal_date": "2013-12-05"
+          },
+          {
+            "reduced": false,
+            "ret": 0.07372177540044457,
+            "signal_date": "2014-01-06"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0034865812066121886,
+            "signal_date": "2014-02-11"
+          },
+          {
+            "reduced": false,
+            "ret": 0.05363113926487064,
+            "signal_date": "2014-03-12"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0397823855225865,
+            "signal_date": "2014-04-11"
+          },
+          {
+            "reduced": false,
+            "ret": 0.04046775770870882,
+            "signal_date": "2014-05-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.06734759520716746,
+            "signal_date": "2014-06-13"
+          },
+          {
+            "reduced": false,
+            "ret": 0.10475208199468604,
+            "signal_date": "2014-07-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.14463452185165301,
+            "signal_date": "2014-08-12"
+          },
+          {
+            "reduced": false,
+            "ret": 0.12307532824932561,
+            "signal_date": "2014-09-11"
+          },
+          {
+            "reduced": false,
+            "ret": 0.007241927870082258,
+            "signal_date": "2014-10-17"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03264269976441135,
+            "signal_date": "2014-11-17"
+          },
+          {
+            "reduced": false,
+            "ret": -0.08267032965953024,
+            "signal_date": "2014-12-16"
+          },
+          {
+            "reduced": true,
+            "ret": 0.13791383457612774,
+            "signal_date": "2015-01-16"
+          },
+          {
+            "reduced": false,
+            "ret": 0.2314587987363693,
+            "signal_date": "2015-02-16"
+          },
+          {
+            "reduced": false,
+            "ret": 0.17907568418715855,
+            "signal_date": "2015-03-24"
+          },
+          {
+            "reduced": false,
+            "ret": 0.2997004943183226,
+            "signal_date": "2015-04-23"
+          },
+          {
+            "reduced": true,
+            "ret": -0.08384597288959614,
+            "signal_date": "2015-05-25"
+          },
+          {
+            "reduced": true,
+            "ret": -0.23391912761989878,
+            "signal_date": "2015-06-24"
+          },
+          {
+            "reduced": true,
+            "ret": -0.0548945353304538,
+            "signal_date": "2015-07-23"
+          },
+          {
+            "reduced": true,
+            "ret": -0.12843710162823757,
+            "signal_date": "2015-08-21"
+          },
+          {
+            "reduced": true,
+            "ret": 0.2311952706803363,
+            "signal_date": "2015-09-23"
+          },
+          {
+            "reduced": true,
+            "ret": 0.2932422304679527,
+            "signal_date": "2015-10-29"
+          },
+          {
+            "reduced": true,
+            "ret": 0.21192080777846245,
+            "signal_date": "2015-11-27"
+          },
+          {
+            "reduced": false,
+            "ret": -0.29890260672491176,
+            "signal_date": "2015-12-28"
+          },
+          {
+            "reduced": true,
+            "ret": 0.1170663709317597,
+            "signal_date": "2016-01-27"
+          },
+          {
+            "reduced": true,
+            "ret": 0.1779169767750174,
+            "signal_date": "2016-03-03"
+          },
+          {
+            "reduced": true,
+            "ret": 0.10833305642002238,
+            "signal_date": "2016-04-01"
+          },
+          {
+            "reduced": false,
+            "ret": -0.05436327987087075,
+            "signal_date": "2016-05-04"
+          },
+          {
+            "reduced": false,
+            "ret": 0.031670589838955564,
+            "signal_date": "2016-06-02"
+          },
+          {
+            "reduced": false,
+            "ret": 0.003278291096591415,
+            "signal_date": "2016-07-05"
+          },
+          {
+            "reduced": false,
+            "ret": 0.11510556159789555,
+            "signal_date": "2016-08-03"
+          },
+          {
+            "reduced": false,
+            "ret": 0.014887939509364997,
+            "signal_date": "2016-09-01"
+          },
+          {
+            "reduced": false,
+            "ret": 0.08413327729194864,
+            "signal_date": "2016-10-11"
+          },
+          {
+            "reduced": false,
+            "ret": -0.007090854676986353,
+            "signal_date": "2016-11-09"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0044512961733015975,
+            "signal_date": "2016-12-08"
+          },
+          {
+            "reduced": false,
+            "ret": -0.03600134808080024,
+            "signal_date": "2017-01-09"
+          },
+          {
+            "reduced": true,
+            "ret": 0.017995529189246722,
+            "signal_date": "2017-02-14"
+          },
+          {
+            "reduced": false,
+            "ret": -0.048420609001633835,
+            "signal_date": "2017-03-15"
+          },
+          {
+            "reduced": false,
+            "ret": -0.11621188855985917,
+            "signal_date": "2017-04-17"
+          },
+          {
+            "reduced": false,
+            "ret": 0.020891561816168108,
+            "signal_date": "2017-05-17"
+          },
+          {
+            "reduced": false,
+            "ret": -0.09094839021135459,
+            "signal_date": "2017-06-19"
+          },
+          {
+            "reduced": false,
+            "ret": 0.04675375866358212,
+            "signal_date": "2017-07-18"
+          },
+          {
+            "reduced": false,
+            "ret": 0.038481631246891065,
+            "signal_date": "2017-08-16"
+          },
+          {
+            "reduced": false,
+            "ret": -0.012122177652495661,
+            "signal_date": "2017-09-14"
+          },
+          {
+            "reduced": false,
+            "ret": -0.06323404943720852,
+            "signal_date": "2017-10-20"
+          },
+          {
+            "reduced": false,
+            "ret": -0.02968583921968346,
+            "signal_date": "2017-11-20"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0008794622994696841,
+            "signal_date": "2017-12-19"
+          },
+          {
+            "reduced": false,
+            "ret": -0.09386061043169816,
+            "signal_date": "2018-01-18"
+          },
+          {
+            "reduced": true,
+            "ret": 0.051557934801201875,
+            "signal_date": "2018-02-23"
+          },
+          {
+            "reduced": false,
+            "ret": 0.013752051531117722,
+            "signal_date": "2018-03-26"
+          },
+          {
+            "reduced": false,
+            "ret": 0.06937881132445002,
+            "signal_date": "2018-04-26"
+          },
+          {
+            "reduced": false,
+            "ret": -0.1494848490943406,
+            "signal_date": "2018-05-29"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03813517085807725,
+            "signal_date": "2018-06-28"
+          },
+          {
+            "reduced": false,
+            "ret": -0.022152585722169993,
+            "signal_date": "2018-07-27"
+          },
+          {
+            "reduced": false,
+            "ret": -0.002100645720045253,
+            "signal_date": "2018-08-27"
+          },
+          {
+            "reduced": false,
+            "ret": -0.07033343081529429,
+            "signal_date": "2018-09-26"
+          },
+          {
+            "reduced": true,
+            "ret": -0.000984364530813094,
+            "signal_date": "2018-11-01"
+          },
+          {
+            "reduced": false,
+            "ret": -0.038262895307940956,
+            "signal_date": "2018-11-30"
+          },
+          {
+            "reduced": false,
+            "ret": 0.025524364952616736,
+            "signal_date": "2019-01-02"
+          },
+          {
+            "reduced": false,
+            "ret": 0.31982395341922637,
+            "signal_date": "2019-01-31"
+          },
+          {
+            "reduced": false,
+            "ret": 0.1687989889862029,
+            "signal_date": "2019-03-08"
+          },
+          {
+            "reduced": false,
+            "ret": -0.11448738681127374,
+            "signal_date": "2019-04-09"
+          },
+          {
+            "reduced": true,
+            "ret": -0.0008036363848074656,
+            "signal_date": "2019-05-13"
+          },
+          {
+            "reduced": false,
+            "ret": 0.018089855185884376,
+            "signal_date": "2019-06-12"
+          },
+          {
+            "reduced": false,
+            "ret": -0.059890804340846406,
+            "signal_date": "2019-07-11"
+          },
+          {
+            "reduced": false,
+            "ret": 0.10565128670336107,
+            "signal_date": "2019-08-09"
+          },
+          {
+            "reduced": false,
+            "ret": 0.013582015046889433,
+            "signal_date": "2019-09-09"
+          },
+          {
+            "reduced": false,
+            "ret": -0.07490725108670893,
+            "signal_date": "2019-10-16"
+          },
+          {
+            "reduced": false,
+            "ret": 0.04714957422188873,
+            "signal_date": "2019-11-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.060673101039651935,
+            "signal_date": "2019-12-13"
+          },
+          {
+            "reduced": false,
+            "ret": -0.005858107135704514,
+            "signal_date": "2020-01-14"
+          },
+          {
+            "reduced": false,
+            "ret": -0.039015485832870414,
+            "signal_date": "2020-02-20"
+          },
+          {
+            "reduced": false,
+            "ret": 0.07330849967768152,
+            "signal_date": "2020-03-20"
+          },
+          {
+            "reduced": false,
+            "ret": -0.014366496208183395,
+            "signal_date": "2020-04-21"
+          },
+          {
+            "reduced": false,
+            "ret": 0.01571749178745754,
+            "signal_date": "2020-05-25"
+          },
+          {
+            "reduced": false,
+            "ret": 0.08133699110580452,
+            "signal_date": "2020-06-23"
+          },
+          {
+            "reduced": false,
+            "ret": 0.10748513299287019,
+            "signal_date": "2020-07-24"
+          },
+          {
+            "reduced": false,
+            "ret": -0.014458677468882051,
+            "signal_date": "2020-08-24"
+          },
+          {
+            "reduced": false,
+            "ret": -0.05474735685328705,
+            "signal_date": "2020-09-22"
+          },
+          {
+            "reduced": false,
+            "ret": 0.041881589970486154,
+            "signal_date": "2020-10-29"
+          },
+          {
+            "reduced": false,
+            "ret": -0.09125453913164393,
+            "signal_date": "2020-11-27"
+          },
+          {
+            "reduced": false,
+            "ret": 0.05429737387662346,
+            "signal_date": "2020-12-28"
+          },
+          {
+            "reduced": false,
+            "ret": -0.011208667022024325,
+            "signal_date": "2021-01-27"
+          },
+          {
+            "reduced": false,
+            "ret": 0.04127359719588537,
+            "signal_date": "2021-03-04"
+          },
+          {
+            "reduced": false,
+            "ret": -0.012605313613565292,
+            "signal_date": "2021-04-02"
+          },
+          {
+            "reduced": false,
+            "ret": 0.008445278670211633,
+            "signal_date": "2021-05-07"
+          },
+          {
+            "reduced": false,
+            "ret": -0.10764798771499007,
+            "signal_date": "2021-06-07"
+          },
+          {
+            "reduced": false,
+            "ret": -0.023688866327846222,
+            "signal_date": "2021-07-07"
+          },
+          {
+            "reduced": false,
+            "ret": 0.02037678855503217,
+            "signal_date": "2021-08-05"
+          }
+        ]
+      },
+      "validation": {
+        "base": {
+          "cagr": 0.1362145497062628,
+          "daily_maxdd": -0.2437657727679683,
+          "n_days": 609,
+          "sharpe_daily_ann": 0.699788428853606,
+          "twr_total": 0.38037938523525483
+        },
+        "frac_periods_reduced": 0.06896551724137931,
+        "mean_ret_when_full": 0.0104480026180604,
+        "mean_ret_when_reduced": 0.04881639639774811,
+        "overlay": {
+          "cagr": 0.11565986356421076,
+          "daily_maxdd": -0.26369230824565004,
+          "n_days": 609,
+          "sharpe_daily_ann": 0.6318457951829795,
+          "twr_total": 0.3182096045896097
+        },
+        "signals": [
+          {
+            "reduced": false,
+            "ret": 0.015767885432930964,
+            "signal_date": "2021-08-25"
+          },
+          {
+            "reduced": false,
+            "ret": -0.03127654323219138,
+            "signal_date": "2021-09-27"
+          },
+          {
+            "reduced": false,
+            "ret": 0.12322138451088306,
+            "signal_date": "2021-11-02"
+          },
+          {
+            "reduced": false,
+            "ret": 0.038442873419953325,
+            "signal_date": "2021-12-01"
+          },
+          {
+            "reduced": false,
+            "ret": -0.021492437865541662,
+            "signal_date": "2021-12-30"
+          },
+          {
+            "reduced": true,
+            "ret": 0.056199213553413,
+            "signal_date": "2022-02-07"
+          },
+          {
+            "reduced": false,
+            "ret": -0.048416845739602324,
+            "signal_date": "2022-03-08"
+          },
+          {
+            "reduced": false,
+            "ret": -0.10483418316451874,
+            "signal_date": "2022-04-08"
+          },
+          {
+            "reduced": true,
+            "ret": 0.04143357924208323,
+            "signal_date": "2022-05-12"
+          },
+          {
+            "reduced": false,
+            "ret": 0.13139014234381313,
+            "signal_date": "2022-06-13"
+          },
+          {
+            "reduced": false,
+            "ret": 0.06175005443542649,
+            "signal_date": "2022-07-12"
+          },
+          {
+            "reduced": false,
+            "ret": 0.0020988014173563075,
+            "signal_date": "2022-08-10"
+          },
+          {
+            "reduced": false,
+            "ret": -0.00026986886827171065,
+            "signal_date": "2022-09-08"
+          },
+          {
+            "reduced": false,
+            "ret": 0.06455799725282149,
+            "signal_date": "2022-10-17"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03303583084946329,
+            "signal_date": "2022-11-15"
+          },
+          {
+            "reduced": false,
+            "ret": -0.041096982693841634,
+            "signal_date": "2022-12-14"
+          },
+          {
+            "reduced": false,
+            "ret": 0.07475013739275072,
+            "signal_date": "2023-01-13"
+          },
+          {
+            "reduced": false,
+            "ret": -0.01230607120433186,
+            "signal_date": "2023-02-20"
+          },
+          {
+            "reduced": false,
+            "ret": -0.07510373326871635,
+            "signal_date": "2023-03-21"
+          },
+          {
+            "reduced": false,
+            "ret": 0.06469882849186155,
+            "signal_date": "2023-04-20"
+          },
+          {
+            "reduced": false,
+            "ret": -0.005242730387483657,
+            "signal_date": "2023-05-24"
+          },
+          {
+            "reduced": false,
+            "ret": 0.08486113901518419,
+            "signal_date": "2023-06-26"
+          },
+          {
+            "reduced": false,
+            "ret": -0.05798245008430507,
+            "signal_date": "2023-07-25"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03702231237181912,
+            "signal_date": "2023-08-23"
+          },
+          {
+            "reduced": false,
+            "ret": -0.0034882084877689,
+            "signal_date": "2023-09-21"
+          },
+          {
+            "reduced": false,
+            "ret": 0.04158699270605226,
+            "signal_date": "2023-10-30"
+          },
+          {
+            "reduced": false,
+            "ret": -0.05787937288863857,
+            "signal_date": "2023-11-28"
+          },
+          {
+            "reduced": false,
+            "ret": 0.03385625713644572,
+            "signal_date": "2023-12-27"
+          },
+          {
+            "reduced": false,
+            "ret": -0.06555513820391903,
+            "signal_date": "2024-01-26"
+          }
+        ]
+      },
+      "verdict": "REJECT"
+    }
+  },
+  "sma": 200,
+  "vol_mult": 1.5,
+  "vol_threshold": 0.020224571473577292,
+  "vol_win": 20
+}

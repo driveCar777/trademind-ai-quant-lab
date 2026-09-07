@@ -174,15 +174,14 @@ def topup_lots(picks, opens, budget):
     return [(j, lots) for j, lots in picks]
 
 
-def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, hold=HOLD, topup=False, fee_reserve=0.0):
-    """V26.4: N = floor(exposure*equity/unit); equal money per name; lots = floor(unit/(100*open)); realistic carried exit.
-    topup=True (V26.6): after the first pass, fill the remaining exposure budget with extra lots on the same names."""
+def eq_money_select(pack, scores_t, elig_t, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, topup=False, fee_reserve=0.0):
+    """V26.4/V26.8 name+lot selection at next open. Does not require the hold to be finished."""
     dates = pack["dates"]
     elig_t = elig_t & board_mask(pack["symbols"], boards)
     c = np.asarray(pack["close"][t], dtype=float)
     elig_t = elig_t & np.isfinite(c) & (c <= max_price)
-    t0, t1 = t + 1, t + 1 + hold
-    if t1 >= len(dates):
+    t0 = t + 1
+    if t0 >= len(dates):
         return None
     idx = np.where(elig_t & np.isfinite(scores_t))[0]
     if idx.size < 200:
@@ -208,6 +207,65 @@ def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=
         opens = dict((j, float(pack["open"][t0, j])) for j, _ in picks)
         used = sum(l * LOT * opens[j] * (1.0 + SLIPPAGE) for j, l in picks)
         picks = topup_lots(picks, opens, exposure * equity - fee_reserve - used)
+    return {"t0": t0, "picks": picks, "skipped": skipped, "n": n}
+
+
+def eq_money_open_mark(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, topup=False, fee_reserve=0.0, mark_index=None):
+    """Actual next-open fills + close-to-close mark through mark_index. Unrealized: buy fee in, no sell yet."""
+    sel = eq_money_select(pack, scores_t, elig_t, t, equity, exposure, unit, boards, max_price, topup, fee_reserve)
+    if sel is None:
+        return None
+    dates, symbols = pack["dates"], pack["symbols"]
+    t0, last = sel["t0"], (len(dates) - 1 if mark_index is None else mark_index)
+    names, invested, buy_fees, n_fill = [], 0.0, 0.0, 0
+    for j, lots in sel["picks"]:
+        r0 = "FILL" if bool(xok[t0, j]) else exec_reason(pack, t0, j)
+        o0 = float(pack["open"][t0, j])
+        shares = lots * LOT
+        cost_in = shares * o0 * (1.0 + SLIPPAGE) if np.isfinite(o0) and o0 > 0 else 0.0
+        fee = _fee(cost_in) if cost_in else 0.0
+        row = {"symbol": symbols[j], "lots": lots, "status": r0, "open": round(o0, 4) if np.isfinite(o0) else None,
+               "cost_in": round(cost_in, 2), "buy_fee": round(fee, 2)}
+        if r0 == "FILL":
+            n_fill += 1
+            invested += cost_in
+            buy_fees += fee
+            mk = float(pack["close"][last, j])
+            row["mark_close"] = round(mk, 4) if np.isfinite(mk) else None
+            row["mark_date"] = dates[last]
+            row["unrealized"] = round(shares * mk - cost_in - fee, 2) if np.isfinite(mk) and mk > 0 else None
+        names.append(row)
+    cash = equity - invested - buy_fees
+    pos = 0.0
+    curve = []
+    for d in range(t0, last + 1):
+        pos = 0.0
+        for j, lots in sel["picks"]:
+            if not bool(xok[t0, j]):
+                continue
+            mk = float(pack["close"][d, j])
+            if np.isfinite(mk) and mk > 0:
+                pos += lots * LOT * mk
+        curve.append({"date": dates[d], "equity": round(cash + pos, 2), "cash": round(cash, 2), "positions": round(pos, 2)})
+    mtm = curve[-1]["equity"] if curve else equity
+    return {"signal_date": dates[t], "entry": dates[t0], "status": "OPEN", "n_target": sel["n"], "n_sel": len(sel["picks"]),
+            "n_fill": n_fill, "skipped_no_lot": sel["skipped"], "invested": round(invested, 2), "buy_fees": round(buy_fees, 2),
+            "cash": round(cash, 2), "mtm_equity": round(mtm, 2), "unrealized": round(mtm - equity, 2),
+            "ret_unrealized": (mtm / equity - 1.0) if equity else None, "mark_date": dates[last],
+            "cash_idle_frac": round(cash / equity, 4) if equity else None, "names": names, "curve": curve}
+
+
+def eq_money_period(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, unit=UNIT_YUAN, boards="MAIN", max_price=100.0, hold=HOLD, topup=False, fee_reserve=0.0):
+    """V26.4: N = floor(exposure*equity/unit); equal money per name; lots = floor(unit/(100*open)); realistic carried exit.
+    topup=True (V26.6): after the first pass, fill the remaining exposure budget with extra lots on the same names."""
+    dates = pack["dates"]
+    t1 = t + 1 + hold
+    if t1 >= len(dates):
+        return None
+    sel = eq_money_select(pack, scores_t, elig_t, t, equity, exposure, unit, boards, max_price, topup, fee_reserve)
+    if sel is None:
+        return None
+    t0, picks, skipped, n = sel["t0"], sel["picks"], sel["skipped"], sel["n"]
     pnl, pnl_v14, invested, n_fill, n_carry, n_stuck, names = 0.0, 0.0, 0.0, 0, 0, 0, []
     for j, lots in picks:
         r0 = "FILL" if bool(xok[t0, j]) else exec_reason(pack, t0, j)

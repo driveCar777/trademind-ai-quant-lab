@@ -1,0 +1,850 @@
+{
+  "credit_estimate_usd": 93.18,
+  "dataset_ranges": {
+    "DBEQ.BASIC": {
+      "end": "2026-09-04T00:00:00.000000000Z",
+      "schema": {
+        "definition": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "mbo": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "mbp-1": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "mbp-10": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "ohlcv-1d": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "ohlcv-1h": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "ohlcv-1m": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "ohlcv-1s": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "status": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "tbbo": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        },
+        "trades": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2023-03-28T00:00:00.000000000Z"
+        }
+      },
+      "start": "2023-03-28T00:00:00.000000000Z"
+    },
+    "EQUS.SUMMARY": {
+      "end": "2026-09-04T00:00:00.000000000Z",
+      "schema": {
+        "definition": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2024-07-01T00:00:00.000000000Z"
+        },
+        "ohlcv-1d": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2024-07-01T00:00:00.000000000Z"
+        },
+        "statistics": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2024-07-01T00:00:00.000000000Z"
+        }
+      },
+      "start": "2024-07-01T00:00:00.000000000Z"
+    },
+    "GLBX.MDP3": {
+      "end": "2026-09-03T22:14:16.465667000Z",
+      "schema": {
+        "bbo-1m": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "bbo-1s": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "definition": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "mbo": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2017-05-21T00:00:00.000000000Z"
+        },
+        "mbp-1": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "mbp-10": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "ohlcv-1d": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "ohlcv-1h": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "ohlcv-1m": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "ohlcv-1s": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "statistics": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "status": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "tbbo": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        },
+        "trades": {
+          "end": "2026-09-03T22:14:16.465667000Z",
+          "start": "2010-06-06T00:00:00.000000000Z"
+        }
+      },
+      "start": "2010-06-06T00:00:00.000000000Z"
+    },
+    "XNAS.ITCH": {
+      "end": "2026-09-04T00:00:00.000000000Z",
+      "schema": {
+        "bbo-1m": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "bbo-1s": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "definition": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "imbalance": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "mbo": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "mbp-1": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "mbp-10": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "ohlcv-1d": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "ohlcv-1h": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "ohlcv-1m": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "ohlcv-1s": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "statistics": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "status": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "tbbo": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        },
+        "trades": {
+          "end": "2026-09-04T00:00:00.000000000Z",
+          "start": "2018-05-01T00:00:00.000000000Z"
+        }
+      },
+      "start": "2018-05-01T00:00:00.000000000Z"
+    }
+  },
+  "downloaded": false,
+  "id": "DATABENTO_EVAL_QUOTE_V22",
+  "quotes": [
+    {
+      "billable_bytes": 266167104,
+      "cost_usd": 47.098612189293,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME30_OHLCV_2010",
+      "ok": true,
+      "purpose": "cross-sectional futures universe (30 roots) daily bars",
+      "schema": "ohlcv-1d",
+      "start": "2010-06-06",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "GC.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "CL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 46004826240,
+      "cost_usd": 42.845333218575,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME30_STATS_2010",
+      "ok": true,
+      "purpose": "official settle / OI / volume for curve + carry",
+      "schema": "statistics",
+      "start": "2010-06-06",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "GC.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "CL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 52011836240,
+      "cost_usd": 82.347655303776,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME30_DEF_2010",
+      "ok": true,
+      "purpose": "contract definitions (expiry) for roll/carry",
+      "schema": "definition",
+      "start": "2010-06-06",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "GC.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "CL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 214394376,
+      "cost_usd": 37.937361225486,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME28_OHLCV_2010_noGCCL",
+      "ok": true,
+      "purpose": "same minus already-owned GC/CL",
+      "schema": "ohlcv-1d",
+      "start": "2010-06-06",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 37929678320,
+      "cost_usd": 35.324765667319,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME28_STATS_2010_noGCCL",
+      "ok": true,
+      "purpose": "same minus owned",
+      "schema": "statistics",
+      "start": "2010-06-06",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 42453467160,
+      "cost_usd": 67.214382972568,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME28_DEF_2010_noGCCL",
+      "ok": true,
+      "purpose": "same minus owned",
+      "schema": "definition",
+      "start": "2010-06-06",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 205571744,
+      "cost_usd": 36.376185119152,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME30_OHLCV_2015",
+      "ok": true,
+      "purpose": "shorter window fallback",
+      "schema": "ohlcv-1d",
+      "start": "2015-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "GC.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "CL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 37142588000,
+      "cost_usd": 34.591730684042,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME30_STATS_2015",
+      "ok": true,
+      "purpose": "shorter window fallback",
+      "schema": "statistics",
+      "start": "2015-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "GC.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "CL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 39662577760,
+      "cost_usd": 62.795711860061,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME30_DEF_2015",
+      "ok": true,
+      "purpose": "shorter window fallback",
+      "schema": "definition",
+      "start": "2015-01-02",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "GC.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "CL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 5176749760,
+      "cost_usd": 8.19608065486,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "LO_1Y_MVDA_DEF",
+      "ok": true,
+      "purpose": "V8.4 preferred pack part 1",
+      "schema": "definition",
+      "start": "2025-08-29",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ]
+    },
+    {
+      "billable_bytes": 21450184,
+      "cost_usd": 3.795637711883,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "LO_1Y_MVDA_OHLCV",
+      "ok": true,
+      "purpose": "V8.4 preferred pack part 2",
+      "schema": "ohlcv-1d",
+      "start": "2025-08-29",
+      "stype_in": "parent",
+      "symbols": [
+        "LO.OPT"
+      ]
+    },
+    {
+      "billable_bytes": 7345418600,
+      "cost_usd": 11.629622075707,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "OG_1Y_MVDA_DEF",
+      "ok": true,
+      "purpose": "gold options",
+      "schema": "definition",
+      "start": "2025-08-29",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT"
+      ]
+    },
+    {
+      "billable_bytes": 19017600,
+      "cost_usd": 3.365188837051,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "OG_1Y_MVDA_OHLCV",
+      "ok": true,
+      "purpose": "gold options",
+      "schema": "ohlcv-1d",
+      "start": "2025-08-29",
+      "stype_in": "parent",
+      "symbols": [
+        "OG.OPT"
+      ]
+    },
+    {
+      "billable_bytes": 358570800,
+      "cost_usd": 10.018352419138,
+      "dataset": "EQUS.SUMMARY",
+      "end": "2026-08-29",
+      "id": "USEQ_SUMMARY_ALL",
+      "ok": true,
+      "purpose": "US equities consolidated daily, all names",
+      "schema": "ohlcv-1d",
+      "start": "2024-07-01",
+      "stype_in": "raw_symbol",
+      "symbols": [
+        "ALL_SYMBOLS"
+      ]
+    },
+    {
+      "billable_bytes": 980357560,
+      "cost_usd": 73.042330145836,
+      "dataset": "DBEQ.BASIC",
+      "end": "2026-08-29",
+      "id": "USEQ_DBEQ_BASIC_ALL",
+      "ok": true,
+      "purpose": "US equities basic daily, all names",
+      "schema": "ohlcv-1d",
+      "start": "2023-03-28",
+      "stype_in": "raw_symbol",
+      "symbols": [
+        "ALL_SYMBOLS"
+      ]
+    },
+    {
+      "billable_bytes": 1070254696,
+      "cost_usd": 29.902570769191,
+      "dataset": "XNAS.ITCH",
+      "end": "2026-08-29",
+      "id": "USEQ_XNAS_ITCH_ALL",
+      "ok": true,
+      "purpose": "Nasdaq daily, all names",
+      "schema": "ohlcv-1d",
+      "start": "2018-05-01",
+      "stype_in": "raw_symbol",
+      "symbols": [
+        "ALL_SYMBOLS"
+      ]
+    },
+    {
+      "billable_bytes": 8059376160,
+      "cost_usd": 120.094063282013,
+      "dataset": "XNAS.ITCH",
+      "end": "2026-08-29",
+      "id": "USEQ_XNAS_DEF",
+      "ok": true,
+      "purpose": "Nasdaq definitions (listing status)",
+      "schema": "definition",
+      "start": "2018-05-01",
+      "stype_in": "raw_symbol",
+      "symbols": [
+        "ALL_SYMBOLS"
+      ]
+    },
+    {
+      "billable_bytes": 1070254696,
+      "cost_usd": 29.902570769191,
+      "dataset": "XNAS.ITCH",
+      "end": "2026-08-29",
+      "id": "USEQ_XNAS_ITCH_2018",
+      "ok": true,
+      "purpose": "Nasdaq daily since 2018",
+      "schema": "ohlcv-1d",
+      "start": "2018-05-01",
+      "stype_in": "raw_symbol",
+      "symbols": [
+        "ALL_SYMBOLS"
+      ]
+    },
+    {
+      "billable_bytes": null,
+      "dataset": "EQUS.SUMMARY",
+      "end": "2026-08-29",
+      "error": "HTTP 422 metadata.get_cost b'{\"detail\":{\"case\":\"data_start_before_available_start\",\"message\":\"`start` in query (\\'2018-05-01 00:00:00+00:00\\') was before the available start of dataset EQUS.SUMMARY (\\'2024-07-01 00:00:00+00:00\\'). Try reque",
+      "id": "USEQ_SUMMARY_2018",
+      "ok": false,
+      "purpose": "consolidated daily since 2018",
+      "schema": "ohlcv-1d",
+      "start": "2018-05-01",
+      "stype_in": "raw_symbol",
+      "symbols": [
+        "ALL_SYMBOLS"
+      ]
+    },
+    {
+      "billable_bytes": 2341679164672,
+      "cost_usd": 34893.738697052,
+      "dataset": "EQUS.SUMMARY",
+      "end": "2026-08-29",
+      "id": "USEQ_SUMMARY_STATS",
+      "ok": true,
+      "purpose": "consolidated stats",
+      "schema": "statistics",
+      "start": "2024-07-01",
+      "stype_in": "raw_symbol",
+      "symbols": [
+        "ALL_SYMBOLS"
+      ]
+    },
+    {
+      "billable_bytes": 247099048,
+      "cost_usd": 43.724495097995,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME30_OHLCV_2012",
+      "ok": true,
+      "purpose": "mid window",
+      "schema": "ohlcv-1d",
+      "start": "2012-01-03",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "GC.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "CL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    },
+    {
+      "billable_bytes": 42382964960,
+      "cost_usd": 39.472212046385,
+      "dataset": "GLBX.MDP3",
+      "end": "2026-08-29",
+      "id": "CME30_STATS_2012",
+      "ok": true,
+      "purpose": "mid window",
+      "schema": "statistics",
+      "start": "2012-01-03",
+      "stype_in": "parent",
+      "symbols": [
+        "ES.FUT",
+        "NQ.FUT",
+        "YM.FUT",
+        "RTY.FUT",
+        "ZN.FUT",
+        "ZB.FUT",
+        "ZF.FUT",
+        "ZT.FUT",
+        "6E.FUT",
+        "6J.FUT",
+        "6B.FUT",
+        "6A.FUT",
+        "6C.FUT",
+        "6S.FUT",
+        "GC.FUT",
+        "SI.FUT",
+        "HG.FUT",
+        "PL.FUT",
+        "CL.FUT",
+        "NG.FUT",
+        "HO.FUT",
+        "RB.FUT",
+        "ZC.FUT",
+        "ZS.FUT",
+        "ZW.FUT",
+        "ZM.FUT",
+        "ZL.FUT",
+        "LE.FUT",
+        "HE.FUT",
+        "GF.FUT"
+      ]
+    }
+  ],
+  "this_run_usd": 0,
+  "utc": "2026-09-04T06:16:20Z"
+}

@@ -1,0 +1,179 @@
+{
+  "cagr_only_from": "CANONICAL_CAPITAL_ACCOUNT",
+  "cagr_target_not_a_gate": 0.1,
+  "contract_hash": "e9898050fe498e8ad1a4138286fd3b12c41dcf7ec17eb5bec41c65d234688e63",
+  "cost_model": {
+    "commission": 0.00025,
+    "id": "A_SHARE_STRATEGY_COST_MODEL_V1",
+    "optimize": false,
+    "slippage": 0.001,
+    "stamp_before_20230828": 0.001,
+    "stamp_from_20230828": 0.0005,
+    "stamp_side": "SELL_ONLY",
+    "transfer": 1e-05
+  },
+  "dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "denied_window": [
+    "2024-03-01",
+    "2026-08-28"
+  ],
+  "do_not_flip_sign": true,
+  "exclude_st": true,
+  "execution_price": "RAW_OPEN_T1",
+  "fdr_q": 0.05,
+  "final_oos": "DENIED",
+  "h11_h12": "KEEP_LOW_PRIORITY",
+  "hold_days": 20,
+  "hypotheses": [
+    {
+      "family": "USD_STRENGTH_DEFENSIVE",
+      "hold_days": 20,
+      "id": "M1_USD_DEF_60",
+      "lookback": 60,
+      "macro": "USD_FROM_EURUSD",
+      "mechanism": "After USD strengthens, long low USD-beta A-shares. score = -beta_usd_60 * r_usd. r_usd = -r_EURUSD.",
+      "not": "V08_GOLD_OIL_FROM_USD_OR_H11_LOW_VOL",
+      "signal": "NEG_BETA_TIMES_SHOCK"
+    },
+    {
+      "family": "USD_STRENGTH_DEFENSIVE",
+      "hold_days": 20,
+      "id": "M2_USD_DEF_120",
+      "lookback": 120,
+      "macro": "USD_FROM_EURUSD",
+      "mechanism": "Same USD-strength defensive, 120-day beta.",
+      "not": "V08_GOLD_OIL_FROM_USD_OR_H11_LOW_VOL",
+      "signal": "NEG_BETA_TIMES_SHOCK"
+    },
+    {
+      "family": "GLOBAL_EQUITY_CONTINUATION",
+      "hold_days": 20,
+      "id": "M3_US_CONT_60",
+      "lookback": 60,
+      "macro": "US500",
+      "mechanism": "After US500 rises, long high US500-beta A-shares. score = beta_us500_60 * r_us500. Risk-on spillover, not A-share residual.",
+      "not": "V08_OR_PRICE_ONLY_MOMENTUM",
+      "signal": "BETA_TIMES_SHOCK"
+    },
+    {
+      "family": "GLOBAL_EQUITY_CONTINUATION",
+      "hold_days": 20,
+      "id": "M4_US_CONT_120",
+      "lookback": 120,
+      "macro": "US500",
+      "mechanism": "Same US500 continuation, 120-day beta.",
+      "not": "V08_OR_PRICE_ONLY_MOMENTUM",
+      "signal": "BETA_TIMES_SHOCK"
+    },
+    {
+      "family": "GOLD_VOL_DEFENSIVE",
+      "hold_days": 20,
+      "id": "M5_GVZ_DEF_60",
+      "lookback": 60,
+      "macro": "GVZ",
+      "mechanism": "After GVZ rises, long low GVZ-beta A-shares. score = -beta_gvz_60 * dlog_gvz. Gold-vol risk-off, not realized-vol rank.",
+      "not": "H11_REALIZED_VOL_OR_INDEX_IV_ON_GOLD",
+      "signal": "NEG_BETA_TIMES_SHOCK"
+    },
+    {
+      "family": "GOLD_VOL_DEFENSIVE",
+      "hold_days": 20,
+      "id": "M6_GVZ_DEF_120",
+      "lookback": 120,
+      "macro": "GVZ",
+      "mechanism": "Same GVZ defensive, 120-day beta.",
+      "not": "H11_REALIZED_VOL_OR_INDEX_IV_ON_GOLD",
+      "signal": "NEG_BETA_TIMES_SHOCK"
+    }
+  ],
+  "id": "A_SHARE_MACRO_INFORMATION_V17",
+  "keep_h11_h12": true,
+  "level1": [
+    "pre_registered",
+    "research_MEAN_FORWARD_RETURN_net > 0",
+    "validation_MEAN_FORWARD_RETURN_net > 0",
+    "BH_FDR_q_0.05",
+    ">=2 evidence (excess_vs_B0 and rank_ic) on research AND validation",
+    "PIT_clean",
+    "research_capital_total > 0",
+    "validation_capital_total > 0"
+  ],
+  "live_api": false,
+  "long_only": true,
+  "lookbacks_allowed": [
+    60,
+    120
+  ],
+  "macro_datasets": {
+    "EURUSD": {
+      "id": "tm-market-EURUSD-D1-20260828-000001",
+      "role": "USD_PROXY_NEGATED_RETURN",
+      "sha256": "4b1c1ae8b3d633bf4b133840ccdf39232a69277501c462ceb8413dd2eebd6ffb"
+    },
+    "GVZ": {
+      "id": "tm-alt-CBOE-GVZ-D1-20260828-000001",
+      "role": "GOLD_VOL_SHOCK",
+      "sha256": "7e77dab46fddb7898f73807e95faf6980e9de926fa77e21b257151d8d6918e3d"
+    },
+    "US500": {
+      "coverage_note": "starts_2011-01-17",
+      "id": "tm-market-US500-D1-20260828-000001",
+      "role": "GLOBAL_EQUITY_SHOCK",
+      "sha256": "5d829d450904e512021301a8b6538e2b8ff8c69c07013d8edd3ff39c7575e8e4"
+    }
+  },
+  "min_cross_section": 100,
+  "min_history": "lookback + 20",
+  "ml": false,
+  "new_h13": false,
+  "new_purchase": false,
+  "no_forward_fill_prices": true,
+  "not": [
+    "V08_USD_PREDICTS_GOLD_OIL",
+    "H11_H12_RETUNE",
+    "V15_RESIDUAL",
+    "V16_FINANCIAL_INDUSTRY",
+    "OPPOSITE_SIGN_TWIN"
+  ],
+  "pit_rule": "MACRO_CALENDAR_DATE_STRICTLY_BEFORE_ASHARE_SIGNAL_DATE",
+  "portfolio": "QUINTILE_TOP_20",
+  "predictive_formation": "DAILY_OVERLAPPING_H_DAY",
+  "predictive_is_not_cagr": true,
+  "predictive_metric_name": "MEAN_FORWARD_RETURN",
+  "preregistered_run_all_six": true,
+  "price_only_reopen": false,
+  "quantile": 0.2,
+  "rebalance": "NON_OVERLAPPING_EVERY_HOLD",
+  "reopen_h11_h12": false,
+  "reopen_v16": false,
+  "representation_risk": "No frozen QFQ. DIVIDEND_EXCLUSION.",
+  "research": [
+    "2010-01-04",
+    "2021-08-24"
+  ],
+  "return_representation": "RAW_CLOSE_TO_CLOSE",
+  "same_cluster_corr": 0.9,
+  "seed": 20260902,
+  "signal_price": "RAW_CLOSE_T",
+  "split": "70/15/15_TIME",
+  "unexecutable": [
+    "LIMIT_LOCK",
+    "SUSPENDED",
+    "DELISTED",
+    "ZERO_VOLUME",
+    "MISSING_OPEN"
+  ],
+  "unfilled": "WEIGHT_STAYS_CASH_ZERO_PNL_ZERO_FEE",
+  "unused_reason": "2018-12 start would silently shrink the locked 2010 research window.",
+  "unused_short_macros": [
+    "DXY",
+    "UST10",
+    "GOLD",
+    "OIL"
+  ],
+  "validation": [
+    "2021-08-25",
+    "2024-02-29"
+  ]
+}

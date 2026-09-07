@@ -1,0 +1,13 @@
+{
+  "csv": "D:\\AGXXAIVER-4-WINDOWS-1-STOCK\\data\\market\\cn_a_share\\dividend\\normalized\\DIVIDEND_EVENTS.csv",
+  "csv_sha256": "368b75495e68f6ad3bdd1901dc913460891fdd05620fddf05d749ac1da8cb1a0",
+  "download_complete": true,
+  "knowledge_time": "dividPlanAnnounceDate else dividPreNoticeDate",
+  "n_cash": 24029,
+  "n_files": 5549,
+  "n_rows": 24803,
+  "n_stock": 5904,
+  "n_symbols": 2998,
+  "n_with_announce": 24803,
+  "operate_date_not_knowledge": true
+}

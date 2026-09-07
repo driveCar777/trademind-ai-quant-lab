@@ -1,0 +1,22 @@
+{
+  "CANDIDATE": 2,
+  "EXISTING_CANDIDATE": 2,
+  "LEVEL": 1,
+  "LIVE": 0,
+  "NEW_CANDIDATE": 0,
+  "NEW_INDEPENDENT_CANDIDATE": 0,
+  "NEXT": "DIVIDEND_EVENT_NO_CANDIDATE",
+  "OVERALL": "A_SHARE_DIVIDEND_EVENT_V1_NO_CANDIDATE",
+  "PAPER": 0,
+  "PORTFOLIO": 0,
+  "STOP": "STOP_B_FAMILY",
+  "STRATEGY": 2,
+  "candidate_ids": [],
+  "family_ran": true,
+  "final_oos": "DENIED",
+  "h11_h12": "KEEP_LOW_PRIORITY",
+  "independent_ids": [],
+  "long_validation": false,
+  "new_purchase": false,
+  "same_cluster_ids": []
+}

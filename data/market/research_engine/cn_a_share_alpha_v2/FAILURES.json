@@ -1,0 +1,105 @@
+{
+  "n": 9,
+  "rows": [
+    {
+      "family": "CROSS_SECTIONAL_RESIDUAL",
+      "id": "H21_RESID_REV_20_H20",
+      "mechanism": "Idiosyncratic overreaction after removing the day's EW market. Long lowest residual sum.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "CROSS_SECTIONAL_RESIDUAL",
+      "id": "H22_RESID_REV_60_H20",
+      "mechanism": "Same residual reversal, 60-day residual sum.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "CROSS_SECTIONAL_RESIDUAL",
+      "id": "H23_RESID_REV_20_H5",
+      "mechanism": "Same residual reversal, 5-day hold. Second registered hold, not a search.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "research_mean_forward_net",
+        "validation_mean_forward_net",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "MARKET_DISPERSION_STATE",
+      "id": "H24_DISP_HIGH_RESID_20_H20",
+      "mechanism": "Trade residual-reversal 20 only when CS residual std >= trailing 60d median. Primary state = dispersion level.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "MARKET_DISPERSION_STATE",
+      "id": "H25_DISP_UP_RESID_20_H20",
+      "mechanism": "Trade residual-reversal 20 only when residual std is higher than 20 days ago. Dispersion rising.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "MARKET_DISPERSION_STATE",
+      "id": "H26_DISP_HIGH_LOW_BREADTH_20_H20",
+      "mechanism": "Primary HIGH dispersion AND auxiliary LOW breadth (pct-up <= 60d median), then residual-reversal 20.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "PRICE_ACTIVITY_DISAGREEMENT",
+      "id": "H27_CAPITULATION_20_H20",
+      "mechanism": "Price down + activity up. Score = CS rank(-ret_sum_20) + CS rank(amount_sum_20). Long top quintile.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_excess",
+        "research_rank_ic",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "PRICE_ACTIVITY_DISAGREEMENT",
+      "id": "H28_CAPITULATION_60_H20",
+      "mechanism": "Same capitulation disagreement, 60-day window.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_excess",
+        "validation_rank_ic",
+        "fdr",
+        "research_capital",
+        "validation_capital"
+      ]
+    },
+    {
+      "family": "PRICE_ACTIVITY_DISAGREEMENT",
+      "id": "H29_PX_AMT_CORR_20_H20",
+      "mechanism": "Long names with the most negative 20-day corr(daily ret, dlog amount). Disagreement, not level.",
+      "reopen": "New contract only. Do not flip sign. Do not retune lookback/hold/quantile.",
+      "why_failed": [
+        "validation_mean_forward_net",
+        "validation_capital"
+      ]
+    }
+  ]
+}

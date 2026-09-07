@@ -1,0 +1,49 @@
+{
+  "id": "POST_V21_STRATEGY_BIND",
+  "read_only": true,
+  "h11_official": {
+    "n": 172,
+    "end": 834202.8900906141,
+    "total": -0.1657971099093859,
+    "cagr": -0.012671769389827725,
+    "maxdd": -0.638378554115192
+  },
+  "h12_official": {
+    "n": 172,
+    "end": 883505.871380174,
+    "total": -0.116494128619826,
+    "cagr": -0.00867536987586126,
+    "maxdd": -0.6349782745407139
+  },
+  "h11_val_only": {
+    "n": 30,
+    "end": 942499.4893244621,
+    "total": -0.05750051067553785,
+    "cagr": -0.023602362694426393,
+    "maxdd": -0.15604065108517584
+  },
+  "h11_h12_blend_50_50_DIAGNOSTIC_NOT_PORTFOLIO": {
+    "n": 172,
+    "end": 859173.9368171678,
+    "total": -0.1408260631828322,
+    "cagr": -0.010621014608383939,
+    "maxdd": -0.6365803170468036
+  },
+  "blend_vs_h11_gain_total": 0.024971046726553703,
+  "h11_yuan": {
+    "gross": 337127.53667615855,
+    "fees_incl_stamp": 215500.51011203218,
+    "slippage": 287424.1364735272,
+    "net": -165797.10990940078,
+    "cost_over_gross": 1.4917934368222905
+  },
+  "h11_zero_cost_counterfactual_DIAGNOSTIC": {
+    "n": 172,
+    "end": 1502830.710026629,
+    "total": 0.5028307100266289,
+    "cagr": 0.029071183567027647,
+    "maxdd": -0.5841898526212447
+  },
+  "cagr_target": 0.1,
+  "note": "Zero-cost path is a diagnostic ceiling. Even with no cost the book compounds ~2%/yr; the 10% gap is information, not fees. Blend adds nothing: corr 0.996."
+}

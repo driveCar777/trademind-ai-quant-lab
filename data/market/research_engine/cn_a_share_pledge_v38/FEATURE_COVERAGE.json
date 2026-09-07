@@ -1,0 +1,58 @@
+{
+  "features": {
+    "PL_NEG_D20": {
+      "last_session": 0.0,
+      "mean_over_research": 0.18874958164920322
+    },
+    "PL_NEG_D60": {
+      "last_session": 0.0,
+      "mean_over_research": 0.18628324279793015
+    },
+    "PL_NEG_DEALS": {
+      "last_session": 0.0,
+      "mean_over_research": 0.19013979352779137
+    },
+    "PL_NEG_MCAP": {
+      "last_session": 0.0,
+      "mean_over_research": 0.18290039389336563
+    },
+    "PL_NEG_RATIO": {
+      "last_session": 0.0,
+      "mean_over_research": 0.19013979352779137
+    },
+    "PL_STRESS": {
+      "last_session": 0.0,
+      "mean_over_research": 0.19013979352779137
+    }
+  },
+  "first_live_session": "2014-03-12",
+  "live_sessions": 2456,
+  "pit": {
+    "N": 5549,
+    "T": 8714,
+    "absent_means_zero": true,
+    "arrays": [
+      "PL_RATIO_ST",
+      "PL_DEALS_ST",
+      "PL_MCAP_ST",
+      "PL_LIVE"
+    ],
+    "content_hash": "ba293d7d9ab34f3061362c13a7e932b52aab3e640c128a8ce200d2bd3419f39d",
+    "dataset_id": "tm-ashare-PLEDGE-W1-20260907-000001",
+    "first_live_session": "2014-03-12",
+    "pit_rule": "snapshot visible first session after TRADE_DATE + 2 sessions; carried <= 30 sessions",
+    "snap_lag_sessions": 3,
+    "snapshot_cutoff": "2024-02-29",
+    "stale_sessions": 30,
+    "stats": {
+      "dropped_denied": 102039,
+      "no_symbol": 203,
+      "rows": 1434193,
+      "snapshots": 508,
+      "used": 1331951
+    },
+    "tables_used": [
+      "RPT_CSDC_LIST"
+    ]
+  }
+}

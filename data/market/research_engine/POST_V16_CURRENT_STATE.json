@@ -1,0 +1,21 @@
+{
+  "CANDIDATE": 2,
+  "LEVEL": 1,
+  "LIVE": 0,
+  "NEW_INDEPENDENT_CANDIDATE": 0,
+  "OVERALL": "A_SHARE_INFORMATION_ALPHA_NO_CANDIDATE",
+  "PAPER": 0,
+  "PORTFOLIO": 0,
+  "STOP": "STOP_B",
+  "STRATEGY": 2,
+  "decision_pointer": "docs/research_engine/POST_V16_DECISION.md",
+  "exhausted": ["V13_PRICE", "V15_PRICE_V2", "V16_FIN_IND", "V17_MACRO", "V18_ALTINFO", "V19_INDMACRO"],
+  "data_blocked": ["EVENT", "NEWS", "DIVIDEND_PANEL", "QUARTERLY_BALANCE", "INDEX_ASOF"],
+  "payment_required": ["OPTIONS_SURFACE"],
+  "final_oos": "DENIED",
+  "h11_h12": "KEEP_LOW_PRIORITY",
+  "new_purchase": false,
+  "unified_fdr_m": 18,
+  "unified_fdr_discoveries": ["IM6_GVZ_IND_DEF_120"],
+  "xavier": false
+}

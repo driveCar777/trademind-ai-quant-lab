@@ -1,0 +1,1757 @@
+{
+  "chg": 20,
+  "components": [
+    "MARGIN_Z",
+    "TURN_Z",
+    "LIMITUP_Z",
+    "NEWACCT_Z"
+  ],
+  "contract": "V38_O3_SENTIMENT_CONTRACT.md",
+  "denied_window_read": false,
+  "reduced_exposure": 0.5,
+  "rules": {
+    "O3_SENT": {
+      "gate": {
+        "validation_maxdd_improved": false,
+        "validation_sharpe_not_lower": true
+      },
+      "research": {
+        "base": {
+          "cagr": 0.21605004953851892,
+          "daily_maxdd": -0.5589735308767796,
+          "n_days": 2352,
+          "sharpe_daily_ann": 0.8342640307218963,
+          "twr_total": 5.618968664212873
+        },
+        "frac_periods_reduced": 0.14285714285714285,
+        "mean_ret_when_full": 0.02241358712774258,
+        "mean_ret_when_reduced": 0.016368930858128898,
+        "overlay": {
+          "cagr": 0.21178169992705476,
+          "daily_maxdd": -0.4559001189991344,
+          "n_days": 2352,
+          "sharpe_daily_ann": 0.882991845146494,
+          "twr_total": 5.397879553832084
+        },
+        "signals": [
+          {
+            "parts": {
+              "LIMITUP_Z": -1.35,
+              "MARGIN_Z": -1.18,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.57
+            },
+            "reduced": false,
+            "ret": 0.07701109687114241,
+            "signal_date": "2012-01-04",
+            "z": -1.365
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 2.81,
+              "MARGIN_Z": -1.36,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.47
+            },
+            "reduced": false,
+            "ret": -0.008542151838791805,
+            "signal_date": "2012-02-09",
+            "z": 0.325
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.43,
+              "MARGIN_Z": 1.08,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.26
+            },
+            "reduced": false,
+            "ret": -0.044388278516981475,
+            "signal_date": "2012-03-09",
+            "z": 0.925
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.28,
+              "MARGIN_Z": 0.23,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.68
+            },
+            "reduced": false,
+            "ret": -0.005466081181123778,
+            "signal_date": "2012-04-12",
+            "z": 0.729
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.52,
+              "MARGIN_Z": 0.65,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.99
+            },
+            "reduced": true,
+            "ret": -0.042708903343949126,
+            "signal_date": "2012-05-15",
+            "z": 1.055
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.31,
+              "MARGIN_Z": 0.53,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.44
+            },
+            "reduced": false,
+            "ret": -0.04660973012751736,
+            "signal_date": "2012-06-13",
+            "z": -0.074
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.37,
+              "MARGIN_Z": -0.05,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.89
+            },
+            "reduced": false,
+            "ret": 0.0044342408704820865,
+            "signal_date": "2012-07-13",
+            "z": -0.437
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.31,
+              "MARGIN_Z": -0.43,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.04
+            },
+            "reduced": false,
+            "ret": 0.09392078275754404,
+            "signal_date": "2012-08-13",
+            "z": -0.054
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.21,
+              "MARGIN_Z": -0.1,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.51
+            },
+            "reduced": false,
+            "ret": -0.04228546893557357,
+            "signal_date": "2012-09-11",
+            "z": 0.201
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.02,
+              "MARGIN_Z": -0.3,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.69
+            },
+            "reduced": false,
+            "ret": -0.0006585166155926665,
+            "signal_date": "2012-10-17",
+            "z": -0.332
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.0,
+              "MARGIN_Z": -0.52,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.09
+            },
+            "reduced": false,
+            "ret": 0.011841635037192415,
+            "signal_date": "2012-11-15",
+            "z": -0.867
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.54,
+              "MARGIN_Z": -0.95,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.84
+            },
+            "reduced": false,
+            "ret": 0.11877335739088508,
+            "signal_date": "2012-12-14",
+            "z": -0.42
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 2.41,
+              "MARGIN_Z": 3.07,
+              "NEWACCT_Z": null,
+              "TURN_Z": 2.11
+            },
+            "reduced": true,
+            "ret": 0.051611871600188236,
+            "signal_date": "2013-01-17",
+            "z": 2.531
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.18,
+              "MARGIN_Z": 2.12,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.28
+            },
+            "reduced": true,
+            "ret": 0.04139644228278952,
+            "signal_date": "2013-02-22",
+            "z": 1.194
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.49,
+              "MARGIN_Z": 1.04,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.93
+            },
+            "reduced": false,
+            "ret": -0.009790789157788833,
+            "signal_date": "2013-03-25",
+            "z": 0.493
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.14,
+              "MARGIN_Z": 0.11,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.18
+            },
+            "reduced": false,
+            "ret": 0.05894522464302365,
+            "signal_date": "2013-04-25",
+            "z": -0.404
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.5,
+              "MARGIN_Z": 1.03,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.53
+            },
+            "reduced": true,
+            "ret": -0.1581446304948652,
+            "signal_date": "2013-05-29",
+            "z": 1.352
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.01,
+              "MARGIN_Z": -1.31,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.3
+            },
+            "reduced": false,
+            "ret": 0.06602718062527885,
+            "signal_date": "2013-07-02",
+            "z": -0.333
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 2.39,
+              "MARGIN_Z": -0.62,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.34
+            },
+            "reduced": false,
+            "ret": 0.18052965012568822,
+            "signal_date": "2013-07-31",
+            "z": 0.702
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.59,
+              "MARGIN_Z": -0.26,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.93
+            },
+            "reduced": false,
+            "ret": 0.07281440289205594,
+            "signal_date": "2013-08-29",
+            "z": 0.753
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.87,
+              "MARGIN_Z": 0.22,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.87
+            },
+            "reduced": false,
+            "ret": -0.016267075212158682,
+            "signal_date": "2013-10-08",
+            "z": 0.988
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.73,
+              "MARGIN_Z": -0.42,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.43
+            },
+            "reduced": false,
+            "ret": 0.03413175971760228,
+            "signal_date": "2013-11-06",
+            "z": 0.248
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.6,
+              "MARGIN_Z": -0.67,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.19
+            },
+            "reduced": false,
+            "ret": -0.0162773124118973,
+            "signal_date": "2013-12-05",
+            "z": -0.088
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.81,
+              "MARGIN_Z": -0.94,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.74
+            },
+            "reduced": false,
+            "ret": 0.07372177540044457,
+            "signal_date": "2014-01-06",
+            "z": -1.165
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.71,
+              "MARGIN_Z": -0.92,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.29
+            },
+            "reduced": false,
+            "ret": -0.0034865812066121886,
+            "signal_date": "2014-02-11",
+            "z": -0.496
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.67,
+              "MARGIN_Z": -0.52,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.05
+            },
+            "reduced": false,
+            "ret": 0.05363113926487064,
+            "signal_date": "2014-03-12",
+            "z": 0.402
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.39,
+              "MARGIN_Z": -0.8,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.58
+            },
+            "reduced": false,
+            "ret": -0.0397823855225865,
+            "signal_date": "2014-04-11",
+            "z": -0.592
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.52,
+              "MARGIN_Z": -1.27,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.7
+            },
+            "reduced": false,
+            "ret": 0.04046775770870882,
+            "signal_date": "2014-05-14",
+            "z": -1.495
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.42,
+              "MARGIN_Z": -1.19,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.78
+            },
+            "reduced": false,
+            "ret": 0.06734759520716746,
+            "signal_date": "2014-06-13",
+            "z": -1.465
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.09,
+              "MARGIN_Z": 0.3,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.18
+            },
+            "reduced": false,
+            "ret": 0.10475208199468604,
+            "signal_date": "2014-07-14",
+            "z": 0.012
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.57,
+              "MARGIN_Z": 0.81,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.23
+            },
+            "reduced": false,
+            "ret": 0.14463452185165301,
+            "signal_date": "2014-08-12",
+            "z": 0.488
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.81,
+              "MARGIN_Z": 1.82,
+              "NEWACCT_Z": null,
+              "TURN_Z": 2.34
+            },
+            "reduced": true,
+            "ret": 0.12307532824932561,
+            "signal_date": "2014-09-11",
+            "z": 1.658
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.68,
+              "MARGIN_Z": 2.09,
+              "NEWACCT_Z": null,
+              "TURN_Z": 2.4
+            },
+            "reduced": true,
+            "ret": 0.007241927870082258,
+            "signal_date": "2014-10-17",
+            "z": 1.725
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.63,
+              "MARGIN_Z": 0.61,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.18
+            },
+            "reduced": false,
+            "ret": 0.03264269976441135,
+            "signal_date": "2014-11-17",
+            "z": 0.389
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 3.76,
+              "MARGIN_Z": 2.55,
+              "NEWACCT_Z": null,
+              "TURN_Z": 2.62
+            },
+            "reduced": true,
+            "ret": -0.08267032965953024,
+            "signal_date": "2014-12-16",
+            "z": 2.976
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.74,
+              "MARGIN_Z": 0.75,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.62
+            },
+            "reduced": false,
+            "ret": 0.13791383457612774,
+            "signal_date": "2015-01-16",
+            "z": 0.7
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.08,
+              "MARGIN_Z": -0.86,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.46
+            },
+            "reduced": false,
+            "ret": 0.2314587987363693,
+            "signal_date": "2015-02-16",
+            "z": 0.229
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 3.72,
+              "MARGIN_Z": 1.51,
+              "NEWACCT_Z": null,
+              "TURN_Z": 2.36
+            },
+            "reduced": true,
+            "ret": 0.17907568418715855,
+            "signal_date": "2015-03-24",
+            "z": 2.527
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 3.42,
+              "MARGIN_Z": 1.24,
+              "NEWACCT_Z": null,
+              "TURN_Z": 2.87
+            },
+            "reduced": true,
+            "ret": 0.2997004943183226,
+            "signal_date": "2015-04-23",
+            "z": 2.51
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 3.64,
+              "MARGIN_Z": -0.02,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.91
+            },
+            "reduced": true,
+            "ret": -0.08384597288959614,
+            "signal_date": "2015-05-25",
+            "z": 1.844
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.93,
+              "MARGIN_Z": -0.45,
+              "NEWACCT_Z": null,
+              "TURN_Z": 2.0
+            },
+            "reduced": true,
+            "ret": -0.23391912761989878,
+            "signal_date": "2015-06-24",
+            "z": 1.162
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 4.6,
+              "MARGIN_Z": -3.86,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.68
+            },
+            "reduced": false,
+            "ret": -0.0548945353304538,
+            "signal_date": "2015-07-23",
+            "z": 0.806
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.4,
+              "MARGIN_Z": -0.96,
+              "NEWACCT_Z": null,
+              "TURN_Z": 1.12
+            },
+            "reduced": false,
+            "ret": -0.12843710162823757,
+            "signal_date": "2015-08-21",
+            "z": 0.186
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.62,
+              "MARGIN_Z": -2.04,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.01
+            },
+            "reduced": false,
+            "ret": 0.2311952706803363,
+            "signal_date": "2015-09-23",
+            "z": -0.47
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.13,
+              "MARGIN_Z": 0.31,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.36
+            },
+            "reduced": false,
+            "ret": 0.2932422304679527,
+            "signal_date": "2015-10-29",
+            "z": 0.177
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.3,
+              "MARGIN_Z": 0.66,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.59
+            },
+            "reduced": false,
+            "ret": 0.21192080777846245,
+            "signal_date": "2015-11-27",
+            "z": 0.317
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.71,
+              "MARGIN_Z": -0.1,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.83
+            },
+            "reduced": false,
+            "ret": -0.29890260672491176,
+            "signal_date": "2015-12-28",
+            "z": -0.546
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.82,
+              "MARGIN_Z": -1.18,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.35
+            },
+            "reduced": false,
+            "ret": 0.1170663709317597,
+            "signal_date": "2016-01-27",
+            "z": -1.117
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.69,
+              "MARGIN_Z": -0.36,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.61
+            },
+            "reduced": false,
+            "ret": 0.1779169767750174,
+            "signal_date": "2016-03-03",
+            "z": -0.886
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.87,
+              "MARGIN_Z": 0.3,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.38
+            },
+            "reduced": false,
+            "ret": 0.10833305642002238,
+            "signal_date": "2016-04-01",
+            "z": -0.651
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.97,
+              "MARGIN_Z": 0.2,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.28
+            },
+            "reduced": false,
+            "ret": -0.05436327987087075,
+            "signal_date": "2016-05-04",
+            "z": -0.684
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.88,
+              "MARGIN_Z": 0.13,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.66
+            },
+            "reduced": false,
+            "ret": 0.031670589838955564,
+            "signal_date": "2016-06-02",
+            "z": -0.804
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.65,
+              "MARGIN_Z": 0.65,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.08
+            },
+            "reduced": false,
+            "ret": 0.003278291096591415,
+            "signal_date": "2016-07-05",
+            "z": -0.363
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.78,
+              "MARGIN_Z": 0.35,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.99
+            },
+            "reduced": false,
+            "ret": 0.11510556159789555,
+            "signal_date": "2016-08-03",
+            "z": -0.469
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.99,
+              "MARGIN_Z": 0.63,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.32
+            },
+            "reduced": false,
+            "ret": 0.014887939509364997,
+            "signal_date": "2016-09-01",
+            "z": -0.56
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.97,
+              "MARGIN_Z": -0.18,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.34
+            },
+            "reduced": false,
+            "ret": 0.08413327729194864,
+            "signal_date": "2016-10-11",
+            "z": -0.832
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.79,
+              "MARGIN_Z": 0.47,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.89
+            },
+            "reduced": false,
+            "ret": -0.007090854676986353,
+            "signal_date": "2016-11-09",
+            "z": -0.404
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.88,
+              "MARGIN_Z": 0.8,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.7
+            },
+            "reduced": false,
+            "ret": -0.0044512961733015975,
+            "signal_date": "2016-12-08",
+            "z": -0.259
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.79,
+              "MARGIN_Z": -0.33,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.64
+            },
+            "reduced": false,
+            "ret": -0.03600134808080024,
+            "signal_date": "2017-01-09",
+            "z": -0.919
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.79,
+              "MARGIN_Z": -0.71,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.72
+            },
+            "reduced": false,
+            "ret": 0.017995529189246722,
+            "signal_date": "2017-02-14",
+            "z": -1.07
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.95,
+              "MARGIN_Z": 0.52,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.86
+            },
+            "reduced": false,
+            "ret": -0.048420609001633835,
+            "signal_date": "2017-03-15",
+            "z": -0.432
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.02,
+              "MARGIN_Z": 0.19,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.49
+            },
+            "reduced": false,
+            "ret": -0.11621188855985917,
+            "signal_date": "2017-04-17",
+            "z": -0.095
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.65,
+              "MARGIN_Z": -1.93,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.45
+            },
+            "reduced": false,
+            "ret": 0.020891561816168108,
+            "signal_date": "2017-05-17",
+            "z": -1.342
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.26,
+              "MARGIN_Z": -0.5,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.41
+            },
+            "reduced": false,
+            "ret": -0.09094839021135459,
+            "signal_date": "2017-06-19",
+            "z": -0.724
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.81,
+              "MARGIN_Z": 0.17,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.77
+            },
+            "reduced": false,
+            "ret": 0.04675375866358212,
+            "signal_date": "2017-07-18",
+            "z": -0.804
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.06,
+              "MARGIN_Z": 1.21,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.31
+            },
+            "reduced": false,
+            "ret": 0.038481631246891065,
+            "signal_date": "2017-08-16",
+            "z": 0.321
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.47,
+              "MARGIN_Z": 1.77,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.58
+            },
+            "reduced": false,
+            "ret": -0.012122177652495661,
+            "signal_date": "2017-09-14",
+            "z": 0.94
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.0,
+              "MARGIN_Z": -0.08,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.34
+            },
+            "reduced": false,
+            "ret": -0.06323404943720852,
+            "signal_date": "2017-10-20",
+            "z": -0.139
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.53,
+              "MARGIN_Z": 0.6,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.59
+            },
+            "reduced": false,
+            "ret": -0.02968583921968346,
+            "signal_date": "2017-11-20",
+            "z": -0.507
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.52,
+              "MARGIN_Z": -0.47,
+              "NEWACCT_Z": null,
+              "TURN_Z": -2.33
+            },
+            "reduced": false,
+            "ret": -0.0008794622994696841,
+            "signal_date": "2017-12-19",
+            "z": -1.439
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.99,
+              "MARGIN_Z": 0.74,
+              "NEWACCT_Z": null,
+              "TURN_Z": -1.16
+            },
+            "reduced": false,
+            "ret": -0.09386061043169816,
+            "signal_date": "2018-01-18",
+            "z": 0.189
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.29,
+              "MARGIN_Z": -2.69,
+              "NEWACCT_Z": null,
+              "TURN_Z": -0.97
+            },
+            "reduced": false,
+            "ret": 0.051557934801201875,
+            "signal_date": "2018-02-23",
+            "z": -0.789
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 3.32,
+              "MARGIN_Z": 0.1,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.29
+            },
+            "reduced": true,
+            "ret": 0.013752051531117722,
+            "signal_date": "2018-03-26",
+            "z": 1.236
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.86,
+              "MARGIN_Z": -0.45,
+              "NEWACCT_Z": null,
+              "TURN_Z": 0.43
+            },
+            "reduced": false,
+            "ret": 0.06937881132445002,
+            "signal_date": "2018-04-26",
+            "z": 0.613
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.97,
+              "MARGIN_Z": -0.12,
+              "NEWACCT_Z": -0.77,
+              "TURN_Z": -0.42
+            },
+            "reduced": false,
+            "ret": -0.1494848490943406,
+            "signal_date": "2018-05-29",
+            "z": -0.083
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.43,
+              "MARGIN_Z": -2.27,
+              "NEWACCT_Z": -0.59,
+              "TURN_Z": -1.54
+            },
+            "reduced": false,
+            "ret": 0.03813517085807725,
+            "signal_date": "2018-06-28",
+            "z": -0.992
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.65,
+              "MARGIN_Z": -0.6,
+              "NEWACCT_Z": -0.95,
+              "TURN_Z": -0.85
+            },
+            "reduced": false,
+            "ret": -0.022152585722169993,
+            "signal_date": "2018-07-27",
+            "z": -0.188
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.21,
+              "MARGIN_Z": -0.76,
+              "NEWACCT_Z": -0.73,
+              "TURN_Z": -1.67
+            },
+            "reduced": false,
+            "ret": -0.002100645720045253,
+            "signal_date": "2018-08-27",
+            "z": -0.841
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.51,
+              "MARGIN_Z": -0.54,
+              "NEWACCT_Z": -0.77,
+              "TURN_Z": -2.0
+            },
+            "reduced": false,
+            "ret": -0.07033343081529429,
+            "signal_date": "2018-09-26",
+            "z": -0.956
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.35,
+              "MARGIN_Z": -1.95,
+              "NEWACCT_Z": -1.18,
+              "TURN_Z": -0.58
+            },
+            "reduced": false,
+            "ret": -0.000984364530813094,
+            "signal_date": "2018-11-01",
+            "z": -0.59
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.61,
+              "MARGIN_Z": 0.91,
+              "NEWACCT_Z": -1.16,
+              "TURN_Z": 1.78
+            },
+            "reduced": false,
+            "ret": -0.038262895307940956,
+            "signal_date": "2018-11-30",
+            "z": 0.784
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.27,
+              "MARGIN_Z": 0.14,
+              "NEWACCT_Z": -0.75,
+              "TURN_Z": -1.02
+            },
+            "reduced": false,
+            "ret": 0.025524364952616736,
+            "signal_date": "2019-01-02",
+            "z": -0.726
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.23,
+              "MARGIN_Z": -0.19,
+              "NEWACCT_Z": -1.2,
+              "TURN_Z": -0.19
+            },
+            "reduced": false,
+            "ret": 0.31982395341922637,
+            "signal_date": "2019-01-31",
+            "z": -0.455
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 4.81,
+              "MARGIN_Z": 5.25,
+              "NEWACCT_Z": -0.73,
+              "TURN_Z": 5.6
+            },
+            "reduced": true,
+            "ret": 0.1687989889862029,
+            "signal_date": "2019-03-08",
+            "z": 3.731
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.64,
+              "MARGIN_Z": 1.77,
+              "NEWACCT_Z": -0.78,
+              "TURN_Z": 2.77
+            },
+            "reduced": true,
+            "ret": -0.11448738681127374,
+            "signal_date": "2019-04-09",
+            "z": 1.35
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.3,
+              "MARGIN_Z": -0.43,
+              "NEWACCT_Z": 1.95,
+              "TURN_Z": 0.9
+            },
+            "reduced": false,
+            "ret": -0.0008036363848074656,
+            "signal_date": "2019-05-13",
+            "z": 0.683
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.19,
+              "MARGIN_Z": -0.43,
+              "NEWACCT_Z": 0.63,
+              "TURN_Z": -0.19
+            },
+            "reduced": false,
+            "ret": 0.018089855185884376,
+            "signal_date": "2019-06-12",
+            "z": 0.05
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.37,
+              "MARGIN_Z": 0.03,
+              "NEWACCT_Z": -0.36,
+              "TURN_Z": -0.23
+            },
+            "reduced": false,
+            "ret": -0.059890804340846406,
+            "signal_date": "2019-07-11",
+            "z": -0.23
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.1,
+              "MARGIN_Z": -0.35,
+              "NEWACCT_Z": -0.59,
+              "TURN_Z": -0.64
+            },
+            "reduced": false,
+            "ret": 0.10565128670336107,
+            "signal_date": "2019-08-09",
+            "z": -0.669
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.08,
+              "MARGIN_Z": 0.92,
+              "NEWACCT_Z": -0.5,
+              "TURN_Z": -0.11
+            },
+            "reduced": false,
+            "ret": 0.013582015046889433,
+            "signal_date": "2019-09-09",
+            "z": 0.058
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.7,
+              "MARGIN_Z": -0.03,
+              "NEWACCT_Z": -0.76,
+              "TURN_Z": -0.27
+            },
+            "reduced": false,
+            "ret": -0.07490725108670893,
+            "signal_date": "2019-10-16",
+            "z": -0.442
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.86,
+              "MARGIN_Z": -0.17,
+              "NEWACCT_Z": -0.76,
+              "TURN_Z": -0.67
+            },
+            "reduced": false,
+            "ret": 0.04714957422188873,
+            "signal_date": "2019-11-14",
+            "z": -0.616
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.93,
+              "MARGIN_Z": -0.09,
+              "NEWACCT_Z": -1.2,
+              "TURN_Z": -0.82
+            },
+            "reduced": false,
+            "ret": 0.060673101039651935,
+            "signal_date": "2019-12-13",
+            "z": -0.759
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.02,
+              "MARGIN_Z": 0.78,
+              "NEWACCT_Z": -1.05,
+              "TURN_Z": 0.3
+            },
+            "reduced": false,
+            "ret": -0.005858107135704514,
+            "signal_date": "2020-01-14",
+            "z": 0.002
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.89,
+              "MARGIN_Z": -0.05,
+              "NEWACCT_Z": -1.05,
+              "TURN_Z": 0.71
+            },
+            "reduced": false,
+            "ret": -0.039015485832870414,
+            "signal_date": "2020-02-20",
+            "z": 0.375
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.16,
+              "MARGIN_Z": -0.5,
+              "NEWACCT_Z": -0.72,
+              "TURN_Z": 1.57
+            },
+            "reduced": false,
+            "ret": 0.07330849967768152,
+            "signal_date": "2020-03-20",
+            "z": 0.377
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.33,
+              "MARGIN_Z": -0.91,
+              "NEWACCT_Z": 2.63,
+              "TURN_Z": 0.26
+            },
+            "reduced": false,
+            "ret": -0.014366496208183395,
+            "signal_date": "2020-04-21",
+            "z": 0.577
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.03,
+              "MARGIN_Z": -0.0,
+              "NEWACCT_Z": 1.67,
+              "TURN_Z": 0.14
+            },
+            "reduced": false,
+            "ret": 0.01571749178745754,
+            "signal_date": "2020-05-25",
+            "z": 0.444
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.21,
+              "MARGIN_Z": 1.21,
+              "NEWACCT_Z": 0.27,
+              "TURN_Z": 0.31
+            },
+            "reduced": false,
+            "ret": 0.08133699110580452,
+            "signal_date": "2020-06-23",
+            "z": 0.499
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.88,
+              "MARGIN_Z": 3.24,
+              "NEWACCT_Z": 1.33,
+              "TURN_Z": 2.64
+            },
+            "reduced": true,
+            "ret": 0.10748513299287019,
+            "signal_date": "2020-07-24",
+            "z": 2.27
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.74,
+              "MARGIN_Z": 0.28,
+              "NEWACCT_Z": 3.33,
+              "TURN_Z": 0.97
+            },
+            "reduced": true,
+            "ret": -0.014458677468882051,
+            "signal_date": "2020-08-24",
+            "z": 1.329
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.64,
+              "MARGIN_Z": -0.71,
+              "NEWACCT_Z": 1.59,
+              "TURN_Z": -0.05
+            },
+            "reduced": false,
+            "ret": -0.05474735685328705,
+            "signal_date": "2020-09-22",
+            "z": 0.047
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.15,
+              "MARGIN_Z": -0.49,
+              "NEWACCT_Z": 0.91,
+              "TURN_Z": -0.96
+            },
+            "reduced": false,
+            "ret": 0.041881589970486154,
+            "signal_date": "2020-10-29",
+            "z": -0.423
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.94,
+              "MARGIN_Z": -0.13,
+              "NEWACCT_Z": -0.18,
+              "TURN_Z": -0.63
+            },
+            "reduced": false,
+            "ret": -0.09125453913164393,
+            "signal_date": "2020-11-27",
+            "z": -0.468
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.92,
+              "MARGIN_Z": -0.13,
+              "NEWACCT_Z": 0.84,
+              "TURN_Z": -0.89
+            },
+            "reduced": false,
+            "ret": 0.05429737387662346,
+            "signal_date": "2020-12-28",
+            "z": -0.276
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.16,
+              "MARGIN_Z": 0.4,
+              "NEWACCT_Z": 1.02,
+              "TURN_Z": -0.43
+            },
+            "reduced": false,
+            "ret": -0.011208667022024325,
+            "signal_date": "2021-01-27",
+            "z": 0.29
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.03,
+              "MARGIN_Z": -0.8,
+              "NEWACCT_Z": 2.02,
+              "TURN_Z": -0.8
+            },
+            "reduced": false,
+            "ret": 0.04127359719588537,
+            "signal_date": "2021-03-04",
+            "z": 0.095
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.27,
+              "MARGIN_Z": -0.75,
+              "NEWACCT_Z": 0.82,
+              "TURN_Z": -0.98
+            },
+            "reduced": false,
+            "ret": -0.012605313613565292,
+            "signal_date": "2021-04-02",
+            "z": -0.295
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.41,
+              "MARGIN_Z": -0.45,
+              "NEWACCT_Z": 2.56,
+              "TURN_Z": -0.78
+            },
+            "reduced": false,
+            "ret": 0.008445278670211633,
+            "signal_date": "2021-05-07",
+            "z": 0.23
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.14,
+              "MARGIN_Z": 0.33,
+              "NEWACCT_Z": 0.82,
+              "TURN_Z": -0.5
+            },
+            "reduced": false,
+            "ret": -0.10764798771499007,
+            "signal_date": "2021-06-07",
+            "z": 0.196
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.15,
+              "MARGIN_Z": -0.1,
+              "NEWACCT_Z": 0.2,
+              "TURN_Z": -0.23
+            },
+            "reduced": false,
+            "ret": -0.023688866327846222,
+            "signal_date": "2021-07-07",
+            "z": 0.003
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.24,
+              "MARGIN_Z": 0.13,
+              "NEWACCT_Z": 0.48,
+              "TURN_Z": 0.72
+            },
+            "reduced": false,
+            "ret": 0.02037678855503217,
+            "signal_date": "2021-08-05",
+            "z": 0.643
+          }
+        ]
+      },
+      "validation": {
+        "base": {
+          "cagr": 0.1362145497062628,
+          "daily_maxdd": -0.2437657727679683,
+          "n_days": 609,
+          "sharpe_daily_ann": 0.699788428853606,
+          "twr_total": 0.38037938523525483
+        },
+        "frac_periods_reduced": 0.06896551724137931,
+        "mean_ret_when_full": 0.014638426714162493,
+        "mean_ret_when_reduced": -0.0077543288996302084,
+        "overlay": {
+          "cagr": 0.14180907680945531,
+          "daily_maxdd": -0.24376577276796862,
+          "n_days": 609,
+          "sharpe_daily_ann": 0.7328146339365429,
+          "twr_total": 0.3976008591051996
+        },
+        "signals": [
+          {
+            "parts": {
+              "LIMITUP_Z": 2.34,
+              "MARGIN_Z": 0.33,
+              "NEWACCT_Z": 0.56,
+              "TURN_Z": 1.35
+            },
+            "reduced": true,
+            "ret": 0.015767885432930964,
+            "signal_date": "2021-08-25",
+            "z": 1.146
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 1.23,
+              "MARGIN_Z": 0.16,
+              "NEWACCT_Z": 1.08,
+              "TURN_Z": 2.51
+            },
+            "reduced": true,
+            "ret": -0.03127654323219138,
+            "signal_date": "2021-09-27",
+            "z": 1.244
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.19,
+              "MARGIN_Z": -1.09,
+              "NEWACCT_Z": 0.49,
+              "TURN_Z": -0.6
+            },
+            "reduced": false,
+            "ret": 0.12322138451088306,
+            "signal_date": "2021-11-02",
+            "z": -0.348
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.89,
+              "MARGIN_Z": 0.26,
+              "NEWACCT_Z": -0.89,
+              "TURN_Z": 0.82
+            },
+            "reduced": false,
+            "ret": 0.038442873419953325,
+            "signal_date": "2021-12-01",
+            "z": 0.269
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.53,
+              "MARGIN_Z": -0.69,
+              "NEWACCT_Z": -0.14,
+              "TURN_Z": 1.14
+            },
+            "reduced": false,
+            "ret": -0.021492437865541662,
+            "signal_date": "2021-12-30",
+            "z": 0.211
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.91,
+              "MARGIN_Z": -3.24,
+              "NEWACCT_Z": -0.09,
+              "TURN_Z": 1.01
+            },
+            "reduced": false,
+            "ret": 0.056199213553413,
+            "signal_date": "2022-02-07",
+            "z": -0.804
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.18,
+              "MARGIN_Z": -0.02,
+              "NEWACCT_Z": -0.22,
+              "TURN_Z": -0.08
+            },
+            "reduced": false,
+            "ret": -0.048416845739602324,
+            "signal_date": "2022-03-08",
+            "z": -0.375
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.37,
+              "MARGIN_Z": -1.43,
+              "NEWACCT_Z": -0.04,
+              "TURN_Z": -0.02
+            },
+            "reduced": false,
+            "ret": -0.10483418316451874,
+            "signal_date": "2022-04-08",
+            "z": -0.281
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 2.13,
+              "MARGIN_Z": -2.48,
+              "NEWACCT_Z": 1.91,
+              "TURN_Z": -0.07
+            },
+            "reduced": false,
+            "ret": 0.04143357924208323,
+            "signal_date": "2022-05-12",
+            "z": 0.372
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.41,
+              "MARGIN_Z": 0.4,
+              "NEWACCT_Z": -0.39,
+              "TURN_Z": -0.02
+            },
+            "reduced": false,
+            "ret": 0.13139014234381313,
+            "signal_date": "2022-06-13",
+            "z": 0.1
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.05,
+              "MARGIN_Z": 1.36,
+              "NEWACCT_Z": -0.52,
+              "TURN_Z": 1.2
+            },
+            "reduced": false,
+            "ret": 0.06175005443542649,
+            "signal_date": "2022-07-12",
+            "z": 0.523
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.13,
+              "MARGIN_Z": 0.17,
+              "NEWACCT_Z": -0.25,
+              "TURN_Z": 0.23
+            },
+            "reduced": false,
+            "ret": 0.0020988014173563075,
+            "signal_date": "2022-08-10",
+            "z": 0.004
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.89,
+              "MARGIN_Z": -0.21,
+              "NEWACCT_Z": -0.7,
+              "TURN_Z": -0.17
+            },
+            "reduced": false,
+            "ret": -0.00026986886827171065,
+            "signal_date": "2022-09-08",
+            "z": -0.742
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.83,
+              "MARGIN_Z": -1.0,
+              "NEWACCT_Z": -0.97,
+              "TURN_Z": -2.41
+            },
+            "reduced": false,
+            "ret": 0.06455799725282149,
+            "signal_date": "2022-10-17",
+            "z": -1.552
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.46,
+              "MARGIN_Z": 0.75,
+              "NEWACCT_Z": -1.49,
+              "TURN_Z": 0.14
+            },
+            "reduced": false,
+            "ret": 0.03303583084946329,
+            "signal_date": "2022-11-15",
+            "z": -0.264
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.44,
+              "MARGIN_Z": 0.67,
+              "NEWACCT_Z": -1.49,
+              "TURN_Z": -0.62
+            },
+            "reduced": false,
+            "ret": -0.041096982693841634,
+            "signal_date": "2022-12-14",
+            "z": -0.718
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.74,
+              "MARGIN_Z": -0.15,
+              "NEWACCT_Z": -1.12,
+              "TURN_Z": -2.51
+            },
+            "reduced": false,
+            "ret": 0.07475013739275072,
+            "signal_date": "2023-01-13",
+            "z": -1.382
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.49,
+              "MARGIN_Z": 1.15,
+              "NEWACCT_Z": -1.41,
+              "TURN_Z": 0.05
+            },
+            "reduced": false,
+            "ret": -0.01230607120433186,
+            "signal_date": "2023-02-20",
+            "z": -0.424
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.95,
+              "MARGIN_Z": 0.45,
+              "NEWACCT_Z": 0.47,
+              "TURN_Z": -0.96
+            },
+            "reduced": false,
+            "ret": -0.07510373326871635,
+            "signal_date": "2023-03-21",
+            "z": -0.498
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.91,
+              "MARGIN_Z": 1.15,
+              "NEWACCT_Z": 0.98,
+              "TURN_Z": -0.3
+            },
+            "reduced": false,
+            "ret": 0.06469882849186155,
+            "signal_date": "2023-04-20",
+            "z": 0.233
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.27,
+              "MARGIN_Z": -1.08,
+              "NEWACCT_Z": -1.06,
+              "TURN_Z": -0.94
+            },
+            "reduced": false,
+            "ret": -0.005242730387483657,
+            "signal_date": "2023-05-24",
+            "z": -0.837
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.24,
+              "MARGIN_Z": -0.55,
+              "NEWACCT_Z": -1.1,
+              "TURN_Z": -1.01
+            },
+            "reduced": false,
+            "ret": 0.08486113901518419,
+            "signal_date": "2023-06-26",
+            "z": -0.725
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.91,
+              "MARGIN_Z": -0.77,
+              "NEWACCT_Z": -1.03,
+              "TURN_Z": -1.02
+            },
+            "reduced": false,
+            "ret": -0.05798245008430507,
+            "signal_date": "2023-07-25",
+            "z": -0.931
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.47,
+              "MARGIN_Z": -0.15,
+              "NEWACCT_Z": -1.16,
+              "TURN_Z": -1.31
+            },
+            "reduced": false,
+            "ret": 0.03702231237181912,
+            "signal_date": "2023-08-23",
+            "z": -1.024
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.81,
+              "MARGIN_Z": 1.39,
+              "NEWACCT_Z": -0.9,
+              "TURN_Z": -0.74
+            },
+            "reduced": false,
+            "ret": -0.0034882084877689,
+            "signal_date": "2023-09-21",
+            "z": -0.267
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.23,
+              "MARGIN_Z": 0.4,
+              "NEWACCT_Z": -0.9,
+              "TURN_Z": -0.77
+            },
+            "reduced": false,
+            "ret": 0.04158699270605226,
+            "signal_date": "2023-10-30",
+            "z": -0.26
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": 0.15,
+              "MARGIN_Z": 1.35,
+              "NEWACCT_Z": -0.9,
+              "TURN_Z": 0.21
+            },
+            "reduced": false,
+            "ret": -0.05787937288863857,
+            "signal_date": "2023-11-28",
+            "z": 0.202
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -1.0,
+              "MARGIN_Z": -0.91,
+              "NEWACCT_Z": -0.9,
+              "TURN_Z": -0.49
+            },
+            "reduced": false,
+            "ret": 0.03385625713644572,
+            "signal_date": "2023-12-27",
+            "z": -0.826
+          },
+          {
+            "parts": {
+              "LIMITUP_Z": -0.1,
+              "MARGIN_Z": -1.95,
+              "NEWACCT_Z": -0.9,
+              "TURN_Z": 0.55
+            },
+            "reduced": false,
+            "ret": -0.06555513820391903,
+            "signal_date": "2024-01-26",
+            "z": -0.599
+          }
+        ]
+      },
+      "verdict": "REJECT"
+    }
+  },
+  "threshold": 1.0,
+  "z_win": 250
+}

@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-09-07 11:00（**纸面操作台 V2** 上线 `http://127.0.0.1:9000/paper`：真实日历「今天要做什么」/ 一键后台 `daily.py`（锁、进度、日志、续跑）/ 成交日志派生真实账户 / 按可用现金重算买入手数 / 历史每一期 / FAQ；设计与逐条回答 `docs/research_engine/PAPER_OPS_DESK_V2_DESIGN.md`，SPEC §29.5–29.8；旧页 `/paper/v1`。Smoke PASS，Stability 到 09-29 卖出日。每次计算 $0。此前 10:25：O4 REJECT、O5 NOT_DEPLOYABLE，S2 关闭；ML7 影子接入 `daily.py` 第 9 步，24 期后读一次；ML1 不动）  
+**最后更新：** 2026-09-07 21:20（纸面：2007 截止日期是截断日历写坏的标签，K 线仍到 2026-09-07；叠跑 6 个 daily.py 已杀；锁/黑名单/skip-fetch。不要连点更新。）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
