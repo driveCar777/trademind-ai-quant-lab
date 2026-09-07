@@ -367,6 +367,26 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 
 ---
 
+## 纸面操作台 V2 冒烟 — 22 Paper Ops ✅
+
+**文件：** `tests/smoke/22_paper_ops.py`（离线，草稿日志 `JOURNAL_SMOKE.json`，不碰真实日志/冻结目录）  
+**日期：** 2026-09-07
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 链上信号日每 21 个交易日（08-28 → 09-29 → 11-04，含国庆） | ✅ |
+| 2 | 买入日无日志 → `BUY_TODAY`，资金检查 `source=MODEL` | ✅ |
+| 3 | 持有日 held/left = 5/15；`--force-score` 名单标 `PREVIEW_NON_CHAIN` | ✅ |
+| 4 | 入金 + 10 笔买入 → 日志派生账户（现金/市值/持仓） | ✅ |
+| 5 | 卖出日早 → `SELL_TODAY` 列日志持仓；当晚未更新 → `SIGNAL_TONIGHT` + 未登记卖出警告 | ✅ |
+| 6 | 名单已出 → `LIST_READY_BUY_TOMORROW`，买入手数按可用现金 − ¥200 重算且不超预算 | ✅ |
+| 7 | 非法成交拒绝 / 删除事件 / 手续费估算 | ✅ |
+| 8 | HTTP：`/ops` `/update/status` `/journal` 增删；`/paper` `/paper/v1` 200；页面点「更新数据」→ 后台 `daily.py` 有锁、有进度、正常结束并归档 `HISTORY.json` | ✅ |
+
+稳定性：跟 V29 到 2026-09-29（真实卖出日）/ 09-30（买入日）各走一遍页面状态 → Freeze。
+
+---
+
 ## V6 台账稳定性 — 04 Paper Desk ✅
 
 **文件：** `tests/stability/04_paper_desk.py`  

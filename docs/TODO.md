@@ -1,8 +1,11 @@
 # TradeMind TODO — 版本任务清单
 
 > **当前活跃模块:** **V25 多层组合模型 = 第一个通过 Level-1 + 复现 + 独立性的 Candidate**（`A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE`，STOP A）。NEW_INDEPENDENT=**1**。规则修正见 `RESEARCH_RULES_AMENDMENT_V1.md`（A1 构造菜单 / A2 滚动验证 / A3 每层一个模型 / A4 超额序列聚类）。V22–V24 NO_CANDIDATE 已冻。Databento 余额 ≈$46 不花。
-> **最后更新:** 2026-09-06 12:00（V37 仓单 **NO_CANDIDATE**，ATLAS 81；第二袖仍 0）
-> **下一入口:** (1) 停编 D1 薄家族。仓单层已关。会员持仓排名若未探通则不算对象。(2) V29 影子账本 + 每日 SHORTLIST（V26.8）。(3) Paper 需用户：开始日 / 账户 / 行情源。组合仍 1 袖。**禁止**：改 ML1 / V26.8；为翻倍做彩票账本；降 V37 的 t 门；加郑商所/大商所重读 V37。
+> **最后更新:** 2026-09-07 11:00（纸面操作台 V2 上线；ML7 影子接入）
+> **下一入口:** 用户准备操作模拟盘。**纸面操作台 V2** `http://127.0.0.1:9000/paper`（`PAPER_OPS_DESK_V2_DESIGN.md`）：真实日历上的「今天要做什么」、一键后台更新、成交日志、历史每一期。Phase 3 Smoke PASS；Phase 4 Stability 跟 V29 到 09-29 第一次真实卖出日。ML1 / V26.8 / `daily.py` 参数不动。V38 S3 ML7 影子只输出。
+
+| PAPER OPS V2 | 用户 10:24 提出模拟盘日常问题（卖出在哪显示 / 明天换票？/ 标记成交 / 几点更新 / 中断重复 / 补数据 / 新闻财报 / 付费数据 / 先看余额）。设计+逐条回答 `PAPER_OPS_DESK_V2_DESIGN.md`；`paper_ops.py` + SPEC §29.5–29.8 + `paper.html` 重写（旧页 `/paper/v1`） | ✅ Design ✅ Implement ✅ Smoke（8 场景状态机 + HTTP + 浏览器 + 页面触发后台更新）；🔄 Stability 至 09-29 卖出日/09-30 买入日走一遍 → Freeze | 2026-09-07 |
+| V38 EVOLUTION | 用户 22:45 授权长期研究。S0 ✅；S1 L1 ✅ NO_CANDIDATE、L4 增减持 ✅ NO_CANDIDATE（有边 t 5.9 / 账本负）、L7 质押 ✅ NO_CANDIDATE（有边 t 6.6 / 账本负）、L2 DATA_BLOCKED、L3/L5/L6 DEFERRED；S2 O1/O2/O3 ✅ 全 REJECT；ATLAS 87；报告 `V38_EVOLUTION_MISSION_REPORT.md` | ✅ O4/O5 各读一次（O4 REJECT；O5 过门但 NOT_DEPLOYABLE）S2 关闭；✅ ML7 影子接入 `daily.py`（只输出，`LEDGER_ML7` 倒计时 24 期）。🔄 每日 `daily.py` 照跑；ML7 读取 ≈2028-Q3。不在历史窗跑堆叠。 | 2026-09-07 |
 
 ---
 
@@ -88,7 +91,7 @@
 | V25 NORTHBOUND | HKEX 历史仅 12 月、改季度 | ⛔ DATA_BLOCKED | 2026-09-04 |
 | V27 FINDEEP | 东财季报 4 表 × 64 期 $0（INCOME/CASHFLOW PIT 不成立弃用；CPD+BALANCE 原始公告日）→ 10 固定特征 → 2 预注册模型，LO20 闸门。ML2F 仅季报：验证超额 +0.52% t 5.6、滚动 5/5、corr vs ML1 0.06，但 LO20 验证 −0.3% 不过；ML2 全栈：Level-1 但 corr vs ML1 0.96 同簇、无增量 | ✅ LEVEL1_SAME_CLUSTER_AS_ML1 冻；ML1 不变 | 2026-09-04 |
 | V28 ML1 FINAL OOS | 用户委托自决 → 协议先写 → 融资/成分/户数 raw 延伸到 2026-08（特征到 2024-02 逐位同冻结缓存）→ REFIT_240 闸门 + 2021 冻结诊断 → 2024-03→2026-07 30 期：超额 +1.00%/20d t 9.3，LO20 +71.4%（CAGR 24.3%，MaxDD −21%），19/30 打过 EW | ✅ **FINAL_OOS_PASS**，已锁不再读 | 2026-09-04 |
-| V29 ML1 LIVE PIPELINE | `research_engine/ml1_live/`：live 日历/basics/增量日线 → live pack（冻结块逐位相同）→ 融资日更/户数周更/成分月更 → 14 特征 → REFIT_240 模型缓存 → 前 20% 名单 `SIGNAL_{date}.json` → 影子账本接 V28 链（信号 2026-08-28 起每 21 日）。冒烟 5/5（`ml1_live/SMOKE_V29.json`）：冻结块逐位同、20 只抽查 0 错、特征 14/14 逐位同、2026-07-30 重打分 = V28 分数 Δ0.0 | ✅ Design+Implement+Smoke PASS；⏳ Stability = 连续 5 日 + 第一期结算（≈2026-09-29） | 2026-09-05 |
+| V29 ML1 LIVE PIPELINE | `research_engine/ml1_live/`：live 日历/basics/增量日线 → live pack（冻结块逐位相同）→ 融资日更/户数周更/成分月更 → 14 特征 → REFIT_240 模型缓存 → 前 20% 名单 `SIGNAL_{date}.json` → 影子账本接 V28 链（信号 2026-08-28 起每 21 日）。冒烟 5/5（`ml1_live/SMOKE_V29.json`）：冻结块逐位同、20 只抽查 0 错、特征 14/14 逐位同、2026-07-30 重打分 = V28 分数 Δ0.0。用户 11:53：A 股没搞好禁止换市场。TOP20 现记 OPEN。 | ✅ Design+Implement+Smoke PASS；🔄 当前唯一工作；⏳ Stability = 连续交易日真实拉取 + 第一期结算（≈2026-09-29） | 2026-09-05 |
 | ML1 PAPER | 有账户的 Paper：开始日 / 账户 / 行情源需用户；管线已能每天出名单 | ⏸ 待用户 | — |
 | AMENDMENT V2 (MT5) | 用户授权解除 MT5 三条范围限制（ML 禁令 / 股票 CFD 只清点 / 只多头账本）；纪律全保留；不重开已证伪宏观家族 | ✅ 生效 | 2026-09-05 |
 | V30 MT5 US XS PRICE | 492 只美股 CFD D1 冻结（$0，5.9h）→ 7 价格特征 → 1 LightGBM → LS20 闸门 + 实测费率（多头融资 −11.09%/年）。验证毛价差 t 0.18，LS20 −71.5%（t −4.0），LO−EW −1.03%/20d，滚动 2/5 | ✅ **NO_CANDIDATE**；`MT5_STOCK_CFD_COST_CEILING`：不开 V31 on CFD | 2026-09-05 |

@@ -1,0 +1,670 @@
+"""Paper Ops Desk V2 (SPEC §29.5–29.8, docs/research_engine/PAPER_OPS_DESK_V2_DESIGN.md).
+
+Three things, all read-only towards the research pipeline:
+  * run manager  — start `python -m research_engine.ml1_live.daily` in the background with a lock file, expose progress + log;
+  * journal      — owner's hand-entered fills / deposits; positions and cash are derived from events (never stored);
+  * plan         — what to do today, on the real calendar, from the frozen V26.8 chain (signal every 21 sessions, hold 20).
+No orders. No parameter of daily.py is reachable from here.
+"""
+from __future__ import print_function
+
+import csv
+import json
+import os
+import shutil
+import subprocess
+import sys
+import time
+import uuid
+from datetime import datetime, timedelta
+from pathlib import Path
+
+from app.service import paper_service as ps
+
+ROOT = ps.ROOT
+LIVE = ps.LIVE
+SIGNALS = ps.SIGNALS
+LEDGER_DIR = ps.LEDGER
+BARS = LIVE / "bars"
+RUNS = LIVE / "runs"
+LOCK = RUNS / "CURRENT.json"
+JOURNAL = LIVE / "paper" / "JOURNAL.json"
+STATUS = LIVE / "STATUS.json"
+
+CHAIN_ANCHOR = "2026-07-30"   # research_engine.ml1_live.CHAIN_ANCHOR_SIGNAL
+HOLD = 20
+STEP = HOLD + 1
+LOT = 100
+FEE_RESERVE = 200.0
+DATA_READY_HOUR = 18          # BaoStock daily bars are complete ~17:30-18:00
+UPDATE_WINDOW = "收盘后 18:30 以后更新；忘了就次日 08:30 前补。名单只看信号日收盘，平时不更新不会出错名单。"
+COMMISSION_RATE = 0.0003
+COMMISSION_MIN = 5.0
+STAMP_TAX = 0.0005
+STAGE_MARKERS = (  # (substring of a daily.py log line, stage label); later markers win
+    ("ML1_LIVE_PANEL basics", "股票列表"),
+    ("ML1_LIVE_PANEL bars", "日线（约 999 只，最慢的一步）"),
+    ("ML1_LIVE_PANEL bars done", "日线完成"),
+    ("ML1_LIVE_LAYERS margin", "融资融券"),
+    ("ML1_LIVE_LAYERS holders", "股东户数"),
+    ("ML1_LIVE_LAYERS index", "指数成分"),
+    ("ML1_LIVE_PANEL live pack", "拼装面板"),
+    ("ML1_LIVE_SCORE", "模型打分"),
+    ("ML1_LIVE_LEDGER", "影子账本"),
+    ("ML1_LIVE_TOP20", "短名单 / TOP20 账本"),
+    ("ML7_REFRESH", "ML7 信息层增量下载"),
+    ("_COMPILE", "ML7 信息层特征编译（约 3–5 分钟）"),
+    ("ML7_FEATURES", "ML7 特征"),
+    ("ML7_SCORE", "ML7 打分"),
+    ("ML7_LEDGER", "ML7 账本"),
+    ("ML1_LIVE DONE", "完成"),
+)
+
+
+# ----------------------------------------------------------------------------- helpers
+def _now():
+    return datetime.now()
+
+
+def _load(path, default=None):
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return json.load(fh)
+    except (OSError, ValueError):
+        return default
+
+
+def _dump(path, obj):
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    tmp = str(path) + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(obj, fh, indent=1, ensure_ascii=False, default=str)
+    os.replace(tmp, str(path))
+
+
+def _days():
+    # bypass paper_service's process cache so a finished update is seen at once
+    ps._TRADING_DAYS = None
+    return ps._trading_days()
+
+
+def _idx(days, d):
+    try:
+        return days.index(d)
+    except ValueError:
+        return None
+
+
+def _last_close(symbol):
+    p = BARS / (symbol + ".csv")
+    if not p.is_file():
+        return None, None
+    try:
+        with open(p, encoding="utf-8", newline="") as fh:
+            rows = list(csv.DictReader(fh))
+    except OSError:
+        return None, None
+    for r in reversed(rows):
+        try:
+            c = float(r.get("close") or 0)
+        except ValueError:
+            continue
+        if c > 0:
+            return c, r.get("date")
+    return None, None
+
+
+def _est_fee(side, amount):
+    fee = max(COMMISSION_MIN, amount * COMMISSION_RATE)
+    if side == "SELL":
+        fee += amount * STAMP_TAX
+    return round(fee, 2)
+
+
+# ----------------------------------------------------------------------------- chain calendar
+def chain_signals(days, upto=None):
+    """Signal dates every 21 sessions after the V28 anchor, up to `upto` (inclusive) or the end of the calendar."""
+    i = _idx(days, CHAIN_ANCHOR)
+    if i is None:
+        return []
+    out = []
+    i += STEP
+    while i < len(days):
+        if upto and days[i] > upto:
+            break
+        out.append(days[i])
+        i += STEP
+    return out
+
+
+def period_of(days, signal_date):
+    i = _idx(days, signal_date)
+    if i is None:
+        return {}
+    g = lambda k: days[k] if 0 <= k < len(days) else None  # noqa
+    return {"signal_date": signal_date, "entry": g(i + 1), "exit_date": g(i + STEP), "next_signal": g(i + STEP), "next_entry": g(i + STEP + 1)}
+
+
+# ----------------------------------------------------------------------------- freshness
+def freshness(days, status):
+    now = _now()
+    today = now.date().isoformat()
+    is_td = today in days
+    before = [d for d in days if d < today]
+    last_completed = today if (is_td and now.hour >= DATA_READY_HOUR) else (before[-1] if before else None)
+    asof = (status or {}).get("asof_session") or ((status or {}).get("live_pack") or {}).get("asof")
+    stale = 0
+    if asof and last_completed and asof < last_completed:
+        stale = len([d for d in days if asof < d <= last_completed])
+    nxt = [d for d in days if d > today]
+    return {"today": today, "weekday": now.strftime("%a"), "today_is_trading_day": is_td, "last_completed_session": last_completed,
+            "next_trading_day": nxt[0] if nxt else None, "asof_session": asof, "stale_sessions": stale, "needs_update": stale > 0,
+            "data_ready_after": "%02d:00" % DATA_READY_HOUR, "update_window": UPDATE_WINDOW, "clock": now.strftime("%Y-%m-%d %H:%M")}
+
+
+# ----------------------------------------------------------------------------- run manager
+def _pid_alive(pid):
+    if not pid:
+        return False
+    try:
+        import psutil
+        return psutil.pid_exists(int(pid)) and psutil.Process(int(pid)).status() != psutil.STATUS_ZOMBIE
+    except ImportError:
+        pass
+    except Exception:  # noqa
+        return False
+    try:
+        if os.name == "nt":
+            out = subprocess.run(["tasklist", "/FI", "PID eq %d" % int(pid), "/NH", "/FO", "CSV"], capture_output=True, text=True, timeout=10).stdout
+            return ('"%d"' % int(pid)) in out
+        os.kill(int(pid), 0)
+        return True
+    except Exception:  # noqa
+        return False
+
+
+def _python():
+    return os.environ.get("TRADEMIND_DAILY_PYTHON") or shutil.which("python") or sys.executable
+
+
+def _log_tail(path, n=25):
+    try:
+        with open(path, encoding="utf-8", errors="replace") as fh:
+            lines = fh.read().splitlines()
+    except OSError:
+        return []
+    return lines[-n:]
+
+
+def _stage(lines):
+    stage = "启动中（导入模型库 / 连接 BaoStock）"
+    for ln in lines:
+        for marker, label in STAGE_MARKERS:
+            if marker in ln:
+                stage = label
+        if "ML1_LIVE_PANEL bars" in ln and "done" not in ln:
+            parts = ln.split()
+            if len(parts) > 3 and parts[2].isdigit():
+                stage = "日线 %s 只已补" % parts[2]
+        if "ML1_LIVE_LAYERS holders" in ln and "/" in ln:
+            parts = ln.split()
+            try:
+                k = parts.index("/")
+                stage = "股东户数 %s/%s" % (parts[k - 1], parts[k + 1])
+            except (ValueError, IndexError):
+                pass
+    return stage
+
+
+def _last_run_summary():
+    st = _load(STATUS, {}) or {}
+    errs = []
+    for k, v in (st.get("steps") or {}).items():
+        if isinstance(v, dict) and v.get("error"):
+            errs.append("%s: %s" % (k, v["error"]))
+    if isinstance(st.get("ml7"), dict) and st["ml7"].get("error"):
+        errs.append("ml7: " + st["ml7"]["error"])
+    return {"asof_session": st.get("asof_session"), "started_at": st.get("started_at"), "elapsed_s": st.get("elapsed_s"),
+            "fetch": (st.get("steps") or {}).get("fetch"), "errors": errs, "signal": st.get("signal"),
+            "ledger_top20": {k: (st.get("ledger_top20") or {}).get(k) for k in ("n_periods", "n_periods_closed", "equity_end_closed", "mtm_equity", "open_signal_date")}}
+
+
+def run_status():
+    lock = _load(LOCK, None)
+    out = {"running": False, "pid": None, "started_at": None, "elapsed_s": None, "stage": None, "log": None, "log_tail": [],
+           "last_run": _last_run_summary(), "last_failed": None, "python": _python()}
+    if lock:
+        alive = _pid_alive(lock.get("pid"))
+        tail = _log_tail(lock.get("log"))
+        out.update({"pid": lock.get("pid"), "started_at": lock.get("started_at"), "log": lock.get("log"), "log_tail": tail})
+        if alive:
+            out["running"] = True
+            out["elapsed_s"] = round(time.time() - float(lock.get("t0", time.time())), 0)
+            out["stage"] = _stage(tail)
+        else:
+            # finished or died: decide by the exit marker written by _finish (or absence of it)
+            done = any("ML1_LIVE DONE" in ln for ln in tail)
+            out["stage"] = "完成" if done else "中断/失败"
+            if not done:
+                out["last_failed"] = {"started_at": lock.get("started_at"), "log": lock.get("log"), "tail": tail[-8:]}
+            _archive_lock(lock, done)
+    hist = _load(RUNS / "HISTORY.json", []) or []
+    out["history"] = hist[-10:]
+    if not lock and hist:
+        out["log"] = hist[-1].get("log")
+        out["log_tail"] = _log_tail(out["log"], 40)
+        out["stage"] = "完成" if hist[-1].get("ok") else "中断/失败"
+    if out["last_failed"] is None:
+        for h in reversed(hist):
+            if not h.get("ok"):
+                out["last_failed"] = {"started_at": h.get("started_at"), "log": h.get("log"), "tail": h.get("tail")}
+            break
+    return out
+
+
+def _archive_lock(lock, ok):
+    hist = _load(RUNS / "HISTORY.json", []) or []
+    hist.append({"started_at": lock.get("started_at"), "ended_at": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "ok": ok,
+                 "log": lock.get("log"), "tail": _log_tail(lock.get("log"), 8), "args": lock.get("args")})
+    _dump(RUNS / "HISTORY.json", hist[-200:])
+    try:
+        os.remove(str(LOCK))
+    except OSError:
+        pass
+
+
+def start_update(force=False):
+    RUNS.mkdir(parents=True, exist_ok=True)
+    cur = run_status()
+    if cur["running"]:
+        if force:
+            raise RuntimeError("已有一次更新在跑（pid %s），不重复启动。" % cur["pid"])
+        cur["reused"] = True
+        return cur
+    ts = _now().strftime("%Y%m%d_%H%M%S")
+    log = RUNS / ("RUN_%s.log" % ts)
+    # asof = last COMPLETED session (today only after 18:00), so an intraday click never ingests a half-day bar
+    fresh = freshness(_days(), _load(STATUS, {}) or {})
+    asof = fresh.get("last_completed_session") or _now().date().isoformat()
+    args = [_python(), "-m", "research_engine.ml1_live.daily", "--asof", asof]
+    env = dict(os.environ)
+    env["PYTHONIOENCODING"] = "utf-8"
+    env["PYTHONUNBUFFERED"] = "1"
+    fh = open(str(log), "w", encoding="utf-8")
+    flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+    proc = subprocess.Popen(args, cwd=str(ROOT), stdout=fh, stderr=subprocess.STDOUT, env=env, close_fds=False, creationflags=flags)
+    _dump(LOCK, {"pid": proc.pid, "t0": time.time(), "started_at": _now().strftime("%Y-%m-%dT%H:%M:%S"), "log": str(log), "args": args[1:]})
+    out = run_status()
+    out["reused"] = False
+    return out
+
+
+# ----------------------------------------------------------------------------- journal
+def load_journal():
+    j = _load(JOURNAL, None) or {"account": {"base_cash": 0.0}, "events": []}
+    j.setdefault("account", {"base_cash": 0.0})
+    j.setdefault("events", [])
+    return j
+
+
+def add_event(body):
+    typ = str(body.get("type") or "").upper()
+    if typ not in ("BUY", "SELL", "DEPOSIT", "WITHDRAW", "NOTE"):
+        raise ValueError("type 必须是 BUY / SELL / DEPOSIT / WITHDRAW / NOTE")
+    date = body.get("date") or _now().date().isoformat()
+    ev = {"id": uuid.uuid4().hex[:10], "ts": _now().strftime("%Y-%m-%dT%H:%M:%S"), "type": typ, "date": date, "note": (body.get("note") or "")[:200]}
+    if typ in ("BUY", "SELL"):
+        sym = str(body.get("symbol") or "").strip()
+        if not sym:
+            raise ValueError("symbol 必填")
+        if "." not in sym:
+            sym = ("sh." if sym.startswith("6") else "sz.") + sym
+        lots = int(body.get("lots") or 0)
+        price = float(body.get("price") or 0)
+        if lots <= 0 or price <= 0:
+            raise ValueError("lots 和 price 必须 > 0")
+        amount = round(lots * LOT * price, 2)
+        fee = body.get("fee")
+        fee = float(fee) if fee is not None else _est_fee(typ, amount)
+        ev.update({"symbol": sym, "lots": lots, "price": price, "amount": amount, "fee": round(fee, 2)})
+    elif typ in ("DEPOSIT", "WITHDRAW"):
+        amt = float(body.get("amount") or 0)
+        if amt <= 0:
+            raise ValueError("amount 必须 > 0")
+        ev["amount"] = round(amt, 2)
+    j = load_journal()
+    j["events"].append(ev)
+    j["events"].sort(key=lambda e: (e.get("date") or "", e.get("ts") or ""))
+    _dump(JOURNAL, j)
+    return ev
+
+
+def delete_event(event_id):
+    j = load_journal()
+    before = len(j["events"])
+    j["events"] = [e for e in j["events"] if e.get("id") != event_id]
+    if len(j["events"]) == before:
+        raise KeyError(event_id)
+    _dump(JOURNAL, j)
+    return True
+
+
+def derive_account(journal, days):
+    """Cash + FIFO positions from events. Marks with the last close on disk."""
+    names = ps._stock_names()
+    cash = float((journal.get("account") or {}).get("base_cash") or 0.0)
+    deposits = withdrawals = realized = fees = 0.0
+    pos = {}  # symbol -> {"lots", "cost", "buy_date", "fills":[...]}
+    for e in journal.get("events") or []:
+        t = e.get("type")
+        if t == "DEPOSIT":
+            cash += e["amount"]
+            deposits += e["amount"]
+        elif t == "WITHDRAW":
+            cash -= e["amount"]
+            withdrawals += e["amount"]
+        elif t == "BUY":
+            cash -= e["amount"] + e["fee"]
+            fees += e["fee"]
+            p = pos.setdefault(e["symbol"], {"lots": 0, "cost": 0.0, "buy_date": e["date"], "fills": []})
+            p["lots"] += e["lots"]
+            p["cost"] += e["amount"] + e["fee"]
+            p["fills"].append(e)
+        elif t == "SELL":
+            cash += e["amount"] - e["fee"]
+            fees += e["fee"]
+            p = pos.get(e["symbol"])
+            if p and p["lots"] > 0:
+                take = min(e["lots"], p["lots"])
+                avg = p["cost"] / p["lots"] if p["lots"] else 0.0
+                realized += (e["amount"] - e["fee"]) * (take / float(e["lots"])) - avg * take
+                p["lots"] -= take
+                p["cost"] -= avg * take
+                if p["lots"] <= 0:
+                    p["lots"], p["cost"] = 0, 0.0
+                    p["closed"] = e["date"]
+            else:
+                realized += e["amount"] - e["fee"]
+    positions, mv = [], 0.0
+    for sym, p in pos.items():
+        if p["lots"] <= 0:
+            continue
+        px, pdate = _last_close(sym)
+        shares = p["lots"] * LOT
+        val = px * shares if px else None
+        if val:
+            mv += val
+        positions.append({"symbol": sym, "name": names.get(sym, ""), "lots": p["lots"], "shares": shares, "avg_price": round(p["cost"] / shares, 4) if shares else None,
+                          "buy_date": p["buy_date"], "mark_price": px, "mark_date": pdate, "cost_in": round(p["cost"], 2),
+                          "market_value": round(val, 2) if val else None, "unrealized": round(val - p["cost"], 2) if val else None, "status": "HELD"})
+    positions.sort(key=lambda r: r["symbol"])
+    month = _now().strftime("%Y-%m")
+    dep_months = sorted(set((e.get("date") or "")[:7] for e in journal.get("events") or [] if e.get("type") == "DEPOSIT"))
+    n_ev = len(journal.get("events") or [])
+    return {"source": "JOURNAL" if n_ev else "MODEL", "n_events": n_ev, "cash": round(cash, 2), "market_value": round(mv, 2), "equity": round(cash + mv, 2),
+            "positions": positions, "deposits_total": round(deposits, 2), "withdrawals_total": round(withdrawals, 2),
+            "realized_pnl": round(realized, 2), "fees_total": round(fees, 2), "month_contrib_logged": month in dep_months, "deposit_months": dep_months}
+
+
+# ----------------------------------------------------------------------------- history
+def _ledger():
+    return _load(LEDGER_DIR / "LEDGER_TOP20.json", {}) or {}
+
+
+def history(days, ledger):
+    names = ps._stock_names()
+    periods = list(ledger.get("periods") or [])
+    chain = set(chain_signals(days))
+    out = []
+    for k, p in enumerate(periods):
+        sd = p.get("signal_date")
+        sl = _load(SIGNALS / ("SHORTLIST_SHADOW_%s.json" % sd), {}) or {}
+        fills = ((ledger.get("fills_by_period") or {}).get(sd)) or []
+        fill_by = dict((f.get("symbol"), f) for f in fills)
+        rows = []
+        for n in sl.get("names") or []:
+            f = fill_by.get(n.get("symbol")) or {}
+            rows.append({"rank": n.get("rank"), "symbol": n.get("symbol"), "name": names.get(n.get("symbol"), ""), "score": n.get("score"),
+                         "last_close": n.get("last_close"), "lots_100_est": n.get("lots_100_est"), "lots": f.get("lots"), "open": f.get("open"),
+                         "status": f.get("status"), "pnl": f.get("net") if f.get("net") is not None else f.get("unrealized")})
+        per = period_of(days, sd)
+        out.append({"period_no": k + 1, "signal_date": sd, "entry": p.get("entry") or per.get("entry"), "exit": p.get("exit") or per.get("exit_date"),
+                    "status": p.get("status"), "n_names": p.get("n_names") or len(rows), "n_fill": p.get("n_fill"), "capital_ret": p.get("capital_ret"),
+                    "ret_unrealized": p.get("ret_unrealized"), "ew_ret": p.get("ew_ret"), "lo_minus_ew": p.get("lo_minus_ew"), "net_yuan": p.get("net_yuan"),
+                    "unrealized": p.get("unrealized"), "equity": p.get("equity") or p.get("mtm_equity"), "is_chain": sd in chain or sd == CHAIN_ANCHOR,
+                    "unit_yuan": sl.get("unit_yuan"), "capital_yuan": sl.get("capital_yuan"), "names": rows})
+    # forced lists on non-chain days (e.g. --force-score) are shown, but flagged
+    for fn in sorted(os.listdir(SIGNALS)) if SIGNALS.is_dir() else []:
+        if fn.startswith("SHORTLIST_20") and fn.endswith(".json"):
+            sd = fn[len("SHORTLIST_"):-len(".json")]
+            if sd not in chain and all(h["signal_date"] != sd for h in out):
+                sl = _load(SIGNALS / fn, {}) or {}
+                out.append({"period_no": None, "signal_date": sd, "entry": None, "exit": None, "status": "PREVIEW_NON_CHAIN", "n_names": sl.get("n_names"),
+                            "is_chain": False, "unit_yuan": sl.get("unit_yuan"), "capital_yuan": sl.get("capital_yuan"),
+                            "names": [{"rank": n.get("rank"), "symbol": n.get("symbol"), "name": names.get(n.get("symbol"), ""), "score": n.get("score"),
+                                       "last_close": n.get("last_close"), "lots_100_est": n.get("lots_100_est")} for n in sl.get("names") or []],
+                            "note": "非操作日强制打分的预览名单，不是当期持仓，不进账本"})
+    out.sort(key=lambda h: h["signal_date"] or "")
+    return out
+
+
+# ----------------------------------------------------------------------------- plan
+def _universe(signal_date):
+    for pre in ("SIGNAL_", "SHADOW_"):
+        d = _load(SIGNALS / ("%s%s.json" % (pre, signal_date)), None)
+        if d and d.get("names"):
+            return d["names"]
+    return None
+
+
+def _model_positions(ledger, signal_date, days):
+    names = ps._stock_names()
+    fills = ((ledger.get("fills_by_period") or {}).get(signal_date)) or []
+    per = period_of(days, signal_date)
+    rows = []
+    for f in fills:
+        sym = f.get("symbol")
+        rows.append({"symbol": sym, "name": names.get(sym, ""), "lots": f.get("lots"), "shares": (f.get("lots") or 0) * LOT, "avg_price": f.get("open"),
+                     "buy_date": per.get("entry"), "mark_price": f.get("mark_close"), "mark_date": f.get("mark_date"), "cost_in": f.get("cost_in"),
+                     "market_value": round((f.get("mark_close") or 0) * (f.get("lots") or 0) * LOT, 2) if f.get("mark_close") else None,
+                     "unrealized": f.get("unrealized"), "status": f.get("status") or "FILL"})
+    return rows
+
+
+def _buy_list(signal_date, settings, cash_available, source):
+    uni = _universe(signal_date)
+    sl = _load(SIGNALS / ("SHORTLIST_SHADOW_%s.json" % signal_date), None) or _load(SIGNALS / ("SHORTLIST_%s.json" % signal_date), None)
+    names = ps._stock_names()
+    if source == "JOURNAL" and uni:
+        cap = max(float(cash_available), 0.0)
+        pv = ps.preview_lots(uni, cap, int(settings.get("n_target") or 10), float(settings.get("max_price") or 100.0), settings.get("boards") or "MAIN", 1.0) if cap >= LOT else {"names": [], "est_invested_yuan": 0.0, "unit_yuan": None}
+        rows, planned, unit = pv["names"], pv["est_invested_yuan"], pv.get("unit_yuan")
+        basis = "按你的可用现金 ¥%.0f 重算（同一套 V26.8 算术）" % cap
+    elif sl:
+        rows, planned, unit = sl.get("names") or [], sl.get("est_invested_yuan"), sl.get("unit_yuan")
+        basis = "官方影子账本 ¥%.0f 的手数（你还没登记成交/入金）" % float(sl.get("capital_yuan") or 0)
+    else:
+        return [], None, None, "名单文件不存在"
+    for r in rows:
+        r["name"] = names.get(r.get("symbol"), "")
+    return rows, planned, unit, basis
+
+
+def plan(days, fresh, status, ledger, settings, account):
+    today = fresh["today"]
+    now = _now()
+    is_td = fresh["today_is_trading_day"]
+    last_completed = fresh["last_completed_session"]
+    ref_day = today if is_td else last_completed
+    sigs_done = chain_signals(days, upto=last_completed or today)
+    cur_sig = sigs_done[-1] if sigs_done else None
+    per = period_of(days, cur_sig) if cur_sig else {}
+    all_sigs = chain_signals(days)
+    future = [s for s in all_sigs if s >= today]
+    source = account["source"]
+    out = {"phase": "NO_POSITION", "headline": "", "sub": "", "steps": [], "sell_list": [], "buy_list": [], "cash_check": None, "warnings": [],
+           "key_dates": {"signal_date": cur_sig, "entry": per.get("entry"), "exit_date": per.get("exit_date"), "next_signal": per.get("next_signal") or (future[0] if future else None),
+                         "next_entry": per.get("next_entry")},
+           "sessions_held": None, "sessions_left": None, "sessions_total": HOLD, "today_action": "UNKNOWN", "basis": None}
+    if not cur_sig:
+        out.update({"headline": "还没有第一期名单", "sub": "第一个信号日 %s 收盘后更新数据即出名单。" % (future[0] if future else "—")})
+        return out
+
+    entry, exit_d = per.get("entry"), per.get("exit_date")
+    i_ref, i_e, i_x = _idx(days, ref_day), _idx(days, entry), _idx(days, exit_d)
+    if None not in (i_ref, i_e):
+        out["sessions_held"] = max(0, min(i_ref - i_e, HOLD))
+    if None not in (i_ref, i_x):
+        out["sessions_left"] = max(0, i_x - i_ref)
+
+    positions = account["positions"] if source == "JOURNAL" else _model_positions(ledger, cur_sig, days)
+    have_pos = len(positions) > 0
+    list_today = (SIGNALS / ("SHORTLIST_SHADOW_%s.json" % today)).is_file()
+    stale_warn = "数据截至 %s，落后 %d 个交易日。名单不受影响，但持仓市值不是最新的。" % (fresh["asof_session"], fresh["stale_sessions"])
+
+    def sell_rows():
+        return [dict(p, side="SELL") for p in positions]
+
+    # --- today is a chain signal day (== exit day of the current period, or the very first signal)
+    if today in all_sigs and is_td:
+        prev_positions = positions if cur_sig != today else (account["positions"] if source == "JOURNAL" else _model_positions(ledger, sigs_done[-2], days) if len(sigs_done) > 1 else [])
+        out["key_dates"]["signal_date"] = today
+        tp = period_of(days, today)
+        out["key_dates"].update({"entry": tp.get("entry"), "exit_date": tp.get("exit_date"), "next_signal": tp.get("next_signal"), "next_entry": tp.get("next_entry")})
+        out["sessions_held"], out["sessions_left"] = (HOLD, 0) if prev_positions else (None, None)
+        contrib = float(settings.get("monthly_contrib") or 0)
+        if source == "JOURNAL" and contrib > 0 and not _contrib_logged(account, today[:7]):
+            out["warnings"].append("本月定投 ¥%.0f 还没登记入金（合同：每月第一个信号日先入金再买）。" % contrib)
+        if list_today:
+            out["phase"] = "LIST_READY_BUY_TOMORROW"
+            out["today_action"] = "BUY"
+            rows, planned, unit, basis = _buy_list(today, settings, account["cash"], source)
+            out["buy_list"], out["basis"] = rows, basis
+            out["headline"] = "今晚名单已出：明天 %s 开盘买入 %d 只" % (tp.get("entry"), len(rows))
+            out["sub"] = "今天开盘应已卖出上一期全部持仓。明早 09:15–09:25 集合竞价或 09:30 开盘按下表下单，然后回来登记成交。"
+            out["steps"] = [{"when": "今天已做", "text": "开盘卖出上一期全部持仓（没登记的请登记卖出）"},
+                            {"when": "%s 开盘" % tp.get("entry"), "text": "买入下表 %d 只，手数按表；开盘价与昨收差太多时手数=floor(单位/(100×开盘价))" % len(rows)},
+                            {"when": "买完", "text": "回到本页逐只「登记买入」（手数、成交价）"}]
+            out["cash_check"] = _cash_check(account, planned, source, prev_positions if source == "JOURNAL" else [])
+            if source == "JOURNAL" and prev_positions:
+                out["warnings"].append("你的成交日志里还有 %d 只上一期持仓没登记卖出。先卖后买，卖出后现金当天可用。" % len(prev_positions))
+        elif now.hour < DATA_READY_HOUR:
+            out["phase"] = "SELL_TODAY"
+            out["today_action"] = "SELL"
+            out["sell_list"] = [dict(p, side="SELL") for p in prev_positions]
+            out["headline"] = "今天开盘：卖出全部 %d 只" % len(prev_positions)
+            out["sub"] = "持有期满。09:30 开盘按市价/对手价全部卖出；跌停或停牌卖不掉的明天再卖（最多顺延 10 个交易日）。今晚 18:30 后更新数据出新名单。"
+            out["steps"] = [{"when": "09:30 开盘", "text": "卖出下表全部持仓"},
+                            {"when": "卖完", "text": "回到本页逐只「登记卖出」"},
+                            {"when": "18:30 后", "text": "点「更新数据」→ 出新名单 → 明早开盘买入"}]
+        else:
+            out["phase"] = "SIGNAL_TONIGHT"
+            out["today_action"] = "UPDATE"
+            out["sell_list"] = [dict(p, side="SELL") for p in prev_positions]
+            out["headline"] = "今天是信号日：先更新数据，名单才会出来"
+            out["sub"] = "收盘数据 18:00 后已齐。点右上「更新数据」（约 35 分钟），完成后本页会显示明早要买的名单。"
+            out["steps"] = [{"when": "现在", "text": "点「更新数据」"}, {"when": "跑完", "text": "刷新本页看名单和资金检查"}, {"when": "明早开盘", "text": "买入名单"}]
+            if prev_positions:
+                out["warnings"].append("今天开盘应已卖出上一期 %d 只；没登记的请先登记卖出。" % len(prev_positions))
+        if fresh["needs_update"] and out["phase"] != "SIGNAL_TONIGHT":
+            out["warnings"].append(stale_warn)
+        return out
+
+    # --- entry day
+    if today == entry and is_td:
+        out["phase"] = "BUY_TODAY"
+        out["today_action"] = "BUY"
+        rows, planned, unit, basis = _buy_list(cur_sig, settings, account["cash"], source)
+        out["buy_list"], out["basis"] = rows, basis
+        out["headline"] = "今天开盘：买入 %d 只" % len(rows)
+        out["sub"] = "09:15–09:25 集合竞价或 09:30 开盘按下表下单；每只手数以表为准，开盘价偏离昨收太多时手数=floor(单位/(100×开盘价))。买完回来登记。"
+        out["steps"] = [{"when": "09:30 开盘", "text": "买入下表 %d 只" % len(rows)}, {"when": "买完", "text": "逐只「登记买入」"},
+                        {"when": "%s 开盘" % exit_d, "text": "卖出全部（系统到那天会提示）"}]
+        leftover = account["positions"] if source == "JOURNAL" else []
+        out["cash_check"] = _cash_check(account, planned, source, leftover)
+        if leftover:
+            out["warnings"].append("日志里还有 %d 只上一期持仓未登记卖出；先卖后买。" % len(leftover))
+        if source == "JOURNAL" and float(settings.get("monthly_contrib") or 0) > 0 and not _contrib_logged(account, (cur_sig or today)[:7]):
+            out["warnings"].append("本月定投 ¥%.0f 还没登记入金（合同：每月第一个信号日先入金再买）。" % float(settings["monthly_contrib"]))
+        if fresh["needs_update"]:
+            out["warnings"].append(stale_warn)
+        return out
+
+    # --- ordinary hold day (or weekend / holiday)
+    if have_pos or (entry and last_completed and entry <= last_completed):
+        out["phase"] = "HOLD"
+        out["today_action"] = "HOLD"
+        held, left = out["sessions_held"], out["sessions_left"]
+        out["headline"] = "今天无需操作" if is_td else "今天休市，无需操作"
+        out["sub"] = "持有第 %s/%d 个交易日 · %s 开盘卖出全部 · 当晚更新数据出新名单 · %s 开盘买入" % (held if held is not None else "—", HOLD, exit_d, per.get("next_entry"))
+        out["steps"] = [{"when": "平时", "text": "什么都不用做；想看市值就 18:30 后点一次「更新数据」"},
+                        {"when": "%s 开盘" % exit_d, "text": "卖出全部持仓（%s 个交易日后）" % (left if left is not None else "—")},
+                        {"when": "%s 晚" % exit_d, "text": "更新数据 → 新名单"}, {"when": "%s 开盘" % per.get("next_entry"), "text": "买入新名单"}]
+        if source == "JOURNAL" and not positions:
+            out["warnings"].append("你还没登记任何买入成交。若已在模拟盘买了，请登记，否则卖出日无法给出卖出清单。")
+        if fresh["needs_update"]:
+            out["warnings"].append(stale_warn)
+        return out
+
+    out["phase"] = "NO_POSITION"
+    out["headline"] = "本期还没有开仓"
+    out["sub"] = "名单 %s 已出，买入日 %s。" % (cur_sig, entry)
+    return out
+
+
+def _contrib_logged(account, month):
+    return month in (account.get("deposit_months") or [])
+
+
+def _cash_check(account, planned, source, leftover_positions):
+    cash = account["cash"] if source == "JOURNAL" else None
+    proceeds = 0.0
+    for p in leftover_positions or []:
+        if p.get("market_value"):
+            proceeds += p["market_value"]
+    if cash is None:
+        return {"source": "MODEL", "cash_available": None, "reserve": FEE_RESERVE, "budget": None, "planned_yuan": planned, "ok": None,
+                "shortfall": None, "note": "没有成交日志：按官方 ¥20,000 影子账本的手数。登记入金后会按你的现金重算。"}
+    budget = cash - FEE_RESERVE
+    ok = planned is not None and planned <= budget + 1e-6
+    return {"source": "JOURNAL", "cash_available": round(cash, 2), "reserve": FEE_RESERVE, "budget": round(budget, 2), "planned_yuan": planned,
+            "ok": ok, "shortfall": round(max(0.0, (planned or 0) - budget), 2), "pending_sell_value": round(proceeds, 2) if proceeds else 0.0,
+            "note": "预留 ¥200 佣金；名单手数已按可用现金算，不够就少买，不会建议卖别的换这只。"}
+
+
+# ----------------------------------------------------------------------------- entry point
+def ops():
+    days = _days()
+    status = _load(STATUS, {}) or {}
+    ledger = _ledger()
+    settings = ps.load_settings()
+    journal = load_journal()
+    account = derive_account(journal, days)
+    fresh = freshness(days, status)
+    run = run_status()
+    pl = plan(days, fresh, status, ledger, settings, account)
+    if run["running"]:
+        pl["warnings"].insert(0, "数据正在更新（%s）。跑完后刷新本页。" % (run.get("stage") or "运行中"))
+    if run.get("last_failed") and not run["running"]:
+        pl["warnings"].append("上一次更新没有正常结束（%s）。再点一次「更新数据」会从缺的地方继续。" % (run["last_failed"].get("started_at") or ""))
+    model_pos = _model_positions(ledger, pl["key_dates"].get("signal_date"), days) if pl["key_dates"].get("signal_date") else []
+    top20 = status.get("ledger_top20") or ledger.get("summary") or {}
+    return {"freshness": fresh, "run": run, "plan": pl, "account": account, "model_positions": model_pos,
+            "model_summary": {k: top20.get(k) for k in ("contract", "capital_yuan", "monthly_contrib", "n_target", "equity_end_closed", "mtm_equity", "unrealized",
+                                                        "n_periods", "n_periods_closed", "open_signal_date", "open_mark_date", "deposits_to_date")},
+            "history": history(days, ledger), "journal_events": list(reversed(journal.get("events") or []))[:50], "settings": settings,
+            "faq": FAQ, "orders_sent": False}
+
+
+FAQ = [
+    {"q": "系统什么时候让我卖？", "a": "只有卖出日（买入后第 20 个交易日）开盘卖全部。中间每天都是「无需操作」。没有加仓、做 T、止损——这些在研究期都测过，更差（V33/V34）。"},
+    {"q": "明天再算会不会换一批票？", "a": "不会。名单只在信号日（每 21 个交易日一次）生成，平时运行只补数据。"},
+    {"q": "几点更新数据？", "a": UPDATE_WINDOW},
+    {"q": "更新到一半断了 / 重复点了怎么办？", "a": "每一步都按缺什么补什么，重复点无害；正在跑时按钮会灰掉。断了再点一次就从缺的地方继续，上次失败会在状态栏红字提示。"},
+    {"q": "隔几天没更新，会补齐吗？", "a": "会。一次运行补齐冻结末日到今天之间所有缺的交易日。"},
+    {"q": "新闻、财报要更新吗？", "a": "ML1 只用价格、融资、股东户数、指数成分、年报，全部在同一次「更新数据」里自动增量；新闻不是特征。季报/预告/增减持/质押是 ML7 影子的输入，也一起更新。"},
+    {"q": "每次计算要花钱吗？", "a": "不用。BaoStock、东方财富数据中心、中登（经东财）全免费。Databento 只花在期货研究上。"},
+    {"q": "出名单前看余额吗？", "a": "看。登记入金/成交后，买入手数按你的可用现金 − ¥200 重算；不够就少买几手/几只，不会建议卖别的换这只。"},
+    {"q": "买卖后要做什么？", "a": "回来「登记成交」。之后资金、持仓、卖出清单都按你的真实成交算；不登记就退回官方 ¥20,000 影子账本。"},
+    {"q": "这套东西能保证赚钱吗？", "a": "不能。历史三段账本为正（研究 +551%、验证 +39%、最终 OOS +71%），2017/2018 各 −30%；近 6 个月为负。它是一个有纪律的练手外壳，不是承诺。"},
+]

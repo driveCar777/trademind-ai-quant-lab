@@ -4,6 +4,92 @@
 
 ---
 
+## 2026-09-07 (11:00) — Paper Ops Desk V2: real-calendar plan, one-click background update, fill journal, per-period history
+
+- Owner 10:24 (preparing to run a broker simulation account): where does "sell" show up, will tomorrow's run change the list, how to mark fills, how often / when to update, what if an update is interrupted or clicked twice, does it backfill, are news/financials needed, is paid data needed, should the cash balance be checked before a new list. Design + answers: `docs/research_engine/PAPER_OPS_DESK_V2_DESIGN.md` (§0 answers each question). Core answer: the strategy acts once every 21 sessions; every other day the desk says "no action"; no add-on / T+0 / stop rules (V33/V34); nothing needs paid data (BaoStock / Eastmoney / CSDC are free; Databento was futures only).
+- `master/api/app/service/paper_ops.py` (new): `freshness` (last completed session = today only after 18:00), run manager (`POST /api/v1/paper/update` spawns `python -m research_engine.ml1_live.daily --asof <last completed session>` with repository defaults only, lock `live/runs/CURRENT.json`, log `live/runs/RUN_*.log`, stage parsed from log, history, stale-lock detection via psutil/tasklist), append-only journal `live/paper/JOURNAL.json` (BUY/SELL/DEPOSIT/WITHDRAW/NOTE; positions + cash derived FIFO; fee estimate ¥5-min 0.03% + 0.05% stamp on sells; marks from `live/bars`), and `plan()` on the real calendar: `HOLD | SELL_TODAY | SIGNAL_TONIGHT | LIST_READY_BUY_TOMORROW | BUY_TODAY | NO_POSITION` with sell list (journal positions if any, else model fills), buy list re-sized with `preview_lots` on the owner's cash − ¥200, cash check, warnings (unsold previous period, monthly ¥2,000 deposit not logged, stale data, failed run). Forced non-chain lists (e.g. `SHORTLIST_2026-09-04`) are flagged `PREVIEW_NON_CHAIN`, never shown as the current list. SPEC §29.5–29.8; schemas `PaperOpsData / PaperRunData / PaperJournal*`.
+- `dashboard/paper.html` rewritten as the ops desk (old page kept at `/paper/v1` = `paper_v1.html`): status chips (data as-of / today / account source), update button + progress + log, hero "今天要做什么" with steps and a 20-cell hold progress, sell/buy action card with per-row "登记", three numbers (journal or shadow), positions (actual | model tabs), per-period history with expandable names, journal with delete, settings (only monthly contribution editable), FAQ from the backend. Stitch job `gen-3` landed in project 炒股 (updateTime 02:28:49Z) from the same brief; TEXT_TO_UI_PRO output is only viewable on the Stitch web UI.
+- Smoke: offline state-machine simulation over 8 dated scenarios (hold / weekend / exit morning / signal night before & after list / entry day; journal deposit+10 buys+10 sells) all produced the intended phase and lists; HTTP smoke of ops/status/journal add/reject/delete; browser render OK; real background update launched from the page (see next entry for result). Stability: runs with V29 until the first real exit day 2026-09-29.
+
+## 2026-09-07 (10:25) — O4 global-index / O5 northbound overlays read once; ML7 information-stack shadow wired into daily.py (output-only)
+
+- Owner 09:44: blanket authorisation ("不用请示"); asked about retail crowding, Nasdaq/Dow/Nikkei/HSI linkage, north/southbound flows, politics/policy/news/Fed/war.
+- `research_engine/v38_overlay/global_north.py` + `V38_O4_O5_GLOBAL_NORTH_CONTRACT.md` / `_DECISION.md`: O4 (mean 20d return of ^IXIC/^DJI/^N225/^HSI via Yahoo, z<−1 → 50%) → **REJECT** (validation Sharpe 0.70→0.58; flagged periods averaged +2.9% — A-share small caps moved against global drawdowns). O5 (SH+SZ northbound 20d net buy, Eastmoney `RPT_MUTUAL_DEAL_HISTORY`, z<−1 → 50%) → passes both gates (validation TWR +38→+42%, Sharpe 0.70→0.82, MaxDD −24.4→−22.3%) but **NOT_DEPLOYABLE**: HKEX stopped daily northbound disclosure 2024-08-19; not written into `daily.py`, no proxy search. ATLAS 88–89. Southbound NOT_APPLICABLE; per-stock northbound (2021-04→2024-08 only), Fed/war/policy/news DATA_BLOCKED; retail crowding = V24 (stock) / O3 (market) already read. S2 closed (O1–O5).
+- ML7 (V38-S3) forward shadow: `research_engine/ml7_live/` — env-redirected live copies of the four information layers (`cn_a_share_findeep_v27`, `cn_a_share_preann_v38`, `cn_a_share_insider_v38`, `cn_a_share_pledge_v38` gained `TRADEMIND_*_RAW/NORM/FEAT/*_CUTOFF/END_YEAR` overrides; defaults unchanged), hard-linked frozen raw + incremental refetch of open periods, 32 features, REFIT_240 model (2025-11-06, 2.45M rows), `SIGNAL_ML7_{date}.json`, `LEDGER_ML7.json/csv` (`name_overlap_with_ml1`), `STATUS_ML7.json`. Hooked as step 9 of `ml1_live/daily.py` (`--no-ml7`), after all ML1 files; exceptions recorded only. First signal 2026-08-28: 999 names, 38.6% overlap with ML1. Integrated `--skip-fetch` run: ML1 files byte-identical timestamps, ML7 2 s. Read rule: ≥24 closed periods, once.
+
+## 2026-09-07 (02:10) — V38 S0–S2 settled: L4 insider / L7 pledge NO_CANDIDATE (real edge, wrong book); O3 sentiment REJECT; S3 stack registered for the forward window
+
+- L4 `research_engine/cn_a_share_insider_v38/`: 股东增减持 + 高管持股变动 2007–2024 (267,830 PIT events) → 7 fixed features → one LightGBM → `A_SHARE_INSIDER_TRADES_V38L4_NO_CANDIDATE` (`V38_L4_INSIDER_DECISION.md`). Validation excess vs EW +0.17%/20d t 5.9, rolling 4/5, corr vs ML1 0.21 — real and orthogonal — but LO20 validation −16.2% (bear β). Second orthogonal information layer after V27 ML2F that the 20d long-only quintile book cannot monetise. ATLAS 85.
+- O3 `research_engine/v38_overlay/sentiment.py` ("韭菜指数"): 4 free market-level retail-heat z-scores (margin 20d Δ, median turnover, limit-up fraction, CSDC new accounts `RPT_STOCK_OPEN_DATA`) → composite > +1 → 50% exposure on V26.8, one read → `REJECT` on the pre-registered gate (validation MaxDD unchanged) although Sharpe rose in both segments and research MaxDD −56%→−46% (`V38_O3_SENTIMENT_DECISION.md`). The 2022–24 drawdown had no preceding overheating. ATLAS 86. Not tuned.
+- L7 `research_engine/cn_a_share_pledge_v38/` + `V38_L7_PLEDGE_CONTRACT.md`: 中登 weekly 股权质押 (`RPT_CSDC_LIST`, 2014-03 →, 1.43M rows, 508 snapshots, absent = zero) → 6 fixed features (low pledge = long) → one LightGBM (first prediction 2016-03-28 = live start + 500 sessions; first attempt crashed with no training rows before any result and was corrected) → `A_SHARE_EQUITY_PLEDGE_V38L7_NO_CANDIDATE` (`V38_L7_PLEDGE_DECISION.md`). Strongest V38 layer: validation excess +0.35%/20d t 6.6, IC 0.05, 4/4 live rolling blocks, corr vs ML1 0.62; LO20 −25% research / −9% validation. ATLAS 87.
+- L2 buyback: only live table `RPTA_WEB_GPHG` has 2,986 rows total → DATA_BLOCKED. L3/L5/L6 DEFERRED (short-side mechanisms / ML1 overlap).
+- S3 `V38_S3_INFO_STACK_CONTRACT.md` registered, **not run**: 32-feature information-only stack (findeep + preann + insider + pledge, all included ex-ante), evaluable only on the V29 forward window (≥24 periods, one read). Historical windows are all consumed. Awaiting user on adding an output-only ML7 score + `LEDGER_ML7.json` to `daily.py`.
+- `V38_EVOLUTION_MISSION_REPORT.md`: S0–S2 settled; 0 gates passed; three free information layers proven real but unmonetisable under the long-only 20d book; nothing changes in ML1 / V26.8 / `daily.py`. `PROJECT_STATUS.md`, `TODO.md`, `AGENTS.md`, `TRADEMIND_CONTEXT.md` updated.
+
+## 2026-09-06 (23:50) — V38 L1 pre-announcement layer + S2 overlays: all NO_CANDIDATE / REJECT
+
+- S0 `V38_HYPOTHESIS_LEDGER.md` (LSY CH-3/4, A-share PEAD, insider-timing literature, buybacks, lock-ups, CICSI; community small-cap-decay note as risk only).
+- L1 `research_engine/cn_a_share_preann_v38/`: Eastmoney 业绩预告 + 业绩快报 2008–2023 (124 periods, 0 fails, 100,400 PIT events) → 9 fixed features → one LightGBM → `A_SHARE_PREANNOUNCEMENT_V38L1_NO_CANDIDATE` (research excess t 9.6 concentrated 2018–21, validation t −0.11, LO20 −20%, rolling 3/5, corr vs ML1 0.07).
+- S2 `research_engine/v38_overlay/`: O1 main-board EW < SMA200 → 50% and O2 20d vol > research median ×1.5 → 50% on the V26.8 book, one read each → both REJECT (`V38_OVERLAY_DECISION.md`). 2015 drawdown untouched by the trend rule.
+- FAILURE_ATLAS 84 rows. ML1 unchanged. Sleeve count still 1.
+
+## 2026-09-06 (22:50) — V38 Evolution Mission opened (Design)
+
+- User asked for continuous backtest/optimise/iterate + learning from other strategies and forums. Answer: iterate outside ML1, not on it (ATLAS 81 + V34 show tuning only improves the backtest). `V38_EVOLUTION_MISSION_DESIGN.md`: S0 hypothesis ledger, S1 eight free information layers (insider trades, buybacks, lock-up expiry, earnings pre-announcements, block trades, fund holdings, pledges, market-level retail sentiment), S2 three exposure overlays tested once each, S3 equal-weight combination only if an independent sleeve appears. ML1 frozen; denied/recent windows unread; m counted per layer.
+
+## 2026-09-06 (22:20) — Paper desk rebuilt around「今天要做什么」
+
+- User/PM read of `/paper`: it answered「模型是什么」, not「我今天要不要动手」. Rebuilt IA (Stitch 炒股 gen-2 consulted; navy palette): hero = today's action (HOLD/SELL/BUY from new `window.today_action`, sessions held/left, 4-dot timeline), three plain numbers (现在值多少 / 投进去多少 / 本轮到期), one money card (capital + monthly, one button; frozen params hidden under 高级), holdings table + per-row recipe drawer, then accordions 上一轮 / 历史回测 / 今日参考名单. Removed 4-step wizard, duplicate date cards, chart tabs mixing 2012 with this week, all research jargon (TWR/CAGR/影子账本/合同).
+- No rule, cost, hold or ML1 change; ¥20,000 baseline ledger untouched; `orders_sent` still false.
+
+## 2026-09-06 (17:10) — Paper desk modules linked + trade tickets
+
+- Looked at `/paper`: table stuck on「正在读 live 文件」because `applyDesk` wrote a missing `augMeta`. Tabs did not change the table; row click did nothing.
+- One selected context now: 本周/本月/验证/研究 switch chart + dates + KPIs + holdings together. Click a row for buy/sell recipe (date, price, lots, fee, PnL). Stitch generate running on 炒股 (navy, not burgundy); TEXT_TO_UI_PRO still web-only.
+
+## 2026-09-06 (15:50) — 本周/本月 follow preset capital (SHADOW scores)
+
+- First attempt re-scored live sessions and died on Master `No module named 'lightgbm'`, so 本周/本月 stayed on official ¥20k. Now lot/MTM replay reads frozen `SHADOW_2026-08-28` / `SHADOW_2026-07-30` scores. Unit floor still ¥2,000; below that the tabs show 买不进, not ¥20,157.
+
+## 2026-09-06 (12:50) — Preview capital now replays V26.8 books
+
+- Changing capital on `/paper` re-runs research + validation with frozen ML1 scores and the V26.8 shell (preview). Official ¥20k ledger / READ unchanged. Denied window not read.
+
+## 2026-09-06 (12:35) — Paper desk dates, buy price, equity curve
+
+- Official table is the OPEN book: **买入** = next-open fill, **现价** = mark close. Latest SHORTLIST is preview only.
+- Desk now returns `window` (signal/entry/mark + V26.8 research/validation) and `curves` (live / August / validation / research). No retune.
+
+## 2026-09-06 (12:30) — Paper desk Stitch land
+
+- Generated once on 炒股 (`updateTime` 2026-09-06T04:23:05Z). API still has burgundy tokens; landed HTML uses navy `#070b12` / `#111827` / `#3b82f6`.
+- `/paper` now follows that console language: 01–04 paper steps, sticky nav, official vs preview table (open/mark/PnL), August area sparkline. Same APIs. No `order_send`.
+
+## 2026-09-06 (12:20) — A-share paper desk on the dashboard
+
+- New page `/paper` (Stitch 炒股 tokens: `#070b12` / `#3b82f6` / `#7c5cfc`). Shows V26.8 shortlist, TOP20 MTM, August curve.
+- Capital / monthly deposit / price cap / N are editable as **lot preview** from the last SIGNAL. Does not retune ML1. `PUT /api/v1/paper/settings` stores defaults only.
+- SPEC §29. No `order_send`. Stitch MCP was not attached this session; UI uses the bound 炒股 palette.
+
+## 2026-09-06 (12:15) — V26.8 August 2026 month (diagnostic)
+
+- Full hold 2026-07-31 open → 08-28 open: **+¥2,703 / +13.52%**, 10/10 fills, vs MAIN≤¥100 EW **+7.28%**.
+- Calendar August (08-03→08-28 sale): money ¥21,125 → ¥22,703 (**+7.47%**); peak 08-25 ¥22,847.
+- 08-28 +¥2k deposit → 08-31 new book 9 fills (unit ¥2,470), MTM ¥24,778. Not a retune.
+
+## 2026-09-06 (12:05) — V26.8 replay + live open mark (numbers)
+
+- Replayed frozen V26.8 validation: TWR **+39.0298%**, equity **¥86,856.15**, 29 periods, Δ vs READ = 0.
+- Live 2026-08-28 book marked to 2026-09-04: 10/10 fills at 08-31 open, invested ¥19,739.72, fees ¥50.20, MTM **¥20,157.08** (**+¥157 / +0.79%**). Close-est lots matched open lots this period.
+- Validation 29 periods: name set never differs close vs next open; lots identical **17/29**; mean overnight gap **+0.10%** (abs 0.43%).
+- Ledger now stores open fills + daily MTM. Feature cache respects live env; shape mismatch rebuilds. No ML1/V26.8 retune.
+
+## 2026-09-06 (11:53) — Stay on A-share V29 (owner correction)
+
+- Owner: A-share paper path unfinished; do not switch markets. V31/V35–V37 remain frozen, not the next knife.
+- `LEDGER_TOP20` now records the OPEN V26.8 book (2026-08-28) instead of empty periods. `n_target` no longer overwritten by selected N.
+- Next: daily V26.8 SHORTLIST + shadow ledger. No new family. No ML1/V26.8 retune.
+
 ## 2026-09-06 (12:00) — V37 warehouse receipts: NO_CANDIDATE (val +41% does not pass)
 
 - Contract committed before pull/run. SHFE/INE `dailystock.dat` DIRECT, 2,801/3,002 days, 22 products, 5 warehouse features, MIN_N=12, V31 labels/LS. CZCE xls reachable but totals-column drift — excluded before scores. DCE 412 — excluded.

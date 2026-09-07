@@ -881,4 +881,79 @@ Windows 只编排。Xavier 只计算。四台各至少 10 次 feature / window /
 
 ---
 
+## 二十九、V29 A 股纸面台（Master 只读 + 预览）
+
+给人看 ML1 / V26.8 短名单和影子账本。不发单。不改 ML1 特征 / 持有期 / 成本 / refit。
+
+### 29.1 路由
+
+| 方法 | 路径 | 作用 |
+|------|------|------|
+| `GET` | `/paper` | 纸面台 HTML |
+| `GET` | `/api/v1/paper/desk` | 状态 + 本期持仓 + 日期窗 + 资金曲线 + TOP20 账本 |
+| `POST` | `/api/v1/paper/preview` | 按新资金重算手数，并按同一套 V26.8 规则重跑研究/验证账本（预览，不写冻结 READ、不改官方仓） |
+| `PUT` | `/api/v1/paper/settings` | 写下一次预览默认资金（`live/PAPER_SETTINGS.json`） |
+
+### 29.2 `GET /api/v1/paper/desk` 的 `data`
+
+`asof_session`、`contract`、`status`、`settings`、`shortlist`、`holdings[]`（本期 OPEN：`symbol,name,buy_date,buy_price,mark_date,mark_price,lots,shares,cost_in,buy_fee,unrealized,recipe`）、`holdings_august[]`（本月已平仓：买入/卖出日价、净利、`recipe`）、`books`（`live`/`august`/`validation`/`research` 各带 `kind`+`rows`，切页用）、`window`、`curves`、`preset_replay`、`ledger`、`august`、`orders_sent`（恒 `false`）。切曲线页必须换表和票据。
+
+`window` 另含首页动作态：`today_action` ∈ `HOLD | SELL | BUY | UNKNOWN`（按 `asof_session` 与 `exit_date` 在交易日历上的位置算出）、`sessions_held`（买入开盘后已过交易日数）、`sessions_left`、`sessions_total`（=20，`held + left == total`）。只描述状态，不发单。
+
+禁用窗日期只展示为已消耗，不得用来选变体。
+
+### 29.3 `POST /api/v1/paper/preview` 请求
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `capital` | number | 必填，> 0。账户资金（元） |
+| `monthly_contrib` | number | 可选，默认设置值。只展示，不改官方账本 |
+| `max_price` | number | 可选，默认 100。信号日收盘上限 |
+| `n_target` | int | 可选，默认 10。改 N = 预览，不是新合同采纳 |
+| `boards` | string | 可选，`MAIN` / `MAIN_CHINEXT` / `ALL` |
+
+`data`：`contract`、`capital`、`unit_yuan`、`n_target`、`n_names`、`est_invested_yuan`、`cash_yuan`、`preview`（恒 `true`）、`names[]`（`rank,symbol,score,last_close,lots_100_est,est_yuan`）、`replay`（可空：`research` / `validation` / `live`（本期/本周） / `august`（本月）曲线与持仓；`official_capital` 恒 20000）。
+
+手数公式与 V26.8 相同：`unit=max(2000, capital/n_target)`，`lots=floor(unit/(100*close))`，再按分数补手到仓位。名字来自最近 SIGNAL 的前 20% 分数，不再拟合。
+
+`replay` 用冻结 ML1 分数在研究窗 + 验证窗各跑一次账本。不读禁用窗。不覆盖 `ML1_SCALED_UNIT_FULL_CONTRIB2K_MAIN_READ.json`。本期影子仓仍是官方 ¥20,000。
+
+### 29.4 规则
+
+- 不写冻结研究目录。不 `order_send`。
+- 改 `n_target` / `exposure` / 持有期不得当成官方外壳；官方默认仍是 V26.8。
+- 资金可调：预览立刻变手数，并按该资金重跑研究/验证曲线；`PUT settings` 只记默认资金，不改已开仓影子账本。官方合同仍是 V26.8 / ¥20,000。
+- 缺文件 → `TM-1003`。
+
+### 29.5 操作台 V2 路由（2026-09-07，设计见 `docs/research_engine/PAPER_OPS_DESK_V2_DESIGN.md`）
+
+| 方法 | 路径 | 作用 |
+|------|------|------|
+| `GET` | `/api/v1/paper/ops` | 今天的操作计划 + 数据新鲜度 + 运行状态 + 成交日志派生账户 + 历史每一期 |
+| `POST` | `/api/v1/paper/update` | 后台启动一次 `python -m research_engine.ml1_live.daily`（官方默认参数；有锁，重复调用返回当前运行） |
+| `GET` | `/api/v1/paper/update/status` | 运行锁 / 进度阶段 / 日志尾 / 上次运行结果 |
+| `GET` | `/api/v1/paper/journal` | 成交日志（事件 + 派生持仓/现金） |
+| `POST` | `/api/v1/paper/journal` | 追加一条事件 `{type: BUY|SELL|DEPOSIT|WITHDRAW|NOTE, date, symbol?, lots?, price?, fee?, note?}` |
+| `DELETE` | `/api/v1/paper/journal/{event_id}` | 删除一条事件（用于改错） |
+
+### 29.6 `GET /api/v1/paper/ops` 的 `data`
+
+- `freshness`：`today`、`today_is_trading_day`、`last_completed_session`（今天 18:00 前 = 上一个交易日）、`asof_session`、`stale_sessions`（落后交易日数）、`needs_update`、`update_window`（文字："收盘后 18:30 以后，或次日 08:30 前"）。
+- `run`：`running`、`pid`、`started_at`、`elapsed_s`、`stage`（从日志识别的阶段文字）、`log_tail[]`、`last_run`（`STATUS.json` 摘要：`asof_session,started_at,elapsed_s,errors[]`）、`last_failed`。
+- `plan`：`phase` ∈ `UPDATE_FIRST | SELL_TODAY | LIST_READY_BUY_TOMORROW | SIGNAL_TONIGHT | BUY_TODAY | HOLD | NO_POSITION`；`headline`、`sub`、`steps[]`（每步 `{when, text}`）、`sell_list[]`、`buy_list[]`（按实际现金重算：`rank,symbol,name,last_close,lots_100_est,est_yuan,score`）、`cash_check`（`cash_available, reserve, budget, planned_yuan, ok, shortfall, source ∈ JOURNAL|MODEL`）、`warnings[]`、`key_dates`（`signal_date, entry, exit_date, next_signal, next_entry`）、`sessions_held/left/total`。
+- `account`：`source`（`JOURNAL` 有事件 / `MODEL` 无事件）、`cash`、`market_value`、`equity`、`positions[]`（`symbol,name,lots,shares,avg_price,buy_date,mark_price,mark_date,cost_in,unrealized,status`）、`deposits_total`、`realized_pnl`、`month_contrib_logged`（本月是否已登记 ¥2,000 入金）。
+- `history[]`：每期 `{period_no, signal_date, entry, exit, status, n_names, capital_ret, ew_ret, lo_minus_ew, net_yuan, equity, is_chain, names[]}`；非链上的强制名单以 `is_chain=false` 标注为「非操作日预览」。
+- `journal_events[]`：最近 50 条。
+- `orders_sent`：恒 `false`。
+
+### 29.7 `POST /api/v1/paper/update`
+
+`body` 可选 `{force: bool}`（默认 `false`；`true` 只在已有运行时返回 `TM-1007` 冲突而不是复用）。返回 `run` 结构。`daily.py` 以仓库默认参数运行（V26.8 官方外壳），页面**不能**传特征/参数/持有期/资金。
+
+### 29.8 成交日志规则
+
+- 事件不可编辑，只能追加/删除；持仓与现金全部由事件推导（FIFO 按票）。
+- 手续费空则按 `max(5, 成交额×0.0003)` 估（买）/ `max(5, 成交额×0.0003)+成交额×0.0005 印花税`（卖）；用户填了以填的为准。
+- 日志不进冻结目录，不影响 `LEDGER_TOP20.json`；只改页面的「实际账户」视图和买入手数。
+
 

@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-09-06 12:00（V37 `CN_FUTURES_WAREHOUSE_V37_NO_CANDIDATE`；组合仍 1 袖 ML1 V26.8；ATLAS 81）  
+**最后更新：** 2026-09-07 11:00（**纸面操作台 V2** 上线 `http://127.0.0.1:9000/paper`：真实日历「今天要做什么」/ 一键后台 `daily.py`（锁、进度、日志、续跑）/ 成交日志派生真实账户 / 按可用现金重算买入手数 / 历史每一期 / FAQ；设计与逐条回答 `docs/research_engine/PAPER_OPS_DESK_V2_DESIGN.md`，SPEC §29.5–29.8；旧页 `/paper/v1`。Smoke PASS，Stability 到 09-29 卖出日。每次计算 $0。此前 10:25：O4 REJECT、O5 NOT_DEPLOYABLE，S2 关闭；ML7 影子接入 `daily.py` 第 9 步，24 期后读一次；ML1 不动）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 
@@ -18,7 +18,7 @@ TradeMind 是运行在本地 Jetson 集群上的 AI 量化研究与投研实验�
 
 | 项 | 值 |
 |----|-----|
-| 版本 | **V37 NO_CANDIDATE（仓单验证 +41% 但研究负 / t 2.41 / 滚动 3/5）；V36/V31/V35 已关；ML1 + V26.8 仍是唯一袖子** |
+| 版本 | **V38 Evolution Mission S0–S2 已结算**（`V38_EVOLUTION_MISSION_REPORT.md`，$0，ATLAS 87）+ V29 纸面路径并行。L1 预告 NO_CANDIDATE；**L4 增减持**（验证超额 +0.17%/20d t 5.9，corr ML1 0.21）与 **L7 质押**（+0.35%/20d t 6.6，IC 0.05，4/4 滚动）都有信息但 LO20 两期负 → NO_CANDIDATE；L2 回购 DATA_BLOCKED；L3/L5/L6 DEFERRED（空头机制/与 ML1 重叠）。O1 SMA200 / O2 波动率 / **O3 韭菜指数**（两期夏普升、研究 MaxDD −56→−46，验证 MaxDD 不变）全 REJECT。结论：免费信息层边 0.2–0.4%/20d，盖不住 EW 为负年份的 β。O4 全球四指数联动 REJECT（反向）；O5 北向净流出过门但港交所 2024-08 停发 → NOT_DEPLOYABLE；S2 关闭。**S3 ML7 影子已接入**（`research_engine/ml7_live/`，`daily.py` 第 9 步，只输出 `SIGNAL_ML7` / `LEDGER_ML7`，首信号 08-28 与 ML1 重合 38.6%，`periods_until_read` 24）。V31/V35–V37 期货已冻。ML1 + V26.8 仍是唯一袖子。 |
 | 状态 | 用户授权修改规则 → `RESEARCH_RULES_AMENDMENT_V1`（A1–A4）。V25：14 个已有 PIT 特征 → 1 个预注册 LightGBM。验证超额 +1.47%/20d（t 17.1），LO20 验证 +30.9%（熊市；CAGR 11.1%，MaxDD −21%），研究 CAGR 14.5%（MaxDD −47%），滚动 5/5，成本 2× 仍正，复现 7/7，placebo 干净，超额序列 corr vs H11 0.06。**NEW_INDEPENDENT=1**。Paper=NO。H11/H12 KEEP_LOW_PRIORITY。 |
 | 当前 Phase | **V29 ML1 前向管线（2026-09-05）**：`research_engine/ml1_live/daily.py` 每天拉增量日线/融资/户数/成分 → live pack（冻结块逐位相同）→ 14 特征 → REFIT_240 模型（2025-11-06 已缓存）→ 前 20% 名单 `live/signals/SIGNAL_{date}.json` → 影子账本 `live/ledger/LEDGER.json`（接 V28 链，信号 2026-08-28 已 OPEN，999 只/996 可成交，¥5M 等权，无发单）。冒烟 5/5：2026-07-30 重打分与 V28 分数 Δ0.0。Stability = 连续 5 个交易日 + 第一期结算（≈2026-09-29）→ Freeze。有账户的 Paper 仍待用户。 **前一步 ML1 Final OOS 单次读取 PASS（V28，用户委托，已锁）**：2024-03→2026-07 超额 vs EW +1.00%/20d（t 9.3），LO20 +71.4%（CAGR 24.3%，MaxDD −21%），19/30 期打过 EW；EW 自己 +1.17%/20d（小盘牛市），一半以上是 β。三段正账本 +276% / +30.9% / +71.4%。**下一门 = Paper 准备**（五源每日增量管线 + 打分器只出名单 + 监控账本；先 Design）；Paper 开始需用户。策略规格 `V26_ML1_STRATEGY_SPEC.md` 不变。Portfolio 仍需第二条正袖子。不动 ML1 任何参数。**V27 季报层（$0）已冻**：ML2F 仅季报模型与 ML1 正交（超额 corr 0.06）、验证超额 +0.52% t 5.6、滚动 5/5，但 LO20 验证资金 −0.3% 不过门；ML2 全栈 corr 0.96 同簇、无增量。季报层 = 唯一与 ML1 正交且验证显著的信息层，问题在 20 日多头账本不在信息。 |
 

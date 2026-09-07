@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradeMind 纸面台 · 今天要做什么</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --floor:#070b12;--surface:#111827;--surface-2:#0b0f1a;--hover:#1c2533;--overlay:#1f2937;
+  --line:#243044;--line-soft:#1b2536;
+  --text:#e2e8f0;--muted:#94a3b8;--faint:#64748b;
+  --ok:#10b981;--ok-dim:rgba(16,185,129,.12);
+  --bad:#f43f5e;--bad-dim:rgba(244,63,94,.12);
+  --warn:#f59e0b;--warn-dim:rgba(245,158,11,.14);
+  --blue:#3b82f6;--blue-press:#2563eb;--blue-dim:rgba(59,130,246,.16);--sel:#12233f;
+  --r:12px;--r-btn:16px;
+}
+html,body{background:var(--floor);color:var(--text);min-height:100vh}
+body{font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.6;font-weight:500}
+button,input,select{font:inherit}
+.mono{font-family:"JetBrains Mono",Consolas,monospace}
+a{color:inherit}
+
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 28px;height:60px;background:rgba(17,24,39,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.brand{font-size:18px;font-weight:700;letter-spacing:-.02em}
+.brand em{font-style:normal;color:var(--ok)}
+.nav{display:flex;gap:8px}
+.nav a{color:var(--muted);text-decoration:none;padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:12px;background:var(--surface)}
+.nav a.on{color:var(--text);border-color:var(--blue);background:var(--sel)}
+.right{display:flex;align-items:center;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:12px;color:var(--muted)}
+.pill b{color:var(--text);font-weight:600}
+.pill.ok{background:var(--ok-dim);border-color:#065f46;color:var(--ok)}
+.pill.ok b{color:var(--ok)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(16,185,129,.18)}
+
+.wrap{max-width:1100px;margin:0 auto;padding:24px 24px 56px;display:flex;flex-direction:column;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 20px;border-bottom:1px solid var(--line-soft)}
+.card-h h3{font-size:15px;font-weight:600}
+.card-h .meta{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.card-b{padding:18px 20px 20px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0}
+.hero .main{padding:26px 28px 22px}
+.hero .side{border-left:1px solid var(--line-soft);padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between}
+.eyebrow{font-size:12px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;font-family:"JetBrains Mono",monospace}
+.hero h1{font-size:26px;line-height:1.3;margin-top:8px;letter-spacing:-.02em;font-weight:700}
+.hero h1.warn{color:#fbbf24}
+.hero h1.sell{color:#fbbf24}
+.hero p.sub{margin-top:8px;color:var(--muted);font-size:14px;font-weight:400}
+.hero p.sub b{color:var(--text);font-family:"JetBrains Mono",monospace;font-weight:600}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;position:relative}
+.timeline::before{content:"";position:absolute;left:12.5%;right:12.5%;top:7px;height:2px;background:var(--line)}
+.timeline .fill{position:absolute;left:12.5%;top:7px;height:2px;background:var(--blue);width:0}
+.tl{position:relative;text-align:center}
+.tl i{display:block;width:16px;height:16px;border-radius:50%;background:var(--surface);border:2px solid var(--line);margin:0 auto}
+.tl.done i{background:var(--blue);border-color:var(--blue)}
+.tl.now i{background:var(--surface);border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-dim)}
+.tl.sell i{border-color:#fbbf24}
+.tl small{display:block;margin-top:8px;font-size:11px;color:var(--faint)}
+.tl b{display:block;font-size:13px;font-family:"JetBrains Mono",monospace;font-weight:600}
+.hero .acts{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.btn{border:0;border-radius:var(--r-btn);padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer}
+.btn-go{background:var(--blue);color:#fff}
+.btn-go:hover{background:var(--blue-press)}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 12px;font-size:12px;font-weight:600;cursor:pointer}
+.btn-ghost:hover{border-color:var(--blue)}
+.btn:disabled,.btn-ghost:disabled{opacity:.5;cursor:default}
+svg.spark{width:100%;height:96px;display:block}
+.spark-cap{display:flex;justify-content:space-between;font-size:11px;color:var(--faint);font-family:"JetBrains Mono",monospace;margin-top:6px}
+
+/* 3 numbers */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.num{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
+.num span{display:block;font-size:12px;color:var(--muted)}
+.num b{display:block;margin-top:6px;font-size:24px;letter-spacing:-.02em;font-family:"JetBrains Mono",monospace;font-weight:600}
+.num em{display:block;font-style:normal;font-size:12px;color:var(--faint);margin-top:2px;font-weight:400}
+.up{color:var(--ok)}.dn{color:var(--bad)}
+
+/* money */
+.money{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+input,select{width:100%;background:var(--surface-2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 12px;outline:none;font-family:"JetBrains Mono",monospace;font-size:15px}
+input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-dim)}
+.help{font-size:12px;color:var(--faint);margin-top:12px;font-weight:400;line-height:1.55}
+.hint{display:none;margin-top:10px;padding:8px 12px;border-radius:10px;background:var(--warn-dim);color:#fbbf24;font-size:12px}
+.hint.show{display:block}
+.chip{display:inline-flex;align-items:center;padding:2px 9px;border-radius:999px;font-size:11px;background:var(--ok-dim);color:var(--ok)}
+.chip.warn{background:var(--warn-dim);color:#fbbf24}
+.chip.info{background:var(--blue-dim);color:#93c5fd}
+
+/* holdings */
+.hold{display:grid;grid-template-columns:minmax(0,1fr) 340px}
+.hold .drawer{border-left:1px solid var(--line-soft);padding:18px 20px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:11px;color:var(--faint);letter-spacing:.04em;padding:10px 14px;background:var(--surface-2);font-weight:600}
+td{padding:11px 14px;border-top:1px solid var(--line-soft);font-size:13px;vertical-align:middle}
+tbody tr{cursor:pointer}
+tbody tr:hover td{background:var(--hover)}
+tbody tr.sel td{background:var(--sel)}
+.sym b{display:block;font-weight:600;font-family:"JetBrains Mono",monospace}
+.sym small{display:block;font-size:11px;color:var(--faint);font-weight:400}
+.pos{color:var(--ok)}.neg{color:var(--bad)}
+.empty{padding:36px;text-align:center;color:var(--muted);font-size:13px}
+.drawer h4{font-size:15px;font-weight:600}
+.drawer .state{margin:4px 0 14px}
+.tk{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+.tk div{font-size:11px;color:var(--faint)}
+.tk b{display:block;margin-top:2px;color:var(--text);font-size:13px;font-family:"JetBrains Mono",monospace;font-weight:600}
+.recipe{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--surface-2);border:1px solid var(--line-soft);font-size:13px;color:var(--text);font-weight:400;line-height:1.7}
+.drawer .acts{display:flex;gap:8px;margin-top:12px}
+
+/* accordions */
+details.acc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;font-size:14px;font-weight:600}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary .sum{font-size:13px;color:var(--muted);font-weight:500;font-family:"JetBrains Mono",monospace}
+details.acc summary::after{content:"▸";color:var(--faint);margin-left:8px;transition:transform .15s}
+details.acc[open] summary::after{transform:rotate(90deg)}
+details.acc .card-b{border-top:1px solid var(--line-soft)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:4px 12px;font-size:12px;cursor:pointer}
+.tabs button.on{border-color:var(--blue);color:var(--text);background:var(--sel)}
+svg.curve{width:100%;height:220px;display:block;margin-top:12px}
+.axis{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-family:"JetBrains Mono",monospace;margin-top:6px}
+.plain{font-size:13px;color:var(--muted);font-weight:400;line-height:1.7}
+.plain b{color:var(--text);font-family:"JetBrains Mono",monospace;font-weight:600}
+.row2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.foot{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--faint);font-weight:400;padding-top:8px}
+.flash{position:fixed;top:76px;left:50%;transform:translateX(-50%);z-index:30;padding:10px 16px;border-radius:10px;background:var(--overlay);border:1px solid var(--blue);color:var(--text);font-size:13px;display:none}
+.flash.show{display:block}
+@media (max-width:900px){.hero,.hold{grid-template-columns:1fr}.hero .side,.hold .drawer{border-left:0;border-top:1px solid var(--line-soft)}.nums,.money,.row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><em>TradeMind</em> 纸面台</div>
+  <nav class="nav"><a href="/dashboard">研究台</a><a class="on" href="/paper">A股纸面</a></nav>
+  <div class="right">
+    <div class="pill"><i class="dot"></i>行情到 <b id="asof">—</b></div>
+    <div class="pill ok">系统不会替你下单</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="card hero" id="hero">
+    <div class="main">
+      <div class="eyebrow">今天要做什么</div>
+      <h1 id="heroTitle">正在读账本…</h1>
+      <p class="sub" id="heroSub"></p>
+      <div class="timeline" id="timeline">
+        <div class="fill" id="tlFill"></div>
+        <div class="tl" id="tl0"><i></i><small>选股</small><b>—</b></div>
+        <div class="tl" id="tl1"><i></i><small>买入</small><b>—</b></div>
+        <div class="tl" id="tl2"><i></i><small>今天</small><b>—</b></div>
+        <div class="tl" id="tl3"><i></i><small>卖出</small><b>—</b></div>
+      </div>
+      <div class="acts">
+        <button class="btn btn-go" type="button" onclick="scrollTo2('holdCard')">看我的持仓</button>
+        <button class="btn-ghost" type="button" onclick="toggleSellHelp()">到期那天怎么卖</button>
+        <button class="btn-ghost" type="button" onclick="copyList()">复制持仓名单</button>
+      </div>
+      <p class="help" id="sellHelp" style="display:none"></p>
+    </div>
+    <div class="side">
+      <div>
+        <div class="eyebrow">这轮走势</div>
+        <svg class="spark" id="spark" viewBox="0 0 300 96" preserveAspectRatio="none"></svg>
+        <div class="spark-cap"><span id="sparkA">—</span><span id="sparkB">—</span></div>
+      </div>
+      <p class="help" id="sideNote" style="margin-top:8px"></p>
+    </div>
+  </section>
+
+  <section class="nums">
+    <article class="num"><span>现在值多少</span><b id="nMtm">—</b><em id="nMtmSub">买入后到最近收盘</em></article>
+    <article class="num"><span>投进去多少</span><b id="nInv">—</b><em id="nInvSub">含佣金</em></article>
+    <article class="num"><span>本轮到期</span><b id="nExit">—</b><em id="nExitSub">那天开盘卖，收盘后出新名单</em></article>
+  </section>
+
+  <section class="card">
+    <div class="card-h">
+      <h3>我的资金</h3>
+      <div class="meta"><span class="chip info" id="modeChip">按你的钱算</span><button class="btn-ghost" type="button" onclick="showBaseline()">看 ¥20,000 研究基准</button></div>
+    </div>
+    <div class="card-b">
+      <div class="money">
+        <div><label for="capital">账户里打算用的钱（元）</label><input id="capital" type="number" min="2000" step="1000" oninput="markDirty()"></div>
+        <div><label for="contrib">每月再加（元，可填 0）</label><input id="contrib" type="number" min="0" step="500" oninput="markDirty()"></div>
+        <div><button class="btn btn-go" type="button" id="btnGo" onclick="recalcAndSave()">按这笔钱算</button></div>
+      </div>
+      <p class="hint" id="dirty">数字改了，还没重算。点「按这笔钱算」。</p>
+      <p class="help">最少 ¥2,000 才买得进一只。改这里只改给你的名单和手数，不改选股规则；¥20,000 那份基准账本不动。</p>
+      <p class="help" id="previewNote"></p>
+      <details style="margin-top:10px">
+        <summary style="cursor:pointer;font-size:12px;color:var(--faint)">高级（已锁定，不建议改）</summary>
+        <div class="row2" style="margin-top:10px">
+          <div><label for="maxPrice">股价上限</label><input id="maxPrice" type="number" min="1" step="1" oninput="markDirty()"></div>
+          <div><label for="nTarget">目标只数</label><input id="nTarget" type="number" min="1" max="40" step="1" oninput="markDirty()"></div>
+          <div><label for="boards">能买的板块</label>
+            <select id="boards" onchange="markDirty()">
+              <option value="MAIN">仅主板</option>
+              <option value="MAIN_CHINEXT">主板+创业板</option>
+              <option value="ALL">全部</option>
+            </select></div>
+        </div>
+        <p class="help">持有 20 个交易日、每只最少 ¥2,000、剩余钱按排名补手、佣金最低 ¥5 —— 这些是定死的，页面上改不了。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="card hold" id="holdCard">
+    <div>
+      <div class="card-h">
+        <h3 id="holdTitle">我的持仓</h3>
+        <div class="meta"><span class="chip" id="holdChip">持有中</span><span id="holdMeta"></span></div>
+      </div>
+      <table>
+        <thead><tr><th>股票</th><th>买入</th><th>现价</th><th>手数</th><th>花了</th><th>赔赚</th></tr></thead>
+        <tbody id="holdBody"><tr><td colspan="6" class="empty">正在读…</td></tr></tbody>
+      </table>
+      <p class="help" style="padding:0 20px 14px">点一行，右边告诉你这一笔怎么买、怎么卖。</p>
+    </div>
+    <aside class="drawer">
+      <h4 id="tkTitle">点左边一只股票</h4>
+      <div class="state"><span class="chip" id="tkChip">—</span></div>
+      <div class="tk">
+        <div>买入日<b id="tkBuyD">—</b></div><div>买入价<b id="tkBuyP">—</b></div>
+        <div id="tkSellDL">现价日<b id="tkSellD">—</b></div><div id="tkSellPL">现价<b id="tkSellP">—</b></div>
+        <div>手数 / 股数<b id="tkLots">—</b></div><div>佣金<b id="tkFee">—</b></div>
+        <div>花了<b id="tkCost">—</b></div><div>赔赚<b id="tkPnl">—</b></div>
+      </div>
+      <div class="recipe" id="tkRecipe">先点左边一行。</div>
+      <div class="acts">
+        <button class="btn-ghost" type="button" onclick="copyTicket()">复制这一笔</button>
+        <button class="btn-ghost" type="button" onclick="nextRow()">看下一只</button>
+      </div>
+    </aside>
+  </section>
+
+  <details class="acc" id="accLast">
+    <summary><span>上一轮怎么样</span><span class="sum" id="lastSum">—</span></summary>
+    <div class="card-b">
+      <p class="plain" id="lastPlain"></p>
+      <table style="margin-top:12px">
+        <thead><tr><th>股票</th><th>买入</th><th>卖出</th><th>手数</th><th>花了</th><th>净赚</th></tr></thead>
+        <tbody id="lastBody"></tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="acc" id="accHist">
+    <summary><span>历史回测（只做参考，不是承诺）</span><span class="sum" id="histSum">—</span></summary>
+    <div class="card-b">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <p class="plain" id="histPlain"></p>
+        <div class="tabs">
+          <button type="button" class="on" data-k="validation" onclick="showHist('validation')">近三年（2021–2024）</button>
+          <button type="button" data-k="research" onclick="showHist('research')">更早（2012–2021）</button>
+        </div>
+      </div>
+      <svg class="curve" id="curve" viewBox="0 0 720 220" preserveAspectRatio="none"></svg>
+      <div class="axis"><span id="cvA">—</span><span id="cvM">—</span><span id="cvB">—</span></div>
+      <p class="help">2024-03 到 2026-08 这段已经在定规则时看过，不再拿来挑参数。回测里每只股票的明细没有保存，只有每一轮的进出日期和盈亏。</p>
+    </div>
+  </details>
+
+  <details class="acc" id="accRef">
+    <summary><span>今天的参考名单（今天不是换仓日，不用买）</span><span class="sum" id="refSum">—</span></summary>
+    <div class="card-b">
+      <p class="plain" id="refPlain"></p>
+      <table style="margin-top:12px">
+        <thead><tr><th>#</th><th>股票</th><th>最近收盘</th><th>约几手</th><th>约多少钱</th></tr></thead>
+        <tbody id="refBody"></tbody>
+      </table>
+    </div>
+  </details>
+
+  <footer class="foot">
+    <span>名单由模型每天生成，你手工下单。模拟账本不等于真钱，也不是承诺。</span>
+    <span id="footMark"></span>
+  </footer>
+</main>
+<div class="flash" id="flash"></div>
+
+<script>
+const API = window.location.origin;
+let desk = null, rows = [], sel = -1, lastRows = [], histKey = 'validation', baseline = false;
+
+const yuan = n => n == null || Number.isNaN(n) ? '—' : '¥' + Number(n).toLocaleString('zh-CN', {maximumFractionDigits: 0});
+const yuan2 = n => n == null || Number.isNaN(n) ? '—' : '¥' + Number(n).toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const signed = n => n == null || Number.isNaN(n) ? '—' : ((n >= 0 ? '+' : '−') + yuan2(Math.abs(n)));
+const pct = n => n == null ? '—' : ((n >= 0 ? '+' : '') + (n * 100).toFixed(1) + '%');
+const px = n => n == null || Number.isNaN(n) ? '—' : Number(n).toFixed(2);
+const md = d => d ? String(d).slice(5) : '—';
+const cls = n => n > 0 ? 'pos' : (n < 0 ? 'neg' : '');
+const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+function flash(t){ const el = document.getElementById('flash'); el.textContent = t; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2600); }
+function scrollTo2(id){ document.getElementById(id).scrollIntoView({behavior: 'smooth', block: 'start'}); }
+function markDirty(){ document.getElementById('dirty').classList.add('show'); }
+function clearDirty(){ document.getElementById('dirty').classList.remove('show'); }
+
+/* ---------- hero ---------- */
+function paintHero(){
+  const w = desk.window || {};
+  const liveC = (desk.curves || {}).live || {};
+  const n = rows.length;
+  const held = w.sessions_held, total = w.sessions_total || 20, left = w.sessions_left;
+  const act = w.today_action;
+  const h1 = document.getElementById('heroTitle');
+  h1.className = '';
+  const sellHelp = document.getElementById('sellHelp');
+  if (!n && liveC.preview){
+    h1.textContent = '这笔钱买不进任何一只。';
+    h1.className = 'warn';
+    set('heroSub', liveC.note || '每只最少要 ¥2,000。把上面的资金改到 ¥2,000 以上再算。');
+  } else if (act === 'HOLD'){
+    h1.textContent = '今天不用操作。';
+    document.getElementById('heroSub').innerHTML = `手里 <b>${n}</b> 只股票持有中，买入后已过 <b>${held ?? '—'} / ${total}</b> 个交易日，还剩 <b>${left ?? '—'}</b> 个，<b>${w.exit_date || '—'}</b> 开盘卖出。`;
+  } else if (act === 'SELL'){
+    h1.textContent = '今天开盘卖出这 ' + n + ' 只。';
+    h1.className = 'sell';
+    document.getElementById('heroSub').innerHTML = `全部按开盘价市价卖。收盘后系统出新名单，<b>明天开盘</b> 按新名单买。`;
+  } else if (act === 'BUY'){
+    h1.textContent = '今天开盘按新名单买入。';
+    h1.className = 'sell';
+    document.getElementById('heroSub').innerHTML = `上一轮已在 <b>${w.exit_date || '—'}</b> 卖出。看下面「今天的参考名单」的手数，开盘市价买。`;
+  } else {
+    h1.textContent = '数据还没更新到今天。';
+    h1.className = 'warn';
+    set('heroSub', '行情只到 ' + (w.asof_session || '—') + '。先跑一次 daily.py 再看。');
+  }
+  sellHelp.textContent = `到期日 ${w.exit_date || '—'}：开盘 9:30 前挂市价卖出下面每一只，全部手数。如果某只跌停或停牌卖不掉，下一个交易日开盘再卖，最多顺延 10 天。卖完当天收盘后，系统会出新一轮名单。`;
+  // timeline
+  const pts = [w.signal_date, w.entry, w.asof_session, w.exit_date];
+  pts.forEach((d, i) => {
+    const el = document.getElementById('tl' + i);
+    el.querySelector('b').textContent = md(d);
+    el.className = 'tl' + (i < 2 ? ' done' : (i === 2 ? ' now' : ' sell'));
+  });
+  const frac = (held != null && total) ? Math.min(1, Math.max(0, held / total)) : 0;
+  document.getElementById('tlFill').style.width = (75 * (0.6667 + frac / 3)).toFixed(1) + '%';
+  set('sideNote', liveC.preview ? `按 ¥${Number(desk.settings.capital).toLocaleString('zh-CN')} 算的模拟走势。` : '¥20,000 研究基准账本的走势。');
+  spark(liveC.points || []);
+}
+
+function spark(pts){
+  const svg = document.getElementById('spark');
+  if (pts.length < 2){ svg.innerHTML = ''; set('sparkA', '—'); set('sparkB', '还没两天数据'); return; }
+  const ys = pts.map(p => p.equity), min = Math.min(...ys), max = Math.max(...ys);
+  const w = 300, h = 96, pad = 6;
+  const xy = pts.map((p, i) => [pad + (w - 2 * pad) * i / (pts.length - 1), h - pad - (h - 2 * pad) * ((p.equity - min) / (max - min || 1))]);
+  const line = xy.map(p => p.map(v => v.toFixed(1)).join(',')).join(' ');
+  const col = ys[ys.length - 1] >= ys[0] ? '#10b981' : '#f43f5e';
+  svg.innerHTML = `<defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${col}" stop-opacity=".3"/><stop offset="100%" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
+    <polygon fill="url(#g1)" points="${pad},${h - pad} ${line} ${w - pad},${h - pad}"/><polyline fill="none" stroke="${col}" stroke-width="2" points="${line}"/>`;
+  set('sparkA', md(pts[0].date) + ' ' + yuan(ys[0]));
+  set('sparkB', md(pts[pts.length - 1].date) + ' ' + yuan(ys[ys.length - 1]));
+}
+
+/* ---------- numbers ---------- */
+function paintNums(){
+  const w = desk.window || {};
+  const liveC = (desk.curves || {}).live || {};
+  const open = ((desk.ledger || {}).periods || []).find(p => p.status === 'OPEN') || {};
+  const preview = !!liveC.preview;
+  const mtm = preview ? liveC.equity_end : open.mtm_equity;
+  const u = preview ? liveC.unrealized : open.unrealized;
+  const inv = preview ? liveC.invested : open.invested_open;
+  const el = document.getElementById('nMtm');
+  el.textContent = yuan(mtm); el.className = cls(u) === 'pos' ? 'up' : (cls(u) === 'neg' ? 'dn' : '');
+  set('nMtmSub', (u == null ? '' : (signed(u) + ' · ')) + '到 ' + (w.mark_date || '—') + ' 收盘');
+  set('nInv', yuan(inv));
+  set('nInvSub', rows.length + ' 只 · 含佣金' + (preview ? '' : ' · 现金 ' + yuan(open.cash)));
+  set('nExit', w.exit_date || '—');
+  set('nExitSub', w.sessions_left != null ? ('还剩 ' + w.sessions_left + ' 个交易日，那天开盘卖') : '那天开盘卖，收盘后出新名单');
+}
+
+/* ---------- holdings + ticket ---------- */
+function paintHold(){
+  const w = desk.window || {};
+  const liveC = (desk.curves || {}).live || {};
+  const chip = document.getElementById('holdChip');
+  chip.textContent = baseline ? '¥20,000 基准' : (liveC.preview ? '按你的钱' : '持有中');
+  chip.className = 'chip' + (baseline ? ' info' : '');
+  set('holdMeta', md(w.entry) + ' 买 · 现价 ' + md(w.mark_date));
+  const body = document.getElementById('holdBody');
+  if (!rows.length){
+    body.innerHTML = '<tr><td colspan="6" class="empty">这笔钱一只都买不进。每只最少 ¥2,000。</td></tr>';
+    fillTicket(null); return;
+  }
+  body.innerHTML = rows.map((r, i) => `<tr data-i="${i}">
+    <td><span class="sym"><b>${r.symbol}</b><small>${r.name || ''}</small></span></td>
+    <td class="mono">${md(r.buy_date)} @${px(r.buy_price)}</td>
+    <td class="mono">${px(r.mark_price)}</td>
+    <td class="mono">${r.lots ?? '—'} 手</td>
+    <td class="mono">${yuan(r.cost_in)}</td>
+    <td class="mono ${cls(r.unrealized)}">${signed(r.unrealized)}</td></tr>`).join('');
+  body.querySelectorAll('tr').forEach(tr => tr.addEventListener('click', () => selectRow(Number(tr.dataset.i))));
+  selectRow(sel >= 0 && sel < rows.length ? sel : 0);
+}
+function selectRow(i){
+  sel = i;
+  document.querySelectorAll('#holdBody tr').forEach((tr, n) => tr.classList.toggle('sel', n === i));
+  fillTicket(rows[i]);
+}
+function nextRow(){ if (rows.length) selectRow((sel + 1) % rows.length); }
+function fillTicket(r){
+  if (!r){ set('tkTitle', '点左边一只股票'); set('tkChip', '—'); ['tkBuyD','tkBuyP','tkSellD','tkSellP','tkLots','tkFee','tkCost','tkPnl'].forEach(id => set(id, '—')); set('tkRecipe', '先点左边一行。'); return; }
+  const w = desk.window || {};
+  const shares = r.shares != null ? r.shares : (r.lots || 0) * 100;
+  set('tkTitle', r.symbol + (r.name ? '  ' + r.name : ''));
+  const chip = document.getElementById('tkChip'); chip.textContent = '持有中 · ' + w.exit_date + ' 开盘卖'; chip.className = 'chip';
+  set('tkBuyD', r.buy_date || '—'); set('tkBuyP', px(r.buy_price));
+  set('tkSellD', r.mark_date || '—'); set('tkSellP', px(r.mark_price));
+  set('tkLots', (r.lots ?? 0) + ' 手 / ' + shares + ' 股'); set('tkFee', yuan2(r.buy_fee));
+  set('tkCost', yuan2(r.cost_in));
+  const p = document.getElementById('tkPnl'); p.textContent = signed(r.unrealized); p.className = cls(r.unrealized);
+  set('tkRecipe', `${r.buy_date} 开盘买了 ${r.lots} 手（${shares} 股），每股 ${px(r.buy_price)}，花了 ${yuan2(r.cost_in)}，佣金 ${yuan2(r.buy_fee)}。现在 ${px(r.mark_price)}（${r.mark_date}），${(r.unrealized||0) >= 0 ? '赚' : '赔'} ${yuan2(Math.abs(r.unrealized || 0))}。${w.exit_date} 开盘卖出全部 ${r.lots} 手。`);
+}
+function copyTicket(){ const t = document.getElementById('tkRecipe').textContent; navigator.clipboard.writeText(t).then(() => flash('已复制这一笔')); }
+function copyList(){
+  const lines = ['代码,名称,买入日,买入价,手数,花了,现价,赔赚'].concat(rows.map(r => [r.symbol, r.name || '', r.buy_date, r.buy_price, r.lots, r.cost_in, r.mark_price, r.unrealized].join(',')));
+  navigator.clipboard.writeText(lines.join('\n')).then(() => flash('持仓名单已复制'));
+}
+function toggleSellHelp(){ const el = document.getElementById('sellHelp'); el.style.display = el.style.display === 'none' ? 'block' : 'none'; }
+
+/* ---------- last round ---------- */
+function paintLast(){
+  const w = desk.window || {};
+  const c = (desk.curves || {}).august || {};
+  const aug = desk.august || {};
+  const pnl = lastRows.reduce((a, r) => a + (Number(r.pnl) || 0), 0);
+  const cost = lastRows.reduce((a, r) => a + (Number(r.cost_in) || 0), 0);
+  const ret = c.preview ? c.total : aug.hold_ret;
+  set('lastSum', (lastRows.length ? (signed(pnl) + ' · ' + pct(ret)) : '买不进'));
+  document.getElementById('lastPlain').innerHTML = lastRows.length
+    ? `<b>${w.month_entry || '07-31'}</b> 开盘买了 <b>${lastRows.length}</b> 只，花 <b>${yuan(cost)}</b>；<b>${w.month_exit || '08-28'}</b> 开盘全部卖出，净赚 <b>${signed(pnl)}</b>（${pct(ret)}）。${aug.ew_hold != null && !c.preview ? '同期主板等权 ' + pct(aug.ew_hold) + '。' : ''}`
+    : (c.note || '这笔钱上一轮也买不进。');
+  document.getElementById('lastBody').innerHTML = lastRows.map(r => `<tr>
+    <td><span class="sym"><b>${r.symbol}</b><small>${r.name || ''}</small></span></td>
+    <td class="mono">${md(r.buy_date)} @${px(r.buy_price)}</td>
+    <td class="mono">${md(r.sell_date)} @${px(r.sell_price)}</td>
+    <td class="mono">${r.lots} 手</td>
+    <td class="mono">${yuan(r.cost_in)}</td>
+    <td class="mono ${cls(r.pnl)}">${signed(r.pnl)}</td></tr>`).join('') || '<tr><td colspan="6" class="empty">没有成交</td></tr>';
+}
+
+/* ---------- history ---------- */
+function showHist(k){
+  histKey = k;
+  document.querySelectorAll('#accHist .tabs button').forEach(b => b.classList.toggle('on', b.dataset.k === k));
+  const c = (desk.curves || {})[k] || {};
+  const cap = c.preview ? Number(desk.settings.capital) : 20000;
+  const yrs = k === 'validation' ? '2021 年 8 月到 2024 年 3 月' : '2012 年到 2021 年';
+  document.getElementById('histPlain').innerHTML = c.points && c.points.length
+    ? `${yrs}，<b>${yuan(cap)}</b> 起步${Number(desk.settings.monthly_contrib) > 0 && c.preview ? '、每月加 ' + yuan(desk.settings.monthly_contrib) : ''}，按同样规则做到期末是 <b>${yuan(c.equity_end)}</b>${c.cagr != null ? '，年化约 <b>' + pct(c.cagr) + '</b>' : ''}，共 <b>${c.n_periods || (c.periods || []).length}</b> 轮。中间有过明显回撤。`
+    : '这一段没有数据。';
+  const v = (desk.curves || {}).validation || {};
+  set('histSum', v.equity_end != null ? (yuan(v.preview ? desk.settings.capital : 20000) + ' → ' + yuan(v.equity_end) + '（2021–2024）') : '—');
+  drawCurve(c.points || []);
+}
+function drawCurve(pts){
+  const svg = document.getElementById('curve');
+  if (pts.length < 2){ svg.innerHTML = ''; set('cvA', '—'); set('cvM', '没有数据'); set('cvB', '—'); return; }
+  const ys = pts.map(p => p.equity), min = Math.min(...ys), max = Math.max(...ys);
+  const w = 720, h = 220, pad = {l: 6, r: 6, t: 10, b: 10};
+  const xy = pts.map((p, i) => [pad.l + (w - pad.l - pad.r) * i / (pts.length - 1), h - pad.b - (h - pad.t - pad.b) * ((p.equity - min) / (max - min || 1))]);
+  const line = xy.map(p => p.map(v => v.toFixed(1)).join(',')).join(' ');
+  const col = ys[ys.length - 1] >= ys[0] ? '#10b981' : '#f43f5e';
+  svg.innerHTML = `<defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${col}" stop-opacity=".28"/><stop offset="100%" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
+    <polygon fill="url(#g2)" points="${pad.l},${h - pad.b} ${line} ${w - pad.r},${h - pad.b}"/><polyline fill="none" stroke="${col}" stroke-width="2" points="${line}"/>`;
+  set('cvA', pts[0].date + ' ' + yuan(ys[0])); set('cvM', '最低 ' + yuan(min) + ' · 最高 ' + yuan(max)); set('cvB', pts[pts.length - 1].date + ' ' + yuan(ys[ys.length - 1]));
+}
+
+/* ---------- reference list ---------- */
+function paintRef(){
+  const s = desk.shortlist || {};
+  const names = s.names || [];
+  const day = (desk.signal_file || '').match(/\d{4}-\d{2}-\d{2}/);
+  set('refSum', names.length ? (names.length + ' 只 · ' + (day ? day[0] : '')) : '—');
+  document.getElementById('refPlain').innerHTML = `模型每个交易日都会算一份名单，但只有到期日（${(desk.window || {}).exit_date || '—'}）收盘后那份才用来买。这份是 ${day ? day[0] : '最近'} 收盘的参考，按 ¥20,000 估手数，不用照着买。`;
+  document.getElementById('refBody').innerHTML = names.map(n => `<tr>
+    <td class="mono">${n.rank}</td><td class="mono">${n.symbol}</td><td class="mono">${px(n.last_close)}</td>
+    <td class="mono">${n.lots_100_est ?? '—'} 手</td><td class="mono">${yuan(n.est_yuan)}</td></tr>`).join('');
+}
+
+/* ---------- load / apply ---------- */
+function applyDesk(d){
+  desk = d;
+  const s = d.settings || {};
+  document.getElementById('capital').value = s.capital;
+  document.getElementById('contrib').value = s.monthly_contrib;
+  document.getElementById('maxPrice').value = s.max_price;
+  document.getElementById('nTarget').value = s.n_target;
+  document.getElementById('boards').value = s.boards || 'MAIN';
+  set('asof', d.asof_session || '—');
+  set('footMark', '行情标到 ' + ((d.window || {}).mark_date || '—'));
+  rows = baseline ? (d.holdings_official || []) : (d.holdings || []);
+  lastRows = baseline ? (d.holdings_august_official || []) : (d.holdings_august || []);
+  const liveC = (d.curves || {}).live || {};
+  const chip = document.getElementById('modeChip');
+  chip.textContent = baseline ? '¥20,000 研究基准' : (liveC.preview ? '按你的钱 ' + yuan(s.capital) : '¥20,000（和基准相同）');
+  paintHero(); paintNums(); paintHold(); paintLast(); showHist(histKey); paintRef();
+}
+async function load(){
+  const r = await fetch(API + '/api/v1/paper/desk');
+  const j = await r.json();
+  if (!j.success){ flash(j.message || '读账本失败'); return; }
+  applyDesk(j.data);
+  const cap = Number((j.data.settings || {}).capital);
+  if (cap && Math.abs(cap - 20000) > 0.5 && !((j.data.curves || {}).live || {}).preview) recalc(false);
+}
+function showBaseline(){
+  baseline = !baseline;
+  if (!desk) return;
+  // baseline curves come from the un-overlaid official files: re-fetch and swap holdings only
+  if (baseline){
+    rows = desk.holdings_official || []; lastRows = desk.holdings_august_official || [];
+    set('modeChip', '¥20,000 研究基准');
+    paintHold(); paintLast();
+    flash('这是 ¥20,000 基准账本的名单；再点一次回到你的钱');
+  } else {
+    rows = desk.holdings || []; lastRows = desk.holdings_august || [];
+    applyDesk(desk);
+  }
+}
+function body(){
+  return { capital: Number(document.getElementById('capital').value), monthly_contrib: Number(document.getElementById('contrib').value),
+    max_price: Number(document.getElementById('maxPrice').value), n_target: Number(document.getElementById('nTarget').value), boards: document.getElementById('boards').value };
+}
+async function recalc(save){
+  const btn = document.getElementById('btnGo');
+  btn.disabled = true; btn.textContent = '算中…';
+  try {
+    if (save){
+      const r0 = await fetch(API + '/api/v1/paper/settings', {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body())});
+      const j0 = await r0.json(); if (!j0.success) { flash(j0.message || '没记住'); return; }
+    }
+    const r = await fetch(API + '/api/v1/paper/preview', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body())});
+    const j = await r.json();
+    if (!j.success){ flash(j.message || '算不出来'); return; }
+    const rp = j.data.replay || {};
+    if (rp.error || (rp.live && rp.live.error)){ flash('没算成：' + (rp.error || rp.live.error)); return; }
+    baseline = false;
+    desk.settings = Object.assign({}, desk.settings, body());
+    desk.curves = Object.assign({}, desk.curves, {live: rp.live, august: rp.august, validation: rp.validation, research: rp.research});
+    desk.holdings = rp.holdings || []; desk.holdings_august = rp.august_holdings || [];
+    clearDirty();
+    set('previewNote', (rp.live && rp.live.note) ? rp.live.note : ('已按 ' + yuan(j.data.capital) + ' 重算：现在 ' + (rp.holdings || []).length + ' 只，市值 ' + yuan((rp.live || {}).equity_end) + '。'));
+    applyDesk(desk);
+    flash('已按 ' + yuan(j.data.capital) + ' 算好' + (save ? '，并记为默认' : ''));
+  } finally { btn.disabled = false; btn.textContent = '按这笔钱算'; }
+}
+function recalcAndSave(){ recalc(true); }
+load();
+</script>
+</body>
+</html>

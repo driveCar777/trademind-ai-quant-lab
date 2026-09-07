@@ -314,6 +314,122 @@ class MT5QuotesData(BaseModel):
     items: List[Dict[str, Any]] = Field(default_factory=list)
 
 
+class PaperPreviewRequest(BaseModel):
+    """POST /api/v1/paper/preview — resize lots from last SIGNAL. Does not retune ML1."""
+
+    capital: float = Field(..., gt=0)
+    monthly_contrib: Optional[float] = None
+    max_price: Optional[float] = None
+    n_target: Optional[int] = None
+    boards: Optional[str] = None
+
+
+class PaperSettingsRequest(BaseModel):
+    """PUT /api/v1/paper/settings — persist preview defaults only."""
+
+    capital: Optional[float] = None
+    monthly_contrib: Optional[float] = None
+    max_price: Optional[float] = None
+    n_target: Optional[int] = None
+    boards: Optional[str] = None
+
+
+class PaperDeskData(BaseModel):
+    asof_session: Optional[str] = None
+    contract: Optional[str] = None
+    status: Dict[str, Any] = Field(default_factory=dict)
+    settings: Dict[str, Any] = Field(default_factory=dict)
+    shortlist: Optional[Dict[str, Any]] = None
+    shortlist_file: Optional[str] = None
+    signal_file: Optional[str] = None
+    holdings: List[Dict[str, Any]] = Field(default_factory=list)
+    holdings_official: List[Dict[str, Any]] = Field(default_factory=list)
+    holdings_august: List[Dict[str, Any]] = Field(default_factory=list)
+    holdings_august_official: List[Dict[str, Any]] = Field(default_factory=list)
+    books: Dict[str, Any] = Field(default_factory=dict)
+    window: Dict[str, Any] = Field(default_factory=dict)
+    curves: Dict[str, Any] = Field(default_factory=dict)
+    preset_replay: Optional[Dict[str, Any]] = None
+    ledger: Optional[Dict[str, Any]] = None
+    august: Optional[Dict[str, Any]] = None
+    orders_sent: bool = False
+
+
+class PaperPreviewData(BaseModel):
+    contract: str
+    capital: float
+    unit_yuan: float
+    n_target: int
+    n_names: int
+    est_invested_yuan: float
+    cash_yuan: float
+    skipped_price_too_high: int = 0
+    preview: bool = True
+    boards: str
+    max_price: float
+    names: List[Dict[str, Any]]
+    note: str = ""
+    monthly_contrib: Optional[float] = None
+    signal_date: Optional[str] = None
+    replay: Optional[Dict[str, Any]] = None
+
+
+class PaperOpsData(BaseModel):
+    """GET /api/v1/paper/ops — SPEC §29.6. Plan for today on the real calendar; no orders."""
+
+    freshness: Dict[str, Any] = Field(default_factory=dict)
+    run: Dict[str, Any] = Field(default_factory=dict)
+    plan: Dict[str, Any] = Field(default_factory=dict)
+    account: Dict[str, Any] = Field(default_factory=dict)
+    model_positions: List[Dict[str, Any]] = Field(default_factory=list)
+    model_summary: Dict[str, Any] = Field(default_factory=dict)
+    history: List[Dict[str, Any]] = Field(default_factory=list)
+    journal_events: List[Dict[str, Any]] = Field(default_factory=list)
+    settings: Dict[str, Any] = Field(default_factory=dict)
+    faq: List[Dict[str, Any]] = Field(default_factory=list)
+    orders_sent: bool = False
+
+
+class PaperRunData(BaseModel):
+    """POST /api/v1/paper/update, GET /api/v1/paper/update/status — SPEC §29.7."""
+
+    running: bool = False
+    reused: Optional[bool] = None
+    pid: Optional[int] = None
+    started_at: Optional[str] = None
+    elapsed_s: Optional[float] = None
+    stage: Optional[str] = None
+    log: Optional[str] = None
+    log_tail: List[str] = Field(default_factory=list)
+    last_run: Dict[str, Any] = Field(default_factory=dict)
+    last_failed: Optional[Dict[str, Any]] = None
+    history: List[Dict[str, Any]] = Field(default_factory=list)
+    python: Optional[str] = None
+
+
+class PaperUpdateRequest(BaseModel):
+    force: bool = False
+
+
+class PaperJournalEventRequest(BaseModel):
+    """POST /api/v1/paper/journal — SPEC §29.8. Append-only."""
+
+    type: str
+    date: Optional[str] = None
+    symbol: Optional[str] = None
+    lots: Optional[int] = None
+    price: Optional[float] = None
+    fee: Optional[float] = None
+    amount: Optional[float] = None
+    note: Optional[str] = None
+
+
+class PaperJournalData(BaseModel):
+    events: List[Dict[str, Any]] = Field(default_factory=list)
+    account: Dict[str, Any] = Field(default_factory=dict)
+    last_event: Optional[Dict[str, Any]] = None
+
+
 def api_success(
     data: T,
     message: str = "",
@@ -346,3 +462,8 @@ DeskTodayResponse = ApiResponse[DeskTodayData]
 MT5StatusResponse = ApiResponse[MT5StatusData]
 MT5QuotesResponse = ApiResponse[MT5QuotesData]
 SampleListResponse = ApiResponse[SampleListData]
+PaperDeskResponse = ApiResponse[PaperDeskData]
+PaperPreviewResponse = ApiResponse[PaperPreviewData]
+PaperOpsResponse = ApiResponse[PaperOpsData]
+PaperRunResponse = ApiResponse[PaperRunData]
+PaperJournalResponse = ApiResponse[PaperJournalData]

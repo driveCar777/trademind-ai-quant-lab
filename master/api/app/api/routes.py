@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 from fastapi import APIRouter
 from fastapi.responses import HTMLResponse
@@ -26,6 +27,12 @@ from app.model.schemas import (
     OrderPreviewRequest,
     OrderResponse,
     OrderSubmitRequest,
+    PaperDeskData,
+    PaperDeskResponse,
+    PaperPreviewData,
+    PaperPreviewRequest,
+    PaperPreviewResponse,
+    PaperSettingsRequest,
     ResearchData,
     ResearchListData,
     ResearchListResponse,
@@ -40,8 +47,24 @@ from app.model.schemas import (
     TasksListResponse,
     WorkersData,
     WorkersResponse,
+    api_error,
     api_success,
+    ErrorCode,
 )
+from app.model.schemas import (
+    PaperJournalData,
+    PaperJournalEventRequest,
+    PaperJournalResponse,
+    PaperOpsData,
+    PaperOpsResponse,
+    PaperRunData,
+    PaperRunResponse,
+    PaperUpdateRequest,
+)
+from app.service import paper_ops
+from app.service.paper_service import desk as paper_desk
+from app.service.paper_service import preview as paper_preview
+from app.service.paper_service import save_settings as paper_save_settings
 from app.service.ai_gateway_proxy import AIGatewayProxy
 from app.service.ops_service import restart_master, start_worker
 from app.service.mt5_service import list_quotes
@@ -96,9 +119,8 @@ def list_tasks(limit: int = 50):
     return api_success(TasksListData(tasks=tasks, count=len(tasks)))
 
 
-@router.get("/dashboard", response_class=HTMLResponse)
-def serve_dashboard():
-    html_path = Path(__file__).resolve().parents[4] / "dashboard" / "index.html"
+def _html(name):
+    html_path = Path(__file__).resolve().parents[4] / "dashboard" / name
     if not html_path.exists():
         return HTMLResponse(content="<h1>Dashboard not found</h1>", status_code=404)
     return HTMLResponse(
@@ -108,6 +130,21 @@ def serve_dashboard():
             "Pragma": "no-cache",
         },
     )
+
+
+@router.get("/dashboard", response_class=HTMLResponse)
+def serve_dashboard():
+    return _html("index.html")
+
+
+@router.get("/paper", response_class=HTMLResponse)
+def serve_paper():
+    return _html("paper.html")
+
+
+@router.get("/paper/v1", response_class=HTMLResponse)
+def serve_paper_v1():
+    return _html("paper_v1.html")
 
 
 @router.get("/api/v1/ai/health")
@@ -223,3 +260,78 @@ def order_list(limit: int = 20):
 @router.get("/api/v1/orders/{order_id}", response_model=OrderResponse)
 def order_detail(order_id: str):
     return api_success(OrderData(**get_order(order_id)))
+
+
+@router.get("/api/v1/paper/desk", response_model=PaperDeskResponse)
+def paper_desk_view():
+    return api_success(PaperDeskData(**paper_desk()), message="A股纸面台（不发单）。")
+
+
+@router.post("/api/v1/paper/preview", response_model=PaperPreviewResponse)
+def paper_preview_view(request: PaperPreviewRequest):
+    try:
+        data = paper_preview(request.model_dump())
+    except FileNotFoundError:
+        return api_error(ErrorCode.TASK_FAILED, "没有 SIGNAL，先跑 daily.py。")
+    except ValueError as exc:
+        return api_error(ErrorCode.TASK_FAILED, str(exc))
+    return api_success(PaperPreviewData(**data), message="手数预览，不是改合同。")
+
+
+@router.put("/api/v1/paper/settings", response_model=PaperDeskResponse)
+def paper_settings_view(request: PaperSettingsRequest):
+    try:
+        paper_save_settings(request.model_dump(exclude_none=True))
+    except ValueError as exc:
+        return api_error(ErrorCode.TASK_FAILED, str(exc))
+    return api_success(PaperDeskData(**paper_desk()), message="已记下预览默认资金。")
+
+
+# ---- Paper Ops Desk V2 (SPEC §29.5-29.8). No orders; daily.py runs with repository defaults only.
+@router.get("/api/v1/paper/ops", response_model=PaperOpsResponse)
+def paper_ops_view():
+    return api_success(PaperOpsData(**paper_ops.ops()), message="今天的操作计划（不发单）。")
+
+
+@router.post("/api/v1/paper/update", response_model=PaperRunResponse)
+def paper_update_start(request: Optional[PaperUpdateRequest] = None):
+    try:
+        run = paper_ops.start_update(force=bool(request and request.force))
+    except RuntimeError as exc:
+        return api_error(ErrorCode.WORKER_BUSY, str(exc))
+    except OSError as exc:
+        return api_error(ErrorCode.TASK_FAILED, "启动失败：%s" % exc)
+    msg = "已有一次更新在跑，给你看它的进度。" if run.get("reused") else "已在后台开始更新（约 35 分钟）。"
+    return api_success(PaperRunData(**run), message=msg)
+
+
+@router.get("/api/v1/paper/update/status", response_model=PaperRunResponse)
+def paper_update_status():
+    return api_success(PaperRunData(**paper_ops.run_status()))
+
+
+@router.get("/api/v1/paper/journal", response_model=PaperJournalResponse)
+def paper_journal_view():
+    j = paper_ops.load_journal()
+    return api_success(PaperJournalData(events=list(reversed(j["events"])), account=paper_ops.derive_account(j, paper_ops._days())))
+
+
+@router.post("/api/v1/paper/journal", response_model=PaperJournalResponse)
+def paper_journal_add(request: PaperJournalEventRequest):
+    try:
+        ev = paper_ops.add_event(request.model_dump(exclude_none=True))
+    except ValueError as exc:
+        return api_error(ErrorCode.TASK_FAILED, str(exc))
+    j = paper_ops.load_journal()
+    return api_success(PaperJournalData(events=list(reversed(j["events"])), account=paper_ops.derive_account(j, paper_ops._days()), last_event=ev),
+                       message="已登记。")
+
+
+@router.delete("/api/v1/paper/journal/{event_id}", response_model=PaperJournalResponse)
+def paper_journal_delete(event_id: str):
+    try:
+        paper_ops.delete_event(event_id)
+    except KeyError:
+        return api_error(ErrorCode.TASK_FAILED, "没有这条记录。")
+    j = paper_ops.load_journal()
+    return api_success(PaperJournalData(events=list(reversed(j["events"])), account=paper_ops.derive_account(j, paper_ops._days())), message="已删除。")
