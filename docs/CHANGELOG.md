@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-09-07 (22:15) — Freeze tag + branch `exp/sz-main-shell` (:9001) + V26.9 Shenzhen-main single read
+
+- Main frozen at `freeze-20260907-paper-ops-v2.1` (`898eb80c`). `.gitignore` now excludes V38 layer raw/npy, `SCORES_*.npy`, US-share CFD csv (3.9 GB stayed local).
+- Worktree `D:\AGXXAIVER-4-WINDOWS-1-STOCK-SZ` on branch `exp/sz-main-shell`; caches / ML1 scores / venv are junctions or hardlinks to main, `live/` is a small copy. Its Master runs on :9001 with `TRADEMIND_PAPER_READONLY=1` (update button refuses; one BaoStock login only, from :9000).
+- V26.9 (`V26_9_ML1_SZ_MAIN_SHELL_CONTRACT.md`, branch): V26.8 shell with `SZ_MAIN = sz.00` only. Research +609% (t 5.57) vs MAIN +551% (t 4.78); validation +94.1% (t 2.92, 17/29, daily MaxDD −26.1%) vs MAIN +39.0% (t 2.86, 19/29, −24.4%). Gap ≈ 2022 alone. `VIABLE_HISTORICAL`, same level as MAIN, not evidence SZ is better. Main `daily.py` unchanged (board by permission). ATLAS 90.
+- :9001 shows the SZ shadow list derived from main `SIGNAL_{date}.json` (`derive_sz_shortlist.py`, branch); read after ≥24 forward periods.
+
 ## 2026-09-07 (21:20) — Paper update: 2007 asof was a poisoned label; stacked runs; BaoStock blacklist
 
 STATUS/pack said `asof=2007-05-23` after a truncated calendar write. Prices did not go back to 2007 (`sh.600000` still ends 2026-09-07). Repeated clicks spawned six `daily.py` because the lock was dropped when cmdline could not be read (no wmic / no psutil) after 15s, then BaoStock returned 黑名单.

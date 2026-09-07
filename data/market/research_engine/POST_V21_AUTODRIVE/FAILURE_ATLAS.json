@@ -2,7 +2,7 @@
  "id": "POST_V21_FAILURE_ATLAS",
  "read_only": true,
  "span": "V8-V38",
- "n_rows": 89,
+ "n_rows": 90,
  "n_val_capital_neg": 61,
  "n_beat_ew_overlap": 15,
  "n_level1": 2,
@@ -1482,6 +1482,22 @@
    "val_capital": "validation TWR +38.0% -> +41.9%, Sharpe 0.70 -> 0.82, MaxDD -24.4% -> -22.3% (7/29 periods reduced, mean ret -0.5% vs +1.5%); research Sharpe 0.83 -> 0.84, MaxDD -55.9 -> -55.0 (data only from 2014-11)",
    "val_capital_sign": "POS",
    "decision": "V38_O5_NORTHBOUND_OVERLAY_ADOPT_CANDIDATE_DIAGNOSTIC_NOT_DEPLOYABLE: passes both pre-registered gates but HKEX stopped daily northbound net-buy disclosure on 2024-08-19; no live input exists. Not written into daily.py. Do not search for proxies (that is feature search after seeing the result). Recorded so nobody re-tests it."
+  },
+  {
+   "id": "V26_9_SZ_MAIN_SHELL",
+   "version": "V26.9 (branch exp/sz-main-shell)",
+   "universe": "frozen ML1 scores; V26.8 shell (N_target 10, unit max(2000,eq/10), 100% - 200, contrib 2k) with board filter SZ_MAIN = sz.00 only (1642/5549)",
+   "mechanism": "owner question: Shenzhen main board only",
+   "family": "EXECUTION_SHELL_BOARD_FILTER",
+   "val_capital": "validation TWR +94.1% (CAGR 30.2%, daily MaxDD -26.1%, excess vs SZ EW +3.67%/20d t 2.92, 17/29, IRR 24.9%) vs MAIN +39.0% (t 2.86, 19/29); research +609% vs +551% (t 5.57 vs 4.78); gap is almost all 2022 (+60% vs +14%), 2023 reverses (+4% vs +13%)",
+   "val_capital_sign": "POS",
+   "decision": "ML1_SCALED_UNIT_N10_FULL_CONTRIB2K_SZMAIN_VIABLE_HISTORICAL: same level as MAIN, not evidence SZ is better (same t, one-year path variance, deeper daily MaxDD). Main-line daily.py unchanged (board by permission, not by result). Branch :9001 emits SZ shadow shortlist derived from SIGNAL; read after >=24 forward periods. Do not read SH_MAIN alone; do not explain 2022.",
+   "files": [
+    "docs/research_engine/V26_9_ML1_SZ_MAIN_SHELL_CONTRACT.md (branch)",
+    "docs/research_engine/V26_9_ML1_SZ_MAIN_SHELL_DECISION.md (branch)",
+    "data/market/research_engine/cn_a_share_ml_v26sz/ML1_SCALED_UNIT_N10_FULL_CONTRIB2K_SZMAIN_READ.json (branch worktree)"
+   ],
+   "date": "2026-09-07"
   }
  ]
 }
