@@ -501,12 +501,11 @@ def run_status():
             out["stopped"] = True
         else:
             out["stage"] = "中断/失败"
-    if out["last_failed"] is None:
-        for h in reversed(hist):
-            if h.get("ok") or h.get("stopped"):
-                continue
+    if out["last_failed"] is None and hist:
+        # Only the most recent run counts: a failure that was followed by a successful run is history, not a warning.
+        h = hist[-1]
+        if not h.get("ok") and not h.get("stopped"):
             out["last_failed"] = {"started_at": h.get("started_at"), "log": h.get("log"), "tail": h.get("tail")}
-            break
     return _decorate_run(out)
 
 
@@ -636,7 +635,7 @@ def start_update(force=False):
                                  note="%s %s 日线没有缺口。没有新任务。" % (reason, local))
     if blocked and not bogus and not fresh.get("needs_update"):
         return _decorate_run(run_status(), fresh, cov, skipped=True, reused=False,
-                             note="东财刚把账号拉黑了。本地已是 %s。先不要连点，过一阵再补漏。" % (fresh.get("asof_session") or asof))
+                             note="BaoStock 刚把本机拉黑了（东财正常）。本地已是 %s，名单和账本都是最新的。先不要连点，几小时后再补漏。" % (fresh.get("asof_session") or asof))
     bits = [reason, local]
     if bogus:
         bits.append("截止日期标签被写坏了（不是行情回到 2007）。这次用本地日线重算到 %s，不连东财。" % asof)
