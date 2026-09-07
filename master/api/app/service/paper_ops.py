@@ -448,6 +448,59 @@ def history(days, ledger):
     return out
 
 
+def history_actual(days, journal, upto):
+    """The owner's own periods, derived from journal fills: one row per chain period up to `upto` (last completed session or today).
+    A period the owner did not trade is shown as NOT_TRADED so the timeline is never confused with the model's."""
+    names = ps._stock_names()
+    events = [e for e in journal.get("events") or [] if e.get("type") in ("BUY", "SELL")]
+    sigs = chain_signals(days, upto=upto)
+    out = []
+    for k, sd in enumerate(sigs):
+        per = period_of(days, sd)
+        entry, nxt_entry = per.get("entry"), per.get("next_entry")
+        if not entry:
+            continue
+        # buys from the entry day until (excluding) the next period's entry; sells until and including the next entry day
+        buys = [e for e in events if e["type"] == "BUY" and entry <= e["date"] < (nxt_entry or "9999")]
+        sells = [e for e in events if e["type"] == "SELL" and entry < e["date"] <= (nxt_entry or "9999")]
+        if not buys and not sells:
+            st = "PENDING_ENTRY" if entry > (upto or "") else "NOT_TRADED"
+            out.append({"period_no": k + 1, "signal_date": sd, "entry": entry, "exit": per.get("exit_date"), "status": st, "n_names": 0,
+                        "invested": 0.0, "proceeds": 0.0, "pnl": None, "capital_ret": None, "names": [], "is_chain": True})
+            continue
+        by = {}
+        for e in buys:
+            r = by.setdefault(e["symbol"], {"symbol": e["symbol"], "name": names.get(e["symbol"], ""), "lots": 0, "cost": 0.0, "sold_lots": 0, "proceeds": 0.0, "buy_date": e["date"]})
+            r["lots"] += e["lots"]
+            r["cost"] += e["amount"] + e["fee"]
+        for e in sells:
+            r = by.setdefault(e["symbol"], {"symbol": e["symbol"], "name": names.get(e["symbol"], ""), "lots": 0, "cost": 0.0, "sold_lots": 0, "proceeds": 0.0, "buy_date": None})
+            r["sold_lots"] += e["lots"]
+            r["proceeds"] += e["amount"] - e["fee"]
+            r["sell_date"] = e["date"]
+        rows, invested, proceeds, mv_open = [], 0.0, 0.0, 0.0
+        all_closed = True
+        for r in by.values():
+            open_lots = max(r["lots"] - r["sold_lots"], 0)
+            px, _d = _last_close(r["symbol"]) if open_lots else (None, None)
+            open_val = (px or 0) * open_lots * LOT
+            if open_lots:
+                all_closed = False
+            unit_cost = r["cost"] / r["lots"] if r["lots"] else 0.0
+            pnl = r["proceeds"] + open_val - r["cost"] if r["lots"] else r["proceeds"]
+            rows.append({"symbol": r["symbol"], "name": r["name"], "lots": r["lots"], "sold_lots": r["sold_lots"], "open_lots": open_lots, "buy_date": r["buy_date"],
+                         "sell_date": r.get("sell_date"), "cost_in": round(r["cost"], 2), "avg_price": round(unit_cost / LOT, 4) if r["lots"] else None,
+                         "proceeds": round(r["proceeds"], 2), "mark_price": px, "pnl": round(pnl, 2), "status": "CLOSED" if not open_lots else "HELD"})
+            invested += r["cost"]
+            proceeds += r["proceeds"]
+            mv_open += open_val
+        pnl = proceeds + mv_open - invested
+        out.append({"period_no": k + 1, "signal_date": sd, "entry": entry, "exit": per.get("exit_date"), "status": "CLOSED" if all_closed else "OPEN",
+                    "n_names": len(rows), "invested": round(invested, 2), "proceeds": round(proceeds, 2), "open_value": round(mv_open, 2), "pnl": round(pnl, 2),
+                    "capital_ret": round(pnl / invested, 4) if invested else None, "names": sorted(rows, key=lambda r: r["symbol"]), "is_chain": True})
+    return out
+
+
 # ----------------------------------------------------------------------------- plan
 def _universe(signal_date):
     for pre in ("SIGNAL_", "SHADOW_"):
@@ -490,7 +543,9 @@ def _buy_list(signal_date, settings, cash_available, source):
     return rows, planned, unit, basis
 
 
-def plan(days, fresh, status, ledger, settings, account):
+def plan(days, fresh, status, ledger, settings, account, mode="MODEL"):
+    """mode = 'JOURNAL' (the owner's real/simulated account, from fills) or 'MODEL' (the ¥20,000 shadow book).
+    The two never mix: in JOURNAL mode the sell list, holdings and cash are the owner's own, even if partial or empty."""
     today = fresh["today"]
     now = _now()
     is_td = fresh["today_is_trading_day"]
@@ -501,8 +556,8 @@ def plan(days, fresh, status, ledger, settings, account):
     per = period_of(days, cur_sig) if cur_sig else {}
     all_sigs = chain_signals(days)
     future = [s for s in all_sigs if s >= today]
-    source = account["source"]
-    out = {"phase": "NO_POSITION", "headline": "", "sub": "", "steps": [], "sell_list": [], "buy_list": [], "cash_check": None, "warnings": [],
+    source = "JOURNAL" if mode == "JOURNAL" else "MODEL"
+    out = {"mode": source, "phase": "NO_POSITION", "headline": "", "sub": "", "steps": [], "sell_list": [], "buy_list": [], "cash_check": None, "warnings": [],
            "key_dates": {"signal_date": cur_sig, "entry": per.get("entry"), "exit_date": per.get("exit_date"), "next_signal": per.get("next_signal") or (future[0] if future else None),
                          "next_entry": per.get("next_entry")},
            "sessions_held": None, "sessions_left": None, "sessions_total": HOLD, "today_action": "UNKNOWN", "basis": None}
@@ -521,13 +576,24 @@ def plan(days, fresh, status, ledger, settings, account):
     have_pos = len(positions) > 0
     list_today = (SIGNALS / ("SHORTLIST_SHADOW_%s.json" % today)).is_file()
     stale_warn = "数据截至 %s，落后 %d 个交易日。名单不受影响，但持仓市值不是最新的。" % (fresh["asof_session"], fresh["stale_sessions"])
-
-    def sell_rows():
-        return [dict(p, side="SELL") for p in positions]
+    n_model_names = len(_model_positions(ledger, cur_sig, days))
+    partial_note = None
+    if source == "JOURNAL" and have_pos and n_model_names and len(positions) < n_model_names:
+        partial_note = "你只买了名单中的 %d/%d 只；系统只按你实际持有的算，卖出日也只让你卖这 %d 只。" % (len(positions), n_model_names, len(positions))
 
     # --- today is a chain signal day (== exit day of the current period, or the very first signal)
     if today in all_sigs and is_td:
         prev_positions = positions if cur_sig != today else (account["positions"] if source == "JOURNAL" else _model_positions(ledger, sigs_done[-2], days) if len(sigs_done) > 1 else [])
+        if source == "JOURNAL" and not prev_positions and now.hour < DATA_READY_HOUR and not list_today:
+            # nothing to sell for this account: today is only "wait for tonight's list"
+            tp = period_of(days, today)
+            out.update({"phase": "SIGNAL_TONIGHT", "today_action": "UPDATE", "headline": "今天不用卖（你没有持仓）· 今晚出新名单",
+                        "sub": "今天是信号日。收盘后 18:30 以后点「更新数据」，名单出来后明天 %s 开盘买入。" % tp.get("entry"),
+                        "steps": [{"when": "18:30 后", "text": "点「更新数据」"}, {"when": "跑完", "text": "刷新本页看买入名单和资金检查"}, {"when": "%s 开盘" % tp.get("entry"), "text": "买入名单，回来登记"}]})
+            out["key_dates"].update({"signal_date": today, "entry": tp.get("entry"), "exit_date": tp.get("exit_date"), "next_signal": tp.get("next_signal"), "next_entry": tp.get("next_entry")})
+            if account["cash"] <= 0:
+                out["warnings"].append("你的账户现金为 0：先「入金」登记本金，明天的买入手数才算得出来。")
+            return out
         out["key_dates"]["signal_date"] = today
         tp = period_of(days, today)
         out["key_dates"].update({"entry": tp.get("entry"), "exit_date": tp.get("exit_date"), "next_signal": tp.get("next_signal"), "next_entry": tp.get("next_entry")})
@@ -541,19 +607,24 @@ def plan(days, fresh, status, ledger, settings, account):
             rows, planned, unit, basis = _buy_list(today, settings, account["cash"], source)
             out["buy_list"], out["basis"] = rows, basis
             out["headline"] = "今晚名单已出：明天 %s 开盘买入 %d 只" % (tp.get("entry"), len(rows))
-            out["sub"] = "今天开盘应已卖出上一期全部持仓。明早 09:15–09:25 集合竞价或 09:30 开盘按下表下单，然后回来登记成交。"
-            out["steps"] = [{"when": "今天已做", "text": "开盘卖出上一期全部持仓（没登记的请登记卖出）"},
+            had_prev = bool(prev_positions) or source == "MODEL"
+            out["sub"] = ("今天开盘应已卖出上一期持仓。" if had_prev else "") + "明早 09:15–09:25 集合竞价或 09:30 开盘按下表下单，然后回来登记成交。"
+            out["steps"] = ([{"when": "今天已做", "text": "开盘卖出上一期持仓（没登记的请登记卖出）"}] if had_prev else []) + [
                             {"when": "%s 开盘" % tp.get("entry"), "text": "买入下表 %d 只，手数按表；开盘价与昨收差太多时手数=floor(单位/(100×开盘价))" % len(rows)},
                             {"when": "买完", "text": "回到本页逐只「登记买入」（手数、成交价）"}]
             out["cash_check"] = _cash_check(account, planned, source, prev_positions if source == "JOURNAL" else [])
             if source == "JOURNAL" and prev_positions:
                 out["warnings"].append("你的成交日志里还有 %d 只上一期持仓没登记卖出。先卖后买，卖出后现金当天可用。" % len(prev_positions))
+            if source == "JOURNAL" and account["cash"] <= 0:
+                out["warnings"].append("你的账户现金为 0，名单算不出手数：先「入金」登记本金。")
         elif now.hour < DATA_READY_HOUR:
             out["phase"] = "SELL_TODAY"
             out["today_action"] = "SELL"
             out["sell_list"] = [dict(p, side="SELL") for p in prev_positions]
-            out["headline"] = "今天开盘：卖出全部 %d 只" % len(prev_positions)
+            out["headline"] = "今天开盘：卖出%s %d 只" % ("你持有的" if source == "JOURNAL" else "全部", len(prev_positions))
             out["sub"] = "持有期满。09:30 开盘按市价/对手价全部卖出；跌停或停牌卖不掉的明天再卖（最多顺延 10 个交易日）。今晚 18:30 后更新数据出新名单。"
+            if partial_note:
+                out["warnings"].append(partial_note)
             out["steps"] = [{"when": "09:30 开盘", "text": "卖出下表全部持仓"},
                             {"when": "卖完", "text": "回到本页逐只「登记卖出」"},
                             {"when": "18:30 后", "text": "点「更新数据」→ 出新名单 → 明早开盘买入"}]
@@ -584,26 +655,58 @@ def plan(days, fresh, status, ledger, settings, account):
         out["cash_check"] = _cash_check(account, planned, source, leftover)
         if leftover:
             out["warnings"].append("日志里还有 %d 只上一期持仓未登记卖出；先卖后买。" % len(leftover))
+        if source == "JOURNAL" and account["cash"] <= 0:
+            out["warnings"].append("你的账户现金为 0，名单算不出手数：先「入金」登记本金。")
         if source == "JOURNAL" and float(settings.get("monthly_contrib") or 0) > 0 and not _contrib_logged(account, (cur_sig or today)[:7]):
             out["warnings"].append("本月定投 ¥%.0f 还没登记入金（合同：每月第一个信号日先入金再买）。" % float(settings["monthly_contrib"]))
         if fresh["needs_update"]:
             out["warnings"].append(stale_warn)
         return out
 
-    # --- ordinary hold day (or weekend / holiday)
-    if have_pos or (entry and last_completed and entry <= last_completed):
+    # --- ordinary hold day (or weekend / holiday), account has positions (model always does once the entry has passed)
+    in_period = bool(entry and last_completed and entry <= last_completed)
+    if have_pos and in_period:
         out["phase"] = "HOLD"
         out["today_action"] = "HOLD"
         held, left = out["sessions_held"], out["sessions_left"]
         out["headline"] = "今天无需操作" if is_td else "今天休市，无需操作"
-        out["sub"] = "持有第 %s/%d 个交易日 · %s 开盘卖出全部 · 当晚更新数据出新名单 · %s 开盘买入" % (held if held is not None else "—", HOLD, exit_d, per.get("next_entry"))
+        who = "你持有的 %d 只" % len(positions) if source == "JOURNAL" else "全部"
+        out["sub"] = "持有第 %s/%d 个交易日 · %s 开盘卖出%s · 当晚更新数据出新名单 · %s 开盘买入" % (held if held is not None else "—", HOLD, exit_d, who, per.get("next_entry"))
         out["steps"] = [{"when": "平时", "text": "什么都不用做；想看市值就 18:30 后点一次「更新数据」"},
-                        {"when": "%s 开盘" % exit_d, "text": "卖出全部持仓（%s 个交易日后）" % (left if left is not None else "—")},
+                        {"when": "%s 开盘" % exit_d, "text": "卖出%s（%s 个交易日后）" % (who, left if left is not None else "—")},
                         {"when": "%s 晚" % exit_d, "text": "更新数据 → 新名单"}, {"when": "%s 开盘" % per.get("next_entry"), "text": "买入新名单"}]
-        if source == "JOURNAL" and not positions:
-            out["warnings"].append("你还没登记任何买入成交。若已在模拟盘买了，请登记，否则卖出日无法给出卖出清单。")
+        if partial_note:
+            out["warnings"].append(partial_note)
         if fresh["needs_update"]:
             out["warnings"].append(stale_warn)
+        return out
+
+    # --- JOURNAL mode, period running but the owner holds nothing: do not tell them to join mid-period
+    if source == "JOURNAL" and in_period:
+        held, left = out["sessions_held"], out["sessions_left"]
+        out["phase"] = "NO_POSITION"
+        out["today_action"] = "WAIT"
+        out["headline"] = "你还没有持仓 · 本期第 %s/%d 天" % (held if held is not None else "—", HOLD)
+        out["sub"] = ("本期名单 %s 收盘出，正式买入日 %s 已过。两个选择：A. 等下一期——%s 晚更新数据出新名单，%s 开盘买入（合同路径）；"
+                      "B. 现在按下面本期名单跟买，%s 开盘和大家一起卖——这是中途进场，历史上没测过，好坏未知，由你决定。"
+                      % (cur_sig, entry, exit_d, per.get("next_entry"), exit_d))
+        out["steps"] = [{"when": "现在", "text": "先「入金」登记模拟盘本金（现在 ¥%.0f）" % account["cash"] if account["cash"] <= 0 else "本金已登记 ¥%.0f" % account["cash"]},
+                        {"when": "选 A", "text": "%s 晚 18:30 后「更新数据」→ 新名单 → %s 开盘买 → 回来登记" % (exit_d, per.get("next_entry"))},
+                        {"when": "选 B", "text": "按下表任意几只在下一个开盘买入 → 回来「登记买入」→ 页面立刻切到持有状态，%s 提示卖出" % exit_d}]
+        rows, planned, unit, basis = _buy_list(cur_sig, settings, account["cash"], "JOURNAL")
+        # mid-period: keep the official lot arithmetic (incl. top-up round) but re-mark amounts at the latest close
+        planned = 0.0
+        for r in rows:
+            px, pdate = _last_close(r["symbol"])
+            if px:
+                r["last_close"], r["mark_date"] = px, pdate
+                r["est_yuan"] = round((r.get("lots_100_est") or 0) * LOT * px, 2)
+            planned += r.get("est_yuan") or 0.0
+        out["buy_list"], out["basis"] = rows, "本期 %s 名单 · 手数按你的现金算，金额按最新收盘 %s · 中途跟买（未检验）" % (cur_sig, fresh["asof_session"])
+        out["cash_check"] = _cash_check(account, planned, "JOURNAL", [])
+        out["mid_entry_option"] = True
+        if account["n_events"] == 0:
+            out["warnings"].append("成交日志为空。若你其实已在模拟盘买了本期名单，请「登记买入」（日期填实际成交日），页面会立刻切到持有状态。")
         return out
 
     out["phase"] = "NO_POSITION"
@@ -642,17 +745,25 @@ def ops():
     account = derive_account(journal, days)
     fresh = freshness(days, status)
     run = run_status()
-    pl = plan(days, fresh, status, ledger, settings, account)
-    if run["running"]:
-        pl["warnings"].insert(0, "数据正在更新（%s）。跑完后刷新本页。" % (run.get("stage") or "运行中"))
-    if run.get("last_failed") and not run["running"]:
-        pl["warnings"].append("上一次更新没有正常结束（%s）。再点一次「更新数据」会从缺的地方继续。" % (run["last_failed"].get("started_at") or ""))
+    plans = {"actual": plan(days, fresh, status, ledger, settings, account, mode="JOURNAL"),
+             "model": plan(days, fresh, status, ledger, settings, account, mode="MODEL")}
+    for pl in plans.values():
+        if run["running"]:
+            pl["warnings"].insert(0, "数据正在更新（%s）。跑完后刷新本页。" % (run.get("stage") or "运行中"))
+        if run.get("last_failed") and not run["running"]:
+            pl["warnings"].append("上一次更新没有正常结束（%s）。再点一次「更新数据」会从缺的地方继续。" % (run["last_failed"].get("started_at") or ""))
+    pl = plans["model"]
     model_pos = _model_positions(ledger, pl["key_dates"].get("signal_date"), days) if pl["key_dates"].get("signal_date") else []
     top20 = status.get("ledger_top20") or ledger.get("summary") or {}
-    return {"freshness": fresh, "run": run, "plan": pl, "account": account, "model_positions": model_pos,
+    hist_model = history(days, ledger)
+    return {"freshness": fresh, "run": run,
+            # `plan` kept for backward compatibility = the owner's own account plan
+            "plan": plans["actual"], "plans": plans, "account": account, "model_positions": model_pos,
             "model_summary": {k: top20.get(k) for k in ("contract", "capital_yuan", "monthly_contrib", "n_target", "equity_end_closed", "mtm_equity", "unrealized",
                                                         "n_periods", "n_periods_closed", "open_signal_date", "open_mark_date", "deposits_to_date")},
-            "history": history(days, ledger), "journal_events": list(reversed(journal.get("events") or []))[:50], "settings": settings,
+            "history": hist_model, "history_model": hist_model,
+            "history_actual": history_actual(days, journal, fresh["last_completed_session"] or fresh["today"]),
+            "journal_events": list(reversed(journal.get("events") or []))[:50], "settings": settings,
             "faq": FAQ, "orders_sent": False}
 
 
@@ -665,6 +776,9 @@ FAQ = [
     {"q": "新闻、财报要更新吗？", "a": "ML1 只用价格、融资、股东户数、指数成分、年报，全部在同一次「更新数据」里自动增量；新闻不是特征。季报/预告/增减持/质押是 ML7 影子的输入，也一起更新。"},
     {"q": "每次计算要花钱吗？", "a": "不用。BaoStock、东方财富数据中心、中登（经东财）全免费。Databento 只花在期货研究上。"},
     {"q": "出名单前看余额吗？", "a": "看。登记入金/成交后，买入手数按你的可用现金 − ¥200 重算；不够就少买几手/几只，不会建议卖别的换这只。"},
-    {"q": "买卖后要做什么？", "a": "回来「登记成交」。之后资金、持仓、卖出清单都按你的真实成交算；不登记就退回官方 ¥20,000 影子账本。"},
+    {"q": "买卖后要做什么？", "a": "回来「登记成交」，买几只登记几只。「我的模拟账户」只按你登记的算：没登记 = 空仓，系统不会假设你买了。"},
+    {"q": "可以只买名单里的几只吗？", "a": "可以。名单是 10 只等金额，你买 3 只就登记 3 只；卖出日系统只让你卖这 3 只，历史每一期也按你实际的 3 只算。「模型影子账本」永远假设全买，两边互不影响。"},
+    {"q": "我的模拟账户 vs 模型影子账本？", "a": "影子账本 = 官方 V26.8 合同（¥20,000 起、每期全买、每月定投 ¥2,000），用来核对策略本身；我的模拟账户 = 你真正登记的入金和成交。顶部切换后，整页（今天做什么 / 资金 / 持仓 / 每一期）都跟着切。"},
+    {"q": "只有月初才能买吗？现在中途能进场吗？", "a": "跟月份无关：每 21 个交易日一期，信号日收盘出名单、次日开盘买、第 20 个交易日开盘卖。合同路径是等下一买入日。你空仓时页面同时给出本期名单（按你的现金重算手数）作为选项 B：现在跟买、卖出日不变——这是中途进场，历史上没测过，好坏未知，买不买你定；登记后页面立刻切到持有状态。"},
     {"q": "这套东西能保证赚钱吗？", "a": "不能。历史三段账本为正（研究 +551%、验证 +39%、最终 OOS +71%），2017/2018 各 −30%；近 6 个月为负。它是一个有纪律的练手外壳，不是承诺。"},
 ]

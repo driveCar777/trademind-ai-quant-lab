@@ -379,11 +379,14 @@ class PaperOpsData(BaseModel):
 
     freshness: Dict[str, Any] = Field(default_factory=dict)
     run: Dict[str, Any] = Field(default_factory=dict)
-    plan: Dict[str, Any] = Field(default_factory=dict)
+    plan: Dict[str, Any] = Field(default_factory=dict)  # = plans.actual (owner's account)
+    plans: Dict[str, Any] = Field(default_factory=dict)  # {"actual": plan(JOURNAL), "model": plan(MODEL)}
     account: Dict[str, Any] = Field(default_factory=dict)
     model_positions: List[Dict[str, Any]] = Field(default_factory=list)
     model_summary: Dict[str, Any] = Field(default_factory=dict)
-    history: List[Dict[str, Any]] = Field(default_factory=list)
+    history: List[Dict[str, Any]] = Field(default_factory=list)  # = history_model
+    history_model: List[Dict[str, Any]] = Field(default_factory=list)
+    history_actual: List[Dict[str, Any]] = Field(default_factory=list)
     journal_events: List[Dict[str, Any]] = Field(default_factory=list)
     settings: Dict[str, Any] = Field(default_factory=dict)
     faq: List[Dict[str, Any]] = Field(default_factory=list)

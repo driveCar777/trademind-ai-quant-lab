@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-09-07 (12:05) — Paper Ops Desk V2.1: two accounts, one switch; partial fills; mid-entry option
+
+User feedback 11:48 / 12:02: "我模拟账户还没买呢，为啥数据和推荐不是根据目前情况来的" / "推了 10 只我买了 3 只，别按全卖了算" / "历史每一期切换账户也得切" / "只有月初才能买吗？现在没法拿名单吗？".
+
+- `paper_ops.py`: `plan(..., mode)` now `JOURNAL | MODEL`, never mixed. `ops()` returns `plans.{actual,model}`, `history_actual` (journal fills grouped by chain period: `OPEN | CLOSED | NOT_TRADED | PENDING_ENTRY`, invested / proceeds / pnl per period and per name) and `history_model`; `plan` / `history` kept as aliases. Actual account: no journal = flat (no more silent fallback to the model book); partial fill → holdings, sell list, history all on the k names actually held + warning "你只买了 k/N 只"; cash 0 → "先入金" warning; flat mid-period → `NO_POSITION / WAIT` with **both options**: A wait for next entry (contract path), B the current period's list re-sized to own cash with amounts re-marked at the latest close, labelled "中途跟买（未检验）", same exit day (`mid_entry_option=true`). FAQ +4 rows.
+- `paper.html`: global top-bar switch 「我的模拟账户 / 模型影子账本」 (localStorage) drives hero, banners, action list, three numbers, positions, per-period history; model view read-only (no journal buttons, only place that shows `PREVIEW_NON_CHAIN`); actual history has its own columns (投入 / 已收回 / 盈亏, status chips 持有中 / 已平仓 / 待买入 / 未参与).
+- `tests/smoke/22_paper_ops.py`: 25 checks PASS (both plans on entry / hold day, flat-account WAIT + mid-entry option, 3/10 partial fill isolation, actual history OPEN → CLOSED, PENDING_ENTRY on signal night).
+- SPEC §29.6 updated; design doc §2.1.
+
 ## 2026-09-07 (11:00) — Paper Ops Desk V2: real-calendar plan, one-click background update, fill journal, per-period history
 
 - Owner 10:24 (preparing to run a broker simulation account): where does "sell" show up, will tomorrow's run change the list, how to mark fills, how often / when to update, what if an update is interrupted or clicked twice, does it backfill, are news/financials needed, is paid data needed, should the cash balance be checked before a new list. Design + answers: `docs/research_engine/PAPER_OPS_DESK_V2_DESIGN.md` (§0 answers each question). Core answer: the strategy acts once every 21 sessions; every other day the desk says "no action"; no add-on / T+0 / stop rules (V33/V34); nothing needs paid data (BaoStock / Eastmoney / CSDC are free; Databento was futures only).

@@ -39,23 +39,37 @@ def main():
 
     at("%s 10:00" % per["entry"])
     d = po.ops()
-    check(d["plan"]["phase"] == "BUY_TODAY" and d["plan"]["cash_check"]["source"] == "MODEL", "entry day without journal -> BUY_TODAY on model list", d["plan"]["headline"])
+    pm, pa = d["plans"]["model"], d["plans"]["actual"]
+    check(pm["phase"] == "BUY_TODAY" and pm["cash_check"]["source"] == "MODEL", "entry day, model view -> BUY_TODAY on model list", pm["headline"])
+    check(pa["phase"] == "BUY_TODAY" and pa["cash_check"]["source"] == "JOURNAL" and any("现金为 0" in w for w in pa["warnings"]), "entry day, empty actual account -> BUY_TODAY + cash-0 warning")
     check(d["orders_sent"] is False and d["run"]["running"] in (True, False), "no orders, run status readable")
 
     mid = days[days.index(per["entry"]) + 5]
     at("%s 10:00" % mid)
     d = po.ops()
-    check(d["plan"]["phase"] == "HOLD" and d["plan"]["sessions_held"] == 5 and d["plan"]["sessions_left"] == 15, "hold day held/left", (d["plan"]["sessions_held"], d["plan"]["sessions_left"]))
-    check(all(h["status"] != "PREVIEW_NON_CHAIN" or not h["is_chain"] for h in d["history"]), "forced lists flagged non-chain")
+    pm, pa = d["plans"]["model"], d["plans"]["actual"]
+    check(pm["phase"] == "HOLD" and pm["sessions_held"] == 5 and pm["sessions_left"] == 15, "hold day, model held/left", (pm["sessions_held"], pm["sessions_left"]))
+    check(pa["phase"] == "NO_POSITION" and pa["today_action"] == "WAIT" and pa.get("mid_entry_option") and len(pa["buy_list"]) == 0 and per["next_entry"] in pa["sub"],
+          "hold day, empty actual (cash 0) -> NO_POSITION, mid-entry option offered, list sized to cash = empty", pa["headline"])
+    check(d["history_actual"] and d["history_actual"][-1]["status"] == "NOT_TRADED", "actual history shows NOT_TRADED")
+    check(all(h["status"] != "PREVIEW_NON_CHAIN" or not h["is_chain"] for h in d["history_model"]), "forced lists flagged non-chain")
 
-    # journal: deposit + buy the model fills
+    # journal: deposit + PARTIAL buy (3 of the model fills)
     po.add_event({"type": "DEPOSIT", "amount": 20000, "date": cur})
     fills = (po._ledger().get("fills_by_period") or {}).get(cur) or []
-    for f in fills:
+    part = fills[:3]
+    for f in part:
         po.add_event({"type": "BUY", "symbol": f["symbol"], "lots": f["lots"], "price": f["open"], "date": per["entry"]})
     d = po.ops()
-    a = d["account"]
-    check(a["source"] == "JOURNAL" and len(a["positions"]) == len(fills) and a["cash"] < 20000, "journal-derived account", (a["cash"], a["equity"]))
+    a, pa, pm = d["account"], d["plans"]["actual"], d["plans"]["model"]
+    check(a["source"] == "JOURNAL" and len(a["positions"]) == 3 and a["cash"] < 20000, "journal-derived account (3 names)", (a["cash"], a["equity"]))
+    check(pa["phase"] == "HOLD" and any("3/%d" % len(fills) in w for w in pa["warnings"]), "partial fill -> HOLD with partial note", pa["warnings"])
+    check(len(d["model_positions"]) == len(fills) and pm["phase"] == "HOLD" and not pm["warnings"], "model view unaffected by partial fill")
+    ha = d["history_actual"][-1]
+    check(ha["status"] == "OPEN" and ha["n_names"] == 3 and ha["invested"] > 0, "actual history period OPEN with 3 names", (ha["n_names"], ha["invested"]))
+    # the rest of the fills
+    for f in fills[3:]:
+        po.add_event({"type": "BUY", "symbol": f["symbol"], "lots": f["lots"], "price": f["open"], "date": per["entry"]})
 
     at("%s 09:00" % per["exit_date"])
     d = po.ops()
@@ -66,7 +80,11 @@ def main():
 
     for p in po.ops()["account"]["positions"]:
         po.add_event({"type": "SELL", "symbol": p["symbol"], "lots": p["lots"], "price": p["mark_price"] or p["avg_price"], "date": per["exit_date"]})
-    check(len(po.ops()["account"]["positions"]) == 0, "all sells logged -> flat")
+    d = po.ops()
+    check(len(d["account"]["positions"]) == 0, "all sells logged -> flat")
+    ha = next(h for h in d["history_actual"] if h["signal_date"] == cur)
+    check(ha["status"] == "CLOSED" and ha["proceeds"] > 0 and ha["pnl"] is not None, "actual history period CLOSED with proceeds", (ha["proceeds"], ha["pnl"]))
+    check(d["history_actual"][-1]["status"] == "PENDING_ENTRY", "new period on signal night -> PENDING_ENTRY")
 
     nxt = per["next_signal"]
     fake = [S / ("SHORTLIST_SHADOW_%s.json" % nxt), S / ("SHADOW_%s.json" % nxt)]

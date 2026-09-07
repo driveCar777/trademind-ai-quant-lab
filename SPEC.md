@@ -941,8 +941,10 @@ Windows 只编排。Xavier 只计算。四台各至少 10 次 feature / window /
 - `freshness`：`today`、`today_is_trading_day`、`last_completed_session`（今天 18:00 前 = 上一个交易日）、`asof_session`、`stale_sessions`（落后交易日数）、`needs_update`、`update_window`（文字："收盘后 18:30 以后，或次日 08:30 前"）。
 - `run`：`running`、`pid`、`started_at`、`elapsed_s`、`stage`（从日志识别的阶段文字）、`log_tail[]`、`last_run`（`STATUS.json` 摘要：`asof_session,started_at,elapsed_s,errors[]`）、`last_failed`。
 - `plan`：`phase` ∈ `UPDATE_FIRST | SELL_TODAY | LIST_READY_BUY_TOMORROW | SIGNAL_TONIGHT | BUY_TODAY | HOLD | NO_POSITION`；`headline`、`sub`、`steps[]`（每步 `{when, text}`）、`sell_list[]`、`buy_list[]`（按实际现金重算：`rank,symbol,name,last_close,lots_100_est,est_yuan,score`）、`cash_check`（`cash_available, reserve, budget, planned_yuan, ok, shortfall, source ∈ JOURNAL|MODEL`）、`warnings[]`、`key_dates`（`signal_date, entry, exit_date, next_signal, next_entry`）、`sessions_held/left/total`。
-- `account`：`source`（`JOURNAL` 有事件 / `MODEL` 无事件）、`cash`、`market_value`、`equity`、`positions[]`（`symbol,name,lots,shares,avg_price,buy_date,mark_price,mark_date,cost_in,unrealized,status`）、`deposits_total`、`realized_pnl`、`month_contrib_logged`（本月是否已登记 ¥2,000 入金）。
-- `history[]`：每期 `{period_no, signal_date, entry, exit, status, n_names, capital_ret, ew_ret, lo_minus_ew, net_yuan, equity, is_chain, names[]}`；非链上的强制名单以 `is_chain=false` 标注为「非操作日预览」。
+- `plans`：`{actual, model}` 两份独立 `plan`（V2.1）。`actual` = `mode=JOURNAL`，只按成交日志：空仓则 `NO_POSITION/today_action=WAIT`（"等下一买入日"，不建议中途进场），部分买入则卖出清单只含实际持有的几只并带 `partial` 提示，现金 0 时提示先入金；`model` = `mode=MODEL`，¥20,000 影子账本假设全买。两者永不混用；顶层 `plan` = `plans.actual`（兼容）。
+- `account`：`source`（`JOURNAL` 有事件 / `MODEL` 无事件）、`n_events`、`cash`、`market_value`、`equity`、`positions[]`（`symbol,name,lots,shares,avg_price,buy_date,mark_price,mark_date,cost_in,unrealized,status`）、`deposits_total`、`realized_pnl`、`month_contrib_logged`（本月是否已登记 ¥2,000 入金）。
+- `history_model[]`（= `history[]`，兼容）：模型每期 `{period_no, signal_date, entry, exit, status, n_names, capital_ret, ew_ret, lo_minus_ew, net_yuan, equity, is_chain, names[]}`；非链上的强制名单以 `is_chain=false` 标注为「非操作日预览」。
+- `history_actual[]`（V2.1）：用户自己的每期，从成交日志按链上周期归组（买入 ∈ [entry, next_entry)，卖出 ∈ (entry, next_entry]）：`{period_no, signal_date, entry, exit, status ∈ OPEN|CLOSED|NOT_TRADED|PENDING_ENTRY, n_names, invested, proceeds, open_value, pnl, capital_ret, names[{symbol,name,lots,sold_lots,open_lots,avg_price,proceeds,mark_price,pnl,status}]}`。
 - `journal_events[]`：最近 50 条。
 - `orders_sent`：恒 `false`。
 

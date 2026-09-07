@@ -113,6 +113,14 @@ a{color:inherit}
 .tabs{display:flex;gap:6px}
 .tabs button{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:4px 12px;font-size:12px;cursor:pointer}
 .tabs button.on{color:var(--text);border-color:var(--blue);background:var(--sel)}
+/* global account switch */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{background:transparent;border:0;color:var(--muted);padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;line-height:1.25}
+.seg button small{font-size:10px;color:var(--faint);font-family:"JetBrains Mono",monospace;font-weight:500}
+.seg button.on{background:var(--sel);color:var(--text);box-shadow:inset 0 -2px 0 var(--blue)}
+.seg button.on.model{box-shadow:inset 0 -2px 0 var(--ai)}
+.mode-note{font-size:12px;color:var(--muted);padding:8px 14px;border-radius:8px;background:var(--surface-2);border:1px dashed var(--line)}
+.mode-note.model{border-color:#3b2a7a;color:#c4b5fd}
 .sub-rows{grid-column:1/-1;padding:6px 14px 12px 60px;font-size:12px;color:var(--muted);display:grid;grid-template-columns:repeat(2,1fr);gap:4px 24px}
 .sub-rows div{display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace}
 
@@ -144,7 +152,10 @@ pre.log{background:var(--surface-2);border:1px solid var(--line-soft);border-rad
   <div class="chips">
     <span class="pill" id="pill-data"><i class="dot"></i>数据截至 <b>—</b></span>
     <span class="pill" id="pill-today">今天 <b>—</b></span>
-    <span class="pill" id="pill-account">账户 <b>—</b></span>
+    <div class="seg" id="seg" title="切换后整页（今天做什么 / 资金 / 持仓 / 历史）都跟着切">
+      <button data-k="actual" class="on">我的模拟账户<small id="seg-actual">未入金</small></button>
+      <button data-k="model">模型影子账本<small id="seg-model">¥20,000 起</small></button>
+    </div>
     <span class="pill">系统不发单</span>
     <a class="pill" href="/dashboard" style="text-decoration:none">← 实验室</a>
   </div>
@@ -158,6 +169,7 @@ pre.log{background:var(--surface-2);border:1px solid var(--line-soft);border-rad
 </header>
 
 <main class="wrap">
+  <div class="mode-note" id="mode-note"></div>
   <div id="banners" style="display:none"></div>
 
   <!-- hero -->
@@ -197,12 +209,14 @@ pre.log{background:var(--surface-2);border:1px solid var(--line-soft);border-rad
   <!-- positions -->
   <section class="card" id="pos-card">
     <div class="card-h">
-      <h3>我的持仓</h3>
+      <h3 id="pos-title">我的持仓</h3>
       <div class="meta">
-        <div class="tabs" id="pos-tabs"><button data-k="actual" class="on">实际账户（成交日志）</button><button data-k="model">模型影子账本 ¥20,000</button></div>
-        <button class="btn-ghost btn-sm" onclick="openDrawer('BUY')">登记买入</button>
-        <button class="btn-ghost btn-sm" onclick="openDrawer('SELL')">登记卖出</button>
-        <button class="btn-ghost btn-sm" onclick="openDrawer('DEPOSIT')">入金 / 出金</button>
+        <span id="pos-meta"></span>
+        <span id="pos-actions">
+          <button class="btn-ghost btn-sm" onclick="openDrawer('BUY')">登记买入</button>
+          <button class="btn-ghost btn-sm" onclick="openDrawer('SELL')">登记卖出</button>
+          <button class="btn-ghost btn-sm" onclick="openDrawer('DEPOSIT')">入金 / 出金</button>
+        </span>
       </div>
     </div>
     <div class="card-b" style="padding:0"><div class="list" id="pos-list"></div></div>
@@ -210,7 +224,7 @@ pre.log{background:var(--surface-2);border:1px solid var(--line-soft);border-rad
 
   <!-- history -->
   <section class="card" id="hist-card">
-    <div class="card-h"><h3>历史每一期</h3><div class="meta"><span id="hist-meta"></span><span class="tog" data-tog="hist-card">收起</span></div></div>
+    <div class="card-h"><h3 id="hist-title">历史每一期</h3><div class="meta"><span id="hist-meta"></span><span class="tog" data-tog="hist-card">收起</span></div></div>
     <div class="card-b" style="padding:0"><div class="list" id="hist-list"></div></div>
   </section>
 
@@ -278,7 +292,10 @@ pre.log{background:var(--surface-2);border:1px solid var(--line-soft);border-rad
 
 <script>
 const $ = (id) => document.getElementById(id);
-let OPS = null, POS_TAB = 'actual', POLL = null;
+let OPS = null, POLL = null;
+let VIEW = localStorage.getItem('paper.view') || 'actual';   // 'actual' = my simulated account (journal) | 'model' = ¥20,000 shadow book
+const isModel = () => VIEW === 'model';
+const curPlan = () => (OPS && OPS.plans ? OPS.plans[VIEW] : OPS && OPS.plan) || {};
 
 const fmt = {
   yuan: (v) => (v == null ? '—' : '¥' + Number(v).toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})),
@@ -300,41 +317,17 @@ async function api(path, opt) {
 /* ---------- render ---------- */
 function render(d) {
   OPS = d;
-  const f = d.freshness, p = d.plan, a = d.account, run = d.run;
-  $('contract').textContent = (d.model_summary && d.model_summary.contract) || '—';
+  const f = d.freshness, a = d.account, run = d.run, m = d.model_summary || {};
+  $('contract').textContent = m.contract || '—';
   // chips
   const pd = $('pill-data');
   pd.className = 'pill ' + (f.needs_update ? (f.stale_sessions >= 3 ? 'bad' : 'warn') : 'ok');
   pd.innerHTML = '<i class="dot"></i>数据截至 <b>' + (f.asof_session || '—') + '</b>' + (f.needs_update ? ' · 落后 ' + f.stale_sessions + ' 个交易日' : ' · 最新');
   $('pill-today').innerHTML = '今天 <b>' + f.today + '</b> ' + f.weekday + (f.today_is_trading_day ? ' · 交易日' : ' · 休市');
-  $('pill-account').innerHTML = (a.source === 'JOURNAL' ? '实际账户 <b>' + fmt.yuan0(a.equity) + '</b>' : '未登记成交 · 用影子账本 <b>' + fmt.yuan0(d.model_summary.mtm_equity) + '</b>');
+  $('seg-actual').textContent = a.n_events ? '权益 ' + fmt.yuan0(a.equity) + ' · ' + a.positions.length + ' 只' : '未入金 · 空仓';
+  $('seg-model').textContent = '权益 ' + fmt.yuan0(m.mtm_equity) + ' · ' + (d.model_positions || []).length + ' 只';
   renderRun(run);
-  // banners
-  const bn = [];
-  (p.warnings || []).forEach((w) => bn.push({cls: /落后|没登记|未登记|没有正常/.test(w) ? '' : 'info', text: w}));
-  if (a.source === 'MODEL') bn.push({cls: 'info', text: '你还没登记任何入金/成交。现在显示的是官方 ¥20,000 影子账本；开始模拟盘后，先「入金」再逐只「登记买入」，页面就会按你的真实账户算。'});
-  const B = $('banners');
-  B.style.display = bn.length ? 'flex' : 'none'; B.style.flexDirection = 'column'; B.style.gap = '8px';
-  B.innerHTML = bn.map((b) => '<div class="banner ' + b.cls + '">' + esc(b.text) + '</div>').join('');
-  // hero
-  const cls = {SELL_TODAY: 'sell', SIGNAL_TONIGHT: 'update', UPDATE_FIRST: 'update', BUY_TODAY: 'buy', LIST_READY_BUY_TOMORROW: 'buy'}[p.phase] || '';
-  $('hero-eyebrow').textContent = 'TODAY · ' + f.today + ' · ' + phaseLabel(p.phase);
-  const h1 = $('hero-h1'); h1.textContent = p.headline; h1.className = cls;
-  $('hero-sub').textContent = p.sub || '';
-  $('hero-steps').innerHTML = (p.steps || []).map((s) => '<li><b>' + esc(s.when) + '</b><span>' + esc(s.text) + '</span></li>').join('');
-  // progress 20
-  const held = p.sessions_held, total = p.sessions_total || 20;
-  let bars = '';
-  for (let i = 0; i < total; i++) bars += '<i class="' + (held != null && i < held ? 'on' : '') + (i === total - 1 ? ' sell' : '') + '"></i>';
-  $('prog').innerHTML = bars;
-  $('prog-cap').textContent = held == null ? '本期未开始' : '已持有 ' + held + ' / ' + total + ' 个交易日 · 还剩 ' + (p.sessions_left ?? '—') + ' 个到卖出日';
-  const k = p.key_dates || {};
-  $('kdates').innerHTML = [['信号日（出名单）', k.signal_date], ['买入日（开盘）', k.entry], ['卖出日（开盘）', k.exit_date], ['下一信号日', k.next_signal], ['下一买入日', k.next_entry]]
-    .map((x) => '<div class="kv"><span>' + x[0] + '</span><b>' + (x[1] || '—') + '</b></div>').join('');
-  renderAction(p, a);
-  renderNums(d);
-  renderPositions();
-  renderHistory(d.history || []);
+  renderView();
   renderJournal(d.journal_events || []);
   renderFaq(d.faq || []);
   // settings
@@ -343,11 +336,50 @@ function render(d) {
   $('set-meta').textContent = '月定投 ¥' + (s.monthly_contrib ?? 2000) + ' · N=' + (s.n_target ?? 10) + ' · ≤¥' + (s.max_price ?? 100) + ' · ' + (s.boards || 'MAIN');
   // symbol datalist
   const syms = new Set();
-  (a.positions || []).forEach((r) => syms.add(r.symbol)); (d.model_positions || []).forEach((r) => syms.add(r.symbol)); (p.buy_list || []).forEach((r) => syms.add(r.symbol));
+  (a.positions || []).forEach((r) => syms.add(r.symbol)); (d.model_positions || []).forEach((r) => syms.add(r.symbol));
+  Object.values(d.plans || {}).forEach((pl) => (pl.buy_list || []).forEach((r) => syms.add(r.symbol)));
   $('sym-list').innerHTML = [...syms].map((s) => '<option value="' + fmt.code(s) + '">').join('');
 }
+
+/* everything below the top bar follows VIEW */
+function renderView() {
+  const d = OPS; if (!d) return;
+  const f = d.freshness, a = d.account, p = curPlan();
+  [...$('seg').children].forEach((b) => { b.classList.toggle('on', b.dataset.k === VIEW); b.classList.toggle('model', b.dataset.k === 'model'); });
+  const note = $('mode-note');
+  note.className = 'mode-note' + (isModel() ? ' model' : '');
+  note.innerHTML = isModel()
+    ? '<b>模型影子账本</b>：官方 V26.8 合同的账本，假设每期按名单全部买入、¥20,000 起、每月定投 ¥2,000，用来核对策略。<b>它不是你的钱</b>，也不受你买了几只影响。只读。'
+    : '<b>我的模拟账户</b>：只按你在「操作日志」里登记的入金 / 买入 / 卖出算。买了 3 只就按 3 只算，卖出日也只让你卖这 3 只。没登记 = 空仓。' + (a.n_events ? '' : ' <b>现在是空的：先「入金」登记本金。</b>');
+  // banners
+  const bn = [];
+  (p.warnings || []).forEach((w) => bn.push({cls: /落后|没登记|未登记|没有正常|为 0|为空/.test(w) ? '' : 'info', text: w}));
+  const B = $('banners');
+  B.style.display = bn.length ? 'flex' : 'none'; B.style.flexDirection = 'column'; B.style.gap = '8px';
+  B.innerHTML = bn.map((b) => '<div class="banner ' + b.cls + '">' + esc(b.text) + '</div>').join('');
+  // hero
+  const cls = {SELL_TODAY: 'sell', SIGNAL_TONIGHT: 'update', UPDATE_FIRST: 'update', BUY_TODAY: 'buy', LIST_READY_BUY_TOMORROW: 'buy'}[p.phase] || '';
+  $('hero-eyebrow').textContent = (isModel() ? '模型影子账本' : '我的模拟账户') + ' · ' + f.today + ' · ' + phaseLabel(p.phase);
+  const h1 = $('hero-h1'); h1.textContent = p.headline || '—'; h1.className = cls;
+  $('hero-sub').textContent = p.sub || '';
+  $('hero-steps').innerHTML = (p.steps || []).map((s) => '<li><b>' + esc(s.when) + '</b><span>' + esc(s.text) + '</span></li>').join('');
+  // progress 20
+  const held = p.sessions_held, total = p.sessions_total || 20;
+  let bars = '';
+  for (let i = 0; i < total; i++) bars += '<i class="' + (held != null && i < held ? 'on' : '') + (i === total - 1 ? ' sell' : '') + '"></i>';
+  $('prog').innerHTML = bars;
+  const holdsNothing = !isModel() && !(a.positions || []).length;
+  $('prog-cap').textContent = held == null ? '本期未开始' : (holdsNothing ? '本期第 ' + held + ' / ' + total + ' 天（你未参与）· ' : '已持有 ' + held + ' / ' + total + ' 个交易日 · ') + '还剩 ' + (p.sessions_left ?? '—') + ' 个到卖出日';
+  const k = p.key_dates || {};
+  $('kdates').innerHTML = [['信号日（出名单）', k.signal_date], ['买入日（开盘）', k.entry], ['卖出日（开盘）', k.exit_date], ['下一信号日', k.next_signal], ['下一买入日', k.next_entry]]
+    .map((x) => '<div class="kv"><span>' + x[0] + '</span><b>' + (x[1] || '—') + '</b></div>').join('');
+  renderAction(p, a);
+  renderNums(d);
+  renderPositions();
+  if (isModel()) renderHistoryModel(d.history_model || d.history || []); else renderHistoryActual(d.history_actual || []);
+}
 function phaseLabel(ph) {
-  return {HOLD: '持有中', SELL_TODAY: '卖出日', SIGNAL_TONIGHT: '信号日 · 待更新', LIST_READY_BUY_TOMORROW: '信号日 · 名单已出', BUY_TODAY: '买入日', NO_POSITION: '未开仓', UPDATE_FIRST: '先更新'}[ph] || ph;
+  return {HOLD: '持有中', SELL_TODAY: '卖出日', SIGNAL_TONIGHT: '信号日 · 待更新', LIST_READY_BUY_TOMORROW: '信号日 · 名单已出', BUY_TODAY: '买入日', NO_POSITION: '空仓等待', UPDATE_FIRST: '先更新'}[ph] || ph;
 }
 function localTime(iso) { // STATUS.json stamps are UTC ("...Z"); lock stamps are local (no Z)
   if (!iso) return '—';
@@ -380,20 +412,21 @@ function renderRun(run) {
 function renderAction(p, a) {
   const card = $('action-card'), L = $('action-list'), C = $('cash-check');
   const isSell = p.phase === 'SELL_TODAY' || (p.phase === 'SIGNAL_TONIGHT' && p.sell_list.length);
-  const isBuy = p.phase === 'BUY_TODAY' || p.phase === 'LIST_READY_BUY_TOMORROW';
+  const isBuy = p.phase === 'BUY_TODAY' || p.phase === 'LIST_READY_BUY_TOMORROW' || (p.mid_entry_option && (p.buy_list || []).length);
   if (!isSell && !isBuy) { card.style.display = 'none'; return; }
   card.style.display = '';
+  const mine = !isModel();
   if (isSell) {
-    $('action-title').textContent = '卖出清单 · 开盘全部卖出 ' + p.sell_list.length + ' 只';
-    $('action-meta').innerHTML = '<span>' + (a.source === 'JOURNAL' ? '来自你的成交日志' : '来自模型影子账本（你没登记成交）') + '</span><button class="btn-ghost btn-sm" onclick="openDrawer(\'SELL\', true)">登记卖出</button>';
+    $('action-title').textContent = (mine ? '卖出清单 · 开盘卖出你持有的 ' : '模型卖出清单 · 开盘全部卖出 ') + p.sell_list.length + ' 只';
+    $('action-meta').innerHTML = '<span>' + (mine ? '来自你的成交日志' : '模型影子账本，只读') + '</span>' + (mine ? '<button class="btn-ghost btn-sm" onclick="openDrawer(\'SELL\', true)">登记卖出</button>' : '');
     L.innerHTML = '<div class="row pos head"><span>#</span><span>股票</span><span>买入日 / 买价</span><span>最新收盘</span><span>手数</span><span>投入</span><span>浮动盈亏</span><span>状态</span><span></span></div>' +
       p.sell_list.map((r, i) => posRow(r, i, true)).join('');
     C.innerHTML = '卖出后现金当天可买入，次日可提。跌停/停牌卖不掉：明天再卖，最多顺延 10 个交易日（合同 V26.4）。';
   } else {
-    $('action-title').textContent = '买入名单 · ' + p.buy_list.length + ' 只（' + (p.basis || '') + '）';
-    $('action-meta').innerHTML = '<button class="btn-ghost btn-sm" onclick="openDrawer(\'BUY\', true)">登记买入</button>';
+    $('action-title').textContent = (p.mid_entry_option ? '本期名单（可选中途跟买）· ' : mine ? '买入名单 · ' : '模型买入名单 · ') + p.buy_list.length + ' 只（' + (p.basis || '') + '）';
+    $('action-meta').innerHTML = mine ? '<span>' + (p.mid_entry_option ? '中途进场未经检验，买不买你定 · 买几只登记几只 · 卖出日不变' : '手数按你的可用现金算 · 可以只买其中几只，买几只登记几只') + '</span><button class="btn-ghost btn-sm" onclick="openDrawer(\'BUY\', true)">登记买入</button>' : '<span>按 ¥20,000 影子账本算的手数，只读</span>';
     L.innerHTML = '<div class="row buy head"><span>#</span><span>股票</span><span>信号日收盘</span><span>手数</span><span>预计金额</span><span>模型分</span><span></span></div>' +
-      p.buy_list.map((r, i) => '<div class="row buy"><span class="m dim">' + (r.rank || i + 1) + '</span><span class="sym">' + esc(r.name || '') + '<small>' + esc(r.symbol) + '</small></span><span class="m">' + fmt.px(r.last_close) + '</span><span class="m">' + r.lots_100_est + ' 手</span><span class="m">' + fmt.yuan(r.est_yuan) + '</span><span class="m" style="color:var(--ai)">' + (r.score != null ? Number(r.score).toFixed(4) : '—') + '</span><span><button class="btn-ghost btn-sm" onclick="prefill(\'BUY\',\'' + r.symbol + '\',' + r.lots_100_est + ',' + r.last_close + ')">登记</button></span></div>').join('');
+      p.buy_list.map((r, i) => '<div class="row buy"><span class="m dim">' + (r.rank || i + 1) + '</span><span class="sym">' + esc(r.name || '') + '<small>' + esc(r.symbol) + '</small></span><span class="m">' + fmt.px(r.last_close) + '</span><span class="m">' + r.lots_100_est + ' 手</span><span class="m">' + fmt.yuan(r.est_yuan) + '</span><span class="m" style="color:var(--ai)">' + (r.score != null ? Number(r.score).toFixed(4) : '—') + '</span><span>' + (mine ? '<button class="btn-ghost btn-sm" onclick="prefill(\'BUY\',\'' + r.symbol + '\',' + r.lots_100_est + ',' + r.last_close + ')">已买，登记</button>' : '') + '</span></div>').join('');
     const cc = p.cash_check;
     if (!cc) C.innerHTML = '';
     else if (cc.source === 'MODEL') C.innerHTML = '<span class="dim">资金检查：</span>' + esc(cc.note);
@@ -407,33 +440,53 @@ function posRow(r, i, sell) {
                    : '<button class="btn-ghost btn-sm" onclick="prefill(\'SELL\',\'' + r.symbol + '\',' + (r.lots || 0) + ',' + (r.mark_price || 0) + ')">卖出</button>';
   return '<div class="row pos"><span class="m dim">' + (i + 1) + '</span><span class="sym">' + esc(r.name || '') + '<small>' + esc(r.symbol) + '</small></span>' +
     '<span class="m">' + esc(r.buy_date || '—') + '<br><span class="dim">' + fmt.px(r.avg_price) + '</span></span><span class="m">' + fmt.px(r.mark_price) + '<br><span class="dim" style="font-size:11px">' + esc(r.mark_date || '') + '</span></span>' +
-    '<span class="m">' + (r.lots ?? '—') + ' 手</span><span class="m">' + fmt.yuan(r.cost_in) + '</span><span class="m ' + fmt.cls(r.unrealized) + '">' + fmt.signed(r.unrealized) + '</span><span>' + chip + '</span><span>' + (POS_TAB === 'actual' || sell ? act : '') + '</span></div>';
+    '<span class="m">' + (r.lots ?? '—') + ' 手</span><span class="m">' + fmt.yuan(r.cost_in) + '</span><span class="m ' + fmt.cls(r.unrealized) + '">' + fmt.signed(r.unrealized) + '</span><span>' + chip + '</span><span>' + (!isModel() ? act : '') + '</span></div>';
 }
 function renderNums(d) {
   const a = d.account, m = d.model_summary || {};
-  if (a.source === 'JOURNAL') {
-    $('n1-lab').textContent = '可用现金'; $('n1').textContent = fmt.yuan(a.cash); $('n1-sub').innerHTML = '累计入金 <b>' + fmt.yuan0(a.deposits_total) + '</b> · 手续费 <b>' + fmt.yuan(a.fees_total) + '</b>';
+  if (!isModel()) {
+    $('n1-lab').textContent = '可用现金'; $('n1').textContent = fmt.yuan(a.cash); $('n1-sub').innerHTML = a.n_events ? '累计入金 <b>' + fmt.yuan0(a.deposits_total) + '</b> · 手续费 <b>' + fmt.yuan(a.fees_total) + '</b>' : '还没入金 · 点「入金 / 出金」登记本金';
     $('n2').textContent = fmt.yuan(a.market_value); $('n2-sub').innerHTML = a.positions.length + ' 只 · 浮动 <b class="' + fmt.cls(sum(a.positions, 'unrealized')) + '">' + fmt.signed(sum(a.positions, 'unrealized')) + '</b>';
     $('n3').textContent = fmt.yuan(a.equity); $('n3-sub').innerHTML = '已实现 <b class="' + fmt.cls(a.realized_pnl) + '">' + fmt.signed(a.realized_pnl) + '</b> · 净投入 <b>' + fmt.yuan0(a.deposits_total - a.withdrawals_total) + '</b>';
   } else {
     $('n1-lab').textContent = '影子账本现金（¥20,000 起）'; $('n1').textContent = fmt.yuan(m.equity_end_closed); $('n1-sub').textContent = '已平仓 ' + (m.n_periods_closed ?? 0) + ' 期 · 入金 ' + fmt.yuan0(m.deposits_to_date);
     $('n2').textContent = fmt.yuan(m.mtm_equity != null && m.unrealized != null ? m.mtm_equity : null); $('n2-sub').innerHTML = '本期浮动 <b class="' + fmt.cls(m.unrealized) + '">' + fmt.signed(m.unrealized) + '</b> · 市值日 ' + (m.open_mark_date || '—');
-    $('n3').textContent = fmt.yuan(m.mtm_equity); $('n3-sub').textContent = '这是模型的影子账本，不是你的钱。登记成交后这里换成你的账户。';
+    $('n3').textContent = fmt.yuan(m.mtm_equity); $('n3-sub').textContent = '模型的影子账本，不是你的钱。';
   }
 }
 function sum(arr, k) { return (arr || []).reduce((s, r) => s + (Number(r[k]) || 0), 0); }
 function renderPositions() {
   const d = OPS; if (!d) return;
-  const rows = POS_TAB === 'actual' ? d.account.positions : d.model_positions;
+  const mine = !isModel();
+  const rows = mine ? d.account.positions : d.model_positions;
+  $('pos-title').textContent = mine ? '我的持仓' : '模型持仓（影子账本）';
+  $('pos-meta').textContent = mine ? '只按成交日志' : '假设名单全部买入 · 只读';
+  $('pos-actions').style.display = mine ? '' : 'none';
   const L = $('pos-list');
   if (!rows || !rows.length) {
-    L.innerHTML = '<div class="empty">' + (POS_TAB === 'actual' ? '成交日志里没有持仓。买入后点「登记买入」。' : '模型本期没有持仓记录。') + '</div>'; return;
+    L.innerHTML = '<div class="empty">' + (mine ? '你现在空仓。买入日买了以后点「登记买入」（买几只登记几只）。' : '模型本期没有持仓记录。') + '</div>'; return;
   }
   L.innerHTML = '<div class="row pos head"><span>#</span><span>股票</span><span>买入日 / 买价</span><span>最新收盘</span><span>手数</span><span>投入</span><span>浮动盈亏</span><span>状态</span><span></span></div>' + rows.map((r, i) => posRow(r, i, false)).join('');
 }
-function renderHistory(h) {
+function renderHistoryActual(h) {
   const L = $('hist-list');
-  $('hist-meta').textContent = h.filter((x) => x.is_chain).length + ' 期 · 每 21 个交易日一期';
+  $('hist-title').textContent = '我的每一期';
+  const traded = h.filter((x) => x.status === 'OPEN' || x.status === 'CLOSED');
+  $('hist-meta').textContent = traded.length + ' 期有交易 / 共 ' + h.length + ' 期 · 每 21 个交易日一期';
+  if (!h.length) { L.innerHTML = '<div class="empty">还没有历史期。</div>'; return; }
+  L.innerHTML = '<div class="row hist head"><span>期</span><span>信号日</span><span>买入日</span><span>卖出日</span><span>只数</span><span>投入</span><span>已收回</span><span>盈亏</span><span>状态</span><span></span></div>' +
+    h.slice().reverse().map((x) => {
+      const st = x.status === 'OPEN' ? '<span class="chip blue">持有中</span>' : x.status === 'CLOSED' ? '<span class="chip ok">已平仓</span>' : x.status === 'PENDING_ENTRY' ? '<span class="chip warn">待买入</span>' : '<span class="chip gray">未参与</span>';
+      const names = (x.names || []).map((n) => '<div><span>' + esc(fmt.code(n.symbol)) + ' ' + esc(n.name || '') + '</span><span>' + n.lots + '手' + (n.open_lots ? '（持 ' + n.open_lots + '）' : '') + ' @' + fmt.px(n.avg_price) + ' <span class="' + fmt.cls(n.pnl) + '">' + fmt.signed(n.pnl) + '</span></span></div>').join('');
+      const ret = x.capital_ret != null ? ' <span class="dim" style="font-size:11px">' + fmt.pct(x.capital_ret) + '</span>' : '';
+      return '<div class="row hist" style="cursor:pointer" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display===\'grid\'?\'none\':\'grid\'"><span class="m dim">' + x.period_no + '</span><span class="m">' + esc(x.signal_date) + '</span><span class="m">' + esc(x.entry || '—') + '</span><span class="m">' + esc(x.exit || '—') + '</span><span class="m">' + (x.n_names || '—') + '</span><span class="m">' + (x.invested ? fmt.yuan0(x.invested) : '—') + '</span><span class="m">' + (x.proceeds ? fmt.yuan0(x.proceeds) : '—') + '</span><span class="m ' + fmt.cls(x.pnl) + '">' + fmt.signed(x.pnl) + ret + '</span><span>' + st + '</span><span class="dim">' + (names ? '▾' : '') + '</span></div>' +
+        '<div class="sub-rows" style="display:none">' + (names || '<div style="grid-column:1/-1;justify-content:flex-start;font-family:Inter">这一期你没有登记任何买入。</div>') + '</div>';
+    }).join('');
+}
+function renderHistoryModel(h) {
+  const L = $('hist-list');
+  $('hist-title').textContent = '模型每一期（影子账本）';
+  $('hist-meta').textContent = h.filter((x) => x.is_chain).length + ' 期 · 每 21 个交易日一期 · 假设名单全部买入';
   if (!h.length) { L.innerHTML = '<div class="empty">还没有历史期。</div>'; return; }
   L.innerHTML = '<div class="row hist head"><span>期</span><span>信号日</span><span>买入日</span><span>卖出日</span><span>只数</span><span>期收益</span><span>vs 等权</span><span>盈亏</span><span>状态</span><span></span></div>' +
     h.slice().reverse().map((x, i) => {
@@ -453,7 +506,7 @@ function renderJournal(ev) {
   L.innerHTML = '<div class="row jr head"><span>时间</span><span>动作</span><span>标的</span><span>手数 × 价</span><span>金额</span><span>手续费</span><span></span></div>' + ev.map((e) => '<div class="row jr"><span class="m dim">' + esc(e.date) + ' <span style="font-size:11px">' + esc((e.ts || '').slice(11, 16)) + '</span></span><span><span class="chip ' + (e.type === 'BUY' ? 'blue' : e.type === 'SELL' ? 'warn' : e.type === 'DEPOSIT' ? 'ok' : 'gray') + '">' + lab[e.type] + '</span></span><span class="m">' + esc(e.symbol ? fmt.code(e.symbol) + ' ' + (nameOf(e.symbol)) : (e.note || '')) + '</span><span class="m">' + (e.lots ? e.lots + ' × ' + fmt.px(e.price) : '—') + '</span><span class="m">' + fmt.yuan(e.amount) + '</span><span class="m">' + (e.fee != null ? fmt.yuan(e.fee) : '—') + '</span><span><button class="btn-ghost btn-sm" onclick="delEvent(\'' + e.id + '\')">删</button></span></div>').join('');
 }
 function nameOf(sym) {
-  const all = [...(OPS.account.positions || []), ...(OPS.model_positions || []), ...(OPS.plan.buy_list || [])];
+  const all = [...(OPS.account.positions || []), ...(OPS.model_positions || []), ...(curPlan().buy_list || [])];
   const hit = all.find((r) => r.symbol === sym); return hit ? hit.name || '' : '';
 }
 function renderFaq(faq) { $('faq').innerHTML = faq.map((q) => '<details><summary>' + esc(q.q) + '</summary><p>' + esc(q.a) + '</p></details>').join(''); }
@@ -475,7 +528,7 @@ $('btn-update').onclick = async () => {
   catch (e) { toast('启动失败：' + e.message, 5000); }
 };
 document.querySelectorAll('.tog').forEach((t) => (t.onclick = () => { const c = $(t.dataset.tog); c.classList.toggle('collapsed'); t.textContent = c.classList.contains('collapsed') ? '展开' : '收起'; }));
-$('pos-tabs').onclick = (e) => { const b = e.target.closest('button'); if (!b) return; POS_TAB = b.dataset.k; [...$('pos-tabs').children].forEach((x) => x.classList.toggle('on', x === b)); renderPositions(); };
+$('seg').onclick = (e) => { const b = e.target.closest('button'); if (!b) return; VIEW = b.dataset.k; localStorage.setItem('paper.view', VIEW); renderView(); };
 $('btn-save').onclick = async () => {
   try { await api('/api/v1/paper/settings', {method: 'PUT', body: JSON.stringify({monthly_contrib: Number($('set-contrib').value)})}); toast('已保存'); load(); } catch (e) { toast(e.message, 4000); }
 };
@@ -485,7 +538,7 @@ function openDrawer(type, batch) {
   $('f-type').value = type || 'BUY'; onType();
   $('f-date').value = OPS ? OPS.freshness.today : new Date().toISOString().slice(0, 10);
   $('f-symbol').value = ''; $('f-lots').value = ''; $('f-price').value = ''; $('f-fee').value = ''; $('f-amount').value = ''; $('f-note').value = '';
-  const P = OPS && OPS.plan;
+  const P = OPS && (OPS.plans ? OPS.plans.actual : OPS.plan);
   const canBatch = batch && P && ((type === 'BUY' && P.buy_list.length) || (type === 'SELL' && P.sell_list.length));
   $('f-batch').style.display = canBatch ? '' : 'none';
   $('f-batch-btn').onclick = () => batchLog(type);
@@ -504,8 +557,8 @@ $('f-save').onclick = async () => {
   try { await api('/api/v1/paper/journal', {method: 'POST', body: JSON.stringify(body)}); toast('已登记'); closeDrawer(); load(); } catch (e) { $('f-hint').textContent = e.message; }
 };
 async function batchLog(type) {
-  const P = OPS.plan, rows = type === 'BUY' ? P.buy_list : P.sell_list, date = $('f-date').value;
-  if (!confirm('按计划登记 ' + rows.length + ' 条' + (type === 'BUY' ? '买入' : '卖出') + '（价格用表中价格，之后可在「操作日志」逐条删掉重登）？')) return;
+  const P = OPS.plans ? OPS.plans.actual : OPS.plan, rows = type === 'BUY' ? P.buy_list : P.sell_list, date = $('f-date').value;
+  if (!confirm('按计划登记 ' + rows.length + ' 条' + (type === 'BUY' ? '买入' : '卖出') + '（价格用表中价格，之后可在「操作日志」逐条删掉重登）。只买了几只的话请关掉这个窗、逐只登记。')) return;
   let n = 0;
   for (const r of rows) {
     const body = {type, date, symbol: r.symbol, lots: type === 'BUY' ? r.lots_100_est : r.lots, price: type === 'BUY' ? r.last_close : (r.mark_price || r.avg_price)};
