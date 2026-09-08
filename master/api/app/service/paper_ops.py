@@ -1216,7 +1216,7 @@ def ops():
     return {"freshness": fresh, "run": run,
             # `plan` kept for backward compatibility = the owner's own account plan
             "plan": plans["actual"], "plans": plans, "account": account, "model_positions": model_pos,
-            "model_summary": {k: top20.get(k) for k in ("contract", "capital_yuan", "monthly_contrib", "n_target", "equity_end_closed", "mtm_equity", "unrealized",
+            "model_summary": {k: top20.get(k) for k in ("contract", "capital_yuan", "monthly_contrib", "n_target", "equity_end_closed", "cash", "positions_mv", "mtm_equity", "unrealized", "n_mark_missing",
                                                         "n_periods", "n_periods_closed", "open_signal_date", "open_mark_date", "deposits_to_date")},
             "history": hist_model, "history_model": hist_model,
             "history_actual": history_actual(days, journal, fresh["last_completed_session"] or fresh["today"]),

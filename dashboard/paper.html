@@ -487,8 +487,10 @@ function renderNums(d) {
     $('n2').textContent = fmt.yuan(a.market_value); $('n2-sub').innerHTML = a.positions.length + ' 只 · 浮动 <b class="' + fmt.cls(sum(a.positions, 'unrealized')) + '">' + fmt.signed(sum(a.positions, 'unrealized')) + '</b>';
     $('n3').textContent = fmt.yuan(a.equity); $('n3-sub').innerHTML = '已实现 <b class="' + fmt.cls(a.realized_pnl) + '">' + fmt.signed(a.realized_pnl) + '</b> · 净投入 <b>' + fmt.yuan0(a.deposits_total - a.withdrawals_total) + '</b>';
   } else {
-    $('n1-lab').textContent = '影子账本现金（¥20,000 起）'; $('n1').textContent = fmt.yuan(m.equity_end_closed); $('n1-sub').textContent = '已平仓 ' + (m.n_periods_closed ?? 0) + ' 期 · 入金 ' + fmt.yuan0(m.deposits_to_date);
-    $('n2').textContent = fmt.yuan(m.mtm_equity != null && m.unrealized != null ? m.mtm_equity : null); $('n2-sub').innerHTML = '本期浮动 <b class="' + fmt.cls(m.unrealized) + '">' + fmt.signed(m.unrealized) + '</b> · 市值日 ' + (m.open_mark_date || '—');
+    const cash = (m.cash != null) ? m.cash : m.equity_end_closed;
+    const mv = (m.positions_mv != null) ? m.positions_mv : (m.mtm_equity != null && cash != null ? m.mtm_equity - cash : null);
+    $('n1-lab').textContent = '影子账本现金（¥20,000 起）'; $('n1').textContent = fmt.yuan(cash); $('n1-sub').textContent = '已平仓 ' + (m.n_periods_closed ?? 0) + ' 期 · 入金 ' + fmt.yuan0(m.deposits_to_date);
+    $('n2').textContent = fmt.yuan(mv); $('n2-sub').innerHTML = '本期浮动 <b class="' + fmt.cls(m.unrealized) + '">' + fmt.signed(m.unrealized) + '</b> · 市值日 ' + (m.open_mark_date || '—') + (m.n_mark_missing ? ' · ' + m.n_mark_missing + ' 只缺价按成本' : '');
     $('n3').textContent = fmt.yuan(m.mtm_equity); $('n3-sub').textContent = '模型的影子账本，不是你的钱。';
   }
 }

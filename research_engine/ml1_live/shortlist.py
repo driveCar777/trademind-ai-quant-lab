@@ -191,12 +191,16 @@ def update_top20_ledger(pack, S, elig, xok, first_signal_index, capital=MANUAL_C
                     "contract": contract}
         if snap:
             open_row.update({"n_fill": snap["n_fill"], "invested_open": snap["invested"], "buy_fees": snap["buy_fees"],
-                             "cash": snap["cash"], "mtm_equity": snap["mtm_equity"], "unrealized": snap["unrealized"],
-                             "ret_unrealized": snap["ret_unrealized"], "mark_date": snap["mark_date"]})
+                             "cash": snap["cash"], "positions_mv": snap["positions_mv"], "mtm_equity": snap["mtm_equity"],
+                             "unrealized": snap["unrealized"], "ret_unrealized": snap["ret_unrealized"],
+                             "mark_date": snap["mark_date"], "n_mark_missing": snap.get("n_mark_missing")})
             fills[dates[open_t]] = snap["names"]
+            summ["cash"] = snap["cash"]
+            summ["positions_mv"] = snap["positions_mv"]
             summ["mtm_equity"] = snap["mtm_equity"]
             summ["unrealized"] = snap["unrealized"]
             summ["open_mark_date"] = snap["mark_date"]
+            summ["n_mark_missing"] = snap.get("n_mark_missing")
         elif sl:
             fills[dates[open_t]] = sl["names"]
         periods.append(open_row)

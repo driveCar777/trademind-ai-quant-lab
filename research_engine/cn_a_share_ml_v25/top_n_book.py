@@ -234,8 +234,12 @@ def eq_money_open_mark(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, un
             row["mark_close"] = round(mk, 4) if np.isfinite(mk) else None
             row["mark_date"] = dates[last]
             row["unrealized"] = round(shares * mk - cost_in - fee, 2) if np.isfinite(mk) and mk > 0 else None
+            # Missing mark → carry at cost. Never treat a filled lot as worth ¥0 (that fake-halves equity).
+            row["mark_value"] = round(shares * mk, 2) if np.isfinite(mk) and mk > 0 else round(cost_in, 2)
+            row["mark_missing"] = not (np.isfinite(mk) and mk > 0)
         names.append(row)
     cash = equity - invested - buy_fees
+    cost_by_j = dict((j, float(pack["open"][t0, j]) * lots * LOT * (1.0 + SLIPPAGE)) for j, lots in sel["picks"] if bool(xok[t0, j]))
     pos = 0.0
     curve = []
     for d in range(t0, last + 1):
@@ -246,11 +250,16 @@ def eq_money_open_mark(pack, scores_t, elig_t, xok, t, equity, exposure=0.70, un
             mk = float(pack["close"][d, j])
             if np.isfinite(mk) and mk > 0:
                 pos += lots * LOT * mk
+            else:
+                pos += cost_by_j.get(j, 0.0)
         curve.append({"date": dates[d], "equity": round(cash + pos, 2), "cash": round(cash, 2), "positions": round(pos, 2)})
     mtm = curve[-1]["equity"] if curve else equity
+    positions_mv = round(sum(n.get("mark_value") or 0.0 for n in names if n.get("status") == "FILL"), 2)
+    n_mark_missing = int(sum(1 for n in names if n.get("mark_missing")))
     return {"signal_date": dates[t], "entry": dates[t0], "status": "OPEN", "n_target": sel["n"], "n_sel": len(sel["picks"]),
             "n_fill": n_fill, "skipped_no_lot": sel["skipped"], "invested": round(invested, 2), "buy_fees": round(buy_fees, 2),
-            "cash": round(cash, 2), "mtm_equity": round(mtm, 2), "unrealized": round(mtm - equity, 2),
+            "cash": round(cash, 2), "positions_mv": positions_mv, "n_mark_missing": n_mark_missing,
+            "mtm_equity": round(mtm, 2), "unrealized": round(mtm - equity, 2),
             "ret_unrealized": (mtm / equity - 1.0) if equity else None, "mark_date": dates[last],
             "cash_idle_frac": round(cash / equity, 4) if equity else None, "names": names, "curve": curve}
 

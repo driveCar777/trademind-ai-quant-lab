@@ -1,97 +1,100 @@
-{
- "asof_requested": "2026-09-07",
- "started_at": "2026-09-07T13:28:13Z",
- "steps": {
-  "fetch": "skipped",
-  "features_rebuilt": true
- },
- "asof_session": "2026-09-07",
- "live_pack": {
-  "frozen_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
-  "frozen_dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
-  "frozen_end": "2026-08-28",
-  "asof": "2026-09-07",
-  "n_dates": 8720,
-  "n_symbols": 5551,
-  "n_live_sessions": 6,
-  "n_live_cells": 27482,
-  "live_hash": "aa2e493c8d4159382faacbc5a0f4c0e816982e50acaf1fdd6447aafd47dad768",
-  "built_at": "2026-09-07T13:28:18Z"
- },
- "ledger": {
-  "state": "RUNNING",
-  "n_periods_closed": 0,
-  "n_periods_open": 1,
-  "total_capital_ret": null,
-  "equity": 5000000.0,
-  "n_lo_beat_ew": 0,
-  "rolling_12_lo_minus_ew": null,
-  "consecutive_lo_le_ew": 0,
-  "rules": {
-   "pause": "12-period rolling LO-EW < -8%",
-   "retire": "24 consecutive LO-EW <= 0"
-  },
-  "next_signal_date": "21 sessions after 2026-08-28",
-  "capital_yuan": 5000000.0,
-  "chain_anchor": "2026-07-30",
-  "money": "NONE (shadow)",
-  "orders_sent": false
- },
- "ledger_top20": {
-  "n_periods": 1,
-  "n_periods_closed": 0,
-  "contract": "ML1_SCALED_UNIT_N10_FULL_CONTRIB2K_MAIN",
-  "boards": "MAIN",
-  "max_price": 100.0,
-  "capital_yuan": 20000.0,
-  "n_names": "EMERGENT",
-  "exposure": 1.0,
-  "money": "NONE (shadow)",
-  "orders_sent": false,
-  "historical_gate": "VIABLE_HISTORICAL (V26.8 single read 2026-09-06: validation TWR +39.0%, t 2.86, daily MaxDD -24.4%)",
-  "monthly_contrib": 2000.0,
-  "n_target": 10,
-  "equity_end_closed": 20000.0,
-  "deposits_to_date": 0.0,
-  "last_closed_signal_month": null,
-  "mtm_equity": 10055.08,
-  "unrealized": -9944.92,
-  "open_mark_date": "2026-09-07",
-  "n_periods_open": 1,
-  "open_signal_date": "2026-08-28"
- },
- "signal": {
-  "is_chain_signal_day": false,
-  "next_signal_date": "21 sessions after 2026-08-28"
- },
- "ml7": {
-  "asof_session": "2026-09-07",
-  "started_at": "2026-09-07T13:36:13Z",
-  "steps": {
-   "refresh": "skipped",
-   "features_rebuilt": true
-  },
-  "ledger": {
-   "id": "A_SHARE_INFO_STACK_ML7_V38S3",
-   "state": "ACCUMULATING",
-   "n_periods_closed": 0,
-   "periods_until_read": 24,
-   "n_periods_open": 1,
-   "total_capital_ret": null,
-   "equity": 5000000.0,
-   "n_lo_beat_ew": 0,
-   "capital_yuan": 5000000.0,
-   "chain_anchor": "2026-07-30",
-   "next_signal_date": "21 sessions after 2026-08-28",
-   "money": "NONE (shadow, output-only)",
-   "orders_sent": false,
-   "affects_shortlist": false,
-   "read_rule": "one read after >= 24 closed periods: excess vs EW t >= 2, LO20 capital > 0, excess corr vs ML1 < 0.90"
-  },
-  "elapsed_s": 335.0,
-  "orders_sent": false,
-  "affects_shortlist": false
- },
- "elapsed_s": 814.9,
- "orders_sent": false
+﻿{
+    "asof_requested":  "2026-09-07",
+    "started_at":  "2026-09-07T13:28:13Z",
+    "steps":  {
+                  "fetch":  "skipped",
+                  "features_rebuilt":  true
+              },
+    "asof_session":  "2026-09-07",
+    "live_pack":  {
+                      "frozen_dataset_id":  "tm-ashare-EQUITY-D1-20260830-000002",
+                      "frozen_dataset_hash":  "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+                      "frozen_end":  "2026-08-28",
+                      "asof":  "2026-09-07",
+                      "n_dates":  8720,
+                      "n_symbols":  5551,
+                      "n_live_sessions":  6,
+                      "n_live_cells":  27482,
+                      "live_hash":  "aa2e493c8d4159382faacbc5a0f4c0e816982e50acaf1fdd6447aafd47dad768",
+                      "built_at":  "2026-09-07T13:28:18Z"
+                  },
+    "ledger":  {
+                   "state":  "RUNNING",
+                   "n_periods_closed":  0,
+                   "n_periods_open":  1,
+                   "total_capital_ret":  null,
+                   "equity":  5000000.0,
+                   "n_lo_beat_ew":  0,
+                   "rolling_12_lo_minus_ew":  null,
+                   "consecutive_lo_le_ew":  0,
+                   "rules":  {
+                                 "pause":  "12-period rolling LO-EW \u003c -8%",
+                                 "retire":  "24 consecutive LO-EW \u003c= 0"
+                             },
+                   "next_signal_date":  "21 sessions after 2026-08-28",
+                   "capital_yuan":  5000000.0,
+                   "chain_anchor":  "2026-07-30",
+                   "money":  "NONE (shadow)",
+                   "orders_sent":  false
+               },
+    "ledger_top20":  {
+                         "n_periods":  1,
+                         "n_periods_closed":  0,
+                         "contract":  "ML1_SCALED_UNIT_N10_FULL_CONTRIB2K_MAIN",
+                         "boards":  "MAIN",
+                         "max_price":  100.0,
+                         "capital_yuan":  20000.0,
+                         "n_names":  "EMERGENT",
+                         "exposure":  1.0,
+                         "money":  "NONE (shadow)",
+                         "orders_sent":  false,
+                         "historical_gate":  "VIABLE_HISTORICAL (V26.8 single read 2026-09-06: validation TWR +39.0%, t 2.86, daily MaxDD -24.4%)",
+                         "monthly_contrib":  2000.0,
+                         "n_target":  10,
+                         "equity_end_closed":  20000.0,
+                         "deposits_to_date":  0.0,
+                         "last_closed_signal_month":  null,
+                         "mtm_equity":  20419.08,
+                         "unrealized":  419.08,
+                         "open_mark_date":  "2026-09-07",
+                         "n_periods_open":  1,
+                         "open_signal_date":  "2026-08-28",
+                         "cash":  210.08,
+                         "positions_mv":  20209,
+                         "n_mark_missing":  0
+                     },
+    "signal":  {
+                   "is_chain_signal_day":  false,
+                   "next_signal_date":  "21 sessions after 2026-08-28"
+               },
+    "ml7":  {
+                "asof_session":  "2026-09-07",
+                "started_at":  "2026-09-07T13:36:13Z",
+                "steps":  {
+                              "refresh":  "skipped",
+                              "features_rebuilt":  true
+                          },
+                "ledger":  {
+                               "id":  "A_SHARE_INFO_STACK_ML7_V38S3",
+                               "state":  "ACCUMULATING",
+                               "n_periods_closed":  0,
+                               "periods_until_read":  24,
+                               "n_periods_open":  1,
+                               "total_capital_ret":  null,
+                               "equity":  5000000.0,
+                               "n_lo_beat_ew":  0,
+                               "capital_yuan":  5000000.0,
+                               "chain_anchor":  "2026-07-30",
+                               "next_signal_date":  "21 sessions after 2026-08-28",
+                               "money":  "NONE (shadow, output-only)",
+                               "orders_sent":  false,
+                               "affects_shortlist":  false,
+                               "read_rule":  "one read after \u003e= 24 closed periods: excess vs EW t \u003e= 2, LO20 capital \u003e 0, excess corr vs ML1 \u003c 0.90"
+                           },
+                "elapsed_s":  335.0,
+                "orders_sent":  false,
+                "affects_shortlist":  false
+            },
+    "elapsed_s":  814.9,
+    "orders_sent":  false
 }
