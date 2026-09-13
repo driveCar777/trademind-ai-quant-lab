@@ -11,14 +11,16 @@ import logging
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 import yaml
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from inference import EngineBusy, InferenceEngine
 from models import ChatRequest, DescribeRequest, GenerateRequest, SignalRequest
+from providers import deepseek_chat, find_model, list_models
 from prompts import (
     RESEARCH_REPORT_TEMPLATE,
     SIGNAL_INTERPRET_TEMPLATE,
@@ -89,6 +91,16 @@ app.add_middleware(
 )
 
 
+@app.exception_handler(HTTPException)
+async def _http_error(_request: Request, exc: HTTPException) -> JSONResponse:
+    code = "TM-1001" if exc.status_code == 400 else "TM-1002"
+    msg = exc.detail if isinstance(exc.detail, str) else str(exc.detail)
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"success": False, "message": msg, "code": code, "data": None},
+    )
+
+
 # --- Helpers ---
 
 
@@ -114,6 +126,27 @@ def _run_generate(engine: InferenceEngine, **kwargs: Any) -> Dict[str, Any]:
         return engine.generate(**kwargs)
     except EngineBusy:
         raise HTTPException(status_code=503, detail="AI Gateway busy")
+
+
+def _complete(model_id: str, messages: List[Dict[str, str]], max_tokens: int, temperature: float) -> Dict[str, Any]:
+    loaded = bool(_engine and _engine.is_loaded)
+    item = find_model(model_id, loaded, MODEL_NAME)
+    if item is None:
+        raise HTTPException(status_code=400, detail="unknown model id")
+    if item["provider"] == "cursor" or (item["provider"] != "local" and not item["available"]):
+        raise HTTPException(status_code=503, detail=item.get("reason") or "model unavailable")
+    if item["provider"] == "local":
+        engine = _require_engine()
+        out = _run_generate(engine, messages=messages, max_tokens=max_tokens, temperature=temperature)
+        out["model"] = MODEL_NAME
+        return out
+    if item["provider"] == "deepseek":
+        api_model = item["id"].split(":", 1)[1]
+        try:
+            return deepseek_chat(api_model, messages, max_tokens, temperature)
+        except Exception as exc:  # noqa: BLE001 — surface remote errors
+            raise HTTPException(status_code=503, detail=str(exc)[:300])
+    raise HTTPException(status_code=503, detail="model unavailable")
 
 
 def _build_prompt(report_type: str, context: Dict[str, Any]) -> str:
@@ -168,6 +201,8 @@ def health() -> Dict[str, Any]:
             "model_loaded": loaded,
             "model_name": MODEL_NAME,
             "model_quantization": "Q4_K_M",
+            "any_available": loaded or any(m["available"] for m in list_models(loaded, MODEL_NAME)),
+            "providers": {"local": loaded, "deepseek": any(m["available"] for m in list_models(loaded, MODEL_NAME) if m["provider"] == "deepseek"), "cursor": False},
             "gpu": gpu_info,
             "inference": _engine.stats if _engine else {},
             "uptime_seconds": _uptime_seconds(),
@@ -179,122 +214,47 @@ def health() -> Dict[str, Any]:
 @app.get("/models")
 def models() -> Dict[str, Any]:
     loaded = bool(_engine and _engine.is_loaded)
-    return {
-        "success": True,
-        "data": {
-            "models": [
-                {
-                    "name": MODEL_NAME,
-                    "path": MODEL_PATH,
-                    "loaded": loaded,
-                    "quantization": "Q4_K_M",
-                }
-            ]
-        },
-    }
+    catalog = list_models(loaded, MODEL_NAME)
+    if catalog:
+        catalog[0]["path"] = MODEL_PATH
+        catalog[0]["loaded"] = loaded
+        catalog[0]["quantization"] = "Q4_K_M"
+    return {"success": True, "data": {"models": catalog}}
 
 
 @app.post("/api/v1/ai/generate")
 def generate_report(req: GenerateRequest) -> Dict[str, Any]:
-    engine = _require_engine()
     prompt = _build_prompt(req.type, req.context)
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT_ZH},
-        {"role": "user", "content": prompt},
-    ]
-    result = _run_generate(
-        engine,
-        messages=messages,
-        max_tokens=req.params.get("max_tokens", 1024),
-        temperature=req.params.get("temperature", 0.3),
-    )
-    return {
-        "success": True,
-        "data": {
-            "report_type": req.type,
-            "report": result["text"],
-            "tokens_used": result["tokens_used"],
-            "latency_ms": result["latency_ms"],
-            "model": MODEL_NAME,
-            "timestamp": _now_iso(),
-        },
-    }
+    messages = [{"role": "system", "content": SYSTEM_PROMPT_ZH}, {"role": "user", "content": prompt}]
+    result = _complete(req.model, messages, req.params.get("max_tokens", 1024), req.params.get("temperature", 0.3))
+    return {"success": True, "data": {"report_type": req.type, "report": result["text"], "tokens_used": result["tokens_used"],
+                                      "latency_ms": result["latency_ms"], "model": result.get("model") or req.model, "timestamp": _now_iso()}}
 
 
 @app.post("/api/v1/ai/describe")
 def describe_strategy(req: DescribeRequest) -> Dict[str, Any]:
-    engine = _require_engine()
     prompt = _build_prompt(req.type, req.context)
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT_ZH},
-        {"role": "user", "content": prompt},
-    ]
-    result = _run_generate(
-        engine,
-        messages=messages,
-        max_tokens=req.params.get("max_tokens", 1024),
-        temperature=req.params.get("temperature", 0.3),
-    )
-    return {
-        "success": True,
-        "data": {
-            "report_type": req.type,
-            "description": result["text"],
-            "tokens_used": result["tokens_used"],
-            "latency_ms": result["latency_ms"],
-            "model": MODEL_NAME,
-            "timestamp": _now_iso(),
-        },
-    }
+    messages = [{"role": "system", "content": SYSTEM_PROMPT_ZH}, {"role": "user", "content": prompt}]
+    result = _complete(req.model, messages, req.params.get("max_tokens", 1024), req.params.get("temperature", 0.3))
+    return {"success": True, "data": {"report_type": req.type, "description": result["text"], "tokens_used": result["tokens_used"],
+                                      "latency_ms": result["latency_ms"], "model": result.get("model") or req.model, "timestamp": _now_iso()}}
 
 
 @app.post("/api/v1/ai/signal")
 def interpret_signal(req: SignalRequest) -> Dict[str, Any]:
-    engine = _require_engine()
     prompt = _build_prompt(req.type, req.context)
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT_ZH},
-        {"role": "user", "content": prompt},
-    ]
-    result = _run_generate(
-        engine,
-        messages=messages,
-        max_tokens=req.params.get("max_tokens", 512),
-        temperature=req.params.get("temperature", 0.2),
-    )
-    return {
-        "success": True,
-        "data": {
-            "report_type": req.type,
-            "interpretation": result["text"],
-            "tokens_used": result["tokens_used"],
-            "latency_ms": result["latency_ms"],
-            "model": MODEL_NAME,
-            "timestamp": _now_iso(),
-        },
-    }
+    messages = [{"role": "system", "content": SYSTEM_PROMPT_ZH}, {"role": "user", "content": prompt}]
+    result = _complete(req.model, messages, req.params.get("max_tokens", 512), req.params.get("temperature", 0.2))
+    return {"success": True, "data": {"report_type": req.type, "interpretation": result["text"], "tokens_used": result["tokens_used"],
+                                      "latency_ms": result["latency_ms"], "model": result.get("model") or req.model, "timestamp": _now_iso()}}
 
 
 @app.post("/api/v1/ai/chat")
 def chat(req: ChatRequest) -> Dict[str, Any]:
-    engine = _require_engine()
     messages = [{"role": m.role, "content": m.content} for m in req.messages]
-    result = _run_generate(
-        engine,
-        messages=messages,
-        max_tokens=req.params.get("max_tokens", 1024),
-        temperature=req.params.get("temperature", 0.3),
-    )
-    return {
-        "success": True,
-        "data": {
-            "reply": result["text"],
-            "tokens_used": result["tokens_used"],
-            "latency_ms": result["latency_ms"],
-            "model": MODEL_NAME,
-            "timestamp": _now_iso(),
-        },
-    }
+    result = _complete(req.model, messages, req.params.get("max_tokens", 1024), req.params.get("temperature", 0.3))
+    return {"success": True, "data": {"reply": result["text"], "tokens_used": result["tokens_used"],
+                                      "latency_ms": result["latency_ms"], "model": result.get("model") or req.model, "timestamp": _now_iso()}}
 
 
 if __name__ == "__main__":

@@ -1,0 +1,14 @@
+{
+  "profile": "HOT_MT5_EVOLUTION",
+  "candidate": false,
+  "writes_9000": false,
+  "next": "STOP_GOLD_H1_OWN_PRICE_ML_AND_RULES",
+  "done": ["V1", "V2", "V2_FORENSICS", "V3_ATR_BARRIER", "V4_TSMOM12", "V4_FORENSICS", "V5_VOLTARGET", "H1_V1", "H1_V1_FORENSICS", "H1_V2", "H1_V3", "H1_V4", "H1_WHY", "H1_V5", "H1_TRAIN_VAL_REGIME", "H1_V6_RIDGE", "H1_V7", "H1_V8", "H1_V9"],
+  "queue": [],
+  "gold_tsmom": "VIABLE_HISTORICAL_NOT_CANDIDATE",
+  "gold_voltarget": "VIABLE_HISTORICAL_NOT_CANDIDATE",
+  "h1_train_val": "OVERFIT_NOT_DEAD_NOT_CONSTANT",
+  "h1_ridge": "NO_CANDIDATE",
+  "inventory": "docs/research_engine/HOT_MT5_GOLD_H1_INVENTORY.md",
+  "rules": "do not retune 252/20/10%; do not write Grok; do not restack 24h sign / more trees / IC-picked features; own-price H1 tree+session+barrier+sparse inventoried"
+}

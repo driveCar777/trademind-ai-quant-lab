@@ -2,8 +2,8 @@
  "id": "POST_V21_FAILURE_ATLAS",
  "read_only": true,
  "span": "V8-V38",
- "n_rows": 90,
- "n_val_capital_neg": 61,
+ "n_rows": 106,
+ "n_val_capital_neg": 65,
  "n_beat_ew_overlap": 15,
  "n_level1": 2,
  "new_independent": 0,
@@ -1498,6 +1498,287 @@
     "data/market/research_engine/cn_a_share_ml_v26sz/ML1_SCALED_UNIT_N10_FULL_CONTRIB2K_SZMAIN_READ.json (branch worktree)"
    ],
    "date": "2026-09-07"
+  },
+  {
+   "id": "HOT_MT5_PER_PRODUCT_V1",
+   "version": "HOT_MT5_PER_PRODUCT_V1",
+   "universe": "Ava demo own-price D1: GOLD/CrudeOIL 2018-12->2026-09-11; EURUSD/USDJPY/USDCHF 1971->2026-09; GBPUSD/USDCAD 1993->2026-09. No US shares.",
+   "mechanism": "one pre-registered LightGBM + hold shell per product (GOLD 10d TREND_LS; CRUDE 5d SHORT_HOLD_LS; FX 5d FX_LS); next-open non-overlap LS; spread+2x2bp+swap",
+   "family": "MT5_PER_PRODUCT_PRICE_ML",
+   "val_capital": "7/7 long-sample TWR negative; 7/7 validation TWR negative; viable 0/7. GOLD long -18% t -0.28; CRUDE -81% t -0.97; EURUSD -50% t -0.70; USDJPY -56% t -0.84; GBPUSD -88% t -4.57; USDCAD -85% t -4.56; USDCHF -83% t -1.92",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "decision": "HOT_MT5_PER_PRODUCT_V1_NO_CANDIDATE. Own-price D1 models do not beat costs on these seven. Do not retune hold/features from year slices (GOLD 2024 +26%, CRUDE 2025 +63% then 2026 -67%). Do not write into Grok prompts. Do not hedge with A-share. H1 archived, not searched. US shares still out.",
+   "files": [
+    "docs/research_engine/HOT_MT5_PER_PRODUCT_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_PER_PRODUCT_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_COST_AWARE_V2",
+   "version": "HOT_MT5_COST_AWARE_V2",
+   "universe": "same V1 Ava D1/META, seven products, no US shares",
+   "mechanism": "3-class LightGBM; label long/short only if |hold return| > 2x META expected round-trip cost; argmax; cash sits one bar; coverage <15% or val trades <8 is auto-deny",
+   "family": "MT5_PER_PRODUCT_PRICE_ML",
+   "val_capital": "0/7 viable. Coverage 82-91% (cash labels only 4-20% because 2x META cost is 10-33bp vs 5-10d vol). Long TWR GOLD -49% t -1.42; CRUDE -86%; EURUSD -66% t -1.31; USDJPY -39%; GBPUSD -80% t -3.24; USDCAD -71%; USDCHF -79%. All seven validation TWR negative. Payoff 0.89-1.03.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "decision": "HOT_MT5_COST_AWARE_V2_NO_CANDIDATE. 2x broker cost is too short vs 5/10-day moves, so sit-out never happens. Do not raise lambda after seeing this. Do not reuse the 20bp forensics cut. Do not write into Grok prompts. Do not hedge with A-share. TSMOM is a separate pre-registered family, not a V2 patch.",
+   "files": [
+    "docs/research_engine/HOT_MT5_COST_AWARE_V2_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_COST_AWARE_V2_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/cost_aware_v2/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_ATR_BARRIER_V3",
+   "version": "HOT_MT5_ATR_BARRIER_V3",
+   "universe": "same seven Ava D1, no US shares",
+   "mechanism": "3-class LightGBM; hurdle = 1.0 * ATR14/close * sqrt(hold); argmax; cash sits one bar",
+   "family": "MT5_PER_PRODUCT_PRICE_ML",
+   "val_capital": "7/7 VALIDATION_COVERAGE. Cash labels 79-88%; median hurdle GOLD 378bp / CRUDE 632bp / FX 129-171bp; coverage 1-12%; val trades 0-8. EURUSD long TWR +10% and USDCHF +20% have val n=0, not promoted.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "decision": "HOT_MT5_ATR_BARRIER_V3_NO_CANDIDATE. Successful sit-out is not a strategy. Do not shrink k to manufacture 15% coverage. Do not reuse 20bp or V2 lambda.",
+   "files": [
+    "docs/research_engine/HOT_MT5_ATR_BARRIER_V3_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_ATR_BARRIER_V3_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/atr_barrier_v3/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_TSMOM12_V4",
+   "version": "HOT_MT5_TSMOM12_V4",
+   "universe": "same seven Ava D1; no ML; not CME XS FX3",
+   "mechanism": "sign(close/close_252-1), next open, hold 20, V1 cost",
+   "family": "MT5_PER_PRODUCT_TSMOM",
+   "val_capital": "1/7 VIABLE_HISTORICAL (GOLD val +84% t 2.18, long +52% CAGR 6.2% MaxDD -47%, 81 long / 21 short). 6/7 NO_CANDIDATE. EURUSD/USDJPY long TWR +111%/+162% but CAGR 1.4%/1.8% and val ~0. Payoff still ~1.0-1.15, not 1.5-2.5.",
+   "val_capital_sign": "MIX",
+   "frozen": true,
+   "decision": "GOLD is VIABLE_HISTORICAL on a 2018-start bull, not a Candidate, not deploy, not Grok. Do not drop 2021-22. Do not change 252/20. Do not add SMA200 or vol-scale after seeing gold. Own-price D1 queue stops. 0 Candidate.",
+   "files": [
+    "docs/research_engine/HOT_MT5_TSMOM12_V4_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_TSMOM12_V4_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/tsmom12_v4/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_VOLTARGET_V5",
+   "version": "HOT_MT5_VOLTARGET_V5",
+   "universe": "same seven Ava D1; V4 12m sign; size min(1, 10%/20d ann vol); no leverage",
+   "mechanism": "Barroso-style inverse-vol on TSMOM12, cap 1.0, hold 20, V1 cost",
+   "family": "MT5_PER_PRODUCT_TSMOM",
+   "val_capital": "1/7 VIABLE_HISTORICAL (GOLD val +73% t 2.83, long +58%, mean w 0.76, MaxDD -40% vs V4 -47%). CRUDE long TWR +41% (was -84%) but val t 0.58. FX still val ~0. 6/7 NO_CANDIDATE.",
+   "val_capital_sign": "MIX",
+   "frozen": true,
+   "decision": "Last pre-registered non-ML shell from the sit-out design. GOLD still historical-only, not Candidate, not Grok. Do not change 10%/cap. Do not keep CRUDE because research flipped. Own-price D1 information+shells inventoried. No V6.",
+   "files": [
+    "docs/research_engine/HOT_MT5_VOLTARGET_V5_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_VOLTARGET_V5_DECISION.md",
+    "docs/research_engine/HOT_MT5_OWN_PRICE_D1_INVENTORY.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/voltarget_v5/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V1",
+   "version": "HOT_MT5_GOLD_H1_V1",
+   "universe": "Ava GOLD H1 2018-12-12->2026-09-11 (45818 bars). Not M15/M30.",
+   "mechanism": "m=2: LightGBM sign(score) hold 24h; 120h TSMOM hold 24h; swap on midnights only",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "0/2 viable. ML long TWR -35% t val 0.14; TSMOM -61% t val -0.26. Hit ~47-49%, payoff ~1. Last-month ML +18% diagnostic only.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "decision": "HOT_MT5_GOLD_H1_V1_NO_CANDIDATE. Hourly always-in does not beat costs on this gold H1. Do not search hold. Do not promote last month. M15/M30 is a new pull + new contract, not a patch.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V1_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V1_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v1/results/READ.json",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V1_FORENSICS.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v1/results/FORENSICS.json",
+    "docs/research_engine/HOT_MT5_GOLD_H1_INVENTORY.md"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V2",
+   "version": "HOT_MT5_GOLD_H1_V2",
+   "universe": "Ava GOLD H1 same file. Same-day session.",
+   "mechanism": "m=2 no tree: London 07:00 ORB; Donchian24 first break; exit hour>=20; overnight=0",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "0/2. ORB 99% days trigger, raw -20% net -74% val t -0.88. Donchian val +4% t 0.36.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "decision": "HOT_MT5_GOLD_H1_V2_NO_CANDIDATE. 1h London range is not a barrier. Do not fade the first break after seeing raw negative. Do not change 07/20.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V2_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V2_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v2/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V3",
+   "version": "HOT_MT5_GOLD_H1_V3",
+   "universe": "Ava GOLD H1 same file. Wider barriers, same-day.",
+   "mechanism": "m=2: prev-day HL break; London ORB +/- 0.5*ATR14; exit >=20",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "1/2 VIABLE_HISTORICAL PREV_DAY_HL val +25% t 1.34; long-sample -23% research -39%. ORB_ATR 95% fill NO.",
+   "val_capital_sign": "MIX",
+   "frozen": true,
+   "decision": "PREV_DAY_HL historical-only on 2024-26 bull, not Candidate, not Grok. Do not go long-only. Do not raise 0.5. Do not reverse V2.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V3_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V3_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v3/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V4",
+   "version": "HOT_MT5_GOLD_H1_V4",
+   "universe": "Ava GOLD H1 same file. Asia fade.",
+   "mechanism": "m=1: fade first London raid of 00-06 UTC box; exit >=20",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "0/1. Net -80% val t -3.62. Every year negative. 92% days trigger.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "decision": "HOT_MT5_GOLD_H1_V4_ASIA_FADE_NO_CANDIDATE. STOP_GOLD_H1_OWN_PRICE_SESSION. Do not copy these rules to M15/M30. Do not retune 00-06.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V4_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V4_DECISION.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_INVENTORY.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v4/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V5",
+   "version": "HOT_MT5_GOLD_H1_V5",
+   "universe": "Ava GOLD H1 same file. Native-clock features.",
+   "mechanism": "13 H1-clock features (R1/6/24 SMA24/120 HOUR sin/cos) LGBM sign(score) hold 24h",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "0/1. long TWR -67% raw -10% val t -0.14. Worse than V1 D1-named features.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "decision": "HOT_MT5_GOLD_H1_V5_NATIVE_NO_CANDIDATE. Not a column-name problem. STOP_GOLD_H1_OWN_PRICE. Do not search hold. Do not add DXY onto this shell.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V5_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V5_DECISION.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_WHY_SO_BAD.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v5/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_TRAIN_VAL_REGIME",
+   "version": "HOT_MT5_GOLD_H1_DIAG",
+   "universe": "Ava GOLD H1 same file. Read-only train/val/regime.",
+   "mechanism": "True in-sample LGBM + 44-fold purged train IC vs next-fold OOS IC + predeclared regimes",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "diagnostic. V1 in-sample IC 0.517 R2 0.187 hit 62%; fold train IC 0.619 vs test 0.038. V5 same. Not constant scores.",
+   "val_capital_sign": "N/A",
+   "frozen": true,
+   "decision": "OVERFIT. research_70 was walk-forward OOS not train-set fit. Do not restack 24h-sign trees. Do not promote 2024-26 +29% vs BH +90%.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_TRAIN_VAL_REGIME.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v1/results/TRAIN_VAL_REGIME.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V6",
+   "version": "HOT_MT5_GOLD_H1_V6",
+   "universe": "Ava GOLD H1 same file. Ridge regularizer.",
+   "mechanism": "Same 14 V1 cols, 24h sign, walk-forward; z-score + Ridge(alpha=1)",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "0/1. in-sample IC 0.055 R2 0.003; fold train 0.103 test 0.007; long TWR -52%; val +1.0% t 0.20",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "decision": "HOT_MT5_GOLD_H1_V6_RIDGE_NO_CANDIDATE. Linear cannot fit 24h labels; tree in-sample IC was capacity. Do not search alpha/hold. Next must change the question.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V6_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V6_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v6/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V7",
+   "version": "HOT_MT5_GOLD_H1_V7",
+   "universe": "Ava GOLD H1 same file. Session remain 07-15 to >=20 UTC.",
+   "mechanism": "V5 13-col LGBM regress remaining session return; |score|>1*ATR sit-out; 1 trade/day; overnight=0; cost spread+2*2bp",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "0/1. in-sample IC 0.542 R2 0.210 hit 64%; fold train IC 0.636 test -0.001; long TWR -37% n=526; val +1.2% t 0.16 cover 16%. OVERFIT.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "candidate": false,
+   "decision": "HOT_MT5_GOLD_H1_V7_SESSION_REMAIN_NO_CANDIDATE. New question, same pathology as V1/V5. Do not retune lambda/hold. Do not fade V2. Do not promote 2024-26 +1.2% vs BH +90%.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V7_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V7_DECISION.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V7_TRAIN_VAL.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v7/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V8",
+   "version": "HOT_MT5_GOLD_H1_V8",
+   "universe": "Ava GOLD H1 same file. Triple barrier k=1 ATR 24h.",
+   "mechanism": "V5 13-col LGBM 3-class which +/-1.0 ATR hits first in 24 H1; enter next open; exit next open after touch or t+25; cost V1 nights",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "0/1. in-sample acc 65.2% IC 0.394; fold train IC 0.481 test 0.007; cash label 2.4%; long TWR -99.5% n=9324; val -71.6% t -4.31 cover 77.8%. OVERFIT.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "candidate": false,
+   "decision": "HOT_MT5_GOLD_H1_V8_TRIPLE_BARRIER_NO_CANDIDATE. Path question fits in-sample, OOS IC~0. k=1 is not a sit-out (cash 2.4%). Do not search k. Do not promote last-month +7.7% or 2024-26 vs BH +90%.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V8_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V8_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v8/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_H1_V9",
+   "version": "HOT_MT5_GOLD_H1_V9_SPARSE",
+   "universe": "Ava GOLD H1 same file. Five a-priori cols only: R24 VOL24 DIST_SMA24 HOUR_SIN HOUR_COS.",
+   "mechanism": "Same 24h sign(score) as V1; LGBM regressor LGBM_PARAMS; FIRST_PRED=2000 REFIT=1000 embargo=25; cost spread+2*2bp+midnight swap. Not IC-picked winners.",
+   "family": "MT5_GOLD_H1",
+   "val_capital": "0/1. in-sample IC 0.283 R2 0.064 hit 56.8%; fold train IC 0.364 test -0.001 (44); long TWR -51.8% n=1752; val -6.6% t -0.03 cover 96%. OVERFIT. Fewer cols did not raise OOS vs V1 0.52/0.038.",
+   "val_capital_sign": "NEG",
+   "frozen": true,
+   "candidate": false,
+   "decision": "HOT_MT5_GOLD_H1_V9_SPARSE_NO_CANDIDATE. Train IC fell vs V1 but not to Ridge 0.055; OOS IC ~0. No key own-price column for 24h sign. Do not add features. Do not --force. Do not promote 2024-05 +5.2% vs BH +90%.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V9_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V9_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v9/results/READ.json"
+   ],
+   "date": "2026-09-13"
+  },
+  {
+   "id": "HOT_MT5_GOLD_FOLLOW_V4",
+   "version": "HOT_MT5_GOLD_FOLLOW_V4",
+   "universe": "Ava GOLD D1 same file; frozen V4/V5 books",
+   "mechanism": "Manual follow of frozen 12m TSMOM sign; STATUS.json stance; no new train",
+   "family": "MT5_PER_PRODUCT_TSMOM",
+   "val_capital": "Not a new book. Points at V4 VIABLE_HISTORICAL / V5 shell. candidate=false deploy=false.",
+   "val_capital_sign": "MIX",
+   "frozen": true,
+   "candidate": false,
+   "decision": "Manual Ava follow spec only. Do not train H1. Do not order_send. Do not write Grok. Do not change 252/20/10%.",
+   "files": [
+    "docs/research_engine/HOT_MT5_GOLD_FOLLOW_V4_SPEC.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_follow/STATUS.json"
+   ],
+   "date": "2026-09-13"
   }
  ]
 }

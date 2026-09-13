@@ -4,6 +4,172 @@
 
 ---
 
+## 2026-09-13 — MT5 forensic audit (no code change)
+
+- Read-only audit of every MT5 path. There is no single auto-trader: Grok demo desk can send; research books never send; V4 follow is display-only. Wrote `STRATEGY_FORENSIC_REPORT.md` and `FAILURE_ANALYSIS.md`. Did not retune or retrain.
+
+## 2026-09-13 — GOLD V4 per-trade path / BE / trail diagnostic
+
+- Owner asked whether each V4 fill had a profit chance, and why there was no breakeven or trailing stop. Read-only path on 102 closed GOLD trades + the open 2026-08-25 leg. 47 losers; 41 never reached +3% MFE; only 5 losers ever closed ≥+3% in the money. BE3 cuts full-sample +52% to +14%. TRAIL5 looks slightly better on the full sample and worse on research — not selected. Does not overwrite V4 READ or follow rules. Smoke 41.
+
+## 2026-09-13 — Ava GOLD V4 manual follow
+
+- Owner asked to make money on Ava GOLD. The only historically gated book is D1 12-month TSMOM V4 / V5 shell, not H1. Shipped follow spec + `gold_follow/STATUS.json` (stance LONG since 2026-08-25, last close 2026-09-11, V5 weight, disclaimer). :9001 MT5 page shows it; not fed to Grok; no `order_send`; :9000 journal unchanged. Refused another H1 tree. `candidate=false`. Smoke 40. ATLAS 106.
+
+## 2026-09-13 — GOLD H1 V7/V8/V9 parent merge
+
+- Session-remain / triple-barrier / sparse-5 each ran once: V7 train IC 0.54 / fold OOS −0.001 / net −37% / val t 0.16; V8 3-class train acc 65% / fold OOS IC 0.007 / val −72% t −4.3 / CASH 2.4%; V9 5-col train IC 0.283 / fold OOS −0.001 / net −52% / val t −0.03. Changing label or dropping columns does not fix own-price H1 overfit. `candidate=false`. Stop stacking 24h sign / more trees / IC-picked features. ATLAS 105. No new trains.
+
+## 2026-09-13 — GOLD H1 train-set test then Ridge
+
+- Owner asked: prove the model was tested on its own training rows. True in-sample H1_ML IC 0.517 / R² 0.187 / hit 62%; 44-fold mean train IC 0.619 vs test IC 0.038. Not constant scores, not dead labels — overfit. V5 same pathology. Pre-registered V6 Ridge (z-score, α=1): in-sample IC 0.055, fold test IC 0.007, long TWR −52%, val t 0.20. Trade audit 0 mismatch. Does not overwrite V1–V5 READ. Smokes 37–38. ATLAS 102.
+
+## 2026-09-13 — why H1 looks “too bad” + native-clock tree
+
+- Audited 1752 ML fills against GOLD_H1: 0 mismatches. Not a calc bug. Gold itself: 4/94 months ≥+10%, 0 months ≥+20%; 10%/mo = 214%/yr vs gold CAGR 17.5%. Feb 2026 gold +11% / tree −19%. Not too little data, not overfit (research −46%). V5 H1-clock features (no SMA200) still NO_CANDIDATE (raw −10% net −67%). Own-price H1 well stopped. Smoke 36. ATLAS 100.
+
+## 2026-09-13 — GOLD H1 analyze then V2–V4 session well
+
+- User asked for analysis, not another NO_CANDIDATE line. V1 forensics: buy-hold +250%; 24h sign IC≈0; path MFE +83bp; always-in shorts the bull; 13%/yr cost. V2 same-day London ORB is 99% always-in (net −74%). V3 prev-day HL val +25% t 1.34 historical-only, full sample −23%. V4 Asia fade −80% every year. Stop own-price H1 session/break/fade. Smokes 33–35. ATLAS 99. Not Candidate. No Grok. No M15 copy.
+
+## 2026-09-13 — GOLD H1 first contract
+
+- User trades hours, not days. First H1 contract on full GOLD H1 (45,818 bars): ML `sign(score)` hold 24h + 120h TSMOM hold 24h. Both NO_CANDIDATE (ML −35%, TSMOM −61%; val t 0.14 / −0.26). Last-month ML +18% diagnostic only. Swap counts midnights. Does not overwrite D1. Smoke 32. ATLAS 96. M15/M30 not pulled.
+
+## 2026-09-13 — GOLD last-month H1 diagnostic
+
+- Overlay frozen D1 V4/V5 (and V1/V2 fills) on existing GOLD H1 2026-08-11→09-11. No H1 retrain. Open V4 long 8-25→9-11 mark −7.1% (vol-target −2.7%) after the early-September dump; prior closed long +6.3%. Not a Candidate.
+
+## 2026-09-13 — MT5 long-task: V5 inverse-vol + inventory
+
+- Last shell from the original sit-out design: 10% inverse-vol on the same 12-month sign, cap 1.0, no leverage. GOLD still `VIABLE_HISTORICAL` (val +73% t 2.83, MaxDD −40%); CRUDE research flips to +41% but val t 0.58; 6/7 NO_CANDIDATE. Not a V4 patch. Own-price D1 information + shells inventoried. Smoke 31. ATLAS 95.
+
+## 2026-09-13 — MT5 long-task: V2 forensics + V3 ATR + V4 TSMOM
+
+- User asked for continuous analysis, not wait-for-prompt. Ran the queued families the same session. V2 forensics: 11,446 fills, 71–90% same side as V1, GOLD opening short streak again, FX raw+ / net−. V3 ATR×√hold: cash labels 79–88%, 7/7 coverage fail (`HOT_MT5_ATR_BARRIER_V3_NO_CANDIDATE`). V4 12-month TSMOM no tree: GOLD `VIABLE_HISTORICAL` (val +84% t 2.18) on the 2024–26 bull, 81/21 long/short, MaxDD −47%, not Candidate; 6/7 NO_CANDIDATE. Own-price D1 queue stopped. Do not invent V5. Smokes 29–30. ATLAS 93–94.
+
+## 2026-09-13 — MT5 cost-aware 3-way (V2)
+
+- `HOT_MT5_COST_AWARE_V2` trained once on the same seven D1 files. Label = long/short only if |hold return| > 2× META expected cost (not the V1 20bp peek). LightGBM classifier, cash sits one bar. Coverage 82–91% because cash labels were only 4–20% (hurdle 10–33bp vs 5/10-day vol). 0/7 viable. All validation TWR negative. Payoff still ~1. `HOT_MT5_COST_AWARE_V2_NO_CANDIDATE`. Do not raise λ. Does not overwrite V1 `READ.json` or `:9000`. ATLAS 92. Smoke 28.
+
+## 2026-09-13 — MT5 per-product trade forensics
+
+- Read all 11,556 fills. Strategy is `sign(score)` always-in. Model IC ≈ 0. EURUSD/USDJPY raw TWR +267%/+148%, net negative after ~4%/yr cost. GOLD first 20 scores are two constants; shorts lose 61bp/trade while longs make 55bp. Not a retune. `HOT_MT5_PER_PRODUCT_TRADE_FORENSICS.md`.
+
+## 2026-09-13 — MT5 per-product train + long backtest (no US shares)
+
+- Seven Ava products pulled and trained once (`HOT_MT5_PER_PRODUCT_V1`). D1: GOLD/CRUDE ~2410 bars from 2018-12; FX 10k–16k bars from 1971/1993, through 2026-09-11. H1 archived (45k–80k), not searched. Full-sample costed LS books all negative (GOLD −18% t −0.28 … GBPUSD −88% t −4.57). 0/7 viable. `HOT_MT5_PER_PRODUCT_V1_NO_CANDIDATE`. Do not retune from year slices. Not a Candidate. Does not write `:9000` or mix with A-share. ATLAS 91.
+
+## 2026-09-13 — MT5 history is already on this machine
+
+- Live Ava demo pulls GOLD/CrudeOIL D1 through 2026-09-11; FX frozen D1 back to 2001. Per-product training does not wait for Monday A-share bars. Design `MT5_PER_PRODUCT_V1_DESIGN.md` corrected.
+
+## 2026-09-13 — :9001 own pool, refresh when unsuitable
+
+- `:9000` / `:9001` 池分开。热台只写 `live/paper_hot/POOL.json`，不写 SIGNAL/SHORTLIST。周一 `asof>=2026-09-14` 才启用；现在持仓不动。合适买当前池，不合适刷新热台池（本场不再问第二次，每天最多刷 2 次）。不是 Candidate。
+- 仍禁止：A 股赚了补 MT5、两边对冲、拿两边数字改提示词。
+
+## 2026-09-13 — :9001 evening must-look + in-pool refill
+
+- A 股：能买卖白天最多 3 次；不能买卖白天仍跳过，但 **19:30 当天 0 次诊过必须看一次**（T-1 也看）。不是问句，计划按下一开盘自动记台账。
+- 卖出后只买当前 ML1 池。不合适就拿现金（`HOLD_CASH`），不循环要新名单。计划/成交钉 `name_source` / `pool_age` / `cash_policy`。`:9000` 不动。不是 Candidate。
+
+## 2026-09-13 — :9001 tickets + skip empty A-share sessions
+
+- A 股：没有可卖（T+1 锁死）也买不起 1 手 → 这场不诊（`SKIPPED_NO_CAPACITY`）。不是新策略。
+- A 股 / MT5 每笔成交钉价格、手数、时间、原因、当时账户/盘口快照。MT5 仍一天两场，不埋点、不持续盯盘。`:9000` 不动。
+
+## 2026-09-12 — :9001 money card is one module
+
+- 账户数字、左侧色例、资金曲线收进同一张卡。浮层只留日期 + 色点 + 数字，不再写「（蓝）账户价值」。`:9000` 不动。
+
+## 2026-09-12 — :9001 chart: distinct colors + crosshair
+
+- 今日三栏骨架不动。七条线改成蓝/橙/黄/绿/紫/青/粉，避免蓝紫看混。鼠标在图里出十字虚线；浮层列出当天每条线的颜色名和数字；离指针最近的那条加粗，交点有高亮圆点。个股弹窗同一套。`:9000` 不动。
+
+## 2026-09-12 — :9001 money chart: one module, dual Y + time X
+
+- 账户数字和资金曲线收进同一张卡。图有下轴日期、左轴金额、右轴百分比、刻度和零线。金额线共用左轴（不再各自拉满交叉）。
+
+## 2026-09-12 — :9001 Today page: owner sketch (left equity / center chart / 4 cards)
+
+- 今日回到上一版骨架：左上缩小账户卡 + 色例，中间一张多色资金曲线，右「要不要动手」，下 4 张短理由卡片。点卡片放大看全文和该股价格/投入/浮动。`GET /api/v1/hot/symbol/{symbol}/curve`。Stitch `gen-2`。`:9000` 不动。
+
+## 2026-09-12 — :9001 desk: one nav, analysis curves, settings
+
+- 去掉底栏，只留顶栏。今日：账户/市值、剩余现金/落袋/收益、使用率三条图（不同颜色，图例可关）。建议改成可滚动列表，计划再多也不再摊大卡。持仓改成卡片网格 + 账单条。日程/MT5 补「做什么」和近几日场次表。说明改成设置（`auto_fill` / 初始资金 / MT5 发单与手数）+ FAQ。`equity_curve` 增 `realized/pnl/util_pct`；场次增 `recent`。`:9000` 不动。
+
+## 2026-09-12 — :9001 paper desk: horizontal 5-page dock
+
+- `paper_hot.html` rewritten: 今日 / 持仓 / 日程 / MT5 / 说明 + bottom dock. Navy `#070b12` / `#111827`. Equity sparkline from `desk.equity_curve` (journal + existing `live/bars` closes). Hidden by default: 对照账, 账本1/2/N5, 「跑融合台」, Layer A/B, three-clock dump, honesty walls. SPEC §29.13. Stitch generate `gen-1` landed (`updateTime` 2026-09-12T03:35:21Z); project `namedColors` still burgundy (`update_design_system` rejected). `:9000` untouched.
+
+## 2026-09-12 — :9001 UI: drop book1/book2 and the manual「跑融合台」button
+
+- Page is now just the automated paper desk. 对照账 / 账本1 / 账本2 / N5 开关拿掉（文件仍留在 `live/paper_hot/`，看冻结 ML1 去 :9000）。右上角「跑融合台（2 次 Grok）」和「两层怎么走的」拿掉——工作日 09:35/11:30/15:05 + 19:30 已经自动诊股记账。品牌改成「纸面诊股台」。
+
+## 2026-09-12 — Clock split + Ava MT5 product desk on :9001 (not a Candidate)
+
+- A 股冲突：主人只在工作日晚上更新 `:9000`，15:05 收盘诊股原先要今天的本地日线 → 几乎天天 `SKIPPED_STALE_DATA`。现开盘/午休/收盘一律允许 T-1 + 联网；`clocks` 分开本地 asof / 网上今天 / `fill_date` 下一开盘（日历截断则工作日往后走）；提示词写明 `last_close` 不是今收。19:30 仍只结算。页面「三套时钟」卡。
+- MT5：`:9001` 新 `paper_hot_mt5.py`。报价走 Ava 终端（与 A 股日线无关）。黄金/原油/欧美/美日/美英/美加/美瑞分账 + 股票篮子只建议。工作日 08:30 / 20:30 各 1 次 Grok，0.01 手，demo 才发单，live 拒绝。路由 `/api/v1/hot/mt5*`；任务 `TradeMind_HotMt5Asia/Ny`。不重开已死家族，不训模型。冒烟 25 收盘 T-1 RAN + fill_date/clocks；新冒烟 26。`:9000` 不动。
+
+## 2026-09-12 — Hot Desk V3: sparse live diagnosis overlay (3 sessions/day, paper only, not a Candidate)
+
+- Owner decision 10:51: ML1 + V26.8 on `:9000` stays the only name source; `:9001` overlays Grok 4.6 named diagnosis (BUY/SELL/ADD/REDUCE/REPLACE/HOLD) at 09:35 / 11:30 / 15:05 (one web call each), 19:30 settle-only unless the close plan is missing — never a 4th billable call (`MAX_GROK_CALLS_PER_DAY=3`). Layer A skipped on live sessions (Book2 fact: +3.3% vs +39.0%). Universe clamped to ML1 SHORTLIST ∪ SIGNAL top-30 ∪ current holdings (`OUT_OF_UNIVERSE` otherwise). ADD needs a held name; REDUCE = partial SELL in lots; REPLACE = SELL old + BUY pool name; buy budget = cash + planned sell proceeds − ¥200; notional ≤ exposure × equity; T+1; 1 lot = 100 shares. Intraday plans fill at next trading-day open (PENDING, never fabricated); later plan for the same fill_date supersedes earlier (`SUPERSEDED` in `FUSION_FILLS`).
+- New `POST /api/v1/hot/fusion/session {session}`, `FUSION_SESSIONS.json`, `GET /fusion.auto_fill.sessions` (chips, n_calls today, skip reasons, next session). `scripts/hot_fusion_session.bat <session>`; schtasks `TradeMind_HotFusionOpen/Lunch/Close` created, `TradeMind_HotFusionDaily` retargeted to `daily`. UI: 今日诊股 chips + token note + 加仓/减仓/换股 labels. Docs: V3 §7c contract addendum (2-month observation, read once at ≥24 settled periods or 2026-11-12 whichever later, no prompt tuning), §7d + new `MT5_EXECUTION_VS_HOLDING.md` (docs only). Smoke 25 +14 checks. No real Grok call fired this turn; `:9000` untouched.
+
+## 2026-09-12 — Hot desk paper account seeded at ¥20,000 (owner request; paper only)
+
+- `FUSION_SETTINGS.json.initial_capital = 20000` (settable via `POST /api/v1/hot/fusion/settings`). New `paper_hot.derive_account` = seed + journal flows; DEPOSIT events flagged `seed: true` are evidence only (the 2026-09-10 ¥20,000 DEPOSIT was flagged, not deleted, so the seed is not double-counted). All `:9001` callers switched to it; `:9000` untouched. UI shows 初始资金 ¥20,000, cash with an overspend note, 较初始 P&L, a 种子 chip on the seed event.
+- Audit result (real journal, no fills deleted): before = base 0 + DEPOSIT 20,000 → cash −259; after = seed 20,000 + flows → **cash still −¥259**, MV ¥20,192, equity ¥19,933 (−¥67 vs initial). The 10 manual fills cost ¥20,209 + ¥50 fees = ¥20,259, i.e. ¥259 over the ¥20k — that is the true cause, not a missing seed. Buy budget therefore 0 until something is sold. Smoke 23 +4 checks (empty journal = 20000, BUY decreases from 20000, seed not double-counted, setting drives seed); 25 settle tests rebased on the seed. Book2 finished 29/29 (`n_timeout 0`, TWR +3.3% vs Book1 +39.0% — anonymous Grok filter is not additive; still not a Candidate).
+
+## 2026-09-12 — Hot Desk V3: auto paper fills + daily driver (simulated, not a Candidate)
+
+- Owner: "让他每天的建议，都纸面登记模拟买卖". New `master/api/app/service/paper_fusion_fill.py` (`:9001` only): `settle_pending()` settles every unsettled `FUSION_PLAN_{asof}.json` once its `fill_date` OPEN exists in `live/bars` — BUY/SELL written to the hot `JOURNAL.json` at that open with `paper_ops._est_fee`, `auto=true`, `plan_id`, `note="FUSION auto {asof}"`. SELL first then BUY; T+1 (`T_PLUS_ONE_LOCKED`), cash floor ¥200 with lot round-down (`CASH_FLOOR`), `SELL_NOT_HELD`, `NO_BAR_AT_FILL_DATE`. Plans get `settled_at`/`fills`; audit `FUSION_FILLS.json`; idempotent (double guard). Toggle `FUSION_SETTINGS.json.auto_fill` (default ON).
+- Daily driver `POST /api/v1/hot/fusion/daily` (thread + `FUSION_DAILY_RUN.json`): settle → run the pipeline only if `paper_ops.freshness` says bars are current (`SKIPPED_STALE_DATA` otherwise, Grok not called; `SKIPPED_ALREADY_PLANNED` if today's plan exists). Also `POST …/fusion/settle`, `GET/POST …/fusion/settings`. `GET …/fusion` gains `auto_fill{enabled,last_daily,last_settle,n_auto_events,today,skipped,pending_plans}`. `hot.add_event(body, extra=)` keeps audit fields.
+- Scheduling without a scheduler lib: `scripts/hot_fusion_daily.bat` (curl, log `FUSION_DAILY_CRON.log`) + Task Scheduler `TradeMind_HotFusionDaily` 19:30 Mon–Fri, user Phoenix (created; next run 2026-09-14 19:30). It never triggers `:9000`'s update — that stays the owner's button; stale data → skip.
+- UI (fusion view): card「自动纸面登记」with toggle, "今日已自动登记 N 笔 / 跳过原因" strip, buttons 跑今日 / 只结算; `auto` chip on journal rows. Smoke 25 +2 sections (settle rules, idempotency, toggle, stale skip). SPEC §29.11a; V3 design §7b.
+- Plainly: auto fills are simulated at next open with estimated fees. No real orders, no `order_send`, not a Candidate.
+
+## 2026-09-11 — Hot Desk V3 fusion desk on :9001 (paper, not a Candidate)
+
+- `:9001/paper` default view is now one pipeline: ML1 `SHORTLIST` ∪ `SIGNAL` top-30 pool → Layer A anonymous 60-bar OHLC → Grok `keep[]` (no web) → Layer B Grok with web (fund flows / sectors / macro) → deterministic hard rules (next-open, T+1, ≤8 names, notional ≤ `exposure_pct × equity`, buys ≤ cash − ¥200, BUY only from kept pool, SELL only held) → `FUSION_PLAN_{asof}.json` / `FUSION_LAST.json`. User registers fills by hand in the shared `paper_hot/JOURNAL.json`; nothing auto-executes. The three books stay as audit ledgers under a「对照账」toggle.
+- New `master/api/app/service/paper_fusion.py`, routes `GET /api/v1/hot/fusion`, `POST /api/v1/hot/fusion/run|stop`; desk `profile=HOT_V3`. SPEC §29.11; design `docs/research_engine/PAPER_HOT_DESK_V3_FUSION.md`. Honesty in UI/JSON: Layer B cannot be backtested (look-ahead); "aggressive" = higher turnover and fees; not a Candidate.
+- Book2 timeout fix: `grok_keep.ask_keep` retries (2 × 420 s, cancel on timeout), raises `GrokTimeout`; `book2.run_window` records `status=GROK_TIMEOUT, keep=None`, excludes it from TWR (`n_timeout` counted separately), marks the run stopped and resume-safe (trailing timeout period is retried). Full 29-period validation run relaunched in the background.
+- Grok design consult (one `grok-4.6` xhigh fast Cloud Agent call) saved to `docs/research_engine/PAPER_HOT_DESK_V3_GROK_CONSULT.md`; adopted/rejected list in the V3 design doc §7. Nothing from it touches ML1 / V26.8.
+- Smoke 25 `tests/smoke/25_hot_fusion.py`; smoke 23/24 updated to `HOT_V3`. `:9000` / `daily.py` / `paper_ops.py` / `paper.html` untouched; only `:9001` restarted.
+- **Anon protocol v1.1** (evening): `api.cursor.com` dropped ~1 in 2 requests (`SSL UNEXPECTED_EOF` / `record layer failure`, occasional 502), so `create_agent` never got through — the timeouts were transport, not slow agents. `cursor_cloud._request` now retries transport flaps 5× (8 s), `wait_run` tolerates failed polls and defaults to 900 s; `grok_keep` = 1 retry per period at 900 s. Payload shrunk: bars are `[o,h,l,c]` arrays, 2 dp, index implicit (~12 KB for 10×60 instead of 27 KB); leak assertion unchanged; `B2_LEDGER.anon_protocol=v1.1` (the 2026-09-10 one-shot was v1.0). Layer B transport failure now degrades to `exposure 0 / no BUY` instead of failing the run.
+- **HOT_N5 concentration read (pre-registered, once).** `HOT_N5_CONCENTRATION_CONTRACT.md` written before the run; `book_n5.py` = Book1 engine with `n_target=5` only, VALIDATION only → **`HOT_N5_CONCENTRATION_NOT_VIABLE`**: TWR **−0.79%** vs Book1 +39.03%, CAGR −0.3%, daily-MTM MaxDD **−28.1%** (2022-12-13 → 2024-02-06, not recovered), beats Book1 in **8/29** periods, mean excess −1.19%/period (t −2.03). Concentration is not a lever here. `B_N5_LEDGER.json` is read-once; desk `books.n5`; fourth「对照账」toggle. Not a Candidate; main `n_target=10` unchanged.
+- First real fusion run (22:20) failed on transport in both layers (`FUSION_RUN.error`); Book2 relaunch #1 stopped with `GROK_TIMEOUT` on period 1 for the same reason and was relaunched after the v1.1 fix.
+- **Duplicate-agent root cause + fix (23:15).** `GET /agents` showed the "failed" `POST /agents` calls had all succeeded server-side (2× Book2, 3× consult agents; the TLS drop was on the response read), so transport retries were creating billable duplicates and the client still saw "timeout". `cursor_cloud.create_agent` now, before any re-POST, lists agents and adopts the same-name agent created since the attempt started (`adopted=true`); `cancel_run` sends `{}` (API 400s on empty body). Orphans archived; one orphan Book2 agent had already FINISHED period 1 (result discarded — Book2 resumes from period 1 cleanly). Book2 relaunched at 23:17 on the restarted `:9001`.
+- **Grok design consult done (1 reply used, 107 s)** → `PAPER_HOT_DESK_V3_GROK_CONSULT.md` (prompt + raw reply + decisions). Adopted: `claim_class`/`priced_in` self-report with hard rule `priced_in=true → BUY dropped / SELL→HOLD` (`PRICED_IN_NEXT_OPEN`); default HOLD, empty `names` allowed; plan `audit` block (`hold_all`, `n_narrative_actions`, `truncation_rate`, `invested_pct_after_plan` vs `exposure_pct_asked`), `prompt_hash`, `anon_protocol`. Rejected (user's explicit "aggressive / daily / web overlay" design): shrink pool to 10, take `exposure_pct` away from Grok, no Layer-B SELL, 20-day cadence, gate Layer A on Book2 unblind. Smoke 25 extended (priced_in rule, audit block).
+- **First successful real fusion run (23:17→23:31, asof 2026-09-10, fill 2026-09-14).** Layer A 40 → 11 kept (v1.1, 0 leak hits); Layer B 222 s, `exposure_pct` 55, 4 themes (红利再平衡 / 中东能源溢价 / 节前缩量 / 地产链承压), 10 names all `claim_class=narrative`: 5 SELL kept (sellable at fill), 5 flagged `priced_in=true` → HOLD; 0 BUY (derived cash −¥259 after the user's 10 fills, so buy budget 0), est. fees ¥29.92 (0.15% of equity), truncation 0. Plan JSON at `FUSION_PLAN_2026-09-10.json` / `FUSION_LAST.json`; nothing sent; not a Candidate. Book2 at 5/29 with `n_timeout 0` at 23:35 — protocol v1.1 + adoption fix confirmed working.
+
+## 2026-09-10 — Hot Desk V2 three books on :9001
+
+- `:9001/paper` is now three isolated books: (1) frozen ML1+V26.8 replay, (2) same names filtered by Grok on anonymous OHLC, (3) live web paper on the ML1 pool at next open. Not a Candidate. `:9000` / `daily.py` / `paper_ops.py` untouched.
+- New package `research_engine/hot_three_books/`. Desk `profile=HOT_V2`. Smoke 24.
+
+## 2026-09-10 — Hot brief stuck: worker died on Windows file replace
+
+- 「出今日简报」后台线程在写 `BRIEF_RUN.json` 时 `os.replace` 报 WinError 5，失败处理又写同一文件，线程死了，页面一直显示「已提交，正在组简报」。Cursor 其实没在跑。
+- 状态文件改为重试 + 直接覆盖；线程死后把 `running` 清掉并显示错误。`:9000` 不动。
+
+## 2026-09-10 — Hot desk brief: show Cursor errors; Grok Extra High Fast is params
+
+- Brief was failing on `POST /v1/agents` then falling through to a dead Clash `:7890` (`10061`). Page hid `BRIEF_RUN.error`, so it looked like “一直出不来”. Model id was already `grok-4.6` — Extra High Fast is `effort=xhigh` + `fast=true`, not another name.
+- Skip 7890 unless that port is listening; longer create timeout; dropdown adds Grok Extra High / Fast; failed `stage`/`error` shown on `:9001/paper`. `:9000` untouched.
+
+## 2026-09-10 — Hot Desk V1 on :9001; :9000 paper frozen
+
+- V2.1 纸面台保持 `http://127.0.0.1:9000/paper`（`paper.html` / `paper_ops.py` / 主线 JOURNAL 未改）。
+- 新开独立进程 `app.hot_main:app` → `http://127.0.0.1:9001/paper`。日志只写 `live/paper_hot/JOURNAL.json`。买卖不锁 20 日；普通账户 T+1 写在页面上。不发单、不改 `daily.py`。
+- 先接 Cursor Cloud Agent（无仓库）：密钥读 `D:\Cursor\APIKey.txt`，下拉 `GET /v1/models`，简报 `POST /v1/agents`。不是 Candidate。启动：`scripts\start_hot_desk.bat`。`start_all.bat` 仍只管 9000。
+
+## 2026-09-10 — Paper shadow marks follow live bars; AI model dropdown
+
+- Shadow book on `/paper` was showing `LEDGER_TOP20.json` `mark_close` from the last `daily.py` run, so closes looked frozen while the simulated account already marked `live/bars/{symbol}.csv` last row. `ops()` now remarques `model_positions` / `model_summary` / OPEN `history_model` with `_last_close`. Two books can still disagree on lots, cost, and fees (V26.8 full book vs journal). FAQ updated.
+- Lab console model picker is a `<select>` only (`local:` / `deepseek:` / `cursor:` catalog ids). DeepSeek with `TRADEMIND_DEEPSEEK_API_KEY` lists `GET https://api.deepseek.com/models` and chats via official completions. Cursor with `TRADEMIND_CURSOR_API_KEY` lists `GET https://api.cursor.com/v1/models` for the dropdown; those ids stay unusable for `/chat` (Cursor HTTP API is an Agent API, not chat completions). Unknown id → `TM-1001`.
+
 ## 2026-09-07 (22:15) — Freeze tag + branch `exp/sz-main-shell` (:9001) + V26.9 Shenzhen-main single read
 
 - Main frozen at `freeze-20260907-paper-ops-v2.1` (`898eb80c`). `.gitignore` now excludes V38 layer raw/npy, `SCORES_*.npy`, US-share CFD csv (3.9 GB stayed local).

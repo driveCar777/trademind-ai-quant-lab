@@ -143,6 +143,8 @@ details.adv summary{cursor:pointer;padding:8px 12px;color:var(--muted);font-size
 details.adv .pad{padding:0 12px 12px}
 label{display:block;font-size:12px;color:var(--muted);margin:8px 0 4px}
 textarea,select,input[type=text]{width:100%;background:#0a1019;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 10px;outline:none}
+optgroup{color:var(--muted);font-style:normal;font-weight:600}
+option{color:var(--text)}
 textarea:focus,select:focus,input[type=text]:focus{border-color:var(--blue)}
 textarea{min-height:88px;resize:vertical;font-family:"JetBrains Mono",Consolas,monospace;font-size:12px}
 .tiny{min-height:44px}
@@ -204,8 +206,8 @@ textarea{min-height:88px;resize:vertical;font-family:"JetBrains Mono",Consolas,m
     <span class="pill"><i class="dot" id="masterDot"></i>调度中心 <b id="masterStatus">正在连接…</b>
       <button class="btn-ghost" id="masterRestartBtn" onclick="restartMaster()">重启调度中心</button>
     </span>
-    <span class="pill"><i class="dot" id="aiDot"></i>通义千问 <b id="statAi">—</b>
-      <span class="ops-note">模型用桌面 TradeMind-Lab 开</span>
+    <span class="pill"><i class="dot" id="aiDot"></i>AI <b id="statAi">—</b>
+      <span class="ops-note">本机 / DeepSeek / Cursor 目录，下拉选</span>
     </span>
     <span class="pill" id="masterVersion">v--</span>
   </div>
@@ -339,8 +341,11 @@ textarea{min-height:88px;resize:vertical;font-family:"JetBrains Mono",Consolas,m
 
   <section class="card" id="aiCard" style="margin-bottom:20px">
         <div class="card-b">
-          <div class="kicker"><em>?</em><strong>另外问通义千问</strong></div>
-          <p class="hint" id="aiHint">先选用途。解读买卖信号时，请留着框里的数字。</p>
+          <div class="kicker"><em>?</em><strong>另外问 AI</strong></div>
+          <p class="hint" id="aiHint">先选用途，再选模型。解读买卖信号时，请留着框里的数字。</p>
+          <label for="aiModel">模型</label>
+          <select id="aiModel"></select>
+          <p class="hint" id="aiModelHint">只准下拉，不要手输名字。本机通义免费。DeepSeek 在仓库 <code>.env</code> 写 <code>TRADEMIND_DEEPSEEK_API_KEY</code> 后重启通义窗口，下拉会拉官方全部模型。Cursor 官方 API 是编程 Agent，没有聊天补全，列出的模型不能用来问答。</p>
           <div class="warn" id="aiWarn">框里默认是示例数字，不是实盘，也不是节点刚算出来的结果。</div>
           <div class="segs" id="aiSegs">
             <button type="button" class="seg on" data-action="chat" onclick="setAiAction('chat')">随便聊聊</button>
@@ -394,6 +399,7 @@ let selectedWf = false;
 let aiOnline = false;
 let aiBusy = false;
 let lastAiBtnLabel = '问 AI';
+let aiModels = [];
 
 const AI_HINTS = {
   chat: '随便聊天，不会分析行情。',
@@ -779,9 +785,9 @@ function onWorkerTypeChange() {
   if (key) applyPreset(key);
 }
 
-async function fetchJSON(path) {
+async function fetchJSON(path, timeoutMs) {
   try {
-    const r = await fetch(API + path, {signal: AbortSignal.timeout(8000)});
+    const r = await fetch(API + path, {signal: AbortSignal.timeout(timeoutMs || 8000)});
     if (!r.ok) throw new Error('HTTP ' + r.status);
     return await r.json();
   } catch(e) { return null; }
@@ -818,16 +824,55 @@ async function refreshWorkers() {
   await refreshAiHealth();
 }
 
+function fillAiModels(models) {
+  const sel = document.getElementById('aiModel');
+  if (!sel) return;
+  const prev = localStorage.getItem('ai.model') || sel.value;
+  const labels = {local: '本机通义', deepseek: 'DeepSeek', cursor: 'Cursor'};
+  const by = {};
+  (models || []).forEach((raw) => {
+    const m = Object.assign({}, raw);
+    if (!m.id) {
+      m.id = 'local:qwen2.5-14b-instruct';
+      m.provider = m.provider || 'local';
+      m.label = m.label || m.name;
+      m.available = m.available != null ? m.available : !!m.loaded;
+    }
+    (by[m.provider || 'local'] = by[m.provider || 'local'] || []).push(m);
+  });
+  sel.innerHTML = '';
+  ['local', 'deepseek', 'cursor'].forEach((p) => {
+    if (!by[p]) return;
+    const og = document.createElement('optgroup');
+    og.label = labels[p];
+    by[p].forEach((m) => {
+      const o = document.createElement('option');
+      o.value = m.id;
+      const tag = m.available ? '' : (m.provider === 'cursor' ? '（不能问答）' : '（不可用）');
+      o.textContent = (m.label || m.name) + tag;
+      o.disabled = !m.available;
+      og.appendChild(o);
+    });
+    sel.appendChild(og);
+  });
+  const ids = (models || []).filter((m) => m.available).map((m) => m.id);
+  if (prev && ids.indexOf(prev) >= 0) sel.value = prev;
+  else if (ids.length) sel.value = ids[0];
+  sel.onchange = function() { localStorage.setItem('ai.model', sel.value); };
+}
+
 async function refreshAiHealth() {
   const data = await fetchJSON('/api/v1/ai/health');
   const inner = data && data.data ? data.data : null;
+  const modelsResp = await fetchJSON('/api/v1/ai/models', 20000);
+  aiModels = modelsResp && modelsResp.data ? (modelsResp.data.models || []) : [];
+  fillAiModels(aiModels);
+  const any = !!(inner && inner.any_available) || aiModels.some((m) => m.available);
   const loaded = !!(inner && inner.model_loaded);
-  const status = inner ? (inner.status || 'unknown') : 'OFFLINE';
-  const isOnline = loaded || status === 'healthy';
-  const label = isOnline ? (status === 'degraded' ? '降级' : '在线') : '离线';
+  const label = any ? (loaded || (inner && inner.status === 'healthy') ? '在线' : '可用') : '离线';
   document.getElementById('statAi').textContent = label;
-  document.getElementById('aiDot').className = 'dot ' + (isOnline ? 'on' : 'off');
-  aiOnline = isOnline;
+  document.getElementById('aiDot').className = 'dot ' + (any ? 'on' : 'off');
+  aiOnline = any;
   updateAiButtons();
 }
 
@@ -1294,12 +1339,12 @@ function updateAiButtons() {
   const ready = !!(next && next.getAttribute('data-ready') === '1');
   if (ask && !aiBusy) {
     ask.disabled = !aiOnline;
-    ask.title = aiOnline ? '' : '通义千问离线，请用桌面 TradeMind-Lab';
+    ask.title = aiOnline ? '' : '没有可用模型。本机用桌面 TradeMind-Lab 开，或在 .env 写 TRADEMIND_DEEPSEEK_API_KEY';
     ask.textContent = lastAiBtnLabel;
   }
   if (next) {
     next.disabled = !ready || !aiOnline;
-    next.title = !aiOnline ? '通义千问离线，请用桌面 TradeMind-Lab' : (ready ? '' : '先算完一笔');
+    next.title = !aiOnline ? '没有可用模型' : (ready ? '' : '先算完一笔');
   }
 }
 
@@ -1365,9 +1410,15 @@ function fillAiFromTask(task) {
   showNextAi(summary, true);
 }
 
+function selectedAiModel() {
+  const sel = document.getElementById('aiModel');
+  return sel && sel.value ? sel.value : '';
+}
+
 function buildAiBody(action, text, task) {
+  const model = selectedAiModel();
   if (action === 'chat') {
-    return {messages: [{role: 'user', content: text}], params: {max_tokens: aiMaxTokens(action)}};
+    return {messages: [{role: 'user', content: text}], params: {max_tokens: aiMaxTokens(action)}, model: model};
   }
   let context = {};
   try { context = text ? JSON.parse(text) : {}; }
@@ -1384,7 +1435,7 @@ function buildAiBody(action, text, task) {
     describe: 'strategy_description',
     signal: 'signal_interpretation'
   };
-  return {type: typeMap[action] || 'research_report', context: context, params: {max_tokens: aiMaxTokens(action)}};
+  return {type: typeMap[action] || 'research_report', context: context, params: {max_tokens: aiMaxTokens(action)}, model: model};
 }
 
 function extractAiText(payload) {
@@ -1398,10 +1449,12 @@ async function submitAI(forcedAction, forcedText, task) {
   const text = forcedText != null ? forcedText : document.getElementById('aiInput').value;
   const btn = document.getElementById('aiBtn');
   const resp = document.getElementById('aiResponse');
-  if (!aiOnline) {
+  const sel = document.getElementById('aiModel');
+  const opt = sel && sel.options[sel.selectedIndex];
+  if (!aiOnline || !sel || !sel.value || (opt && opt.disabled)) {
     resp.className = 'out show';
     resp.style.color = 'var(--bad)';
-    resp.textContent = '通义千问离线。请用桌面 TradeMind-Lab，网页不能启动模型。';
+    resp.textContent = '请从下拉框选一个可用模型。本机请用桌面 TradeMind-Lab 开通义；DeepSeek 要在仓库 .env 写 TRADEMIND_DEEPSEEK_API_KEY 后重启通义窗口。Cursor 的模型不能问答。';
     return;
   }
   if (action === 'signal' && !hasSignalNumbers(text) && !task) {
@@ -1415,7 +1468,7 @@ async function submitAI(forcedAction, forcedText, task) {
   btn.textContent = '思考中…';
   resp.className = 'out show';
   resp.style.color = 'var(--muted)';
-  resp.textContent = '正在问通义千问，请稍等…';
+  resp.textContent = '正在问 ' + ((opt && opt.textContent) || 'AI') + '，请稍等…';
   try {
     const r = await fetch(API + aiEndpoint(action), {
       method: 'POST',
@@ -1424,7 +1477,7 @@ async function submitAI(forcedAction, forcedText, task) {
     });
     const result = await r.json();
     if (!result.success) {
-      resp.textContent = (result.message || 'AI 请求失败') + ' (' + (result.code || r.status) + ')';
+      resp.textContent = (result.message || (typeof result.detail === 'string' ? result.detail : 'AI 请求失败')) + ' (' + (result.code || r.status) + ')';
       resp.style.color = 'var(--bad)';
     } else {
       resp.textContent = extractAiText(result);

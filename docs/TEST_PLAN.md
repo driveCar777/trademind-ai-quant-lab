@@ -385,8 +385,219 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 | 10 | V2.1 登记一只后本期名单仍在（已登记 3 / 还剩 7）；`PUT /journal/{id}` 就地改成交价金额 | ✅ |
 | 11 | 周六 9/6 → `last_completed=9/4`；周一 10:00 仍 9/4；周一 19:00 → 9/7 | ✅ |
 | 12 | 无运行时 `stop_update` 不报错；`stopped=false` | ✅ |
+| 13 | 影子持仓 `mark_price` / `open_mark_date` = `live/bars` 最后一行，不是账本冻结 `mark_close` | ✅ 2026-09-10 |
 
 稳定性：跟 V29 到 2026-09-29（真实卖出日）/ 09-30（买入日）各走一遍页面状态 → Freeze。
+
+## 高风险热点台 V1 冒烟 — 23 Paper Hot
+
+**文件：** `tests/smoke/23_paper_hot.py`  
+**日期：** 2026-09-10
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 热台 JOURNAL ≠ 冻结 `live/paper/JOURNAL.json` | ✅ |
+| 2 | 热台入金不改冻结日志字节 | ✅ |
+| 3 | `desk.profile=HOT_V3`（原 HOT_V2，2026-09-11 起），`orders_sent=false`，指向 `:9000/paper`，披露 T+1 | ✅ 2026-09-11 |
+| 4 | `grok-4.6?effort=xhigh&fast=true` 解析为 grok-4.6 + Extra High Fast 参数，不是另一个模型名 | ✅ 2026-09-10 |
+| 5 | 无活线程却 `running=true` 的 BRIEF_RUN 会被标失败；状态文件可覆盖写入 | ✅ 2026-09-10 |
+| 6 | `desk.equity_curve` 为非空列表，末点有 `equity/cash/realized/pnl/util_pct`（JOURNAL + `live/bars` 盯市，不是新家族） | ✅ 2026-09-12 |
+| 7 | `:9001/paper` 资金图：七色可关、十字线、浮层列当日各线；最近交点高亮圆点（页面，无新接口） | ✅ 2026-09-12 页面 |
+
+## 三本对照账 V2 冒烟 — 24 Hot Three Books
+
+**文件：** `tests/smoke/24_hot_three_books.py`  
+**日期：** 2026-09-10
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 热台 JOURNAL ≠ 冻结 `live/paper/JOURNAL.json`；入金不改冻结字节 | ✅ |
+| 2 | `desk.profile=HOT_V3`（原 HOT_V2），`books.b1/b2/b3/n5`，均 `candidate=false`；N5 `read_once`、标签遵守合同规则（TWR>0 且 ≥ 账本1） | ✅ 2026-09-11 |
+| 3 | 账本3 提示词含联网 + 下一开盘 | ✅ |
+| 4 | 匿名 payload 无 `sh.`/`sz.`/6 位代码/ISO 日期/中文 | ✅ |
+| 5 | `parse_keep` 只收合法 `Uxx`；坏 JSON → `[]` | ✅ |
+| 6 | 账本1 验证 TWR 与冻结 V26.8 同号同量级（\|Δ\|<0.005） | ✅ |
+| 7 | 账本2 keep-all 1 期写 smoke 文件，日志 payload 无泄露；不改冻结 JOURNAL | ✅ |
+
+## 融合台 V3 冒烟 — 25 Hot Fusion
+
+**文件：** `tests/smoke/25_hot_fusion.py`（`TRADEMIND_HOT_SMOKE=1`，两层 Grok 走本地 stub，$0）  
+**日期：** 2026-09-11
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 融合产物只在 `live/paper_hot/`；从不写 `live/paper/JOURNAL.json`（字节比对） | ✅ |
+| 2 | 池只来自 ML1 `SHORTLIST` ∪ `SIGNAL` 前 30；扩展池主板、≤¥100 | ✅ |
+| 3 | 匿名 payload（冻结尾 + live bars）无 `sh.`/`sz.`/代码/日期/中文；≤60 根；首收盘=100；协议 v1.1 `[o,h,l,c]` 数组、<3 KB/序列 | ✅ |
+| 4 | 硬规则：T+1（当日买不能卖 → HOLD+blocked）、只卖持仓、只买池内主板、≤8 只、名义 ≤ exposure×权益、新买 ≤ 现金−¥200 | ✅ |
+| 5 | Layer B 失败 → exposure 0、无 BUY | ✅ |
+| 5b | 评审采纳规则：`priced_in=true` 的 BUY 丢弃（`PRICED_IN_NEXT_OPEN`）、SELL 降 HOLD；`hard_event` BUY 保留；计划含 `audit` 块与 12 位 `prompt_hash` | ✅ 2026-09-11 |
+| 6 | 端到端计划：`HOT_V3_FUSION`、`candidate=false`、`orders_sent=false`、两层 stub、`FUSION_LAST`/`FUSION_PLAN`/`FUSION_ANON_LOG` 写出且无泄露、账本2 未读完提示 | ✅ |
+| 7 | `FUSION_RUN` 死线程校正；`view()` 返回 | ✅ |
+| 8 | 账本2 GROK_TIMEOUT：记 `keep=None`、不计 TWR、`n_timeout=1`、run `stopped_reason`；续跑重试该期至 `complete` | ✅ |
+| 9 | 自动纸面登记（临时 JOURNAL）：SELL 按 fill_date 开盘价成交；当日买入 `T_PLUS_ONE_LOCKED`；未持有 `SELL_NOT_HELD`；BUY 3 手 @50 成交；5 手按现金取整为 1 手 `partial`；超现金 − ¥200 `CASH_FLOOR`；现金不低于地板；事件带 `auto/plan_id/"FUSION auto"`、费用 = `_est_fee`；计划 `settled_at` + `FUSION_FILLS`；**重跑幂等**；开关关 → 不登记 | ✅ 2026-09-12 |
+| 10 | 每日驱动：行情陈旧 → `SKIPPED_STALE_DATA`、管线未调用；新鲜且无当日计划 → 管线调用 1 次、先结算；`auto_fill_view` 字段 | ✅ 2026-09-12 |
+| 11 | （smoke 23）种子账户：空日志现金 = 20000；BUY 后现金从 20000 下降；`seed:true` DEPOSIT 不重复计；`initial_capital` 设置驱动种子。（smoke 25）结算账户从 20000 种子起算 | ✅ 2026-09-12 |
+| 12 | 场次驱动：当天 0 次诊过的陈旧 19:30 → **RAN**（晚间必看）；open 在 T-1 RAN；同日第二次 open → `SKIPPED_ALREADY_PLANNED`；close 已被晚间写成计划 → 已计划；收盘后 19:30 → 已计划；settle → `SETTLE_ONLY`；非法场次 ValueError；`n_calls_today` 只数 RAN；白天无能卖且买不起 1 手 → `SKIPPED_NO_CAPACITY`；独立日白天跳过、晚上仍 RAN；自动成交带 reason + snapshot | ✅ 2026-09-13 |
+| 13 | 实时场次管线（stub）：`layer_a.status=SKIPPED_LIVE_SESSION` 且池不缩；计划带 `session`；发明代码 `sh.999999` → `OUT_OF_UNIVERSE`；`cash_policy` + `stamp_pool`；提示词含「本场不再调你第二次」「不写 :9000」 | ✅ 2026-09-13 |
+| 16 | 热台自有池：周五 asof 不启用；周一 asof 可刷新；刷新不改 `:9000` SIGNAL/SHORTLIST 字节；每天第 3 次刷新 `SKIPPED_REFRESH_BUDGET`；`POOL.json` `writes_9000=false` | ✅ 2026-09-13 |
+| 14 | ADD/REDUCE/REPLACE：REDUCE → 部分 SELL 1 手；REPLACE → SELL 旧 + BUY 新（kind `REPLACE_OUT/IN`）；未持有 ADD → `ADD_NOT_HELD`；池外 BUY → `OUT_OF_UNIVERSE`；预算含卖出净额且计划买入 ≤ 预算；计划后名义 ≤ 80% 权益；持有名字 ADD 1 手 = ¥2,000 @20；`cash_policy=ROTATE_IN_POOL`；持仓不在池 `HELD_OUT_OF_POOL`；空动作 `HOLD_CASH`；`hot_fusion_session.bat` / `hot_fusion_daily.bat` 存在 | ✅ 2026-09-13 |
+| 15 | 时钟：`next_trading_day` 缺失时 fill_date 从周五走到下周一；有日历则用 freshness；`clocks.conflict=EXPECTED` 当 asof 是 T-1 | ✅ 2026-09-12 |
+
+## 热台 MT5 冒烟 — 26 Hot MT5
+
+**文件：** `tests/smoke/26_hot_mt5.py`（`TRADEMIND_HOT_SMOKE=1`，`TRADEMIND_MT5_SEND=0`）
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 日志在 `live/paper_hot/`；不改 `:9000` JOURNAL 字节 | ✅ 2026-09-12 |
+| 2 | 未知品种 / `priced_in` 开仓丢弃；SHARES `send=false`；冒烟与 live 账户都不调用 `order_send` | ✅ 2026-09-12 |
+| 3 | 周末 `SKIPPED_WEEKEND`；工作日 asia RAN；同日第二次已计划；settle 不调 Grok | ✅ 2026-09-12 |
+| 4 | 每笔 MT5 记录 price / volume / session / reason / snapshot | ✅ 2026-09-13 |
+
+## 热台 MT5 分品种模型 — 27
+
+**文件：** `tests/smoke/27_hot_mt5_products.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 七个品种、无美股；合成 D1 能跑出全样本账本；`candidate=false`；不写 `:9000` JOURNAL | ✅ 2026-09-13 |
+
+稳定性：场次任务 09:35 / 11:30 / 15:05（能买卖才诊，各最多 1 次）+ 19:30 当天 0 次必须看；`:9000` 更新仍是用户按钮；2 个月观察，≥24 已结算期或 2026-11-12 取晚者读一次。不循环要新名单。不回测。
+
+---
+
+## 热台 MT5 成本门槛三分类 — 28
+
+**文件：** `tests/smoke/28_hot_mt5_cost_aware.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | λ=2（不是 20bp）；合成 D1 能跑；`candidate=false`；不写 `:9000` JOURNAL；不改 V1 `READ.json` | ✅ 2026-09-13 |
+
+---
+
+## 热台 MT5 ATR 门槛 — 29
+
+**文件：** `tests/smoke/29_hot_mt5_atr_barrier.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | k=1.0；合成 D1 能跑；不写 `:9000` / V1 / V2 READ | ✅ 2026-09-13 |
+
+## 热台 MT5 十二个月 TSMOM — 30
+
+**文件：** `tests/smoke/30_hot_mt5_tsmom.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 252/20；无树；不写 `:9000` / V1–V3 READ | ✅ 2026-09-13 |
+
+---
+
+## 热台黄金 V4 手工跟盘 — 40
+
+**文件：** `tests/smoke/40_hot_mt5_gold_follow.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 写出 STATUS；candidate/deploy/feeds_grok=false；符号 GOLD；不写 `:9000` / V4 / V5 READ | ✅ 2026-09-13 |
+
+## 热台黄金 V4 路径/出场诊断 — 41
+
+**文件：** `tests/smoke/41_hot_mt5_gold_v4_path.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 102 笔；candidate=false；研究 TWR 与 GOLD.json 一致；不写 V4 READ / :9000 JOURNAL | ✅ 2026-09-13 |
+
+## 热台黄金 H1 稀疏五列 — 39
+
+**文件：** `tests/smoke/39_hot_mt5_gold_h1_v9.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 特征恰好 R24/VOL24/DIST_SMA24/HOUR_SIN/HOUR_COS；写真样本内与折 IC；不写 `:9000` / V1–V8 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 三障碍 — 38
+
+**文件：** `tests/smoke/38_hot_mt5_gold_h1_v8.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 植入 ATR 障碍出三类；不写 `:9000` / V1–V7 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 场次剩余 — 37 V7
+
+**文件：** `tests/smoke/37_hot_mt5_gold_h1_v7.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 合成 0–20 时；植入场次漂移；标签仅 07–15；每日一笔当日 ≥20 出；写真样本内与折 IC；不写 `:9000` / V1–V6 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 Ridge — 38
+
+**文件：** `tests/smoke/38_hot_mt5_gold_h1_v6.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | α=1；报告训练集；不写 `:9000` / V1 / V5 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 真样本内诊断 — 37
+
+**文件：** `tests/smoke/37_hot_mt5_gold_h1_train_val.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 植入信号 IC 高；常数分能检出；不写 `:9000` / V1 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 小时钟特征 — 36
+
+**文件：** `tests/smoke/36_hot_mt5_gold_h1_v5.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 小时钟特征清单；不写 `:9000` / V1 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 亚洲反向 — 35
+
+**文件：** `tests/smoke/35_hot_mt5_gold_h1_v4.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 亚洲箱体打穿则反向；当日平；不写 `:9000` / V3 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 真实障碍 — 34
+
+**文件：** `tests/smoke/34_hot_mt5_gold_h1_v3.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 昨日高低 / 0.5 ATR；不写 `:9000` / V2 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 当日场次 — 33
+
+**文件：** `tests/smoke/33_hot_mt5_gold_h1_v2.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 伦敦 ORB / 24 根通道；当日 ≥20:00 出；不写 `:9000` / V1 READ | ✅ 2026-09-13 |
+
+## 热台黄金 H1 — 32
+
+**文件：** `tests/smoke/32_hot_mt5_gold_h1.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 持有 24 小时；隔夜按自然日；两本账；不写 `:9000` / D1 READ | ✅ 2026-09-13 |
+
+## 热台 MT5 波动倒数 — 31
+
+**文件：** `tests/smoke/31_hot_mt5_voltarget.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 目标 10%、封顶 1.0；不写 `:9000` / V4 READ | ✅ 2026-09-13 |
 
 ---
 

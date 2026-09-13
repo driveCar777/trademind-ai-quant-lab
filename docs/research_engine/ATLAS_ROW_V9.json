@@ -1,0 +1,18 @@
+{
+  "id": "HOT_MT5_GOLD_H1_V9",
+  "version": "HOT_MT5_GOLD_H1_V9_SPARSE",
+  "universe": "Ava GOLD H1 same file. Five a-priori cols only: R24 VOL24 DIST_SMA24 HOUR_SIN HOUR_COS.",
+  "mechanism": "Same 24h sign(score) as V1; LGBM regressor LGBM_PARAMS; FIRST_PRED=2000 REFIT=1000 embargo=25; cost spread+2*2bp+midnight swap. Not IC-picked winners.",
+  "family": "MT5_GOLD_H1",
+  "val_capital": "0/1. in-sample IC 0.283 R2 0.064 hit 56.8%; fold train IC 0.364 test -0.001 (44); long TWR -51.8% n=1752; val -6.6% t -0.03 cover 96%. OVERFIT. Fewer cols did not raise OOS vs V1 0.52/0.038.",
+  "val_capital_sign": "NEG",
+  "frozen": true,
+  "candidate": false,
+  "decision": "HOT_MT5_GOLD_H1_V9_SPARSE_NO_CANDIDATE. Train IC fell vs V1 but not to Ridge 0.055; OOS IC ~0. No key own-price column for 24h sign. Do not add features. Do not --force. Do not promote 2024-05 +5.2% vs BH +90%.",
+  "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V9_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V9_DECISION.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v9/results/READ.json"
+  ],
+  "date": "2026-09-13"
+}

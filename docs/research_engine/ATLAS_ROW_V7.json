@@ -1,0 +1,19 @@
+{
+  "id": "HOT_MT5_GOLD_H1_V7",
+  "version": "HOT_MT5_GOLD_H1_V7",
+  "universe": "Ava GOLD H1 same file. Session remain 07-15 to >=20 UTC.",
+  "mechanism": "V5 13-col LGBM regress remaining session return; |score|>1*ATR sit-out; 1 trade/day; overnight=0; cost spread+2*2bp",
+  "family": "MT5_GOLD_H1",
+  "val_capital": "0/1. in-sample IC 0.542 R2 0.210 hit 64%; fold train IC 0.636 test -0.001; long TWR -37% n=526; val +1.2% t 0.16 cover 16%. OVERFIT.",
+  "val_capital_sign": "NEG",
+  "frozen": true,
+  "candidate": false,
+  "decision": "HOT_MT5_GOLD_H1_V7_SESSION_REMAIN_NO_CANDIDATE. New question, same pathology as V1/V5. Do not retune lambda/hold. Do not fade V2. Do not promote 2024-26 +1.2% vs BH +90%.",
+  "files": [
+    "docs/research_engine/HOT_MT5_GOLD_H1_V7_CONTRACT.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V7_DECISION.md",
+    "docs/research_engine/HOT_MT5_GOLD_H1_V7_TRAIN_VAL.md",
+    "data/market/cn_a_share/live/paper_hot/mt5_products/gold_h1_v7/results/READ.json"
+  ],
+  "date": "2026-09-13"
+}

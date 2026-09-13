@@ -178,6 +178,17 @@ def _last_close(symbol):
     return None, None
 
 
+def _live_mark(symbol, lots, cost_in):
+    """Same mark as the journal account: last close on disk. Missing close → cost, never ¥0."""
+    px, pdate = _last_close(symbol)
+    shares = (lots or 0) * LOT
+    if px and px > 0 and shares:
+        val = px * shares
+        unreal = (val - cost_in) if cost_in is not None else None
+        return px, pdate, val, unreal, False
+    return None, None, (cost_in if cost_in is not None else None), None, True
+
+
 def _est_fee(side, amount):
     fee = max(COMMISSION_MIN, amount * COMMISSION_RATE)
     if side == "SELL":
@@ -840,14 +851,31 @@ def history(days, ledger):
         rows = []
         for n in sl.get("names") or []:
             f = fill_by.get(n.get("symbol")) or {}
+            lots = f.get("lots")
+            cost = f.get("cost_in")
+            px, pdate, val, unreal, missing = _live_mark(n.get("symbol"), lots, cost) if lots else (None, None, None, None, False)
+            last_px = px if px else n.get("last_close")
+            pnl = f.get("net") if f.get("net") is not None else (unreal if unreal is not None else f.get("unrealized"))
             rows.append({"rank": n.get("rank"), "symbol": n.get("symbol"), "name": names.get(n.get("symbol"), ""), "score": n.get("score"),
-                         "last_close": n.get("last_close"), "lots_100_est": n.get("lots_100_est"), "lots": f.get("lots"), "open": f.get("open"),
-                         "status": f.get("status"), "pnl": f.get("net") if f.get("net") is not None else f.get("unrealized")})
+                         "last_close": last_px, "mark_date": pdate, "lots_100_est": n.get("lots_100_est"), "lots": lots, "open": f.get("open"),
+                         "status": f.get("status"), "pnl": pnl, "mark_missing": missing})
         per = period_of(days, sd)
+        unreal = p.get("unrealized")
+        equity = p.get("equity") or p.get("mtm_equity")
+        if p.get("status") == "OPEN":
+            cash = p.get("cash")
+            mv = sum((n.get("pnl") or 0) + (fill_by.get(n.get("symbol") or "", {}).get("cost_in") or 0) for n in rows if n.get("lots"))
+            if cash is not None:
+                equity = round(float(cash) + mv, 2)
+                unreal = round(equity - float(p.get("equity_end_closed") or sl.get("capital_yuan") or 20000), 2)
+            else:
+                live_u = [n.get("pnl") for n in rows if n.get("pnl") is not None]
+                if live_u:
+                    unreal = round(sum(live_u), 2)
         out.append({"period_no": k + 1, "signal_date": sd, "entry": p.get("entry") or per.get("entry"), "exit": p.get("exit") or per.get("exit_date"),
                     "status": p.get("status"), "n_names": p.get("n_names") or len(rows), "n_fill": p.get("n_fill"), "capital_ret": p.get("capital_ret"),
                     "ret_unrealized": p.get("ret_unrealized"), "ew_ret": p.get("ew_ret"), "lo_minus_ew": p.get("lo_minus_ew"), "net_yuan": p.get("net_yuan"),
-                    "unrealized": p.get("unrealized"), "equity": p.get("equity") or p.get("mtm_equity"), "is_chain": sd in chain or sd == CHAIN_ANCHOR,
+                    "unrealized": unreal, "equity": equity, "is_chain": sd in chain or sd == CHAIN_ANCHOR,
                     "unit_yuan": sl.get("unit_yuan"), "capital_yuan": sl.get("capital_yuan"), "names": rows})
     # forced lists on non-chain days (e.g. --force-score) are shown, but flagged
     for fn in sorted(os.listdir(SIGNALS)) if SIGNALS.is_dir() else []:
@@ -933,11 +961,36 @@ def _model_positions(ledger, signal_date, days):
     rows = []
     for f in fills:
         sym = f.get("symbol")
-        rows.append({"symbol": sym, "name": names.get(sym, ""), "lots": f.get("lots"), "shares": (f.get("lots") or 0) * LOT, "avg_price": f.get("open"),
-                     "buy_date": per.get("entry"), "mark_price": f.get("mark_close"), "mark_date": f.get("mark_date"), "cost_in": f.get("cost_in"),
-                     "market_value": round((f.get("mark_close") or 0) * (f.get("lots") or 0) * LOT, 2) if f.get("mark_close") else None,
-                     "unrealized": f.get("unrealized"), "status": f.get("status") or "FILL"})
+        lots = f.get("lots") or 0
+        cost = f.get("cost_in")
+        px, pdate, val, unreal, missing = _live_mark(sym, lots, cost)
+        rows.append({"symbol": sym, "name": names.get(sym, ""), "lots": lots, "shares": lots * LOT, "avg_price": f.get("open"),
+                     "buy_date": per.get("entry"), "mark_price": px, "mark_date": pdate, "cost_in": cost,
+                     "market_value": round(val, 2) if val is not None else None,
+                     "unrealized": round(unreal, 2) if unreal is not None else None,
+                     "status": f.get("status") or "FILL", "mark_missing": missing})
     return rows
+
+
+def _model_summary_live(top20, positions):
+    out = {k: top20.get(k) for k in ("contract", "capital_yuan", "monthly_contrib", "n_target", "equity_end_closed", "cash", "positions_mv", "mtm_equity", "unrealized", "n_mark_missing",
+                                     "n_periods", "n_periods_closed", "open_signal_date", "open_mark_date", "deposits_to_date")}
+    if not positions:
+        return out
+    mv = sum((p.get("market_value") or 0.0) for p in positions)
+    cash = out.get("cash")
+    out["positions_mv"] = round(mv, 2)
+    out["n_mark_missing"] = int(sum(1 for p in positions if p.get("mark_missing")))
+    dates = [p.get("mark_date") for p in positions if p.get("mark_date")]
+    if dates:
+        out["open_mark_date"] = max(dates)
+    if cash is not None:
+        out["mtm_equity"] = round(float(cash) + mv, 2)
+        base = out.get("equity_end_closed")
+        if base is None:
+            base = (out.get("capital_yuan") or 20000.0) + (out.get("deposits_to_date") or 0.0)
+        out["unrealized"] = round(out["mtm_equity"] - float(base), 2)
+    return out
 
 
 def _buy_list(signal_date, settings, cash_available, source):
@@ -1211,13 +1264,12 @@ def ops():
             pl["warnings"].append("上一次更新没有正常结束（%s）。再点一次「更新数据」会从缺的地方继续。" % (run["last_failed"].get("started_at") or ""))
     pl = plans["model"]
     model_pos = _model_positions(ledger, pl["key_dates"].get("signal_date"), days) if pl["key_dates"].get("signal_date") else []
-    top20 = status.get("ledger_top20") or ledger.get("summary") or {}
+    top20 = ledger.get("summary") or status.get("ledger_top20") or {}
     hist_model = history(days, ledger)
     return {"freshness": fresh, "run": run,
             # `plan` kept for backward compatibility = the owner's own account plan
             "plan": plans["actual"], "plans": plans, "account": account, "model_positions": model_pos,
-            "model_summary": {k: top20.get(k) for k in ("contract", "capital_yuan", "monthly_contrib", "n_target", "equity_end_closed", "cash", "positions_mv", "mtm_equity", "unrealized", "n_mark_missing",
-                                                        "n_periods", "n_periods_closed", "open_signal_date", "open_mark_date", "deposits_to_date")},
+            "model_summary": _model_summary_live(top20, model_pos),
             "history": hist_model, "history_model": hist_model,
             "history_actual": history_actual(days, journal, fresh["last_completed_session"] or fresh["today"]),
             "journal_events": list(reversed(journal.get("events") or []))[:50], "settings": settings,
@@ -1235,7 +1287,7 @@ FAQ = [
     {"q": "出名单前看余额吗？", "a": "看。登记入金/成交后，买入手数按你的可用现金 − ¥200 重算；不够就少买几手/几只，不会建议卖别的换这只。"},
     {"q": "买卖后要做什么？", "a": "回来「登记成交」，买几只登记几只。「我的模拟账户」只按你登记的算：没登记 = 空仓，系统不会假设你买了。"},
     {"q": "可以只买名单里的几只吗？", "a": "可以。名单是 10 只等金额，你买 3 只就登记 3 只；卖出日系统只让你卖这 3 只，历史每一期也按你实际的 3 只算。「模型影子账本」永远假设全买，两边互不影响。"},
-    {"q": "我的模拟账户 vs 模型影子账本？", "a": "影子账本 = 官方 V26.8 合同（¥20,000 起、每期全买、每月定投 ¥2,000），用来核对策略本身；我的模拟账户 = 你真正登记的入金和成交。顶部切换后，整页（今天做什么 / 资金 / 持仓 / 每一期）都跟着切。"},
+    {"q": "我的模拟账户 vs 模型影子账本？", "a": "影子账本 = 官方 V26.8 合同（¥20,000 起、每期全买、每月定投 ¥2,000），假设名单全部按次日开盘成交；我的模拟账户 = 你登记的入金和成交（买几只算几只、你填的价和手续费）。两边手数/成本本来就可以不同，对不上不是算错。收盘价两边都读同一份日线最后一行，打开页面就更新，不必再跑 daily.py。"},
     {"q": "只有月初才能买吗？现在中途能进场吗？", "a": "跟月份无关：每 21 个交易日一期，信号日收盘出名单、次日开盘买、第 20 个交易日开盘卖。合同路径是等下一买入日。你空仓时页面同时给出本期名单作为选项 B：现在跟买、卖出日不变——这是中途进场，历史上没测过，好坏未知，买不买你定。登记一只后名单还在：已登记的标「已登记·改」，剩下的继续点「已买，登记」。"},
     {"q": "登记填错了怎么办？", "a": "持仓行或操作日志点「改」，改手数/价格/日期后保存（手续费空着会按新金额重估）。也可以「删」掉重登。改的是你的成交日志，不动模型影子账本。"},
     {"q": "这套东西能保证赚钱吗？", "a": "不能。历史三段账本为正（研究 +551%、验证 +39%、最终 OOS +71%），2017/2018 各 −30%；近 6 个月为负。它是一个有纪律的练手外壳，不是承诺。"},

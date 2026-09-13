@@ -5,7 +5,7 @@
       "exit_expected": "20 sessions after 2026-08-31",
       "model_refit_date": "2025-11-06",
       "n_sel": 999,
-      "name_overlap_with_ml1": 0.385,
+      "name_overlap_with_ml1": 0.386,
       "signal_date": "2026-08-28",
       "status": "OPEN"
     }

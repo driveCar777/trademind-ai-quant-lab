@@ -90,6 +90,14 @@ def main():
     check(pa["phase"] == "HOLD" and any("3/%d" % len(fills) in w for w in pa["warnings"]), "partial fill -> HOLD with partial note", pa["warnings"])
     check(len(d["model_positions"]) == len(fills) and pm["phase"] == "HOLD" and not any("只买了" in w for w in (pm.get("warnings") or [])),
           "model view unaffected by partial fill")
+    if d["model_positions"]:
+        p0 = d["model_positions"][0]
+        live_px, live_d = po._last_close(p0["symbol"])
+        check((p0.get("mark_missing") and live_px is None) or (p0.get("mark_price") == live_px and p0.get("mark_date") == live_d),
+              "model mark_price is live bar close", (p0.get("mark_price"), live_px, p0.get("mark_date"), live_d))
+        sm = d.get("model_summary") or {}
+        check(not live_d or sm.get("open_mark_date") == max(p.get("mark_date") or "" for p in d["model_positions"]),
+              "model_summary open_mark_date follows live bars", sm.get("open_mark_date"))
     check(len(pa.get("buy_list") or []) == len(fills) - 3 and len(pa.get("logged_list") or []) == 3 and pa.get("continue_register"),
           "partial fill keeps remaining names on the list", (len(pa.get("buy_list") or []), len(pa.get("logged_list") or [])))
     ev0 = next(e for e in po.load_journal()["events"] if e.get("type") == "BUY")

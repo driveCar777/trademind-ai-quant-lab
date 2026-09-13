@@ -1,10 +1,13 @@
 # TradeMind TODO — 版本任务清单
 
 > **当前活跃模块:** **V25 多层组合模型 = 第一个通过 Level-1 + 复现 + 独立性的 Candidate**（`A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE`，STOP A）。NEW_INDEPENDENT=**1**。规则修正见 `RESEARCH_RULES_AMENDMENT_V1.md`（A1 构造菜单 / A2 滚动验证 / A3 每层一个模型 / A4 超额序列聚类）。V22–V24 NO_CANDIDATE 已冻。Databento 余额 ≈$46 不花。
-> **最后更新:** 2026-09-07 21:20（2007 标签=截断日历，不是行情回到 2007；叠跑已杀；不要连点更新。ML1 / V26.8 参数不动）
-> **下一入口:** 用户准备操作模拟盘。**纸面操作台** `http://127.0.0.1:9000/paper`。刷新后若仍显示 2007，等本地重算跑完（不连东财）。东财黑名单解除前不要连点「更新」。
+> **最后更新:** 2026-09-13（MT5 取证：`STRATEGY_FORENSIC_REPORT.md` / `FAILURE_ANALYSIS.md`。不调参。跟盘仍是冻结 V4 展示。`:9000` 冻结）
+> **下一入口:** 冻结纸面台 `http://127.0.0.1:9000/paper`。热台 `http://127.0.0.1:9001/paper`（顶栏：今日/持仓/日程/MT5/设置）。
 
-| PAPER OPS V2 | 用户 10:24 提出模拟盘日常问题。V2.1 双账户。20:40：截止日期=最近已收盘交易日；已是最新 `skipped`；`POST /update/stop`；日线 40s 超时跳过。21:20：截断日历→2007 标签；锁失效叠跑；黑名单则 `--skip-fetch`。 | ✅ Design ✅ Implement ✅ Smoke；🔄 Stability 至 09-29 | 2026-09-07 |
+| PAPER OPS V2 | V2.1 双账户。**冻结，只跑 :9000。** | ✅ FROZEN | 2026-09-10 |
+| PAPER HOT V3 | 融合台：:9001 自有池 + Grok 加减换 + 下一开盘记台账。不是 Candidate。 | ✅ Design SPEC §29.11f ✅ Implement ✅ Smoke 25 · ✅ **池与 :9000 分开** · ✅ MT5 D1/H1 清点 · ✅ V4 跟盘 + 路径诊断 · ✅ **MT5 取证审计**（SPEC §29.31，不调参）· 🔄 Stability：≥24 已结算期再读；不改 daily.py / :9000 | 2026-09-13 |
+| PAPER HOT V2 | 三本对照账。不改主线。不是 Candidate。 | ✅ Design ✅ Implement ✅ Smoke 24 | 2026-09-10 |
+| PAPER HOT V1 | 用户要激进台：不定 20 日、Cursor 联网、热点/龙头/仓位。独立 :9001，不改主线。 | ✅ 被 V2 替换（§29.9 留证） | 2026-09-10 |
 | V38 EVOLUTION | 用户 22:45 授权长期研究。S0 ✅；S1 L1 ✅ NO_CANDIDATE、L4 增减持 ✅ NO_CANDIDATE（有边 t 5.9 / 账本负）、L7 质押 ✅ NO_CANDIDATE（有边 t 6.6 / 账本负）、L2 DATA_BLOCKED、L3/L5/L6 DEFERRED；S2 O1/O2/O3 ✅ 全 REJECT；ATLAS 87；报告 `V38_EVOLUTION_MISSION_REPORT.md` | ✅ O4/O5 各读一次（O4 REJECT；O5 过门但 NOT_DEPLOYABLE）S2 关闭；✅ ML7 影子接入 `daily.py`（只输出，`LEDGER_ML7` 倒计时 24 期）。🔄 每日 `daily.py` 照跑；ML7 读取 ≈2028-Q3。不在历史窗跑堆叠。 | 2026-09-07 |
 
 ---

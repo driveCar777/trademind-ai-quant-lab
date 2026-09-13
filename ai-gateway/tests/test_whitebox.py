@@ -80,13 +80,36 @@ def test_health_degraded(client: TestClient):
     assert data["model_name"] == "Qwen2.5-14B-Instruct"
 
 
-def test_models_listed_not_loaded(client: TestClient):
+def test_models_listed_not_loaded(client: TestClient, monkeypatch):
+    monkeypatch.delenv("TRADEMIND_DEEPSEEK_API_KEY", raising=False)
+    monkeypatch.delenv("TRADEMIND_CURSOR_API_KEY", raising=False)
+    import providers
+    providers._ds_cache = (0.0, None)
+    providers._cu_cache = (0.0, None)
     resp = client.get("/models")
     assert resp.status_code == 200
     models = resp.json()["data"]["models"]
     assert len(models) >= 1
     assert models[0]["loaded"] is False
     assert models[0]["name"] == "Qwen2.5-14B-Instruct"
+    assert models[0]["id"] == "local:qwen2.5-14b-instruct"
+    ids = [m["id"] for m in models]
+    assert "deepseek:deepseek-chat" in ids
+    assert any(i.startswith("cursor:") for i in ids)
+    ds = next(m for m in models if m["id"] == "deepseek:deepseek-chat")
+    assert ds["available"] is False
+    assert all(not m["available"] for m in models if m["provider"] == "cursor")
+
+
+def test_unknown_model_400(client: TestClient):
+    resp = client.post(
+        "/api/v1/ai/chat",
+        json={"messages": [{"role": "user", "content": "hi"}], "model": "nope:x"},
+    )
+    assert resp.status_code == 400
+    body = resp.json()
+    assert body["success"] is False
+    assert body["code"] == "TM-1001"
 
 
 def test_chat_503_when_model_unavailable(client: TestClient):

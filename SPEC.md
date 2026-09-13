@@ -370,7 +370,7 @@ logs/
 
 ## 十四、V3.0 AI Gateway 代理（Master）
 
-> 本地推理模型固定为 **Qwen2.5-14B-Instruct Q4_K_M**。禁止把 GPT 系列或其它闭源 API 写成已部署模型。
+> 本机推理仍是 **Qwen2.5-14B-Instruct Q4_K_M**。另外允许 **目录里列出的** 远程模型：DeepSeek 官方 API、Cursor `GET /v1/models` 返回的 id。页面只准下拉选择，禁止手输模型名。没有对应 key 的项 `available=false`，选了不能发。
 
 Master **不负责推理**。Master 只把 AI 请求转发到独立进程 AI Gateway (`port 9100`)。
 
@@ -380,8 +380,14 @@ Master **不负责推理**。Master 只把 AI 请求转发到独立进程 AI Gat
 |----|------|------|
 | `ai_gateway.url` | `config` / `TRADEMIND_AI_GATEWAY_URL` | `http://127.0.0.1:9100` |
 | `ai_gateway.timeout_seconds` | `config` / `TRADEMIND_AI_GATEWAY_TIMEOUT_SECONDS` | `120` |
+| DeepSeek key | `.env` `TRADEMIND_DEEPSEEK_API_KEY` | 空 = 目录仍列出官方两只，但 `available=false` |
+| Cursor key | `.env` `TRADEMIND_CURSOR_API_KEY` | 空 = 目录用冻结兜底 id，`available=false` |
 
-**禁止** 在代码中硬编码 Gateway IP/端口。
+**禁止** 在代码中硬编码 Gateway IP/端口。密钥只进本机 `.env`，禁止入库。
+
+`GET /models` 的每条：`id`（`local:…` / `deepseek:…` / `cursor:…`）、`provider`、`label`、`available`、`name`（兼容旧字段=label）。DeepSeek 有 key 时拉 `https://api.deepseek.com/models`；Cursor 有 key 时拉 `https://api.cursor.com/v1/models`。页面只渲染这些 id。
+
+请求体可带 `model`（必须是目录里的 `id`）。缺省 = 本机 Qwen。未知 id → `TM-1001`。Cursor id 目前不能当聊天补全（官方是 Agent API）；选了返回 503，提示改用本机或 DeepSeek。
 
 ### 14.2 Master 代理路由
 
@@ -943,8 +949,9 @@ Windows 只编排。Xavier 只计算。四台各至少 10 次 feature / window /
 - `run`：`running`、`pid`、`started_at`、`elapsed_s`、`stage`（从日志识别的阶段文字）、`log_tail[]`、`last_run`（`STATUS.json` 摘要：`asof_session,started_at,elapsed_s,errors[]`）、`last_failed`。
 - `plan`：`phase` ∈ `UPDATE_FIRST | SELL_TODAY | LIST_READY_BUY_TOMORROW | SIGNAL_TONIGHT | BUY_TODAY | HOLD | NO_POSITION`；`headline`、`sub`、`steps[]`（每步 `{when, text}`）、`sell_list[]`、`buy_list[]`（按实际现金重算：`rank,symbol,name,last_close,lots_100_est,est_yuan,score`）、`cash_check`（`cash_available, reserve, budget, planned_yuan, ok, shortfall, source ∈ JOURNAL|MODEL`）、`warnings[]`、`key_dates`（`signal_date, entry, exit_date, next_signal, next_entry`）、`sessions_held/left/total`。
 - `plans`：`{actual, model}` 两份独立 `plan`（V2.1）。`actual` = `mode=JOURNAL`，只按成交日志：空仓则 `NO_POSITION/today_action=WAIT`（"等下一买入日"，不建议中途进场），部分买入则卖出清单只含实际持有的几只并带 `partial` 提示，现金 0 时提示先入金；`model` = `mode=MODEL`，¥20,000 影子账本假设全买。两者永不混用；顶层 `plan` = `plans.actual`（兼容）。
-- `account`：`source`（`JOURNAL` 有事件 / `MODEL` 无事件）、`n_events`、`cash`、`market_value`、`equity`、`positions[]`（`symbol,name,lots,shares,avg_price,buy_date,mark_price,mark_date,cost_in,unrealized,status`）、`deposits_total`、`realized_pnl`、`month_contrib_logged`（本月是否已登记 ¥2,000 入金）。
-- `history_model[]`（= `history[]`，兼容）：模型每期 `{period_no, signal_date, entry, exit, status, n_names, capital_ret, ew_ret, lo_minus_ew, net_yuan, equity, is_chain, names[]}`；非链上的强制名单以 `is_chain=false` 标注为「非操作日预览」。
+- `account`：`source`（`JOURNAL` 有事件 / `MODEL` 无事件）、`n_events`、`cash`、`market_value`、`equity`、`positions[]`（`symbol,name,lots,shares,avg_price,buy_date,mark_price,mark_date,cost_in,unrealized,status`）、`deposits_total`、`realized_pnl`、`month_contrib_logged`（本月是否已登记 ¥2,000 入金）。持仓 `mark_price` 每次 `ops()` 从 `live/bars/{symbol}.csv` 最后一行收盘读取，不依赖 `daily.py`。
+- `model_positions[]` / `model_summary`：与 `account.positions` **同一套** `_last_close` 重估。`LEDGER_TOP20.json` 的 `mark_close` 只是上次 `daily.py` 快照，页面不得直接当最新价。缺价按成本暂记（`mark_missing`），不得当 ¥0。`model_summary` 的 `positions_mv` / `mtm_equity` / `unrealized` / `open_mark_date` 按这次重估价重算；`cash` 仍用账本现金（未平仓）。
+- `history_model[]`（= `history[]`，兼容）：模型每期 `{period_no, signal_date, entry, exit, status, n_names, capital_ret, ew_ret, lo_minus_ew, net_yuan, equity, is_chain, names[]}`；未平仓期的 `names[].last_close` / `pnl` 同样用最新收盘重估。非链上的强制名单以 `is_chain=false` 标注为「非操作日预览」。
 - `history_actual[]`（V2.1）：用户自己的每期，从成交日志按链上周期归组（买入 ∈ [entry, next_entry)，卖出 ∈ (entry, next_entry]）：`{period_no, signal_date, entry, exit, status ∈ OPEN|CLOSED|NOT_TRADED|PENDING_ENTRY, n_names, invested, proceeds, open_value, pnl, capital_ret, names[{symbol,name,lots,sold_lots,open_lots,avg_price,proceeds,mark_price,pnl,status}]}`。
 - `journal_events[]`：最近 50 条。
 - `orders_sent`：恒 `false`。
@@ -967,5 +974,174 @@ Windows 只编排。Xavier 只计算。四台各至少 10 次 feature / window /
 - 本期推荐名单在部分登记后仍返回：`buy_list` = 尚未持有的名字，`logged_list` = 已登记的，`continue_register=true`。页面不得在登记第一只后把名单收掉。
 - 手续费空则按 `max(5, 成交额×0.0003)` 估（买）/ `max(5, 成交额×0.0003)+成交额×0.0005 印花税`（卖）；用户填了以填的为准。
 - 日志不进冻结目录，不影响 `LEDGER_TOP20.json`；只改页面的「实际账户」视图和买入手数。
+
+### 29.9 高风险热点实验台 V1（`:9001/paper`，2026-09-10）
+
+> **冻结：** §29.5–29.8 的 V2.1 操作台只跑在 `:9000/paper`。本小节是**另一进程**，不得改 `paper_ops.py` / `paper.html` / `JOURNAL.json` / `LEDGER_TOP20.json` / `daily.py`。不是 Candidate，不是 V26.8，未经回测。V33/V34 的证伪仍然成立；本台是用户授权的高风险试验，禁止把结果写回主线合同。
+
+独立进程：`TRADEMIND_PORT=9001`，入口 `GET /paper` → `dashboard/paper_hot.html`。健康检查 `GET /health`（`service=trademind-hot-desk`）。**禁止**占用 9000，禁止在 `start_all.bat` 里替换主线 Master。
+
+| 方法 | 路径 | 作用 |
+|------|------|------|
+| `GET` | `/paper` | 高风险实验台页面 |
+| `GET` | `/api/v1/hot/desk` | 账户 + 简报 + 参考名单 + Cursor 目录 |
+| `GET` | `/api/v1/hot/symbol/{symbol}/curve` | 该股 `live/bars` 收盘；若热台持仓则附投入/浮动。不是新家族。见 §29.13 |
+| `GET` | `/api/v1/hot/models` | Cursor `GET https://api.cursor.com/v1/models`（下拉，禁止手输） |
+| `POST` | `/api/v1/hot/brief` | 后台启动无仓库 Cloud Agent（`repos`/`env` 都不传） |
+| `GET` | `/api/v1/hot/brief/status` | 简报任务进度 |
+| `POST` | `/api/v1/hot/brief/stop` | 取消当前 run |
+| `GET/POST/PUT/DELETE` | `/api/v1/hot/journal` | 本台成交日志，路径 `live/paper_hot/JOURNAL.json` |
+
+密钥：只读本机 `TRADEMIND_CURSOR_API_KEY_FILE`（默认 `D:\Cursor\APIKey.txt`）或 `TRADEMIND_CURSOR_API_KEY`。禁止入库、禁止写进日志。
+
+`GET /api/v1/hot/desk` 的 `data`：
+
+| 字段 | 说明 |
+|------|------|
+| `profile` | 恒 `HOT_V1` |
+| `frozen_url` | `http://127.0.0.1:9000/paper` |
+| `risk` | 恒 `HIGH` |
+| `t_plus` | 普通账户股票 **T+1**（当天买的不能当天卖；所谓做T = 底仓/隔日） |
+| `freshness` | 只读主线 `STATUS` / 日历（数据仍由 `:9000` 更新） |
+| `account` | 只从 `paper_hot/JOURNAL.json` 推导；`positions[].sellable_today`；`util_pct`=市值/权益×100 |
+| `equity_curve` | 可选。热台纸面账户点 `[{date, equity, cash, market_value, realized, unrealized, pnl, util_pct}]`。由 JOURNAL + `live/bars` 已有收盘按日盯市推导，不是新研究家族。空仓给种子点。首笔成交日前一个交易日补一粒种子快照（权益=初始、现金=初始），方便画线。`realized`=已卖出相对成本的落袋；`pnl`=权益 − 初始 − 净入金；`util_pct`=市值/权益×100（权益≤0 则为 0）。见 §29.13 |
+| `brief` | 最近一次简报（可空） |
+| `brief_run` | `{running, agent_id, run_id, stage, error}` |
+| `cursor` | `{key_present, models[{id,label,api_id,params[]}], selected}`。`id` 是下拉值，可带变体查询串（如 `grok-4.6?effort=xhigh&fast=true` = Extra High + Fast）。API 的模型名仍是 `grok-4.6`，Extra High / Fast 是 `model.params`，不是另一个模型名。 |
+| `ml1_ref` | 最近 SHORTLIST 前 10 只，**仅参考**，不是本期必须买的名单 |
+| `plan` | `{headline, sub, exposure_pct, themes[], recs[], warnings[]}`，来自简报，**没有 20 日固定持有** |
+| `orders_sent` | 恒 `false` |
+
+简报 JSON（Agent `result` 必须能解析出）：`asof, exposure_pct (0–100), regime, themes[{tag,note}], names[{symbol,name,action ∈ BUY\|SELL\|HOLD\|T_BUY\|T_SELL, horizon ∈ 1-3d\|swing\|intraday, tag, reason, lots_hint}], avoid[], disclaimer`。
+
+规则：
+
+- 不 `order_send`。不写冻结研究目录。不改主线成交日志。
+- 买卖日不由 21 日链决定；用户随时登记。T+1 由页面禁用「今天买的票今天卖」。
+- Cloud Agent **禁止**带本仓库 `repos`（无仓库问答）。失败 → `TM-1002`。
+- 未知模型 id → `TM-1001`。页面只准下拉。
+- 简报与推荐不是历史闸门、不是 Level-1、不是承诺。
+
+### 29.10 三本对照账 V2（`:9001/paper`，2026-09-10）
+
+> §29.9 是 V1（联网荐股、无回测）。本小节替换页面语义，不改 `:9000` / `paper_ops.py` / `daily.py`。三本不是 Candidate。禁止用账本2 成绩改 ML1。
+
+| 账本 | 引擎 | Grok | 调仓 | 每天记一笔 | 产物 |
+|------|------|------|------|------------|------|
+| 1 | 冻结 ML1 分数 + V26.8 `top_n_book` | 无 | 21 个交易日 | 收盘盯市 | `live/paper_hot/B1_LEDGER.json` |
+| 2 | 账本1 候选 → 匿名 OHLC → `keep[]` | 只看价格，禁止搜网、禁止代码 | 同 V26.8 | 收盘盯市 | `B2_LEDGER.json` + `B2_ANON_LOG.json` |
+| 3 | 最新 ML1 SHORTLIST 为池 | 允许联网、允许代码 | 下一开盘（纸面） | 成交日志 | `JOURNAL.json` |
+
+`GET /api/v1/hot/desk` 增加 `profile=HOT_V2`、`books.{b1,b2,b3}`、`book1_run`、`book2_run`。`POST /api/v1/hot/brief` 只服务账本3。`POST /api/v1/hot/book2/run` 跑账本2（`limit` 从前 N 期；`tail` 从最近 N 期）；`POST /api/v1/hot/book2/stop` 停止。`POST /api/v1/hot/book1/run` 重放账本1。非前缀 resume 自动重来，避免 1 期冒烟污染全窗权益。
+
+账本2 匿名协议：近 60 根 OHLC、首根收盘归一 100、id=`U01…`、相对日 `d=0…`。payload 禁止 `sh.`/`sz.`/`bj.`、6 位代码、中文、`YYYY-MM-DD`。Grok 只回 `{"keep":["Uxx",…]}`。验证窗 = V26.8 `VALIDATION`（2021-08-25→2024-02-29）。不读禁用窗。账本1 验证 TWR 必须与 `ML1_SCALED_UNIT_FULL_CONTRIB2K_MAIN_READ.json` 同号同量级（|Δ|<0.005）。
+
+规则：不 `order_send`。三本永不混算。账本2 即使正收益也不是 Level-1。
+
+### 29.11 融合台 V3（`:9001/paper` 默认视图，2026-09-11）
+
+> §29.10 三本保留为「对照账」审计账本（页面二级开关），不删、不混算。本小节是同一进程上的**一条管线**。不改 `:9000` / `paper_ops.py` / `daily.py` / ML1 / V26.8。**不是 Candidate。联网层不可回测。** 设计见 `docs/research_engine/PAPER_HOT_DESK_V3_FUSION.md`。
+
+| 方法 | 路径 | 作用 |
+|------|------|------|
+| `GET` | `/api/v1/hot/fusion` | `profile=HOT_V3_FUSION`；`plan`（最近计划，含 `stale`）、`run`、`account`（融合台账，`live/bars` 收盘盯市）、`book2`（门）、`honesty[]` |
+| `POST` | `/api/v1/hot/fusion/run` `{model?}` | 后台线程：组池 → Layer A → Layer B → 硬规则 → 写计划。状态 `FUSION_RUN.json`（死线程校正同 §29.9 brief） |
+| `POST` | `/api/v1/hot/fusion/stop` | 取消当前 Cloud Agent run |
+
+`GET /api/v1/hot/desk` 的 `profile` 改为 `HOT_V3`，其余字段不变（`books.b2` 增加 `n_timeout / total_expected / complete`）。
+
+管线字段（`FUSION_PLAN_{asof}.json` = `FUSION_LAST.json`）：
+
+| 字段 | 说明 |
+|------|------|
+| `profile` / `candidate` / `level1` / `promise` / `orders_sent` | 恒 `HOT_V3_FUSION` / `false` / `false` / `false` / `false` |
+| `asof` / `fill_date` | 数据截至日 / 成交假设日（下一交易日开盘） |
+| `pool` | `{signal_date, shortlist_file, n_shortlist, n_extended(≤30), n_pool}`；池只来自 ML1 `SHORTLIST_*.json` ∪ `SIGNAL_*.json` 前 30（主板、≤¥100） |
+| `layer_a` | `{n_in, n_keep, keep_ids[], status ∈ OK\|GROK_TIMEOUT\|EMPTY_POOL\|SMOKE_STUB, leak_hits[] (必须空), skipped_no_bars[], lookback=60}`；payload 记 `FUSION_ANON_LOG.json` |
+| `layer_b` | `{status ∈ OK\|GROK_TIMEOUT\|PARSE_ERROR\|…, raw_exposure_pct, confidence, n_names_raw, agent_id, run_id, duration_ms}` |
+| `exposure_pct` | 硬规则后 0–100；Layer B 失败 → 0 |
+| `actions[]` | `{symbol, name, action ∈ BUY\|HOLD\|SELL, lots, price_ref, est_yuan, est_fee, reason, tag, source, held, in_pool, blocked?}` |
+| `dropped[]` | 被截掉的每一条 + `why ∈ BUY_OUT_OF_POOL\|NOT_MAIN_BOARD\|PRICE_OUT_OF_RANGE\|SELL_NOT_HELD\|MAX_8_NAMES\|EXPOSURE_CAP_OR_CASH\|BAD_ACTION\|DUP_OR_EMPTY\|HOLD_NOT_HELD_NOT_POOL` |
+| `budget` | `{equity, cash, cap_notional=exposure×equity, held_notional, buy_budget=min(cash−200, cap−held), planned_buy_notional, est_fees, fee_pct_of_equity, post_plan_notional}` |
+| `book2` | `{n_periods, total_expected=29, n_timeout, complete, note}`；`complete=false` 时页面固定显示「账本2 未读完，匿名过滤增量未知」 |
+| `warnings[]` / `disclaimer` | 含「不是 Candidate」「联网层不可回测」「激进 = 换手高、费用高」 |
+
+硬规则（`paper_fusion.enforce`，确定性）：T+1（`buy_date ≥ fill_date` 的持仓不能 SELL → HOLD + `blocked`）；BUY 只能 keep 内 + 主板 + ≤¥100；SELL 只能持仓；BUY/HOLD ≤ 8；总名义 ≤ `exposure_pct × equity`；新买 ≤ 现金 − ¥200；Grok 未提及的持仓默认 HOLD。
+
+Layer A 匿名协议同 §29.10（60 根、首收盘 100、`U01…`、无 `sh.`/`sz.`/6 位码/日期/中文），**v1.1 起** payload = `{"protocol":"v1.1","cols":["o","h","l","c"],"series":[{"id":"U01","bars":[[o,h,l,c],…]}]}`（2 位小数、索引隐含；账本2 同用，`B2_LEDGER.anon_protocol` 记录）；价格尾部 = 冻结包（只读）+ `live/bars` 增量，**不做任何历史评估**。
+
+对照账第四本 `books.n5`（`B_N5_LEDGER.json`，`book_n5.py`）：账本1 引擎只改 `n_target=5`，预注册、只读 VALIDATION 一次、`read_once=true` 后拒绝再跑；字段 `label ∈ HOT_N5_CONCENTRATION_{VIABLE_HISTORICAL|NOT_VIABLE}`（VIABLE iff TWR>0 且 ≥ 账本1 TWR）、`daily_maxdd`、`periods_beaten_b1/periods_compared`、`mean_excess_vs_b1`、`t_excess_vs_b1`。2026-09-11 读数 = NOT_VIABLE。不是 Candidate；主线 `n_target=10` 不变。Layer B 提示词要求每条 `reason` 写来源类型与时效，写不出来源不得 BUY。
+
+**§29.11a 自动纸面登记（2026-09-12，用户要求"每天的建议都纸面登记模拟买卖"）。** 模块 `master/api/app/service/paper_fusion_fill.py`（仅 :9001）。
+- `settle_pending()`：对每个未结算的 `FUSION_PLAN_{asof}.json`，若其 `fill_date` 在 `live/bars/{symbol}.csv` 已有开盘价，则按**该日开盘价**把 BUY/SELL 写进热台 `JOURNAL.json`（`hot.add_event(body, extra={auto, plan_id, reason, session, snapshot})`，`fee` = `paper_ops._est_fee` 同一估算器，`note = "FUSION auto {asof}"`）。`reason` 抄计划原文；`snapshot` = 当时现金/权益/持仓/asof/`fill_price`（`price_source=live_bars_open`）。先 SELL 后 BUY；T+1（当日买入手数不可卖 → `T_PLUS_ONE_LOCKED`）；现金地板（买入 ≤ 派生现金 − ¥200，手数向下取整 → 不够 `CASH_FLOOR`）；未持有 SELL → `SELL_NOT_HELD`；无该日 K 线 → `NO_BAR_AT_FILL_DATE`。计划写 `settled_at` / `fills`；审计 `FUSION_FILLS.json`（`plan_id`、`requested`、`filled`、`skipped`）。**幂等**：`settled_at` 与 `FUSION_FILLS` 双重守卫，重跑不重复登记。开关 `FUSION_SETTINGS.json.auto_fill`（默认 true；关 = 计划照出、不登记）。手工 `add_event` 同样钉 `snapshot`。
+- 每日驱动 `POST /api/v1/hot/fusion/daily`（后台线程，状态 `FUSION_DAILY_RUN.json`）：(a) `settle_pending()`；(b) `paper_ops.freshness`（只读）显示 `asof_session` = 最近完成交易日且不需更新 → 跑融合管线；否则 `pipeline = SKIPPED_STALE_DATA`（不调 Grok）；该 asof 已有计划 → `SKIPPED_ALREADY_PLANNED`；融合台正在跑 → `SKIPPED_RUN_IN_PROGRESS`。`POST /api/v1/hot/fusion/settle` 只结算；`GET/POST /api/v1/hot/fusion/settings {auto_fill}`。`GET /api/v1/hot/fusion` 增 `auto_fill = {enabled, last_daily, last_settle, n_auto_events, today{n_filled,n_skipped,skipped}, skipped, pending_plans}`。
+- 调度不加库：`scripts/hot_fusion_daily.bat`（curl POST，日志 `FUSION_DAILY_CRON.log`）+ Windows 任务计划 `TradeMind_HotFusionDaily` 19:30 周一至周五（用户级）。**:9000 的行情更新仍是用户的按钮，此脚本永不触发 :9000**；行情没更新就 SKIPPED_STALE_DATA。
+- **自动纸面成交 = 模拟**：按下一开盘价、估算费用；没有真实下单、没有 `order_send`；不是 Candidate、不是收益承诺。
+
+**§29.11c 实时诊股场次（2026-09-12 10:51，用户决定；2 个月观察，只 :9001）。** `POST /api/v1/hot/fusion/session {session: open|lunch|close|daily|settle, model?}` → `{success, data: 驱动状态}`；`/fusion/daily` = `session=daily`。`paper_fusion.run_pipeline(..., session=)`：`session ∈ {open,lunch,close}` 时 **不调 Layer A**（`layer_a.status=SKIPPED_LIVE_SESSION`，池不缩），一次 Grok 联网调用，snapshot 增 `session / universe / pending_plans`，计划写 `FUSION_PLAN_{date}_{session}.json` + `FUSION_LAST.json`，字段增 `session / session_label / session_date`，`actions[].kind ∈ {BUY,SELL,HOLD,ADD,REDUCE,REPLACE_OUT,REPLACE_IN}`（可带 `replace_with` / `replaces`），`counts.kinds`，`budget.sell_proceeds_net`。`enforce`：宇宙 = kept（ML1 池）∪ 持仓，其它 `OUT_OF_UNIVERSE`；ADD 须已持有（`ADD_NOT_HELD`）；REDUCE 部分卖 `lots_hint` 手（缺省一半；≥持仓即 SELL）；REPLACE 展开为 SELL 旧 + BUY 新（新买仍受池/主板/≤¥100/名义上限）；买入预算 = 现金 + 计划 SELL 净额 − ¥200。`paper_fusion_fill.run_session`：先结算；`settle` 永不调 Grok；非交易日 `SKIPPED_NOT_TRADING_DAY`；同日同场次已有计划 `SKIPPED_ALREADY_PLANNED`；`MAX_GROK_CALLS_PER_DAY=3` → `SKIPPED_CALL_BUDGET`；close/daily 行情陈旧 `SKIPPED_STALE_DATA`；既无 T+1 可卖、现金 − ¥200 又不够 1 手（`BUY_MIN_YUAN=200`）→ `SKIPPED_NO_CAPACITY`（不诊，不是策略）；open/lunch/close 允许 T-1 日线。`st.capacity = {can_act, can_sell, can_buy, cash, budget, n_sellable}`。结算：同一 `fill_date` 多份未结算计划，后出的覆盖先出的（先出的 `fills.status=SUPERSEDED`、`superseded_by`）。`FUSION_SESSIONS.json {days:{date:{session:{job_id,pipeline,note,plan,settle}}}}`（RAN 记录不被跳过覆盖）；`GET /api/v1/hot/fusion.auto_fill.sessions = {date, sessions, n_calls_today, max_calls_per_day, next, schedule, token_note}`。任务计划 `TradeMind_HotFusionOpen 09:35 / Lunch 11:30 / Close 15:05 / Daily 19:30`（一–五）调 `scripts/hot_fusion_session.bat <session>`。读取：≥24 已结算融合期或 2026-11-12 取晚者，只读一次；不是 Candidate。
+
+**§29.11b 热台纸面账户种子（2026-09-12，用户：初始资金 ¥20,000）。** `FUSION_SETTINGS.json.initial_capital`（默认 20000，`POST /api/v1/hot/fusion/settings {initial_capital}` 可改）。`paper_hot.derive_account(journal, days)` = 种子 + 日志流水（内部只读调用 `paper_ops.derive_account`，`base_cash=种子`）；事件带 `seed: true` 的 DEPOSIT 是种子本身的证据，不再计入 `deposits_total`（2026-09-10 的 ¥20,000 DEPOSIT 已标记）。账户增 `initial_capital`、`seed_events`、`overspent`（现金为负时的超额）、`pnl_vs_initial`。所有 :9001 调用方（desk / brief / fusion / settle / journal 路由）统一走它；:9000 的 `paper_ops.derive_account` 不变。现金为负只如实显示（买入预算 0），不生成反向交易。纸面，不是 Candidate。
+
+账本2 超时协议：`grok_keep.ask_keep` 2 次 × 420 s；失败抛 `GrokTimeout`；`book2` 记 `status=GROK_TIMEOUT, keep=None`，**不计入 TWR**，`n_timeout` 单独计数，run `stopped_reason=GROK_TIMEOUT`；续跑弹出尾部超时期重试。禁止把超时当 keep-all / keep-none。
+
+**§29.11d 时钟分裂（2026-09-12，主人只在工作日晚上更新 :9000）。** 三套时钟必须分开：`clocks.local_asof` = 本地日线/盯市/ML1 名单（通常 T-1）；Grok 网上 = 今天的新闻/报价（不是成交价）；`fill_date` = 下一交易日开盘（`resolve_fill_date`：优先 `freshness.next_trading_day`，日历被截断则工作日往后走）。盘中/收盘诊股**不再**因为本地没有今收而 `SKIPPED_STALE_DATA`；15:05 与 09:35/11:30 一样用 T-1 + 联网。19:30 场次规则以 §29.11e 为准。提示词写明 `last_close` 不是今收。不是 Candidate。
+
+**§29.11e 晚间必看 + 池内补仓（2026-09-13）。** 覆盖 §29.11c 里「不能买卖整日不诊 / 19:30 只结算」：
+- **场次：** `open/lunch/close` 仅当 `can_act`（有 T+1 可卖 **或** 现金−¥200 够买约 1 手）才调 Grok，否则 `SKIPPED_NO_CAPACITY`。`daily`（19:30）若当日 `n_calls_today==0` **必须**看一次（`must_evening`），即使 stale / 无现金 / 全 T+1 锁死；写成当天 `close` 计划。白天已诊过且行情陈旧 → `SKIPPED_STALE_DATA`。仍 `MAX_GROK_CALLS_PER_DAY=3`。不是问句：计划按下一开盘自动记 `JOURNAL`。
+- **池：** `stamp_pool` 对比上一份 `FUSION_LAST`：`pool_age ∈ {CURRENT,NEW,OLD}`，`n_new`/`n_old`/`previous_signal_date`/`pool_rotated`/`refill_rule`。`actions[]` 带 `name_source ∈ {SHORTLIST,SIGNAL_TOP30,HELD,UNKNOWN}`、`pool_age`（持仓不在池 = `HELD_OUT_OF_POOL`）。自动成交 extra 抄 `name_source`/`pool_age`/`pool_signal_date`。
+- **补仓（已被 §29.11f 覆盖）：** 合适买当前池；不合适刷新 :9001 池。
+- 提示词写死补仓规则。`prompt_hash` 随提示词变（新序列戳）。不是 Candidate。
+
+**§29.11f :9001 自有池（2026-09-13，周一 asof≥2026-09-14 启用）。** `:9000` 与 `:9001` 池分开。
+- 文件：`live/paper_hot/POOL.json`（`owner=hot_9001`，`writes_9000=false`）。永不写 `live/signals/SIGNAL_*.json` / `SHORTLIST_*.json`。
+- 井：只读最新 ML1 `SIGNAL`（主板、≤¥100）。第一份热台池 = 当前 SHORTLIST ∪ 信号前 30 的副本，持仓不因换池被卖掉。
+- 启用：`hot_pool_owned` iff `asof_session >= 2026-09-14`。此前 `status=WAIT_MONDAY`，诊股仍读共享 ML1，不刷新。
+- 刷新：`cash_policy ∈ {HOLD_CASH, SELL_TO_CASH}` 且已启用且 `write=true` → `refresh_hot_pool` 取井里下一页未用过的 `HOT_POOL_PAGE=40` 只写入 POOL.json。本场不因刷新再调 Grok。每天最多 `MAX_POOL_REFRESH_PER_DAY=2`。井用尽 → `WELL_EXHAUSTED`，等 :9000 新 SIGNAL（只读）。
+- 字段：`pool.owner/status/generation`，`plan.pool_refresh`，`actions[].name_source` 可取 `HOT_POOL`。
+- 不是 Candidate。A 股与 MT5 仍禁止对冲、禁止拿两边数字改提示词。
+
+**§29.12 热台 MT5 分品种 demo（2026-09-12，只 :9001，Ava Trade）。** 模块 `paper_hot_mt5.py`。报价走本机 MT5 终端（与 A 股晚上更新无关）。品种账：黄金 / 原油 / 欧美 / 美日 / 美英 / 美加 / 美瑞 各一本逻辑；美股 CFD 一个篮子**只建议不发单**（V30 成本天花板）。场次工作日 08:30 / 20:30 各 1 次 Grok（`MAX_GROK_CALLS_PER_DAY=2`），每品种每场最多 1 笔，手数默认 0.01。动作 BUY/SELL/FLAT/HOLD；`priced_in` 开仓丢弃；未知品种丢弃。`demo_send` 默认开，但 `account_mode=live` 拒绝、`TRADEMIND_MT5_SEND=0` / 冒烟不发单。日志 `live/paper_hot/MT5_JOURNAL.json`（每笔：`type, product, volume, price, bid, ask, ts, reason, session, ticket, paper, snapshot{account_mode, products[], positions[], sent}`），不写 `live/paper/JOURNAL.json`。路由 `GET /api/v1/hot/mt5`、`POST /api/v1/hot/mt5/session {session:asia|ny|settle}`、`GET/POST /api/v1/hot/mt5/settings`。任务 `TradeMind_HotMt5Asia` / `HotMt5Ny`。**不是 Candidate**；不重开 V1–V8 / V30 / V32；不下载 H1/tick 农场；不看完再训。冒烟 `tests/smoke/26_hot_mt5.py`。
+
+`TRADEMIND_HOT_SMOKE=1` 时两层 Grok 都走本地 stub（$0）。冒烟 `tests/smoke/25_hot_fusion.py`。
+
+**§29.31 MT5 取证审计（2026-09-13，只读）。** 不改核心代码、不重训、不调参。产物 `docs/research_engine/STRATEGY_FORENSIC_REPORT.md`、`FAILURE_ANALYSIS.md`。结论：能 `order_send` 的是 `:9001` Grok 观察台（无止损、研究分数不进提示词）；研究 D1/H1/V30/V32 不发单；V4 跟盘只展示。不是 Candidate。
+
+**§29.30 热台黄金 V4 路径/出场诊断（2026-09-13，只读）。** `research_engine/hot_mt5_tsmom/path_exits.py`。不覆盖 `tsmom12_v4/results/READ.json`，不改 252/20，不写 `gold_follow` 规则。对象 = 已平 102 笔 `GOLD_trades.json` + 当前未平腿。路径字段：D1 高低在 `[entry, exit)`，`mfe/mae/close_mfe/giveback/mfe_day`。诊断规则事前写死（收盘判定、下一开盘出）：`BE3/BE5/TRAIL5/TRAIL10/SL10/TP10`。`candidate=false`，`not_a_book=true`，`do_not_write_into_follow=true`。产物 `GOLD_PATH_EXITS.json`、`GOLD_PATH_TRADES.json`。读法：研究窗连续 72 笔 TWR 须与 `GOLD.json` research_70 一致；不得用全样本或后 30 笔去选最好的出场。说明 `HOT_MT5_GOLD_V4_PATH_EXITS.md`。冒烟 `tests/smoke/41_hot_mt5_gold_v4_path.py`。
+
+**§29.29 热台黄金 V4 手工跟盘（2026-09-13，只 :9001）。** 模块 `research_engine/hot_mt5_gold_follow/`。不是 Candidate，不是 live，不 `order_send`，不写 `:9000` / `daily.py` / `paper_ops.py` / `live/paper/JOURNAL.json`，**不把本状态写入 Grok 提示词**。只读冻结 V4/V5 `GOLD.json` + `GOLD_trades.json` + 最新 `history/GOLD_D1.csv`（可选只读 `h1_month_diag/GOLD_LAST_MONTH.json`），写出 `live/paper_hot/mt5_products/gold_follow/STATUS.json`。规则仍是 V4：`sign(close/close_252−1)`，下一开盘、持有 20 根 D1；V5 仓位 `min(1, 0.10/σ20d_ann)` 只作手数上限，不加杠杆。Ava 成交符号以 `GOLD_META.json` 的 `broker=GOLD` 为准（逻辑名 XAUUSD，终端常见 `GOLD`）。`candidate=false`，`deploy=false`，`feeds_grok=false`。路由 `GET /api/v1/hot/mt5/gold_follow`（刷新并返回 STATUS）；`GET /api/v1/hot/mt5` 的 `gold_follow` 只读已写 STATUS，不进 `_prompt`。禁止再训 24h sign / 把 H1 规则抄到 M15。冒烟 `tests/smoke/40_hot_mt5_gold_follow.py`。规格 `HOT_MT5_GOLD_FOLLOW_V4_SPEC.md`。
+STATUS 字段：`profile, candidate, deploy, writes_9000, feeds_grok, order_send, broker_symbol, logical, stance, last_bar_sign, since_signal, since_entry, open_leg, last_bar, last_close, close_252, mom_252, entry_open, mtm_to_last_open, mtm_to_last_close, v5_weight, v5_weight_last, v5_target_ann, lookback, hold, bars_held, bars_left, planned_exit_est, h1_dump{window,mtm,maxdd,worst_ts,worst_px}, book_v4{verdict,val_twr,val_t,maxdd,research_twr,n_long,n_short}, book_v5{verdict,val_twr,val_t,maxdd}, disclaimer`。
+页面（`:9001/paper` MT5 页）只展示：`stance, since_entry, last_close, v5_weight, mtm_to_last_close, disclaimer`。
+
+**§29.28 热台黄金 H1 稀疏五列（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1_v9/`。同一 24h 符号问句，不是新标签。特征事前锁死五列：`R24/VOL24/DIST_SMA24/HOUR_SIN/HOUR_COS`（一天尺度 + 小时钟正余弦）。不是从 V1/V5 单列 IC 表挑赢家。拿掉 SMA200-当-8-日、`MONTH`、线性 `HOUR`、R1/R5。LightGBM 回归，超参同 `products.LGBM_PARAMS`，`sign(score)` 永远在场。Walk-forward / 成本 / 闸门同 §29.19 的 H1_ML。必须写真样本内 IC/R²/命中与约 44 折 train/test IC（协议同 §29.24）。状态窗同 §29.24，不晋升。产物 `live/paper_hot/mt5_products/gold_h1_v9/results/`。不覆盖 V1–V8 READ。`candidate=false`。冒烟 `tests/smoke/39_hot_mt5_gold_h1_v9.py`。合同 `HOT_MT5_GOLD_H1_V9_CONTRACT.md`。
+
+**§29.27 热台黄金 H1 三障碍（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1_v8/`。新问句：未来 24 根谁先碰到 ±1.0×ATR14，不是 24h 收盘符号，不是 V2 ORB，不是 D1 V3。特征 = §29.23 小时钟 13 列。k=1.0 写死。LightGBM 三分类，argmax，CASH 坐一期。Walk-forward 首预测 2000 / 每 1000 重拟合 / embargo=25。成交下一开盘，障碍触达后下一开盘出或 `t+1+24` 开盘时间止。成本同 §29.19（点差+2×2bp+跨午夜 swap）。覆盖率 = Σ持有小时 / 窗口小时。闸门：验证 30%、n≥8、覆盖≥15%、TWR>0 且 t>1 → `VIABLE_HISTORICAL`，`candidate=false`。每折必须报训练集三类准确率与 `P(long)−P(short)` 对已实现符号的 IC。产物 `live/paper_hot/mt5_products/gold_h1_v8/results/`。不覆盖 V1–V7 READ。冒烟 `tests/smoke/38_hot_mt5_gold_h1_v8.py`。合同 `HOT_MT5_GOLD_H1_V8_CONTRACT.md`。
+
+**§29.26 热台黄金 H1 场次剩余收益（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1_v7/`。新问句：伦敦–纽约场次剩余收益，不是 24h 符号，不是 V2 第一下突破。特征同 §29.23 小时钟 13 列，不挑 IC。标签 `y[t]=open[t_exit]/open[t+1]−1`，`t_exit`=同日第一根 `hour≥20` 且严格在 `t+1` 之后；出不了则该根空仓。只在 07–15 UTC 发信。LightGBM 回归，超参同 `products.LGBM_PARAMS`。Walk-forward：`FIRST_PRED=2000`、`REFIT=1000`、`embargo=max(20,出场根数)+1`。外壳：`|score|>1.0×ATR14/close` 才 `sign(score)`，λ=1 写死；每日最多 1 笔（第一根过门槛），下一开盘进、当日 ≥20:00 开盘出，隔夜=0，成本=点差+2×2bp。闸门：验证=合格日最后 30%，n≥8，覆盖=成交日/合格日≥15%，TWR>0 且 t>1 → `VIABLE_HISTORICAL`，`candidate=false`。必须写真样本内 IC/R²/命中与每折 train/test IC。状态窗同 §29.24，不晋升。不覆盖 V1–V6 READ。冒烟 `tests/smoke/37_hot_mt5_gold_h1_v7.py`。合同 `HOT_MT5_GOLD_H1_V7_CONTRACT.md`。
+
+**§29.25 热台黄金 H1 Ridge 正则（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1_v6/`。依据 §29.24：V1/V5 真样本内 IC≈0.50、折均训练 IC≈0.60、折均测试 IC≈0.03，过拟合。本份换更简单模型，不问新问题。特征/标签/walk-forward/`sign(score)`/成本/闸门同 §29.19 的 H1_ML。模型写死：每折对训练行做均值方差标准化，再 `Ridge(alpha=1.0)`。不搜 α。产物 `live/paper_hot/mt5_products/gold_h1_v6/results/READ.json`，另写 `FOLDS.json`（每折 train/test IC）。不覆盖 V1–V5 READ。`candidate=false`。冒烟 `tests/smoke/38_hot_mt5_gold_h1_v6.py`。合同 `HOT_MT5_GOLD_H1_V6_CONTRACT.md`。
+
+**§29.24 热台黄金 H1 真样本内 / 折外 / 状态诊断（2026-09-13，只 :9001，只读）。** `research_engine/hot_mt5_gold_h1/train_val_regime.py`。不覆盖 V1–V5 `READ.json`。回答的是「树有没有在自己的训练集上拟合过」，不是再训一版 24h `sign`。产物 `live/paper_hot/mt5_products/gold_h1_v1/results/TRAIN_VAL_REGIME.json`（V5 段可附在同一文件 `v5` 键）。字段：`true_in_sample{n, ic, r2, hit, mean_abs_score, score_min, score_max, score_std, n_unique, stuck_constant}`；`folds[]` 每折 `{fold, fit_at_i, n_train, n_test, train_ic, test_ic, train_r2, test_r2, train_hit, test_hit, score_min, score_max, score_std, n_unique, stuck_constant}`；`regimes[]` / `years[]` `{id, start, end, n_trades, twr, hit, t, buy_hold, vs_buy_hold}`；`feature_ic` 每列对 24h 标签在研究窗与各状态的 Pearson。`ic` = Pearson(pred, y)。`stuck_constant` = `score_std < 1e-12` 或 `n_unique <= 2`。状态窗事前写死：COVID `2020-02-01`–`2020-06-30`，HIKING_2022 全年，CHOP_2023 全年，GOLD_BULL `2024-05-01`–样本末。不是 Candidate。冒烟 `tests/smoke/37_hot_mt5_gold_h1_train_val.py`。
+
+**§29.23 热台黄金 H1 小时钟特征（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1_v5/`。只测日线列名是否拧错。特征写死 `R1/R6/R24/VOL24/VOL120/ATR14/DIST_SMA24/DIST_SMA120/RSI14/RANGE_ATR/HOUR_SIN/HOUR_COS/DOW`。标签、`sign(score)`、成本、闸门同 §29.19 的 H1_ML。不覆盖 V1–V4 READ。冒烟 `tests/smoke/36_hot_mt5_gold_h1_v5.py`。合同 `HOT_MT5_GOLD_H1_V5_CONTRACT.md`。
+
+**§29.22 热台黄金 H1 亚洲反向（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1_v4/`。新族：00–06 UTC 箱体，伦敦第一次打穿则反向，当日 ≥20:00 出。不是 V2 伦敦 ORB 反手。m=1 无树。成本/闸门同 §29.20。不覆盖 V1–V3 READ。冒烟 `tests/smoke/35_hot_mt5_gold_h1_v4.py`。合同 `HOT_MT5_GOLD_H1_V4_CONTRACT.md`。
+
+**§29.21 热台黄金 H1 真实障碍（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1_v3/`。V2 伦敦 1 小时区间 99% 日触发，不是过滤。本份换更大障碍，不是反向第一下，不是改 07/20。m=2 无树当日平：`PREV_DAY_HL`（打穿上一日高低）；`LONDON_ORB_ATR05`（07:00 高低各外扩 `0.5×ATR14`）。进出同时段、成本同 §29.20。不覆盖 V1/V2 READ。冒烟 `tests/smoke/34_hot_mt5_gold_h1_v3.py`。合同 `HOT_MT5_GOLD_H1_V3_CONTRACT.md`。
+
+**§29.20 热台黄金 H1 当日场次（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1_v2/`。V1 法医：24h 收盘方向无边、路径里有波动、永远在场在做空趋势。本份不是再训 24h 符号，不是搜 8/12/36 小时。m=2 无树：`LONDON_ORB`（07:00 UTC 那根高低为区间，当日第一次收盘突破后下一开盘进，≥20:00 开盘出）；`DONCHIAN24_SESSION`（当日 07–19 时第一次收盘突破此前 24 根高低，同样当日 ≥20:00 出）。无 07:00 或当日出不了就空仓。成本 = 点差 + 2×2bp，隔夜=0。覆盖率 = 成交日 / 有 07:00 的日。闸门同 §29.19。不覆盖 V1 `READ.json`。不拉 15/30。冒烟 `tests/smoke/33_hot_mt5_gold_h1_v2.py`。合同 `HOT_MT5_GOLD_H1_V2_CONTRACT.md`。
+
+**§29.19 热台黄金 H1（2026-09-13，只 :9001）。** `research_engine/hot_mt5_gold_h1/`。用户执行口径 = 小时/15/30 分钟；本份只做已有 `GOLD_H1.csv`。m=2：H1 LightGBM + `sign(score)` 持有 24 根；H1 120 小时动量持有 24 根。隔夜只按跨过的自然日计。不搜 15/30。不覆盖 D1 READ。冒烟 `tests/smoke/32_hot_mt5_gold_h1.py`。合同 `HOT_MT5_GOLD_H1_V1_CONTRACT.md`。
+
+**§29.18 热台 MT5 波动倒数仓位（2026-09-13，只 :9001）。** `research_engine/hot_mt5_voltarget/`。V4 同一 12 月符号、持有 20；仓位 = min(1, 10%/20 日年化波动)，不加杠杆。不是 V4 补丁，不是 SMA200。产物 `live/paper_hot/mt5_products/voltarget_v5/`。冒烟 `tests/smoke/31_hot_mt5_voltarget.py`。合同 `HOT_MT5_VOLTARGET_V5_CONTRACT.md`。
+
+**§29.17 热台 MT5 十二个月 TSMOM（2026-09-13，只 :9001）。** `research_engine/hot_mt5_tsmom/`。无树。信号 = sign(收盘/252 日前收盘−1)，下一开盘、持有 20 根、同一成本。不是 SMA200，不是 CME 截面 FX3。产物 `live/paper_hot/mt5_products/tsmom12_v4/`。冒烟 `tests/smoke/30_hot_mt5_tsmom.py`。合同 `HOT_MT5_TSMOM12_V4_CONTRACT.md`。
+
+**§29.16 热台 MT5 ATR 波动门槛三分类（2026-09-13，只 :9001）。** `research_engine/hot_mt5_atr_barrier/`。同一批 D1/特征/hold。标签门槛 = `1.0 × ATR14/close × √hold`（不是 V2 的 2×META 成本，不是法医 20bp）。其余闸门同 §29.15。产物 `live/paper_hot/mt5_products/atr_barrier_v3/`。冒烟 `tests/smoke/29_hot_mt5_atr_barrier.py`。合同 `HOT_MT5_ATR_BARRIER_V3_CONTRACT.md`。
+
+**§29.15 热台 MT5 成本门槛三分类（2026-09-13，只 :9001）。** `research_engine/hot_mt5_cost_aware/`。同一批 V1 D1/META，不改特征/hold。标签 = 三分类：未来 hold 日收益大于 `2×META 预期往返成本` 为多，小于相反门槛为空，其余空仓。λ=2 写死，**不是** V1 法医 20bp。模型 = LightGBM 分类器，argmax；CASH 次日再看。覆盖率 = 成交数×hold/窗口交易日。验证成交&lt;8 或验证覆盖&lt;15% → 直接 `NO_CANDIDATE`；否则验证 TWR&gt;0 且 t&gt;1 → `VIABLE_HISTORICAL`，`candidate` 仍 false。产物 `live/paper_hot/mt5_products/cost_aware_v2/`，不覆盖 V1 `READ.json`。冒烟 `tests/smoke/28_hot_mt5_cost_aware.py`。合同 `HOT_MT5_COST_AWARE_V2_CONTRACT.md`。
+
+**§29.14 热台 MT5 分品种模型（2026-09-13，只 :9001）。** `research_engine/hot_mt5_products/`。品种 = GOLD / CRUDE / EURUSD / USDJPY / GBPUSD / USDCAD / USDCHF（**不做美股**）。本机 Ava `copy_rates` 写入 `live/paper_hot/mt5_products/history/{ID}_{D1|H1}.csv` + `{ID}_META.json`。训练只用 D1；H1 只存档。每品种一份预注册 LightGBM + 持有期外壳（黄金 10 日，其余 5 日），特征只用该品种 OHLC。成交 = 下一根开盘，非重叠。成本 = 点差 + 2×2bp + swap（mode 1/5）。主报告 = 全样本 TWR；前 70% / 后 30% / 按年 / COVID_2020 / HIKING_2022 / RECENT_2024_ON 为报告或诊断，不用于选参。闸门：验证 TWR>0 且 t>1 且期数≥8 → `VIABLE_HISTORICAL`，`candidate` 仍 false。不写 `:9000`，不与 A 股对冲，不把结果写进 Grok 提示词。冒烟 `tests/smoke/27_hot_mt5_products.py`。合同 `HOT_MT5_PER_PRODUCT_CONTRACT.md`。
+
+**§29.13 热台多页操作台（2026-09-12，只 :9001 UI）。** `dashboard/paper_hot.html` 横向多页，**只留顶栏**（今日 / 持仓 / 日程 / MT5 / 设置），不重复底栏 dock。今日页按主人标注：左上缩小账户卡 + 左侧色例；中间一张多色资金曲线；右「今天要不要动手」；下最多 4 张建议卡（理由只留一两句，点击放大看全文和该股曲线）。默认页不展示对照账、账本1/2/N5、「跑融合台」、Layer A/B、三套时钟堆砌、诚实墙。`GET /api/v1/hot/symbol/{symbol}/curve` 返回 `{symbol,name,held,series:[{date,close,invested?,pnl?}]}`，收盘来自已有 `live/bars`。设置页可调 `auto_fill`、`initial_capital`、MT5 `demo_send` / `volume`（0.01–0.10）；不改 ML1 / V26.8。`auto_fill.sessions.recent` / `sessions.recent` 为近几日场次摘要。不改 `:9000` / `daily.py` / `paper_ops.py` / ML1 / V26.8。
 
 

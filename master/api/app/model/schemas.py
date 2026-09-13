@@ -97,6 +97,7 @@ class AIGenerateRequest(BaseModel):
     type: str = Field(default="research_report", min_length=1)
     context: Dict[str, Any] = Field(default_factory=dict)
     params: Dict[str, Any] = Field(default_factory=dict)
+    model: str = ""
 
 
 class AIDescribeRequest(BaseModel):
@@ -105,6 +106,7 @@ class AIDescribeRequest(BaseModel):
     type: str = Field(default="strategy_description", min_length=1)
     context: Dict[str, Any] = Field(default_factory=dict)
     params: Dict[str, Any] = Field(default_factory=dict)
+    model: str = ""
 
 
 class AISignalRequest(BaseModel):
@@ -113,6 +115,7 @@ class AISignalRequest(BaseModel):
     type: str = Field(default="signal_interpretation", min_length=1)
     context: Dict[str, Any] = Field(default_factory=dict)
     params: Dict[str, Any] = Field(default_factory=dict)
+    model: str = ""
 
 
 class AIChatRequest(BaseModel):
@@ -120,6 +123,7 @@ class AIChatRequest(BaseModel):
 
     messages: List[AIChatMessage] = Field(..., min_length=1)
     params: Dict[str, Any] = Field(default_factory=dict)
+    model: str = ""
 
 
 class TaskRequest(BaseModel):

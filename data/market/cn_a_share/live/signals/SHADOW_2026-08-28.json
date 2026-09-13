@@ -20,16 +20,16 @@
   "hold_sessions": 20,
   "kind": "SHADOW",
   "live_pack": {
-    "asof": "2026-09-07",
-    "built_at": "2026-09-07T13:28:18Z",
+    "asof": "2026-09-11",
+    "built_at": "2026-09-12T05:22:16Z",
     "frozen_dataset_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
     "frozen_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
     "frozen_end": "2026-08-28",
-    "live_hash": "aa2e493c8d4159382faacbc5a0f4c0e816982e50acaf1fdd6447aafd47dad768",
-    "n_dates": 8720,
-    "n_live_cells": 27482,
-    "n_live_sessions": 6,
-    "n_symbols": 5551
+    "live_hash": "f124207250461b1cbc81375c3dcaa561007f995bb12dc03840d76989527b08f7",
+    "n_dates": 8724,
+    "n_live_cells": 52157,
+    "n_live_sessions": 10,
+    "n_symbols": 5556
   },
   "model_fitted_now": false,
   "model_refit_date": "2025-11-06",

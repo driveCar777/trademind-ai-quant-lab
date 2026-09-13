@@ -11,6 +11,9 @@ ALLOWED = {
     "XAUUSD": ("GOLD", "XAUUSD", "XAUUSDm", "XAUUSD.a", "XAUUSD."),
     "EURUSD": ("EURUSD", "EURUSDm", "EURUSD.a"),
     "USDJPY": ("USDJPY", "USDJPYm", "USDJPY.a"),
+    "GBPUSD": ("GBPUSD", "GBPUSDm", "GBPUSD.a"),
+    "USDCAD": ("USDCAD", "USDCADm", "USDCAD.a"),
+    "USDCHF": ("USDCHF", "USDCHFm", "USDCHF.a"),
     "CRUDE": (
         "CrudeOIL",
         "WTICrude",
@@ -49,9 +52,13 @@ def normalize_symbol(symbol: str) -> str:
         "WTICRUDE": "CRUDE",
         "BRENTOIL": "CRUDE",
         "BRENT_OIL": "CRUDE",
+        "GBPUSD": "GBPUSD",
+        "CABLE": "GBPUSD",
+        "USDCAD": "USDCAD",
+        "USDCHF": "USDCHF",
     }
     if text not in aliases and text not in ALLOWED:
-        raise TaskFailedError("只支持黄金/欧美/原油/美日")
+        raise TaskFailedError("只支持黄金/原油/欧美/美日/美英/美加/美瑞")
     return aliases.get(text, text)
 
 
@@ -75,6 +82,12 @@ def _scan_match(logical: str, name: str) -> bool:
         return n == "EURUSD" or n.startswith("EURUSD")
     if logical == "USDJPY":
         return n == "USDJPY" or n.startswith("USDJPY")
+    if logical == "GBPUSD":
+        return n == "GBPUSD" or n.startswith("GBPUSD")
+    if logical == "USDCAD":
+        return n == "USDCAD" or n.startswith("USDCAD")
+    if logical == "USDCHF":
+        return n == "USDCHF" or n.startswith("USDCHF")
     if logical == "CRUDE":
         return n in ("CRUDEOIL", "WTICRUDE", "XTIUSD", "USOIL", "CRUDE", "WTICOUSD", "BRENTOIL") or n.startswith(
             "XTIUSD"
@@ -192,7 +205,8 @@ class Mt5Session(object):
         scanned = self._scan_broker_symbol(logical)
         if scanned:
             return scanned
-        labels = {"XAUUSD": "黄金", "EURUSD": "欧美", "USDJPY": "美日", "CRUDE": "原油"}
+        labels = {"XAUUSD": "黄金", "EURUSD": "欧美", "USDJPY": "美日", "GBPUSD": "美英",
+                  "USDCAD": "美加", "USDCHF": "美瑞", "CRUDE": "原油"}
         raise TaskFailedError("终端里没有%s（已试 %s）" % (labels.get(logical, logical), "/".join(ALLOWED[logical][:4])))
 
     def copy_closes(self, logical: str, bars: int = BARS, timeframe: str = "M15") -> Dict[str, Any]:
@@ -220,6 +234,52 @@ class Mt5Session(object):
             "logical": logical,
             "timeframe": timeframe,
         }
+
+    def positions(self) -> List[Dict[str, Any]]:
+        getter = getattr(self.mt5, "positions_get", None)
+        if getter is None:
+            return []
+        try:
+            rows = getter() or []
+        except Exception:
+            return []
+        out: List[Dict[str, Any]] = []
+        for pos in rows:
+            side = "BUY" if int(getattr(pos, "type", 0) or 0) == 0 else "SELL"
+            out.append({
+                "ticket": str(getattr(pos, "ticket", "") or ""),
+                "symbol": getattr(pos, "symbol", "") or "",
+                "side": side,
+                "volume": float(getattr(pos, "volume", 0) or 0),
+                "price_open": float(getattr(pos, "price_open", 0) or 0),
+                "profit": float(getattr(pos, "profit", 0) or 0),
+                "magic": int(getattr(pos, "magic", 0) or 0),
+            })
+        return out
+
+    def list_share_symbols(self, limit: int = 12) -> List[str]:
+        getter = getattr(self.mt5, "symbols_get", None)
+        if getter is None:
+            return []
+        try:
+            rows = getter() or []
+        except Exception:
+            return []
+        names: List[str] = []
+        for item in rows:
+            path = (getattr(item, "path", "") or "").lower()
+            name = getattr(item, "name", "") or ""
+            if not name or name.startswith("#"):
+                continue
+            if "share" not in path and "cfd-shares" not in path and "usa" not in path:
+                continue
+            if any(bad in name.upper() for bad in ("TEST", "FUTURE")):
+                continue
+            if name not in names:
+                names.append(name)
+            if len(names) >= limit:
+                break
+        return names
 
     def last_price(self, logical: str) -> Dict[str, Any]:
         broker = self.resolve_broker_symbol(logical)
@@ -274,6 +334,11 @@ class Mt5Session(object):
                     "ticket": str(getattr(result, "order", "") or getattr(result, "deal", "") or ""),
                     "symbol": broker,
                     "reason": "mt5_demo",
+                    "side": side,
+                    "volume": float(volume),
+                    "price": price,
+                    "bid": float(tick.bid),
+                    "ask": float(tick.ask),
                 }
             if result is not None:
                 last_err = "retcode=%s" % getattr(result, "retcode", "?")

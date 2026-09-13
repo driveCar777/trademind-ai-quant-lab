@@ -1,4 +1,4 @@
-﻿"""Pydantic request/response models for AI Gateway V3.0.
+"""Pydantic request/response models for AI Gateway V3.0.
 
 These schemas match the API contract defined in V3_AI_GATEWAY_SPEC.md.
 All three content endpoints (generate / describe / signal) share the same
@@ -26,6 +26,7 @@ class GenerateRequest(BaseModel):
     )
     context: Dict[str, Any] = Field(default_factory=dict)
     params: Dict[str, Any] = Field(default_factory=dict)
+    model: str = ""
 
 
 class DescribeRequest(BaseModel):
@@ -34,6 +35,7 @@ class DescribeRequest(BaseModel):
     type: str = "strategy_description"
     context: Dict[str, Any] = Field(default_factory=dict)
     params: Dict[str, Any] = Field(default_factory=dict)
+    model: str = ""
 
 
 class SignalRequest(BaseModel):
@@ -42,6 +44,7 @@ class SignalRequest(BaseModel):
     type: str = "signal_interpretation"
     context: Dict[str, Any] = Field(default_factory=dict)
     params: Dict[str, Any] = Field(default_factory=dict)
+    model: str = ""
 
 
 class ChatRequest(BaseModel):
@@ -49,3 +52,4 @@ class ChatRequest(BaseModel):
 
     messages: List[ChatMessage] = Field(..., min_length=1)
     params: Dict[str, Any] = Field(default_factory=dict)
+    model: str = ""
