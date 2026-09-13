@@ -1144,4 +1144,126 @@ STATUS 字段：`profile, candidate, deploy, writes_9000, feeds_grok, order_send
 
 **§29.13 热台多页操作台（2026-09-12，只 :9001 UI）。** `dashboard/paper_hot.html` 横向多页，**只留顶栏**（今日 / 持仓 / 日程 / MT5 / 设置），不重复底栏 dock。今日页按主人标注：左上缩小账户卡 + 左侧色例；中间一张多色资金曲线；右「今天要不要动手」；下最多 4 张建议卡（理由只留一两句，点击放大看全文和该股曲线）。默认页不展示对照账、账本1/2/N5、「跑融合台」、Layer A/B、三套时钟堆砌、诚实墙。`GET /api/v1/hot/symbol/{symbol}/curve` 返回 `{symbol,name,held,series:[{date,close,invested?,pnl?}]}`，收盘来自已有 `live/bars`。设置页可调 `auto_fill`、`initial_capital`、MT5 `demo_send` / `volume`（0.01–0.10）；不改 ML1 / V26.8。`auto_fill.sessions.recent` / `sessions.recent` 为近几日场次摘要。不改 `:9000` / `daily.py` / `paper_ops.py` / ML1 / V26.8。
 
+**§29.12 修订（2026-09-13 Phase 2）。** Grok 观察台 **不是** 研究 Candidate，也不是自动交易策略。`TRADEMIND_HOT_GROK_SEND` **默认 `0`**：即使 `demo_send=true` 且 `TRADEMIND_MT5_SEND≠0`，热台也不得把 LLM `BUY|SELL` 送到 `order_send`。只有主人显式把 `TRADEMIND_HOT_GROK_SEND=1` 才恢复旧观察台发单（仍仅 demo、仍不是 Candidate）。Grok 允许的角色 = Research / Hypothesis / News / Regime / Feature 助手。禁止 LLM→BUY→MT5 当策略。不拆 :9001 热台，不改 :9000。
+
+---
+
+## 三十、Phase 2 — Ava GOLD 成本感知地基（2026-09-13）
+
+研究市场 = Ava **`GOLD`**（逻辑名 XAUUSD）。20%/月是绩效目标，不是优化器目标。不重开 D1 V1–V5 / H1 V1–V9 / V30 / V32 / V4 follow / RSI 人手 / Grok 热台交易（全部 `LEGACY_FROZEN`，只作负对照）。只允许三个预注册实验：`EXP-001` / `EXP-002` / `EXP-003`。模块 `research_engine/phase2_mt5/`。产物 `AUDIT/`、`MT5_GROUND_TRUTH/`、`data/market/research_engine/phase2/`。不写 `:9000` / `daily.py` / `paper_ops.py` / `paper.html` / ML1 / V26.8。不覆盖冻结 `READ.json`。Phase 2 研究路径 **禁止** `order_send`。
+
+### 30.1 环境
+
+| 变量 | 默认 | 含义 |
+|------|------|------|
+| `TRADEMIND_HOT_GROK_SEND` | `0` | 热台 Grok→`order_send`。默认关。不是策略开关。 |
+| `TRADEMIND_MT5_SEND` | 历史默认 `1` | V9 人手确认单仍用此闸。Phase 2 采集器只读，不发单。 |
+| `TRADEMIND_HOT_SMOKE` | 未设 | `1` 时热台 stub，不连终端。 |
+| `TRADEMIND_PHASE2_FORCE` | 未设 | `1` 才允许覆盖 Phase 2 **未冻结** 的工作草稿。写一次合同 / `READ.json` 仍拒绝覆盖。 |
+
+### 30.2 SignalContractV2
+
+回测与纸面执行必须共用同一 schema。字段：
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `signal_id` | string | 稳定 id。同一信号必须能对上 MT5 deal。 |
+| `strategy_id` | string | `EXP-001` / `EXP-002` / `EXP-003` / `BASELINE_*` |
+| `timestamp` | string | 信号时刻，UTC `YYYY-MM-DDTHH:MM:SSZ` |
+| `symbol` | string | 经纪商符号，黄金 = `GOLD` |
+| `side` | string | `LONG` / `SHORT` / `FLAT`。FLAT 是正常状态。 |
+| `expected_return` | number\|null | 毛预期收益（分数/标签单位） |
+| `expected_net_return` | number\|null | 扣成本后预期 |
+| `probability` | number\|null | P(net>0) 若模型输出，否则 null |
+| `threshold` | number\|null | 事前门槛。禁止看完再定。 |
+| `confidence` | number\|null | 研究置信，**不得**单独触发发单 |
+| `valid_until` | string\|null | 信号失效时刻 UTC |
+| `time_stop` | string\|null | 时间止（根数或时刻） |
+| `stop_loss` | number\|null | 风险止（价格或分数）。Candidate 必须有时间止+风险止。 |
+| `take_profit` | number\|null | 可选。不是必填。 |
+| `risk_budget` | number\|null | 账户风险分数。研究情景 0.25/0.50/1.00/2.00%，不是默认仓。 |
+| `position_size` | number\|null | 手数或权重。杠杆 ≠ 仓位 ≠ 期望收益。 |
+| `model_version` | string | 模型/基线名 |
+| `feature_version` | string | 特征合同 id |
+| `data_version` | string | 数据哈希或包名 |
+| `experiment_id` | string | 与合同相同 |
+| `commit` | string\|null | git commit |
+| `contract` | string | 合同路径 |
+| `data_hash` | string | 输入数据 sha256 |
+| `code_hash` | string | 代码 sha256 |
+| `result_hash` | string\|null | 写出后回填 |
+
+禁止用 `confidence` 或 LLM 文本当 `side`。
+
+### 30.3 True Paper / Demo Ledger
+
+生命周期：`signal → order → deal → position → close deal`。同一 `signal_id` 必须映射到 MT5 deal（若有成交）。字段：
+
+`signal_id, strategy_id, model_version, bid, ask, spread, expected_return, expected_net_return, probability, threshold, requested_fill, actual_fill, slippage, commission, swap, realized, unrealized, balance, equity, margin, free_margin, margin_level, drawdown`
+
+另记：`order_ticket, deal_ticket, position_ticket, broker_symbol, account_mode`。账户号 / login **只存掩码**（`****`+后 4 位），禁止入库明文。
+
+写一次：`data/market/research_engine/phase2/ledger/LEDGER.json`。热台旧 `MT5_JOURNAL.json` 不是本账本。
+
+### 30.4 MT5 Ground Truth
+
+只读终端：`account_info` / `symbol_info` / `symbol_info_tick` / 历史 orders / deals / positions。禁止 `order_send`。
+
+账户快照字段：`ACCOUNT_LEVERAGE, ACCOUNT_MARGIN_MODE, ACCOUNT_CURRENCY, ACCOUNT_TRADE_MODE, balance, equity, margin, margin_free, margin_level, login_masked`。
+
+GOLD 品种字段：`CONTRACT_SIZE, TICK_SIZE, TICK_VALUE, VOLUME_MIN, VOLUME_MAX, VOLUME_STEP, MARGIN_INITIAL, MARGIN_HEDGED, TRADE_MODE, BID, ASK, SPREAD, SWAP_LONG, SWAP_SHORT, SWAP_MODE, DIGITS, POINT`。
+
+产物：`AUDIT/BROKER_GOLD_SPEC_<UTC>.json`（真快照，禁止用 README 假设 100x / contract=100 / 点差）；`MT5_GROUND_TRUTH/`（account / symbol / orders / deals / positions）。连不上 → `DATA_BLOCKED` + 失败原因，采集器与 schema 仍交付。
+
+### 30.5 Candidate Gate V2
+
+自动交易 **仅当 C0–C13 全过**。否则 `DO_NOT_TRADE`。`candidate` 仍默认 false。
+
+| 门 | 含义 |
+|----|------|
+| C0 | 预注册合同存在且写一次 |
+| C1 | 数据 PIT；无未来收盘成交 |
+| C2 | 标签经济化（净、成本、MFE/MAE） |
+| C3 | 非重叠账本；重叠标签已披露 + purge/embargo |
+| C4 | 统一成本（优先经纪商真值；假设必须打标） |
+| C5 | 基线已跑；模型相对基线有增量 |
+| C6 | 研究窗与验证窗同号；不用验证选参 |
+| C7 | FINAL OOS 未开、未用于选择 |
+| C8 | 多重检验（家族/参数/门槛）已记账 |
+| C9 | 时间止 + 风险止 |
+| C10 | 三态 LONG/SHORT/FLAT；非永远在场 |
+| C11 | 执行 = 回测同一 SignalContractV2 |
+| C12 | 纸面账本可对上终端 deal |
+| C13 | 20%/月不得当选模目标；杠杆不得当 alpha |
+
+Grok / RSI 人手 / V4 跟盘 **不能** 过这些门。
+
+### 30.6 实验 ID
+
+| ID | 问句 | 市场 | 状态规则 |
+|----|------|------|----------|
+| EXP-001 | GOLD D1 own-price 是否有稳定低频方向边 | GOLD D1 | 合同冻结后才跑。阶梯 Naive→Linear。无增量则停。 |
+| EXP-002 | GOLD H1 + 严格 PIT 是否有增量小时边 | GOLD H1 | 合同先写。ML 仅当 EXP-001 阶梯规则已遵守。 |
+| EXP-003 | 跨资产（DXY/利率/风险资产/油）是否比价内有增量 | GOLD + 外生 PIT | 合同先写。ML 同上。 |
+
+禁止发明 V1–V30 新号。旧 D1/H1 家族永久 `LEGACY_FROZEN`。
+
+### 30.7 统一基线与指标
+
+基线（任何新 ML 之前，同一成本/仓位/进出）：Buy&Hold, Always Long, Always Short, Random, Momentum, Mean Reversion, Breakout, Volatility Filter, Trend Filter。
+
+指标：Total Return, CAGR, Monthly Return Distribution, Median Monthly, Worst Month, MaxDD, Sharpe, Sortino, Calmar, PF, Expectancy, Turnover, Exposure。
+
+经济标签 V2（每笔）：`gross, spread_cost, slip_cost, commission, swap, net, mfe, mae, max_dd_during_trade`；汇总 `P(net>0), P(net>cost+buffer), E(net), E(net\|signal)`。焦点是 E(net\|signal) 不是准确率。
+
+成本档：Base / 1x / 2x / 3x / Stress。固定点差/滑点/隔夜仅当标明 `assumed`，之后用经纪商快照校验。
+
+风险情景：账户风险 0.25 / 0.50 / 1.00 / 2.00% — 研究情景，不是默认。
+
+FINAL OOS：本阶段锁 `2025-09-12` → 样本末。**禁止**用该窗选家族/门槛/模型。
+
+### 30.8 模型阶梯
+
+Naive → Linear → Logistic → Ridge → LightGBM → 更复杂。仅当上一层相对基线有 **OOS 增量** 才许下一层。Phase 2 首批最多到 Linear（EXP-001）。Monte Carlo / bootstrap 模块可脚手架；无 Candidate 时禁止把它写成证据。
+
 

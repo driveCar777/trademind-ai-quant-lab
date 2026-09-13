@@ -503,6 +503,22 @@ Freeze      ░░░░░░░░░░   0%  待 Phase 8
 |---|--------|------|
 | 1 | 写出 STATUS；candidate/deploy/feeds_grok=false；符号 GOLD；不写 `:9000` / V4 / V5 READ | ✅ 2026-09-13 |
 
+## Phase 2 地基 — 42
+
+**文件：** `tests/smoke/42_phase2_foundation.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | Grok send 默认关；SignalContractV2；ledger 生命周期；Gate V2 DO_NOT_TRADE；write-once；不写 :9000 / V4 | ✅ 2026-09-13 |
+
+## Phase 2 统一基线 — 43
+
+**文件：** `tests/smoke/43_phase2_baselines.py`
+
+| # | 测试项 | 状态 |
+|---|--------|------|
+| 1 | 九条基线；经济标签；月度分布；FINAL OOS 未评；第二次写入拒绝；不写 :9000 / V4 | ✅ 2026-09-13 |
+
 ## 热台黄金 V4 路径/出场诊断 — 41
 
 **文件：** `tests/smoke/41_hot_mt5_gold_v4_path.py`

@@ -1,0 +1,20 @@
+{
+  "note": "Sidecar. Does not overwrite READ.json. Single-trade book MaxDD is 0 by construction; this is the daily close path on the RESEARCH window.",
+  "window": ["2019-02-26", "2025-09-11"],
+  "n_bars": 2038,
+  "daily_mark_total": 1.7324921752738658,
+  "cagr_daily": 0.13235027472610206,
+  "maxdd_daily": -0.2137413065647218,
+  "maxdd_date": "2022-10-20",
+  "monthly": {
+    "n": 79,
+    "median": 0.011117538063352361,
+    "mean": 0.013758644471644873,
+    "worst": -0.0732974140190148,
+    "best": 0.10738985332473283,
+    "p10": -0.03276793109839773,
+    "frac_ge_10pct": 0.012658227848101266,
+    "frac_ge_20pct": 0.0
+  },
+  "candidate": false
+}

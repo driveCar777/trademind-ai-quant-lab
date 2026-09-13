@@ -1,5 +1,7 @@
 # 七品种 own-price D1：信息层 + 外壳清点
 
+> **LEGACY / FROZEN (Phase 2, 2026-09-13).** Baseline / negative control only.  
+> Do **not** retune 252 / hold / λ / k / threshold / TP/SL / feature stack.  
 > 2026-09-13。长任务停点。不是 Candidate。不写 `:9000`。不写 Grok。
 
 ## 信息层（这一口井）

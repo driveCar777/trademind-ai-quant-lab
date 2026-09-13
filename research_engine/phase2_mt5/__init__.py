@@ -1,0 +1,18 @@
+"""Phase 2 Ava GOLD cost-aware foundation. Not a Candidate. No order_send."""
+PROFILE = "PHASE2_MT5_GOLD"
+CANDIDATE = False
+WRITES_9000 = False
+ORDER_SEND = False
+GROK_IS_STRATEGY = False
+LEGACY_FROZEN = (
+    "D1_V1", "D1_V2", "D1_V3", "D1_V4", "D1_V5",
+    "H1_V1", "H1_V2", "H1_V3", "H1_V4", "H1_V5", "H1_V6", "H1_V7", "H1_V8", "H1_V9",
+    "V30", "V32", "V4_FOLLOW", "RSI_MANUAL", "GROK_HOT_TABLE",
+)
+EXPERIMENTS = ("EXP-001", "EXP-002", "EXP-003")
+RESEARCH_END = "2025-09-11"
+FINAL_OOS_START = "2025-09-12"
+BROKER_SYMBOL = "GOLD"
+SLIP_ASSUMED = 0.0002
+FLAT_THRESHOLD = 0.0020
+SEED = 25

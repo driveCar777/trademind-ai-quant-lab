@@ -1,5 +1,7 @@
 # Ava GOLD 手工跟盘规格（不是 Candidate，不是实盘合同）
 
+> **LEGACY / FROZEN (Phase 2, 2026-09-13).** Display-only V4 beta. Not a research Candidate.  
+> Do **not** retune 252/20 or write this into Grok / order_send.  
 > 2026-09-13。主人目标：在 Ava MT5 黄金上尽量用**已经量过的边**试着赚钱。  
 > 本文件是给人看的跟盘说明书。`candidate=false`，`deploy=false`，不 `order_send`，不写 Grok。
 

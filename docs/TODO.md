@@ -1,9 +1,10 @@
 # TradeMind TODO — 版本任务清单
 
 > **当前活跃模块:** **V25 多层组合模型 = 第一个通过 Level-1 + 复现 + 独立性的 Candidate**（`A_SHARE_MULTILAYER_MODEL_V1_INDEPENDENT_CANDIDATE`，STOP A）。NEW_INDEPENDENT=**1**。规则修正见 `RESEARCH_RULES_AMENDMENT_V1.md`（A1 构造菜单 / A2 滚动验证 / A3 每层一个模型 / A4 超额序列聚类）。V22–V24 NO_CANDIDATE 已冻。Databento 余额 ≈$46 不花。
-> **最后更新:** 2026-09-13（MT5 取证：`STRATEGY_FORENSIC_REPORT.md` / `FAILURE_ANALYSIS.md`。不调参。跟盘仍是冻结 V4 展示。`:9000` 冻结）
-> **下一入口:** 冻结纸面台 `http://127.0.0.1:9000/paper`。热台 `http://127.0.0.1:9001/paper`（顶栏：今日/持仓/日程/MT5/设置）。
+> **最后更新:** 2026-09-13（Phase 2：`AUDIT/PHASE2_FINAL_REPORT.md`。D1 买持有净 +171%、H1 永远多净 −30%。Grok 默认不发单。不调参。`:9000` 冻结）
+> **下一入口:** 冻结纸面台 `http://127.0.0.1:9000/paper`。热台 `http://127.0.0.1:9001/paper`（顶栏：今日/持仓/日程/MT5/设置）。Phase 2 下一刀不是 Logistic、不是 FINAL OOS。
 
+| PHASE 2 GOLD | Ava 经纪商真值 + SignalContractV2 + 统一基线 + EXP-001/002/003。Linear 不赢买持有。20%/月 UNSUPPORTED。 | ✅ 地基 + 第一批；Candidate=FALSE | 2026-09-13 |
 | PAPER OPS V2 | V2.1 双账户。**冻结，只跑 :9000。** | ✅ FROZEN | 2026-09-10 |
 | PAPER HOT V3 | 融合台：:9001 自有池 + Grok 加减换 + 下一开盘记台账。不是 Candidate。 | ✅ Design SPEC §29.11f ✅ Implement ✅ Smoke 25 · ✅ **池与 :9000 分开** · ✅ MT5 D1/H1 清点 · ✅ V4 跟盘 + 路径诊断 · ✅ **MT5 取证审计**（SPEC §29.31，不调参）· 🔄 Stability：≥24 已结算期再读；不改 daily.py / :9000 | 2026-09-13 |
 | PAPER HOT V2 | 三本对照账。不改主线。不是 Candidate。 | ✅ Design ✅ Implement ✅ Smoke 24 | 2026-09-10 |

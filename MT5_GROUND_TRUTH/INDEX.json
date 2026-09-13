@@ -1,0 +1,9 @@
+{
+  "account": "ACCOUNT_SNAPSHOT.json",
+  "symbol": "SYMBOL_GOLD.json",
+  "orders": "ORDERS.json",
+  "deals": "DEALS.json",
+  "positions": "POSITIONS.json",
+  "history_orders": "HISTORY_ORDERS.json",
+  "goal": "reconstruct any trade from broker/terminal data"
+}

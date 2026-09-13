@@ -4,6 +4,10 @@
 
 ---
 
+## 2026-09-13 — Phase 2 Ava GOLD cost-aware foundation
+
+- SPEC §30: SignalContractV2, true ledger, MT5 ground truth, Candidate Gate V2, EXP-001/002/003, Grok-not-candidate. `TRADEMIND_HOT_GROK_SEND` defaults 0 on :9001 (desk stays). Live broker spec: leverage 400, GOLD contract 100, spread 34, swap −1.54/+0.64. Unified D1/H1 baselines write-once. EXP-001 Naive→Linear: Linear beats Naive on a bull slice, loses to buy-hold +171%; next layer denied. EXP-002 baselines only (H1 always-long −30%). EXP-003 registered not run. 20%/month UNSUPPORTED. Smokes 42–43. No `:9000` / ML1 change. `candidate=false`.
+
 ## 2026-09-13 — MT5 forensic audit (no code change)
 
 - Read-only audit of every MT5 path. There is no single auto-trader: Grok demo desk can send; research books never send; V4 follow is display-only. Wrote `STRATEGY_FORENSIC_REPORT.md` and `FAILURE_ANALYSIS.md`. Did not retune or retrain.

@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-09-13（`:9000` 冻结。MT5 取证已写：Grok 观察台 ≠ 研究账本 ≠ V4 跟盘。不调参。`candidate=false`。）  
+**最后更新：** 2026-09-13（Phase 2 地基已落地：经纪商真值 + 统一基线 + EXP-001 阶梯停。`:9000` 冻结。Grok 默认不发单。`candidate=false`。20%/月 UNSUPPORTED。）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 

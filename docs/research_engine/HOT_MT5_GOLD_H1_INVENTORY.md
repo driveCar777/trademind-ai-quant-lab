@@ -1,5 +1,7 @@
 # 黄金 H1 价内清点（已停）
 
+> **LEGACY / FROZEN (Phase 2, 2026-09-13).** Baseline / negative control only.  
+> Do **not** retune hold=24 / SMA200-as-hours / ORB / Asia fade / λ / k / feature stack.  
 > 2026-09-13。用户执行口径 = 小时 / 15 / 30 分钟。不是 Candidate。不写 `:9000`。不写 Grok。
 > 停点 `STOP_GOLD_H1_OWN_PRICE_ML_AND_RULES`：own-price H1 tree + session + barrier + sparse 已清点。
 

@@ -1,0 +1,17 @@
+{
+  "login_masked": "****8889",
+  "ACCOUNT_LEVERAGE": 400,
+  "ACCOUNT_MARGIN_MODE": 2,
+  "ACCOUNT_CURRENCY": "USD",
+  "ACCOUNT_TRADE_MODE": 0,
+  "balance": 11784.53,
+  "equity": 11784.53,
+  "margin": 0.0,
+  "margin_free": 11784.53,
+  "margin_level": 0.0,
+  "profit": 0.0,
+  "server": "Ava-Demo 1-MT5",
+  "company": "Ava Trade Markets Ltd.",
+  "name_present": true,
+  "order_send": false
+}

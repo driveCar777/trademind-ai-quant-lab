@@ -4,6 +4,10 @@ Not a Candidate. Does not touch :9000 paper, daily.py, or the A-share journal.
 Frequency is sparse (2 Grok calls / weekday): Asia 08:30 and New York 20:30 China time.
 Each product has its own logic tag; stocks are one advisory basket and never auto-send
 (V30 cost ceiling). Live accounts are refused. TRADEMIND_HOT_SMOKE=1 never sends.
+
+Phase 2: Grok is Research/Hypothesis/News/Regime/Feature only.
+LLM → BUY/SELL → order_send is NOT a strategy and is NOT a Candidate.
+TRADEMIND_HOT_GROK_SEND defaults to 0 (off). The desk stays; auto-send does not.
 """
 from __future__ import annotations
 
@@ -104,8 +108,18 @@ def save_settings(patch: Dict[str, Any]) -> Dict[str, Any]:
     return cur
 
 
+def grok_send_allowed() -> bool:
+    """LLM may not order_send as a strategy. Default OFF (TRADEMIND_HOT_GROK_SEND=0)."""
+    return os.environ.get("TRADEMIND_HOT_GROK_SEND", "0") == "1"
+
+
 def want_send() -> bool:
-    return bool(settings()["demo_send"] and send_allowed() and not _smoke())
+    return bool(
+        settings()["demo_send"]
+        and send_allowed()
+        and grok_send_allowed()
+        and not _smoke()
+    )
 
 
 def _journal() -> Dict[str, Any]:
@@ -411,7 +425,11 @@ def _send_demo(logical: str, side: str, volume: float) -> Dict[str, Any]:
 
 
 def execute(plan: Dict[str, Any], send_fn: Optional[Callable] = None) -> Dict[str, Any]:
-    """Apply actions: SHARES and smoke stay paper; demo send only when allowed and account is demo."""
+    """Apply actions. SHARES/smoke stay paper.
+
+    Demo order_send requires want_send() which now also needs TRADEMIND_HOT_GROK_SEND=1.
+    Grok BUY/SELL is not a research Candidate. Phase 2 research must not call this path.
+    """
     probe = (plan.get("snapshot") or {}).get("probe") or {}
     mode = probe.get("account_mode")
     filled: List[Dict[str, Any]] = []
@@ -627,8 +645,8 @@ def view() -> Dict[str, Any]:
         "honesty": [
             "报价走 Ava MT5 终端，和 :9000 晚上更新的 A 股日线不是一路，不会抢同一份数据。",
             "每个品种一本逻辑；股票篮子只建议、不自动发单（V30 成本死）。",
-            "每天最多 2 次 Grok（08:30 / 20:30），每品种每场最多 1 笔，手数 0.01。不是 Candidate。",
-            "实盘账户拒绝发单。demo_send 关掉就只记账。",
-            "黄金 V4 跟盘只展示冻结日线状态，不写进 Grok，不发单。",
+            "每天最多 2 次 Grok（08:30 / 20:30），每品种每场最多 1 笔。Grok 不是 Candidate，默认不发单（TRADEMIND_HOT_GROK_SEND=0）。",
+            "实盘账户拒绝发单。demo_send 关掉就只记账。LLM→BUY→MT5 不是策略。",
+            "黄金 V4 跟盘只展示冻结日线状态，不写进 Grok，不发单。LEGACY_FROZEN。",
         ],
     }

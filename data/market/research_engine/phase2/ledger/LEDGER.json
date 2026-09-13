@@ -1,0 +1,9 @@
+{
+  "profile": "PHASE2_TRUE_LEDGER",
+  "candidate": false,
+  "order_send": false,
+  "events": [],
+  "open_positions": {},
+  "by_signal": {},
+  "note": "Schema ready. No Phase 2 strategy fills yet. Same signal_id must map to an MT5 deal when one exists."
+}
