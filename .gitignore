@@ -25,7 +25,10 @@ venv/
 tmp/
 .tmp/
 data/mt5_terminal/
-.cursor/
+.cursor/*
+# Cloud Agent environment config is repo-managed and must be tracked.
+!.cursor/environment.json
+!.cursor/install.sh
 *.log
 bt-*.log
 test-*.log

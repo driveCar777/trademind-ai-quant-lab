@@ -1,0 +1,15 @@
+{
+  "name": "TradeMind AI Quant Lab",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "master-api",
+      "command": "cd master/api && .venv/bin/python -m uvicorn app.main:app --host 0.0.0.0 --port 9000"
+    },
+    {
+      "name": "indicator-worker",
+      "command": "cd indicator-worker && TRADEMIND_API_PORT=8000 .venv/bin/python -m uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    }
+  ],
+  "ports": [9000, 8000]
+}
