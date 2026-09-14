@@ -14,6 +14,7 @@
 - [x] Wave E: TARGET / leverage / overlap / multiple-testing / FINAL_REPORT
 - [x] Wave F: `55920477` pushed to `origin/main`
 - [x] Case File: `AUDIT/MT5_STRATEGY_CASE_FILE.md` (2026-09-14, independent review; no new runs)
+- [x] Phase 3 entry review (docs only): `AUDIT/MT5_PHASE3_ALPHA_DISCOVERY_PLAN.md` — CANDIDATE still FALSE; do not run EXP-007/008/009
 
 ## Blocked
 
@@ -27,5 +28,5 @@
 
 1. Do **not** open Logistic or FINAL OOS.
 2. Optional: map existing 51 terminal deals to a journal (forensic only).
-3. EXP-003 only if a new **pre-registered** incremental test is justified — not because Linear beat Naive on a bull slice.
+3. EXP-003 stays REGISTERED_NOT_RUN. Phase 3 experiments are in `AUDIT/MT5_PHASE3_ALPHA_DISCOVERY_PLAN.md` and are **not run** until named PIT data exists.
 4. Keep `:9000` frozen. Keep Grok send off unless the owner sets `TRADEMIND_HOT_GROK_SEND=1` knowing it is not a Candidate.

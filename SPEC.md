@@ -1270,4 +1270,6 @@ Naive → Linear → Logistic → Ridge → LightGBM → 更复杂。仅当上�
 
 Read-only compilation for independent review: `AUDIT/MT5_STRATEGY_CASE_FILE.md`. Not a new experiment. Does not authorize trading.
 
+Phase 3 alpha-discovery **plan only** (2026-09-14): `AUDIT/MT5_PHASE3_ALPHA_DISCOVERY_PLAN.md`. Does not change C0–C13. Does not authorize EXP-007/008/009 runs or `order_send`.
+
 

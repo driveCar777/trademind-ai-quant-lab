@@ -2,7 +2,7 @@
 
 > **接力开发入口。** 任何 AI 接手项目，先读：`AGENTS.md` → `SPEC.md` → 本文件 → `TODO.md`。
 
-**最后更新：** 2026-09-14（只读 Case File：`AUDIT/MT5_STRATEGY_CASE_FILE.md`。Phase 2 地基 2026-09-13：经纪商真值 + 统一基线 + EXP-001 阶梯停。`:9000` 冻结。Grok 默认不发单。`candidate=false`。20%/月 UNSUPPORTED。DO NOT TRADE。）  
+**最后更新：** 2026-09-14（Phase 3 计划：`AUDIT/MT5_PHASE3_ALPHA_DISCOVERY_PLAN.md`。只读 Case File：`AUDIT/MT5_STRATEGY_CASE_FILE.md`。Phase 2 地基 2026-09-13：经纪商真值 + 统一基线 + EXP-001 阶梯停。`:9000` 冻结。Grok 默认不发单。`candidate=false`。20%/月 UNSUPPORTED。DO NOT TRADE。）  
 **更新人：** Cursor  
 **事实以 `docs/TRADEMIND_CONTEXT.md` 为准。** 下文旧勾选表不要当现状。
 

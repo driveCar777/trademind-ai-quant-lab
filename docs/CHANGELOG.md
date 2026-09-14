@@ -4,6 +4,10 @@
 
 ---
 
+## 2026-09-14 — MT5 Phase 3 alpha-discovery plan (docs only)
+
+- Entry review after Phase 2 lock: `AUDIT/MT5_ALPHA_DATA_AVAILABILITY.md`, `MT5_ALPHA_CANDIDATE_MAP.md`, `MT5_RETURN_TARGET_REALITY_CHECK.md`, `MT5_PHASE3_ALPHA_DISCOVERY_PLAN.md`. No retrain, no pull, no `order_send`. CANDIDATE remains FALSE. EXP-007/008/009 pre-register text only; EXP-003 still REGISTERED_NOT_RUN. 20%/month still UNSUPPORTED.
+
 ## 2026-09-14 — MT5 strategy Case File (read-only)
 
 - Compiled existing Phase 1/2 evidence into `AUDIT/MT5_STRATEGY_CASE_FILE.md` for independent external review. No retrain, no retune, no FINAL OOS, no `order_send`. Verdict unchanged: Candidate FALSE, DO NOT TRADE, 20%/month UNSUPPORTED.
