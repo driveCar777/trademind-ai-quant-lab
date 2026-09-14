@@ -1266,4 +1266,8 @@ FINAL OOS：本阶段锁 `2025-09-12` → 样本末。**禁止**用该窗选家�
 
 Naive → Linear → Logistic → Ridge → LightGBM → 更复杂。仅当上一层相对基线有 **OOS 增量** 才许下一层。Phase 2 首批最多到 Linear（EXP-001）。Monte Carlo / bootstrap 模块可脚手架；无 Candidate 时禁止把它写成证据。
 
+### 30.9 External Case File (2026-09-14)
+
+Read-only compilation for independent review: `AUDIT/MT5_STRATEGY_CASE_FILE.md`. Not a new experiment. Does not authorize trading.
+
 

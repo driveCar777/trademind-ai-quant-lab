@@ -12,7 +12,8 @@
 - [x] Wave C: GOLD D1 + H1 unified baselines (write-once READ)
 - [x] Wave D: EXP-001 Naive→Linear; increment vs Naive only; **lost to buy-hold**; next layer denied
 - [x] Wave E: TARGET / leverage / overlap / multiple-testing / FINAL_REPORT
-- [ ] Wave F: commit/push (this file updated before git)
+- [x] Wave F: `55920477` pushed to `origin/main`
+- [x] Case File: `AUDIT/MT5_STRATEGY_CASE_FILE.md` (2026-09-14, independent review; no new runs)
 
 ## Blocked
 
