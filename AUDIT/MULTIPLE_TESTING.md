@@ -14,7 +14,8 @@
 | Phase 2 D1 9 baselines | 9 | pre-registered, RESEARCH only |
 | Phase 2 H1 9 baselines | 9 | pre-registered, RESEARCH only |
 | EXP-001 Naive + Linear | 2 | Linear increment vs Naive only; lost to BH |
-| **Total charged** | **~75** | |
+| EXP-009-F1 `DFII10_D20_SIGN` | **1** | Charged **2026-09-14 before any EXP-009 score**. Contract `docs/research_engine/EXP009_PREREGISTRATION.md`. Not a discovery. |
+| **Total charged** | **~76** | |
 
 Thresholds, holds, TFs, and “which product to look at” were additional implicit trials in Phase 1. Phase 2 **did not** add a grid.
 
@@ -29,4 +30,4 @@ Thresholds, holds, TFs, and “which product to look at” were additional impli
 
 ## Rule
 
-New work must add to `m` **before** the run (EXP-001/002/003). Do not open FINAL OOS to “find” one survivor among 75.
+New work must add to `m` **before** the run. EXP-009-F1 is charged above **before** any book. EXP-007 / EXP-008 stay **uncharged** until their own freeze-to-run. Do not open FINAL OOS to “find” one survivor among 76.

@@ -15,6 +15,7 @@
 - [x] Wave F: `55920477` pushed to `origin/main`
 - [x] Case File: `AUDIT/MT5_STRATEGY_CASE_FILE.md` (2026-09-14, independent review; no new runs)
 - [x] Phase 3 entry review (docs only): `AUDIT/MT5_PHASE3_ALPHA_DISCOVERY_PLAN.md` — CANDIDATE still FALSE; do not run EXP-007/008/009
+- [x] EXP-009 pack acquired (`b068262f`). Pre-registration freeze: `docs/research_engine/EXP009_PREREGISTRATION.md` — **PREREGISTERED / READY_TO_RUN**. Do **not** run until a new instruction. `candidate=false`. EXP-008 still BLOCKED.
 
 ## Blocked
 

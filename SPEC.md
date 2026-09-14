@@ -1245,8 +1245,9 @@ Grok / RSI 人手 / V4 跟盘 **不能** 过这些门。
 | EXP-001 | GOLD D1 own-price 是否有稳定低频方向边 | GOLD D1 | 合同冻结后才跑。阶梯 Naive→Linear。无增量则停。 |
 | EXP-002 | GOLD H1 + 严格 PIT 是否有增量小时边 | GOLD H1 | 合同先写。ML 仅当 EXP-001 阶梯规则已遵守。 |
 | EXP-003 | 跨资产（DXY/利率/风险资产/油）是否比价内有增量 | GOLD + 外生 PIT | 合同先写。ML 同上。 |
+| EXP-009 | PIT DFII10 对 GOLD 是否有相对 BUY_HOLD 的增量净边 | GOLD D1 + frozen DFII10 | `docs/research_engine/EXP009_PREREGISTRATION.md`。`PREREGISTERED`。未跑。`candidate=false`。 |
 
-禁止发明 V1–V30 新号。旧 D1/H1 家族永久 `LEGACY_FROZEN`。
+禁止发明 V1–V30 新号。旧 D1/H1 家族永久 `LEGACY_FROZEN`。EXP-009 不得把 20%/月当选模目标。
 
 ### 30.7 统一基线与指标
 

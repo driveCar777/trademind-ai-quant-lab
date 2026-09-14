@@ -4,6 +4,10 @@
 
 ---
 
+## 2026-09-14 — EXP-009 DFII10 pre-registration (docs only)
+
+- Write-once `docs/research_engine/EXP009_PREREGISTRATION.md` + `AUDIT/MT5_EXP009_PREREGISTRATION_AUDIT.md`. Family `EXP-009-F1` charged in `AUDIT/MULTIPLE_TESTING.md` (m ~76) **before** any score. LONG/SHORT/FLAT; BUY_HOLD increment; FINAL OOS locked; 20%/month not an objective. No train, no book, no `order_send`. `candidate=false`. EXP-008 still BLOCKED.
+
 ## 2026-09-14 — MT5 Phase 3 alpha-discovery plan (docs only)
 
 - Entry review after Phase 2 lock: `AUDIT/MT5_ALPHA_DATA_AVAILABILITY.md`, `MT5_ALPHA_CANDIDATE_MAP.md`, `MT5_RETURN_TARGET_REALITY_CHECK.md`, `MT5_PHASE3_ALPHA_DISCOVERY_PLAN.md`. No retrain, no pull, no `order_send`. CANDIDATE remains FALSE. EXP-007/008/009 pre-register text only; EXP-003 still REGISTERED_NOT_RUN. 20%/month still UNSUPPORTED.
