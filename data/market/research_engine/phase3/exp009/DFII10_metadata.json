@@ -1,0 +1,21 @@
+{
+  "series_id": "DFII10",
+  "title": "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Quoted on an Investment Basis, Inflation-Indexed",
+  "units": "Percent",
+  "frequency": "Daily",
+  "seasonal_adjustment": "Not Seasonally Adjusted",
+  "observation_start": "2003-01-02",
+  "observation_end": "2026-09-10",
+  "last_updated": "2026-09-11 15:16:26-05",
+  "notes": "H.15 Statistical Release notes (https://www.federalreserve.gov/releases/h15/default.htm) and the Treasury Yield Curve Methodology (https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics/treasury-yield-curve-methodology).\n\nFor questions on the data, please contact the data source (https://www.federalreserve.gov/apps/ContactUs/feedback.aspx?refurl=/releases/h15/%). For questions on FRED functionality, please contact us here (https://fred.stlouisfed.org/contactus/).</p>",
+  "source": "FRED/ALFRED + Board of Governors H.15",
+  "source_url": "https://fred.stlouisfed.org/series/DFII10",
+  "alfred_url": "https://alfred.stlouisfed.org/series?seid=DFII10",
+  "h15_url": "https://www.federalreserve.gov/RELEASES/h15/",
+  "h15_clock_note": "Official H.15 HTML: posted Monday-Friday at 4:15pm. TZ token not printed; treated as America/New_York.",
+  "retrieval_timestamp_utc": "2026-09-14T05:04:23Z",
+  "n_alfred_raw_rows": 40078,
+  "n_frozen_rows": 5927,
+  "data_gaps": [],
+  "api_key_written": false
+}

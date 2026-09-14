@@ -1,180 +1,202 @@
 # EXP-009 Data Acquisition Report
 
 **Date:** 2026-09-14  
+**Retrieval:** `2026-09-14T05:04:23Z`  
 **Session:** acquire + PIT acceptance only. No train, no book, no EXP-007/008, no `order_send`.
 
 ```
 CANDIDATE: FALSE
 EXECUTION: NOT AUTHORIZED
 EXP-008: BLOCKED
-EXP-009: BLOCKED
+EXP-009: READY_FOR_PREREGISTRATION
 ```
 
----
-
-## Verdict
-
-**EXP-009 = BLOCKED**
-
-Cause: **`TRADEMIND_FRED_API_KEY` is not in the process environment and not in `.env`.**  
-No key was created, guessed, or written. No DFII10 observations were stored.  
-This is **not** a strategy failure and **not** a reason to substitute DGS10 / DXY / Bund / CPI.
-
-H.15 posting language was checked on the **live official HTML** this session (no FRED key required). That does **not** unlock a frozen DFII10 pack.
+This is **not** a tradable strategy. PASS here means the **data pack** may be hashed into a later pre-registration contract. It does **not** mean incremental alpha vs GOLD BUY-HOLD.
 
 ---
 
-## 1. Where would the data come from?
+## 1. Where did the data come from?
 
-| Intended source | Used this session? |
-|-----------------|--------------------|
-| FRED / ALFRED API `series_id=DFII10` with `realtime_start` / `realtime_end` | **No** — API without a key returned HTTP **400** (`https://api.stlouisfed.org/fred/series?series_id=DFII10`) |
-| FRED public CSV (today’s revised view) | **Not used** — would fail vintage / Test 10 |
-| Treasury real par XML | **Not pulled** — no DFII10 series to cross-check |
-| Substitutes (DGS10, DXY, Bund, CPI) | **Not used** |
+| Source | Role | Used |
+|--------|------|------|
+| FRED / ALFRED API `series_id=DFII10` | Values + `realtime_start` / `realtime_end` | **Yes** (key in local `.env` only) |
+| FRED current view | Frozen **value** (latest) | Yes, 6181 API rows; 5927 numeric |
+| ALFRED vintage windows | First-available timing | Yes, 11 chunks from **2005-10-12** (5089 vintage dates). Full-history one-shot rejected: FRED max **2000** vintages/request |
+| U.S. Treasury XML `daily_treasury_real_yield_curve` / `TC_10YEAR` | Cross-check, not a substitute | Yes |
+| DGS10 / DXY / Bund / CPI | Forbidden substitutes | **Not used** |
 
-On-disk search: **zero** `DFII10` files under `data/`.
+Pack: `data/market/research_engine/phase3/exp009/`
 
 ---
 
-## 2. Is it free?
+## 2. Free?
 
-Yes. A FRED API key is **free** after registration.  
-https://fred.stlouisfed.org/docs/api/api_key.html  
-
-Do not pay Bloomberg for DFII10.
+**Yes.** FRED API key is free. No Bloomberg. Key was **not** written into any pack file or git.
 
 ---
 
 ## 3. Coverage
 
-**Unknown / not acquired.** Spec target remains 2003 → present (RESEARCH lock uses 2018-12 → 2025-09-11).
+| | |
+|--|--|
+| Observation start | **2003-01-02** |
+| Observation end | **2026-09-10** |
+| Frozen numeric rows | **5927** |
+| FRED `.` / empty (holidays etc.) | **254** (excluded from freeze) |
+| Duplicates | **0** |
+| ALFRED archive start | **2005-10-12** (694 pre-history rows flagged `alfred_pre_history=1`) |
+
+RESEARCH lock (2018-12 → 2025-09-11) is inside this span.
 
 ---
 
-## 4. What DFII10 is
+## 4. What DFII10 actually is
 
-FRED series page title (HTML retrieved 2026-09-14, HTTP 200):
+FRED title:
 
-> Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Quoted on an Investment Basis, Inflation-Indexed (DFII10)
+> Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Quoted on an Investment Basis, Inflation-Indexed
 
-That is the **10-year TIPS / inflation-indexed constant-maturity** yield (H.15), **not** nominal DGS10.
+Units: **percent**, daily, not seasonally adjusted.  
+Source notes: H.15 + Treasury yield-curve methodology.  
+This is **10-year TIPS / inflation-indexed constant maturity (R-CMT)**, not nominal DGS10.
 
 ---
 
-## 5. Knowledge time (contract — not applied to rows)
+## 5. Knowledge time
 
-Until a vintage pack exists, knowledge time is a **rule**, not a computed column.
+**Not** `observation_date`.
 
-Per `AUDIT/MT5_EXP009_TIPS_DATA_SPEC.md`:
+Rule applied:
 
 ```text
-observation_date  = Treasury session the yield refers to
-publication_clock = H.15 post time on the publication calendar day
-knowledge_time_utc = max(publication_day 16:15 America/New_York in UTC,
-                         ALFRED realtime_start end-of-day UTC)
+h15 = 16:15 America/New_York on observation_date  (DST-correct UTC)
+if ALFRED first realtime_start is the 2005-10-12 archive backfill
+    and observation_date < 2005-10-12:
+        knowledge_time = h15          # flag alfred_pre_history=1
+else:
+        knowledge_time = max(h15, realtime_start 23:59:59Z)
 ```
 
-**Never** `observation_date == knowledge_time`.  
-GOLD D1 `timestamp_utc` is bar **OPEN** `T00:00:00Z`. Decision clock = `timestamp_utc(t+1)`.  
-Same-date join of DFII10 to that open is a **future leak** (spec §5). Not implemented this session because there is no series.
+Examples in the frozen CSV:
+
+| observation_date | value | knowledge_time_utc | meaning |
+|------------------|-------|--------------------|---------|
+| 2003-01-02 | 2.43 | `2003-01-02T21:15:00Z` | January EST; ALFRED did not exist yet |
+| 2018-12-12 | 1.08 | `2018-12-13T23:59:59Z` | FRED ingest **T+1** |
+| 2026-09-10 | 2.55 | `2026-09-11T23:59:59Z` | FRED `last_updated` 2026-09-11 15:16 CDT |
+
+**5231 / 5233** post-archive rows have `realtime_start` **after** `observation_date`. Conservative knowledge is usually **next UTC day 23:59:59Z**, not the H.15 print clock alone.
+
+GOLD D1 `timestamp_utc` is bar **OPEN** `T00:00:00Z`.  
+`decision_time = next bar open`.  
+**date == date at the OPEN is lookahead** (1937/1937 overlapping bars). The frozen file does **not** encode that join.
 
 ---
 
-## 6. H.15 clock — live check
+## 6. H.15 clock
 
-Retrieved `https://www.federalreserve.gov/RELEASES/h15/` on 2026-09-14 (HTTP 200).
+**VERIFIED** on live `https://www.federalreserve.gov/RELEASES/h15/` (this lab, 2026-09-14):
 
-Official note on that page:
+> The release is posted daily Monday through Friday at 4:15pm.
 
-> The release is posted daily Monday through Friday at 4:15pm.  
-> The release is not posted on holidays or in the event that the Board is closed.  
-> Release date: September 11, 2026
+Timezone letters `ET` are **not** on that sentence. Treated as **America/New_York** (Board in Washington).  
+DST check: 2003-01-02 H.15 → **21:15Z**; 2003-07-01 → **20:15Z**.
 
-The same page lists **Inflation indexed / 10-year** (values visible in the HTML).
-
-**DATA_GAP:** that note says **4:15pm** and does **not** print the letters `ET` / `Eastern` on the clock sentence. The Board is in Washington; this lab treats 16:15 as **America/New_York** unless a later official line says otherwise. Marked **VERIFIED** for “posted 4:15pm business days,” not for a timezone token on that sentence.
+FRED `last_updated` for this pull: **2026-09-11 15:16:26-05** (ingest, not the official clock).
 
 ---
 
-## 7. ALFRED vintage
+## 7. Is ALFRED vintage meaningful?
 
-**Not tested.** No API key ⇒ no vintage dates, no `realtime_start` table.  
-Do **not** write “DFII10 has no revisions.” Vintage meaning is **UNKNOWN** until a keyed pull.
+**LIMITED — not INVALID, not CPI-like.**
+
+| Fact | Number |
+|------|--------|
+| Vintage dates | 5089 (2005-10-12 → 2026-09-11) |
+| ALFRED rows across windows | 40078 |
+| Observation dates with multiple realtime windows | 5738 |
+| Observation dates whose **value** changed across vintages | **0** |
+| As-of 2015-12-31 / 2018-12-31 / 2020-12-31 / 2022-12-30 vs current | **0** value diffs |
+
+So vintage is **availability / ingest timing**, not a restatement history like PAYEMS.  
+It is still required: `realtime_start` is usually **T+1**, and that delays `knowledge_time_utc`.  
+Do **not** write “DFII10 has no revisions so observation_date = knowledge_time.”
+
+Pre-2005-10-12: ALFRED backfilled the whole history on archive start. Those 694 rows use H.15-only knowledge and are flagged.
 
 ---
 
 ## 8. Treasury cross-check
 
-**Not run.** No DFII10 values on disk.
+**PASS** as a value check. Not a second series.
+
+| | |
+|--|--|
+| Treasury rows parsed | 5678 (`TC_10YEAR`) |
+| Overlap | **5677** |
+| \|DFII10 − Treasury\| > 0.5 bp | **0** |
+| Only FRED | 250 (mostly **2017** — Treasury XML year fetch `URLError`; DATA_GAP, not a rewrite) |
+| Only Treasury | 1 (`2026-09-11`, after FRED observation_end 2026-09-10) |
+
+Values were **not** edited to force a match.
 
 ---
 
 ## 9. Future leak
 
-**No package ⇒ no join ⇒ no leak found in a feature file.**  
-Also **not certified clean**. The leak test only applies after rows exist.
+**NOT FOUND in the frozen feature columns.**  
+`knowledge_time_utc` is never midnight of `observation_date`.  
+**FOUND if a later book joins on calendar date to GOLD open** — 1937/1937 overlap bars would leak. Any EXP-009 contract must use `knowledge_time_utc <= decision_time`.
 
 ---
 
-## 10. Acceptance tests (this session)
-
-Mapped to the user’s TEST-01…10 and to `AUDIT/MT5_PIT_DATA_ACCEPTANCE_TEST.md`.
+## 10. Acceptance tests
 
 | ID | Topic | Result |
 |----|--------|--------|
-| TEST-01 fields | schema / FRED observations | **FAIL** — no file |
-| TEST-02 continuity | business-day gaps | **NOT RUN** |
-| TEST-03 duplicates | unique observation dates | **NOT RUN** |
-| TEST-04 missing | `.` / null yields | **NOT RUN** |
-| TEST-05 timezone | EST/EDT 16:15 → UTC | **NOT RUN** on rows; H.15 clock text checked |
-| TEST-06 knowledge time | ≠ observation_date | **NOT RUN** |
-| TEST-07 vintage | ALFRED 2015/2018/2020/2022 | **NOT RUN** |
-| TEST-08 Treasury | value mismatch table | **NOT RUN** |
-| TEST-09 hash | sha256 of frozen bytes | **N/A** — no frozen series |
-| TEST-10 future info | date==date join | **NOT RUN** |
+| TEST-01 | fields complete | **PASS** |
+| TEST-02 | continuity (no gap > 5d) | **PASS** |
+| TEST-03 | duplicates | **PASS** (0) |
+| TEST-04 | missing | **PASS** (254 FRED `.` dropped) |
+| TEST-05 | timezone DST | **PASS** |
+| TEST-06 | knowledge ≠ observation midnight | **PASS** |
+| TEST-07 | vintage semantics | **PASS** (label LIMITED) |
+| TEST-08 | Treasury | **PASS** (0 mismatches; 2017 XML gap noted) |
+| TEST-09 | hash repeat | **PASS** |
+| TEST-10 | future-info rule | **PASS** (same-date OPEN join documented as leak; file does not use it) |
 
-Critical failures (no observations) ⇒ **DATA = BLOCKED**. Data were **not** edited to force a pass.
+No critical fail. Data were not edited to pass.
 
 ---
 
 ## 11. Dataset SHA256
 
-**None.** No `DFII10_raw` file.
-
-Marker only: `data/market/research_engine/phase3/exp009/EXP009_ACQUIRE_STATUS.json`  
-(`acceptance_status=BLOCKED`, `block_reason=TRADEMIND_FRED_API_KEY_MISSING`).
+**`790b6d725a0d170b7e701f85880bbb57515a9033634ec02d0d9633fcf7fe7b1f`**  
+File: `DFII10_raw.csv`
 
 ---
 
-## 12. Git / secrets
+## 12. Current status
 
-| Check | Result |
-|-------|--------|
-| `.gitignore` | `.env` and `.env.*` ignored; `!.env.example` kept |
-| `git check-ignore .env` | ignored |
-| `.env` keys | **no** `TRADEMIND_FRED_API_KEY` |
-| `.env.example` | commented `# TRADEMIND_FRED_API_KEY=` added (empty, not a secret) |
-| Real key in git | **no** |
+**READY_FOR_PREREGISTRATION**
+
+Not Candidate. Not authorized to trade. Do **not** train, search lookbacks, or run EXP-009 books in this session.
+
+Next allowed step (later): write `docs/research_engine/EXP009_*` contract with this `hash_sha256`, increment `AUDIT/MULTIPLE_TESTING.md` **before** any engine, success = incremental net vs GOLD BUY-HOLD.
 
 ---
 
-## 13. Current status
+## Files
 
-**BLOCKED** — waiting for the owner to set a free FRED key.  
-After a keyed pull and tests, the only upgrade allowed is **READY_FOR_PREREGISTRATION**.  
-Not Candidate. Not tradable. Do not start EXP-009 research books.
-
----
-
-## USER ACTION REQUIRED
-
-1. Open https://fred.stlouisfed.org/docs/api/api_key.html and request a **free** FRED API key.  
-2. Edit local `D:\AGXXAIVER-4-WINDOWS-1-STOCK\.env` (not git, not chat):
-
-```text
-TRADEMIND_FRED_API_KEY=<paste key here>
+```
+data/market/research_engine/phase3/exp009/DFII10_raw.csv
+data/market/research_engine/phase3/exp009/DFII10_metadata.json
+data/market/research_engine/phase3/exp009/DFII10_vintage_audit.json
+data/market/research_engine/phase3/exp009/DFII10_treasury_crosscheck.csv
+data/market/research_engine/phase3/exp009/DFII10_treasury_crosscheck.json
+data/market/research_engine/phase3/exp009/EXP009_DATA_MANIFEST.json
+data/market/research_engine/phase3/exp009/EXP009_ACQUIRE_STATUS.json
+data/market/research_engine/phase3/exp009/acquire_dfii10.py
 ```
 
-3. Reply in this project: “FRED key is in `.env`, continue EXP-009 acquire.”  
-4. Do **not** paste the key into GitHub, Slack, or the chat.
+`git check-ignore .env` remains ignored. No key in the pack.

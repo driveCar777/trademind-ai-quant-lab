@@ -1,0 +1,43 @@
+{
+  "n_treasury_rows": 5678,
+  "n_overlap": 5677,
+  "n_only_fred": 250,
+  "n_only_treasury": 1,
+  "n_mismatch_gt_0.5bp": 0,
+  "mismatch_examples": [],
+  "only_fred_head": [
+    "2017-01-03",
+    "2017-01-04",
+    "2017-01-05",
+    "2017-01-06",
+    "2017-01-09",
+    "2017-01-10",
+    "2017-01-11",
+    "2017-01-12",
+    "2017-01-13",
+    "2017-01-17",
+    "2017-01-18",
+    "2017-01-19",
+    "2017-01-20",
+    "2017-01-23",
+    "2017-01-24"
+  ],
+  "only_treasury_head": [
+    "2026-09-11"
+  ],
+  "treasury_http_errors": [
+    {
+      "year": 2017,
+      "error": "URLError"
+    }
+  ],
+  "treasury_xml_field_names": [
+    "DailyTreasuryRealYieldCurveRateDataId",
+    "NEW_DATE",
+    "TC_10YEAR",
+    "TC_20YEAR",
+    "TC_30YEAR",
+    "TC_5YEAR",
+    "TC_7YEAR"
+  ]
+}

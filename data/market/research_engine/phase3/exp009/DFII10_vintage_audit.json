@@ -1,0 +1,47 @@
+{
+  "series_id": "DFII10",
+  "n_all_alfred_rows": 40078,
+  "n_vintage_dates": 5089,
+  "vintage_date_min": "2005-10-12",
+  "vintage_date_max": "2026-09-11",
+  "n_distinct_observation_dates_with_value": 5927,
+  "n_obs_with_multiple_vintages": 5738,
+  "n_value_changed_across_vintages": 0,
+  "samples": [
+    {
+      "year": "2015",
+      "requested_asof": "2015-12-31",
+      "vintage_date_used": "2015-12-31",
+      "n_hist_values": 3253,
+      "n_value_diff_vs_current": 0,
+      "diff_examples": []
+    },
+    {
+      "year": "2018",
+      "requested_asof": "2018-12-31",
+      "vintage_date_used": "2018-12-31",
+      "n_hist_values": 4002,
+      "n_value_diff_vs_current": 0,
+      "diff_examples": []
+    },
+    {
+      "year": "2020",
+      "requested_asof": "2020-12-31",
+      "vintage_date_used": "2020-12-31",
+      "n_hist_values": 4503,
+      "n_value_diff_vs_current": 0,
+      "diff_examples": []
+    },
+    {
+      "year": "2022",
+      "requested_asof": "2022-12-31",
+      "vintage_date_used": "2022-12-30",
+      "n_hist_values": 5003,
+      "n_value_diff_vs_current": 0,
+      "diff_examples": []
+    }
+  ],
+  "semantics": "LIMITED: multiple realtime windows exist but values match. Treat vintage as availability timing, not a revision history like PAYEMS.",
+  "change_examples": [],
+  "label": "LIMITED"
+}

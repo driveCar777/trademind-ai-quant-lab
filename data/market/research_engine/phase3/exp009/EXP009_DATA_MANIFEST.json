@@ -1,0 +1,92 @@
+{
+  "dataset_name": "EXP009_DFII10_PIT",
+  "series_id": "DFII10",
+  "source": "FRED/ALFRED",
+  "source_url": "https://fred.stlouisfed.org/series/DFII10",
+  "retrieval_timestamp_utc": "2026-09-14T05:04:23Z",
+  "coverage_start": "2003-01-02",
+  "coverage_end": "2026-09-10",
+  "row_count": 5927,
+  "missing_count": 254,
+  "duplicate_count": 0,
+  "timezone": "America/New_York -> UTC",
+  "knowledge_time_rule": "max(H.15 16:15 America/New_York on observation_date, realtime_start 23:59:59Z)",
+  "vintage_rule": "ALFRED realtime_start/end retained; frozen value = latest vintage; first_value retained",
+  "hash_sha256": "790b6d725a0d170b7e701f85880bbb57515a9033634ec02d0d9633fcf7fe7b1f",
+  "hash_file": "DFII10_raw.csv",
+  "acceptance_status": "READY_FOR_PREREGISTRATION",
+  "vintage_label": "LIMITED",
+  "tests": [
+    {
+      "id": "TEST-01",
+      "name": "fields_complete",
+      "status": "PASS",
+      "critical": true,
+      "detail": "missing_cols=[] empty_rows=0"
+    },
+    {
+      "id": "TEST-02",
+      "name": "time_continuity",
+      "status": "PASS",
+      "critical": false,
+      "detail": "start=2003-01-02 end=2026-09-10 n=5927 gaps_gt_5d=0 examples=[]"
+    },
+    {
+      "id": "TEST-03",
+      "name": "duplicate",
+      "status": "PASS",
+      "critical": false,
+      "detail": "duplicate_count=0"
+    },
+    {
+      "id": "TEST-04",
+      "name": "missing_values",
+      "status": "PASS",
+      "critical": false,
+      "detail": "current_dot_or_empty=254 frozen_rows=5927 ('.' excluded from freeze)"
+    },
+    {
+      "id": "TEST-05",
+      "name": "timezone_normalization",
+      "status": "PASS",
+      "critical": true,
+      "detail": "[{\"jan_obs\": \"2003-01-02\", \"h15_utc\": \"2003-01-02T21:15:00+00:00\", \"expect_hour\": 21}, {\"jul_obs\": \"2003-07-01\", \"h15_utc\": \"2003-07-01T20:15:00+00:00\", \"expect_hour\": 20}]"
+    },
+    {
+      "id": "TEST-06",
+      "name": "knowledge_time",
+      "status": "PASS",
+      "critical": true,
+      "detail": "knowledge_eq_midnight=0 knowledge_before_h15=0"
+    },
+    {
+      "id": "TEST-07",
+      "name": "vintage_semantics",
+      "status": "PASS",
+      "critical": false,
+      "detail": "LIMITED: multiple realtime windows exist but values match. Treat vintage as availability timing, not a revision history like PAYEMS. label=LIMITED"
+    },
+    {
+      "id": "TEST-08",
+      "name": "treasury_crosscheck",
+      "status": "PASS",
+      "critical": false,
+      "detail": "both=5677 only_fred=250 only_treas=1 mismatches_gt_0.5bp=0 (method noise allowed) fields=['DailyTreasuryRealYieldCurveRateDataId', 'NEW_DATE', 'TC_10YEAR', 'TC_20YEAR', 'TC_30YEAR', 'TC_5YEAR', 'TC_7YEAR']"
+    },
+    {
+      "id": "TEST-09",
+      "name": "hash_reproducible",
+      "status": "PASS",
+      "critical": false,
+      "detail": "790b6d725a0d170b7e701f85880bbb57515a9033634ec02d0d9633fcf7fe7b1f"
+    },
+    {
+      "id": "TEST-10",
+      "name": "future_information",
+      "status": "PASS",
+      "critical": true,
+      "detail": "{\"gold_path_exists\": true, \"wrong_join_lookahead_count\": 1937, \"correct_join_ok\": null, \"checked_overlap_bars\": 1937, \"same_date_join_is_lookahead\": true, \"note\": \"GOLD D1 timestamp_utc is bar OPEN 00:00Z. DFII10 knowledge is 16:15 ET (20:15Z/21:15Z) same calendar day, so date==date at the OPEN is lookahead.\"}"
+    }
+  ],
+  "api_key_in_files": false
+}

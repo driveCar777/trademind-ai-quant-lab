@@ -1,9 +1,9 @@
 {
   "dataset_name": "EXP009_DFII10_PIT",
   "series_id": "DFII10",
-  "acceptance_status": "BLOCKED",
-  "block_reason": "TRADEMIND_FRED_API_KEY_MISSING",
-  "frozen_package": false,
-  "retrieval_attempted_utc": "2026-09-14T04:10:00Z",
-  "note": "No DFII10 observations written. Do not treat this file as a research pack."
+  "acceptance_status": "READY_FOR_PREREGISTRATION",
+  "frozen_package": true,
+  "retrieval_timestamp_utc": "2026-09-14T05:04:23Z",
+  "hash_sha256": "790b6d725a0d170b7e701f85880bbb57515a9033634ec02d0d9633fcf7fe7b1f",
+  "block_reason": null
 }
