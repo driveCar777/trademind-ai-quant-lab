@@ -144,3 +144,6 @@ data/market/research_engine/*/SCORES_*.npy
 data/market/research_engine/*/*_CURVE_*.npy
 # V30 US share CFD D1 (492 csv, MT5 export) — manifest/specs tracked, bars local-only
 data/market/immutable/tm-mt5-USSHARES-D1-*/*.csv
+
+# Cloud-agent dev virtualenvs
+.venv-*/

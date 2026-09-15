@@ -1,0 +1,2 @@
+# TradeMind A-share desktop GUI (Windows x86_64, Python 3.10+)
+PySide6==6.11.2
