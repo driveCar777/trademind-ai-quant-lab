@@ -1,7 +1,9 @@
 # A_SHORT_LLM_PIPELINE_SPEC.md
 
 > LLM 管线设计（§34–38）。复用锚点：`master/api/app/service/paper_fusion.py`（两层 Grok：匿名价格过滤 + 联网理解、`enforce` 硬截断、`priced_in` 门、三时钟、`prompt_hash`、审计块）、`cursor_cloud.py`（Cursor Cloud Agents 传输）、`ai-gateway/*`（本地 Qwen / DeepSeek）。
-> **红线：LLM 是信息理解 + operational gate，不是 Alpha、不是可回测特征、不产生年化承诺。**
+> **定位（Phase 1.1 修订，Decision A-001）：LLM = Information Intelligence + Decision Support。**
+> 不是 Alpha-only、不是 Trading Authority、不是可回测历史特征、不产生年化承诺；但**可**参与实时 shadow/paper 的信息理解与融合决策支持。最终 Paper 由 Local/Portfolio Engine 控制，LLM 无交易权。
+> 历史回测 vs 实时纸面的边界见 [A_SHORT_DATA_FLOW_V2.md](A_SHORT_DATA_FLOW_V2.md) §4。
 
 ---
 
@@ -98,8 +100,8 @@ Fusion 输出至少 `Quant Confidence` 与 `Information Confidence` 分列，再
 
 ---
 
-## 9. 治理红线（必须 owner 批准，详见 GAPS_AND_RISKS）
+## 9. 治理（Phase 1.1 已裁决，见 A_SHORT_GOVERNANCE_DECISIONS.md）
 
-1. **Decision 017 禁云端 LLM API 作推理引擎**，而 SPEC §14 + fusion desk 实际用 Cursor/DeepSeek → **未消解冲突**；A-Short 依赖云 LLM，须一次新的 Decision/Amendment。
-2. **News/Policy 是 `DATA_BLOCKED` 研究特征**；联网 LLM「结构上不可回测」（前视 + 检索时点不可复现 + 权重内前视）。故 **A-Short 的 LLM 产出不得进 Candidate 统计闸、不得当 alpha 回测**，只作 operational gate（SPEC §29.12：Grok 允许角色 = Research/Hypothesis/News/Regime/Feature 助手；禁 LLM→BUY→order）。
+1. **Decision A-001 已解决 017 冲突**：允许云 LLM 作 Research/Information Intelligence/Shadow/Paper Recommendation Support；硬禁 `LLM→real order`、交易权、silent autonomy；强制 logging/evidence/budget/model_version/no_real_order。
+2. **历史回测 vs 实时纸面已分层**（Decision A-001 + DATA_FLOW_V2 §4）：无历史 PIT news/policy corpus 前，LLM 输出**不得**当历史回测特征（结构上不可回测）；但**可**参与实时 shadow/paper 的信息理解与融合决策支持。要回测新闻 alpha 须先建 timestamped evidence corpus（published/captured/knowledge_time/source/content_hash）。
 3. 红队当前只是**文档仪式**（`red_team/contrarian` 代码=0）；A-Short 需把红队落成代码化角色 + 采纳/拒绝 ledger（模板：`PAPER_HOT_DESK_V3_GROK_CONSULT.md`）。

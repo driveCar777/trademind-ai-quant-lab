@@ -88,9 +88,11 @@ Theme/Capital 关系用 Heatmap + 分层图（Theme↕Industry↕Leader↕Stock�
 
 ---
 
-## 7. 通知（§20、§51）
+## 7. 通知（§20、§51；Phase 1.1 修订：GUI 不是发送方）
 
-- 渠道：**仅 Windows 通知**（`QSystemTrayIcon.showMessage()`，PySide6 原生，零新依赖）。不做 TG/微信/邮件（除非后续明确）。
+> **修正**：通知发送归**后台 Notification Service**（Decision A-004），**不依赖 GUI**——`QSystemTrayIcon.showMessage()` 需 Qt 事件循环，弃用作后台通知。GUI 只**读通知历史**（`NOTIFICATIONS.json`）。无 GUI 发送方案（winotify / PowerShell WinRT）、用户会话约束、dedupe/quiet-hours/错过重放，详见 **[A_SHORT_NOTIFICATION_SPEC.md](A_SHORT_NOTIFICATION_SPEC.md)**。GUI 关闭时 Windows 通知**仍工作**。
+
+- 渠道：**仅 Windows 通知**（后台直发）。不做 TG/微信/邮件（除非后续明确）。
 - 09:00 若有推荐：极简 toast
   ```
   TradeMind A-Short
@@ -126,6 +128,6 @@ Theme/Capital 关系用 Heatmap + 分层图（Theme↕Industry↕Leader↕Stock�
 
 ---
 
-## 10. 与治理文本的张力（须 owner 批准）
+## 10. 治理（Phase 1.1 已批准）
 
-AGENTS.md V1.1 禁令列有「前端禁 Qt/WebSocket」。本 GUI 用 Qt，理由同 hot desk 已超越 V1.1；但这是显式张力，实现前需一次 Decision（见 [GAPS_AND_RISKS](A_SHORT_GAPS_AND_RISKS.md)）。GUI 全程**只读、不发单、独立进程**，不改 :9000。
+AGENTS.md V1.1「禁 Qt 前端」已由 **Decision A-002** 条件批准：PySide6 桌面 GUI 允许，条件 = 独立进程 / 只读+控制台 / 不发单 / 无策略逻辑 / 无数据层 / 后台 localhost:9002 / 关 GUI 不停后台。见 [A_SHORT_GOVERNANCE_DECISIONS.md](A_SHORT_GOVERNANCE_DECISIONS.md)。

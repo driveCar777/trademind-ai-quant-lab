@@ -6,6 +6,16 @@
 
 ---
 
+## 0. 三层边界与执行时点（Phase 1.1 新增，§2、§3）
+
+```
+Prediction (Quant, 不看钱)  →  Recommendation (Alpha, immutable, 不看钱)  →  Paper Execution (Portfolio, 看钱/手数/T+1)
+   P(T+1>+5%)=0.61                A-grade                                      BUY 100 @ 09:30 开盘价
+```
+- 三层不混算（详见 [Runtime v2](A_SHORT_RUNTIME_ARCHITECTURE_V2.md) §1）。账本记账发生在 **Paper Execution** 层。
+- **Recommendation Timestamp（≈08:58）≠ Paper Execution Timestamp（09:30 开盘）**；不得用不存在的 09:00 成交价（详见 [执行时序](A_SHORT_PAPER_EXECUTION_TIMELINE.md)）。
+- 成本一律按 `cost.py` 逐笔真实计（见 [成本可行性](A_SHORT_COST_FEASIBILITY.md)），不用固定「0.27%」近似。
+
 ## 1. 账户模型（§13）
 
 | 参数 | 语义 | 约束 |
@@ -55,10 +65,10 @@ T+1 可 SELL A       (最早)
 | 佣金 | `max(¥5, 额×0.00025)` +过户 0.00001 | `top_n_book._fee`（¥5 最低），`cost.py` |
 | 印花税（卖） | 0.0005（2023-08-28 起，之前 0.0010） | `cost.py::stamp_duty_sell`（`STAMP_CUT`） |
 | 滑点 | 0.0010（可 stress） | `cost.py::SLIPPAGE`,`stress_mult` |
-| 往返 | buy+sell+印花 ≈ 0.27%+0.05% | `cost.py::round_trip_cost` |
+| 往返 | 逐笔按 notional 计（见下） | `cost.py::round_trip_cost` |
 
-> **成本天花板警示（写在最前）**：T+1..T+5 换手 ≈ V26.8 的 21×，每往返 ≈0.27%+印花+¥5 最低。
-> **必须在建模前先算「换手×成本」**，否则重演 `MT5_STOCK_CFD_COST_CEILING`（V30 因此判死）。详见风险文档。
+> **成本按订单 notional 逐笔计，不用固定近似（Phase 1.1 修订）。** 往返成本从 ¥2,000/名的 **0.55%（费用）/0.75%（含滑点）** 到 ≥¥20,000/名的 **0.10%/0.30%**（¥20,000 是最低佣金临界点）。完整表格、账户 2k/5k/20k/100k/1m 分带、T+1/T+3/T+5 年化换手成本、以及「需多少 gross alpha 才净正」的答案，见 **[A_SHORT_COST_FEASIBILITY.md](A_SHORT_COST_FEASIBILITY.md)**。
+> **必须在建模前先过成本 breakeven 闸**，否则重演 `MT5_STOCK_CFD_COST_CEILING`（V30 因此判死）。
 
 ---
 

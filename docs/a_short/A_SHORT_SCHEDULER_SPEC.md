@@ -77,9 +77,11 @@ RAN / SETTLE_ONLY / SKIPPED_NOT_TRADING_DAY / SKIPPED_ALREADY_DONE
 
 ---
 
-## 6. 09:00 通知（§20）
+## 6. 09:00 通知（§20；Phase 1.1 修订）
 
-- 09:00 任务命中 → 后台判「今日是否有推荐」：有 → 发极简 toast（`QSystemTrayIcon.showMessage`）；0 强候选 → 可不发交易提醒，但 GUI 显示 `NO_EDGE`+原因。
+> **通知发送由后台 Notification Service 直发，不依赖 GUI**（Decision A-004）。**关键约束**：Windows WinRT toast 必须在**交互式用户会话**弹出——因此 **notify 步骤（09:00 / pre-open / exec）由用户级任务计划触发**（`ONLOGON` + 定时），数据/分析可在服务里跑，但发 toast 走用户会话端点。方案（winotify / PowerShell WinRT）、dedupe、错过重放见 [A_SHORT_NOTIFICATION_SPEC.md](A_SHORT_NOTIFICATION_SPEC.md)。
+
+- 09:00 任务命中 → 后台判「今日是否有推荐」：有 → 发极简 toast；0 强候选（真 NO_EDGE）→ 可不发交易提醒，但 GUI 显示 `NO_EDGE`+原因；**系统失败 → 不得伪装成 NO_EDGE**，发失败提醒并以失败态呈现（§18）。
 - **通知幂等**：一天只发一次；服务 09:04 才重启也只补发一次（`ASHORT_SESSIONS.json` 记 `notify:sent`）。
 - **错过窗口重放**：机器休眠/关机错过 09:00 → 下次唤醒/GUI 起来时检测「今日未通知且有推荐」→ 补一条「今晨有推荐」，不重复轰炸（dedupe + quiet-hours）。
 

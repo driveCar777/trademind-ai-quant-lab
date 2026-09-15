@@ -10,14 +10,14 @@
 ### R1（最高）— 成本天花板：短周期换手 × A 股成本
 - **坏消息**：T+1..T+5 换手 ≈ V26.8（21 日）的 **21×**。每往返 ≈ 佣金 0.025%×2 + 过户 + 滑点 0.1%×2 + 卖印花 0.05% ≈ **0.27%**，再叠 ¥5 最低佣金（小资金致命）。5 日一换 ≈ 每月 5–6% 摩擦。
 - **同型先例**：`MT5_STOCK_CFD_COST_CEILING` 一条把 V30 判死（LS 一期成本 ≈1.9%/20d，任何信息层过不了）。V33 涨停模型 predictive t=60.9 但外壳 −88%、¥1M −66% → `NOT_TRADABLE_AT_20K`。
-- **必须先做**：在任何建模之前，写一页「换手×成本可行性」算术（复用 `cost.py`/`top_n_book._fee`），给出「毛 alpha 需 > X% 才可能净正」的下限。**过不了这条就不建模。**
-- 缓解：拉长到 T+3/T+5、限制换手、只在高机会日交易（Opportunity-driven，NO TRADE 合法）、避开 ¥5 最低佣金主导的过小单。
+- **Phase 1.1 已交付**：[A_SHORT_COST_FEASIBILITY.md](A_SHORT_COST_FEASIBILITY.md) 用 `cost.py`/`_fee` 逐笔算出真实往返成本（¥2k/名 0.55–0.75% → ≥¥20k/名 0.10–0.30%）、账户 2k/5k/20k/100k/1m 分带、T+1/T+3/T+5 年化换手成本、以及「需多少 gross alpha 才净正」的答案。**结论：T+1 小账户判死、大账户几乎不可行；优先 T+5，其次 T+3。过不了 breakeven 就不建模。**
+- 缓解：优先 T+5/T+3、限制换手、只在高机会日交易（Opportunity-driven，NO TRADE 合法）、避开 ¥5 最低佣金主导的过小单。
 
-### R2 — 治理冲突：三处与现有法律文本硬冲突，须 owner 一次性裁决
-1. **云 LLM 禁令**：`docs/DECISIONS.md` Decision 017「不使用任何云端大模型 API 作为部署推理引擎」，而 SPEC §14 + `paper_fusion.py`/`cursor_cloud.py` 实际在用 Cursor/DeepSeek。**未修订**。A-Short 依赖云 LLM → 需新 Decision/Amendment。
-2. **前端/调度禁令**：AGENTS.md V1.1 禁「Qt/WebSocket 前端」「Cron/APScheduler/Timer 调度」。桌面 GUI 用 Qt、后台用任务计划——虽与 hot desk 既有做法一致，但仍是显式张力，需批准「桌面 GUI + :9002 服务」。
-3. **题材/涨停 scope ban**：`V38_EVOLUTION_MISSION_DESIGN.md`「不做龙虎榜追涨/题材/涨停类短线（V33）」，V33 已 FALSIFIED。A-Short 若触碰「下一热点/龙头/涨停」**必须正面回应此 ban 与 −88% 判决**，作为**新预注册合同**而非重开 V33，否则违反 AGENTS.md。
-- **结论**：这三条不裁决，实现阶段不能启动。已在此显式列出，不默默绕过。
+### R2 — 治理冲突：三处（Phase 1.1 已裁决，见 A_SHORT_GOVERNANCE_DECISIONS.md）
+1. **云 LLM 禁令（Decision 017）** → **已解决**：Decision A-001 允许云 LLM 作 Research/Information Intelligence/Shadow/Paper Recommendation Support，硬禁 `LLM→real order`、交易权、silent autonomy。
+2. **前端/调度禁令（AGENTS.md V1.1）** → **已解决**：Decision A-002 条件批准 PySide6 桌面 GUI（独立进程/只读/不发单/关闭不停后台）；调度沿用 SPEC §29.11a 已认可的「任务计划+curl 幂等端点」，不加调度库。
+3. **题材/涨停 scope ban（V33）** → **已解决**：Decision A-003——V33 负结果是 prior evidence，不封杀独立假设；A-Short 研究涨停/龙头/主题**须新合同**（新 dataset ID/预注册/窗口/OOS/成本/hold/执行假设），禁重开 V33，须独立证明增量 alpha。
+- **结论**：三条均为 PROPOSED，本 PR 合并即 RATIFIED；Phase 2 在三条 RATIFIED + R1 成本闸通过后启动。
 
 ### R3 — LLM 输出结构上不可回测 → A-Short 无法按仓库自身闸门产出 Candidate
 - **坏消息**：仓库明确「联网 = 前视 + 检索时点不可复现 + 权重内前视」，新闻/政策 = `DATA_BLOCKED` 研究特征。因此 A-Short 的「LLM 理解/主题/新闻」**不能**进 FDR/Level-1/OOS 统计闸，也**不能**声称回测年化。
