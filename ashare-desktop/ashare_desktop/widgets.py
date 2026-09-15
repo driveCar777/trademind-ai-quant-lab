@@ -118,17 +118,19 @@ class KpiCard(Card):
         lay.addWidget(self._title)
         lay.addWidget(self._num)
         lay.addStretch(1)
-        self._anim = QPropertyAnimation(self, b"value", self)
-        self._anim.setDuration(700)
-        self._anim.setEasingCurve(QEasingCurve.OutCubic)
+        # NOTE: distinct name from Card._anim (shadow blurRadius); otherwise the
+        # base-class hover animation would drive this count-up property instead.
+        self._val_anim = QPropertyAnimation(self, b"value", self)
+        self._val_anim.setDuration(700)
+        self._val_anim.setEasingCurve(QEasingCurve.OutCubic)
 
     def set_target(self, value: float, decimals: int = 0, prefix: str = ""):
         self._decimals = decimals
         self._prefix = prefix
-        self._anim.stop()
-        self._anim.setStartValue(0.0)
-        self._anim.setEndValue(float(value))
-        self._anim.start()
+        self._val_anim.stop()
+        self._val_anim.setStartValue(0.0)
+        self._val_anim.setEndValue(float(value))
+        self._val_anim.start()
 
     def get_value(self):
         return self._value
