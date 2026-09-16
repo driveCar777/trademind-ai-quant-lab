@@ -23,7 +23,8 @@ import numpy as np
 from research_engine.cn_a_short import (CONTRACT_ID, DERIVED_DATASET_ID, HORIZONS, MIN_ELIGIBLE,
                                         OOS_WINDOW, RESEARCH_WINDOW, SEED, TOP_KS, UPSTREAM_DATASET_HASH,
                                         UPSTREAM_DATASET_ID, VALIDATION_WINDOW)
-from research_engine.cn_a_short.baseline import evaluate, momentum_scores, panel_coverage, simple_eligible
+from research_engine.cn_a_short.baseline import (evaluate, momentum_scores, panel_coverage,
+                                                 simple_eligible, top_k_period)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT = os.path.join(ROOT, "data", "market", "research_engine", "cn_a_short")
@@ -123,14 +124,51 @@ def _emit_feasibility_artifacts():
                            "rows": acct_rows}))
 
 
-def run(window=RESEARCH_WINDOW, scores_path=None, equity=100_000.0, boards="ALL", unlock_oos=False):
+def _forensic_config(window, equity, boards, scores_path):
+    return {"experiment": "baseline_momentum", "window": list(window), "equity": equity, "boards": boards,
+            "model": "20D_MOMENTUM_BASELINE" if not scores_path else os.path.basename(scores_path),
+            "horizons": list(HORIZONS), "top_ks": list(TOP_KS), "min_eligible": MIN_ELIGIBLE,
+            "boards_default": boards, "exclude_st": False, "min_hist": 20}
+
+
+def _forensic_safe(experiment, config, status, **kw):
+    """Run the forensic bundle without ever breaking the baseline (PASS/DEGRADED)."""
+    try:
+        from research_engine.cn_a_short.forensic import run_forensic
+        return run_forensic(experiment, config, status, OUT, **kw)
+    except Exception as exc:
+        return {"forensic_status": "DEGRADED", "error": str(exc)}
+
+
+def _sample_forensic_inputs(pack, elig, signal_idx, score_fn, equity, boards, n_days=5, hold=1, k=10):
+    """Read-only observability samples (SIGNALS + lifecycle) — does NOT affect the evaluate result."""
+    from research_engine.cn_a_short.forensic.signals import signal_snapshot
+    signals, periods = [], []
+    days = signal_idx[:: max(1, len(signal_idx) // max(1, n_days))][:n_days]
+    for t in days:
+        scores_t = score_fn(t) if callable(score_fn) else score_fn[t]
+        if scores_t is None:
+            continue
+        signals.append(signal_snapshot(pack, scores_t, elig[t], t, k, boards=boards))
+        per = top_k_period(pack, scores_t, elig[t], t, hold, k, equity, boards=boards)
+        if per is not None:
+            per["equity_ref"] = equity
+            periods.append(per)
+    return signals, periods
+
+
+def run(window=RESEARCH_WINDOW, scores_path=None, equity=100_000.0, boards="ALL", unlock_oos=False,
+        forensic=True):
     _emit_feasibility_artifacts()
+    config = _forensic_config(window, equity, boards, scores_path)
     if not _pack_available():
         msg = _blocked_message("FROZEN_PRICE_PACK_NOT_MATERIALIZED")
         _write_artifact("PHASE2A2_RESULTS.json", msg)
         _write_artifact("PHASE2A2_DIAGNOSTICS.json", _meta({
             "status": "DATA_BLOCKED", "reason": "FROZEN_PRICE_PACK_NOT_MATERIALIZED",
             "note": "entry/exit/carry/stuck diagnostics require the materialized frozen pack (Steps 8-10)."}))
+        if forensic:
+            msg["forensic"] = _forensic_safe("baseline_momentum", config, "DATA_BLOCKED")
         print(json.dumps(msg, indent=2))
         return msg
     from research_engine.cn_a_share_alpha.pack import load_pack
@@ -141,6 +179,9 @@ def run(window=RESEARCH_WINDOW, scores_path=None, equity=100_000.0, boards="ALL"
     if cov["degenerate"]:
         msg = _blocked_message("DEGENERATE_PANEL_NO_PRICES", detail=cov)
         _write_artifact("PHASE2A2_RESULTS.json", msg)
+        if forensic:
+            msg["forensic"] = _forensic_safe("baseline_momentum", config, "DATA_BLOCKED",
+                                             pack=pack, coverage=cov)
         print(json.dumps(msg, indent=2))
         return msg
     dates = pack["dates"]
@@ -163,6 +204,12 @@ def run(window=RESEARCH_WINDOW, scores_path=None, equity=100_000.0, boards="ALL"
                                             boards=boards, min_eligible=MIN_ELIGIBLE)
     _write_artifact("PHASE2A2_RESULTS.json", result)
     print("WROTE", os.path.join(OUT, "PHASE2A2_RESULTS.json"), "model=", model_used)
+    if forensic:
+        signals, periods = _sample_forensic_inputs(pack, elig, signal_idx, score_fn, equity, boards)
+        result["forensic"] = _forensic_safe("baseline_momentum", config, "RESEARCH_COMPLETE",
+                                             pack=pack, elig=elig, asof_index=i1, coverage=cov,
+                                             evaluate_result=result["horizons"], signals=signals,
+                                             period_samples=periods)
     return result
 
 
@@ -172,5 +219,10 @@ if __name__ == "__main__":
     ap.add_argument("--equity", type=float, default=100_000.0)
     ap.add_argument("--boards", default="ALL")
     ap.add_argument("--unlock-oos", action="store_true")
+    ap.add_argument("--forensic", dest="forensic", action="store_true", default=True,
+                    help="write forensic runs/<RUN_ID>/ bundle (default on)")
+    ap.add_argument("--no-forensic", dest="forensic", action="store_false",
+                    help="disable the forensic bundle")
     args = ap.parse_args()
-    run(scores_path=args.scores, equity=args.equity, boards=args.boards, unlock_oos=args.unlock_oos)
+    run(scores_path=args.scores, equity=args.equity, boards=args.boards, unlock_oos=args.unlock_oos,
+        forensic=args.forensic)
