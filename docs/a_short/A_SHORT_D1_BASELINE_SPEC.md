@@ -5,6 +5,14 @@
 
 ---
 
+## 0. Specified ≠ Implemented（Phase 2A.1 澄清，§F）
+| 组件 | 状态 |
+|------|------|
+| 评估引擎（forward label / T+1 fills / exit-recovery / Top-K vs EW / cost） | **IMPLEMENTED**（`baseline.py` + 32 tests） |
+| 打分特征 | **仅 20 日动量 baseline 已实现**（`momentum_scores`）；[合同 §4](A_SHORT_D1_RESEARCH_CONTRACT.md) 的特征族仅 **specified**，未逐个编码 |
+| News / Policy / Theme / 龙虎榜 / LLM | **未实现，也未 specified 为本阶段** |
+> 本阶段**不声称** D1 特征引擎或任何信息层已完成。引擎就绪 ≠ 特征就绪 ≠ alpha 存在。
+
 ## 1. 两层分离（§21，硬）
 ```
 PREDICTION LAYER              STRATEGY / CAPITAL LAYER
@@ -13,6 +21,8 @@ rank / prob                   ¥5 min-fee + stamp + slippage
 = MEAN_FORWARD_RETURN         = STRATEGY_RETURN (chained non-overlap)
 ```
 永不把 predictive return 叫 CAGR；net 用 STRATEGY_RETURN。函数：`forward_label` / `top_k_period`(net) / `ew_period`(bench) / `evaluate`(聚合)。
+
+**Capital-path 执行（Phase 2A.1，§C=Option 2）**：entry(open t+1) 可执行即建仓；planned exit(open t+1+hold) 不可卖 → 向后 carry 到第一个可卖日（`EXIT_CARRY_MAX=10`），找不到 → `STUCK`（末收盘标记并 flag）。**entry 成交的仓位永不被 exit 失败抹成「未买入」**（区别于 `ROUND_TRIP_EXECUTABILITY`；`n_round_trip_clean` 另列两腿当日都成的子集）。affordability 为 fee-aware（买入现金含 ¥5 最低佣金 ≤ alloc）。详见 [EXECUTION_FORENSIC](A_SHORT_PHASE2A_EXECUTION_FORENSIC.md)。
 
 ## 2. 第一批核心问题（§19）
 Q1 T+1 有无可重复短周期 alpha？ Q2 T+2？ Q3 T+3？ Q4 T+5？ Q5 成本后还有无？ Q6 是否独立（vs ML1<0.90、vs momentum baseline）？ Q7 Top-K 是否明显优于全市场？

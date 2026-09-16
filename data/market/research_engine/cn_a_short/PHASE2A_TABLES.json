@@ -1731,7 +1731,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.25,
+      "cash_idle_frac": 0.2417,
       "per_name_notional": 500,
       "rt_cost_pct_total": 0.02252
     },
@@ -1981,7 +1981,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0961,
       "per_name_notional": 1500,
       "rt_cost_pct_total": 0.009186666666666666
     },
@@ -1991,7 +1991,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.4945,
       "per_name_notional": 500,
       "rt_cost_pct_total": 0.02252
     },
@@ -2031,7 +2031,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.4,
+      "cash_idle_frac": 0.3964,
       "per_name_notional": 1000,
       "rt_cost_pct_total": 0.01252
     },
@@ -2231,7 +2231,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0976,
       "per_name_notional": 3000,
       "rt_cost_pct_total": 0.0058533333333333345
     },
@@ -2241,7 +2241,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.25,
+      "cash_idle_frac": 0.2467,
       "per_name_notional": 1500,
       "rt_cost_pct_total": 0.009186666666666666
     },
@@ -2251,7 +2251,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.4945,
       "per_name_notional": 500,
       "rt_cost_pct_total": 0.02252
     },
@@ -2281,7 +2281,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0976,
       "per_name_notional": 3000,
       "rt_cost_pct_total": 0.0058533333333333345
     },
@@ -2291,7 +2291,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.497,
       "per_name_notional": 1000,
       "rt_cost_pct_total": 0.01252
     },
@@ -2331,7 +2331,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.4,
+      "cash_idle_frac": 0.3979,
       "per_name_notional": 2000,
       "rt_cost_pct_total": 0.00752
     },
@@ -2481,7 +2481,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.025,
+      "cash_idle_frac": 0.0233,
       "per_name_notional": 6500,
       "rt_cost_pct_total": 0.0040584615384615386
     },
@@ -2491,7 +2491,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.125,
+      "cash_idle_frac": 0.1229,
       "per_name_notional": 3500,
       "rt_cost_pct_total": 0.005377142857142857
     },
@@ -2501,7 +2501,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.25,
+      "cash_idle_frac": 0.2467,
       "per_name_notional": 1500,
       "rt_cost_pct_total": 0.009186666666666666
     },
@@ -2511,7 +2511,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.4945,
       "per_name_notional": 500,
       "rt_cost_pct_total": 0.02252
     },
@@ -2531,7 +2531,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0983,
       "per_name_notional": 6000,
       "rt_cost_pct_total": 0.004186666666666667
     },
@@ -2541,7 +2541,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.25,
+      "cash_idle_frac": 0.248,
       "per_name_notional": 3000,
       "rt_cost_pct_total": 0.0058533333333333345
     },
@@ -2551,7 +2551,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.497,
       "per_name_notional": 1000,
       "rt_cost_pct_total": 0.01252
     },
@@ -2581,7 +2581,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0983,
       "per_name_notional": 6000,
       "rt_cost_pct_total": 0.004186666666666667
     },
@@ -2591,7 +2591,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.4982,
       "per_name_notional": 2000,
       "rt_cost_pct_total": 0.00752
     },
@@ -2631,7 +2631,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.25,
+      "cash_idle_frac": 0.2485,
       "per_name_notional": 5000,
       "rt_cost_pct_total": 0.004520000000000001
     },
@@ -2731,7 +2731,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0087,
       "per_name_notional": 16500,
       "rt_cost_pct_total": 0.003126060606060606
     },
@@ -2741,7 +2741,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.05,
+      "cash_idle_frac": 0.0485,
       "per_name_notional": 9500,
       "rt_cost_pct_total": 0.003572631578947368
     },
@@ -2751,7 +2751,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0981,
       "per_name_notional": 4500,
       "rt_cost_pct_total": 0.004742222222222222
     },
@@ -2761,7 +2761,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1972,
       "per_name_notional": 2000,
       "rt_cost_pct_total": 0.00752
     },
@@ -2771,7 +2771,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.4945,
       "per_name_notional": 500,
       "rt_cost_pct_total": 0.02252
     },
@@ -2781,7 +2781,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.04,
+      "cash_idle_frac": 0.0387,
       "per_name_notional": 16000,
       "rt_cost_pct_total": 0.0031450000000000002
     },
@@ -2791,7 +2791,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0986,
       "per_name_notional": 9000,
       "rt_cost_pct_total": 0.003631111111111111
     },
@@ -2801,7 +2801,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1982,
       "per_name_notional": 4000,
       "rt_cost_pct_total": 0.005019999999999999
     },
@@ -2811,7 +2811,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1972,
       "per_name_notional": 2000,
       "rt_cost_pct_total": 0.00752
     },
@@ -2831,7 +2831,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.04,
+      "cash_idle_frac": 0.0387,
       "per_name_notional": 16000,
       "rt_cost_pct_total": 0.0031450000000000002
     },
@@ -2841,7 +2841,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1987,
       "per_name_notional": 8000,
       "rt_cost_pct_total": 0.00377
     },
@@ -2851,7 +2851,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1982,
       "per_name_notional": 4000,
       "rt_cost_pct_total": 0.005019999999999999
     },
@@ -2861,7 +2861,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1972,
       "per_name_notional": 2000,
       "rt_cost_pct_total": 0.00752
     },
@@ -2881,7 +2881,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0988,
       "per_name_notional": 15000,
       "rt_cost_pct_total": 0.0031866666666666666
     },
@@ -2891,7 +2891,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.499,
       "per_name_notional": 5000,
       "rt_cost_pct_total": 0.004520000000000001
     },
@@ -2931,7 +2931,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.4,
+      "cash_idle_frac": 0.3991,
       "per_name_notional": 10000,
       "rt_cost_pct_total": 0.00352
     },
@@ -2981,7 +2981,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 33000,
       "rt_cost_pct_total": 0.0030199999999999997
     },
@@ -2991,7 +2991,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.025,
+      "cash_idle_frac": 0.0238,
       "per_name_notional": 19500,
       "rt_cost_pct_total": 0.003032820512820513
     },
@@ -3001,7 +3001,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.05,
+      "cash_idle_frac": 0.0485,
       "per_name_notional": 9500,
       "rt_cost_pct_total": 0.003572631578947368
     },
@@ -3011,7 +3011,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0981,
       "per_name_notional": 4500,
       "rt_cost_pct_total": 0.004742222222222222
     },
@@ -3021,7 +3021,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.25,
+      "cash_idle_frac": 0.2467,
       "per_name_notional": 1500,
       "rt_cost_pct_total": 0.009186666666666666
     },
@@ -3031,7 +3031,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 33000,
       "rt_cost_pct_total": 0.0030199999999999997
     },
@@ -3041,7 +3041,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.05,
+      "cash_idle_frac": 0.0488,
       "per_name_notional": 19000,
       "rt_cost_pct_total": 0.0030463157894736843
     },
@@ -3051,7 +3051,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0986,
       "per_name_notional": 9000,
       "rt_cost_pct_total": 0.003631111111111111
     },
@@ -3061,7 +3061,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1982,
       "per_name_notional": 4000,
       "rt_cost_pct_total": 0.005019999999999999
     },
@@ -3071,7 +3071,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.497,
       "per_name_notional": 1000,
       "rt_cost_pct_total": 0.01252
     },
@@ -3081,7 +3081,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.04,
+      "cash_idle_frac": 0.0388,
       "per_name_notional": 32000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3091,7 +3091,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0988,
       "per_name_notional": 18000,
       "rt_cost_pct_total": 0.0030755555555555553
     },
@@ -3101,7 +3101,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1987,
       "per_name_notional": 8000,
       "rt_cost_pct_total": 0.00377
     },
@@ -3111,7 +3111,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1982,
       "per_name_notional": 4000,
       "rt_cost_pct_total": 0.005019999999999999
     },
@@ -3131,7 +3131,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0989,
       "per_name_notional": 30000,
       "rt_cost_pct_total": 0.0030199999999999997
     },
@@ -3141,7 +3141,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.25,
+      "cash_idle_frac": 0.249,
       "per_name_notional": 15000,
       "rt_cost_pct_total": 0.0031866666666666666
     },
@@ -3151,7 +3151,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.499,
       "per_name_notional": 5000,
       "rt_cost_pct_total": 0.004520000000000001
     },
@@ -3181,7 +3181,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0989,
       "per_name_notional": 30000,
       "rt_cost_pct_total": 0.0030199999999999997
     },
@@ -3191,7 +3191,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.4992,
       "per_name_notional": 10000,
       "rt_cost_pct_total": 0.00352
     },
@@ -3231,8 +3231,8 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.001,
-      "per_name_notional": 166500,
+      "cash_idle_frac": 0.0027,
+      "per_name_notional": 166000,
       "rt_cost_pct_total": 0.00302
     },
     {
@@ -3241,7 +3241,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.005,
+      "cash_idle_frac": 0.0037,
       "per_name_notional": 99500,
       "rt_cost_pct_total": 0.00302
     },
@@ -3251,7 +3251,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 49500,
       "rt_cost_pct_total": 0.00302
     },
@@ -3261,7 +3261,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.02,
+      "cash_idle_frac": 0.0188,
       "per_name_notional": 24500,
       "rt_cost_pct_total": 0.0030200000000000005
     },
@@ -3271,7 +3271,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.05,
+      "cash_idle_frac": 0.0485,
       "per_name_notional": 9500,
       "rt_cost_pct_total": 0.003572631578947368
     },
@@ -3281,7 +3281,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.004,
+      "cash_idle_frac": 0.0027,
       "per_name_notional": 166000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3291,7 +3291,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 99000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3301,7 +3301,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.02,
+      "cash_idle_frac": 0.0188,
       "per_name_notional": 49000,
       "rt_cost_pct_total": 0.0030200000000000005
     },
@@ -3311,7 +3311,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.04,
+      "cash_idle_frac": 0.0388,
       "per_name_notional": 24000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3321,7 +3321,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0986,
       "per_name_notional": 9000,
       "rt_cost_pct_total": 0.003631111111111111
     },
@@ -3331,7 +3331,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.004,
+      "cash_idle_frac": 0.0027,
       "per_name_notional": 166000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3341,7 +3341,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.02,
+      "cash_idle_frac": 0.0188,
       "per_name_notional": 98000,
       "rt_cost_pct_total": 0.0030200000000000005
     },
@@ -3351,7 +3351,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.04,
+      "cash_idle_frac": 0.0388,
       "per_name_notional": 48000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3361,7 +3361,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.04,
+      "cash_idle_frac": 0.0388,
       "per_name_notional": 24000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3371,7 +3371,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.1987,
       "per_name_notional": 8000,
       "rt_cost_pct_total": 0.00377
     },
@@ -3381,7 +3381,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 165000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3391,7 +3391,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.05,
+      "cash_idle_frac": 0.0488,
       "per_name_notional": 95000,
       "rt_cost_pct_total": 0.0030199999999999997
     },
@@ -3401,7 +3401,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0989,
       "per_name_notional": 45000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3411,7 +3411,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.199,
       "per_name_notional": 20000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3421,7 +3421,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.499,
       "per_name_notional": 5000,
       "rt_cost_pct_total": 0.004520000000000001
     },
@@ -3431,7 +3431,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.04,
+      "cash_idle_frac": 0.0388,
       "per_name_notional": 160000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3441,7 +3441,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0989,
       "per_name_notional": 90000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3451,7 +3451,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.199,
       "per_name_notional": 40000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3461,7 +3461,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.199,
       "per_name_notional": 20000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3481,8 +3481,8 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.001,
-      "per_name_notional": 333000,
+      "cash_idle_frac": 0.0012,
+      "per_name_notional": 332500,
       "rt_cost_pct_total": 0.00302
     },
     {
@@ -3491,7 +3491,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.0025,
+      "cash_idle_frac": 0.0012,
       "per_name_notional": 199500,
       "rt_cost_pct_total": 0.00302
     },
@@ -3501,7 +3501,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.005,
+      "cash_idle_frac": 0.0037,
       "per_name_notional": 99500,
       "rt_cost_pct_total": 0.00302
     },
@@ -3511,7 +3511,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 49500,
       "rt_cost_pct_total": 0.00302
     },
@@ -3521,7 +3521,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.025,
+      "cash_idle_frac": 0.0238,
       "per_name_notional": 19500,
       "rt_cost_pct_total": 0.003032820512820513
     },
@@ -3531,8 +3531,8 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.001,
-      "per_name_notional": 333000,
+      "cash_idle_frac": 0.0027,
+      "per_name_notional": 332000,
       "rt_cost_pct_total": 0.00302
     },
     {
@@ -3541,7 +3541,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.005,
+      "cash_idle_frac": 0.0037,
       "per_name_notional": 199000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3551,7 +3551,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 99000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3561,7 +3561,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.02,
+      "cash_idle_frac": 0.0188,
       "per_name_notional": 49000,
       "rt_cost_pct_total": 0.0030200000000000005
     },
@@ -3571,7 +3571,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.05,
+      "cash_idle_frac": 0.0488,
       "per_name_notional": 19000,
       "rt_cost_pct_total": 0.0030463157894736843
     },
@@ -3581,7 +3581,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.004,
+      "cash_idle_frac": 0.0027,
       "per_name_notional": 332000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3591,7 +3591,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 198000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3601,7 +3601,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.02,
+      "cash_idle_frac": 0.0188,
       "per_name_notional": 98000,
       "rt_cost_pct_total": 0.0030200000000000005
     },
@@ -3611,7 +3611,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.04,
+      "cash_idle_frac": 0.0388,
       "per_name_notional": 48000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3621,7 +3621,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0988,
       "per_name_notional": 18000,
       "rt_cost_pct_total": 0.0030755555555555553
     },
@@ -3631,7 +3631,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 330000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3641,7 +3641,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.025,
+      "cash_idle_frac": 0.0238,
       "per_name_notional": 195000,
       "rt_cost_pct_total": 0.0030199999999999997
     },
@@ -3651,7 +3651,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.05,
+      "cash_idle_frac": 0.0488,
       "per_name_notional": 95000,
       "rt_cost_pct_total": 0.0030199999999999997
     },
@@ -3661,7 +3661,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0989,
       "per_name_notional": 45000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3671,7 +3671,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.25,
+      "cash_idle_frac": 0.249,
       "per_name_notional": 15000,
       "rt_cost_pct_total": 0.0031866666666666666
     },
@@ -3681,7 +3681,7 @@
       "k": 3,
       "feasible": true,
       "n_names": 3,
-      "cash_idle_frac": 0.01,
+      "cash_idle_frac": 0.0088,
       "per_name_notional": 330000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3691,7 +3691,7 @@
       "k": 5,
       "feasible": true,
       "n_names": 5,
-      "cash_idle_frac": 0.05,
+      "cash_idle_frac": 0.0488,
       "per_name_notional": 190000,
       "rt_cost_pct_total": 0.0030199999999999997
     },
@@ -3701,7 +3701,7 @@
       "k": 10,
       "feasible": true,
       "n_names": 10,
-      "cash_idle_frac": 0.1,
+      "cash_idle_frac": 0.0989,
       "per_name_notional": 90000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3711,7 +3711,7 @@
       "k": 20,
       "feasible": true,
       "n_names": 20,
-      "cash_idle_frac": 0.2,
+      "cash_idle_frac": 0.199,
       "per_name_notional": 40000,
       "rt_cost_pct_total": 0.00302
     },
@@ -3721,7 +3721,7 @@
       "k": 50,
       "feasible": true,
       "n_names": 50,
-      "cash_idle_frac": 0.5,
+      "cash_idle_frac": 0.4992,
       "per_name_notional": 10000,
       "rt_cost_pct_total": 0.00352
     }

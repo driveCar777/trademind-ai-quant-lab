@@ -12,6 +12,8 @@
 4. **滑点 = UNKNOWN**（无逐笔成交数据）。所有 net 结论对滑点极敏感（每 0.05%/侧 = 往返 +0.1%）；实测前不得当定论。
 5. **过拟合风险预警**：baseline 将并行比较 4 horizon × 5 Top-K = 20 个主假设；若出现异常高结果，默认怀疑 leakage/幸存者/universe bias/重复检验，先加审计再谈 Paper（§36/§37）。
 6. **不能拿去 Paper 的东西**：目前**没有任何** A-Short alpha 结果存在，故**没有任何东西可进 Paper**。cost/account 表是可行性边界，不是策略。
+7. **specified ≠ implemented（§F）**：已实现 = 评估引擎 + **仅 20 日动量 baseline** 打分；[合同 §4](A_SHORT_D1_RESEARCH_CONTRACT.md) 的完整特征族仅**登记未编码**；News/Policy/Theme/LLM **未实现**。不得把「特征族已列」读成「特征引擎已完成」。
+8. **数字纪律（§E）**：文中「T+1 年化摩擦 73%」= **friction envelope**（假设 242 往返/年、100% 单边换手、P≥¥20k、滑点 0.1%/侧**假设**），**不是**策略实际「年化亏损 73%」。滑点 = **ASSUMPTION/UNKNOWN**，非观测事实。
 
 ---
 
@@ -61,6 +63,7 @@ Next Research Step:   在 :9000 主机 `pack_panel()` 物化冻结面板 → `ru
 | 新 D1 研究合同 | ✅ | [D1_RESEARCH_CONTRACT](A_SHORT_D1_RESEARCH_CONTRACT.md) + `cn_a_short/__init__.py` |
 | Baseline 引擎（T+1..T+5, Top-K, net, turnover, cost） | ✅ 代码+25 tests | `cn_a_short/baseline.py`；`pytest` 全绿 |
 | 经验 alpha（Q1–Q7） | ⛔ DATA_BLOCKED | `run_baseline` 输出 `DATA_BLOCKED` + 复现步骤 |
+| 执行模型正确性（Phase 2A.1） | ✅ 已复审+修正 | [EXECUTION_FORENSIC](A_SHORT_PHASE2A_EXECUTION_FORENSIC.md)：affordability fee-aware + entry/exit capital-path exit-recovery；32 tests |
 
 ## 复现命令 / hashes
 ```

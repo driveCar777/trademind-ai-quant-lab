@@ -29,7 +29,8 @@
 ## 4. Hold / Label（§17 第一批仅数值）
 - horizons：**T+1 / T+2 / T+3 / T+5**（hold ∈ {1,2,3,5}），四者并行，不预判优劣。
 - label：`open(t+1+hold)/open(t+1) − 1`（open-to-open forward return）= **MEAN_FORWARD_RETURN 空间**，非 CAGR（§21）。
-- 第一批特征只用可 PIT 数值：short momentum / short reversal / overnight gap / intraday-vs-overnight（若数据允许）/ volume·amount acceleration / turnover anomaly / range position / volatility / market breadth / limit-up state / recent limit-up count。**不含** LLM/News/Policy/Theme/龙虎榜/付费 L2（§17、§29）。
+- 第一批特征族**已登记（specified）**，只用可 PIT 数值：short momentum / short reversal / overnight gap / intraday-vs-overnight（若数据允许）/ volume·amount acceleration / turnover anomaly / range position / volatility / market breadth / limit-up state / recent limit-up count。**不含** LLM/News/Policy/Theme/龙虎榜/付费 L2（§17、§29）。
+- **specified ≠ implemented（Phase 2A.1 澄清）**：当前**已实现代码 = 仅 20 日动量 baseline**（`baseline.py::momentum_scores`），用于打通评估引擎与做占位基准。**上面这份特征族尚未逐个实现**，Phase 2A **不声称** D1 特征引擎已完成，更**不声称** News/Policy/Theme/LLM 已完成。逐个特征的实现属于后续（须仍在本合同窗口/多重性内）。
 
 ## 5. Cost model（§14，新合同独立成本）
 - 逐笔按 notional：commission(min ¥5)/transfer/stamp(sell)/slippage(**假设**分档 0–0.5%/侧)。

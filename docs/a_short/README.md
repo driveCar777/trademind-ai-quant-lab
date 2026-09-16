@@ -50,6 +50,7 @@ A-Short = TradeMind 的**短周期（T+1/T+2/T+3/T+5）机会发现与纸面推�
 | 19 | [A_SHORT_D1_RESEARCH_CONTRACT.md](A_SHORT_D1_RESEARCH_CONTRACT.md) | 全新独立合同 `A_SHORT_D1_V1`（血缘/窗/多重性/复现） | §12–§16, §18, §35 |
 | 20 | [A_SHORT_D1_BASELINE_SPEC.md](A_SHORT_D1_BASELINE_SPEC.md) | 两层分离 + Top-K 评估 + NO TRADE 诊断 + 审计套件 | §17, §19–§27, §36–§38 |
 | 21 | [A_SHORT_PHASE2A_RESULTS.md](A_SHORT_PHASE2A_RESULTS.md) | BAD NEWS + §42 主表 + §43 STATUS（alpha=DATA_BLOCKED，已实算成本/账户） | §41–§43 |
+| 22 | [A_SHORT_PHASE2A_EXECUTION_FORENSIC.md](A_SHORT_PHASE2A_EXECUTION_FORENSIC.md) | Phase 2A.1 执行模型复审：affordability fee-aware + entry/exit capital-path exit-recovery + 新不变量 | 执行正确性 |
 
 > 代码：`research_engine/cn_a_short/`（cost/account/feasibility/baseline/report/run + 25 tests，全绿）。本环境经验 alpha `DATA_BLOCKED`（无价格面板），成本/账户已实算。
 
