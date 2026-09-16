@@ -58,6 +58,7 @@ A-Short = TradeMind 的**短周期（T+1/T+2/T+3/T+5）机会发现与纸面推�
 |---|------|------|
 | 23 | [A_SHORT_PHASE2A2_DATA_FORENSIC.md](A_SHORT_PHASE2A2_DATA_FORENSIC.md) | 数据血缘取证：合同一致性✅、物化尝试失败(raw 面板缺失)、参考层齐全、退化守卫修复 |
 | 24 | [A_SHORT_PHASE2A2_EMPIRICAL_RESULTS.md](A_SHORT_PHASE2A2_EMPIRICAL_RESULTS.md) | Executive `DATA_BLOCKED`；20 主比较/Q1–Q7 全 BLOCKED；成本/账户算术已出；BAD NEWS |
+| 25 | [A_SHORT_PHASE2A3_CLOUD_DATA_FORENSIC.md](A_SHORT_PHASE2A3_CLOUD_DATA_FORENSIC.md) | Cloud 数据可用性 + Universe 取证：frozen 字节 `REGISTERED_BUT_BYTES_UNAVAILABLE`（never in git/LFS/release）；「垃圾股」= BASELINE_DESIGN_CHARACTERISTIC（ALL universe + 20D momentum，无质量过滤）；DATA_BLOCKED / REQUIRES_OWNER_DECISION |
 
 > 代码：新增 `baseline.panel_coverage` 退化守卫 + `run_baseline` lineage 元数据/artifacts（`PHASE2A2_{RESULTS,DIAGNOSTICS,COST_SENSITIVITY,ACCOUNT_GRID}.json`）。empirical alpha 需在 :9000 物化 frozen 面板后才能跑。
 
