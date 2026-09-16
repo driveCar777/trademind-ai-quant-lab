@@ -1,0 +1,1627 @@
+{
+  "contract_id": "A_SHORT_D1_V1",
+  "contract_hash": "b6d0ace627d7a236fc065915c235c81057d552938ac005a940b9b022c6f527fb",
+  "upstream_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "upstream_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "derived_dataset_id": "tm-ashort-D1BASE-V1",
+  "derived_dataset_hash": null,
+  "code_commit": "5d8ffd7f7067b75a9e0d0adedb00705dc93fb811",
+  "generated_at_utc": "2026-09-16T09:41:07.517164Z",
+  "seed": 20260916,
+  "research_window": [
+    "2014-01-01",
+    "2021-12-31"
+  ],
+  "validation_window": [
+    "2022-01-01",
+    "2023-12-31"
+  ],
+  "oos_window": [
+    "2024-01-01",
+    null
+  ],
+  "kind": "ACCOUNT_GRID",
+  "note": "executability arithmetic; pack-independent; NO alpha",
+  "rows": [
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.24174249250000027,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 5,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 10,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 20,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 3,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 5,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 10,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 20,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.09609099100000021,
+      "per_name_notional": 1500,
+      "rt_cost_pct_total": 0.009186666666666666
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.4944949950000001,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.3963939940000002,
+      "per_name_notional": 1000,
+      "rt_cost_pct_total": 0.01252
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 5,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 10,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 20,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 3,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 5,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 10,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 20,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.09759099100000021,
+      "per_name_notional": 3000,
+      "rt_cost_pct_total": 0.0058533333333333345
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.2467424925000001,
+      "per_name_notional": 1500,
+      "rt_cost_pct_total": 0.009186666666666666
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.4944949950000001,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 20,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.09759099100000021,
+      "per_name_notional": 3000,
+      "rt_cost_pct_total": 0.0058533333333333345
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.4969949950000001,
+      "per_name_notional": 1000,
+      "rt_cost_pct_total": 0.01252
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.3978939940000002,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 5,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 10,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 20,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 3,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 5,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.02326524025000017,
+      "per_name_notional": 6500,
+      "rt_cost_pct_total": 0.0040584615384615386
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.12286624125000016,
+      "per_name_notional": 3500,
+      "rt_cost_pct_total": 0.005377142857142857
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.2467424925000001,
+      "per_name_notional": 1500,
+      "rt_cost_pct_total": 0.009186666666666666
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.4944949950000001,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.09834099100000021,
+      "per_name_notional": 6000,
+      "rt_cost_pct_total": 0.004186666666666667
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.2479924925000001,
+      "per_name_notional": 3000,
+      "rt_cost_pct_total": 0.0058533333333333345
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.4969949950000001,
+      "per_name_notional": 1000,
+      "rt_cost_pct_total": 0.01252
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 20,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.09834099100000021,
+      "per_name_notional": 6000,
+      "rt_cost_pct_total": 0.004186666666666667
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.49824499500000013,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.24849249250000002,
+      "per_name_notional": 5000,
+      "rt_cost_pct_total": 0.004520000000000001
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 5,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 3,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.00870009010000038,
+      "per_name_notional": 16500,
+      "rt_cost_pct_total": 0.003126060606060606
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.04854049050000016,
+      "per_name_notional": 9500,
+      "rt_cost_pct_total": 0.003572631578947368
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.09809099100000021,
+      "per_name_notional": 4500,
+      "rt_cost_pct_total": 0.004742222222222222
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.19719199200000018,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.03873039040000032,
+      "per_name_notional": 16000,
+      "rt_cost_pct_total": 0.0031450000000000002
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.09859099100000021,
+      "per_name_notional": 9000,
+      "rt_cost_pct_total": 0.003631111111111111
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.19819199200000018,
+      "per_name_notional": 4000,
+      "rt_cost_pct_total": 0.005019999999999999
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.19719199200000018,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.03873039040000032,
+      "per_name_notional": 16000,
+      "rt_cost_pct_total": 0.0031450000000000002
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.19869199200000018,
+      "per_name_notional": 8000,
+      "rt_cost_pct_total": 0.00377
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.19819199200000018,
+      "per_name_notional": 4000,
+      "rt_cost_pct_total": 0.005019999999999999
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.19719199200000018,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.09879099100000006,
+      "per_name_notional": 15000,
+      "rt_cost_pct_total": 0.0031866666666666666
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.49899499500000005,
+      "per_name_notional": 5000,
+      "rt_cost_pct_total": 0.004520000000000001
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.399093994,
+      "per_name_notional": 10000,
+      "rt_cost_pct_total": 0.00352
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.00875234260000012,
+      "per_name_notional": 33000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.023765240250000208,
+      "per_name_notional": 19500,
+      "rt_cost_pct_total": 0.003032820512820513
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.04854049050000016,
+      "per_name_notional": 9500,
+      "rt_cost_pct_total": 0.003572631578947368
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.09809099100000021,
+      "per_name_notional": 4500,
+      "rt_cost_pct_total": 0.004742222222222222
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.00875234260000012,
+      "per_name_notional": 33000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.04879049050000016,
+      "per_name_notional": 19000,
+      "rt_cost_pct_total": 0.0030463157894736843
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.09859099100000021,
+      "per_name_notional": 9000,
+      "rt_cost_pct_total": 0.003631111111111111
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.19819199200000018,
+      "per_name_notional": 4000,
+      "rt_cost_pct_total": 0.005019999999999999
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.03879015040000028,
+      "per_name_notional": 32000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.09884099100000021,
+      "per_name_notional": 18000,
+      "rt_cost_pct_total": 0.0030755555555555553
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.19869199200000018,
+      "per_name_notional": 8000,
+      "rt_cost_pct_total": 0.00377
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.19819199200000018,
+      "per_name_notional": 4000,
+      "rt_cost_pct_total": 0.005019999999999999
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.09886576600000001,
+      "per_name_notional": 30000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.24899249250000008,
+      "per_name_notional": 15000,
+      "rt_cost_pct_total": 0.0031866666666666666
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.49899499500000005,
+      "per_name_notional": 5000,
+      "rt_cost_pct_total": 0.004520000000000001
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.09886576600000001,
+      "per_name_notional": 30000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.4992449950000001,
+      "per_name_notional": 10000,
+      "rt_cost_pct_total": 0.00352
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.0027447810400001472,
+      "per_name_notional": 166000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.0037460413000001574,
+      "per_name_notional": 99500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.008752342600000091,
+      "per_name_notional": 49500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.018764945200000074,
+      "per_name_notional": 24500,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.0027447810400001472,
+      "per_name_notional": 166000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.008752342600000091,
+      "per_name_notional": 99000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.018764945200000074,
+      "per_name_notional": 49000,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.03879015040000016,
+      "per_name_notional": 24000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.0027447810400001472,
+      "per_name_notional": 166000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.018764945200000074,
+      "per_name_notional": 98000,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.03879015040000016,
+      "per_name_notional": 48000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.03879015040000016,
+      "per_name_notional": 24000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.008752342600000091,
+      "per_name_notional": 165000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.04880275299999991,
+      "per_name_notional": 95000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.09886576600000006,
+      "per_name_notional": 45000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.19899179200000003,
+      "per_name_notional": 20000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.038790150399999924,
+      "per_name_notional": 160000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.09886576600000006,
+      "per_name_notional": 90000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.19899179200000003,
+      "per_name_notional": 40000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.19899179200000003,
+      "per_name_notional": 20000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.0012428906500001904,
+      "per_name_notional": 332500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.0012428906500001904,
+      "per_name_notional": 199500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.0037460413000001574,
+      "per_name_notional": 99500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.008752342600000091,
+      "per_name_notional": 49500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.0027447810400001472,
+      "per_name_notional": 332000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.0037460413000001574,
+      "per_name_notional": 199000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.008752342600000091,
+      "per_name_notional": 99000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.018764945200000074,
+      "per_name_notional": 49000,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.0027447810400001472,
+      "per_name_notional": 332000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.008752342600000091,
+      "per_name_notional": 198000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.018764945200000074,
+      "per_name_notional": 98000,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.03879015040000016,
+      "per_name_notional": 48000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.008752342600000091,
+      "per_name_notional": 330000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.02377124650000001,
+      "per_name_notional": 195000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.04880275299999991,
+      "per_name_notional": 95000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.09886576600000006,
+      "per_name_notional": 45000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.008752342600000091,
+      "per_name_notional": 330000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.04880275299999991,
+      "per_name_notional": 190000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.09886576600000006,
+      "per_name_notional": 90000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.19899179200000003,
+      "per_name_notional": 40000,
+      "rt_cost_pct_total": 0.00302
+    }
+  ]
+}

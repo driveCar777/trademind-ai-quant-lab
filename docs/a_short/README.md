@@ -52,6 +52,15 @@ A-Short = TradeMind 的**短周期（T+1/T+2/T+3/T+5）机会发现与纸面推�
 | 21 | [A_SHORT_PHASE2A_RESULTS.md](A_SHORT_PHASE2A_RESULTS.md) | BAD NEWS + §42 主表 + §43 STATUS（alpha=DATA_BLOCKED，已实算成本/账户） | §41–§43 |
 | 22 | [A_SHORT_PHASE2A_EXECUTION_FORENSIC.md](A_SHORT_PHASE2A_EXECUTION_FORENSIC.md) | Phase 2A.1 执行模型复审：affordability fee-aware + entry/exit capital-path exit-recovery + 新不变量 | 执行正确性 |
 
+### Phase 2A.2 新增（First Empirical D1 Run — DATA_BLOCKED in cloud）
+
+| # | 文件 | 内容 |
+|---|------|------|
+| 23 | [A_SHORT_PHASE2A2_DATA_FORENSIC.md](A_SHORT_PHASE2A2_DATA_FORENSIC.md) | 数据血缘取证：合同一致性✅、物化尝试失败(raw 面板缺失)、参考层齐全、退化守卫修复 |
+| 24 | [A_SHORT_PHASE2A2_EMPIRICAL_RESULTS.md](A_SHORT_PHASE2A2_EMPIRICAL_RESULTS.md) | Executive `DATA_BLOCKED`；20 主比较/Q1–Q7 全 BLOCKED；成本/账户算术已出；BAD NEWS |
+
+> 代码：新增 `baseline.panel_coverage` 退化守卫 + `run_baseline` lineage 元数据/artifacts（`PHASE2A2_{RESULTS,DIAGNOSTICS,COST_SENSITIVITY,ACCOUNT_GRID}.json`）。empirical alpha 需在 :9000 物化 frozen 面板后才能跑。
+
 > 代码：`research_engine/cn_a_short/`（cost/account/feasibility/baseline/report/run + 25 tests，全绿）。本环境经验 alpha `DATA_BLOCKED`（无价格面板），成本/账户已实算。
 
 ## 三条必须先记住的硬结论（详见 §9 文档）
