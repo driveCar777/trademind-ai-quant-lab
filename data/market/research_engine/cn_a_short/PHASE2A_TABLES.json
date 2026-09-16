@@ -1,0 +1,3881 @@
+{
+  "cost_table": {
+    "min_fee_breakeven_notional": 20000.0,
+    "rows": [
+      {
+        "notional": 500,
+        "min_fee_binding": true,
+        "rt_fee_only_pct": 0.02052,
+        "rt_with_0p1_slip_pct": 0.02252
+      },
+      {
+        "notional": 1000,
+        "min_fee_binding": true,
+        "rt_fee_only_pct": 0.01052,
+        "rt_with_0p1_slip_pct": 0.01252
+      },
+      {
+        "notional": 2000,
+        "min_fee_binding": true,
+        "rt_fee_only_pct": 0.00552,
+        "rt_with_0p1_slip_pct": 0.00752
+      },
+      {
+        "notional": 5000,
+        "min_fee_binding": true,
+        "rt_fee_only_pct": 0.00252,
+        "rt_with_0p1_slip_pct": 0.004520000000000001
+      },
+      {
+        "notional": 10000,
+        "min_fee_binding": true,
+        "rt_fee_only_pct": 0.0015199999999999999,
+        "rt_with_0p1_slip_pct": 0.00352
+      },
+      {
+        "notional": 20000,
+        "min_fee_binding": false,
+        "rt_fee_only_pct": 0.0010199999999999999,
+        "rt_with_0p1_slip_pct": 0.00302
+      },
+      {
+        "notional": 50000,
+        "min_fee_binding": false,
+        "rt_fee_only_pct": 0.00102,
+        "rt_with_0p1_slip_pct": 0.00302
+      },
+      {
+        "notional": 100000,
+        "min_fee_binding": false,
+        "rt_fee_only_pct": 0.00102,
+        "rt_with_0p1_slip_pct": 0.00302
+      },
+      {
+        "notional": 500000,
+        "min_fee_binding": false,
+        "rt_fee_only_pct": 0.00102,
+        "rt_with_0p1_slip_pct": 0.00302
+      }
+    ]
+  },
+  "slippage_sensitivity": {
+    "2000": [
+      {
+        "slip_side": 0.0,
+        "rt_pct": 0.00552
+      },
+      {
+        "slip_side": 0.0005,
+        "rt_pct": 0.00652
+      },
+      {
+        "slip_side": 0.001,
+        "rt_pct": 0.00752
+      },
+      {
+        "slip_side": 0.002,
+        "rt_pct": 0.009519999999999999
+      },
+      {
+        "slip_side": 0.003,
+        "rt_pct": 0.011519999999999999
+      },
+      {
+        "slip_side": 0.005,
+        "rt_pct": 0.015519999999999999
+      }
+    ],
+    "20000": [
+      {
+        "slip_side": 0.0,
+        "rt_pct": 0.0010199999999999999
+      },
+      {
+        "slip_side": 0.0005,
+        "rt_pct": 0.00202
+      },
+      {
+        "slip_side": 0.001,
+        "rt_pct": 0.00302
+      },
+      {
+        "slip_side": 0.002,
+        "rt_pct": 0.00502
+      },
+      {
+        "slip_side": 0.003,
+        "rt_pct": 0.00702
+      },
+      {
+        "slip_side": 0.005,
+        "rt_pct": 0.01102
+      }
+    ],
+    "100000": [
+      {
+        "slip_side": 0.0,
+        "rt_pct": 0.00102
+      },
+      {
+        "slip_side": 0.0005,
+        "rt_pct": 0.00202
+      },
+      {
+        "slip_side": 0.001,
+        "rt_pct": 0.00302
+      },
+      {
+        "slip_side": 0.002,
+        "rt_pct": 0.00502
+      },
+      {
+        "slip_side": 0.003,
+        "rt_pct": 0.00702
+      },
+      {
+        "slip_side": 0.005,
+        "rt_pct": 0.01102
+      }
+    ]
+  },
+  "feasibility_grid": [
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.26716799999999996,
+      "gross_breakeven_per_period": 0.001104,
+      "gross_for_net10pct_per_period": 0.0015172231404958678
+    },
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.363968,
+      "gross_breakeven_per_period": 0.0015040000000000001,
+      "gross_for_net10pct_per_period": 0.001917223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.5575680000000001,
+      "gross_breakeven_per_period": 0.002304,
+      "gross_for_net10pct_per_period": 0.002717223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.049367999999999995,
+      "gross_breakeven_per_period": 0.00020399999999999997,
+      "gross_for_net10pct_per_period": 0.0006172231404958678
+    },
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.14616800000000002,
+      "gross_breakeven_per_period": 0.000604,
+      "gross_for_net10pct_per_period": 0.0010172231404958678
+    },
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.339768,
+      "gross_breakeven_per_period": 0.001404,
+      "gross_for_net10pct_per_period": 0.001817223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.04936800000000001,
+      "gross_breakeven_per_period": 0.00020400000000000003,
+      "gross_for_net10pct_per_period": 0.0006172231404958678
+    },
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.14616800000000002,
+      "gross_breakeven_per_period": 0.000604,
+      "gross_for_net10pct_per_period": 0.0010172231404958678
+    },
+    {
+      "hold": 1,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.339768,
+      "gross_breakeven_per_period": 0.001404,
+      "gross_for_net10pct_per_period": 0.001817223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.66792,
+      "gross_breakeven_per_period": 0.00276,
+      "gross_for_net10pct_per_period": 0.0031732231404958677
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.90992,
+      "gross_breakeven_per_period": 0.00376,
+      "gross_for_net10pct_per_period": 0.004173223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 1.3939199999999998,
+      "gross_breakeven_per_period": 0.0057599999999999995,
+      "gross_for_net10pct_per_period": 0.006173223140495867
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.12341999999999999,
+      "gross_breakeven_per_period": 0.0005099999999999999,
+      "gross_for_net10pct_per_period": 0.0009232231404958677
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.36542,
+      "gross_breakeven_per_period": 0.00151,
+      "gross_for_net10pct_per_period": 0.001923223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.8494200000000001,
+      "gross_breakeven_per_period": 0.00351,
+      "gross_for_net10pct_per_period": 0.0039232231404958675
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.12342,
+      "gross_breakeven_per_period": 0.00051,
+      "gross_for_net10pct_per_period": 0.0009232231404958679
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.36542,
+      "gross_breakeven_per_period": 0.00151,
+      "gross_for_net10pct_per_period": 0.001923223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.8494200000000001,
+      "gross_breakeven_per_period": 0.00351,
+      "gross_for_net10pct_per_period": 0.0039232231404958675
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 1.33584,
+      "gross_breakeven_per_period": 0.00552,
+      "gross_for_net10pct_per_period": 0.005933223140495867
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 1.81984,
+      "gross_breakeven_per_period": 0.00752,
+      "gross_for_net10pct_per_period": 0.007933223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 2.7878399999999997,
+      "gross_breakeven_per_period": 0.011519999999999999,
+      "gross_for_net10pct_per_period": 0.011933223140495866
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.24683999999999998,
+      "gross_breakeven_per_period": 0.0010199999999999999,
+      "gross_for_net10pct_per_period": 0.0014332231404958677
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.73084,
+      "gross_breakeven_per_period": 0.00302,
+      "gross_for_net10pct_per_period": 0.003433223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 1.6988400000000001,
+      "gross_breakeven_per_period": 0.00702,
+      "gross_for_net10pct_per_period": 0.007433223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.24684,
+      "gross_breakeven_per_period": 0.00102,
+      "gross_for_net10pct_per_period": 0.001433223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.73084,
+      "gross_breakeven_per_period": 0.00302,
+      "gross_for_net10pct_per_period": 0.003433223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 1.6988400000000001,
+      "gross_breakeven_per_period": 0.00702,
+      "gross_for_net10pct_per_period": 0.007433223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 2.67168,
+      "gross_breakeven_per_period": 0.01104,
+      "gross_for_net10pct_per_period": 0.011453223140495867
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 3.63968,
+      "gross_breakeven_per_period": 0.01504,
+      "gross_for_net10pct_per_period": 0.015453223140495867
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 5.575679999999999,
+      "gross_breakeven_per_period": 0.023039999999999998,
+      "gross_for_net10pct_per_period": 0.023453223140495867
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.49367999999999995,
+      "gross_breakeven_per_period": 0.0020399999999999997,
+      "gross_for_net10pct_per_period": 0.0024532231404958676
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 1.46168,
+      "gross_breakeven_per_period": 0.00604,
+      "gross_for_net10pct_per_period": 0.006453223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 3.3976800000000003,
+      "gross_breakeven_per_period": 0.01404,
+      "gross_for_net10pct_per_period": 0.014453223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.49368,
+      "gross_breakeven_per_period": 0.00204,
+      "gross_for_net10pct_per_period": 0.002453223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 1.46168,
+      "gross_breakeven_per_period": 0.00604,
+      "gross_for_net10pct_per_period": 0.006453223140495868
+    },
+    {
+      "hold": 1,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 3.3976800000000003,
+      "gross_breakeven_per_period": 0.01404,
+      "gross_for_net10pct_per_period": 0.014453223140495868
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.13358399999999998,
+      "gross_breakeven_per_period": 0.001104,
+      "gross_for_net10pct_per_period": 0.0019304462809917357
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.181984,
+      "gross_breakeven_per_period": 0.0015040000000000001,
+      "gross_for_net10pct_per_period": 0.002330446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.27878400000000003,
+      "gross_breakeven_per_period": 0.002304,
+      "gross_for_net10pct_per_period": 0.003130446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.024683999999999998,
+      "gross_breakeven_per_period": 0.00020399999999999997,
+      "gross_for_net10pct_per_period": 0.0010304462809917355
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.07308400000000001,
+      "gross_breakeven_per_period": 0.000604,
+      "gross_for_net10pct_per_period": 0.0014304462809917357
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.169884,
+      "gross_breakeven_per_period": 0.001404,
+      "gross_for_net10pct_per_period": 0.0022304462809917356
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.024684000000000005,
+      "gross_breakeven_per_period": 0.00020400000000000003,
+      "gross_for_net10pct_per_period": 0.0010304462809917357
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.07308400000000001,
+      "gross_breakeven_per_period": 0.000604,
+      "gross_for_net10pct_per_period": 0.0014304462809917357
+    },
+    {
+      "hold": 2,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.169884,
+      "gross_breakeven_per_period": 0.001404,
+      "gross_for_net10pct_per_period": 0.0022304462809917356
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.33396,
+      "gross_breakeven_per_period": 0.00276,
+      "gross_for_net10pct_per_period": 0.0035864462809917356
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.45496,
+      "gross_breakeven_per_period": 0.00376,
+      "gross_for_net10pct_per_period": 0.004586446280991735
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.6969599999999999,
+      "gross_breakeven_per_period": 0.0057599999999999995,
+      "gross_for_net10pct_per_period": 0.006586446280991735
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.061709999999999994,
+      "gross_breakeven_per_period": 0.0005099999999999999,
+      "gross_for_net10pct_per_period": 0.0013364462809917356
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.18271,
+      "gross_breakeven_per_period": 0.00151,
+      "gross_for_net10pct_per_period": 0.002336446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.42471000000000003,
+      "gross_breakeven_per_period": 0.00351,
+      "gross_for_net10pct_per_period": 0.004336446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.06171,
+      "gross_breakeven_per_period": 0.00051,
+      "gross_for_net10pct_per_period": 0.0013364462809917358
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.18271,
+      "gross_breakeven_per_period": 0.00151,
+      "gross_for_net10pct_per_period": 0.002336446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.42471000000000003,
+      "gross_breakeven_per_period": 0.00351,
+      "gross_for_net10pct_per_period": 0.004336446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.66792,
+      "gross_breakeven_per_period": 0.00552,
+      "gross_for_net10pct_per_period": 0.0063464462809917355
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.90992,
+      "gross_breakeven_per_period": 0.00752,
+      "gross_for_net10pct_per_period": 0.008346446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 1.3939199999999998,
+      "gross_breakeven_per_period": 0.011519999999999999,
+      "gross_for_net10pct_per_period": 0.012346446280991734
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.12341999999999999,
+      "gross_breakeven_per_period": 0.0010199999999999999,
+      "gross_for_net10pct_per_period": 0.0018464462809917354
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.36542,
+      "gross_breakeven_per_period": 0.00302,
+      "gross_for_net10pct_per_period": 0.003846446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.8494200000000001,
+      "gross_breakeven_per_period": 0.00702,
+      "gross_for_net10pct_per_period": 0.007846446280991735
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.12342,
+      "gross_breakeven_per_period": 0.00102,
+      "gross_for_net10pct_per_period": 0.0018464462809917358
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.36542,
+      "gross_breakeven_per_period": 0.00302,
+      "gross_for_net10pct_per_period": 0.003846446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.8494200000000001,
+      "gross_breakeven_per_period": 0.00702,
+      "gross_for_net10pct_per_period": 0.007846446280991735
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 1.33584,
+      "gross_breakeven_per_period": 0.01104,
+      "gross_for_net10pct_per_period": 0.011866446280991734
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 1.81984,
+      "gross_breakeven_per_period": 0.01504,
+      "gross_for_net10pct_per_period": 0.015866446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 2.7878399999999997,
+      "gross_breakeven_per_period": 0.023039999999999998,
+      "gross_for_net10pct_per_period": 0.023866446280991733
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.24683999999999998,
+      "gross_breakeven_per_period": 0.0020399999999999997,
+      "gross_for_net10pct_per_period": 0.0028664462809917354
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.73084,
+      "gross_breakeven_per_period": 0.00604,
+      "gross_for_net10pct_per_period": 0.006866446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 1.6988400000000001,
+      "gross_breakeven_per_period": 0.01404,
+      "gross_for_net10pct_per_period": 0.014866446280991735
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.24684,
+      "gross_breakeven_per_period": 0.00204,
+      "gross_for_net10pct_per_period": 0.002866446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.73084,
+      "gross_breakeven_per_period": 0.00604,
+      "gross_for_net10pct_per_period": 0.006866446280991736
+    },
+    {
+      "hold": 2,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 1.6988400000000001,
+      "gross_breakeven_per_period": 0.01404,
+      "gross_for_net10pct_per_period": 0.014866446280991735
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.089056,
+      "gross_breakeven_per_period": 0.001104,
+      "gross_for_net10pct_per_period": 0.002343669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.12132266666666669,
+      "gross_breakeven_per_period": 0.0015040000000000001,
+      "gross_for_net10pct_per_period": 0.0027436694214876033
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.18585600000000002,
+      "gross_breakeven_per_period": 0.002304,
+      "gross_for_net10pct_per_period": 0.0035436694214876037
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.016456,
+      "gross_breakeven_per_period": 0.00020399999999999997,
+      "gross_for_net10pct_per_period": 0.0014436694214876034
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.04872266666666667,
+      "gross_breakeven_per_period": 0.000604,
+      "gross_for_net10pct_per_period": 0.0018436694214876035
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.11325600000000001,
+      "gross_breakeven_per_period": 0.001404,
+      "gross_for_net10pct_per_period": 0.0026436694214876035
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.016456000000000002,
+      "gross_breakeven_per_period": 0.00020400000000000003,
+      "gross_for_net10pct_per_period": 0.0014436694214876034
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.04872266666666667,
+      "gross_breakeven_per_period": 0.000604,
+      "gross_for_net10pct_per_period": 0.0018436694214876035
+    },
+    {
+      "hold": 3,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.11325600000000001,
+      "gross_breakeven_per_period": 0.001404,
+      "gross_for_net10pct_per_period": 0.0026436694214876035
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.22264,
+      "gross_breakeven_per_period": 0.00276,
+      "gross_for_net10pct_per_period": 0.0039996694214876035
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.30330666666666667,
+      "gross_breakeven_per_period": 0.00376,
+      "gross_for_net10pct_per_period": 0.0049996694214876035
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.46464,
+      "gross_breakeven_per_period": 0.0057599999999999995,
+      "gross_for_net10pct_per_period": 0.006999669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.041139999999999996,
+      "gross_breakeven_per_period": 0.0005099999999999999,
+      "gross_for_net10pct_per_period": 0.0017496694214876032
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.12180666666666667,
+      "gross_breakeven_per_period": 0.00151,
+      "gross_for_net10pct_per_period": 0.0027496694214876032
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.28314,
+      "gross_breakeven_per_period": 0.00351,
+      "gross_for_net10pct_per_period": 0.004749669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.04114,
+      "gross_breakeven_per_period": 0.00051,
+      "gross_for_net10pct_per_period": 0.0017496694214876034
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.12180666666666667,
+      "gross_breakeven_per_period": 0.00151,
+      "gross_for_net10pct_per_period": 0.0027496694214876032
+    },
+    {
+      "hold": 3,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.28314,
+      "gross_breakeven_per_period": 0.00351,
+      "gross_for_net10pct_per_period": 0.004749669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.44528,
+      "gross_breakeven_per_period": 0.00552,
+      "gross_for_net10pct_per_period": 0.006759669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.6066133333333333,
+      "gross_breakeven_per_period": 0.00752,
+      "gross_for_net10pct_per_period": 0.008759669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.92928,
+      "gross_breakeven_per_period": 0.011519999999999999,
+      "gross_for_net10pct_per_period": 0.012759669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.08227999999999999,
+      "gross_breakeven_per_period": 0.0010199999999999999,
+      "gross_for_net10pct_per_period": 0.0022596694214876032
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.24361333333333335,
+      "gross_breakeven_per_period": 0.00302,
+      "gross_for_net10pct_per_period": 0.004259669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.56628,
+      "gross_breakeven_per_period": 0.00702,
+      "gross_for_net10pct_per_period": 0.008259669421487604
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.08228,
+      "gross_breakeven_per_period": 0.00102,
+      "gross_for_net10pct_per_period": 0.0022596694214876032
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.24361333333333335,
+      "gross_breakeven_per_period": 0.00302,
+      "gross_for_net10pct_per_period": 0.004259669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.56628,
+      "gross_breakeven_per_period": 0.00702,
+      "gross_for_net10pct_per_period": 0.008259669421487604
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.89056,
+      "gross_breakeven_per_period": 0.01104,
+      "gross_for_net10pct_per_period": 0.012279669421487604
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 1.2132266666666667,
+      "gross_breakeven_per_period": 0.01504,
+      "gross_for_net10pct_per_period": 0.016279669421487602
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 1.85856,
+      "gross_breakeven_per_period": 0.023039999999999998,
+      "gross_for_net10pct_per_period": 0.024279669421487602
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.16455999999999998,
+      "gross_breakeven_per_period": 0.0020399999999999997,
+      "gross_for_net10pct_per_period": 0.0032796694214876033
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.4872266666666667,
+      "gross_breakeven_per_period": 0.00604,
+      "gross_for_net10pct_per_period": 0.007279669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 1.13256,
+      "gross_breakeven_per_period": 0.01404,
+      "gross_for_net10pct_per_period": 0.015279669421487604
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.16456,
+      "gross_breakeven_per_period": 0.00204,
+      "gross_for_net10pct_per_period": 0.0032796694214876033
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.4872266666666667,
+      "gross_breakeven_per_period": 0.00604,
+      "gross_for_net10pct_per_period": 0.007279669421487603
+    },
+    {
+      "hold": 3,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 1.13256,
+      "gross_breakeven_per_period": 0.01404,
+      "gross_for_net10pct_per_period": 0.015279669421487604
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.0534336,
+      "gross_breakeven_per_period": 0.001104,
+      "gross_for_net10pct_per_period": 0.003170115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.0727936,
+      "gross_breakeven_per_period": 0.0015040000000000001,
+      "gross_for_net10pct_per_period": 0.003570115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.1115136,
+      "gross_breakeven_per_period": 0.002304,
+      "gross_for_net10pct_per_period": 0.004370115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.009873599999999998,
+      "gross_breakeven_per_period": 0.00020399999999999997,
+      "gross_for_net10pct_per_period": 0.002270115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.029233600000000002,
+      "gross_breakeven_per_period": 0.000604,
+      "gross_for_net10pct_per_period": 0.002670115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.0679536,
+      "gross_breakeven_per_period": 0.001404,
+      "gross_for_net10pct_per_period": 0.0034701157024793388
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.009873600000000001,
+      "gross_breakeven_per_period": 0.00020400000000000003,
+      "gross_for_net10pct_per_period": 0.002270115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.029233600000000002,
+      "gross_breakeven_per_period": 0.000604,
+      "gross_for_net10pct_per_period": 0.002670115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "LOW",
+      "turnover_val": 0.2,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.0679536,
+      "gross_breakeven_per_period": 0.001404,
+      "gross_for_net10pct_per_period": 0.0034701157024793388
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.13358399999999998,
+      "gross_breakeven_per_period": 0.00276,
+      "gross_for_net10pct_per_period": 0.004826115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.18198399999999998,
+      "gross_breakeven_per_period": 0.00376,
+      "gross_for_net10pct_per_period": 0.005826115702479338
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.278784,
+      "gross_breakeven_per_period": 0.0057599999999999995,
+      "gross_for_net10pct_per_period": 0.007826115702479338
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.024683999999999994,
+      "gross_breakeven_per_period": 0.0005099999999999999,
+      "gross_for_net10pct_per_period": 0.002576115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.073084,
+      "gross_breakeven_per_period": 0.00151,
+      "gross_for_net10pct_per_period": 0.003576115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.169884,
+      "gross_breakeven_per_period": 0.00351,
+      "gross_for_net10pct_per_period": 0.005576115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.024684,
+      "gross_breakeven_per_period": 0.00051,
+      "gross_for_net10pct_per_period": 0.002576115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.073084,
+      "gross_breakeven_per_period": 0.00151,
+      "gross_for_net10pct_per_period": 0.003576115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "MEDIUM",
+      "turnover_val": 0.5,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.169884,
+      "gross_breakeven_per_period": 0.00351,
+      "gross_for_net10pct_per_period": 0.005576115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.26716799999999996,
+      "gross_breakeven_per_period": 0.00552,
+      "gross_for_net10pct_per_period": 0.007586115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.36396799999999996,
+      "gross_breakeven_per_period": 0.00752,
+      "gross_for_net10pct_per_period": 0.009586115702479338
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 0.557568,
+      "gross_breakeven_per_period": 0.011519999999999999,
+      "gross_for_net10pct_per_period": 0.013586115702479338
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.04936799999999999,
+      "gross_breakeven_per_period": 0.0010199999999999999,
+      "gross_for_net10pct_per_period": 0.003086115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.146168,
+      "gross_breakeven_per_period": 0.00302,
+      "gross_for_net10pct_per_period": 0.005086115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.339768,
+      "gross_breakeven_per_period": 0.00702,
+      "gross_for_net10pct_per_period": 0.009086115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.049368,
+      "gross_breakeven_per_period": 0.00102,
+      "gross_for_net10pct_per_period": 0.003086115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.146168,
+      "gross_breakeven_per_period": 0.00302,
+      "gross_for_net10pct_per_period": 0.005086115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "HIGH",
+      "turnover_val": 1.0,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.339768,
+      "gross_breakeven_per_period": 0.00702,
+      "gross_for_net10pct_per_period": 0.009086115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00552,
+      "annual_friction": 0.5343359999999999,
+      "gross_breakeven_per_period": 0.01104,
+      "gross_for_net10pct_per_period": 0.013106115702479338
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00752,
+      "annual_friction": 0.7279359999999999,
+      "gross_breakeven_per_period": 0.01504,
+      "gross_for_net10pct_per_period": 0.017106115702479337
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 2000,
+      "slip_side": 0.003,
+      "rt_pct": 0.011519999999999999,
+      "annual_friction": 1.115136,
+      "gross_breakeven_per_period": 0.023039999999999998,
+      "gross_for_net10pct_per_period": 0.025106115702479337
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.0,
+      "rt_pct": 0.0010199999999999999,
+      "annual_friction": 0.09873599999999998,
+      "gross_breakeven_per_period": 0.0020399999999999997,
+      "gross_for_net10pct_per_period": 0.004106115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.292336,
+      "gross_breakeven_per_period": 0.00604,
+      "gross_for_net10pct_per_period": 0.008106115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 20000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.679536,
+      "gross_breakeven_per_period": 0.01404,
+      "gross_for_net10pct_per_period": 0.01610611570247934
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.0,
+      "rt_pct": 0.00102,
+      "annual_friction": 0.098736,
+      "gross_breakeven_per_period": 0.00204,
+      "gross_for_net10pct_per_period": 0.004106115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.001,
+      "rt_pct": 0.00302,
+      "annual_friction": 0.292336,
+      "gross_breakeven_per_period": 0.00604,
+      "gross_for_net10pct_per_period": 0.008106115702479339
+    },
+    {
+      "hold": 5,
+      "turnover": "VERY_HIGH",
+      "turnover_val": 2.0,
+      "notional": 100000,
+      "slip_side": 0.003,
+      "rt_pct": 0.00702,
+      "annual_friction": 0.679536,
+      "gross_breakeven_per_period": 0.01404,
+      "gross_for_net10pct_per_period": 0.01610611570247934
+    }
+  ],
+  "account_grid": [
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.25,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 5,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 10,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 20,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 5,
+      "k": 50,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 3,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 5,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 10,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 20,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 10,
+      "k": 50,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 20,
+      "k": 50,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 50,
+      "k": 50,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 2000,
+      "price": 100,
+      "k": 50,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 1500,
+      "rt_cost_pct_total": 0.009186666666666666
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 5,
+      "k": 50,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.4,
+      "per_name_notional": 1000,
+      "rt_cost_pct_total": 0.01252
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 5,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 10,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 20,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 10,
+      "k": 50,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 3,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 5,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 10,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 20,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 20,
+      "k": 50,
+      "feasible": false,
+      "n_names": 2,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 50,
+      "k": 50,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 5000,
+      "price": 100,
+      "k": 50,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 3000,
+      "rt_cost_pct_total": 0.0058533333333333345
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.25,
+      "per_name_notional": 1500,
+      "rt_cost_pct_total": 0.009186666666666666
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 20,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 5,
+      "k": 50,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 3000,
+      "rt_cost_pct_total": 0.0058533333333333345
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 1000,
+      "rt_cost_pct_total": 0.01252
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 10,
+      "k": 50,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.4,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 5,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 10,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 20,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 20,
+      "k": 50,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 3,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 5,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 50,
+      "k": 50,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 3,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 10000,
+      "price": 100,
+      "k": 50,
+      "feasible": false,
+      "n_names": 0,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.025,
+      "per_name_notional": 6500,
+      "rt_cost_pct_total": 0.0040584615384615386
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.125,
+      "per_name_notional": 3500,
+      "rt_cost_pct_total": 0.005377142857142857
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.25,
+      "per_name_notional": 1500,
+      "rt_cost_pct_total": 0.009186666666666666
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 20000,
+      "price": 5,
+      "k": 50,
+      "feasible": false,
+      "n_names": 39,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 6000,
+      "rt_cost_pct_total": 0.004186666666666667
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.25,
+      "per_name_notional": 3000,
+      "rt_cost_pct_total": 0.0058533333333333345
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 1000,
+      "rt_cost_pct_total": 0.01252
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 20,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 10,
+      "k": 50,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 6000,
+      "rt_cost_pct_total": 0.004186666666666667
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 20,
+      "k": 50,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.25,
+      "per_name_notional": 5000,
+      "rt_cost_pct_total": 0.004520000000000001
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 5,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 50,
+      "k": 50,
+      "feasible": false,
+      "n_names": 3,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 3,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 20000,
+      "price": 100,
+      "k": 50,
+      "feasible": false,
+      "n_names": 1,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 16500,
+      "rt_cost_pct_total": 0.003126060606060606
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.05,
+      "per_name_notional": 9500,
+      "rt_cost_pct_total": 0.003572631578947368
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 4500,
+      "rt_cost_pct_total": 0.004742222222222222
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 50000,
+      "price": 5,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 500,
+      "rt_cost_pct_total": 0.02252
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.04,
+      "per_name_notional": 16000,
+      "rt_cost_pct_total": 0.0031450000000000002
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 9000,
+      "rt_cost_pct_total": 0.003631111111111111
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 4000,
+      "rt_cost_pct_total": 0.005019999999999999
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 50000,
+      "price": 10,
+      "k": 50,
+      "feasible": false,
+      "n_names": 49,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.04,
+      "per_name_notional": 16000,
+      "rt_cost_pct_total": 0.0031450000000000002
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 8000,
+      "rt_cost_pct_total": 0.00377
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 4000,
+      "rt_cost_pct_total": 0.005019999999999999
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 2000,
+      "rt_cost_pct_total": 0.00752
+    },
+    {
+      "equity": 50000,
+      "price": 20,
+      "k": 50,
+      "feasible": false,
+      "n_names": 24,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 15000,
+      "rt_cost_pct_total": 0.0031866666666666666
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 5000,
+      "rt_cost_pct_total": 0.004520000000000001
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 50,
+      "k": 50,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.4,
+      "per_name_notional": 10000,
+      "rt_cost_pct_total": 0.00352
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 5,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 50000,
+      "price": 100,
+      "k": 50,
+      "feasible": false,
+      "n_names": 4,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 33000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.025,
+      "per_name_notional": 19500,
+      "rt_cost_pct_total": 0.003032820512820513
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.05,
+      "per_name_notional": 9500,
+      "rt_cost_pct_total": 0.003572631578947368
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 4500,
+      "rt_cost_pct_total": 0.004742222222222222
+    },
+    {
+      "equity": 100000,
+      "price": 5,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.25,
+      "per_name_notional": 1500,
+      "rt_cost_pct_total": 0.009186666666666666
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 33000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.05,
+      "per_name_notional": 19000,
+      "rt_cost_pct_total": 0.0030463157894736843
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 9000,
+      "rt_cost_pct_total": 0.003631111111111111
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 4000,
+      "rt_cost_pct_total": 0.005019999999999999
+    },
+    {
+      "equity": 100000,
+      "price": 10,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 1000,
+      "rt_cost_pct_total": 0.01252
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.04,
+      "per_name_notional": 32000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 18000,
+      "rt_cost_pct_total": 0.0030755555555555553
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 8000,
+      "rt_cost_pct_total": 0.00377
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 4000,
+      "rt_cost_pct_total": 0.005019999999999999
+    },
+    {
+      "equity": 100000,
+      "price": 20,
+      "k": 50,
+      "feasible": false,
+      "n_names": 49,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 30000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.25,
+      "per_name_notional": 15000,
+      "rt_cost_pct_total": 0.0031866666666666666
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 5000,
+      "rt_cost_pct_total": 0.004520000000000001
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 20,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 50,
+      "k": 50,
+      "feasible": false,
+      "n_names": 19,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 30000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 10000,
+      "rt_cost_pct_total": 0.00352
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 10,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 20,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 100000,
+      "price": 100,
+      "k": 50,
+      "feasible": false,
+      "n_names": 9,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.001,
+      "per_name_notional": 166500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.005,
+      "per_name_notional": 99500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 49500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.02,
+      "per_name_notional": 24500,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 500000,
+      "price": 5,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.05,
+      "per_name_notional": 9500,
+      "rt_cost_pct_total": 0.003572631578947368
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.004,
+      "per_name_notional": 166000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 99000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.02,
+      "per_name_notional": 49000,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.04,
+      "per_name_notional": 24000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 10,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 9000,
+      "rt_cost_pct_total": 0.003631111111111111
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.004,
+      "per_name_notional": 166000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.02,
+      "per_name_notional": 98000,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.04,
+      "per_name_notional": 48000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.04,
+      "per_name_notional": 24000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 20,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 8000,
+      "rt_cost_pct_total": 0.00377
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 165000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.05,
+      "per_name_notional": 95000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 45000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 20000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 50,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 5000,
+      "rt_cost_pct_total": 0.004520000000000001
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.04,
+      "per_name_notional": 160000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 90000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 40000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 20000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 500000,
+      "price": 100,
+      "k": 50,
+      "feasible": false,
+      "n_names": 49,
+      "cash_idle_frac": 1.0,
+      "per_name_notional": 0.0,
+      "rt_cost_pct_total": null
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.001,
+      "per_name_notional": 333000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.0025,
+      "per_name_notional": 199500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.005,
+      "per_name_notional": 99500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 49500,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 5,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.025,
+      "per_name_notional": 19500,
+      "rt_cost_pct_total": 0.003032820512820513
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.001,
+      "per_name_notional": 333000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.005,
+      "per_name_notional": 199000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 99000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.02,
+      "per_name_notional": 49000,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 1000000,
+      "price": 10,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.05,
+      "per_name_notional": 19000,
+      "rt_cost_pct_total": 0.0030463157894736843
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.004,
+      "per_name_notional": 332000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 198000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.02,
+      "per_name_notional": 98000,
+      "rt_cost_pct_total": 0.0030200000000000005
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.04,
+      "per_name_notional": 48000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 20,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 18000,
+      "rt_cost_pct_total": 0.0030755555555555553
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 330000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.025,
+      "per_name_notional": 195000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.05,
+      "per_name_notional": 95000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 45000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 50,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.25,
+      "per_name_notional": 15000,
+      "rt_cost_pct_total": 0.0031866666666666666
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 3,
+      "feasible": true,
+      "n_names": 3,
+      "cash_idle_frac": 0.01,
+      "per_name_notional": 330000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 5,
+      "feasible": true,
+      "n_names": 5,
+      "cash_idle_frac": 0.05,
+      "per_name_notional": 190000,
+      "rt_cost_pct_total": 0.0030199999999999997
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 10,
+      "feasible": true,
+      "n_names": 10,
+      "cash_idle_frac": 0.1,
+      "per_name_notional": 90000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 20,
+      "feasible": true,
+      "n_names": 20,
+      "cash_idle_frac": 0.2,
+      "per_name_notional": 40000,
+      "rt_cost_pct_total": 0.00302
+    },
+    {
+      "equity": 1000000,
+      "price": 100,
+      "k": 50,
+      "feasible": true,
+      "n_names": 50,
+      "cash_idle_frac": 0.5,
+      "per_name_notional": 10000,
+      "rt_cost_pct_total": 0.00352
+    }
+  ],
+  "min_capital_table": [
+    {
+      "k": 3,
+      "price": 5,
+      "theoretical_min_capital": 1501.4999999999998,
+      "practical_min_capital": 2001.9999999999998
+    },
+    {
+      "k": 3,
+      "price": 10,
+      "theoretical_min_capital": 3002.9999999999995,
+      "practical_min_capital": 4003.9999999999995
+    },
+    {
+      "k": 3,
+      "price": 20,
+      "theoretical_min_capital": 6005.999999999999,
+      "practical_min_capital": 8007.999999999999
+    },
+    {
+      "k": 3,
+      "price": 50,
+      "theoretical_min_capital": 15014.999999999996,
+      "practical_min_capital": 20019.999999999996
+    },
+    {
+      "k": 3,
+      "price": 100,
+      "theoretical_min_capital": 30029.999999999993,
+      "practical_min_capital": 40039.99999999999
+    },
+    {
+      "k": 5,
+      "price": 5,
+      "theoretical_min_capital": 2502.4999999999995,
+      "practical_min_capital": 3002.9999999999995
+    },
+    {
+      "k": 5,
+      "price": 10,
+      "theoretical_min_capital": 5004.999999999999,
+      "practical_min_capital": 6005.999999999999
+    },
+    {
+      "k": 5,
+      "price": 20,
+      "theoretical_min_capital": 10009.999999999998,
+      "practical_min_capital": 12011.999999999998
+    },
+    {
+      "k": 5,
+      "price": 50,
+      "theoretical_min_capital": 25024.999999999996,
+      "practical_min_capital": 30029.999999999993
+    },
+    {
+      "k": 5,
+      "price": 100,
+      "theoretical_min_capital": 50049.99999999999,
+      "practical_min_capital": 60059.999999999985
+    },
+    {
+      "k": 10,
+      "price": 5,
+      "theoretical_min_capital": 5004.999999999999,
+      "practical_min_capital": 5888.235294117646
+    },
+    {
+      "k": 10,
+      "price": 10,
+      "theoretical_min_capital": 10009.999999999998,
+      "practical_min_capital": 11776.470588235292
+    },
+    {
+      "k": 10,
+      "price": 20,
+      "theoretical_min_capital": 20019.999999999996,
+      "practical_min_capital": 23552.941176470584
+    },
+    {
+      "k": 10,
+      "price": 50,
+      "theoretical_min_capital": 50049.99999999999,
+      "practical_min_capital": 58882.35294117646
+    },
+    {
+      "k": 10,
+      "price": 100,
+      "theoretical_min_capital": 100099.99999999999,
+      "practical_min_capital": 117764.70588235292
+    },
+    {
+      "k": 20,
+      "price": 5,
+      "theoretical_min_capital": 10009.999999999998,
+      "practical_min_capital": 11776.470588235292
+    },
+    {
+      "k": 20,
+      "price": 10,
+      "theoretical_min_capital": 20019.999999999996,
+      "practical_min_capital": 23552.941176470584
+    },
+    {
+      "k": 20,
+      "price": 20,
+      "theoretical_min_capital": 40039.99999999999,
+      "practical_min_capital": 47105.88235294117
+    },
+    {
+      "k": 20,
+      "price": 50,
+      "theoretical_min_capital": 100099.99999999999,
+      "practical_min_capital": 117764.70588235292
+    },
+    {
+      "k": 20,
+      "price": 100,
+      "theoretical_min_capital": 200199.99999999997,
+      "practical_min_capital": 235529.41176470584
+    },
+    {
+      "k": 50,
+      "price": 5,
+      "theoretical_min_capital": 25024.999999999996,
+      "practical_min_capital": 29441.17647058823
+    },
+    {
+      "k": 50,
+      "price": 10,
+      "theoretical_min_capital": 50049.99999999999,
+      "practical_min_capital": 58882.35294117646
+    },
+    {
+      "k": 50,
+      "price": 20,
+      "theoretical_min_capital": 100099.99999999999,
+      "practical_min_capital": 117764.70588235292
+    },
+    {
+      "k": 50,
+      "price": 50,
+      "theoretical_min_capital": 250249.99999999994,
+      "practical_min_capital": 294411.7647058823
+    },
+    {
+      "k": 50,
+      "price": 100,
+      "theoretical_min_capital": 500499.9999999999,
+      "practical_min_capital": 588823.5294117646
+    }
+  ]
+}
