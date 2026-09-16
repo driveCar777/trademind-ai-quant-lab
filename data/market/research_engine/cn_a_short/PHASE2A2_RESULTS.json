@@ -1,0 +1,33 @@
+{
+  "contract_id": "A_SHORT_D1_V1",
+  "contract_hash": "b6d0ace627d7a236fc065915c235c81057d552938ac005a940b9b022c6f527fb",
+  "upstream_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "upstream_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "derived_dataset_id": "tm-ashort-D1BASE-V1",
+  "derived_dataset_hash": null,
+  "code_commit": "5d8ffd7f7067b75a9e0d0adedb00705dc93fb811",
+  "generated_at_utc": "2026-09-16T09:41:07.519986Z",
+  "seed": 20260916,
+  "research_window": [
+    "2014-01-01",
+    "2021-12-31"
+  ],
+  "validation_window": [
+    "2022-01-01",
+    "2023-12-31"
+  ],
+  "oos_window": [
+    "2024-01-01",
+    null
+  ],
+  "status": "DATA_BLOCKED",
+  "reason": "FROZEN_PRICE_PACK_NOT_MATERIALIZED",
+  "detail": null,
+  "expected_pack_cache": "/workspace/data/market/cn_a_share/alpha_cache/v13_000002",
+  "how_to_materialize": [
+    "On the :9000 master host (has the frozen raw daily panel; BaoStock login is restricted to :9000):",
+    "python -c \"from research_engine.cn_a_share_alpha.pack import pack_panel; pack_panel()\"",
+    "then re-run: python -m research_engine.cn_a_short.run_baseline"
+  ],
+  "note": "Do NOT rebuild via BaoStock off :9000 \u2014 that yields a different, unverifiable dataset that fails the registered upstream_hash. Cost/account tables do NOT need the pack; use report_tables.py."
+}

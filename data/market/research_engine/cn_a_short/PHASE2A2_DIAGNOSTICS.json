@@ -1,0 +1,26 @@
+{
+  "contract_id": "A_SHORT_D1_V1",
+  "contract_hash": "b6d0ace627d7a236fc065915c235c81057d552938ac005a940b9b022c6f527fb",
+  "upstream_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002",
+  "upstream_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "derived_dataset_id": "tm-ashort-D1BASE-V1",
+  "derived_dataset_hash": null,
+  "code_commit": "5d8ffd7f7067b75a9e0d0adedb00705dc93fb811",
+  "generated_at_utc": "2026-09-16T09:41:07.521143Z",
+  "seed": 20260916,
+  "research_window": [
+    "2014-01-01",
+    "2021-12-31"
+  ],
+  "validation_window": [
+    "2022-01-01",
+    "2023-12-31"
+  ],
+  "oos_window": [
+    "2024-01-01",
+    null
+  ],
+  "status": "DATA_BLOCKED",
+  "reason": "FROZEN_PRICE_PACK_NOT_MATERIALIZED",
+  "note": "entry/exit/carry/stuck diagnostics require the materialized frozen pack (Steps 8-10)."
+}

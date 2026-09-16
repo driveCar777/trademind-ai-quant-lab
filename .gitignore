@@ -16,6 +16,10 @@ __pycache__/
 *$py.class
 .venv/
 venv/
+.venv-*/
+
+# A-Short forensic run bundles (per-run artifacts; keep out of git, see DATA_STORAGE_POLICY.md)
+data/market/research_engine/cn_a_short/runs/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
