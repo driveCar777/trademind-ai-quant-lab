@@ -33,4 +33,16 @@ A-Short **当前是「A：一个简单动量回测脚手架」**；架构文档�
 | [A_SHORT_DIRECTION_AUDIT.md](A_SHORT_DIRECTION_AUDIT.md) | 是否走偏（A/B/C/D）+ 原因 |
 | [A_SHORT_NEXT_DECISION.md](A_SHORT_NEXT_DECISION.md) | Phase 2B 是否开始 + 先补什么 |
 
+### Observability / Forensic 基础设施（Audit + Design，未实现代码）
+| 文件 | 内容 |
+|------|------|
+| [CURRENT_OBSERVABILITY_AUDIT.md](CURRENT_OBSERVABILITY_AUDIT.md) | 现有 logging/artifact/report 能力审计：已有/缺失/推荐最小实现/风险 |
+| [A_SHORT_OBSERVABILITY_DESIGN.md](A_SHORT_OBSERVABILITY_DESIGN.md) | 观测层总设计（runs/RUN_ID 布局 + 4 个新增快照/归因/分类） |
+| [A_SHORT_RUN_MANIFEST_SPEC.md](A_SHORT_RUN_MANIFEST_SPEC.md) | Run Manifest 规范（代码/数据/模型/成本/执行 版本 + 复现 hash） |
+| [A_SHORT_TRADE_FORENSIC_SPEC.md](A_SHORT_TRADE_FORENSIC_SPEC.md) | SIGNALS 快照 + 交易生命周期状态机取证 |
+| [A_SHORT_FAILURE_DIAGNOSIS.md](A_SHORT_FAILURE_DIAGNOSIS.md) | 错误分类（DATA/MODEL/EXECUTION/COST/ENV）+ 判定信号 |
+| [A_SHORT_EXPERIMENT_REPORT_SPEC.md](A_SHORT_EXPERIMENT_REPORT_SPEC.md) | 自动 REPORT.md（11 节，含"为什么不赚钱"） |
+
+> 状态：本轮仅 **Audit + Design（docs only）**。Minimal Implementation（`cn_a_short/forensic/` + 接线 + 测试）= Phase 3，待确认后进行。
+
 > 原始审计证据来自两个只读子代理扫描：master/api + ai-gateway + dashboard + GUI + ml1_live/ml7_live；以及 research_engine 全部 A-share 数据适配器与磁盘落地情况。
