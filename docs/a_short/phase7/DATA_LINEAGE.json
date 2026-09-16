@@ -1,0 +1,14 @@
+{
+  "activated_at_utc": "2026-09-16T13:49:01.476927Z",
+  "baseline_code_commit": "2f5c137206271b31b05c3ef5079aebf947c872d6",
+  "contract_hash": "95328cb73f8f229f9aea9983a2585f19b897363d7ada51d7ecc5d35ba9c220a4",
+  "derived_dataset_id": "tm-ashort-D1BASE-V1",
+  "derived_hash": "08401de41050c339f1a85f5e5e278bd9b42813967699f82cb596da6bd2938b1d",
+  "materialization_action": "pack_panel(): PACK_EXISTS; loaded and verified without rewriting frozen bytes",
+  "materialized_file_mtime_utc": "2026-08-31T01:57:06.6680187Z",
+  "pack_registered_hash": "356c49c5c88ac093e8a1394f509cb70872cad11add8843920edc3436884f0c5a",
+  "raw_hash": "dd39193c19ca3ece1f8a7964462565346afa018c593a0080182215ceccf9ae80",
+  "raw_location": "data/market/cn_a_share/raw/daily_panel_v12_1/symbols/<symbol>/raw.csv",
+  "run_id": "A_SHORT_baseline_momentum_20260916T134901Z",
+  "upstream_dataset_id": "tm-ashare-EQUITY-D1-20260830-000002"
+}

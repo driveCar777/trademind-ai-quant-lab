@@ -1,0 +1,55 @@
+{
+  "classification": {
+    "COST_ERROR": {
+      "present": true,
+      "reason": "Commission/transfer, sell stamp duty and frozen slippage materially deepen losses; cost does not explain the already-negative gross excess."
+    },
+    "DATA_ERROR": {
+      "present": false,
+      "reason": "Registered hash matches; PIT controls pass; listed-close coverage is 99.9767%."
+    },
+    "EXECUTION_ERROR": {
+      "present": false,
+      "reason": "No execution software fault was detected. Entry blocks, no-lot outcomes, carry and stuck positions are measured feasibility findings under the frozen contract."
+    },
+    "MODEL_ERROR": {
+      "present": true,
+      "reason": "All 20 registered horizon/Top-K comparisons have negative gross excess versus EW."
+    },
+    "SOFTWARE_ERROR": {
+      "present": false,
+      "reason": "Final forensic run completed and all 42 A-Short tests passed."
+    }
+  },
+  "forensic_errors": {
+    "errors": [
+      {
+        "class": "MODEL_ERROR",
+        "code_bug": false,
+        "error_code": "STYLE_EXPOSURE_ONLY",
+        "evidence": {
+          "mean_excess_vs_ew": -0.00037535291578181124,
+          "t_excess": -0.34309119882794176
+        },
+        "message": "Positive gross but excess vs EW not significant -> mostly beta, not alpha.",
+        "severity": "HIGH"
+      },
+      {
+        "class": "COST_ERROR",
+        "code_bug": false,
+        "error_code": "COST_EROSION",
+        "evidence": {
+          "mean_gross_topk": 0.00013120256666223617,
+          "strategy_total_net": -0.983288070189338
+        },
+        "message": "Gross positive but net negative -> cost/turnover erosion.",
+        "severity": "HIGH"
+      }
+    ],
+    "primary_conclusion": "STYLE_EXPOSURE_ONLY"
+  },
+  "primary": "MODEL_ERROR",
+  "secondary": [
+    "COST_ERROR"
+  ]
+}
