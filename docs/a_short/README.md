@@ -73,6 +73,12 @@ A-Short = TradeMind 的**短周期（T+1/T+2/T+3/T+5）机会发现与纸面推�
 | [DATA_STORAGE_POLICY.md](DATA_STORAGE_POLICY.md) | GitHub 存储策略 + 大数据方案 A/B/C/D（不执行） |
 | [A_SHORT_LOCAL_HANDOFF.md](A_SHORT_LOCAL_HANDOFF.md) | 本地恢复包（commit/branch/关键文件/命令/已知问题） |
 | [A_SHORT_CLOUD_FINAL_AUDIT.md](A_SHORT_CLOUD_FINAL_AUDIT.md) | 需求差距（Implemented/Partial/Missing）+ 下一阶段顺序 G0→G7 |
+| [HANDOFF_ENVIRONMENT.md](HANDOFF_ENVIRONMENT.md) | 环境冻结（Cloud VM / 版本 / 体积 / 可用·不可用工具） |
+| [CURRENT_IMPLEMENTATION_STATUS.md](CURRENT_IMPLEMENTATION_STATUS.md) | Implemented / Partial / Missing（当前实现，非规划） |
+| [CURRENT_MODEL_REALITY.md](CURRENT_MODEL_REALITY.md) | 当前模型 = ONLY 20D_MOMENTUM_BASELINE（Specified≠Implemented） |
+| [REQUIREMENT_GAP_MATRIX.md](REQUIREMENT_GAP_MATRIX.md) | 20 项需求 × 状态 × 文件证据 |
+| [DATA_HANDOFF_STATUS.md](DATA_HANDOFF_STATUS.md) | 数据血缘：REGISTERED BUT BYTES UNAVAILABLE |
+| [A_SHORT_CLOUD_HANDOFF_FINAL.md](A_SHORT_CLOUD_HANDOFF_FINAL.md) | 交接最终报告（STATUS / Next Step / 待决策） |
 
 > 代码：`research_engine/cn_a_short/`（cost/account/feasibility/baseline/report/run + 25 tests，全绿）。本环境经验 alpha `DATA_BLOCKED`（无价格面板），成本/账户已实算。
 
