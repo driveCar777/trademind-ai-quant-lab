@@ -60,7 +60,19 @@ A-Short = TradeMind 的**短周期（T+1/T+2/T+3/T+5）机会发现与纸面推�
 | 24 | [A_SHORT_PHASE2A2_EMPIRICAL_RESULTS.md](A_SHORT_PHASE2A2_EMPIRICAL_RESULTS.md) | Executive `DATA_BLOCKED`；20 主比较/Q1–Q7 全 BLOCKED；成本/账户算术已出；BAD NEWS |
 | 25 | [A_SHORT_PHASE2A3_CLOUD_DATA_FORENSIC.md](A_SHORT_PHASE2A3_CLOUD_DATA_FORENSIC.md) | Cloud 数据可用性 + Universe 取证：frozen 字节 `REGISTERED_BUT_BYTES_UNAVAILABLE`（never in git/LFS/release）；「垃圾股」= BASELINE_DESIGN_CHARACTERISTIC（ALL universe + 20D momentum，无质量过滤）；DATA_BLOCKED / REQUIRES_OWNER_DECISION |
 
-> 代码：新增 `baseline.panel_coverage` 退化守卫 + `run_baseline` lineage 元数据/artifacts（`PHASE2A2_{RESULTS,DIAGNOSTICS,COST_SENSITIVITY,ACCOUNT_GRID}.json`）。empirical alpha 需在 :9000 物化 frozen 面板后才能跑。
+> 代码：新增 `baseline.panel_coverage` 退化守卫 + `run_baseline` lineage 元数据/artifacts（`PHASE2A2_{RESULTS,DIAGNOSTICS,COST_SENSITIVITY,ACCOUNT_GRID}.json`）。empirical alpha 需在有冻结面板字节的机器上物化后才能跑。
+
+### Cloud → Local 交接（handoff freeze）
+
+| 文件 | 内容 |
+|------|------|
+| [ENVIRONMENT_REPORT.md](ENVIRONMENT_REPORT.md) | 环境身份（Cursor Cloud VM）+ git/python/deps/disk |
+| [HANDOFF_CLOUD_TO_LOCAL.md](HANDOFF_CLOUD_TO_LOCAL.md) | 真实状态（Implemented/Not）+ 研究状态（`READY_FOR_DATA/NOT_ALPHA_PROVEN`） |
+| [CLOUD_CODE_MAP.md](CLOUD_CODE_MAP.md) | 代码地图（当前/可用/未接/缺失） |
+| [LOCAL_RESTORE_GUIDE.md](LOCAL_RESTORE_GUIDE.md) | 本地 clone 后安装/依赖/测试/运行 |
+| [DATA_STORAGE_POLICY.md](DATA_STORAGE_POLICY.md) | GitHub 存储策略 + 大数据方案 A/B/C/D（不执行） |
+| [A_SHORT_LOCAL_HANDOFF.md](A_SHORT_LOCAL_HANDOFF.md) | 本地恢复包（commit/branch/关键文件/命令/已知问题） |
+| [A_SHORT_CLOUD_FINAL_AUDIT.md](A_SHORT_CLOUD_FINAL_AUDIT.md) | 需求差距（Implemented/Partial/Missing）+ 下一阶段顺序 G0→G7 |
 
 > 代码：`research_engine/cn_a_short/`（cost/account/feasibility/baseline/report/run + 25 tests，全绿）。本环境经验 alpha `DATA_BLOCKED`（无价格面板），成本/账户已实算。
 
