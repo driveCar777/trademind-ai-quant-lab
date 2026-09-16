@@ -9,56 +9,90 @@ alpha is unchanged; only executability changes.
 """
 from __future__ import print_function
 
-from research_engine.cn_a_short.cost import LOT, round_trip, buy_cost_yuan, sell_cost_yuan
+from research_engine.cn_a_short.cost import LOT, SLIPPAGE, _fee, round_trip, buy_cost_yuan, sell_cost_yuan
 
 
 def lot_cost_yuan(price, slip_side=0.0):
-    """Cash to buy ONE lot (100 shares) at `price`, optionally including buy-side slippage."""
+    """Cash for the SHARES of ONE lot (100 shares) at `price`, incl. buy-side slippage. Excludes fees.
+
+    NOTE (Phase 2A.1): this is the notional/share cost only. It is NOT the affordable-cash test; use
+    `buy_cash_out` / `lots_affordable` when you need "can I actually pay for this incl. commission".
+    """
     return LOT * price * (1.0 + slip_side)
 
 
+def buy_cash_out(notional_at_fill):
+    """TRUE cash that leaves the account to BUY `notional_at_fill` yuan of shares (slippage already in
+    the fill price): shares cash + buy fee (commission floored at ¥5 + transfer). Matches the real
+    outflow = buy notional + buy slippage + commission + transfer."""
+    return notional_at_fill + _fee(notional_at_fill)
+
+
 def lots_for(alloc_yuan, price, slip_side=0.0):
-    """Whole lots buyable with `alloc_yuan` at `price`. Never negative; floor to lot."""
+    """Whole lots by SHARE cost only (ignores fees). Kept for notional math; NOT an affordability test.
+    For "can I actually pay incl. fees" use `lots_affordable`."""
     lc = lot_cost_yuan(price, slip_side)
     if lc <= 0:
         return 0
     return int(alloc_yuan // lc)
 
 
-def feasible_portfolio(equity, price, k, exposure=1.0, slip_side=0.0):
-    """Try to build an equal-money K-name portfolio at a single price level.
+def lots_affordable(alloc_yuan, price, slip_side=SLIPPAGE):
+    """Max whole lots whose TRUE cash out (shares incl. slippage + commission + transfer) fits
+    `alloc_yuan`. Fee-aware: the ¥5 minimum commission can drop the last lot vs `lots_for` (§A fix)."""
+    buy_px = price * (1.0 + slip_side)
+    lc = LOT * buy_px
+    if lc <= 0 or alloc_yuan <= 0:
+        return 0
+    L = int(alloc_yuan // lc)
+    while L > 0:
+        notional = L * lc
+        if buy_cash_out(notional) <= alloc_yuan + 1e-9:
+            return L
+        L -= 1
+    return 0
 
-    Returns realized name count, invested, cash-idle fraction, per-name notional and round-trip
-    cost %. Guarantees cash never goes negative: invested <= exposure*equity <= equity.
+
+def feasible_portfolio(equity, price, k, exposure=1.0, slip_side=SLIPPAGE):
+    """Try to build an equal-money K-name portfolio at a single price level. FEE-AWARE (§A fix).
+
+    Sizes lots so TRUE cash out (shares + slippage + commission + transfer) fits each name's unit,
+    hence sum(cash_out) <= exposure*equity <= equity. The no-negative-cash invariant now constrains
+    TRUE cash after fees, not notional.
     """
     assert equity > 0 and price > 0 and k >= 1 and 0 < exposure <= 1.0
     budget = exposure * equity
     unit = budget / k
-    lots = lots_for(unit, price, slip_side)
+    lots = lots_affordable(unit, price, slip_side)
     if lots == 0:
-        # Cannot even hold 1 lot per name at this K → shrink K to what fits.
-        max_names = lots_for(budget, price, slip_side)
+        # Cannot even afford 1 lot (incl. fees) per name at this K → shrink K to what fits the budget.
+        max_names = lots_affordable(budget, price, slip_side)
         return {
             "equity": equity, "price": price, "k_target": k, "exposure": exposure,
-            "feasible": False, "reason": "LOT_TOO_BIG_FOR_UNIT",
+            "feasible": False, "reason": "LOT_PLUS_FEE_TOO_BIG_FOR_UNIT",
             "n_names": min(k, max_names), "max_names_at_1lot": max_names,
-            "invested": 0.0, "cash_idle_frac": 1.0, "per_name_notional": 0.0,
+            "invested": 0.0, "cash_out_incl_fees": 0.0, "cash_after_fees": equity,
+            "cash_idle_frac": 1.0, "per_name_notional": 0.0,
         }
-    per_name_notional = lots * LOT * price
-    invested = k * per_name_notional
-    # If rounding pushed invested over budget (can't happen since lots=floor(unit/lotcost)), clamp names.
+    buy_px = price * (1.0 + slip_side)
+    per_name_fill_notional = lots * LOT * buy_px          # shares cash incl. slippage
+    per_name_cash_out = buy_cash_out(per_name_fill_notional)  # + commission(floored) + transfer
+    per_name_notional = lots * LOT * price                # clean notional for cost-% reporting
     n_names = k
-    if invested > budget + 1e-9:
-        n_names = int(budget // per_name_notional)
-        invested = n_names * per_name_notional
+    total_cash_out = n_names * per_name_cash_out
+    invested = n_names * per_name_notional
+    cash_after_fees = equity - total_cash_out
+    # Invariants (Phase 2A.1): TRUE cash out never exceeds budget or equity; cash never negative.
+    assert total_cash_out <= budget + 1e-6, "invariant: true cash out must fit strategy budget"
+    assert total_cash_out <= equity + 1e-6, "invariant: true cash out must not exceed equity"
+    assert cash_after_fees >= -1e-6, "invariant: no negative cash after fees"
     rt = round_trip(per_name_notional)
-    idle = 1.0 - invested / equity
-    assert invested <= equity + 1e-6, "invariant: invested must not exceed equity"
     return {
         "equity": equity, "price": price, "k_target": k, "exposure": exposure,
-        "feasible": n_names >= 1, "reason": "OK" if n_names == k else "K_REDUCED",
+        "feasible": n_names >= 1, "reason": "OK",
         "n_names": n_names, "lots_per_name": lots, "per_name_notional": per_name_notional,
-        "invested": invested, "cash_idle_frac": idle,
+        "invested": invested, "cash_out_incl_fees": round(total_cash_out, 4),
+        "cash_after_fees": round(cash_after_fees, 4), "cash_idle_frac": cash_after_fees / equity,
         "rt_cost_pct_fee_only": rt["fee_only_pct"], "rt_cost_pct_total": rt["total_pct"],
         "min_fee_binding": rt["min_fee_binding"],
     }
@@ -93,6 +127,6 @@ def round_trip_notional_only(notional, day="2026-01-01", slip_side=0.001):
 
 
 __all__ = [
-    "lot_cost_yuan", "lots_for", "feasible_portfolio", "min_capital_for_k",
-    "practical_min_capital_for_k", "round_trip_notional_only",
+    "lot_cost_yuan", "buy_cash_out", "lots_for", "lots_affordable", "feasible_portfolio",
+    "min_capital_for_k", "practical_min_capital_for_k", "round_trip_notional_only",
 ]

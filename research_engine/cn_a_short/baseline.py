@@ -68,18 +68,43 @@ def momentum_scores(pack, t, lookback=20):
 
 
 # ----------------------------------------------------------------- strategy / capital layer
-def _fill_reason(pack, t0, t1, j):
-    """FILL only if both entry(t0) and exit(t1) are executable. Encodes T+1 (t1>t0) + limit/suspension."""
-    r0 = exec_reason(pack, t0, j)
-    if r0 != "FILL":
-        return r0
-    return exec_reason(pack, t1, j)
+EXIT_CARRY_MAX = 10   # forced-hold recovery cap (trading days) when planned exit is not sellable
 
 
-def top_k_period(pack, scores_t, elig_t, t, hold, k, equity, boards="ALL", slip_side=SLIPPAGE):
-    """One rebalance from signal day t. Select top-k eligible by score; equal money equity/k; next-open
-    fill with T+1 exit; ¥5-min-fee + stamp + slippage cost. Returns gross (fill feasibility ignored)
-    and net (yuan) so PREDICTION vs STRATEGY stay distinct.
+def _entry_ok(pack, t0, j):
+    """Entry executable? (listed/trading/limit/volume). If not FILL, the position is NEVER opened."""
+    return exec_reason(pack, t0, j) == "FILL"
+
+
+def _find_exit(pack, t1, j, max_carry=EXIT_CARRY_MAX):
+    """CAPITAL_PATH exit recovery (§B Option 2). Given an already-open position whose PLANNED exit is
+    day t1, find the first executable sell day at or after t1 (carry forward up to max_carry). If none
+    is sellable within the cap, the position is STUCK (marked at last close, flagged).
+
+    Returns (exit_idx, exit_kind, block_reason, forced_hold_days):
+      exit_kind = "FILL" (sold at open) | "STUCK" (could not sell; marked at last close)
+    """
+    dates = pack["dates"]
+    for c in range(max_carry + 1):
+        tk = t1 + c
+        if tk >= len(dates):
+            tk_last = min(t1 + max_carry, len(dates) - 1)
+            return tk_last, "STUCK", "END_OF_DATA", (tk_last - t1)
+        if exec_reason(pack, tk, j) == "FILL":
+            block = None if c == 0 else exec_reason(pack, t1, j)
+            return tk, "FILL", block, c
+    tk_last = min(t1 + max_carry, len(dates) - 1)
+    return tk_last, "STUCK", exec_reason(pack, t1, j), (tk_last - t1)
+
+
+def top_k_period(pack, scores_t, elig_t, t, hold, k, equity, boards="ALL", slip_side=SLIPPAGE,
+                 exit_carry_max=EXIT_CARRY_MAX):
+    """One rebalance from signal day t. CAPITAL-PATH aware (§B fix): a position that ENTERS (open t+1
+    executable) is ALWAYS booked as held; if its planned exit (t+1+hold) is not sellable, it is carried
+    forward to the first executable day (STUCK if never sellable within `exit_carry_max`). Entry-blocked
+    names are never opened. Fee-aware lot sizing (§A fix) so cash out (incl. ¥5 min fee) fits the unit.
+
+    Keeps PREDICTION (planned open-to-open gross) distinct from STRATEGY (realized net on actual exit).
     """
     dates = pack["dates"]
     t0, t1 = t + 1, t + 1 + hold
@@ -92,41 +117,74 @@ def top_k_period(pack, scores_t, elig_t, t, hold, k, equity, boards="ALL", slip_
     order = idx[np.lexsort((idx, scores_t[idx]))][::-1]  # score desc, tie -> lower symbol index
     picks = [int(j) for j in order[:k]]
     alloc = equity / float(k)
-    pnl, invested, n_fill = 0.0, 0.0, 0
-    gross_list, net_list, names = [], [], []
+    pnl, invested, cash_out_total = 0.0, 0.0, 0.0
+    n_entry, n_entry_blocked, n_no_lot = 0, 0, 0
+    n_round_trip_clean, n_exit_carry, n_stuck, forced_hold_sum = 0, 0, 0, 0
+    gross_list, names = [], []
     for j in picks:
-        o0, o1 = _open(pack, t0, j), _open(pack, t1, j)
-        gross = (o1 / o0 - 1.0) if (np.isfinite(o0) and o0 > 0 and np.isfinite(o1) and o1 > 0) else float("nan")
-        gross_list.append(gross)
-        reason = _fill_reason(pack, t0, t1, j)
-        if reason != "FILL":
-            names.append({"symbol": pack["symbols"][j], "status": reason, "gross": gross, "net": 0.0})
+        o0, planned_o1 = _open(pack, t0, j), _open(pack, t1, j)
+        gross = (planned_o1 / o0 - 1.0) if (np.isfinite(o0) and o0 > 0 and np.isfinite(planned_o1) and planned_o1 > 0) else float("nan")
+        gross_list.append(gross)  # PREDICTION target: planned horizon, independent of fills
+        entry_reason = exec_reason(pack, t0, j)
+        if entry_reason != "FILL":
+            n_entry_blocked += 1
+            names.append({"symbol": pack["symbols"][j], "status": entry_reason, "entered": False,
+                          "gross": gross, "net": 0.0})
             continue
-        lots = int(alloc // (LOT * o0 * (1.0 + slip_side)))
+        # fee-aware lot sizing: shares cash (incl slippage) + buy fee must fit alloc
+        buy_px = o0 * (1.0 + slip_side)
+        lots = int(alloc // (LOT * buy_px))
+        while lots > 0 and (lots * LOT * buy_px + _fee(lots * LOT * buy_px)) > alloc + 1e-9:
+            lots -= 1
         if lots == 0:
-            names.append({"symbol": pack["symbols"][j], "status": "NO_LOT", "gross": gross, "net": 0.0})
+            n_no_lot += 1
+            names.append({"symbol": pack["symbols"][j], "status": "NO_LOT", "entered": False,
+                          "gross": gross, "net": 0.0})
             continue
         shares = lots * LOT
-        buy_px = o0 * (1.0 + slip_side)
-        sell_px = o1 * (1.0 - slip_side)
         cost_in = shares * buy_px
+        buy_fee = _fee(cost_in)
+        cash_out = cost_in + buy_fee
+        invested += cost_in
+        cash_out_total += cash_out
+        n_entry += 1
+        # capital-path exit recovery
+        exit_idx, exit_kind, block_reason, carry = _find_exit(pack, t1, j, exit_carry_max)
+        forced_hold_sum += carry
+        if exit_kind == "FILL":
+            px_exit = _open(pack, exit_idx, j)
+            sell_px = px_exit * (1.0 - slip_side)
+            status = "FILL" if carry == 0 else ("FILL_CARRY_%d" % carry)
+            if carry == 0:
+                n_round_trip_clean += 1
+            else:
+                n_exit_carry += 1
+        else:  # STUCK: assume liquidation at last available close, flagged
+            px_exit = float(pack["close"][exit_idx, j])
+            sell_px = px_exit * (1.0 - slip_side) if (np.isfinite(px_exit) and px_exit > 0) else o0
+            status = "STUCK"
+            n_stuck += 1
         proceeds = shares * sell_px
-        fees = _fee(cost_in) + _fee(proceeds) + proceeds * stamp_duty_sell(dates[t1])
+        fees = buy_fee + _fee(proceeds) + proceeds * stamp_duty_sell(dates[exit_idx])
         net = proceeds - cost_in - fees
         pnl += net
-        invested += cost_in
-        n_fill += 1
-        net_list.append(net / cost_in if cost_in else float("nan"))
-        names.append({"symbol": pack["symbols"][j], "status": "FILL", "gross": gross,
+        names.append({"symbol": pack["symbols"][j], "status": status, "entered": True, "gross": gross,
+                      "planned_exit": dates[t1], "actual_exit": dates[exit_idx],
+                      "forced_hold_days": carry, "exit_block_reason": block_reason,
                       "net": round(net, 4), "net_pct": net / cost_in if cost_in else None})
     gross_arr = np.array([g for g in gross_list if np.isfinite(g)], dtype=float)
+    assert cash_out_total <= equity + 1e-6, "invariant: total buy cash out (incl fees) <= equity"
     return {
-        "signal_date": dates[t], "entry": dates[t0], "exit": dates[t1], "hold": hold, "k": k,
-        "n_pick": len(picks), "n_fill": n_fill,
+        "signal_date": dates[t], "entry": dates[t0], "planned_exit": dates[t1], "exit": dates[t1],
+        "hold": hold, "k": k, "n_pick": len(picks), "n_fill": n_entry,
+        "n_entry": n_entry, "n_entry_blocked": n_entry_blocked, "n_no_lot": n_no_lot,
+        "n_round_trip_clean": n_round_trip_clean, "n_exit_carry": n_exit_carry, "n_stuck": n_stuck,
+        "forced_hold_days_total": forced_hold_sum,
         "mean_gross_topk": float(gross_arr.mean()) if gross_arr.size else None,
         "median_gross_topk": float(np.median(gross_arr)) if gross_arr.size else None,
         "hit_rate_gross": float((gross_arr > 0).mean()) if gross_arr.size else None,
-        "invested": round(invested, 2), "cash_idle_frac": round(1.0 - invested / equity, 4) if equity else None,
+        "invested": round(invested, 2), "cash_out_incl_fees": round(cash_out_total, 2),
+        "cash_idle_frac": round(1.0 - cash_out_total / equity, 4) if equity else None,
         "pnl": round(pnl, 2), "ret_net": pnl / equity if equity else None,
         "names": names,
     }

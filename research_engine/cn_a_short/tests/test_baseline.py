@@ -37,33 +37,35 @@ def test_hold_spacing_and_t_plus_1_exit():
         assert (t + 1 + hold) > (t + 1)
 
 
-def test_limit_lock_blocks_fill():
+def test_entry_limit_lock_not_opened():
+    # ENTRY-day limit lock -> position never opened (correct: never bought).
     pack = make_pack(T=8)
     j = 0
     t0 = 2  # entry day (signal t=1)
-    # Make open(t0,j) a +10% move vs preclose -> LIMIT_LOCK for a normal 10%-limit main-board name
-    pack["open"][t0, j] = pack["preclose"][t0, j] * np.float32(1.10)
+    pack["open"][t0, j] = pack["preclose"][t0, j] * np.float32(1.10)   # +10% -> LIMIT_LOCK on entry
     scores_t = np.full(len(pack["symbols"]), -1.0)
-    scores_t[j] = 10.0                                     # force j into the top pick
+    scores_t[j] = 10.0
     elig_t = np.zeros(len(pack["symbols"]), dtype=bool)
     elig_t[j] = True
     per = top_k_period(pack, scores_t, elig_t, 1, hold=2, k=1, equity=100_000.0)
     assert per["names"][0]["status"] == "LIMIT_LOCK"
-    assert per["n_fill"] == 0
+    assert per["names"][0]["entered"] is False
+    assert per["n_entry"] == 0 and per["n_fill"] == 0
 
 
-def test_suspension_blocks_fill():
+def test_entry_suspension_not_opened():
     pack = make_pack(T=8)
     j = 1
     t0 = 2
-    pack["tradestatus"][t0, j] = 0                         # suspended on entry day
+    pack["tradestatus"][t0, j] = 0                         # suspended on ENTRY day -> never opened
     scores_t = np.full(len(pack["symbols"]), -1.0)
     scores_t[j] = 10.0
     elig_t = np.zeros(len(pack["symbols"]), dtype=bool)
     elig_t[j] = True
     per = top_k_period(pack, scores_t, elig_t, 1, hold=2, k=1, equity=100_000.0)
     assert per["names"][0]["status"] == "SUSPENDED"
-    assert per["n_fill"] == 0
+    assert per["names"][0]["entered"] is False
+    assert per["n_entry"] == 0 and per["n_fill"] == 0
 
 
 def test_top_k_selection_order():
@@ -84,6 +86,78 @@ def test_pit_no_same_day_fill():
     elig_t = np.ones(6, dtype=bool)
     per = top_k_period(pack, scores_t, elig_t, 3, hold=1, k=2, equity=1_000_000.0)
     assert per["entry"] == pack["dates"][4]                # t=3 -> entry index 4
+
+
+def test_exit_limit_lock_forces_carry_not_dropped():
+    # §B / §D.4: entry FILL, planned exit LIMIT_LOCK, next day FILL -> position HELD & carried, NOT dropped.
+    pack = make_pack(T=8)
+    j = 0
+    t, hold = 1, 1
+    t0, t1 = t + 1, t + 1 + hold           # entry=2, planned exit=3
+    pack["open"][t1, j] = pack["preclose"][t1, j] * np.float32(1.10)   # exit day one-word limit-up
+    # t1+1 = 4 stays a normal FILL day by construction
+    scores_t = np.full(len(pack["symbols"]), -1.0)
+    scores_t[j] = 10.0
+    elig_t = np.zeros(len(pack["symbols"]), dtype=bool)
+    elig_t[j] = True
+    per = top_k_period(pack, scores_t, elig_t, t, hold=hold, k=1, equity=100_000.0)
+    nm = per["names"][0]
+    assert nm["entered"] is True                 # bought (not "never traded")
+    assert per["n_entry"] == 1 and per["invested"] > 0
+    assert nm["status"] == "FILL_CARRY_1"
+    assert nm["planned_exit"] == pack["dates"][t1]
+    assert nm["actual_exit"] == pack["dates"][t1 + 1]
+    assert nm["forced_hold_days"] == 1
+    assert nm["exit_block_reason"] == "LIMIT_LOCK"
+    assert per["n_round_trip_clean"] == 0 and per["n_exit_carry"] == 1
+
+
+def test_exit_suspension_forces_carry():
+    # §D.5: entry FILL, planned exit SUSPENDED, recovers next day -> carried, held.
+    pack = make_pack(T=8)
+    j = 2
+    t, hold = 1, 1
+    t0, t1 = t + 1, t + 1 + hold
+    pack["tradestatus"][t1, j] = 0                # planned exit day suspended
+    scores_t = np.full(len(pack["symbols"]), -1.0)
+    scores_t[j] = 10.0
+    elig_t = np.zeros(len(pack["symbols"]), dtype=bool)
+    elig_t[j] = True
+    per = top_k_period(pack, scores_t, elig_t, t, hold=hold, k=1, equity=100_000.0)
+    nm = per["names"][0]
+    assert nm["entered"] is True and per["n_entry"] == 1
+    assert nm["status"] == "FILL_CARRY_1"
+    assert nm["forced_hold_days"] == 1
+    assert nm["exit_block_reason"] == "SUSPENDED"
+
+
+def test_exit_never_recovers_marks_stuck_not_dropped():
+    # Entry FILL, but exit blocked for the entire carry window -> STUCK, still HELD (not dropped).
+    pack = make_pack(T=8)
+    j = 0
+    t, hold = 1, 1
+    t0, t1 = t + 1, t + 1 + hold
+    for tk in range(t1, len(pack["dates"])):     # suspend every day from planned exit onward
+        pack["tradestatus"][tk, j] = 0
+    scores_t = np.full(len(pack["symbols"]), -1.0)
+    scores_t[j] = 10.0
+    elig_t = np.zeros(len(pack["symbols"]), dtype=bool)
+    elig_t[j] = True
+    per = top_k_period(pack, scores_t, elig_t, t, hold=hold, k=1, equity=100_000.0)
+    nm = per["names"][0]
+    assert nm["entered"] is True and per["n_entry"] == 1
+    assert nm["status"] == "STUCK" and per["n_stuck"] == 1
+    assert nm["forced_hold_days"] >= 1
+
+
+def test_period_cash_out_never_exceeds_equity():
+    # Multi-name true-cash invariant (§A / §D.2): sum of buy cash out (incl ¥5 min fee) <= equity.
+    pack = make_pack(T=8)
+    scores_t = np.arange(len(pack["symbols"]), dtype=float)[::-1]
+    elig_t = np.ones(len(pack["symbols"]), dtype=bool)
+    # small equity so the ¥5 min fee actually bites
+    per = top_k_period(pack, scores_t, elig_t, 1, hold=1, k=5, equity=30_000.0)
+    assert per["cash_out_incl_fees"] <= 30_000.0 + 1e-6
 
 
 def test_ew_period_and_evaluate_run():
