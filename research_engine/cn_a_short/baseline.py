@@ -40,6 +40,40 @@ def _open(pack, t, j):
     return float(pack["open"][t, j])
 
 
+def panel_coverage(pack):
+    """Coverage / missingness of a pack's core fields. Used to detect a DEGENERATE (empty / all-NaN)
+    panel before running research on it (Phase 2A.2 guard). A real A-share rectangular panel is naturally
+    sparse (stocks not listed the whole history), so coverage is measured WHERE listed==1, not overall.
+    """
+    close = np.asarray(pack["close"], dtype=float)
+    listed = np.asarray(pack["listed"])
+    T, N = close.shape
+    finite = np.isfinite(close)
+    listed_mask = listed == 1
+
+    def miss(field):
+        a = np.asarray(pack[field], dtype=float)
+        return float(1.0 - (np.isfinite(a) & listed_mask).sum() / max(1, int(listed_mask.sum())))
+
+    n_sym_with_data = int(finite.any(axis=0).sum())
+    n_days_with_data = int((finite.sum(axis=1) > 0).sum())
+    cov_listed = float(finite[listed_mask].mean()) if listed_mask.any() else 0.0
+    return {
+        "n_dates": T, "n_symbols": N,
+        "finite_close_rate_overall": float(finite.mean()),
+        "finite_close_rate_when_listed": cov_listed,
+        "n_symbols_with_any_close": n_sym_with_data,
+        "n_days_with_any_close": n_days_with_data,
+        "missing_open_rate_listed": miss("open"),
+        "missing_close_rate_listed": miss("close"),
+        "missing_volume_rate_listed": miss("volume"),
+        "missing_amount_rate_listed": miss("amount"),
+        "missing_turn_rate_listed": miss("turn"),
+        # DEGENERATE = no usable prices; running research on this would fabricate empty results.
+        "degenerate": bool(n_sym_with_data == 0 or n_days_with_data == 0 or cov_listed < 0.2),
+    }
+
+
 def simple_eligible(pack, min_hist=20, exclude_st=False):
     """Baseline eligibility matrix [T,N]: listed, trading, finite close, >= min_hist sessions listed,
     optionally exclude ST. Deliberately simple + transparent (contract §eligibility)."""
@@ -267,4 +301,5 @@ def evaluate(pack, scores, elig, signal_indices, hold, ks, equity, boards="ALL",
     return per_k
 
 
-__all__ = ["forward_label", "simple_eligible", "momentum_scores", "top_k_period", "ew_period", "evaluate"]
+__all__ = ["forward_label", "panel_coverage", "simple_eligible", "momentum_scores", "top_k_period",
+           "ew_period", "evaluate"]

@@ -4,7 +4,7 @@ from __future__ import print_function
 import numpy as np
 
 from research_engine.cn_a_short.baseline import (evaluate, forward_label, momentum_scores,
-                                                 simple_eligible, top_k_period, ew_period)
+                                                 panel_coverage, simple_eligible, top_k_period, ew_period)
 from research_engine.cn_a_short.tests.synthetic import make_pack
 
 
@@ -158,6 +158,23 @@ def test_period_cash_out_never_exceeds_equity():
     # small equity so the ¥5 min fee actually bites
     per = top_k_period(pack, scores_t, elig_t, 1, hold=1, k=5, equity=30_000.0)
     assert per["cash_out_incl_fees"] <= 30_000.0 + 1e-6
+
+
+def test_panel_coverage_detects_good_and_degenerate():
+    # A real (synthetic) pack has prices -> not degenerate.
+    good = make_pack(T=12)
+    cg = panel_coverage(good)
+    assert cg["degenerate"] is False
+    assert cg["finite_close_rate_when_listed"] > 0.9
+    assert cg["n_symbols_with_any_close"] == len(good["symbols"])
+    # An all-NaN pack (what pack_panel produces from a MISSING raw panel) -> degenerate -> must be caught.
+    empty = make_pack(T=12)
+    for f in ("open", "high", "low", "close", "preclose", "volume", "amount", "turn"):
+        empty[f] = np.full_like(empty[f], np.nan)
+    ce = panel_coverage(empty)
+    assert ce["degenerate"] is True
+    assert ce["n_symbols_with_any_close"] == 0
+    assert ce["missing_close_rate_listed"] == 1.0
 
 
 def test_ew_period_and_evaluate_run():
