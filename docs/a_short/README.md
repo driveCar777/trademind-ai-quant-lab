@@ -40,6 +40,19 @@ A-Short = TradeMind 的**短周期（T+1/T+2/T+3/T+5）机会发现与纸面推�
 
 > 同时修订：LLM_PIPELINE / SCHEDULER / PAPER_LEDGER / GUI / GAPS（治理与通知/成本/三层边界已更新）。
 
+### Phase 2A 新增（Cost + Account Feasibility + D1 Research Contract + Baseline Engine）
+
+| # | 文件 | 内容 | 回应 |
+|---|------|------|------|
+| 16 | [A_SHORT_PHASE2A_PLAN.md](A_SHORT_PHASE2A_PLAN.md) | 本阶段范围/顺序/复用/禁令/数据可用性 | §0–§5 |
+| 17 | [A_SHORT_COST_FEASIBILITY_V2.md](A_SHORT_COST_FEASIBILITY_V2.md) | 逐笔成本 + 滑点敏感性 + Cost Envelope（区别于 Alpha Impossibility） | §3–§6, §10, §11, §14 |
+| 18 | [A_SHORT_ACCOUNT_FEASIBILITY.md](A_SHORT_ACCOUNT_FEASIBILITY.md) | 最小可执行资金 + Account×Top-K Execution Feasibility Map | §7–§9, §24 |
+| 19 | [A_SHORT_D1_RESEARCH_CONTRACT.md](A_SHORT_D1_RESEARCH_CONTRACT.md) | 全新独立合同 `A_SHORT_D1_V1`（血缘/窗/多重性/复现） | §12–§16, §18, §35 |
+| 20 | [A_SHORT_D1_BASELINE_SPEC.md](A_SHORT_D1_BASELINE_SPEC.md) | 两层分离 + Top-K 评估 + NO TRADE 诊断 + 审计套件 | §17, §19–§27, §36–§38 |
+| 21 | [A_SHORT_PHASE2A_RESULTS.md](A_SHORT_PHASE2A_RESULTS.md) | BAD NEWS + §42 主表 + §43 STATUS（alpha=DATA_BLOCKED，已实算成本/账户） | §41–§43 |
+
+> 代码：`research_engine/cn_a_short/`（cost/account/feasibility/baseline/report/run + 25 tests，全绿）。本环境经验 alpha `DATA_BLOCKED`（无价格面板），成本/账户已实算。
+
 ## 三条必须先记住的硬结论（详见 §9 文档）
 
 1. **成本天花板先于模型。** 逐笔真实往返成本 ¥2k/名 0.55–0.75%、≥¥20k/名 0.10–0.30%（见 COST_FEASIBILITY）；
